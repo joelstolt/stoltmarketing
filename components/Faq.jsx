@@ -23,7 +23,7 @@ function Reveal({ children, className = "", delay = 0 }) {
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "Det beror på uppdraget. Mindre projekt som en enklare webbplats startar kring 15 000–25 000 kr. Större e-handelslösningar och AI-projekt prissätts efter scope. Managed hemsida börjar på 390 kr/mån. Jag ger alltid ett fast pris innan vi börjar.",
+    a: "Det beror på uppdraget. En enklare webbplats startar från 3 900 kr. Större e-handelslösningar och AI-projekt prissätts efter scope. Managed hemsida börjar på 390 kr/mån. Jag ger alltid ett fast pris innan vi börjar.",
   },
   {
     q: "Jobbar du bara med företag i Hässleholm?",

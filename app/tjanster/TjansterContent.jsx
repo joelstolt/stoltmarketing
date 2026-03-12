@@ -113,12 +113,12 @@ const services = [
 const packages = [
   {
     name: "Webbstart",
-    price: "Från 9 900 kr",
+    price: "Från 3 900 kr",
     desc: "Ny webbplats med fokus på tydlig kundresa och konvertering.",
   },
   {
     name: "Tillväxtpaket",
-    price: "Från 19 900 kr",
+    price: "Från 7 900 kr",
     desc: "Webb + SEO + AI-verktyg för dig som vill växa snabbare.",
   },
   {
