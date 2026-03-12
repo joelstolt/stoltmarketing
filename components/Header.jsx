@@ -78,11 +78,16 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
         scrolled || isOpen
-          ? "bg-surface/85 backdrop-blur-xl border-b border-black/[0.04]"
+          ? "border-b border-black/[0.04]"
           : "bg-transparent border-b border-transparent"
       }`}
+      style={{
+        zIndex: isOpen ? 10000 : 50,
+        background: scrolled || isOpen ? "rgba(250,250,248,0.95)" : "transparent",
+        backdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
+      }}
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
         {/* Logo */}
@@ -214,7 +219,7 @@ export default function Header() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 lg:hidden"
-            style={{ zIndex: 45, background: "#FAFAF8" }}
+            style={{ zIndex: 9999, background: "#FAFAF8" }}
           >
             <nav className="flex flex-col items-start px-8 pt-28 pb-10 h-full overflow-y-auto">
               {/* Tjänster section */}
