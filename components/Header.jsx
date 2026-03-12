@@ -133,12 +133,11 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav
+            className="hidden lg:flex"
             style={{
-              display: "flex",
               alignItems: "center",
               gap: 28,
             }}
-            className="hidden lg:flex"
           >
             {/* Tjänster dropdown */}
             <div
