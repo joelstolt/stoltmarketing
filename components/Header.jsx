@@ -212,63 +212,87 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-surface/98 backdrop-blur-xl lg:hidden"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 lg:hidden"
+            style={{ zIndex: 45, background: "#FAFAF8" }}
           >
-            <nav className="flex flex-col items-center justify-center h-full gap-6">
+            <nav className="flex flex-col items-start px-8 pt-28 pb-10 h-full overflow-y-auto">
+              {/* Tjänster section */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 }}
-                className="flex flex-col items-center gap-3"
+                className="w-full mb-6"
               >
-                <Link
-                  href="/tjanster"
-                  onClick={() => setIsOpen(false)}
-                  className="text-[20px] font-heading font-600 text-heading"
-                >
-                  Alla tjänster
-                </Link>
-                {serviceItems.map((item, i) => (
+                <p className="text-[11px] font-700 text-muted uppercase tracking-widest mb-4">
+                  Tjänster
+                </p>
+                <div className="flex flex-col gap-1">
+                  <Link
+                    href="/tjanster"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3.5 py-3 px-4 -mx-4 rounded-xl hover:bg-primary/[0.04] transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
+                      <MonitorSmartphone size={18} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-[16px] font-600 text-heading">Alla tjänster</div>
+                      <div className="text-[13px] text-muted">Översikt av erbjudandet</div>
+                    </div>
+                  </Link>
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-3.5 py-3 px-4 -mx-4 rounded-xl hover:bg-primary/[0.04] transition-colors"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
+                        <item.icon size={18} className="text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-[16px] font-600 text-heading">{item.label}</div>
+                        <div className="text-[13px] text-muted">{item.desc}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-border mb-6" />
+
+              {/* Other nav items */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.12 }}
+                className="flex flex-col gap-1 w-full mb-8"
+              >
+                {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-[16px] text-muted hover:text-heading transition-colors"
+                    className="py-3 text-[18px] font-heading font-600 text-body hover:text-heading transition-colors"
                   >
                     {item.label}
                   </Link>
                 ))}
               </motion.div>
 
-              <div className="h-px w-16 bg-border" />
-
-              {navItems.map((item, i) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 + 0.15 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-[20px] font-heading font-600 text-body hover:text-heading transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
-
+              {/* CTA */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.2 }}
+                className="w-full"
               >
                 <Link
                   href="/#kontakt"
                   onClick={() => setIsOpen(false)}
-                  className="premium-btn mt-4"
+                  className="premium-btn w-full justify-center text-[16px]"
                 >
                   Boka kostnadsfri genomgång
                 </Link>
