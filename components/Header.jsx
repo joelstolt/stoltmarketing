@@ -51,7 +51,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -61,7 +60,11 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
     return () => {
       document.body.style.overflow = "";
     };
@@ -77,235 +80,435 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
-        scrolled || isOpen
-          ? "border-b border-black/[0.04]"
-          : "bg-transparent border-b border-transparent"
-      }`}
-      style={{
-        zIndex: isOpen ? 10000 : 50,
-        background: scrolled || isOpen ? "rgba(250,250,248,0.95)" : "transparent",
-        backdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="font-heading text-[18px] font-700 tracking-tight text-heading relative z-50"
+    <>
+      {/* ═══ HEADER BAR ═══ */}
+      <header
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 10001,
+          height: 72,
+          display: "flex",
+          alignItems: "center",
+          background:
+            scrolled || isOpen
+              ? "rgba(250, 250, 248, 0.95)"
+              : "transparent",
+          backdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
+          WebkitBackdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
+          borderBottom:
+            scrolled || isOpen
+              ? "1px solid rgba(0,0,0,0.04)"
+              : "1px solid transparent",
+          transition: "background 0.3s, border-color 0.3s, backdrop-filter 0.3s",
+          padding: "0 20px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1120,
+            margin: "0 auto",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
         >
-          Stolt Marketing
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7">
-          {/* Tjänster dropdown */}
-          <div
-            ref={dropdownRef}
-            className="relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+          {/* Logo */}
+          <Link
+            href="/"
+            className="font-heading"
+            style={{
+              fontSize: 18,
+              fontWeight: 700,
+              letterSpacing: "-0.01em",
+              color: "#0C0F1A",
+              textDecoration: "none",
+            }}
           >
-            <Link
-              href="/tjanster"
-              className="flex items-center gap-1 text-[15px] font-500 text-muted hover:text-heading transition-colors duration-200"
-            >
-              Tjänster
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${
-                  dropdownOpen ? "rotate-180" : ""
-                }`}
-              />
-            </Link>
+            Stolt Marketing
+          </Link>
 
-            <AnimatePresence>
-              {dropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
-                >
-                  <div className="bg-surface/95 backdrop-blur-xl rounded-[16px] border border-border shadow-[0_8px_32px_rgba(0,0,0,0.08),0_2px_8px_rgba(0,0,0,0.04)] p-3 w-[320px]">
-                    <div className="flex flex-col gap-1">
-                      {/* All services link */}
+          {/* Desktop nav */}
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 28,
+            }}
+            className="hidden lg:flex"
+          >
+            {/* Tjänster dropdown */}
+            <div
+              style={{ position: "relative" }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/tjanster"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 4,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  color: "#6B7280",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#0C0F1A")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+              >
+                Tjänster
+                <ChevronDown
+                  size={14}
+                  style={{
+                    transition: "transform 0.2s",
+                    transform: dropdownOpen ? "rotate(180deg)" : "rotate(0)",
+                  }}
+                />
+              </Link>
+
+              <AnimatePresence>
+                {dropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      paddingTop: 12,
+                    }}
+                  >
+                    <div
+                      style={{
+                        background: "rgba(255,255,255,0.97)",
+                        backdropFilter: "blur(20px)",
+                        borderRadius: 16,
+                        border: "1px solid #E5E5E0",
+                        boxShadow:
+                          "0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
+                        padding: 12,
+                        width: 320,
+                      }}
+                    >
                       <Link
                         href="/tjanster"
                         onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-[10px] hover:bg-primary/[0.04] transition-colors group"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 12,
+                          padding: "10px 12px",
+                          borderRadius: 10,
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.background =
+                            "rgba(29,78,216,0.04)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.background = "transparent")
+                        }
                       >
-                        <div className="w-9 h-9 rounded-lg bg-primary/6 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
-                          <MonitorSmartphone
-                            size={16}
-                            className="text-primary"
-                          />
+                        <div
+                          style={{
+                            width: 36,
+                            height: 36,
+                            borderRadius: 8,
+                            background: "rgba(29,78,216,0.06)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <MonitorSmartphone size={16} color="#1D4ED8" />
                         </div>
                         <div>
-                          <div className="text-[14px] font-600 text-heading">
+                          <div
+                            style={{
+                              fontSize: 14,
+                              fontWeight: 600,
+                              color: "#0C0F1A",
+                            }}
+                          >
                             Alla tjänster
                           </div>
-                          <div className="text-[12px] text-muted">
+                          <div style={{ fontSize: 12, color: "#6B7280" }}>
                             Översikt av hela erbjudandet
                           </div>
                         </div>
                       </Link>
 
-                      <div className="h-px bg-border-light my-1" />
+                      <div
+                        style={{
+                          height: 1,
+                          background: "#F0F0EC",
+                          margin: "4px 0",
+                        }}
+                      />
 
                       {serviceItems.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
                           onClick={() => setDropdownOpen(false)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-[10px] hover:bg-primary/[0.04] transition-colors group"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 12,
+                            padding: "10px 12px",
+                            borderRadius: 10,
+                            textDecoration: "none",
+                            transition: "background 0.15s",
+                          }}
+                          onMouseEnter={(e) =>
+                            (e.currentTarget.style.background =
+                              "rgba(29,78,216,0.04)")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.background = "transparent")
+                          }
                         >
-                          <div className="w-9 h-9 rounded-lg bg-primary/6 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
-                            <item.icon size={16} className="text-primary" />
+                          <div
+                            style={{
+                              width: 36,
+                              height: 36,
+                              borderRadius: 8,
+                              background: "rgba(29,78,216,0.06)",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <item.icon size={16} color="#1D4ED8" />
                           </div>
                           <div>
-                            <div className="text-[14px] font-600 text-heading">
+                            <div
+                              style={{
+                                fontSize: 14,
+                                fontWeight: 600,
+                                color: "#0C0F1A",
+                              }}
+                            >
                               {item.label}
                             </div>
-                            <div className="text-[12px] text-muted">
+                            <div style={{ fontSize: 12, color: "#6B7280" }}>
                               {item.desc}
                             </div>
                           </div>
                         </Link>
                       ))}
                     </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-[15px] font-500 text-muted hover:text-heading transition-colors duration-200"
-            >
-              {item.label}
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{
+                  fontSize: 15,
+                  fontWeight: 500,
+                  color: "#6B7280",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#0C0F1A")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            <Link href="/#kontakt" className="premium-btn" style={{ fontSize: 14, padding: "10px 20px" }}>
+              Boka kostnadsfri genomgång
             </Link>
-          ))}
+          </nav>
 
-          <Link
-            href="/#kontakt"
-            className="premium-btn text-[14px] !py-2.5 !px-5"
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden"
+            style={{
+              padding: 8,
+              color: "#6B7280",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              position: "relative",
+              zIndex: 10002,
+            }}
+            aria-label="Meny"
           >
-            Boka kostnadsfri genomgång
-          </Link>
-        </nav>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden relative z-50 p-2 text-muted hover:text-heading transition-colors"
-          aria-label="Meny"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
+      {/* ═══ MOBILE MENU (portal-style, outside header) ═══ */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 lg:hidden"
-            style={{ zIndex: 9999, background: "#FAFAF8" }}
+            transition={{ duration: 0.2 }}
+            style={{
+              position: "fixed",
+              top: 72,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 10000,
+              background: "#FAFAF8",
+              overflowY: "auto",
+              WebkitOverflowScrolling: "touch",
+            }}
+            className="lg:hidden"
           >
-            <nav className="flex flex-col items-start px-8 pt-28 pb-10 h-full overflow-y-auto">
+            <div style={{ padding: "24px 24px 40px" }}>
               {/* Tjänster section */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 }}
-                className="w-full mb-6"
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#9CA3AF",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  marginBottom: 16,
+                }}
               >
-                <p className="text-[11px] font-700 text-muted uppercase tracking-widest mb-4">
-                  Tjänster
-                </p>
-                <div className="flex flex-col gap-1">
-                  <Link
-                    href="/tjanster"
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3.5 py-3 px-4 -mx-4 rounded-xl hover:bg-primary/[0.04] transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
-                      <MonitorSmartphone size={18} className="text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-[16px] font-600 text-heading">Alla tjänster</div>
-                      <div className="text-[13px] text-muted">Översikt av erbjudandet</div>
-                    </div>
-                  </Link>
-                  {serviceItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center gap-3.5 py-3 px-4 -mx-4 rounded-xl hover:bg-primary/[0.04] transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
-                        <item.icon size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-[16px] font-600 text-heading">{item.label}</div>
-                        <div className="text-[13px] text-muted">{item.desc}</div>
-                      </div>
-                    </Link>
-                  ))}
+                Tjänster
+              </p>
+
+              <Link
+                href="/tjanster"
+                onClick={() => setIsOpen(false)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  padding: "12px 0",
+                  textDecoration: "none",
+                  borderBottom: "1px solid #F0F0EC",
+                }}
+              >
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 10,
+                    background: "rgba(29,78,216,0.06)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <MonitorSmartphone size={18} color="#1D4ED8" />
                 </div>
-              </motion.div>
+                <div>
+                  <div style={{ fontSize: 16, fontWeight: 600, color: "#0C0F1A" }}>
+                    Alla tjänster
+                  </div>
+                  <div style={{ fontSize: 13, color: "#6B7280" }}>
+                    Översikt av erbjudandet
+                  </div>
+                </div>
+              </Link>
+
+              {serviceItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 14,
+                    padding: "12px 0",
+                    textDecoration: "none",
+                    borderBottom: "1px solid #F0F0EC",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: 10,
+                      background: "rgba(29,78,216,0.06)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <item.icon size={18} color="#1D4ED8" />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: "#0C0F1A" }}>
+                      {item.label}
+                    </div>
+                    <div style={{ fontSize: 13, color: "#6B7280" }}>
+                      {item.desc}
+                    </div>
+                  </div>
+                </Link>
+              ))}
 
               {/* Divider */}
-              <div className="w-full h-px bg-border mb-6" />
+              <div style={{ height: 1, background: "#E5E5E0", margin: "24px 0" }} />
 
-              {/* Other nav items */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.12 }}
-                className="flex flex-col gap-1 w-full mb-8"
-              >
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="py-3 text-[18px] font-heading font-600 text-body hover:text-heading transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </motion.div>
+              {/* Other nav */}
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-heading"
+                  style={{
+                    display: "block",
+                    padding: "14px 0",
+                    fontSize: 18,
+                    fontWeight: 600,
+                    color: "#3B3F4A",
+                    textDecoration: "none",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
               {/* CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="w-full"
-              >
+              <div style={{ marginTop: 24 }}>
                 <Link
                   href="/#kontakt"
                   onClick={() => setIsOpen(false)}
-                  className="premium-btn w-full justify-center text-[16px]"
+                  className="premium-btn"
+                  style={{
+                    width: "100%",
+                    justifyContent: "center",
+                    fontSize: 16,
+                    padding: "16px 32px",
+                  }}
                 >
                   Boka kostnadsfri genomgång
                 </Link>
-              </motion.div>
-            </nav>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
