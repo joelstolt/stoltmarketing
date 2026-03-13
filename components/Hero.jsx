@@ -75,23 +75,71 @@ export default function Hero() {
         }}
       />
 
-      {/* Organic blob shapes */}
+      {/* Animated circles */}
       <div
-        className="absolute -top-[120px] -right-[80px] w-[500px] h-[500px] pointer-events-none"
+        className="absolute pointer-events-none hidden sm:block"
         style={{
-          borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
-          background:
-            "radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)",
+          top: 80,
+          right: "8%",
+          width: 280,
+          height: 280,
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, rgba(29,78,216,0.07), rgba(29,78,216,0.02))",
+          animation: "float-slow 8s ease-in-out infinite",
         }}
       />
       <div
-        className="absolute -bottom-[60px] -left-[100px] w-[400px] h-[400px] pointer-events-none"
+        className="absolute pointer-events-none hidden sm:block"
         style={{
-          borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%",
-          background:
-            "radial-gradient(ellipse, rgba(29,78,216,0.04) 0%, transparent 70%)",
+          bottom: 120,
+          right: "15%",
+          width: 160,
+          height: 160,
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
+          animation: "float-medium 6s ease-in-out infinite 1s",
         }}
       />
+      <div
+        className="absolute pointer-events-none hidden sm:block"
+        style={{
+          top: 200,
+          right: "5%",
+          width: 80,
+          height: 80,
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
+          animation: "float-fast 5s ease-in-out infinite 0.5s",
+        }}
+      />
+      <div
+        className="absolute pointer-events-none hidden sm:block"
+        style={{
+          top: 140,
+          right: "28%",
+          width: 50,
+          height: 50,
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
+          animation: "float-medium 7s ease-in-out infinite 2s",
+        }}
+      />
+
+      {/* Animation keyframes */}
+      <style>{`
+        @keyframes float-slow {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-14px); }
+        }
+        @keyframes float-medium {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes float-fast {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+      `}</style>
 
       {/* === Content === */}
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-32 sm:pt-40 pb-20 sm:pb-24">
