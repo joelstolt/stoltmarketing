@@ -107,7 +107,7 @@ export default function SeoContent() {
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">Vill du synas bättre på Google?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en genomgång så går jag igenom ditt nuläge och visar var de största möjligheterna finns.</p></Reveal>
-          <Reveal delay={0.12}><a href="/#kontakt" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
+          <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>
       </section>
     </>

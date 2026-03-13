@@ -261,7 +261,7 @@ export default function ProjektContent() {
             </p>
           </Reveal>
           <Reveal delay={0.12}>
-            <a href="/kontakt" className="premium-btn mt-8 mx-auto">
+            <a href="/boka" className="premium-btn mt-8 mx-auto">
               <span>Boka kostnadsfri genomgång</span>
               <ArrowRight size={16} className="opacity-80" />
             </a>

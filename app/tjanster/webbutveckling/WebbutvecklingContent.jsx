@@ -134,7 +134,7 @@ export default function WebbutvecklingContent() {
                   <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
                   <div className="mt-2 font-heading font-800 text-[24px] text-primary tracking-tight">{p.price}</div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">{p.desc}</p>
-                  <a href="/#kontakt" className="secondary-btn mt-5 w-full justify-center text-[14px]">Få upplägg och pris</a>
+                  <a href="/boka" className="secondary-btn mt-5 w-full justify-center text-[14px]">Få upplägg och pris</a>
                 </div>
               </Reveal>
             ))}
@@ -174,7 +174,7 @@ export default function WebbutvecklingContent() {
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">Redo för en sajt som levererar?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en kostnadsfri genomgång så pratar vi igenom dina behov och tar fram ett upplägg.</p></Reveal>
-          <Reveal delay={0.12}><a href="/#kontakt" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
+          <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>
       </section>
     </>

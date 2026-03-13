@@ -143,11 +143,11 @@ export default function Hero() {
 
             <Reveal delay={0.24}>
               <div className="flex flex-wrap gap-3 mt-9">
-                <a href="#kontakt" className="premium-btn">
+                <a href="/boka" className="premium-btn">
                   <span>Boka kostnadsfri genomgång</span>
                   <ArrowRight size={16} className="opacity-80" />
                 </a>
-                <a href="#tjanster" className="secondary-btn">
+                <a href="/tjanster" className="secondary-btn">
                   Se tjänster
                 </a>
               </div>

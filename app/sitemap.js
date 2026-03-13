@@ -11,6 +11,7 @@ export default function sitemap() {
     { url: "/projekt", changeFrequency: "monthly", priority: 0.7 },
     { url: "/om", changeFrequency: "monthly", priority: 0.6 },
     { url: "/kontakt", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/boka", changeFrequency: "monthly", priority: 0.8 },
     { url: "/integritet", changeFrequency: "yearly", priority: 0.3 },
   ];
 

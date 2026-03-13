@@ -112,7 +112,7 @@ export default function ManagedContent() {
                       </li>
                     ))}
                   </ul>
-                  <a href="/#kontakt" className={`mt-7 block text-center text-[14px] font-600 py-3 rounded-[10px] transition-all duration-200 ${
+                  <a href="/boka" className={`mt-7 block text-center text-[14px] font-600 py-3 rounded-[10px] transition-all duration-200 ${
                     pkg.popular ? "premium-btn justify-center" : "secondary-btn justify-center w-full"
                   }`}>
                     Kom igång
@@ -155,7 +155,7 @@ export default function ManagedContent() {
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">Vill du ha lugn drift och tydlig kontroll?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Vi sätter ett upplägg som passar din nivå, prioritet och ambitionsnivå — med tydligt ansvar och uppföljning.</p></Reveal>
-          <Reveal delay={0.12}><a href="/#kontakt" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
+          <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>
       </section>
     </>

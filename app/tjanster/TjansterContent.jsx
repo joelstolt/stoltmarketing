@@ -317,7 +317,7 @@ export default function TjansterContent() {
                     {pkg.desc}
                   </p>
                   <a
-                    href="/#kontakt"
+                    href="/boka"
                     className="secondary-btn mt-6 w-full justify-center text-[14px]"
                   >
                     Få upplägg och pris
@@ -436,7 +436,7 @@ export default function TjansterContent() {
             </p>
           </Reveal>
           <Reveal delay={0.12}>
-            <a href="/#kontakt" className="premium-btn mt-8 mx-auto">
+            <a href="/boka" className="premium-btn mt-8 mx-auto">
               <span>Boka kostnadsfri genomgång</span>
               <ArrowRight size={16} className="opacity-80" />
             </a>

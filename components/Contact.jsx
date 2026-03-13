@@ -57,7 +57,7 @@ export default function Contact() {
 
         <Reveal delay={0.12}>
           <a
-            href="mailto:joel@stoltmarketing.se"
+            href="/boka"
             className="premium-btn mt-8 mx-auto"
           >
             <span>Boka kostnadsfri genomgång</span>

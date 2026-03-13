@@ -151,7 +151,7 @@ export default function ManagedSection() {
                 </ul>
 
                 <a
-                  href="#kontakt"
+                  href="/boka"
                   className={`mt-7 block text-center text-[14px] font-600 py-3 rounded-[10px] transition-all duration-200 ${
                     pkg.popular
                       ? "premium-btn justify-center"

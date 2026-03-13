@@ -135,7 +135,7 @@ export default function OmContent() {
               </Reveal>
 
               <Reveal delay={0.28}>
-                <a href="/#kontakt" className="premium-btn mt-8">
+                <a href="/boka" className="premium-btn mt-8">
                   <span>Ta kontakt</span>
                   <ArrowRight size={16} className="opacity-80" />
                 </a>
@@ -503,7 +503,7 @@ export default function OmContent() {
             </p>
           </Reveal>
           <Reveal delay={0.12}>
-            <a href="/#kontakt" className="premium-btn mt-8 mx-auto">
+            <a href="/boka" className="premium-btn mt-8 mx-auto">
               <span>Boka kostnadsfri genomgång</span>
               <ArrowRight size={16} className="opacity-80" />
             </a>

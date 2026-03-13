@@ -136,7 +136,7 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
 
         <Reveal delay={0.2}>
           <div className="flex flex-wrap gap-3 mt-8">
-            <a href="#kontakt" className="premium-btn">
+            <a href="/boka" className="premium-btn">
               <span>Boka kostnadsfri genomgång</span>
               <ArrowRight size={16} className="opacity-80" />
             </a>

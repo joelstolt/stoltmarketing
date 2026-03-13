@@ -329,7 +329,7 @@ export default function Header() {
               </Link>
             ))}
 
-            <Link href="/kontakt" className="premium-btn" style={{ fontSize: 14, padding: "10px 20px" }}>
+            <Link href="/boka" className="premium-btn" style={{ fontSize: 14, padding: "10px 20px" }}>
               Boka kostnadsfri genomgång
             </Link>
           </nav>
@@ -491,7 +491,7 @@ export default function Header() {
               {/* CTA */}
               <div style={{ marginTop: 24 }}>
                 <Link
-                  href="/kontakt"
+                  href="/boka"
                   onClick={() => setIsOpen(false)}
                   className="premium-btn"
                   style={{
