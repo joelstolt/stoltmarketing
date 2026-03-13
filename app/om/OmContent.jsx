@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, MapPin, Briefcase, Code2, Brain, Rocket } from "lucide-react";
+import { ArrowRight, MapPin, Briefcase, Code2, Brain, Rocket, ExternalLink } from "lucide-react";
 import { Reveal, Badge, SectionHeader } from "@/components/ui";
 
 const timeline = [
@@ -55,6 +55,12 @@ const tools = [
   "Google Analytics", "Search Console", "Figma", "Framer Motion",
 ];
 
+const stats = [
+  { num: "10+", label: "Års erfarenhet" },
+  { num: "70+", label: "Levererade projekt" },
+  { num: "1", label: "AI SaaS-produkt" },
+];
+
 export default function OmContent() {
   return (
     <>
@@ -65,14 +71,6 @@ export default function OmContent() {
           style={{
             background:
               "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
-          }}
-        />
-        <div
-          className="absolute -top-[120px] -right-[80px] w-[500px] h-[500px] pointer-events-none"
-          style={{
-            borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
-            background:
-              "radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)",
           }}
         />
 
@@ -86,7 +84,7 @@ export default function OmContent() {
             </nav>
           </Reveal>
 
-          <div className="grid lg:grid-cols-[1fr,340px] gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr,380px] gap-10 lg:gap-16 items-start">
             {/* Left: Text */}
             <div>
               <Reveal delay={0.04}>
@@ -115,6 +113,15 @@ export default function OmContent() {
               </Reveal>
 
               <Reveal delay={0.2}>
+                <p className="mt-4 text-[16px] leading-relaxed text-body max-w-[520px]">
+                  Idag är jag djupt inne i AI — inte som trend, utan som verktyg.
+                  Jag har byggt egna AI-produkter, implementerat AI-lösningar åt
+                  kunder och använder AI dagligen för att leverera snabbare,
+                  smartare och bättre.
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.24}>
                 <div className="mt-6 flex flex-wrap gap-4 text-[14px] text-muted">
                   <span className="flex items-center gap-2">
                     <MapPin size={15} className="text-primary" />
@@ -127,7 +134,7 @@ export default function OmContent() {
                 </div>
               </Reveal>
 
-              <Reveal delay={0.24}>
+              <Reveal delay={0.28}>
                 <a href="/#kontakt" className="premium-btn mt-8">
                   <span>Ta kontakt</span>
                   <ArrowRight size={16} className="opacity-80" />
@@ -135,103 +142,179 @@ export default function OmContent() {
               </Reveal>
             </div>
 
-            {/* Right: Photo */}
-            <Reveal delay={0.15}>
-              <div className="relative mx-auto lg:mx-0">
-                {/* Photo container with creative framing */}
-                <div
-                  style={{
-                    position: "relative",
-                    width: 300,
-                    height: 360,
-                    borderRadius: 24,
-                    overflow: "hidden",
-                    boxShadow:
-                      "0 8px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
-                  }}
-                >
-                  <img
-                    src="/joel-stolt.png"
-                    alt="Joel Stolt — Digital konsult & AI-specialist"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center top",
-                      display: "block",
-                    }}
-                  />
-                </div>
-
-                {/* Decorative accent */}
+            {/* Right: Photo + animated elements */}
+            <Reveal delay={0.12}>
+              <div style={{ position: "relative", minHeight: 460 }}>
+                {/* Animated circle 1 — large, behind photo */}
                 <div
                   style={{
                     position: "absolute",
-                    top: -8,
-                    right: -8,
-                    width: 80,
-                    height: 80,
+                    top: -20,
+                    right: -30,
+                    width: 200,
+                    height: 200,
                     borderRadius: "50%",
-                    background:
-                      "linear-gradient(135deg, rgba(29,78,216,0.15), rgba(29,78,216,0.05))",
-                    zIndex: -1,
+                    background: "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
+                    animation: "float-slow 8s ease-in-out infinite",
                   }}
                 />
+
+                {/* Animated circle 2 — medium */}
                 <div
                   style={{
                     position: "absolute",
-                    bottom: -12,
-                    left: -12,
+                    bottom: 40,
+                    right: -20,
                     width: 120,
                     height: 120,
                     borderRadius: "50%",
-                    background:
-                      "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
-                    zIndex: -1,
+                    background: "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
+                    animation: "float-medium 6s ease-in-out infinite 1s",
                   }}
                 />
 
-                {/* Floating card */}
+                {/* Animated circle 3 — small accent */}
                 <div
                   style={{
                     position: "absolute",
-                    bottom: -16,
-                    right: -16,
-                    background: "rgba(255,255,255,0.9)",
-                    backdropFilter: "blur(12px)",
-                    borderRadius: 14,
-                    border: "1px solid rgba(255,255,255,0.9)",
-                    boxShadow:
-                      "0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03)",
-                    padding: "10px 16px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
+                    top: 100,
+                    right: -10,
+                    width: 60,
+                    height: 60,
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, rgba(29,78,216,0.12), rgba(29,78,216,0.04))",
+                    animation: "float-fast 5s ease-in-out infinite 0.5s",
+                  }}
+                />
+
+                {/* Animated circle 4 — tiny */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 30,
+                    left: -15,
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
+                    animation: "float-medium 7s ease-in-out infinite 2s",
+                  }}
+                />
+
+                {/* Photo */}
+                <div
+                  style={{
+                    position: "relative",
+                    zIndex: 2,
+                    width: "100%",
+                    maxWidth: 320,
+                    marginLeft: "auto",
+                    marginRight: "auto",
                   }}
                 >
                   <div
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
-                      background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#fff",
-                      fontSize: 12,
-                      fontWeight: 800,
-                      boxShadow: "0 2px 8px rgba(29,78,216,0.25)",
+                      borderRadius: 24,
+                      overflow: "hidden",
+                      boxShadow: "0 12px 48px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.04)",
+                      aspectRatio: "3 / 3.6",
                     }}
                   >
-                    70+
+                    <img
+                      src="/joel-stolt.png"
+                      alt="Joel Stolt — Digital konsult & AI-specialist"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center top",
+                        display: "block",
+                      }}
+                    />
                   </div>
-                  <div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: "#0C0F1A" }}>
-                      Projekt levererade
+
+                  {/* Floating card — projects */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: -16,
+                      right: -16,
+                      background: "rgba(255,255,255,0.92)",
+                      backdropFilter: "blur(12px)",
+                      borderRadius: 14,
+                      border: "1px solid rgba(255,255,255,0.9)",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03)",
+                      padding: "10px 16px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      animation: "float-slow 6s ease-in-out infinite 1s",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 10,
+                        background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#fff",
+                        fontSize: 12,
+                        fontWeight: 800,
+                        boxShadow: "0 2px 8px rgba(29,78,216,0.25)",
+                      }}
+                    >
+                      70+
                     </div>
-                    <div style={{ fontSize: 11, color: "#6B7280" }}>
-                      Och räknar
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#0C0F1A" }}>
+                        Projekt levererade
+                      </div>
+                      <div style={{ fontSize: 11, color: "#6B7280" }}>
+                        Och räknar
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating card — AcadeMedia */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -12,
+                      left: -16,
+                      background: "rgba(255,255,255,0.92)",
+                      backdropFilter: "blur(12px)",
+                      borderRadius: 14,
+                      border: "1px solid rgba(255,255,255,0.9)",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03)",
+                      padding: "8px 14px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 8,
+                      animation: "float-fast 5s ease-in-out infinite 0.3s",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 30,
+                        height: 30,
+                        borderRadius: 8,
+                        background: "linear-gradient(135deg, #059669, #10B981)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 2px 6px rgba(5,150,105,0.2)",
+                      }}
+                    >
+                      <ExternalLink size={14} color="#fff" />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: "#0C0F1A" }}>
+                        AcadeMedia
+                      </div>
+                      <div style={{ fontSize: 10, color: "#6B7280" }}>Enterprise-kund</div>
                     </div>
                   </div>
                 </div>
@@ -241,9 +324,43 @@ export default function OmContent() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
+
+        {/* Animation keyframes */}
+        <style>{`
+          @keyframes float-slow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-14px); }
+          }
+          @keyframes float-medium {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+          }
+          @keyframes float-fast {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+          }
+        `}</style>
       </section>
 
-      {/* ═══ STORY ═══ */}
+      {/* ═══ STATS BAR ═══ */}
+      <section className="py-12 px-5 sm:px-8 border-b border-border">
+        <div className="max-w-6xl mx-auto">
+          <Reveal>
+            <div className="flex flex-wrap justify-center gap-12 sm:gap-20">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-[34px] sm:text-[40px] font-800 font-heading text-primary tracking-tight">
+                    {stat.num}
+                  </div>
+                  <div className="text-[14px] text-muted mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ═══ TIMELINE ═══ */}
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
@@ -293,7 +410,7 @@ export default function OmContent() {
           <div className="mt-12 grid md:grid-cols-2 gap-5">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06 + 0.1}>
-                <div className="flex gap-5 p-6 bg-surface rounded-[20px] border border-border">
+                <div className="flex gap-5 p-6 bg-surface rounded-[20px] border border-border hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <div
                     style={{
                       width: 44,
