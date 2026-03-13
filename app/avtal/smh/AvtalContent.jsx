@@ -51,7 +51,7 @@ const packages = [
     response: "Ofta samma dag",
     maintenance: "Veckovis + proaktiv optimering",
     features: [
-      "20h dedikerad utvecklingstid (värde 13 000 kr)",
+      "20h dedikerad utvecklingstid (värde 17 000 kr)",
       "Högsta prioritet på support",
       "Veckovis genomgång + prestanda",
       "Bricks Builder-licens ingår",
@@ -277,7 +277,7 @@ export default function AvtalContent() {
                 Konsulttimme
               </div>
               <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
-                650{" "}
+                850{" "}
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
               <div className="text-[13px] text-muted mt-1">
@@ -289,7 +289,7 @@ export default function AvtalContent() {
                 Akut jourtid
               </div>
               <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
-                1 300{" "}
+                1 500{" "}
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
               <div className="text-[13px] text-muted mt-1">
