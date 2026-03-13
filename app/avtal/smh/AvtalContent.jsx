@@ -15,7 +15,7 @@ const packages = [
   {
     name: "Bas",
     focus: "Grundtrygghet & drift",
-    price: "1 500",
+    price: "2 000",
     hours: "0 timmar inkluderade",
     response: "2–14 dagar",
     maintenance: "Månadsvis genomgång",
@@ -30,7 +30,7 @@ const packages = [
   {
     name: "Medium",
     focus: "Aktivt underhåll & prioriterad support",
-    price: "6 500",
+    price: "8 500",
     hours: "10 timmar/mån",
     response: "1–2 arbetsdagar",
     maintenance: "Veckovis genomgång",
@@ -46,7 +46,7 @@ const packages = [
   {
     name: "Max",
     focus: "Strategisk tillväxt & högsta beredskap",
-    price: "12 000",
+    price: "15 000",
     hours: "20 timmar/mån",
     response: "Ofta samma dag",
     maintenance: "Veckovis + proaktiv optimering",
