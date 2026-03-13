@@ -77,10 +77,10 @@ export default function Hero() {
 
       {/* Animated circles */}
       <div
-        className="absolute pointer-events-none hidden sm:block"
+        className="absolute pointer-events-none hidden lg:block"
         style={{
-          top: 80,
-          right: "8%",
+          top: "35%",
+          right: "18%",
           width: 280,
           height: 280,
           borderRadius: "50%",
@@ -89,36 +89,36 @@ export default function Hero() {
         }}
       />
       <div
-        className="absolute pointer-events-none hidden sm:block"
+        className="absolute pointer-events-none hidden lg:block"
         style={{
-          bottom: 120,
-          right: "15%",
-          width: 160,
-          height: 160,
+          top: "58%",
+          right: "25%",
+          width: 130,
+          height: 130,
           borderRadius: "50%",
           background: "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
           animation: "float-medium 6s ease-in-out infinite 1s",
         }}
       />
       <div
-        className="absolute pointer-events-none hidden sm:block"
+        className="absolute pointer-events-none hidden lg:block"
         style={{
-          top: 200,
-          right: "5%",
-          width: 80,
-          height: 80,
+          top: "42%",
+          right: "13%",
+          width: 70,
+          height: 70,
           borderRadius: "50%",
           background: "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
           animation: "float-fast 5s ease-in-out infinite 0.5s",
         }}
       />
       <div
-        className="absolute pointer-events-none hidden sm:block"
+        className="absolute pointer-events-none hidden lg:block"
         style={{
-          top: 140,
-          right: "28%",
-          width: 50,
-          height: 50,
+          top: "28%",
+          right: "30%",
+          width: 45,
+          height: 45,
           borderRadius: "50%",
           background: "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
           animation: "float-medium 7s ease-in-out infinite 2s",
