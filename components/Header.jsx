@@ -43,7 +43,7 @@ const serviceItems = [
 
 const navItems = [
   { label: "Projekt", href: "/#case" },
-  { label: "Om mig", href: "/#om" },
+  { label: "Om mig", href: "/om" },
   { label: "Kontakt", href: "/#kontakt" },
 ];
 
