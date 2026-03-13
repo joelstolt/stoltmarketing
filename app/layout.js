@@ -39,6 +39,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "IhOfiR7S9Euz_4uL2iM2fUwa5iWetEwr1zVaZmBTrjE",
+  },
   icons: {
     icon: "/favicon.svg",
   },
