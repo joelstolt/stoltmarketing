@@ -1,75 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-
-const primary = "#1D4ED8";
-const heading = "#0C0F1A";
-const body = "#3B3F4A";
-const muted = "#6B7280";
-const base = "#F8F9FA";
-const surface = "#FFFFFF";
-const border = "#E5E7EB";
-const green = "#059669";
-
-function FadeIn({ children, delay = 0 }) {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef(null);
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold: 0.1 }
-    );
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-  return (
-    <div ref={ref} style={{
-      opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(16px)",
-      transition: `opacity 0.6s cubic-bezier(.16,1,.3,1) ${delay}s, transform 0.6s cubic-bezier(.16,1,.3,1) ${delay}s`,
-    }}>{children}</div>
-  );
-}
-
-function Check() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
-
-function Shield() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    </svg>
-  );
-}
-
-function Clock() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
-    </svg>
-  );
-}
-
-function Zap() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  );
-}
-
-function Star() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill={primary} stroke="none">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  );
-}
+import { useRef, useState, useEffect } from "react";
+import { Check, Shield, Clock, Zap } from "lucide-react";
+import { Reveal, Badge } from "@/components/ui";
 
 const baseFeatures = [
   "Daglig backup av databas och filer",
@@ -86,7 +19,6 @@ const packages = [
     hours: "0 timmar inkluderade",
     response: "2–14 dagar",
     maintenance: "Månadsvis genomgång",
-    license: false,
     features: [
       "WordPress & plugin-underhåll månadsvis",
       "Support i mån av tid",
@@ -102,7 +34,6 @@ const packages = [
     hours: "10 timmar/mån",
     response: "1–2 arbetsdagar",
     maintenance: "Veckovis genomgång",
-    license: true,
     features: [
       "10h dedikerad utvecklingstid",
       "Prioriterad support",
@@ -119,7 +50,6 @@ const packages = [
     hours: "20 timmar/mån",
     response: "Ofta samma dag",
     maintenance: "Veckovis + proaktiv optimering",
-    license: true,
     features: [
       "20h dedikerad utvecklingstid (värde 13 000 kr)",
       "Högsta prioritet på support",
@@ -140,248 +70,263 @@ const hourUsage = [
 
 export default function AvtalContent() {
   return (
-    <div style={{
-      fontFamily: "'DM Sans', system-ui, sans-serif",
-      background: base,
-      color: body,
-      lineHeight: 1.7,
-      minHeight: "100vh",
-    }}>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
-      <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        ::selection { background: ${primary}; color: #fff; }
-        @media print {
-          body { background: #fff !important; }
-          .no-print { display: none !important; }
-        }
-      `}</style>
+    <div className="min-h-screen bg-base">
+      {/* ═══ HERO BANNER ═══ */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+          }}
+        />
+        <div
+          className="absolute -top-[120px] -right-[80px] w-[400px] h-[400px] pointer-events-none"
+          style={{
+            borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
+            background:
+              "radial-gradient(ellipse, rgba(29,78,216,0.08) 0%, transparent 70%)",
+          }}
+        />
 
-      {/* ═══ HEADER BANNER ═══ */}
-      <div style={{
-        background: `linear-gradient(135deg, ${heading} 0%, #1a2340 50%, #1e3a5f 100%)`,
-        padding: "48px 24px 56px",
-        color: "#fff",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        <div style={{
-          position: "absolute", top: -60, right: -60, width: 250, height: 250, borderRadius: "50%",
-          background: "rgba(29,78,216,0.15)", pointerEvents: "none",
-        }} />
-        <div style={{
-          position: "absolute", bottom: -40, left: -40, width: 180, height: 180, borderRadius: "50%",
-          background: "rgba(29,78,216,0.08)", pointerEvents: "none",
-        }} />
+        <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 text-center">
+          <Reveal>
+            <Badge>Förvaltningsavtal 2026</Badge>
+          </Reveal>
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 720, margin: "0 auto" }}>
-          <FadeIn>
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "6px 16px", borderRadius: 999, fontSize: 12, fontWeight: 600,
-              color: "#93C5FD", background: "rgba(29,78,216,0.2)",
-              border: "1px solid rgba(29,78,216,0.3)", textTransform: "uppercase",
-              letterSpacing: "0.08em", marginBottom: 20,
-            }}>
-              Förvaltningsavtal 2026
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.06}>
-            <h1 style={{
-              fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 800,
-              lineHeight: 1.15, letterSpacing: "-0.025em",
-            }}>
+          <Reveal delay={0.06}>
+            <h1 className="mt-5 font-heading font-800 text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading">
               Drift, Säkerhet & Utveckling
             </h1>
-          </FadeIn>
+          </Reveal>
 
-          <FadeIn delay={0.1}>
-            <p style={{ marginTop: 12, fontSize: 17, color: "rgba(255,255,255,0.7)", maxWidth: 500, marginLeft: "auto", marginRight: "auto" }}>
-              Ett aktivt förvaltningsavtal som säkerställer att er e-handelsplattform är tekniskt optimerad, säker och i ständig tillväxt.
+          <Reveal delay={0.1}>
+            <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px] mx-auto">
+              Ett aktivt förvaltningsavtal som säkerställer att er
+              e-handelsplattform är tekniskt optimerad, säker och i ständig
+              tillväxt.
             </p>
-          </FadeIn>
+          </Reveal>
 
-          <FadeIn delay={0.14}>
-            <div style={{
-              marginTop: 24, display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "10px 20px", borderRadius: 12,
-              background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
-              fontSize: 14, fontWeight: 600,
-            }}>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>Kund:</span>
-              <span>SMH, KYH och Hermods</span>
+          <Reveal delay={0.14}>
+            <div className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/70 border border-border backdrop-blur-sm text-[14px] font-600">
+              <span className="text-muted">Kund:</span>
+              <span className="text-heading">SMH, KYH och Hermods</span>
             </div>
-          </FadeIn>
+          </Reveal>
         </div>
-      </div>
 
-      {/* ═══ CONTENT ═══ */}
-      <div style={{ maxWidth: 880, margin: "0 auto", padding: "0 20px" }}>
+        <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
+      </section>
 
-        {/* ── Grundläggande standard ── */}
-        <FadeIn>
-          <section style={{ marginTop: 48, padding: 32, background: surface, borderRadius: 20, border: `1px solid ${border}`, boxShadow: "0 1px 3px rgba(0,0,0,0.03)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(29,78,216,0.06)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Shield />
+      <div className="max-w-[880px] mx-auto px-5 sm:px-8">
+        {/* ═══ GRUNDLÄGGANDE STANDARD ═══ */}
+        <Reveal>
+          <section className="mt-8 p-7 sm:p-9 bg-surface rounded-[20px] border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-[12px] bg-primary/6 flex items-center justify-center">
+                <Shield size={20} className="text-primary" />
               </div>
               <div>
-                <h2 style={{ fontSize: 20, fontWeight: 700, color: heading, letterSpacing: "-0.01em" }}>Grundläggande teknisk standard</h2>
-                <p style={{ fontSize: 13, color: muted }}>Gäller samtliga nivåer</p>
+                <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight">
+                  Grundläggande teknisk standard
+                </h2>
+                <p className="text-[13px] text-muted">Gäller samtliga nivåer</p>
               </div>
             </div>
 
-            <p style={{ fontSize: 15, color: body, marginBottom: 20, maxWidth: 600 }}>
-              För att er webbshop ska prestera optimalt dygnet runt ingår följande i alla paket:
+            <p className="text-[15px] text-body mb-5 max-w-[600px]">
+              För att er webbshop ska prestera optimalt dygnet runt ingår
+              följande i alla paket:
             </p>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+            <div className="grid sm:grid-cols-2 gap-3">
               {baseFeatures.map((f) => (
-                <div key={f} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: base, borderRadius: 10, fontSize: 14, color: body }}>
-                  <Check /> {f}
+                <div
+                  key={f}
+                  className="flex items-center gap-3 p-3.5 bg-surface-muted rounded-xl text-[14px] text-body"
+                >
+                  <Check
+                    size={16}
+                    className="text-primary flex-shrink-0"
+                    strokeWidth={2.5}
+                  />
+                  {f}
                 </div>
               ))}
             </div>
           </section>
-        </FadeIn>
+        </Reveal>
 
-        {/* ── Paketen ── */}
-        <FadeIn delay={0.06}>
-          <h2 style={{ marginTop: 48, fontSize: 28, fontWeight: 800, color: heading, letterSpacing: "-0.02em", textAlign: "center" }}>
+        {/* ═══ PACKAGES ═══ */}
+        <Reveal delay={0.06}>
+          <h2 className="mt-14 font-heading font-800 text-[28px] text-heading tracking-[-0.02em] text-center">
             Förvaltningsnivåer
           </h2>
-          <p style={{ textAlign: "center", fontSize: 15, color: muted, marginTop: 8 }}>
+          <p className="text-center text-[15px] text-muted mt-2">
             Välj den nivå som passar ert behov och ambitionsnivå.
           </p>
-        </FadeIn>
+        </Reveal>
 
-        <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+        <div className="mt-8 grid md:grid-cols-3 gap-4">
           {packages.map((pkg, i) => (
-            <FadeIn key={pkg.name} delay={i * 0.06 + 0.1}>
-              <div style={{
-                position: "relative", height: "100%", padding: 28, background: surface, borderRadius: 20,
-                border: pkg.popular ? `2px solid ${primary}` : `1px solid ${border}`,
-                boxShadow: pkg.popular ? "0 4px 20px rgba(29,78,216,0.08)" : "0 1px 3px rgba(0,0,0,0.03)",
-                display: "flex", flexDirection: "column",
-              }}>
+            <Reveal key={pkg.name} delay={i * 0.06 + 0.1}>
+              <div
+                className={`relative h-full rounded-[20px] p-6 flex flex-col ${
+                  pkg.popular
+                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(29,78,216,0.08)]"
+                    : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]"
+                }`}
+              >
                 {pkg.popular && (
-                  <span style={{
-                    position: "absolute", top: -12, left: 28,
-                    fontSize: 11, fontWeight: 700, color: "#fff", background: primary,
-                    padding: "4px 14px", borderRadius: 999, textTransform: "uppercase", letterSpacing: "0.06em",
-                  }}>Rekommenderad</span>
+                  <span className="absolute -top-3 left-6 text-[11px] font-700 text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider">
+                    Rekommenderad
+                  </span>
                 )}
 
-                <div style={{ fontSize: 13, fontWeight: 600, color: primary, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                <div className="text-[12px] font-600 text-primary uppercase tracking-wider">
                   {pkg.name}
                 </div>
-                <div style={{ fontSize: 13, color: muted, marginTop: 2 }}>{pkg.focus}</div>
+                <div className="text-[12px] text-muted mt-1">{pkg.focus}</div>
 
-                <div style={{ marginTop: 16, display: "flex", alignItems: "baseline", gap: 4 }}>
-                  <span style={{ fontSize: 36, fontWeight: 800, color: heading, letterSpacing: "-0.02em" }}>{pkg.price}</span>
-                  <span style={{ fontSize: 15, color: muted }}>kr/mån</span>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="font-heading font-800 text-[32px] tracking-tight text-heading">
+                    {pkg.price}
+                  </span>
+                  <span className="text-[14px] text-muted">kr/mån</span>
                 </div>
 
-                <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: body }}>
-                    <Clock />
+                <div className="mt-4 flex flex-col gap-3">
+                  <div className="flex items-center gap-2.5 text-[13px] text-body">
+                    <Clock size={16} className="text-primary flex-shrink-0" />
                     <div>
-                      <div style={{ fontWeight: 600 }}>Svarstid</div>
-                      <div style={{ color: muted }}>{pkg.response}</div>
+                      <div className="font-600">Svarstid</div>
+                      <div className="text-muted">{pkg.response}</div>
                     </div>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: body }}>
-                    <Zap />
+                  <div className="flex items-center gap-2.5 text-[13px] text-body">
+                    <Zap size={16} className="text-primary flex-shrink-0" />
                     <div>
-                      <div style={{ fontWeight: 600 }}>Inkluderade timmar</div>
-                      <div style={{ color: muted }}>{pkg.hours}</div>
+                      <div className="font-600">Timmar</div>
+                      <div className="text-muted">{pkg.hours}</div>
                     </div>
                   </div>
                 </div>
 
-                <div style={{ marginTop: 20, borderTop: `1px solid ${border}`, paddingTop: 16, flex: 1 }}>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div className="mt-5 pt-4 border-t border-border-light flex-1">
+                  <div className="flex flex-col gap-2.5">
                     {pkg.features.map((f) => (
-                      <div key={f} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 14, color: body }}>
-                        <span style={{ marginTop: 2 }}><Check /></span> {f}
+                      <div
+                        key={f}
+                        className="flex items-start gap-2 text-[14px] text-body"
+                      >
+                        <Check
+                          size={15}
+                          className="text-primary flex-shrink-0 mt-0.5"
+                          strokeWidth={2.5}
+                        />
+                        {f}
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {pkg.note && (
-                  <p style={{ marginTop: 16, fontSize: 12, color: muted, fontStyle: "italic", paddingTop: 12, borderTop: `1px solid ${border}` }}>
+                  <p className="mt-4 pt-3 border-t border-border-light text-[12px] text-muted italic">
                     {pkg.note}
                   </p>
                 )}
               </div>
-            </FadeIn>
+            </Reveal>
           ))}
         </div>
 
-        {/* ── Definition av timmar ── */}
-        <FadeIn>
-          <section style={{ marginTop: 48, padding: 32, background: surface, borderRadius: 20, border: `1px solid ${border}` }}>
-            <h2 style={{ fontSize: 20, fontWeight: 700, color: heading, marginBottom: 8 }}>Definition av avsatta timmar</h2>
-            <p style={{ fontSize: 15, color: body, marginBottom: 16 }}>
-              Timmarna i Medium och Max är dedikerad tid reserverad för er. De kan användas till:
+        {/* ═══ DEFINITION AV TIMMAR ═══ */}
+        <Reveal>
+          <section className="mt-12 p-7 sm:p-9 bg-surface rounded-[20px] border border-border">
+            <h2 className="font-heading font-700 text-[20px] text-heading mb-3 tracking-tight">
+              Definition av avsatta timmar
+            </h2>
+            <p className="text-[15px] text-body mb-5">
+              Timmarna i Medium och Max är dedikerad tid reserverad för er. De
+              kan användas till:
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <div className="flex flex-col gap-3">
               {hourUsage.map((item) => (
-                <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: body }}>
-                  <Check /> {item}
+                <div
+                  key={item}
+                  className="flex items-center gap-3 text-[14px] text-body"
+                >
+                  <Check
+                    size={16}
+                    className="text-primary flex-shrink-0"
+                    strokeWidth={2.5}
+                  />
+                  {item}
                 </div>
               ))}
             </div>
           </section>
-        </FadeIn>
+        </Reveal>
 
-        {/* ── Priser ── */}
-        <FadeIn>
-          <section style={{ marginTop: 32, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            <div style={{ padding: 28, background: surface, borderRadius: 20, border: `1px solid ${border}`, textAlign: "center" }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: muted, textTransform: "uppercase", letterSpacing: "0.06em" }}>Konsulttimme</div>
-              <div style={{ fontSize: 32, fontWeight: 800, color: heading, marginTop: 8 }}>650 <span style={{ fontSize: 16, color: muted, fontWeight: 500 }}>kr/h</span></div>
-              <div style={{ fontSize: 13, color: muted, marginTop: 4 }}>Vardagar 07:00–17:00</div>
+        {/* ═══ PRISER ═══ */}
+        <Reveal>
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            <div className="p-7 bg-surface rounded-[20px] border border-border text-center">
+              <div className="text-[12px] font-600 text-muted uppercase tracking-wider">
+                Konsulttimme
+              </div>
+              <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
+                650{" "}
+                <span className="text-[15px] text-muted font-500">kr/h</span>
+              </div>
+              <div className="text-[13px] text-muted mt-1">
+                Vardagar 07:00–17:00
+              </div>
             </div>
-            <div style={{ padding: 28, background: surface, borderRadius: 20, border: `1px solid ${border}`, textAlign: "center" }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: muted, textTransform: "uppercase", letterSpacing: "0.06em" }}>Akut jourtid</div>
-              <div style={{ fontSize: 32, fontWeight: 800, color: heading, marginTop: 8 }}>1 300 <span style={{ fontSize: 16, color: muted, fontWeight: 500 }}>kr/h</span></div>
-              <div style={{ fontSize: 13, color: muted, marginTop: 4 }}>Kritiska fel efter kl. 17:00</div>
+            <div className="p-7 bg-surface rounded-[20px] border border-border text-center">
+              <div className="text-[12px] font-600 text-muted uppercase tracking-wider">
+                Akut jourtid
+              </div>
+              <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
+                1 300{" "}
+                <span className="text-[15px] text-muted font-500">kr/h</span>
+              </div>
+              <div className="text-[13px] text-muted mt-1">
+                Kritiska fel efter kl. 17:00
+              </div>
             </div>
-          </section>
-        </FadeIn>
+          </div>
+        </Reveal>
 
-        {/* ── Varför ── */}
-        <FadeIn>
-          <section style={{
-            marginTop: 48, marginBottom: 64, padding: 40, borderRadius: 20, textAlign: "center",
-            background: `linear-gradient(135deg, ${heading} 0%, #1a2340 50%, #1e3a5f 100%)`,
-            color: "#fff", position: "relative", overflow: "hidden",
-          }}>
-            <div style={{
-              position: "absolute", top: -40, right: -40, width: 180, height: 180, borderRadius: "50%",
-              background: "rgba(29,78,216,0.12)", pointerEvents: "none",
-            }} />
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <h2 style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.02em" }}>
+        {/* ═══ VARFÖR ═══ */}
+        <Reveal>
+          <section className="relative mt-12 mb-16 p-10 rounded-[20px] overflow-hidden text-center">
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)",
+              }}
+            />
+            <div className="relative z-10">
+              <h2 className="font-heading font-800 text-[24px] text-heading tracking-[-0.02em]">
                 Varför välja ett aktivt avtal?
               </h2>
-              <p style={{ marginTop: 16, fontSize: 16, color: "rgba(255,255,255,0.75)", maxWidth: 560, marginLeft: "auto", marginRight: "auto", lineHeight: 1.75 }}>
-                Webbshoppar som SMH, KYH och Hermods kräver ständig tillsyn för att inte tappa fart.
-                Genom avsatta timmar säkerställer ni att sajten inte bara överlever — utan faktiskt
-                utvecklas i takt med marknaden. Ni får en trygg partner som känner er kodbas och
-                som kan agera snabbt när möjligheter dyker upp.
+              <p className="mt-4 text-[15px] sm:text-[16px] text-body leading-relaxed max-w-[560px] mx-auto">
+                Webbshoppar som SMH, KYH och Hermods kräver ständig tillsyn för
+                att inte tappa fart. Genom avsatta timmar säkerställer ni att
+                sajten inte bara överlever — utan faktiskt utvecklas i takt med
+                marknaden. Ni får en trygg partner som känner er kodbas och som
+                kan agera snabbt när möjligheter dyker upp.
               </p>
             </div>
           </section>
-        </FadeIn>
+        </Reveal>
 
-        {/* ── Footer ── */}
-        <div style={{ borderTop: `1px solid ${border}`, padding: "24px 0 40px", textAlign: "center" }}>
-          <p style={{ fontSize: 13, color: muted }}>
+        {/* ═══ FOOTER ═══ */}
+        <div className="border-t border-border py-8 text-center mb-4">
+          <p className="text-[13px] text-muted">
             Stolt Marketing · joel@stoltmarketing.se · Hässleholm, Sverige
           </p>
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight, MapPin, Briefcase, Code2, Brain, Rocket } from "lucide-react";
 import { Reveal, Badge, SectionHeader } from "@/components/ui";
 
@@ -151,12 +150,16 @@ export default function OmContent() {
                       "0 8px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
                   }}
                 >
-                  <Image
+                  <img
                     src="/joel-stolt.png"
                     alt="Joel Stolt — Digital konsult & AI-specialist"
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center top" }}
-                    priority
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                      display: "block",
+                    }}
                   />
                 </div>
 
