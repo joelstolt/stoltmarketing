@@ -121,14 +121,28 @@ export default function Header() {
             href="/"
             className="font-heading"
             style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 0,
               fontSize: 18,
-              fontWeight: 700,
-              letterSpacing: "-0.01em",
+              fontWeight: 800,
+              letterSpacing: "-0.02em",
               color: "#0C0F1A",
               textDecoration: "none",
             }}
           >
-            Stolt Marketing
+            <span
+              style={{
+                display: "inline-block",
+                width: 3,
+                height: 22,
+                borderRadius: 2,
+                background: "#1D4ED8",
+                marginRight: 10,
+                flexShrink: 0,
+              }}
+            />
+            stolt marketing
           </Link>
 
           {/* Desktop nav */}

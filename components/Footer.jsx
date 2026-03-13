@@ -39,14 +39,27 @@ export default function Footer() {
             className="font-heading"
             style={{
               fontSize: 18,
-              fontWeight: 700,
+              fontWeight: 800,
+              letterSpacing: "-0.02em",
               color: "#0C0F1A",
               textDecoration: "none",
-              display: "block",
+              display: "flex",
+              alignItems: "center",
               marginBottom: 12,
             }}
           >
-            Stolt Marketing
+            <span
+              style={{
+                display: "inline-block",
+                width: 3,
+                height: 22,
+                borderRadius: 2,
+                background: "#1D4ED8",
+                marginRight: 10,
+                flexShrink: 0,
+              }}
+            />
+            stolt marketing
           </Link>
           <p style={{ fontSize: 14, color: "#6B7280", lineHeight: 1.7, maxWidth: 300 }}>
             Digital konsult med 10+ års erfarenhet. Moderna webbplatser,
