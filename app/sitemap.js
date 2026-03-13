@@ -14,6 +14,10 @@ export default function sitemap() {
     { url: "/boka", changeFrequency: "monthly", priority: 0.8 },
     { url: "/integritet", changeFrequency: "yearly", priority: 0.3 },
     { url: "/hassleholm/hemsida", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/hassleholm", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/hassleholm/seo", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/hassleholm/google-ads", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/hassleholm/ai-automation", changeFrequency: "monthly", priority: 0.8 },
   ];
 
   return pages.map((page) => ({
