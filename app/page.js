@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import AiSection from "@/components/AiSection";
 import ManagedSection from "@/components/ManagedSection";
 import Cases from "@/components/Cases";
+import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import Process from "@/components/Process";
 import Faq from "@/components/Faq";
@@ -20,6 +21,7 @@ export default function Home() {
         <AiSection />
         <ManagedSection />
         <Cases />
+        <Testimonials />
         <About />
         <Process />
         <Faq />
