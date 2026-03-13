@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Globe, Cpu, Search, ArrowRight, Check } from "lucide-react";
+import { Globe, Cpu, Search, Megaphone, ArrowRight, Check } from "lucide-react";
 
 function Reveal({ children, className = "", delay = 0 }) {
   const ref = useRef(null);
@@ -24,7 +24,8 @@ const services = [
   {
     icon: Globe,
     title: "Webbplatser & E-handel",
-    desc: "Moderna, snabba webbplatser och skräddarsydda WooCommerce-lösningar. Jag bygger allt från företagssajter till fullskaliga e-handelsplattformar — med samma teknik som driver Sveriges största bolag.",
+    href: "/tjanster/webbutveckling",
+    desc: "Moderna, snabba webbplatser och skräddarsydda WooCommerce-lösningar. Jag bygger allt från företagssajter till fullskaliga e-handelsplattformar.",
     items: [
       "Next.js, React & WordPress",
       "WooCommerce & e-handel",
@@ -35,7 +36,8 @@ const services = [
   {
     icon: Cpu,
     title: "AI & Automation",
-    desc: "Jag hjälper dig implementera AI-verktyg och automatiserade arbetsflöden som faktiskt sparar tid och pengar. Inte buzzwords — utan konkreta lösningar som förändrar din vardag.",
+    href: "/tjanster/ai-automation",
+    desc: "Jag hjälper dig implementera AI-verktyg och automatiserade arbetsflöden som faktiskt sparar tid. Konkreta lösningar — inte buzzwords.",
     items: [
       "AI-chatbotar & kundtjänst",
       "Automatiserade offerter & dokument",
@@ -46,12 +48,25 @@ const services = [
   {
     icon: Search,
     title: "SEO & Synlighet",
-    desc: "Det spelar ingen roll hur bra din sajt är om ingen hittar den. Jag ser till att du syns på Google — med teknisk SEO, innehållsstrategi och lokal optimering som driver relevanta besökare.",
+    href: "/tjanster/seo",
+    desc: "Det spelar ingen roll hur bra din sajt är om ingen hittar den. Teknisk SEO, innehållsstrategi och lokal optimering som driver relevanta besökare.",
     items: [
       "Teknisk SEO-audit",
       "Sökordsanalys & strategi",
       "Lokal SEO & Google Maps",
       "Core Web Vitals & prestanda",
+    ],
+  },
+  {
+    icon: Megaphone,
+    title: "Google Ads",
+    href: "/tjanster/google-ads",
+    desc: "Riktad annonsering som ger fler samtal och förfrågningar direkt. Jag sätter upp, optimerar och rapporterar — du får fler kunder.",
+    items: [
+      "Sökordsanalys & kampanjstrategi",
+      "Annonstext som konverterar",
+      "Geografisk targeting",
+      "Transparent rapportering",
     ],
   },
 ];
@@ -75,19 +90,22 @@ export default function Services() {
         <Reveal delay={0.1}>
           <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[560px]">
             Ingen byrå-overhead, ingen bortkastad tid. Du jobbar direkt med mig
-            och får snabba resultat inom webb, SEO och AI.
+            och får snabba resultat inom webb, SEO, annonsering och AI.
           </p>
         </Reveal>
 
-        <div className="mt-12 sm:mt-16 grid md:grid-cols-3 gap-5">
+        <div className="mt-12 sm:mt-16 grid sm:grid-cols-2 gap-5">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08 + 0.12}>
-              <div className="h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300 group">
+              <a
+                href={s.href}
+                className="block h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300 group"
+              >
                 <div className="w-11 h-11 rounded-[12px] bg-primary/6 group-hover:bg-primary/10 flex items-center justify-center mb-5 transition-colors duration-300">
                   <s.icon size={20} className="text-primary" />
                 </div>
 
-                <h3 className="font-heading font-700 text-[20px] text-heading tracking-tight">
+                <h3 className="font-heading font-700 text-[20px] text-heading tracking-tight group-hover:text-primary transition-colors">
                   {s.title}
                 </h3>
 
@@ -110,7 +128,15 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-              </div>
+
+                <span className="inline-flex items-center gap-1.5 mt-6 text-[14px] font-600 text-primary">
+                  Läs mer
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </span>
+              </a>
             </Reveal>
           ))}
         </div>

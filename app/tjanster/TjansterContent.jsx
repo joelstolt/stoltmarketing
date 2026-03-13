@@ -10,6 +10,7 @@ import {
   Cpu,
   Search,
   Shield,
+  Megaphone,
   Plus,
   MessageCircle,
   FileText,
@@ -84,6 +85,28 @@ const services = [
       { value: "70+", label: "Projekt med SEO-fokus" },
     ],
     href: "/tjanster/seo",
+  },
+  {
+    icon: Megaphone,
+    title: "Google Ads som ger avkastning",
+    subtitle:
+      "Riktad annonsering som ger fler samtal och förfrågningar direkt — utan att vänta på organisk ranking.",
+    when: "När du vill ha fler kunder nu och inte kan vänta på SEO.",
+    expect: [
+      "Fler samtal och förfrågningar",
+      "Synlighet samma vecka",
+      "Mätbar avkastning på varje krona",
+    ],
+    includes: [
+      "Sökordsanalys & kampanjstrategi",
+      "Annonstext & optimering",
+      "Transparent rapportering",
+    ],
+    stats: [
+      { value: "3 900", label: "kr/mån från" },
+      { value: "7d", label: "Till första resultaten" },
+    ],
+    href: "/tjanster/google-ads",
   },
   {
     icon: Shield,

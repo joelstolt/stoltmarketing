@@ -8,6 +8,7 @@ export default function sitemap() {
     { url: "/tjanster/ai-automation", changeFrequency: "monthly", priority: 0.8 },
     { url: "/tjanster/seo", changeFrequency: "monthly", priority: 0.8 },
     { url: "/tjanster/managed-hemsida", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/tjanster/google-ads", changeFrequency: "monthly", priority: 0.8 },
     { url: "/projekt", changeFrequency: "monthly", priority: 0.7 },
     { url: "/om", changeFrequency: "monthly", priority: 0.6 },
     { url: "/kontakt", changeFrequency: "monthly", priority: 0.7 },

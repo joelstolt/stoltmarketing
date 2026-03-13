@@ -10,6 +10,7 @@ import {
   Cpu,
   Search,
   Shield,
+  Megaphone,
   MonitorSmartphone,
 } from "lucide-react";
 import Link from "next/link";
@@ -32,6 +33,12 @@ const serviceItems = [
     label: "SEO",
     desc: "Synlighet som ger fler kunder",
     href: "/tjanster/seo",
+  },
+  {
+    icon: Megaphone,
+    label: "Google Ads",
+    desc: "Riktad annonsering som ger resultat",
+    href: "/tjanster/google-ads",
   },
   {
     icon: Shield,

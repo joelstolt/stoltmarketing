@@ -7,6 +7,7 @@ const services = [
   { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
   { label: "AI & Automation", href: "/tjanster/ai-automation" },
   { label: "SEO & Synlighet", href: "/tjanster/seo" },
+  { label: "Google Ads", href: "/tjanster/google-ads" },
   { label: "Managed hemsida", href: "/tjanster/managed-hemsida" },
   { label: "Alla tjänster", href: "/tjanster" },
 ];
