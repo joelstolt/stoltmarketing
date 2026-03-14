@@ -96,32 +96,40 @@ export default function ChatWidget() {
     [input, messages, loading]
   );
 
-  const handleEmailSubmit = (e) => {
+  const [emailSending, setEmailSending] = useState(false);
+
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
     const { name, email, message } = emailData;
-    if (!name.trim() || !email.trim() || !message.trim()) return;
+    if (!name.trim() || !email.trim() || !message.trim() || emailSending) return;
 
-    // Build conversation context for the email
+    setEmailSending(true);
+
     const chatHistory = messages
       .map((m) => `${m.role === "user" ? "Besökare" : "AI"}: ${m.content}`)
       .join("\n");
 
-    const subject = `${chatConfig.emailSubjectPrefix} — ${name}`;
-    const body = `Namn: ${name}\nE-post: ${email}\n\nMeddelande:\n${message}${
-      chatHistory ? `\n\n--- Chatthistorik ---\n${chatHistory}` : ""
-    }`;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message, chatHistory }),
+      });
 
-    window.open(
-      `mailto:${chatConfig.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
-      "_self"
-    );
+      if (!res.ok) throw new Error("Send failed");
 
-    setEmailSent(true);
-    setTimeout(() => {
-      setShowEmailForm(false);
-      setEmailSent(false);
-      setEmailData({ name: "", email: "", message: "" });
-    }, 3000);
+      setEmailSent(true);
+      setTimeout(() => {
+        setShowEmailForm(false);
+        setEmailSent(false);
+        setEmailData({ name: "", email: "", message: "" });
+      }, 3000);
+    } catch (err) {
+      console.error("Email error:", err);
+      alert("Kunde inte skicka. Testa mejla joel@stoltmarketing.se direkt.");
+    } finally {
+      setEmailSending(false);
+    }
   };
 
   const themeStyle = chatConfig.theme || {};
@@ -263,6 +271,7 @@ export default function ChatWidget() {
               onSubmit={handleEmailSubmit}
               onBack={() => setShowEmailForm(false)}
               emailSent={emailSent}
+              emailSending={emailSending}
             />
           ) : (
             <>
@@ -640,7 +649,7 @@ function TypingIndicator() {
   );
 }
 
-function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent }) {
+function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent, emailSending }) {
   if (emailSent) {
     return (
       <div
@@ -670,10 +679,10 @@ function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent }) {
           ✓
         </div>
         <div style={{ fontSize: "15px", fontWeight: 600, color: "var(--chat-text, #0c0f1a)" }}>
-          E-postklienten öppnas nu
+          Meddelandet skickat!
         </div>
         <div style={{ fontSize: "13px", color: "var(--chat-text-muted, #6B7280)" }}>
-          Skicka mejlet så återkommer Joel så snart som möjligt.
+          Joel återkommer så snart som möjligt.
         </div>
       </div>
     );
@@ -757,30 +766,30 @@ function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent }) {
         />
         <button
           onClick={onSubmit}
-          disabled={!emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim()}
+          disabled={!emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim() || emailSending}
           style={{
             width: "100%",
             padding: "12px",
             borderRadius: "10px",
             border: "none",
             background:
-              !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim()
+              !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim() || emailSending
                 ? "var(--chat-surface, #f4f4f5)"
                 : "var(--chat-primary, #1D4ED8)",
             color:
-              !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim()
+              !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim() || emailSending
                 ? "var(--chat-text-muted, #6B7280)"
                 : "#fff",
             fontSize: "14px",
             fontWeight: 600,
             cursor:
-              !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim()
+              !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim() || emailSending
                 ? "default"
                 : "pointer",
             transition: "all 0.2s",
           }}
         >
-          Skicka mejl
+          {emailSending ? "Skickar..." : "Skicka meddelande"}
         </button>
       </div>
     </div>
