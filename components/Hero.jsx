@@ -102,10 +102,10 @@ export default function Hero() {
       <div
         className="absolute pointer-events-none hidden lg:block"
         style={{
-          top: "12%",
-          right: "2%",
-          width: "42%",
-          maxWidth: 560,
+          top: "32%",
+          right: "0%",
+          width: "38%",
+          maxWidth: 500,
           animation: "float-slow 8s ease-in-out infinite",
         }}
       >
@@ -115,7 +115,7 @@ export default function Hero() {
             position: "absolute",
             inset: -20,
             borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%",
-            background: "radial-gradient(ellipse, rgba(29,78,216,0.08) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse, rgba(29,78,216,0.06) 0%, transparent 70%)",
             animation: "blob-glow 6s ease-in-out infinite",
             filter: "blur(20px)",
           }}
@@ -128,8 +128,8 @@ export default function Hero() {
             borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%",
             overflow: "hidden",
             animation: "blob-morph 12s ease-in-out infinite",
-            boxShadow: "0 20px 60px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.05)",
-            border: "2px solid rgba(255,255,255,0.5)",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.03)",
+            border: "2px solid rgba(255,255,255,0.4)",
           }}
         >
           <img
@@ -141,14 +141,15 @@ export default function Hero() {
               display: "block",
               animation: "ken-burns 20s ease-in-out infinite alternate",
               transformOrigin: "center center",
+              opacity: 0.55,
             }}
           />
-          {/* Gradient overlay for blending */}
+          {/* Stronger gradient overlay for blending */}
           <div
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(180deg, rgba(29,78,216,0.05) 0%, transparent 40%, rgba(250,250,248,0.3) 100%)",
+              background: "linear-gradient(180deg, rgba(238,242,255,0.3) 0%, rgba(219,234,254,0.2) 40%, rgba(250,250,248,0.5) 100%)",
             }}
           />
         </div>
@@ -171,7 +172,7 @@ export default function Hero() {
             animation: "float-fast 5s ease-in-out infinite 1s",
           }}
         >
-          📍 Baserad i Hässleholm
+          📍 Hässleholm — kunder i hela Sverige
         </div>
 
         {/* Small accent circle */}
