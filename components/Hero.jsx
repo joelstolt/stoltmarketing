@@ -142,7 +142,7 @@ export default function Hero() {
         </Reveal>
 
         {/* === Two-column area below headline === */}
-        <div className="mt-10 sm:mt-14 grid lg:grid-cols-[1fr,400px] gap-12 lg:gap-16 items-center">
+        <div className="mt-10 sm:mt-14 grid lg:grid-cols-[1fr,340px] gap-10 lg:gap-14 items-center">
           {/* Left: Subtitle, bullets, CTAs */}
           <div>
             <Reveal delay={0.12}>
@@ -188,7 +188,7 @@ export default function Hero() {
 
           {/* Right: Hässleholm blob image */}
           <Reveal delay={0.2}>
-            <div className="relative lg:mt-0 mt-6" style={{ animation: "float-slow 8s ease-in-out infinite" }}>
+            <div className="relative mx-auto max-w-[280px] lg:max-w-none" style={{ animation: "float-slow 8s ease-in-out infinite" }}>
               {/* Glow behind */}
               <div
                 style={{
