@@ -12,6 +12,7 @@ import {
   FileSearch,
   Gauge,
   Link2,
+  Star,
 } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
 
@@ -228,6 +229,73 @@ export default function HassleHomSeoContent() {
                   {area}
                 </span>
               ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ═══ CASE & RESULTAT ═══ */}
+      <section className="py-16 sm:py-24 px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            badge="Resultat"
+            title="SEO-resultat från riktiga kunder."
+          />
+          <div className="mt-10 grid sm:grid-cols-2 gap-5">
+            {[
+              {
+                title: "RBN Utbildning",
+                type: "Webb · API · SEO",
+                desc: "Ny webbplats med sökmotoroptimering från grunden — strukturerad data, teknisk SEO och innehållsstrategi som ger synlighet i rätt sökningar.",
+                screenshot: "/case-rbn.png",
+              },
+              {
+                title: "LIA-platsbanken",
+                type: "Webbplattform · Next.js",
+                desc: "SEO-optimerad plattform för AcadeMedia där studenter och arbetsgivare hittar varandra. Rätt struktur för att ranka på relevanta sökord.",
+                screenshot: "/case-lia.png",
+              },
+            ].map((c, i) => (
+              <Reveal key={c.title} delay={i * 0.08 + 0.1}>
+                <div className="group bg-surface rounded-[20px] border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-400 hover:-translate-y-1">
+                  <div className="relative h-[180px] overflow-hidden">
+                    <img src={c.screenshot} alt={c.title} className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500" />
+                  </div>
+                  <div className="p-6">
+                    <span className="text-[12px] font-600 text-primary">{c.type}</span>
+                    <h3 className="mt-1 font-heading font-700 text-[18px] text-heading group-hover:text-primary transition-colors">{c.title}</h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-body">{c.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.2}>
+            <div className="mt-10 bg-surface rounded-[20px] border border-border p-7 sm:p-9">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} size={16} fill="#F59E0B" color="#F59E0B" />
+                ))}
+              </div>
+              <p className="text-[15px] leading-relaxed text-body max-w-[640px]">
+                "Vi behövde en helhetsleverans — ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen."
+              </p>
+              <div className="mt-5 pt-4 border-t border-border-light flex items-center gap-3">
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "linear-gradient(135deg, #EA580C, #EA580Ccc)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 14, fontWeight: 700 }}>RO</div>
+                <div>
+                  <div className="text-[14px] font-600 text-heading">Robin, RBN Utbildning</div>
+                  <div className="text-[13px] text-muted">Ny webb, API-integration & SEO</div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.24}>
+            <div className="mt-6 text-center">
+              <a href="/projekt" className="inline-flex items-center gap-2 text-[15px] font-600 text-primary hover:text-primary-hover transition-colors group">
+                Se alla projekt <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </Reveal>
         </div>
