@@ -289,7 +289,7 @@ export default function ChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={chatConfig.placeholder || "Skriv ett meddelande..."}
                   disabled={loading}
-                  style={{ flex: 1, padding: "10px 14px", borderRadius: "12px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#0c0f1a", fontSize: "14px", outline: "none", transition: "all 0.2s", fontFamily: "inherit" }}
+                  style={{ flex: 1, padding: "10px 14px", borderRadius: "12px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#0c0f1a", fontSize: "16px", outline: "none", transition: "all 0.2s", fontFamily: "inherit" }}
                   onFocus={(e) => { e.target.style.borderColor = pc; e.target.style.boxShadow = `0 0 0 3px ${pc}18`; }}
                   onBlur={(e) => { e.target.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.target.style.boxShadow = "none"; }}
                 />
@@ -394,7 +394,7 @@ function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent, email
     );
   }
 
-  const inputStyle = { width: "100%", padding: "10px 12px", borderRadius: "10px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#0c0f1a", fontSize: "14px", outline: "none", transition: "border-color 0.2s, box-shadow 0.2s", boxSizing: "border-box", fontFamily: "inherit" };
+  const inputStyle = { width: "100%", padding: "10px 12px", borderRadius: "10px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#0c0f1a", fontSize: "16px", outline: "none", transition: "border-color 0.2s, box-shadow 0.2s", boxSizing: "border-box", fontFamily: "inherit" };
   const isDisabled = !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim() || emailSending;
 
   return (
