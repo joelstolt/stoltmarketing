@@ -98,59 +98,108 @@ export default function Hero() {
         }}
       />
 
-      {/* Animated circles */}
+      {/* Hässleholm hero image — blob mask + Ken Burns */}
       <div
         className="absolute pointer-events-none hidden lg:block"
         style={{
-          top: "35%",
-          right: "18%",
-          width: 280,
-          height: 280,
-          borderRadius: "50%",
-          background:
-            "linear-gradient(135deg, rgba(29,78,216,0.07), rgba(29,78,216,0.02))",
+          top: "12%",
+          right: "2%",
+          width: "42%",
+          maxWidth: 560,
           animation: "float-slow 8s ease-in-out infinite",
         }}
-      />
-      <div
-        className="absolute pointer-events-none hidden lg:block"
-        style={{
-          top: "58%",
-          right: "25%",
-          width: 130,
-          height: 130,
-          borderRadius: "50%",
-          background:
-            "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
-          animation: "float-medium 6s ease-in-out infinite 1s",
-        }}
-      />
-      <div
-        className="absolute pointer-events-none hidden lg:block"
-        style={{
-          top: "42%",
-          right: "13%",
-          width: 70,
-          height: 70,
-          borderRadius: "50%",
-          background:
-            "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
-          animation: "float-fast 5s ease-in-out infinite 0.5s",
-        }}
-      />
-      <div
-        className="absolute pointer-events-none hidden lg:block"
-        style={{
-          top: "28%",
-          right: "30%",
-          width: 45,
-          height: 45,
-          borderRadius: "50%",
-          background:
-            "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
-          animation: "float-medium 7s ease-in-out infinite 2s",
-        }}
-      />
+      >
+        {/* Animated glow behind */}
+        <div
+          style={{
+            position: "absolute",
+            inset: -20,
+            borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%",
+            background: "radial-gradient(ellipse, rgba(29,78,216,0.08) 0%, transparent 70%)",
+            animation: "blob-glow 6s ease-in-out infinite",
+            filter: "blur(20px)",
+          }}
+        />
+
+        {/* Image with blob mask */}
+        <div
+          style={{
+            position: "relative",
+            borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%",
+            overflow: "hidden",
+            animation: "blob-morph 12s ease-in-out infinite",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.05)",
+            border: "2px solid rgba(255,255,255,0.5)",
+          }}
+        >
+          <img
+            src="/hassleholm-hero.png"
+            alt="Hässleholm stad"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              animation: "ken-burns 20s ease-in-out infinite alternate",
+              transformOrigin: "center center",
+            }}
+          />
+          {/* Gradient overlay for blending */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(180deg, rgba(29,78,216,0.05) 0%, transparent 40%, rgba(250,250,248,0.3) 100%)",
+            }}
+          />
+        </div>
+
+        {/* Floating label */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 8,
+            left: "10%",
+            background: "rgba(255,255,255,0.92)",
+            backdropFilter: "blur(12px)",
+            borderRadius: 12,
+            padding: "8px 16px",
+            fontSize: 12,
+            fontWeight: 600,
+            color: "#3B3F4A",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+            border: "1px solid rgba(255,255,255,0.8)",
+            animation: "float-fast 5s ease-in-out infinite 1s",
+          }}
+        >
+          📍 Baserad i Hässleholm
+        </div>
+
+        {/* Small accent circle */}
+        <div
+          style={{
+            position: "absolute",
+            top: -15,
+            right: "15%",
+            width: 40,
+            height: 40,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, rgba(29,78,216,0.12), rgba(29,78,216,0.04))",
+            animation: "float-medium 6s ease-in-out infinite 0.5s",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "25%",
+            right: -10,
+            width: 24,
+            height: 24,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, rgba(29,78,216,0.15), rgba(29,78,216,0.05))",
+            animation: "float-fast 5s ease-in-out infinite 2s",
+          }}
+        />
+      </div>
 
       {/* Animation keyframes */}
       <style>{`
@@ -165,6 +214,20 @@ export default function Hero() {
         @keyframes float-fast {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-8px); }
+        }
+        @keyframes ken-burns {
+          0% { transform: scale(1) translate(0, 0); }
+          100% { transform: scale(1.08) translate(-1%, -1%); }
+        }
+        @keyframes blob-morph {
+          0%, 100% { border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%; }
+          25% { border-radius: 55% 45% 40% 60% / 40% 55% 45% 60%; }
+          50% { border-radius: 45% 55% 60% 40% / 60% 45% 55% 40%; }
+          75% { border-radius: 60% 40% 45% 55% / 45% 60% 40% 55%; }
+        }
+        @keyframes blob-glow {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.05); }
         }
       `}</style>
 
