@@ -24,17 +24,28 @@ export default function BokaContent() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `Bokningsförfrågan från ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`
-    );
-    const body = encodeURIComponent(
-      `Namn: ${formData.name}\nFöretag: ${formData.company || "Ej angivet"}\nE-post: ${formData.email}\n\nMeddelande:\n${formData.message || "Vill boka en kostnadsfri genomgång."}`
-    );
-    window.location.href = `mailto:joel@stoltmarketing.se?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setSending(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xreylwen", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message || "Vill boka en kostnadsfri genomgång.",
+          _subject: `Bokningsförfrågan från ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`,
+        }),
+      });
+      if (res.ok) setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+    }
+    setSending(false);
   };
 
   const handleChange = (e) => {
@@ -214,10 +225,11 @@ export default function BokaContent() {
 
                       <button
                         type="submit"
+                        disabled={sending}
                         className="premium-btn w-full justify-center mt-2"
-                        style={{ border: "none", cursor: "pointer", fontFamily: "inherit" }}
+                        style={{ border: "none", cursor: sending ? "wait" : "pointer", fontFamily: "inherit", opacity: sending ? 0.7 : 1 }}
                       >
-                        <span>Boka genomgång</span>
+                        <span>{sending ? "Skickar..." : "Boka genomgång"}</span>
                         <ArrowRight size={16} className="opacity-80" />
                       </button>
                     </div>

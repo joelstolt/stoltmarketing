@@ -62,16 +62,29 @@ export default function KontaktContent() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // For now, open mailto with form data
-    const subject = encodeURIComponent(`Ny förfrågan från ${formData.name} — ${formData.company || "Ej angivet"}`);
-    const body = encodeURIComponent(
-      `Namn: ${formData.name}\nFöretag: ${formData.company}\nE-post: ${formData.email}\nTjänst: ${formData.service}\n\nMeddelande:\n${formData.message}`
-    );
-    window.location.href = `mailto:joel@stoltmarketing.se?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setSending(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xreylwen", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          _subject: `Ny förfrågan från ${formData.name} — ${formData.company || "Ej angivet"}`,
+        }),
+      });
+      if (res.ok) setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+    }
+    setSending(false);
   };
 
   const handleChange = (e) => {
@@ -248,10 +261,11 @@ export default function KontaktContent() {
 
                       <button
                         type="submit"
+                        disabled={sending}
                         className="premium-btn w-full justify-center mt-2"
-                        style={{ border: "none", cursor: "pointer", fontFamily: "inherit" }}
+                        style={{ border: "none", cursor: sending ? "wait" : "pointer", fontFamily: "inherit", opacity: sending ? 0.7 : 1 }}
                       >
-                        <span>Skicka förfrågan</span>
+                        <span>{sending ? "Skickar..." : "Skicka förfrågan"}</span>
                         <ArrowRight size={16} className="opacity-80" />
                       </button>
                     </div>
