@@ -318,18 +318,14 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((prev) => !prev)}
         aria-label={open ? "Stäng chatt" : "Öppna chatt"}
-        style={{ position: "fixed", bottom: "24px", right: "24px", width: "56px", height: "56px", borderRadius: "16px", border: "none", background: chatConfig.headerGradient || `linear-gradient(135deg, ${pc} 0%, ${pcd} 100%)`, color: "#fff", cursor: "pointer", zIndex: 99999, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 8px 32px -4px ${pc}66, 0 4px 12px -2px rgba(0,0,0,0.12)`, transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)", transform: open ? "scale(0.9) rotate(90deg)" : "scale(1)" }}
-        onMouseEnter={(e) => { if (!open) e.currentTarget.style.transform = "scale(1.08)"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.transform = open ? "scale(0.9) rotate(90deg)" : "scale(1)"; }}
+        style={{ position: "fixed", bottom: "24px", right: "24px", width: "56px", height: "56px", borderRadius: "16px", border: "none", background: chatConfig.headerGradient || `linear-gradient(135deg, ${pc} 0%, ${pcd} 100%)`, color: "#fff", cursor: "pointer", zIndex: 99999, display: open ? "none" : "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 8px 32px -4px ${pc}66, 0 4px 12px -2px rgba(0,0,0,0.12)`, transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)", transform: "scale(1)" }}
+        onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.08)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
       >
         {newMsgFlash && !open && (
           <span style={{ position: "absolute", top: "-4px", right: "-4px", width: "14px", height: "14px", borderRadius: "50%", background: "#ef4444", border: `2px solid ${isDark ? "#111" : "#fff"}`, animation: "stolt-chat-bounce 0.5s ease-out" }} />
         )}
-        {open ? (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-        ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
-        )}
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
       </button>
 
       {!open && !hasInteracted && (
