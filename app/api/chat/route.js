@@ -2,24 +2,17 @@ import { chatConfig } from "@/lib/chat-config";
 
 // ============================================================
 // POST /api/chat
-// Streams Claude response + sends Slack notification
+// Streams Claude response
 // ============================================================
 
 export async function POST(req) {
   try {
-    const { messages, conversationId, isFirstMessage } = await req.json();
+    const { messages } = await req.json();
 
     if (!messages || !messages.length) {
       return Response.json({ error: "No messages" }, { status: 400 });
     }
 
-    // --- Slack notification (fire-and-forget on first message) ---
-    if (isFirstMessage && chatConfig.slackNotify && process.env.SLACK_WEBHOOK_URL) {
-      const userMsg = messages[messages.length - 1]?.content || "";
-      notifySlack(userMsg, conversationId).catch(() => {});
-    }
-
-    // --- Stream from Claude ---
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -48,7 +41,6 @@ export async function POST(req) {
       );
     }
 
-    // --- Transform SSE stream to text stream ---
     const encoder = new TextEncoder();
     const decoder = new TextDecoder();
 
@@ -103,49 +95,4 @@ export async function POST(req) {
     console.error("Chat API error:", err);
     return Response.json({ error: "Internal error" }, { status: 500 });
   }
-}
-
-// ============================================================
-// Slack Webhook
-// ============================================================
-
-async function notifySlack(message, conversationId) {
-  const url = process.env.SLACK_WEBHOOK_URL;
-  if (!url) return;
-
-  const truncated =
-    message.length > 200 ? message.slice(0, 200) + "…" : message;
-
-  await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      blocks: [
-        {
-          type: "header",
-          text: {
-            type: "plain_text",
-            text: `💬 Nytt chattmeddelande — ${chatConfig.siteName}`,
-            emoji: true,
-          },
-        },
-        {
-          type: "section",
-          text: {
-            type: "mrkdwn",
-            text: `*Besökare skriver:*\n>${truncated}`,
-          },
-        },
-        {
-          type: "context",
-          elements: [
-            {
-              type: "mrkdwn",
-              text: `🌐 ${chatConfig.siteUrl} · ID: \`${conversationId || "–"}\``,
-            },
-          ],
-        },
-      ],
-    }),
-  });
 }
