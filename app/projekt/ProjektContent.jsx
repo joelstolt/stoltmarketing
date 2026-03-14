@@ -93,7 +93,7 @@ const projects = [
     ],
     tech: ["Next.js", "React", "Claude AI", "jsPDF", "Resend", "Vercel"],
     url: "https://kvota.se",
-    screenshot: null,
+    screenshot: "/case-kvota.png",
   },
   {
     title: "SMH / KYH / Hermods",
@@ -110,7 +110,7 @@ const projects = [
       { label: "Drift", value: "Löpande" },
     ],
     tech: ["WordPress", "WooCommerce", "Bricks Builder", "Stripe"],
-    screenshot: null,
+    screenshot: "/case-smh.png",
   },
 ];
 
