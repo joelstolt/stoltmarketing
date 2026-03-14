@@ -141,54 +141,53 @@ export default function Hero() {
           </h1>
         </Reveal>
 
-        {/* === Two-column area below headline === */}
-        <div className="mt-10 sm:mt-14 grid lg:grid-cols-[1fr,340px] gap-10 lg:gap-14 items-center">
-          {/* Left: Subtitle, bullets, CTAs */}
-          <div>
-            <Reveal delay={0.12}>
-              <p className="text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px]">
-                För småföretag som vill ha tydligare sidor, bättre synlighet och
-                smartare arbetsflöden — med en konsult som faktiskt genomför
-                förbättringarna.
-              </p>
-            </Reveal>
+        {/* === Content below headline === */}
+        <div className="mt-10 sm:mt-14 max-w-[600px]">
+          <Reveal delay={0.12}>
+            <p className="text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px]">
+              För småföretag som vill ha tydligare sidor, bättre synlighet och
+              smartare arbetsflöden — med en konsult som faktiskt genomför
+              förbättringarna.
+            </p>
+          </Reveal>
 
-            <Reveal delay={0.18}>
-              <ul className="mt-6 flex flex-col gap-2.5">
-                {bullets.map((text) => (
-                  <li
-                    key={text}
-                    className="flex items-start gap-3 text-[15px] text-body"
-                  >
-                    <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-primary/8 flex items-center justify-center">
-                      <Check
-                        size={12}
-                        className="text-primary"
-                        strokeWidth={3}
-                      />
-                    </span>
-                    {text}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+          <Reveal delay={0.18}>
+            <ul className="mt-6 flex flex-col gap-2.5">
+              {bullets.map((text) => (
+                <li
+                  key={text}
+                  className="flex items-start gap-3 text-[15px] text-body"
+                >
+                  <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-primary/8 flex items-center justify-center">
+                    <Check
+                      size={12}
+                      className="text-primary"
+                      strokeWidth={3}
+                    />
+                  </span>
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
 
-            <Reveal delay={0.24}>
-              <div className="flex flex-wrap gap-3 mt-9">
-                <a href="/boka" className="premium-btn">
-                  <span>Boka kostnadsfri genomgång</span>
-                  <ArrowRight size={16} className="opacity-80" />
-                </a>
-                <a href="/tjanster" className="secondary-btn">
-                  Se tjänster
-                </a>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={0.24}>
+            <div className="flex flex-wrap gap-3 mt-9">
+              <a href="/boka" className="premium-btn">
+                <span>Boka kostnadsfri genomgång</span>
+                <ArrowRight size={16} className="opacity-80" />
+              </a>
+              <a href="/tjanster" className="secondary-btn">
+                Se tjänster
+              </a>
+            </div>
+          </Reveal>
+        </div>
 
-          {/* Right: Hässleholm blob image */}
-          <Reveal delay={0.2}>
-            <div className="relative mx-auto max-w-[280px] lg:max-w-none" style={{ animation: "float-slow 8s ease-in-out infinite" }}>
+        {/* Blob image — DESKTOP: absolute right, MOBILE: in-flow */}
+        <Reveal delay={0.2}>
+          {/* Mobile version — in flow */}
+          <div className="lg:hidden mt-10 mx-auto max-w-[280px]" style={{ animation: "float-slow 8s ease-in-out infinite" }}>
               {/* Glow behind */}
               <div
                 style={{
@@ -254,7 +253,80 @@ export default function Hero() {
                 📍 Hässleholm — kunder i hela Sverige
               </div>
             </div>
-          </Reveal>
+          </div>
+        </Reveal>
+
+        {/* Desktop blob — absolute positioned */}
+        <div
+          className="absolute pointer-events-none hidden lg:block"
+          style={{
+            top: "38%",
+            right: "5%",
+            width: "32%",
+            maxWidth: 420,
+            animation: "float-slow 8s ease-in-out infinite",
+            zIndex: 5,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              inset: -20,
+              borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%",
+              background: "radial-gradient(ellipse, rgba(29,78,216,0.06) 0%, transparent 70%)",
+              animation: "blob-glow 6s ease-in-out infinite",
+              filter: "blur(20px)",
+            }}
+          />
+          <div
+            style={{
+              position: "relative",
+              borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%",
+              overflow: "hidden",
+              animation: "blob-morph 12s ease-in-out infinite",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.03)",
+              border: "2px solid rgba(255,255,255,0.4)",
+            }}
+          >
+            <img
+              src="/hassleholm-hero.png"
+              alt="Hässleholm stad"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                animation: "ken-burns 20s ease-in-out infinite alternate",
+                transformOrigin: "center center",
+                opacity: 0.6,
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(180deg, rgba(238,242,255,0.25) 0%, rgba(219,234,254,0.15) 40%, rgba(250,250,248,0.45) 100%)",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              bottom: 12,
+              left: "8%",
+              background: "rgba(255,255,255,0.92)",
+              backdropFilter: "blur(12px)",
+              borderRadius: 12,
+              padding: "8px 16px",
+              fontSize: 12,
+              fontWeight: 600,
+              color: "#3B3F4A",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+              border: "1px solid rgba(255,255,255,0.8)",
+              animation: "float-fast 5s ease-in-out infinite 1s",
+            }}
+          >
+            📍 Hässleholm — kunder i hela Sverige
+          </div>
         </div>
 
         {/* === Animated stats === */}
