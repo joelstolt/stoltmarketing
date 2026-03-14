@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Check, Zap, MessageSquare, FileText, Bot } from "lucide-react";
+import { Check, Zap, MessageSquare, FileText, Bot, ArrowRight, Clock, Mic, Mail } from "lucide-react";
 
 function Reveal({ children, className = "", delay = 0 }) {
   const ref = useRef(null);
@@ -41,6 +41,13 @@ const aiFeatures = [
     title: "AI-drivet innehåll",
     desc: "Generera produkttexter, blogginlägg och marknadsföringsmaterial snabbare.",
   },
+];
+
+const kvotaStats = [
+  { icon: Clock, value: "45 sek", label: "Från röst till offert" },
+  { icon: Mic, value: "Tala in", label: "Beskriv jobbet med rösten" },
+  { icon: FileText, value: "PDF", label: "Proffsig offert med logga" },
+  { icon: Mail, value: "E-post", label: "Skicka direkt till kund" },
 ];
 
 export default function AiSection() {
@@ -120,49 +127,50 @@ export default function AiSection() {
           <Reveal delay={0.15}>
             <div className="bg-white/[0.72] backdrop-blur-xl rounded-[20px] border border-white/80 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)]">
               <div className="text-[12px] font-700 text-primary uppercase tracking-wider mb-4">
-                Byggt med AI
+                Eget AI-projekt
               </div>
               <h3 className="font-heading font-700 text-[22px] text-heading tracking-tight">
                 Kvota.se
               </h3>
               <p className="mt-2 text-[14px] leading-relaxed text-body">
-                AI-driven offertgenerator för svenska hantverkare. Från
-                röstinspelning till färdig PDF-offert på under en minut.
+                AI-driven offertgenerator för svenska hantverkare. Prata in vad
+                jobbet gäller — få en proffsig PDF-offert med logga, poster och
+                ROT-avdrag på under en minut.
               </p>
 
-              <div className="mt-5 bg-heading/[0.03] rounded-[12px] p-4 font-mono text-[13px] leading-loose">
-                <div className="text-muted">// Resultat</div>
-                <div>
-                  <span className="text-primary">offertTid</span>
-                  <span className="text-muted">: </span>
-                  <span className="text-amber-600">"45 sekunder"</span>
-                </div>
-                <div>
-                  <span className="text-primary">format</span>
-                  <span className="text-muted">: </span>
-                  <span className="text-amber-600">"PDF + E-post"</span>
-                </div>
-                <div>
-                  <span className="text-primary">aiModell</span>
-                  <span className="text-muted">: </span>
-                  <span className="text-amber-600">"Claude Sonnet"</span>
-                </div>
-                <div>
-                  <span className="text-primary">status</span>
-                  <span className="text-muted">: </span>
-                  <span className="text-emerald-600">"Lanserad ✓"</span>
-                </div>
+              {/* Visual stats grid instead of code */}
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                {kvotaStats.map((s) => (
+                  <div
+                    key={s.label}
+                    className="p-3 rounded-[12px] bg-primary/[0.03] border border-primary/[0.06]"
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <s.icon size={14} className="text-primary" />
+                      <span className="text-[16px] font-800 font-heading text-heading tracking-tight">
+                        {s.value}
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-muted leading-snug">
+                      {s.label}
+                    </span>
+                  </div>
+                ))}
               </div>
 
-              <div className="mt-5 pt-4 border-t border-black/[0.05] flex flex-wrap gap-2">
-                {["Next.js", "Claude AI", "jsPDF", "Resend"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[11px] font-600 text-muted bg-heading/[0.03] px-2.5 py-1 rounded-md"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="mt-5 pt-4 border-t border-black/[0.05]">
+                <a
+                  href="https://kvota.se"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[14px] font-600 text-primary hover:text-primary-hover transition-colors group"
+                >
+                  Besök Kvota.se
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </a>
               </div>
             </div>
           </Reveal>

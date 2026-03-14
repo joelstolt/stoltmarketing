@@ -7,35 +7,35 @@ import { Reveal, SectionHeader } from "@/components/ui";
 
 const testimonials = [
   {
-    name: "Projektledare, AcadeMedia",
+    name: "Andreas, AcadeMedia",
     role: "LIA-platsbanken",
     quote:
       "Joel tog vår idé om en plattform för LIA-platser och förvandlade den till en färdig produkt snabbare än vi trodde var möjligt. Han förstod behoven direkt och levererade en lösning som både studenter och arbetsgivare faktiskt använder.",
-    initials: "AM",
+    initials: "AN",
     color: "#059669",
   },
   {
-    name: "Robert, RBN Utbildning",
+    name: "Robin, RBN Utbildning",
     role: "Ny webb, API-integration & SEO",
     quote:
       "Vi behövde en helhetsleverans — ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
-    initials: "RB",
+    initials: "RO",
     color: "#EA580C",
   },
   {
-    name: "Personalansvarig, Förskolan Harpan",
+    name: "Susanne, Förskolan Harpan",
     role: "Ny grafisk profil & webb",
     quote:
       "Vår nya sajt fångar verkligen känslan av vår förskola. Joel lyssnade på vad vi ville förmedla och skapade en design som föräldrar faktiskt förstår och tycker om. Platsansökan har aldrig varit enklare.",
-    initials: "FH",
+    initials: "SU",
     color: "#CA8A04",
   },
   {
-    name: "Grundare, Omniway",
+    name: "Claudia, Omniway",
     role: "WCAG-anpassad webb",
     quote:
       "Tillgänglighet var ett krav — inte en bonus. Joel levererade en modern sajt som uppfyller WCAG utan att kompromissa på design. Snabb kommunikation och han förstod EdTech-branschen direkt.",
-    initials: "OW",
+    initials: "CL",
     color: "#7C3AED",
   },
 ];

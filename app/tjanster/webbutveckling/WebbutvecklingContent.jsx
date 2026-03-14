@@ -108,7 +108,7 @@ export default function WebbutvecklingContent() {
           <Reveal delay={0.18}>
             <div className="mt-12 grid sm:grid-cols-2 gap-8">
               <div className="bg-surface rounded-[16px] border border-border p-6">
-                <div className="text-[32px] font-800 font-heading text-heading tracking-tight">70+</div>
+                <div className="text-[32px] font-800 font-heading text-heading tracking-tight">150+</div>
                 <div className="text-[14px] text-muted mt-1">Levererade webbprojekt</div>
               </div>
               <div className="bg-surface rounded-[16px] border border-border p-6">

@@ -37,7 +37,7 @@ const services = [
       "Bygg och lansering",
     ],
     stats: [
-      { value: "70+", label: "Levererade webbprojekt" },
+      { value: "150+", label: "Levererade webbprojekt" },
       { value: "24h", label: "Svarslöfte på vardagar" },
     ],
     href: "/tjanster/webbutveckling",
@@ -82,7 +82,7 @@ const services = [
     ],
     stats: [
       { value: "10+", label: "Års SEO-erfarenhet" },
-      { value: "70+", label: "Projekt med SEO-fokus" },
+      { value: "150+", label: "Projekt med SEO-fokus" },
     ],
     href: "/tjanster/seo",
   },

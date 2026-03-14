@@ -57,7 +57,7 @@ const tools = [
 
 const stats = [
   { num: "10+", label: "Års erfarenhet" },
-  { num: "70+", label: "Levererade projekt" },
+  { num: "150+", label: "Levererade projekt" },
   { num: "1", label: "AI SaaS-produkt" },
 ];
 
@@ -266,7 +266,7 @@ export default function OmContent() {
                         boxShadow: "0 2px 8px rgba(29,78,216,0.25)",
                       }}
                     >
-                      70+
+                      150+
                     </div>
                     <div>
                       <div style={{ fontSize: 13, fontWeight: 700, color: "#0C0F1A" }}>

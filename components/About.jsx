@@ -21,7 +21,7 @@ function Reveal({ children, className = "", delay = 0 }) {
 
 const stats = [
   { num: "10+", label: "Års erfarenhet" },
-  { num: "70+", label: "Levererade projekt" },
+  { num: "150+", label: "Levererade projekt" },
   { num: "1", label: "AI SaaS-produkt" },
 ];
 

@@ -337,7 +337,7 @@ export default function Hero() {
           <div className="mt-16 sm:mt-20 pt-8 border-t border-black/[0.06] flex flex-wrap gap-12 sm:gap-14">
             <div>
               <div className="text-[28px] sm:text-[30px] font-800 font-heading text-heading tracking-tight">
-                <CountUp target="70" suffix="+" />
+                <CountUp target="150" suffix="+" />
               </div>
               <div className="text-[14px] text-muted mt-0.5">
                 Levererade projekt
