@@ -55,6 +55,13 @@ export default function ChatWidget() {
     if (open && !showEmailForm) setTimeout(() => inputRef.current?.focus(), 300);
   }, [open, showEmailForm]);
 
+  // Re-focus input after AI finishes responding
+  useEffect(() => {
+    if (!loading && open && !showEmailForm) {
+      setTimeout(() => inputRef.current?.focus(), 50);
+    }
+  }, [loading, open, showEmailForm]);
+
   useEffect(() => {
     const aiMsgs = messages.filter((m) => m.role === "assistant" && m.content);
     if (aiMsgs.length > messageCountRef.current) {
