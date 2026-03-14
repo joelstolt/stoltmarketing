@@ -252,7 +252,6 @@ export default function Hero() {
               >
                 📍 Hässleholm — kunder i hela Sverige
               </div>
-            </div>
           </div>
         </Reveal>
 
