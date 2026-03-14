@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   Check,
@@ -14,7 +14,6 @@ import {
 function Reveal({ children, className = "", delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
-
   return (
     <motion.div
       ref={ref}
@@ -25,6 +24,33 @@ function Reveal({ children, className = "", delay = 0 }) {
     >
       {children}
     </motion.div>
+  );
+}
+
+/* ── Animated count-up ── */
+function CountUp({ target, suffix = "", duration = 2000 }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const num = parseInt(target.replace(/\D/g, ""), 10);
+
+  useEffect(() => {
+    if (!inView || isNaN(num)) return;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * num));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [inView, num, duration]);
+
+  return (
+    <span ref={ref}>
+      {inView ? count : 0}
+      {suffix}
+    </span>
   );
 }
 
@@ -41,6 +67,7 @@ const services = [
     desc: "Moderna sajter och WooCommerce",
     tag: "Populärast",
     tagColor: "primary",
+    href: "/tjanster/webbutveckling",
   },
   {
     icon: Cpu,
@@ -48,19 +75,15 @@ const services = [
     desc: "Smarta verktyg som sparar tid",
     tag: "Nytt",
     tagColor: "green",
+    href: "/tjanster/ai-automation",
   },
   {
     icon: Search,
     title: "SEO & Synlighet",
     desc: "Syns på Google, får fler kunder",
     tag: null,
+    href: "/tjanster/seo",
   },
-];
-
-const stats = [
-  { num: "70+", label: "Levererade projekt" },
-  { num: "24h", label: "Svarslöfte på vardagar" },
-  { num: "3 delar", label: "Webb, SEO och AI i samma upplägg" },
 ];
 
 export default function Hero() {
@@ -84,7 +107,8 @@ export default function Hero() {
           width: 280,
           height: 280,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, rgba(29,78,216,0.07), rgba(29,78,216,0.02))",
+          background:
+            "linear-gradient(135deg, rgba(29,78,216,0.07), rgba(29,78,216,0.02))",
           animation: "float-slow 8s ease-in-out infinite",
         }}
       />
@@ -96,7 +120,8 @@ export default function Hero() {
           width: 130,
           height: 130,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
+          background:
+            "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
           animation: "float-medium 6s ease-in-out infinite 1s",
         }}
       />
@@ -108,7 +133,8 @@ export default function Hero() {
           width: 70,
           height: 70,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
+          background:
+            "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
           animation: "float-fast 5s ease-in-out infinite 0.5s",
         }}
       />
@@ -120,7 +146,8 @@ export default function Hero() {
           width: 45,
           height: 45,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
+          background:
+            "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
           animation: "float-medium 7s ease-in-out infinite 2s",
         }}
       />
@@ -153,7 +180,8 @@ export default function Hero() {
         {/* === MASSIVE HEADLINE — full width === */}
         <Reveal delay={0.06}>
           <h1 className="mt-6 font-heading font-800 text-[clamp(36px,5.8vw,72px)] leading-[1.05] tracking-[-0.03em] text-heading max-w-[900px]">
-            Moderna webbplatser, SEO och AI som gör det enklare för dina kunder att hitta dig och ta kontakt.
+            Moderna webbplatser, SEO och AI som gör det enklare för dina kunder
+            att hitta dig och ta kontakt.
           </h1>
         </Reveal>
 
@@ -222,12 +250,13 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Service rows */}
+                {/* Service rows — now clickable */}
                 <div className="flex flex-col gap-2">
                   {services.map((s) => (
-                    <div
+                    <a
                       key={s.title}
-                      className="group flex items-center gap-3 p-3 rounded-[12px] bg-white/60 border border-black/[0.04] hover:bg-primary/[0.04] hover:border-primary/12 cursor-pointer transition-all duration-200 hover:translate-x-1"
+                      href={s.href}
+                      className="group flex items-center gap-3 p-3 rounded-[12px] bg-white/60 border border-black/[0.04] hover:bg-primary/[0.04] hover:border-primary/12 transition-all duration-200 hover:translate-x-1"
                     >
                       <div className="w-8 h-8 rounded-lg bg-primary/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors duration-200">
                         <s.icon size={15} className="text-primary" />
@@ -255,9 +284,9 @@ export default function Hero() {
                       </div>
                       <ArrowRight
                         size={13}
-                        className="text-faint flex-shrink-0"
+                        className="text-faint group-hover:text-primary flex-shrink-0 transition-colors"
                       />
-                    </div>
+                    </a>
                   ))}
                 </div>
 
@@ -303,19 +332,33 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        {/* === Trust stats === */}
+        {/* === Animated stats === */}
         <Reveal delay={0.35}>
           <div className="mt-16 sm:mt-20 pt-8 border-t border-black/[0.06] flex flex-wrap gap-12 sm:gap-14">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-[28px] sm:text-[30px] font-800 font-heading text-heading tracking-tight">
-                  {stat.num}
-                </div>
-                <div className="text-[14px] text-muted mt-0.5">
-                  {stat.label}
-                </div>
+            <div>
+              <div className="text-[28px] sm:text-[30px] font-800 font-heading text-heading tracking-tight">
+                <CountUp target="70" suffix="+" />
               </div>
-            ))}
+              <div className="text-[14px] text-muted mt-0.5">
+                Levererade projekt
+              </div>
+            </div>
+            <div>
+              <div className="text-[28px] sm:text-[30px] font-800 font-heading text-heading tracking-tight">
+                <CountUp target="10" suffix="+" duration={1500} />
+              </div>
+              <div className="text-[14px] text-muted mt-0.5">
+                Års erfarenhet
+              </div>
+            </div>
+            <div>
+              <div className="text-[28px] sm:text-[30px] font-800 font-heading text-heading tracking-tight">
+                24h
+              </div>
+              <div className="text-[14px] text-muted mt-0.5">
+                Svarslöfte på vardagar
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>
