@@ -206,7 +206,7 @@ export default function Hero() {
         </div>
 
         <Reveal delay={0.2}>
-          <div className="lg:hidden mt-10 mx-auto max-w-[280px]" style={{ animation: "float-slow 8s ease-in-out infinite" }}>
+          <div className="lg:hidden mt-10 mx-auto max-w-[380px]" style={{ animation: "float-slow 8s ease-in-out infinite" }}>
             <BlobImage />
           </div>
         </Reveal>
