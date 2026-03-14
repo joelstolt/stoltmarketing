@@ -2,30 +2,41 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { Reveal, SectionHeader } from "@/components/ui";
 
 const testimonials = [
   {
-    name: "Anna Lindström",
-    role: "VD, Lindströms Bygg AB",
+    name: "Projektledare, AcadeMedia",
+    role: "LIA-platsbanken",
     quote:
-      "Joel levererade en ny sajt som gav oss förfrågningar redan första veckan. Snabbt, professionellt och till ett pris som passade oss perfekt. Bästa investeringen vi gjort digitalt.",
-    initials: "AL",
+      "Joel tog vår idé om en plattform för LIA-platser och förvandlade den till en färdig produkt snabbare än vi trodde var möjligt. Han förstod behoven direkt och levererade en lösning som både studenter och arbetsgivare faktiskt använder.",
+    initials: "AM",
+    color: "#059669",
   },
   {
-    name: "Marcus Ekberg",
-    role: "Grundare, Ekberg Digital",
+    name: "Robert, RBN Utbildning",
+    role: "Ny webb, API-integration & SEO",
     quote:
-      "Vi testade tre byråer innan vi hittade Joel. Skillnaden? Han genomför. Ingen byrå-overhead, inga onödiga möten — bara resultat. Vår trafik ökade med 80% på fyra månader.",
-    initials: "ME",
+      "Vi behövde en helhetsleverans — ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
+    initials: "RB",
+    color: "#EA580C",
   },
   {
-    name: "Sara Johansson",
-    role: "Marknadschef, NordTech Solutions",
+    name: "Personalansvarig, Förskolan Harpan",
+    role: "Ny grafisk profil & webb",
     quote:
-      "AI-lösningen Joel byggde sparar vårt säljteam minst 10 timmar i veckan. Han förstod vårt behov direkt och levererade något som faktiskt funkar i vardagen — inte bara en snygg demo.",
-    initials: "SJ",
+      "Vår nya sajt fångar verkligen känslan av vår förskola. Joel lyssnade på vad vi ville förmedla och skapade en design som föräldrar faktiskt förstår och tycker om. Platsansökan har aldrig varit enklare.",
+    initials: "FH",
+    color: "#CA8A04",
+  },
+  {
+    name: "Grundare, Omniway",
+    role: "WCAG-anpassad webb",
+    quote:
+      "Tillgänglighet var ett krav — inte en bonus. Joel levererade en modern sajt som uppfyller WCAG utan att kompromissa på design. Snabb kommunikation och han förstod EdTech-branschen direkt.",
+    initials: "OW",
+    color: "#7C3AED",
   },
 ];
 
@@ -41,10 +52,10 @@ export default function Testimonials() {
           title="Resultat som talar för sig själva."
         />
 
-        <div className="mt-12 grid md:grid-cols-3 gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 gap-5">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08 + 0.1}>
-              <div className="h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col">
+              <div className="h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -69,8 +80,7 @@ export default function Testimonials() {
                       width: 40,
                       height: 40,
                       borderRadius: 10,
-                      background:
-                        "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                      background: `linear-gradient(135deg, ${t.color}, ${t.color}cc)`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
