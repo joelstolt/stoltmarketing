@@ -140,7 +140,7 @@ export default function Hero() {
 
       <div
         className="absolute pointer-events-none hidden lg:block"
-        style={{ top: "38%", right: "5%", width: "32%", maxWidth: 420, animation: "float-slow 8s ease-in-out infinite", zIndex: 5 }}
+        style={{ top: "44%", right: "3%", width: "38%", maxWidth: 500, animation: "float-slow 8s ease-in-out infinite", zIndex: 5 }}
       >
         <BlobImage />
       </div>
