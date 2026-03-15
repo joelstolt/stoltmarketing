@@ -102,12 +102,6 @@ const nextConfig = {
         source: "/offertforfragan/",
         destination: "/kontakt",
         permanent: true,
-      },
-      {
-        source: "/blogg/",
-        destination: "/",
-        permanent: true,
-      },
       {
         source: "/jobba-hos-oss/",
         destination: "/",
