@@ -19,6 +19,11 @@ export default function sitemap() {
     { url: "/hassleholm/seo", changeFrequency: "monthly", priority: 0.8 },
     { url: "/hassleholm/google-ads", changeFrequency: "monthly", priority: 0.8 },
     { url: "/hassleholm/ai-automation", changeFrequency: "monthly", priority: 0.8 },
+    /* Blogg */
+    { url: "/blogg", changeFrequency: "weekly", priority: 0.8 },
+    { url: "/blogg/vad-kostar-en-hemsida", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/blogg/wordpress-vs-nextjs", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/blogg/seo-for-smaforetag", changeFrequency: "monthly", priority: 0.8 },
   ];
 
   return pages.map((page) => ({

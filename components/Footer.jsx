@@ -15,6 +15,7 @@ const services = [
 const company = [
   { label: "Om mig", href: "/om" },
   { label: "Projekt", href: "/projekt" },
+  { label: "Blogg", href: "/blogg" },
   { label: "Kontakt", href: "/kontakt" },
   { label: "Boka genomgång", href: "/boka" },
   { label: "Integritetspolicy", href: "/integritet" },

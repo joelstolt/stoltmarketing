@@ -50,6 +50,7 @@ const serviceItems = [
 
 const navItems = [
   { label: "Projekt", href: "/projekt" },
+  { label: "Blogg", href: "/blogg" },
   { label: "Om mig", href: "/om" },
   { label: "Kontakt", href: "/kontakt" },
 ];
