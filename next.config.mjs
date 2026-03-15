@@ -47,10 +47,6 @@ const nextConfig = {
       },
       // Old blog/misc pages
       {
-        source: "/blogg",
-        destination: "/",
-        permanent: true,
-      },
       {
         source: "/jobba-hos-oss",
         destination: "/",
