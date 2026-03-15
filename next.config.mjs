@@ -45,8 +45,7 @@ const nextConfig = {
         destination: "/kontakt",
         permanent: true,
       },
-      // Old blog/misc pages
-      {
+      // Old misc pages
       {
         source: "/jobba-hos-oss",
         destination: "/",
@@ -102,6 +101,7 @@ const nextConfig = {
         source: "/offertforfragan/",
         destination: "/kontakt",
         permanent: true,
+      },
       {
         source: "/jobba-hos-oss/",
         destination: "/",
