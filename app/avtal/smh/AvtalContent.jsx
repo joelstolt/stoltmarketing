@@ -30,7 +30,7 @@ const packages = [
   {
     name: "Medium",
     focus: "Aktivt underhåll & prioriterad support",
-    price: "8 500",
+    price: "9 000",
     hours: "10 timmar/mån",
     response: "1–2 arbetsdagar",
     maintenance: "Veckovis genomgång",
@@ -46,12 +46,12 @@ const packages = [
   {
     name: "Max",
     focus: "Strategisk tillväxt & högsta beredskap",
-    price: "15 000",
+    price: "18 000",
     hours: "20 timmar/mån",
     response: "Ofta samma dag",
     maintenance: "Veckovis + proaktiv optimering",
     features: [
-      "20h dedikerad utvecklingstid (värde 17 000 kr)",
+      "20h dedikerad utvecklingstid",
       "Högsta prioritet på support",
       "Veckovis genomgång + prestanda",
       "Bricks Builder-licens ingår",
@@ -193,7 +193,7 @@ export default function AvtalContent() {
                   <span className="font-heading font-800 text-[32px] tracking-tight text-heading">
                     {pkg.price}
                   </span>
-                  <span className="text-[14px] text-muted">kr/mån</span>
+                  <span className="text-[14px] text-muted">kr/mån ex moms</span>
                 </div>
 
                 <div className="mt-4 flex flex-col gap-3">
@@ -277,11 +277,11 @@ export default function AvtalContent() {
                 Konsulttimme
               </div>
               <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
-                850{" "}
+                900{" "}
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
               <div className="text-[13px] text-muted mt-1">
-                Vardagar 07:00–17:00
+                ex moms · Vardagar 07:00–17:00
               </div>
             </div>
             <div className="p-7 bg-surface rounded-[20px] border border-border text-center">
@@ -293,7 +293,7 @@ export default function AvtalContent() {
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
               <div className="text-[13px] text-muted mt-1">
-                Kritiska fel efter kl. 17:00
+                ex moms · Kritiska fel efter kl. 17:00
               </div>
             </div>
           </div>
