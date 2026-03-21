@@ -21,6 +21,13 @@ const company = [
   { label: "Integritetspolicy", href: "/integritet" },
 ];
 
+const hassleholm = [
+  { label: "Hemsida Hässleholm", href: "/hassleholm/hemsida" },
+  { label: "SEO Hässleholm", href: "/hassleholm/seo" },
+  { label: "Google Ads Hässleholm", href: "/hassleholm/google-ads" },
+  { label: "AI & Automation", href: "/hassleholm/ai-automation" },
+];
+
 export default function Footer() {
   return (
     <footer style={{ borderTop: "1px solid #E5E5E0" }}>
@@ -31,7 +38,7 @@ export default function Footer() {
           margin: "0 auto",
           padding: "48px 20px 40px",
           display: "grid",
-          gridTemplateColumns: "1.4fr 1fr 1fr",
+          gridTemplateColumns: "1.4fr 1fr 1fr 1fr",
           gap: 48,
         }}
         className="footer-grid"
@@ -164,6 +171,40 @@ export default function Footer() {
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {company.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{
+                  fontSize: 14,
+                  color: "#3B3F4A",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#3B3F4A")}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Col 4: Hässleholm */}
+        <div>
+          <p
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: "#9CA3AF",
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              marginBottom: 16,
+            }}
+          >
+            Hässleholm
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {hassleholm.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
