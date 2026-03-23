@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Förvaltningsavtal — Drift, Säkerhet & Utveckling",
-  description: "Förvaltningsavtal för SMH, KYH och Hermods.",
+  description: "Förvaltningsavtal — Drift, säkerhet och löpande utveckling av er e-handelsplattform.",
   robots: { index: false, follow: false },
 };
 

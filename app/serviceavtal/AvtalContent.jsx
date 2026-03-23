@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
 import { Check, Shield, Clock, Zap } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
 
@@ -108,12 +107,6 @@ export default function AvtalContent() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.14}>
-            <div className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/70 border border-border backdrop-blur-sm text-[14px] font-600">
-              <span className="text-muted">Kund:</span>
-              <span className="text-heading">SMH, KYH och Hermods</span>
-            </div>
-          </Reveal>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
@@ -314,7 +307,7 @@ export default function AvtalContent() {
                 Varför välja ett aktivt avtal?
               </h2>
               <p className="mt-4 text-[15px] sm:text-[16px] text-body leading-relaxed max-w-[560px] mx-auto">
-                Webbshoppar som SMH, KYH och Hermods kräver ständig tillsyn för
+                E-handelsplattformar kräver ständig tillsyn för
                 att inte tappa fart. Genom avsatta timmar säkerställer ni att
                 sajten inte bara överlever — utan faktiskt utvecklas i takt med
                 marknaden. Ni får en trygg partner som känner er kodbas och som
