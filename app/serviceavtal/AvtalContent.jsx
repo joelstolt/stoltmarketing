@@ -1,14 +1,7 @@
 "use client";
 
-import { Check, Shield, Clock, Zap } from "lucide-react";
+import { Check, Clock, Zap } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
-
-const baseFeatures = [
-  "Daglig backup av databas och filer",
-  "Proaktiv säkerhetsövervakning",
-  "Uptime monitoring med larm",
-  "Staging-miljö för säkra uppdateringar",
-];
 
 const packages = [
   {
@@ -19,11 +12,12 @@ const packages = [
     response: "2–14 dagar",
     maintenance: "Månadsvis genomgång",
     features: [
-      "WordPress & plugin-underhåll månadsvis",
+      "Daglig säkerhetskopiering av hela sajten",
+      "Testmiljö så uppdateringar kan testas innan de går live",
+      "Löpande underhåll och uppdateringar varje månad",
       "Support i mån av tid",
-      "Alla grundfunktioner inkluderade",
     ],
-    note: "Bricks Builder-licens (790 kr/år) faktureras separat.",
+    note: null,
     popular: false,
   },
   {
@@ -34,27 +28,33 @@ const packages = [
     response: "1–2 arbetsdagar",
     maintenance: "Veckovis genomgång",
     features: [
-      "10h dedikerad utvecklingstid",
+      "Daglig säkerhetskopiering av hela sajten",
+      "Testmiljö så uppdateringar kan testas innan de går live",
+      "Löpande säkerhetsbevakning",
+      "Övervakning dygnet runt - vi får larm direkt om sajten går ner",
+      "10 timmar dedikerad utvecklingstid",
       "Prioriterad support",
-      "Veckovis säkerhet & uppdateringar",
-      "Bricks Builder-licens ingår",
+      "Veckovis underhåll och uppdateringar",
     ],
     note: null,
-    popular: true,
+    popular: false,
   },
   {
     name: "Max",
     focus: "Strategisk tillväxt & högsta beredskap",
     price: "18 000",
     hours: "20 timmar/mån",
-    response: "Ofta samma dag",
-    maintenance: "Veckovis + proaktiv optimering",
+    response: "Samma dag",
+    maintenance: "Veckovis + löpande optimering",
     features: [
-      "20h dedikerad utvecklingstid",
+      "Daglig säkerhetskopiering av hela sajten",
+      "Testmiljö så uppdateringar kan testas innan de går live",
+      "Löpande säkerhetsbevakning",
+      "Övervakning dygnet runt - vi får larm direkt om sajten går ner",
+      "20 timmar dedikerad utvecklingstid",
       "Högsta prioritet på support",
-      "Veckovis genomgång + prestanda",
-      "Bricks Builder-licens ingår",
-      "Proaktiv konverteringsoptimering",
+      "Veckovis underhåll, uppdateringar och prestandakoll",
+      "Löpande förbättringar för att öka försäljning",
     ],
     note: null,
     popular: false,
@@ -62,9 +62,16 @@ const packages = [
 ];
 
 const hourUsage = [
-  "Utbyggnad av nya funktioner eller designjusteringar",
-  "Uppdatering av produkter, banners eller kampanjmaterial",
-  "Löpande hastighetsoptimering och konverteringsjusteringar",
+  "Nya sidor eller kampanjsidor",
+  "Designändringar och förbättringar av användarupplevelsen",
+  "Uppdatering av utbildningar, produkter och kampanjmaterial",
+  "Uppsättning av rabattkoder och automatiska mailutskick",
+  "Banners, pop-ups och säsongsanpassningar",
+  "Snabbare laddtider och bättre prestanda",
+  "Felsökning och buggfixar",
+  "Inläggning av utbildningar - skicka innehållet så ser vi till att allt publiceras korrekt",
+  "A/B-testning för att se vad som fungerar bäst",
+  "Uppföljning och mätning av besökare och försäljning",
 ];
 
 export default function AvtalContent() {
@@ -113,44 +120,6 @@ export default function AvtalContent() {
       </section>
 
       <div className="max-w-[880px] mx-auto px-5 sm:px-8">
-        {/* ═══ GRUNDLÄGGANDE STANDARD ═══ */}
-        <Reveal>
-          <section className="mt-8 p-7 sm:p-9 bg-surface rounded-[20px] border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-[12px] bg-primary/6 flex items-center justify-center">
-                <Shield size={20} className="text-primary" />
-              </div>
-              <div>
-                <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight">
-                  Grundläggande teknisk standard
-                </h2>
-                <p className="text-[13px] text-muted">Gäller samtliga nivåer</p>
-              </div>
-            </div>
-
-            <p className="text-[15px] text-body mb-5 max-w-[600px]">
-              För att er webbshop ska prestera optimalt dygnet runt ingår
-              följande i alla paket:
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-3">
-              {baseFeatures.map((f) => (
-                <div
-                  key={f}
-                  className="flex items-center gap-3 p-3.5 bg-surface-muted rounded-xl text-[14px] text-body"
-                >
-                  <Check
-                    size={16}
-                    className="text-primary flex-shrink-0"
-                    strokeWidth={2.5}
-                  />
-                  {f}
-                </div>
-              ))}
-            </div>
-          </section>
-        </Reveal>
-
         {/* ═══ PACKAGES ═══ */}
         <Reveal delay={0.06}>
           <h2 className="mt-14 font-heading font-800 text-[28px] text-heading tracking-[-0.02em] text-center">
@@ -161,35 +130,26 @@ export default function AvtalContent() {
           </p>
         </Reveal>
 
-        <div className="mt-8 grid md:grid-cols-3 gap-4">
+        <div className="mt-8 flex flex-col gap-6">
           {packages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={i * 0.06 + 0.1}>
-              <div
-                className={`relative h-full rounded-[20px] p-6 flex flex-col ${
-                  pkg.popular
-                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(29,78,216,0.08)]"
-                    : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]"
-                }`}
-              >
-                {pkg.popular && (
-                  <span className="absolute -top-3 left-6 text-[11px] font-700 text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider">
-                    Rekommenderad
-                  </span>
-                )}
-
-                <div className="text-[12px] font-600 text-primary uppercase tracking-wider">
-                  {pkg.name}
-                </div>
-                <div className="text-[12px] text-muted mt-1">{pkg.focus}</div>
-
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="font-heading font-800 text-[32px] tracking-tight text-heading">
-                    {pkg.price}
-                  </span>
-                  <span className="text-[14px] text-muted">kr/mån ex moms</span>
+              <div className="relative rounded-[20px] p-7 sm:p-9 bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                  <div>
+                    <div className="text-[12px] font-600 text-primary uppercase tracking-wider">
+                      {pkg.name}
+                    </div>
+                    <div className="text-[13px] text-muted mt-1">{pkg.focus}</div>
+                  </div>
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-heading font-800 text-[32px] tracking-tight text-heading">
+                      {pkg.price}
+                    </span>
+                    <span className="text-[14px] text-muted">kr/mån ex moms</span>
+                  </div>
                 </div>
 
-                <div className="mt-4 flex flex-col gap-3">
+                <div className="mt-5 flex flex-wrap gap-6">
                   <div className="flex items-center gap-2.5 text-[13px] text-body">
                     <Clock size={16} className="text-primary flex-shrink-0" />
                     <div>
@@ -206,8 +166,8 @@ export default function AvtalContent() {
                   </div>
                 </div>
 
-                <div className="mt-5 pt-4 border-t border-border-light flex-1">
-                  <div className="flex flex-col gap-2.5">
+                <div className="mt-5 pt-5 border-t border-border-light">
+                  <div className="grid sm:grid-cols-2 gap-2.5">
                     {pkg.features.map((f) => (
                       <div
                         key={f}
@@ -292,6 +252,33 @@ export default function AvtalContent() {
           </div>
         </Reveal>
 
+        {/* ═══ BRA ATT VETA ═══ */}
+        <Reveal>
+          <section className="mt-12 p-7 sm:p-9 bg-surface rounded-[20px] border border-border">
+            <h2 className="font-heading font-700 text-[20px] text-heading mb-5 tracking-tight">
+              Bra att veta
+            </h2>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-start gap-3 text-[14px] text-body">
+                <Check size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                <span><strong>Ingen bindningstid.</strong> En månads uppsägningstid.</span>
+              </div>
+              <div className="flex items-start gap-3 text-[14px] text-body">
+                <Check size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                <span>Tid utöver det löpande underhållet läggs på att förbättra och optimera sajten.</span>
+              </div>
+              <div className="flex items-start gap-3 text-[14px] text-body">
+                <Check size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                <span>Alla kostnader för webbhotell, domän, SSL-certifikat och övrig infrastruktur ingår.</span>
+              </div>
+              <div className="flex items-start gap-3 text-[14px] text-body">
+                <Check size={16} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                <span>Kontakt via Teams och telefon.</span>
+              </div>
+            </div>
+          </section>
+        </Reveal>
+
         {/* ═══ VARFÖR ═══ */}
         <Reveal>
           <section className="relative mt-12 mb-16 p-10 rounded-[20px] overflow-hidden text-center">
@@ -309,7 +296,7 @@ export default function AvtalContent() {
               <p className="mt-4 text-[15px] sm:text-[16px] text-body leading-relaxed max-w-[560px] mx-auto">
                 E-handelsplattformar kräver ständig tillsyn för
                 att inte tappa fart. Genom avsatta timmar säkerställer ni att
-                sajten inte bara överlever — utan faktiskt utvecklas i takt med
+                sajten inte bara överlever - utan faktiskt utvecklas i takt med
                 marknaden. Ni får en trygg partner som känner er kodbas och som
                 kan agera snabbt när möjligheter dyker upp.
               </p>
