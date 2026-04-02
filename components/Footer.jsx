@@ -245,9 +245,21 @@ export default function Footer() {
           <span style={{ fontSize: 13, color: "#9CA3AF" }}>
             © {new Date().getFullYear()} Stolt Marketing. Alla rättigheter förbehållna.
           </span>
-          <span style={{ fontSize: 13, color: "#9CA3AF" }}>
-            Svar inom 24h på vardagar
-          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <a
+              href="https://kvota.se"
+              target="_blank"
+              rel="noopener"
+              style={{ fontSize: 13, color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#9CA3AF")}
+            >
+              Kvota.se
+            </a>
+            <span style={{ fontSize: 13, color: "#9CA3AF" }}>
+              Svar inom 24h på vardagar
+            </span>
+          </div>
         </div>
       </div>
 
