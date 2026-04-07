@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>SEO Strategy Report — tornhusetumea.se</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: rgba(255,255,255,0.03);
+    --bg-card-hover: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.08);
+    --border-hover: rgba(255,255,255,0.15);
+    --text: #e8e8ed;
+    --text-secondary: #8b8b9e;
+    --text-muted: #5a5a6e;
+    --accent: #6366f1;
+    --accent-glow: rgba(99,102,241,0.3);
+    --green: #22c55e;
+    --green-bg: rgba(34,197,94,0.12);
+    --green-border: rgba(34,197,94,0.25);
+    --yellow: #eab308;
+    --yellow-bg: rgba(234,179,8,0.12);
+    --yellow-border: rgba(234,179,8,0.25);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.12);
+    --red-border: rgba(239,68,68,0.25);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59,130,246,0.12);
+    --orange: #f97316;
+    --orange-bg: rgba(249,115,22,0.12);
+    --orange-border: rgba(249,115,22,0.25);
+    --purple: #a78bfa;
+    --purple-bg: rgba(167,139,250,0.08);
+    --purple-border: rgba(167,139,250,0.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+  }
+
+  ::selection { background: var(--accent); color: white; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(59,130,246,0.03) 0%, transparent 50%);
+    z-index: -1;
+    animation: ambientDrift 20s ease-in-out infinite;
+  }
+  @keyframes ambientDrift {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-2%, 1%); }
+    66% { transform: translate(1%, -1%); }
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header {
+    padding: 40px 0 0;
+    text-align: center;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+  .header-badge .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 8px var(--red);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, #a5a5c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header .subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+  }
+
+  .score-section {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 40px;
+    padding: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(20px);
+  }
+  .score-circle-wrap { position: relative; flex-shrink: 0; }
+  .score-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+  .score-circle svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .score-circle svg circle {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+  }
+  .score-circle svg .bg-ring { stroke: rgba(255,255,255,0.06); }
+  .score-circle svg .progress-ring {
+    stroke: var(--red);
+    stroke-dasharray: 502;
+    stroke-dashoffset: 311;
+    filter: drop-shadow(0 0 6px rgba(239,68,68,0.3));
+    transition: stroke-dashoffset 1.5s ease-out;
+  }
+  .score-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  .score-grade {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    margin-top: 2px;
+  }
+  .score-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    margin-top: 4px;
+  }
+  .score-details { flex: 1; }
+  .score-details h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .score-details p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .sub-scores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+  }
+  .sub-score {
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .sub-score-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .sub-score-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .sub-score-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.06);
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .sub-score-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease-out;
+  }
+
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .tabs-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs-inner::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    padding: 16px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .tab-btn:hover { color: var(--text-secondary); }
+  .tab-btn.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+  .tab-btn .tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    color: var(--text-secondary);
+  }
+  .tab-btn.active .tab-count {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .tab-content { display: none; padding: 40px 0 80px; }
+  .tab-content.active { display: block; }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .stat-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+  .stat-card:hover { border-color: var(--border-hover); }
+  .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--border-hover); }
+  .card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .badge-critical { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .badge-high { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
+  .badge-medium { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-low { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-warning { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-fail { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+  .finding {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+  .finding:last-child { border-bottom: none; }
+  .finding-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+  .finding-status.pass { background: var(--green); box-shadow: 0 0 6px rgba(34,197,94,0.4); }
+  .finding-status.warning { background: var(--yellow); box-shadow: 0 0 6px rgba(234,179,8,0.4); }
+  .finding-status.fail { background: var(--red); box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+  .finding-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .finding-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .finding-rec {
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: rgba(99,102,241,0.06);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .collapsible {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .collapsible:hover { border-color: var(--border-hover); }
+  .collapsible-header {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .collapsible-header:hover { background: rgba(255,255,255,0.02); }
+  .collapsible-title {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .collapsible-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+  .collapsible.open .collapsible-body {
+    max-height: 5000px;
+  }
+  .collapsible-body-inner {
+    padding: 0 24px 24px;
+  }
+  .collapse-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: transform 0.3s, background 0.2s;
+    flex-shrink: 0;
+  }
+  .collapsible.open .collapse-icon { transform: rotate(180deg); }
+
+  .page-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  .page-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+  .page-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    vertical-align: top;
+  }
+  .page-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .page-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    word-break: break-all;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .checklist-item:last-child { border-bottom: none; }
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+  .check-icon.pass {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-border);
+  }
+  .check-icon.fail {
+    background: var(--red-bg);
+    color: var(--red);
+    border: 1px solid var(--red-border);
+  }
+  .check-icon.warn {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+    border: 1px solid var(--yellow-border);
+  }
+  .check-text {
+    font-size: 14px;
+    color: var(--text);
+  }
+  .check-text.muted {
+    color: var(--text-secondary);
+  }
+
+  .action-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .action-item:hover { border-color: var(--border-hover); }
+  .action-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+    opacity: 0.5;
+  }
+  .action-content { flex: 1; }
+  .action-title {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .action-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .action-impact {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .cluster {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .cluster-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--purple);
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .cluster-pages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cluster-page {
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: var(--purple-bg);
+    border: 1px solid var(--purple-border);
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-secondary);
+  }
+  .cluster-page.pillar {
+    background: rgba(167,139,250,0.15);
+    border-color: rgba(167,139,250,0.3);
+    color: var(--purple);
+    font-weight: 600;
+  }
+
+  .note-box {
+    padding: 16px 20px;
+    background: rgba(234,179,8,0.06);
+    border: 1px solid var(--yellow-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size: 28px; }
+    .score-section { flex-direction: column; text-align: center; padding: 24px; gap: 24px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .sub-scores { grid-template-columns: repeat(2, 1fr); }
+    .action-item { flex-direction: column; gap: 12px; }
+  }
+
+  @media print {
+    .tabs { display: none; }
+    .tab-content { display: block !important; page-break-before: always; }
+    body::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <div class="header-badge"><span class="dot"></span> Site-Wide SEO Audit</div>
+    <h1>tornhusetumea.se</h1>
+    <p class="subtitle">Comprehensive analysis of 14 pages — Generated April 7, 2026</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top: 0; padding-bottom: 32px;">
+  <div class="note-box">
+    ⚠️ <strong>Observation:</strong> Sajtens robots.txt kunde inte hämtas (timeout). Detta innebär att sökmotorer kan ha svårt att crawla sajten korrekt, och att denna audit är baserad på data från sökindex snarare än direkt HTML-analys. Begränsningen påverkar inte rapportens slutsatser men betyder att vi inte kunde verifiera alla tekniska detaljer som schema markup, OG-taggar eller bildattribut direkt i källkoden.
+  </div>
+
+  <div class="score-section">
+    <div class="score-circle-wrap">
+      <div class="score-circle">
+        <svg viewBox="0 0 160 160">
+          <circle class="bg-ring" cx="80" cy="80" r="74"/>
+          <circle class="progress-ring" cx="80" cy="80" r="74"/>
+        </svg>
+        <span class="score-number">38</span>
+        <span class="score-grade">F</span>
+        <span class="score-label">Overall Health</span>
+      </div>
+    </div>
+    <div class="score-details">
+      <h2>Kritiska SEO-brister som kräver omedelbar åtgärd</h2>
+      <p>tornhusetumea.se har en vacker restaurangupplevelse men sajten har allvarliga SEO-problem. Robots.txt fungerar inte, majoriteten av sidorna saknar optimerade title tags och meta descriptions, det finns irrelevanta/gamla sidor indexerade (Nectar Townhomes, Startsida-arkiv, "old"-sidor), och ingen synlig strukturerad data. Den mest SEO-optimerade sidan är brunchsidan (/lordags-brunch-i-umea/) som visar hur alla sidor borde se ut.</p>
+      <div class="sub-scores">
+        <div class="sub-score">
+          <div class="sub-score-label">Technical</div>
+          <div class="sub-score-value" style="color: var(--red)">35</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:35%; background: var(--red)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Content</div>
+          <div class="sub-score-value" style="color: var(--orange)">50</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:50%; background: var(--orange)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Architecture</div>
+          <div class="sub-score-value" style="color: var(--red)">38</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:38%; background: var(--red)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Cross-Page</div>
+          <div class="sub-score-value" style="color: var(--orange)">42</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:42%; background: var(--orange)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Social & Schema</div>
+          <div class="sub-score-value" style="color: var(--red)">15</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:15%; background: var(--red)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('pages')">Page-by-Page <span class="tab-count">14</span></button>
+    <button class="tab-btn" onclick="switchTab('sitewide')">Site-Wide Issues <span class="tab-count">12</span></button>
+    <button class="tab-btn" onclick="switchTab('technical')">Technical</button>
+    <button class="tab-btn" onclick="switchTab('content')">Content Strategy</button>
+    <button class="tab-btn" onclick="switchTab('linking')">Internal Linking</button>
+    <button class="tab-btn" onclick="switchTab('actions')">Action Plan</button>
+  </div>
+</div>
+
+<!-- ==================== TAB 1: OVERVIEW ==================== -->
+<div id="tab-overview" class="tab-content active">
+<div class="container">
+
+  <div class="section-title">Executive Summary</div>
+  <div class="section-subtitle">Övergripande SEO-hälsa och topp-prioriteringar för tornhusetumea.se</div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">14</div>
+      <div class="stat-label">Sidor indexerade</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--red)">5</div>
+      <div class="stat-label">Kritiska issues</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--orange)">7</div>
+      <div class="stat-label">Höga prioritet</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--yellow)">9</div>
+      <div class="stat-label">Varningar</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">~200</div>
+      <div class="stat-label">Snitt ordantal</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">0%</div>
+      <div class="stat-label">Schema-täckning</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom: 24px;">
+    <div class="card-title" style="margin-bottom: 16px;">Nyckel-fynd</div>
+    <div style="color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
+      Tornhusets sajt har 14 indexerade sidor, varav minst 3 inte borde finnas i Googles index alls (/portfolio/nectar-townhomes/, /sidplacering/startsida/, /brod-och-vin-old/). Startsidans title tag är "Tornhuset - Tornhuset" — dubbelt varumärke utan en enda sökbar keyword. Bara 1 av 14 sidor (brunchsidan) har en ordentligt SEO-optimerad title tag med plats, tjänst och varumärke. robots.txt kan inte nås (timeout), vilket gör att sökmotorer riskerar att antingen crawla allt okontrollerat eller ge upp helt. Ingen strukturerad data (JSON-LD) upptäcktes, vilket innebär att restaurangen inte kan visas med öppettider, meny eller betyg i Googles rich results. Sajten har starkt innehåll på vissa sidor (Ateljé Vita Duken, Om oss, Brunch) men detta undergrävs av avsaknad av teknisk SEO-infrastruktur.
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Topp 3 Prioriteringar</div>
+  <div class="section-subtitle">De mest kritiska åtgärderna att ta tag i direkt</div>
+
+  <div class="action-item">
+    <div class="action-number">1</div>
+    <div class="action-content">
+      <div class="action-title">Fixa robots.txt och lägg till sitemap.xml</div>
+      <div class="action-desc">robots.txt ger timeout. Skapa en korrekt robots.txt som tillåter crawling och pekar på en sitemap.xml. Skapa en komplett sitemap.xml med alla relevanta sidor (exklusive skräp-sidor). Utan detta kan Google inte crawla sajten effektivt.</div>
+      <div class="action-impact">Förväntad effekt: Grundläggande förutsättning för att överhuvudtaget kunna ranka</div>
+    </div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">2</div>
+    <div class="action-content">
+      <div class="action-title">Skriv unika, keyword-optimerade title tags och meta descriptions för alla sidor</div>
+      <div class="action-desc">Nuvarande titlar som "Tornhuset - Tornhuset", "Mat - Tornhuset", "Kontakt - Tornhuset" missar helt sökintent. Varje sida behöver en unik title tag med relevant sökord + plats: t.ex. "Restaurang i Umeå | Bröd & Vin, På Taket, Ateljé Vita Duken – Tornhuset", "Lunch i Umeå – Bröd & Vin på Tornhuset | Från 149 kr". Lägg till meta descriptions på 150-160 tecken.</div>
+      <div class="action-impact">Förväntad effekt: Direkt ökad CTR i sökresultaten och bättre ranking för lokala sökord</div>
+    </div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">3</div>
+    <div class="action-content">
+      <div class="action-title">Ta bort eller noindex:a irrelevanta sidor och lägg till Restaurant-schema</div>
+      <div class="action-desc">Sätt noindex på /portfolio/nectar-townhomes/, /sidplacering/startsida/ och /brod-och-vin-old/. Lägg till JSON-LD Restaurant-schema på startsidan med namn, adress, öppettider, meny-URL och telefonnummer. Lägg till LocalBusiness-schema på kontaktsidan.</div>
+      <div class="action-impact">Förväntad effekt: Renare index, rich results i Google med öppettider och stjärnbetyg</div>
+    </div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 2: PAGE-BY-PAGE ==================== -->
+<div id="tab-pages" class="tab-content">
+<div class="container">
+
+  <div class="section-title">Sida-för-sida-analys</div>
+  <div class="section-subtitle">Individuella audit-resultat för varje indexerad sida</div>
+
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Sida</th>
+          <th>Title tag</th>
+          <th>Ord</th>
+          <th>H1</th>
+          <th>Meta Desc</th>
+          <th>Schema</th>
+          <th>Issues</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-url">/</span></td>
+          <td>Tornhuset - Tornhuset</td>
+          <td>~350</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/brod-och-vin-old/</span></td>
+          <td>Bröd & Vin old - Tornhuset</td>
+          <td>~300</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/pa-taket/</span></td>
+          <td>På taket - Tornhuset</td>
+          <td>~100</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/mat/</span></td>
+          <td>Mat - Tornhuset</td>
+          <td>~250</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/nyheter/</span></td>
+          <td>Nyheter - Tornhuset</td>
+          <td>~50</td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/kontakt/</span></td>
+          <td>Kontakt - Tornhuset</td>
+          <td>~80</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/pa-taket/stora-sallskap/</span></td>
+          <td>Stora sällskap - Tornhuset</td>
+          <td>~60</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/om-oss-upplevelse/</span></td>
+          <td>Om oss/Upplevelse - Tornhuset</td>
+          <td>~400</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/atelje-vita-duken/</span></td>
+          <td>Ateljé Vita duken - Tornhuset</td>
+          <td>~500</td>
+          <td><span class="badge badge-pass">Pass</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/boka-bord/</span></td>
+          <td>Boka bord - Tornhuset</td>
+          <td>~30</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lunch-i-umea/</span></td>
+          <td>Lunch - Tornhuset</td>
+          <td>~60</td>
+          <td><span class="badge badge-warning">Warn</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lordags-brunch-i-umea/</span></td>
+          <td>Brunch i Umeå – Lördagsbrunch på Tornhuset 11:30–13:30</td>
+          <td>~400</td>
+          <td><span class="badge badge-pass">Pass</span></td>
+          <td><span class="badge badge-pass">Pass</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>1</td>
+        </tr>
+        <tr style="background: rgba(239,68,68,0.04);">
+          <td><span class="page-url">/sidplacering/startsida/</span></td>
+          <td>Startsida-arkiv - Tornhuset</td>
+          <td>~20</td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>6</td>
+        </tr>
+        <tr style="background: rgba(239,68,68,0.04);">
+          <td><span class="page-url">/portfolio/nectar-townhomes/</span></td>
+          <td>Nectar Townhomes - Tornhuset</td>
+          <td>~10</td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td><span class="badge badge-fail">Fail</span></td>
+          <td>7</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Detailed collapsibles -->
+  <div style="margin-top: 24px;">
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/</span>
+        <span class="badge badge-critical">5 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Title tag: "Tornhuset - Tornhuset" — dubbelt varumärke, inga keywords</h4>
+            <p>Startsidans title tag upprepar varumärket och saknar helt sökbara keywords som "restaurang", "Umeå", "lunch" eller "middag".</p>
+            <div class="finding-rec">Ändra till: "Restaurang i Umeå | Bröd & Vin, På Taket & Ateljé Vita Duken – Tornhuset" (under 60 tecken: "Restaurang Umeå – Tornhuset | Tre restauranger under ett tak")</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+            <p>Google genererar snippet automatiskt från sidinnehållet, vilket ger ett rörigt utdrag om lunch, presentkort och kontakt blandat.</p>
+            <div class="finding-rec">Lägg till: "Tre restauranger under ett tak i centrala Umeå. Bröd & Vin, På Taket och Ateljé Vita Duken – lunch, middag, brunch och events vid Umeälven. Boka bord idag."</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen strukturerad data (JSON-LD)</h4>
+            <p>Utan Restaurant-schema kan Google inte visa öppettider, adress, prisklass eller stjärnbetyg i sökresultaten.</p>
+            <div class="finding-rec">Lägg till JSON-LD med @type: "Restaurant", inkludera name, address, telephone, openingHours, servesCuisine, menu, priceRange.</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Startsidan blandar för många ämnen</h4>
+            <p>Sidan kombinerar lunch, presentkort, nyheter och kontaktinfo. Google har svårt att avgöra vad sidan egentligen handlar om.</p>
+            <div class="finding-rec">Behåll fokus på restaurangkonceptet med tydliga CTAs till undersidor. Varje sektion ska leda till en egen sida med mer innehåll.</div>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Saknar keyword "Umeå" och "restaurang" i de första 100 orden</h4>
+            <p>Sökmotorer lägger extra vikt vid ord i början av sidan. Platsnamn och tjänstbeskrivning bör finnas tidigt.</p>
+            <div class="finding-rec">Skriv om inledningen så att "restaurang i Umeå" eller "Umeås restauranghus" framgår tydligt i första meningen.</div>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/brod-och-vin-old/</span>
+        <span class="badge badge-critical">6 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>"old" i URL och title — gammal/duplicerad sida indexerad</h4>
+            <p>Sidan heter "Bröd & Vin old" och har URLen /brod-och-vin-old/. Denna sida verkar vara en kvarglömd äldre version som fortfarande indexeras av Google. Detta skapar förvirring och kannibaliserar keywords med den riktiga Bröd & Vin-sidan.</p>
+            <div class="finding-rec">Antingen: 1) Sätt noindex, nofollow och 301-redirect till korrekt Bröd & Vin-sida. 2) Eller ta bort sidan helt och lägg en redirect. Allra bäst: se till att den korrekta Bröd & Vin-sidan finns på /brod-och-vin/.</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Keyword-kannibalisering</h4>
+            <p>Denna sida tävlar med startsidan och eventuella andra Bröd & Vin-sidor om samma keywords. Google vet inte vilken sida som ska ranka.</p>
+            <div class="finding-rec">Konsolidera allt Bröd & Vin-innehåll till en enda kanonisk sida.</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+            <p>Saknar meta description helt.</p>
+            <div class="finding-rec">Om sidan ska finnas kvar: Lägg till meta description med keywords "restaurang Umeå", "Bröd & Vin", "middag", "sydeuropeisk mat".</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen strukturerad data</h4>
+            <p>Saknar JSON-LD Restaurant-schema.</p>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Generisk title tag</h4>
+            <p>"Bröd & Vin old - Tornhuset" saknar platsinformation och sökbara keywords.</p>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Bra innehåll men fel plats</h4>
+            <p>Sidan har bra beskrivande text om restaurangkonceptet, men den ska finnas på rätt URL, inte en "old"-sida.</p>
+          </div>
+          <span class="badge badge-low">Low</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/pa-taket/</span>
+        <span class="badge badge-high">5 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Tunn content (~100 ord)</h4>
+            <p>Sidan har väldigt lite innehåll. Google värderar sidor med substantiellt, unikt innehåll högre.</p>
+            <div class="finding-rec">Utöka med beskrivning av takterrassen, vilken typ av mat/event som erbjuds, kapacitet, foton, och bokningsinformation. Sikta på minst 300 ord.</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Generisk title: "På taket - Tornhuset"</h4>
+            <p>Bör inkludera plats och vad det är.</p>
+            <div class="finding-rec">Ändra till: "På Taket – Takterrass & Eventlokal i Umeå | Tornhuset"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+            <div class="finding-rec">Lägg till: "Tornhusets takterrass i centrala Umeå. Perfekt för event, grillkvällar och sällskap upp till 40 personer med utsikt över Umeälven."</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen strukturerad data</h4>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>E-post i versaler: "Hanna@Tornhusetumea.se"</h4>
+            <p>Inkonsekvent formatering av e-post jämfört med resten av sajten (info@tornhusetumea.se). Ser oprofessionellt ut.</p>
+          </div>
+          <span class="badge badge-low">Low</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/lordags-brunch-i-umea/</span>
+        <span class="badge badge-pass">1 issue</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status pass"></div>
+          <div class="finding-content">
+            <h4>⭐ Bästa SEO-sidan — modell för resten av sajten</h4>
+            <p>Title: "Brunch i Umeå – Lördagsbrunch på Tornhuset 11:30–13:30" — inkluderar sökord, plats, varumärke och specifik info. Meta description finns. Bra URL-slug med keyword. ~400 ord med relevant innehåll. Denna sida visar vad som är möjligt när SEO görs rätt.</p>
+          </div>
+          <span class="badge badge-pass">Pass</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Saknar JSON-LD Event/FoodEstablishment-schema</h4>
+            <div class="finding-rec">Lägg till schema med typ, tider, pris, plats.</div>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/portfolio/nectar-townhomes/</span>
+        <span class="badge badge-critical">7 issues — SKRÄP-SIDA</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Helt irrelevant sida — "Nectar Townhomes"</h4>
+            <p>Denna sida har inget med Tornhuset eller restaurangverksamheten att göra. Det är antagligen en kvarglömd demo-sida från WordPress-temat. Den indexeras av Google och skadar sajtens topical authority.</p>
+            <div class="finding-rec">Ta bort sidan eller sätt noindex, nofollow omedelbart. Helst 410 Gone eller redirect till startsidan.</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/sidplacering/startsida/</span>
+        <span class="badge badge-critical">6 issues — SKRÄP-SIDA</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>WordPress-arkivsida indexerad — "Startsida-arkiv"</h4>
+            <p>En intern WordPress-taxonomisida som inte borde visas för sökmotorer. URL-strukturen /sidplacering/startsida/ avslöjar CMS-arkitektur och tillför inget värde.</p>
+            <div class="finding-rec">Sätt noindex eller blockera hela /sidplacering/-sökvägen i robots.txt.</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/atelje-vita-duken/</span>
+        <span class="badge badge-high">3 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Generisk title: "Ateljé Vita duken - Tornhuset"</h4>
+            <div class="finding-rec">Ändra till: "Ateljé Vita Duken – Fine Dining i Umeå | Mathias Dahlgren × Tornhuset"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+            <div class="finding-rec">Lägg till: "Modern skandinavisk gastronomi i hjärtat av Umeå. Ateljé Vita Duken serverar en unik matupplevelse tis–fre från 18:00. Boka bord."</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status pass"></div>
+          <div class="finding-content">
+            <h4>Starkt innehåll (~500 ord)</h4>
+            <p>Sidan har bra, beskrivande text om konceptet, filosofin och praktisk info. Bra grund att bygga vidare på med strukturerad data och optimerade meta-taggar.</p>
+          </div>
+          <span class="badge badge-pass">Pass</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/om-oss-upplevelse/</span>
+        <span class="badge badge-high">3 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Title: "Om oss/Upplevelse - Tornhuset" — slash i titeln</h4>
+            <p>Snedstreck i titeln ser oprofessionellt ut och gör det oklart vad sidan handlar om.</p>
+            <div class="finding-rec">Ändra till: "Om Tornhuset – Restaurangupplevelse vid Umeälven" eller "Tornhuset Umeå – Tre restauranger, en destination"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status pass"></div>
+          <div class="finding-content">
+            <h4>Bra innehåll med storytelling och kockprofiler</h4>
+            <p>Nämner Per "Perka" Söderberg och Mathias Dahlgren. Bra E-E-A-T-signaler som bör framhävas mer.</p>
+          </div>
+          <span class="badge badge-pass">Pass</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/kontakt/</span>
+        <span class="badge badge-high">4 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Title: "Kontakt - Tornhuset" — generisk</h4>
+            <div class="finding-rec">Ändra till: "Kontakta Tornhuset Umeå – Boka bord, frågor & events"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Saknar LocalBusiness JSON-LD</h4>
+            <p>Kontaktsidan är perfekt för strukturerad data med adress, telefonnummer, öppettider.</p>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Tunn content (~80 ord)</h4>
+            <div class="finding-rec">Lägg till vägbeskrivning, karta, parkeringsinfo, kollektivtrafik-info.</div>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/mat/</span>
+        <span class="badge badge-high">4 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Title: "Mat - Tornhuset" — extremt generisk</h4>
+            <div class="finding-rec">Ändra till: "Meny & Mat på Tornhuset Umeå – Lunch, Middag & Tapas"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Saknar Menu-schema (JSON-LD)</h4>
+            <div class="finding-rec">Lägg till JSON-LD med @type "Menu" och eventuellt MenuSection/MenuItem för att synas i Googles menyresultat.</div>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Kannibaliserar med /lunch-i-umea/ — båda handlar om mat</h4>
+            <div class="finding-rec">Differentiera tydligt: /mat/ = menyn/middag, /lunch-i-umea/ = specifikt lunchkonceptet.</div>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/lunch-i-umea/</span>
+        <span class="badge badge-high">4 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Bra URL-slug men title missar: "Lunch - Tornhuset"</h4>
+            <p>URL:en /lunch-i-umea/ är utmärkt för SEO, men titeln saknar "Umeå" och kontextuella keywords.</p>
+            <div class="finding-rec">Ändra till: "Lunch i Umeå – Tornhuset Bröd & Vin | Daglig lunch vid älven"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Tunn content (~60 ord)</h4>
+            <div class="finding-rec">Lägg till: veckans meny-info, priser, allergier, tidpunkter, vad som ingår. Sikta på 300+ ord.</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Saknar JSON-LD</h4>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/boka-bord/</span>
+        <span class="badge badge-high">5 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Extremt tunn sida (~30 ord)</h4>
+            <p>Bokningssidan verkar bara innehålla en bokningswidget utan stödjande text.</p>
+            <div class="finding-rec">Lägg till bokningsinstruktioner, avbokningspolicy, info om vilka restauranger man kan boka, öppettider. Minst 200 ord.</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Title: "Boka bord - Tornhuset" — generisk</h4>
+            <div class="finding-rec">Ändra till: "Boka bord på Tornhuset Umeå – Bröd & Vin, Ateljé Vita Duken"</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Ingen meta description</h4>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Saknar JSON-LD</h4>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status warning"></div>
+          <div class="finding-content">
+            <h4>Viktig transaktionssida som underskattas</h4>
+            <p>Folk som söker "boka bord Umeå" har hög köpintent. Denna sida borde vara optimerad för detta.</p>
+          </div>
+          <span class="badge badge-medium">Medium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 3: SITE-WIDE ISSUES ==================== -->
+<div id="tab-sitewide" class="tab-content">
+<div class="container">
+
+  <div class="section-title">Sajt-övergripande problem</div>
+  <div class="section-subtitle">Problem som påverkar flera sidor</div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 16px;">Duplicerat innehåll & kannibalisering</div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>"Bröd & Vin old" kannibaliserar med startsidan</h4>
+        <p>/brod-och-vin-old/ och startsidan konkurrerar om samma keywords: "Bröd & Vin", "restaurang Umeå", "sydeuropeisk mat". Google vet inte vilken sida som ska ranka.</p>
+        <div class="finding-rec">301-redirect /brod-och-vin-old/ till en korrekt /brod-och-vin/ sida eller till startsidan.</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status warning"></div>
+      <div class="finding-content">
+        <h4">/mat/ och /lunch-i-umea/ överlappar</h4>
+        <p>Båda sidorna handlar om mat/lunch. Sökmotorer kan ha svårt att avgöra vilken som ska ranka för "lunch Umeå"-sökningar.</p>
+        <div class="finding-rec">Differentierat tydligt: /mat/ = meny/middag, /lunch-i-umea/ = lunch specifikt. Se till att titlar, H1 och innehåll tydligt skiljer sig.</div>
+      </div>
+      <span class="badge badge-medium">Medium</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>3 irrelevanta sidor indexerade</h4>
+        <p>/portfolio/nectar-townhomes/ (tema-demo), /sidplacering/startsida/ (WordPress-arkiv), och /brod-och-vin-old/ (gammal version) — alla skadar sajtens topical authority.</p>
+        <div class="finding-rec">noindex eller ta bort alla tre. Blockera /portfolio/ och /sidplacering/ i robots.txt.</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 16px;">Konsistens-problem</div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>13 av 14 sidor saknar meta description</h4>
+        <p>Bara brunchsidan har en meta description. Alla andra sidor saknar denna grundläggande SEO-komponent.</p>
+        <div class="finding-rec">Skriv unika meta descriptions (150-160 tecken) för alla sidor. Inkludera target keyword och en CTA.</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status warning"></div>
+      <div class="finding-content">
+        <h4>Inkonsekvent title tag-format</h4>
+        <p>De flesta titlar följer "Namn - Tornhuset" men brunchsidan har ett helt annat (och bättre) format. Startsidan upprepar "Tornhuset - Tornhuset".</p>
+        <div class="finding-rec">Standardisera: "[Sidbeskrivning med keyword] – Tornhuset Umeå" eller "[Keyword] i Umeå | Tornhuset".</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status warning"></div>
+      <div class="finding-content">
+        <h4>Inkonsekvent copyright-år</h4>
+        <p>Vissa sidor visar "© 2025 Tornhuset" och andra "© 2026 Tornhuset". Indikerar att inte alla sidor uppdaterats.</p>
+      </div>
+      <span class="badge badge-low">Low</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status warning"></div>
+      <div class="finding-content">
+        <h4>Inkonsekvent e-postformatering</h4>
+        <p>info@tornhusetumea.se, Hanna@Tornhusetumea.se, sara@tornhusetumea.se — blandning av versaler och gemener.</p>
+      </div>
+      <span class="badge badge-low">Low</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 16px;">Robots.txt & Sitemap</div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>robots.txt ger timeout — otillgänglig</h4>
+        <p>robots.txt kunde inte hämtas. Detta betyder att sökmotorer inte kan verifiera crawl-regler. Det kan leda till att Google antingen crawlar allt (inkl. skräp-sidor) eller ger upp och minskar crawl-budgeten.</p>
+        <div class="finding-rec">Skapa en korrekt robots.txt:<br>
+User-agent: *<br>
+Allow: /<br>
+Disallow: /sidplacering/<br>
+Disallow: /portfolio/<br>
+Disallow: /wp-admin/<br>
+Sitemap: https://www.tornhusetumea.se/sitemap.xml</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>Ingen sitemap.xml hittad</h4>
+        <p>Ingen sitemap kunde verifieras. Utan sitemap har Google svårare att hitta och prioritera sidor.</p>
+        <div class="finding-rec">Skapa sitemap.xml med alla legitima sidor (10-11 sidor). Exkludera skräp-sidor. Skicka in via Google Search Console.</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 16px;">Säkerhet & Serverheaders</div>
+    <div class="finding">
+      <div class="finding-status pass"></div>
+      <div class="finding-content">
+        <h4>HTTPS aktivt</h4>
+        <p>Sajten serveras korrekt via HTTPS.</p>
+      </div>
+      <span class="badge badge-pass">Pass</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status warning"></div>
+      <div class="finding-content">
+        <h4>Serverns svarstid — timeout på robots.txt</h4>
+        <p>Timeout vid hämtning av robots.txt indikerar potentiella server-prestandaproblem som kan påverka crawling och användarvänlighet.</p>
+        <div class="finding-rec">Kontrollera hostingens prestanda. Säkerställ att statiska filer som robots.txt serveras snabbt (under 200ms).</div>
+      </div>
+      <span class="badge badge-medium">Medium</span>
+    </div>
+    <div class="finding">
+      <div class="finding-status warning"></div>
+      <div class="finding-content">
+        <h4>Säkerheters-headers ej verifierbara</h4>
+        <p>Kunde inte hämta headers pga timeout, men WordPress-sajter saknar ofta HSTS, CSP, X-Content-Type-Options.</p>
+        <div class="finding-rec">Lägg till säkerhetsheaders via WordPress-plugin (Headers Security Advanced & HSTS WP) eller .htaccess.</div>
+      </div>
+      <span class="badge badge-medium">Medium</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 4: TECHNICAL ==================== -->
+<div id="tab-technical" class="tab-content">
+<div class="container">
+
+  <div class="section-title">Teknisk SEO</div>
+  <div class="section-subtitle">Infrastruktur, prestanda och teknisk implementation</div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 20px;">Implementation Checklist</div>
+    <div class="checklist-item">
+      <div class="check-icon pass">&#10003;</div>
+      <div class="check-text">HTTPS aktivt på alla sidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">robots.txt — otillgänglig (timeout)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">sitemap.xml — inte hittad</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">JSON-LD strukturerad data — saknas på alla sidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">Meta descriptions — saknas på 13 av 14 sidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon warn">!</div>
+      <div class="check-text">Viewport meta — troligen ok (WordPress-standard)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">Open Graph-taggar — ej verifierat, troligen saknas</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">Twitter Card-taggar — ej verifierat, troligen saknas</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">Canonical tags — ej verifierat</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon warn">!</div>
+      <div class="check-text">Bildoptimering — ej verifierat (lunchmeny serveras som PDF istället för HTML)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text muted">Säkerhetsheaders (HSTS, CSP) — ej verifierat, troligen saknas</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Schema Markup-strategi</div>
+  <div class="section-subtitle">Rekommenderade schema-typer per sida</div>
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Sida</th>
+          <th>Nuvarande schema</th>
+          <th>Rekommenderat</th>
+          <th>Prioritet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-url">/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>Restaurant, Organization, WebSite</td>
+          <td><span class="badge badge-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/atelje-vita-duken/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>Restaurant (fine dining), hasMenu</td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/boka-bord/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>ReserveAction</td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/kontakt/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>LocalBusiness, ContactPoint</td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/mat/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>Menu, MenuSection</td>
+          <td><span class="badge badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lunch-i-umea/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>Restaurant, hasMenu</td>
+          <td><span class="badge badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lordags-brunch-i-umea/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>FoodEvent, offers</td>
+          <td><span class="badge badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/pa-taket/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>Restaurant, EventVenue</td>
+          <td><span class="badge badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/om-oss-upplevelse/</span></td>
+          <td><span class="badge badge-fail">Saknas</span></td>
+          <td>AboutPage</td>
+          <td><span class="badge badge-low">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Prestanda-indikatorer</div>
+  <div class="section-subtitle">Observationer om resurser och laddning</div>
+  <div class="finding">
+    <div class="finding-status warning"></div>
+    <div class="finding-content">
+      <h4>Lunchmeny som PDF istället för HTML</h4>
+      <p>Lunvhmenyn (/wp-content/uploads/2025/09/Officiell-Lunchmeny-hemsida-09-13.pdf) serveras som PDF. Sökmotorer kan läsa PDF men det ger sämre ranking och ingen dynamisk uppdatering.</p>
+      <div class="finding-rec">Flytta menyinnehållet till HTML direkt på /lunch-i-umea/ eller /mat/. Strukturera med headings och schema. Uppdatera varje vecka.</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+  <div class="finding">
+    <div class="finding-status warning"></div>
+    <div class="finding-content">
+      <h4>Bilder refereras i sökresultaten utan tydliga filnamn</h4>
+      <p>Bildnamn som "365338672_orrefors_ak_600", "Artboard 1", "Säsong_vitt" indikerar bristfälliga filnamn och möjligen saknad alt-text.</p>
+      <div class="finding-rec">Byt namn på alla bilder till beskrivande, keyword-rika filnamn: "tornhuset-umea-restaurang.jpg", "brod-och-vin-interiör.jpg" etc. Säkerställ alt-text på alla bilder.</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 5: CONTENT STRATEGY ==================== -->
+<div id="tab-content" class="tab-content">
+<div class="container">
+
+  <div class="section-title">Innehållsstrategi</div>
+  <div class="section-subtitle">Innehållsluckor, keyword-möjligheter och rekommenderade kluster</div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--red)">6</div>
+      <div class="stat-label">Tunna sidor (&lt;150 ord)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--green)">4</div>
+      <div class="stat-label">Starka sidor (300+ ord)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">~2 800</div>
+      <div class="stat-label">Totalt ordantal</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--red)">13</div>
+      <div class="stat-label">Saknar meta desc</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px;">Keyword-karta</div>
+  <div class="section-subtitle">Inferat target keyword per sida med kannibaliseringsrisk</div>
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Sida</th>
+          <th>Inferat keyword</th>
+          <th>Title inkl. KW</th>
+          <th>I första 100 ord</th>
+          <th>Kannibalisering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-url">/</span></td>
+          <td>restaurang umeå</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-warning">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/brod-och-vin-old/</span></td>
+          <td>bröd & vin umeå</td>
+          <td><span class="badge badge-warning">Delvis</span></td>
+          <td><span class="badge badge-pass">Ja</span></td>
+          <td><span class="badge badge-fail">Hög — dubblett</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/pa-taket/</span></td>
+          <td>takterrass umeå</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-pass">Låg</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/atelje-vita-duken/</span></td>
+          <td>fine dining umeå</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-pass">Låg</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lunch-i-umea/</span></td>
+          <td>lunch umeå</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-warning">Medium — överlappar /mat/</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lordags-brunch-i-umea/</span></td>
+          <td>brunch umeå</td>
+          <td><span class="badge badge-pass">Ja</span></td>
+          <td><span class="badge badge-pass">Ja</span></td>
+          <td><span class="badge badge-pass">Låg</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/mat/</span></td>
+          <td>meny tornhuset</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-warning">Medium — överlappar /lunch-i-umea/</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/boka-bord/</span></td>
+          <td>boka bord umeå</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-pass">Låg</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/kontakt/</span></td>
+          <td>kontakt tornhuset</td>
+          <td><span class="badge badge-warning">Delvis</span></td>
+          <td><span class="badge badge-pass">Ja</span></td>
+          <td><span class="badge badge-pass">Låg</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/om-oss-upplevelse/</span></td>
+          <td>om tornhuset umeå</td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-fail">Nej</span></td>
+          <td><span class="badge badge-pass">Låg</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Rekommenderade innehållskluster</div>
+  <div class="section-subtitle">Gruppera sidor i pillar/cluster-struktur för topical authority</div>
+
+  <div class="cluster">
+    <div class="cluster-title">🍽️ Restaurang-kluster — "Restaurang Umeå"</div>
+    <div class="cluster-pages">
+      <span class="cluster-page pillar">/ (Pillar)</span>
+      <span class="cluster-page">/brod-och-vin/</span>
+      <span class="cluster-page">/atelje-vita-duken/</span>
+      <span class="cluster-page">/pa-taket/</span>
+      <span class="cluster-page">/om-oss-upplevelse/</span>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-title">🥗 Mat & Meny-kluster — "Lunch/Middag Umeå"</div>
+    <div class="cluster-pages">
+      <span class="cluster-page pillar">/mat/ (Pillar)</span>
+      <span class="cluster-page">/lunch-i-umea/</span>
+      <span class="cluster-page">/lordags-brunch-i-umea/</span>
+    </div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-title">🎉 Event & Bokning-kluster — "Boka bord / Event Umeå"</div>
+    <div class="cluster-pages">
+      <span class="cluster-page pillar">/boka-bord/ (Pillar)</span>
+      <span class="cluster-page">/pa-taket/stora-sallskap/</span>
+      <span class="cluster-page">/kontakt/</span>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Innehållsluckor — nya sidor att skapa</div>
+  <div class="section-subtitle">Sökord med hög volym som saknar dedikerade sidor</div>
+
+  <div class="action-item">
+    <div class="action-number">1</div>
+    <div class="action-content">
+      <div class="action-title">Skapa /brod-och-vin/ (ersätt "old"-sidan)</div>
+      <div class="action-desc">Bröd & Vin behöver en egen, ren sida med korrekt URL. Bör inkludera meny-highlights, atmosfär, öppettider och bokningslänk. Optimera för "restaurang Umeå", "middag Umeå", "tapas Umeå".</div>
+      <div class="action-impact">Förväntad effekt: Fånga sökningar på "bröd och vin umeå", "middag umeå centrum"</div>
+    </div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">2</div>
+    <div class="action-content">
+      <div class="action-title">Skapa /event-umea/ eller /festlokal-umea/</div>
+      <div class="action-desc">Tornhuset har kapacitet för events och stora sällskap men ingen dedikerad landningssida optimerad för event-sökningar. "Festlokal Umeå", "julbord Umeå", "event restaurang Umeå" är alla sökbara termer.</div>
+      <div class="action-impact">Förväntad effekt: Fånga event- och festsökningar med hög köpintent</div>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">3</div>
+    <div class="action-content">
+      <div class="action-title">Skapa /presentkort/</div>
+      <div class="action-desc">Presentkort nämns på startsidan men saknar egen landningssida. "Presentkort restaurang Umeå" är ett sökbart keyword med köpintent.</div>
+      <div class="action-impact">Förväntad effekt: Fånga säsongs-sökningar (jul, alla hjärtans dag, födelsedagar)</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">4</div>
+    <div class="action-content">
+      <div class="action-title">Skapa /vinprovning-umea/ eller /vinbar-umea/</div>
+      <div class="action-desc">Bröd & Vin har en välsorterad vinkällare — perfekt för en sida optimerad mot "vinbar Umeå", "vinprovning Umeå".</div>
+      <div class="action-impact">Förväntad effekt: Differentiering och nytt trafik-segment</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 6: INTERNAL LINKING ==================== -->
+<div id="tab-linking" class="tab-content">
+<div class="container">
+
+  <div class="section-title">Intern länknings-analys</div>
+  <div class="section-subtitle">Länkflöde, föräldralösa sidor och länkningsmöjligheter</div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">~35</div>
+      <div class="stat-label">Totala interna länkar</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--red)">3</div>
+      <div class="stat-label">Föräldralösa sidor</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--orange)">4</div>
+      <div class="stat-label">Dead-end-sidor</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">~2.5</div>
+      <div class="stat-label">Snitt länkar/sida</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px;">Länk-distribution</div>
+  <div class="section-subtitle">Hur intern link juice fördelas</div>
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Sida</th>
+          <th>Inkommande</th>
+          <th>Utgående</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-url">/</span></td>
+          <td>Hög (nav)</td>
+          <td>~8</td>
+          <td><span class="badge badge-pass">Hub</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/boka-bord/</span></td>
+          <td>~6 (CTA-knappar)</td>
+          <td>~1</td>
+          <td><span class="badge badge-warning">Nästan dead-end</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/atelje-vita-duken/</span></td>
+          <td>~3</td>
+          <td>~2</td>
+          <td><span class="badge badge-pass">OK</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/pa-taket/</span></td>
+          <td>~3</td>
+          <td>~2</td>
+          <td><span class="badge badge-pass">OK</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lunch-i-umea/</span></td>
+          <td>~2</td>
+          <td>~1</td>
+          <td><span class="badge badge-warning">Svag</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/lordags-brunch-i-umea/</span></td>
+          <td>~2</td>
+          <td>~1</td>
+          <td><span class="badge badge-warning">Svag</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/portfolio/nectar-townhomes/</span></td>
+          <td>0</td>
+          <td>0</td>
+          <td><span class="badge badge-fail">Orphan</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/sidplacering/startsida/</span></td>
+          <td>0</td>
+          <td>~1</td>
+          <td><span class="badge badge-fail">Orphan</span></td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/brod-och-vin-old/</span></td>
+          <td>~1</td>
+          <td>~2</td>
+          <td><span class="badge badge-fail">Borde inte existera</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Föreslagna interna länkar</div>
+  <div class="section-subtitle">Specifika länkningsmöjligheter</div>
+
+  <div class="action-item">
+    <div class="action-number">1</div>
+    <div class="action-content">
+      <div class="action-title">Länka från /om-oss-upplevelse/ till varje restaurangs egen sida</div>
+      <div class="action-desc">Om oss-sidan nämner Bröd & Vin, Ateljé Vita Duken och Perka Söderberg men länkar troligen inte till deras individuella sidor.</div>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">2</div>
+    <div class="action-content">
+      <div class="action-title">Länka från /lunch-i-umea/ till /lordags-brunch-i-umea/</div>
+      <div class="action-desc">Naturlig cross-sell: "Gillar du vår lunch? Prova vår lördagsbrunch!"</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">3</div>
+    <div class="action-content">
+      <div class="action-title">Lägg till "Boka bord"-CTA på varje restaurangsida</div>
+      <div class="action-desc">Varje restaurangsida (Bröd & Vin, Ateljé Vita Duken, På Taket) bör länka direkt till /boka-bord/ med en tydlig CTA.</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">4</div>
+    <div class="action-content">
+      <div class="action-title">Länka från /mat/ till /lunch-i-umea/ och /lordags-brunch-i-umea/</div>
+      <div class="action-desc">Mat-sidan bör fungera som nav för allt mat-relaterat innehåll.</div>
+    </div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 7: ACTION PLAN ==================== -->
+<div id="tab-actions" class="tab-content">
+<div class="container">
+
+  <div class="section-title">Prioriterad åtgärdsplan</div>
+  <div class="section-subtitle">Alla rekommendationer rankade efter impact, grupperade efter insats</div>
+
+  <div class="section-title" style="font-size: 18px; color: var(--green);">Quick Wins <span style="font-size: 14px; color: var(--text-muted); font-weight: 400;">&mdash; under 1 timme vardera</span></div>
+  <div style="margin-bottom: 24px;">
+    <div class="action-item">
+      <div class="action-number">1</div>
+      <div class="action-content">
+        <div class="action-title">Skriv meta descriptions för alla 13 sidor som saknar dem</div>
+        <div class="action-desc">150-160 tecken per sida, inkludera target keyword och CTA. Kan göras via WordPress SEO-plugin (Yoast/RankMath).</div>
+        <div class="action-impact">Förväntad effekt: Ökad CTR i sökresultat med 20-30%</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">2</div>
+      <div class="action-content">
+        <div class="action-title">Uppdatera alla title tags till keyword-optimerade format</div>
+        <div class="action-desc">Ändra varje sidas title till formatet: "[Keyword] i Umeå – [Detalj] | Tornhuset". Se förslag per sida i Page-by-Page-tabben.</div>
+        <div class="action-impact">Förväntad effekt: Direkt bättre ranking för lokala sökord</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">3</div>
+      <div class="action-content">
+        <div class="action-title">Sätt noindex på 3 skräp-sidor</div>
+        <div class="action-desc">Lägg till <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code> på /portfolio/nectar-townhomes/, /sidplacering/startsida/ och /brod-och-vin-old/.</div>
+        <div class="action-impact">Förväntad effekt: Renare index, bättre crawl-budget, starkare topical authority</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">4</div>
+      <div class="action-content">
+        <div class="action-title">Skapa robots.txt med korrekt konfiguration</div>
+        <div class="action-desc">Enkel textfil i roten som tillåter crawling, blockerar /sidplacering/ och /portfolio/, och pekar på sitemap.</div>
+        <div class="action-impact">Förväntad effekt: Google kan crawla sajten effektivt</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; color: var(--orange);">High Impact <span style="font-size: 14px; color: var(--text-muted); font-weight: 400;">&mdash; 1-4 timmar vardera</span></div>
+  <div style="margin-bottom: 24px;">
+    <div class="action-item">
+      <div class="action-number">5</div>
+      <div class="action-content">
+        <div class="action-title">Lägg till JSON-LD Restaurant-schema på startsidan</div>
+        <div class="action-desc">Inkludera @type Restaurant med name, address, telephone, openingHoursSpecification, servesCuisine, priceRange, menu-URL, image, og sameAs (Instagram, Facebook).</div>
+        <div class="action-impact">Förväntad effekt: Rich results i Google med öppettider, adress, betyg</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">6</div>
+      <div class="action-content">
+        <div class="action-title">Skapa och skicka in sitemap.xml via Google Search Console</div>
+        <div class="action-desc">Generera sitemap med alla legitima sidor (exkl. skräp). Skicka in via GSC. Verifiera att sajten är registrerad i GSC överhuvudtaget.</div>
+        <div class="action-impact">Förväntad effekt: Snabbare indexering, bättre kontroll över vilka sidor som visas</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">7</div>
+      <div class="action-content">
+        <div class="action-title">Skapa korrekt /brod-och-vin/ sida och 301-redirect old-versionen</div>
+        <div class="action-desc">Flytta allt bra innehåll från /brod-och-vin-old/ till ny /brod-och-vin/. Redirect old → new. Optimera title, meta desc, H1.</div>
+        <div class="action-impact">Förväntad effekt: Eliminera kannibalisering, konsolidera link equity</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">8</div>
+      <div class="action-content">
+        <div class="action-title">Utöka tunna sidor med substantiellt innehåll</div>
+        <div class="action-desc">Sidor som /pa-taket/ (~100 ord), /lunch-i-umea/ (~60 ord), /boka-bord/ (~30 ord) behöver minst 300 ord vardera. Lägg till beskrivningar, FAQ, praktisk info.</div>
+        <div class="action-impact">Förväntad effekt: Bättre ranking för respektive target keyword</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">9</div>
+      <div class="action-content">
+        <div class="action-title">Lägg till Open Graph och Twitter Card-taggar</div>
+        <div class="action-desc">Installera ett SEO-plugin (Yoast eller RankMath) som genererar OG- och Twitter-taggar automatiskt. Ladda upp lockande OG-bilder per sida.</div>
+        <div class="action-impact">Förväntad effekt: Bättre utseende vid delning på sociala medier</div>
+      </div>
+      <span class="badge badge-medium">Medium</span>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; color: var(--purple);">Strategiska initiativ <span style="font-size: 14px; color: var(--text-muted); font-weight: 400;">&mdash; löpande</span></div>
+  <div style="margin-bottom: 24px;">
+    <div class="action-item">
+      <div class="action-number">10</div>
+      <div class="action-content">
+        <div class="action-title">Bygg ut content-kluster med nya landningssidor</div>
+        <div class="action-desc">Skapa dedikerade sidor för: /brod-och-vin/ (ny ren sida), /presentkort/, /event-umea/, /vinprovning-umea/. Varje ny sida bör ha 500+ ord, JSON-LD och intern länkning.</div>
+        <div class="action-impact">Förväntad effekt: Bredare keyword-täckning, fler ingångspunkter från sökmotorer</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">11</div>
+      <div class="action-content">
+        <div class="action-title">Optimera Google Business Profile</div>
+        <div class="action-desc">Säkerställ att Tornhusets Google Business-profil är komplett med alla tre restauranger, korrekta öppettider, menyfoton, och regelbundna inlägg. Be nöjda gäster om Google-recensioner.</div>
+        <div class="action-impact">Förväntad effekt: Bättre synlighet i lokala sökresultat och Google Maps</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">12</div>
+      <div class="action-content">
+        <div class="action-title">Starta en blogg med recept, events och säsongsinnehåll</div>
+        <div class="action-desc">Publicera 2-4 blogginlägg per månad om: veckans lunch, vinrekommendationer, kocksintervjuer, recept, säsongens råvaror. Länka alltid till relevanta restaurangsidor.</div>
+        <div class="action-impact">Förväntad effekt: Löpande organisk trafik, starkare topical authority</div>
+      </div>
+      <span class="badge badge-medium">Medium</span>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Komplett checklista</div>
+  <div class="section-subtitle">Alla åtgärder samlade</div>
+  <div class="card">
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Fixa robots.txt (timeout-problem)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Skapa sitemap.xml och skicka in via Google Search Console</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">noindex på /portfolio/nectar-townhomes/</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">noindex på /sidplacering/startsida/</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">301-redirect /brod-och-vin-old/ → /brod-och-vin/</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Skriv unika title tags för alla 14 sidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Skriv meta descriptions för alla 13 sidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Lägg till JSON-LD Restaurant-schema på startsidan</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Lägg till JSON-LD på alla restaurangsidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Lägg till OG-taggar på alla sidor</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Utöka /pa-taket/ till 300+ ord</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Utöka /lunch-i-umea/ till 300+ ord</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Utöka /boka-bord/ till 200+ ord</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Flytta lunchmeny från PDF till HTML</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Byt namn på bilder till beskrivande filnamn</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Lägg till alt-text på alla bilder</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Skapa /brod-och-vin/ (ny ren sida)</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Skapa /presentkort/ landningssida</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Skapa /event-umea/ landningssida</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Förbättra intern länkning mellan kluster</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Optimera Google Business Profile</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Lägg till säkerhetsheaders (HSTS, CSP)</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.collapsible-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.closest('.collapsible').classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
