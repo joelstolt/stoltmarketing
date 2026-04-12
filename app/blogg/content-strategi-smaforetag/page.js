@@ -188,11 +188,11 @@ export default function Article() {
 
             <div className="space-y-4 mb-8">
               {[
-                { type: "Guides & How-to", example: '"Steg-för-steg-guide till målning av hus"', rank: "⭐⭐⭐⭐⭐", why: "Folk söker på "hur gör man" och guides svarar direkt." },
-                { type: "Jämförelser", example: '"Målning vs tapetsering — fördelar och nackdelar"', rank: "⭐⭐⭐⭐⭐", why: "Folk jämför innan köp. Du visar båda sidor = trovärdigt." },
-                { type: "FAQs", example: '"Vanliga frågor om målning — svar på det du undrar"', rank: "⭐⭐⭐⭐", why: "Folk söker ofta på frågor. FAQs rankar väl." },
-                { type: "Prisguider", example: '"Vad kostar målning? Prisguide för olika hus"', rank: "⭐⭐⭐⭐⭐", why: "Alla söker på "vad kostar?" Ge dem svaret." },
-                { type: "Blogginlägg (allmänt)", example: '"Målning tips för hemmaögat"', rank: "⭐⭐", why: "Rankar ofta sämre om det är vagt. Var specifik." },
+                { type: "Guides & How-to", example: '\u201cSteg-för-steg-guide till målning av hus\u201d', rank: "\u2b50\u2b50\u2b50\u2b50\u2b50", why: 'Folk söker på \u201chur gör man\u201d och guides svarar direkt.' },
+                { type: "Jämförelser", example: '\u201cMålning vs tapetsering \u2014 fördelar och nackdelar\u201d', rank: "\u2b50\u2b50\u2b50\u2b50\u2b50", why: "Folk jämför innan köp. Du visar båda sidor = trovärdigt." },
+                { type: "FAQs", example: '\u201cVanliga frågor om målning \u2014 svar på det du undrar\u201d', rank: "\u2b50\u2b50\u2b50\u2b50", why: "Folk söker ofta på frågor. FAQs rankar väl." },
+                { type: "Prisguider", example: '\u201cVad kostar målning? Prisguide för olika hus\u201d', rank: "\u2b50\u2b50\u2b50\u2b50\u2b50", why: 'Alla söker på \u201cvad kostar?\u201d Ge dem svaret.' },
+                { type: "Blogginlägg (allmänt)", example: '\u201cMålning tips för hemmaögat\u201d', rank: "\u2b50\u2b50", why: "Rankar ofta sämre om det är vagt. Var specifik." },
               ].map((item) => (
                 <div key={item.type} className="bg-surface border border-border rounded-lg p-4">
                   <div className="flex items-start justify-between gap-4 mb-2">
