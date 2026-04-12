@@ -8,15 +8,15 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Projekt — Case & resultat",
+  title: "Projekt & Case — Webbutveckling, SEO, AI, E-handel",
   description:
-    "Se utvalda projekt inom webbutveckling, e-handel, AI och SEO. Från AcadeMedia och SMH till lokala småföretag i Hässleholm.",
+    "Utvalda projekt från Stolt Marketing — webbutveckling, e-handel, AI-automation, SEO. Från AcadeMedia till småföretag i Hässleholm och Skåne.",
   alternates: {
     canonical: "https://stoltmarketing.se/projekt",
   },
   openGraph: {
-    title: "Projekt — Case & resultat | Stolt Marketing",
-    description: "Utvalda projekt inom webbutveckling, e-handel, AI och SEO.",
+    title: "Projekt & Case — Webbutveckling, SEO, AI",
+    description: "Portfolio med resultat från webbutveckling, e-handel, AI-automation, SEO.",
     url: "https://stoltmarketing.se/projekt",
   },
 };

@@ -8,15 +8,15 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Boka kostnadsfri genomgång",
+  title: "Boka kostnadsfri genomgång — Joel Stolt, Hässleholm",
   description:
-    "Boka ett kort samtal så går vi igenom ditt nuläge och vad som ger mest effekt. Helt kostnadsfritt, inga förpliktelser.",
+    "Boka ett kostnadsfritt samtal med Joel Stolt. Vi går igenom din digitala strategi — webb, SEO, AI. Inga förpliktelser. 30 minuter.",
   alternates: {
     canonical: "https://stoltmarketing.se/boka",
   },
   openGraph: {
     title: "Boka kostnadsfri genomgång | Stolt Marketing",
-    description: "Kort samtal om ditt nuläge och vad som ger mest effekt. Kostnadsfritt.",
+    description: "30 min gratis strategi-samtal. Ingen försäljning. Fokus på ditt behov.",
     url: "https://stoltmarketing.se/boka",
   },
 };

@@ -7,7 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Reveal, Badge, PageHero } from "@/components/ui";
 
-const posts = [
+const allPosts = [
+  /* ── Befintliga ── */
   {
     slug: "vad-kostar-en-hemsida",
     title: "Vad kostar en hemsida 2026? Komplett prisguide för företag",
@@ -35,7 +36,104 @@ const posts = [
     readTime: "10 min",
     category: "SEO",
   },
+  /* ── Nya — publiceras en per vecka ── */
+  {
+    slug: "lokal-seo-guide",
+    title: "Lokal SEO — Så syns ditt företag i Google Maps och lokala sökningar",
+    excerpt:
+      "Komplett guide till lokal SEO. Google Business Profile, lokala sökord, recensioner och NAP-konsistens — steg för steg.",
+    date: "2026-04-12",
+    readTime: "11 min",
+    category: "Guide",
+  },
+  {
+    slug: "webbdesign-trender-2026",
+    title: "Webbdesign-trender 2026 — Vad som faktiskt spelar roll",
+    excerpt:
+      "AI, bento grids, mikroanimationer och tillgänglighet. De trender som faktiskt gör din sajt bättre — och de du kan skippa.",
+    date: "2026-04-12",
+    readTime: "8 min",
+    category: "Design",
+  },
+  {
+    slug: "ai-for-foretag",
+    title: "AI för företag 2026 — Praktiska användningsområden som ger resultat",
+    excerpt:
+      "Chatbots, automatisering, content och kundservice. Konkreta AI-användningsområden utan hype — och var du börjar.",
+    date: "2026-04-12",
+    readTime: "9 min",
+    category: "AI",
+  },
+  {
+    slug: "google-ads-vs-seo",
+    title: "Google Ads vs SEO — Vad ska du satsa på?",
+    excerpt:
+      "Betald vs organisk trafik. Kort- och långsiktig ROI, kostnadsjämförelse och när du bör kombinera båda.",
+    date: "2026-04-19",
+    readTime: "7 min",
+    category: "Strategi",
+  },
+  {
+    slug: "hemsida-som-saljer",
+    title: "5 saker som skiljer en hemsida som säljer från en som bara finns",
+    excerpt:
+      "Värdeerbjudande, social proof, CTAs, hastighet och SEO. Konkreta skillnader mellan sajter som konverterar och de som inte gör det.",
+    date: "2026-04-26",
+    readTime: "8 min",
+    category: "Konvertering",
+  },
+  {
+    slug: "wordpress-eller-webbyra",
+    title: "Bygga hemsida själv eller anlita en webbyrå? Ärlig jämförelse",
+    excerpt:
+      "DIY vs byrå — dolda kostnader, tidsåtgång och vad som faktiskt lönar sig beroende på ditt behov.",
+    date: "2026-05-03",
+    readTime: "9 min",
+    category: "Guide",
+  },
+  {
+    slug: "e-handel-guide",
+    title: "Starta e-handel 2026 — Komplett guide för svenska företag",
+    excerpt:
+      "Plattformsjämförelse, betalning, frakt, juridik och kostnader. Allt du behöver veta för att starta din webbutik.",
+    date: "2026-05-10",
+    readTime: "10 min",
+    category: "E-handel",
+  },
+  {
+    slug: "google-business-profile-guide",
+    title: "Google Business Profile — Komplett guide för företagare 2026",
+    excerpt:
+      "Steg-för-steg: skapa, optimera och ranka i Google Maps. Kategorier, bilder, recensioner och vanliga misstag.",
+    date: "2026-05-17",
+    readTime: "8 min",
+    category: "Guide",
+  },
+  {
+    slug: "varfor-snabb-hemsida",
+    title: "Varför en snabb hemsida ger dig fler kunder (och bättre SEO)",
+    excerpt:
+      "Core Web Vitals, vad som gör sajter långsamma och praktiska fixes. Varje sekunds fördröjning kostar dig besökare.",
+    date: "2026-05-24",
+    readTime: "7 min",
+    category: "Prestanda",
+  },
+  {
+    slug: "content-strategi-smaforetag",
+    title: "Content-strategi för småföretag — Så skapar du innehåll som rankar",
+    excerpt:
+      "Hitta ämnen, skapa en publiceringsplan och mät resultat. Praktisk guide till content marketing utan stor budget.",
+    date: "2026-05-31",
+    readTime: "10 min",
+    category: "Marknadsföring",
+  },
 ];
+
+/* Visa bara artiklar vars publiceringsdatum har passerat */
+const today = new Date().toISOString().slice(0, 10);
+const posts = allPosts
+  .filter((p) => p.date <= today)
+  .sort((a, b) => (a.date > b.date ? -1 : 1));
 
 function formatDate(dateStr) {
   const d = new Date(dateStr);

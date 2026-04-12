@@ -4,11 +4,11 @@ import ChatWidget from "@/components/ChatWidget";
 export const metadata = {
   metadataBase: new URL("https://stoltmarketing.se"),
   title: {
-    default: "Joel Stolt — Digital konsult, AI & Webb | Stolt Marketing",
+    default: "Webbyrå Hässleholm — Hemsida, SEO & AI | Stolt Marketing",
     template: "%s | Stolt Marketing",
   },
   description:
-    "Digital konsult med 10+ års erfarenhet. Moderna webbplatser, e-handel, AI-lösningar och SEO för företag i hela Sverige. Enterprise-kvalitet, personlig leverans.",
+    "Webbyrå i Hässleholm. Moderna hemsidor, e-handel, SEO och AI-automation för företag. 10+ års erfarenhet, enterprise-kvalitet, personlig service.",
   keywords: [
     "digital konsult",
     "webbyrå hässleholm",
@@ -28,9 +28,9 @@ export const metadata = {
     locale: "sv_SE",
     url: "https://stoltmarketing.se",
     siteName: "Stolt Marketing",
-    title: "Joel Stolt — Digital konsult, AI & Webb",
+    title: "Webbyrå Hässleholm — Hemsida, SEO & AI",
     description:
-      "Moderna webbplatser, e-handel, AI-lösningar och SEO. Enterprise-kvalitet, personlig leverans.",
+      "Moderna hemsidor, e-handel, SEO och AI-automation för företag i Skåne och Sverige.",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   alternates: {

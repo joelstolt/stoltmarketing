@@ -9,12 +9,12 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "SEO — Synlighet som ger fler kunder",
-  description: "Teknisk SEO, sökordsanalys och lokal optimering som gör att rätt kunder hittar dig på Google. Mätbara resultat, tydlig uppföljning.",
+  title: "SEO Hässleholm — Synlighet som ger fler kunder",
+  description: "SEO-tjänster i Hässleholm för att dina kunder hittar dig på Google. Teknisk SEO, sökordsanalys, lokal optimering. Mätbara resultat. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://stoltmarketing.se/tjanster/seo" },
   openGraph: {
-    title: "SEO — Synlighet som ger fler kunder | Stolt Marketing",
-    description: "Teknisk SEO, sökordsanalys och lokal optimering. Mätbara resultat.",
+    title: "SEO Hässleholm — Synlighet som ger fler kunder",
+    description: "Sökmotoroptimering för företag i Hässleholm. Teknisk SEO, lokal optimering, mätbara resultat.",
     url: "https://stoltmarketing.se/tjanster/seo",
   },
 };

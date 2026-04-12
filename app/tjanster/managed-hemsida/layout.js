@@ -9,12 +9,13 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Managed Hemsida — Drift, underhåll & förbättringar",
-  description: "Managed hemsida med uppdateringar, säkerhet, övervakning och innehållsändringar. Från 390 kr/mån. Ansvar efter lansering.",
+  title: "Managed Hemsida Hässleholm — Drift, säkerhet & support",
+  description:
+    "Managed hemsida för företag i Hässleholm — drift, säkerhet, uppdateringar, innehållsändringar. Från 390 kr/mån. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://stoltmarketing.se/tjanster/managed-hemsida" },
   openGraph: {
-    title: "Managed Hemsida — Drift, underhåll & förbättringar | Stolt Marketing",
-    description: "Hosting, uppdateringar, säkerhet och innehållsändringar. Från 390 kr/mån.",
+    title: "Managed Hemsida Hässleholm — Drift, säkerhet & support",
+    description: "Hemsida med drift, säkerhet, uppdateringar. Från 390 kr/mån.",
     url: "https://stoltmarketing.se/tjanster/managed-hemsida",
   },
 };

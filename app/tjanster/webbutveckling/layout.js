@@ -9,13 +9,13 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Webbutveckling — Moderna sajter som konverterar",
+  title: "Webbutveckling Hässleholm — Moderna hemsidor för företag",
   description:
-    "Moderna webbplatser och e-handelslösningar i Next.js, React och WordPress/WooCommerce. Snabba, responsiva sajter som ger fler kunder. Från 3 900 kr.",
+    "Webbutveckling i Hässleholm — moderna hemsidor och e-handelslösningar i Next.js, React, WordPress. Snabba, responsiva sajter. Från 3 900 kr. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://stoltmarketing.se/tjanster/webbutveckling" },
   openGraph: {
-    title: "Webbutveckling — Moderna sajter som konverterar | Stolt Marketing",
-    description: "Webbplatser och e-handel i Next.js, React och WordPress. Från 3 900 kr.",
+    title: "Webbutveckling Hässleholm — Moderna hemsidor för företag",
+    description: "Webbutveckling för företag i Hässleholm. Next.js, React, WordPress. Från 3 900 kr.",
     url: "https://stoltmarketing.se/tjanster/webbutveckling",
   },
 };

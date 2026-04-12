@@ -9,12 +9,13 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "AI & Automation — Smarta verktyg som sparar tid",
-  description: "AI-chatbotar, automatiserade arbetsflöden och smarta verktyg för småföretag. Konkreta lösningar som faktiskt sparar tid och pengar.",
+  title: "AI-automation Hässleholm — Smartare processer för företag",
+  description:
+    "AI-automation för företag i Hässleholm — chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://stoltmarketing.se/tjanster/ai-automation" },
   openGraph: {
-    title: "AI & Automation — Smarta verktyg som sparar tid | Stolt Marketing",
-    description: "AI-chatbotar, automatiserade arbetsflöden och smarta verktyg för småföretag.",
+    title: "AI-automation Hässleholm — Smartare processer för företag",
+    description: "AI-automation för företag i Hässleholm. Chatbotar, arbetsflöden, effektivisering.",
     url: "https://stoltmarketing.se/tjanster/ai-automation",
   },
 };
