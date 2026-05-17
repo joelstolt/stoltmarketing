@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import ChatWidget from "@/components/ChatWidget";
 
 export const metadata = {
@@ -100,7 +101,16 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}<ChatWidget /></body>
+      <body>
+        {children}
+        <ChatWidget />
+        {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
+        <Script
+          src="https://umami-analytics-tau-two.vercel.app/script.js"
+          data-website-id="3adb02f8-448d-4b39-bc2a-76e9c9b8709e"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
