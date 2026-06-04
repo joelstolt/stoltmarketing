@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import KristianstadAiContent from "./KristianstadAiContent";
+import CityServicePage from "@/components/CityServicePage";
 
 export default function Page() {
   return (
     <>
       <Header />
       <main>
-        <KristianstadAiContent />
+        <CityServicePage service="ai-automation" city="kristianstad" />
       </main>
       <Footer />
     </>

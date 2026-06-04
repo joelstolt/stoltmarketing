@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/google-ads-vs-seo",
+  inLanguage: "sv-SE",
   headline: "Google Ads vs SEO — Vad ska du satsa på?",
   description: "Jämförelse mellan Google Ads och SEO. Vilket är bäst för ditt företag? Kostnader, tid till resultat, långsiktig ROI och hur du kombinerar båda för maximal effekt.",
   author: { "@type": "Person", name: "Joel Stolt" },

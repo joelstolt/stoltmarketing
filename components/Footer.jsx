@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES } from "@/lib/local/data";
 
 const services = [
   { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
@@ -21,12 +22,14 @@ const company = [
   { label: "Integritetspolicy", href: "/integritet" },
 ];
 
-const hassleholm = [
-  { label: "Hemsida Hässleholm", href: "/hassleholm/hemsida" },
-  { label: "SEO Hässleholm", href: "/hassleholm/seo" },
-  { label: "Google Ads Hässleholm", href: "/hassleholm/google-ads" },
-  { label: "AI & Automation", href: "/hassleholm/ai-automation" },
-];
+const linkStyle = {
+  fontSize: 14,
+  color: "#3B3F4A",
+  textDecoration: "none",
+  transition: "color 0.2s",
+};
+const hover = (e) => (e.currentTarget.style.color = "#1D4ED8");
+const unhover = (e) => (e.currentTarget.style.color = "#3B3F4A");
 
 export default function Footer() {
   return (
@@ -73,49 +76,29 @@ export default function Footer() {
             stolt marketing
           </Link>
           <p style={{ fontSize: 14, color: "#6B7280", lineHeight: 1.7, maxWidth: 300 }}>
-            Digital konsult med 10+ års erfarenhet. Moderna webbplatser,
-            e-handel, AI-lösningar och SEO — med enterprise-kvalitet till
-            småföretag i hela Sverige.
+            Digital byrå i Hässleholm med 10+ års erfarenhet. Moderna hemsidor,
+            e-handel, SEO, Google Ads och AI-automation — med enterprise-kvalitet
+            till företag i hela Skåne och Sverige.
           </p>
 
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
             <a
               href="mailto:joel@stoltmarketing.se"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-                fontSize: 14,
-                color: "#3B3F4A",
-                textDecoration: "none",
-              }}
+              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#3B3F4A", textDecoration: "none" }}
             >
               <Mail size={15} color="#1D4ED8" />
               joel@stoltmarketing.se
             </a>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-                fontSize: 14,
-                color: "#3B3F4A",
-              }}
-            >
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#3B3F4A" }}>
               <MapPin size={15} color="#1D4ED8" />
-              Hässleholm, Sverige
+              Hässleholm, Skåne
             </div>
           </div>
 
           <Link
             href="/boka"
             className="premium-btn"
-            style={{
-              marginTop: 20,
-              fontSize: 13,
-              padding: "10px 20px",
-              display: "inline-flex",
-            }}
+            style={{ marginTop: 20, fontSize: 13, padding: "10px 20px", display: "inline-flex" }}
           >
             Boka kostnadsfri genomgång
           </Link>
@@ -123,32 +106,10 @@ export default function Footer() {
 
         {/* Col 2: Tjänster */}
         <div>
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              color: "#9CA3AF",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              marginBottom: 16,
-            }}
-          >
-            Tjänster
-          </p>
+          <p style={colHeading}>Tjänster</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {services.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{
-                  fontSize: 14,
-                  color: "#3B3F4A",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#3B3F4A")}
-              >
+              <Link key={link.href} href={link.href} style={linkStyle} onMouseEnter={hover} onMouseLeave={unhover}>
                 {link.label}
               </Link>
             ))}
@@ -157,80 +118,69 @@ export default function Footer() {
 
         {/* Col 3: Företaget */}
         <div>
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              color: "#9CA3AF",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              marginBottom: 16,
-            }}
-          >
-            Företaget
-          </p>
+          <p style={colHeading}>Företaget</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {company.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{
-                  fontSize: 14,
-                  color: "#3B3F4A",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#3B3F4A")}
-              >
+              <Link key={link.href} href={link.href} style={linkStyle} onMouseEnter={hover} onMouseLeave={unhover}>
                 {link.label}
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Col 4: Hässleholm */}
+        {/* Col 4: Orter */}
         <div>
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              color: "#9CA3AF",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              marginBottom: 16,
-            }}
-          >
-            Hässleholm
-          </p>
+          <p style={colHeading}>Orter i Skåne</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {hassleholm.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{
-                  fontSize: 14,
-                  color: "#3B3F4A",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#3B3F4A")}
-              >
-                {link.label}
+            {CITY_ORDER.map((c) => (
+              <Link key={c} href={CITIES[c].hub} style={{ ...linkStyle, fontWeight: 600 }} onMouseEnter={hover} onMouseLeave={unhover}>
+                {SERVICES.hemsida.label} & SEO {CITIES[c].name}
               </Link>
             ))}
           </div>
         </div>
       </div>
 
+      {/* Lokalt-band: alla ort × tjänst-länkar för synlighet och crawl */}
+      <div style={{ borderTop: "1px solid #F0F0EC" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "32px 20px 8px" }}>
+          <p style={{ ...colHeading, marginBottom: 20 }}>Webbyrå, SEO, Google Ads & AI i Skåne</p>
+          <div
+            className="footer-local-grid"
+            style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 28 }}
+          >
+            {CITY_ORDER.map((c) => (
+              <div key={c}>
+                <Link
+                  href={CITIES[c].hub}
+                  className="font-heading"
+                  style={{ fontSize: 14, fontWeight: 700, color: "#0C0F1A", textDecoration: "none", display: "block", marginBottom: 12 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#0C0F1A")}
+                >
+                  {CITIES[c].name}
+                </Link>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {SERVICE_ORDER.map((s) => (
+                    <Link
+                      key={s}
+                      href={`/${c}/${s}`}
+                      style={{ fontSize: 13, color: "#6B7280", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+                    >
+                      {SERVICES[s].label} {CITIES[c].name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Bottom bar */}
-      <div
-        style={{
-          borderTop: "1px solid #F0F0EC",
-          padding: "20px 20px",
-        }}
-      >
+      <div style={{ borderTop: "1px solid #F0F0EC", padding: "20px 20px", marginTop: 24 }}>
         <div
           style={{
             maxWidth: 1120,
@@ -256,9 +206,7 @@ export default function Footer() {
             >
               Kvota.se
             </a>
-            <span style={{ fontSize: 13, color: "#9CA3AF" }}>
-              Svar inom 24h på vardagar
-            </span>
+            <span style={{ fontSize: 13, color: "#9CA3AF" }}>Svar inom 24h på vardagar</span>
           </div>
         </div>
       </div>
@@ -266,12 +214,19 @@ export default function Footer() {
       {/* Responsive styles */}
       <style>{`
         @media (max-width: 768px) {
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-            gap: 32px !important;
-          }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .footer-local-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
         }
       `}</style>
     </footer>
   );
 }
+
+const colHeading = {
+  fontSize: 12,
+  fontWeight: 700,
+  color: "#9CA3AF",
+  textTransform: "uppercase",
+  letterSpacing: "0.08em",
+  marginBottom: 16,
+};

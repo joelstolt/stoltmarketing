@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/google-business-profile-guide",
+  inLanguage: "sv-SE",
   headline: "Google Business Profile — Komplett guide för företagare 2026",
   description: "Steg-för-steg-guide till Google Business Profile. Hur du gör krav på din listing, optimerar profilen, lägger till bilder, svarar på recensioner och rankar högre i Google Maps.",
   author: { "@type": "Person", name: "Joel Stolt" },

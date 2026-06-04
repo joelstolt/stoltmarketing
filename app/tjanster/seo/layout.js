@@ -19,10 +19,36 @@ export const metadata = {
   },
 };
 
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Sökmotoroptimering (SEO)",
+  "serviceType": "Sökmotoroptimering (SEO)",
+  "description": "SEO-tjänster i Hässleholm för att dina kunder hittar dig på Google. Teknisk SEO, sökordsanalys, lokal optimering. Mätbara resultat. Boka kostnadsfri genomgång.",
+  "url": "https://stoltmarketing.se/tjanster/seo",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://stoltmarketing.se/#organization",
+    "name": "Stolt Marketing",
+    "url": "https://stoltmarketing.se"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Skåne"
+    },
+    {
+      "@type": "Country",
+      "name": "Sverige"
+    }
+  ]
+};
+
 export default function Layout({ children }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       {children}
     </>
   );

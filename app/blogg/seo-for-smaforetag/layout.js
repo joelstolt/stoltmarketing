@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/seo-for-smaforetag",
+  inLanguage: "sv-SE",
   headline: "SEO för småföretag — 7 steg som faktiskt fungerar",
   description: "Praktisk SEO-guide för småföretag. 7 steg du kan göra själv — från Google Business Profile till content-strategi. Ingen budget krävs.",
   author: { "@type": "Person", name: "Joel Stolt" },

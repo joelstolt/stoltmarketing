@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/ai-for-foretag",
+  inLanguage: "sv-SE",
   headline: "AI för företag 2026 — Praktiska användningsområden som ger resultat",
   description: "Så använder svenska företag AI i vardagen 2026. Chatbots, automatisering, content och kundservice. Konkreta exempel och var du börjar.",
   author: { "@type": "Person", name: "Joel Stolt" },

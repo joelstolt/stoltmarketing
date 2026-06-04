@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HassleHomSeoContent from "./HassleHomSeoContent";
+import CityServicePage from "@/components/CityServicePage";
 
 export default function Page() {
   return (
     <>
       <Header />
       <main>
-        <HassleHomSeoContent />
+        <CityServicePage service="seo" city="hassleholm" />
       </main>
       <Footer />
     </>

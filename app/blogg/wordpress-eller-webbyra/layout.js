@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/wordpress-eller-webbyra",
+  inLanguage: "sv-SE",
   headline: "Bygga hemsida själv eller anlita en webbyrå? Ärlig jämförelse",
   description: "DIY vs webbyrå — en ärlig jämförelse. Kostnader, tid, kvalitet och dolda utgifter. Vad passar ditt företag?",
   author: { "@type": "Person", name: "Joel Stolt" },

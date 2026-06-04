@@ -20,10 +20,36 @@ export const metadata = {
   },
 };
 
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI-automation",
+  "serviceType": "AI-automation",
+  "description": "AI-automation för företag i Hässleholm — chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
+  "url": "https://stoltmarketing.se/tjanster/ai-automation",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://stoltmarketing.se/#organization",
+    "name": "Stolt Marketing",
+    "url": "https://stoltmarketing.se"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Skåne"
+    },
+    {
+      "@type": "Country",
+      "name": "Sverige"
+    }
+  ]
+};
+
 export default function Layout({ children }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       {children}
     </>
   );

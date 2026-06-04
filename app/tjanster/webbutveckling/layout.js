@@ -20,10 +20,36 @@ export const metadata = {
   },
 };
 
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Webbutveckling & hemsidor",
+  "serviceType": "Webbutveckling",
+  "description": "Webbutveckling i Hässleholm — moderna hemsidor och e-handelslösningar i Next.js, React, WordPress. Snabba, responsiva sajter. Från 3 900 kr. Boka kostnadsfri genomgång.",
+  "url": "https://stoltmarketing.se/tjanster/webbutveckling",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://stoltmarketing.se/#organization",
+    "name": "Stolt Marketing",
+    "url": "https://stoltmarketing.se"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Skåne"
+    },
+    {
+      "@type": "Country",
+      "name": "Sverige"
+    }
+  ]
+};
+
 export default function Layout({ children }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       {children}
     </>
   );

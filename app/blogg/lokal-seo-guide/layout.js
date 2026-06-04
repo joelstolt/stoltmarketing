@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/lokal-seo-guide",
+  inLanguage: "sv-SE",
   headline: "Lokal SEO — Så syns ditt företag i Google Maps och lokala sökningar",
   description: "Komplett guide till lokal SEO för svenska företag. Google Business Profile, lokala sökord, recensioner och NAP-konsistens. Steg-för-steg.",
   author: { "@type": "Person", name: "Joel Stolt" },

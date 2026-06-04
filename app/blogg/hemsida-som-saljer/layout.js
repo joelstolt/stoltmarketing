@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/hemsida-som-saljer",
+  inLanguage: "sv-SE",
   headline: "5 saker som skiljer en hemsida som säljer från en som bara finns",
   description: "Vad gör en hemsida verkligen framgångsrik? 5 konkreta faktorer som skiljer hemsidor som genererar leads från de som bara existerar.",
   author: { "@type": "Person", name: "Joel Stolt" },

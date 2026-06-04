@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/wordpress-vs-nextjs",
+  inLanguage: "sv-SE",
   headline: "WordPress vs Next.js — vilket passar ditt företag?",
   description: "Ärlig jämförelse mellan WordPress och Next.js. Prestanda, SEO, kostnad, underhåll och redigerbarhet. Baserad på 150+ levererade projekt.",
   author: { "@type": "Person", name: "Joel Stolt" },

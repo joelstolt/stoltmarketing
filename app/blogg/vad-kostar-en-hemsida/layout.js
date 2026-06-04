@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/vad-kostar-en-hemsida",
+  inLanguage: "sv-SE",
   headline: "Vad kostar en hemsida 2026? Komplett prisguide för företag",
   description: "Komplett prisguide för hemsidor 2026. Från gratis-verktyg till skräddarsydda lösningar — vad du betalar för och vad som är värt pengarna.",
   author: { "@type": "Person", name: "Joel Stolt" },

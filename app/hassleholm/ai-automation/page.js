@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HassleHomAiContent from "./HassleHomAiContent";
+import CityServicePage from "@/components/CityServicePage";
 
 export default function Page() {
   return (
     <>
       <Header />
       <main>
-        <HassleHomAiContent />
+        <CityServicePage service="ai-automation" city="hassleholm" />
       </main>
       <Footer />
     </>

@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HelsingborgHemsidaContent from "./HelsingborgHemsidaContent";
+import CityServicePage from "@/components/CityServicePage";
 
 export default function Page() {
   return (
     <>
       <Header />
       <main>
-        <HelsingborgHemsidaContent />
+        <CityServicePage service="hemsida" city="helsingborg" />
       </main>
       <Footer />
     </>

@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HassleHomAdsContent from "./HassleHomAdsContent";
+import CityServicePage from "@/components/CityServicePage";
 
 export default function Page() {
   return (
     <>
       <Header />
       <main>
-        <HassleHomAdsContent />
+        <CityServicePage service="google-ads" city="hassleholm" />
       </main>
       <Footer />
     </>

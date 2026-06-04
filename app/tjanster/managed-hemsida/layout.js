@@ -20,10 +20,36 @@ export const metadata = {
   },
 };
 
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Managed hemsida",
+  "serviceType": "Drift, underhåll & support",
+  "description": "Managed hemsida för företag i Hässleholm — drift, säkerhet, uppdateringar, innehållsändringar. Från 390 kr/mån. Boka kostnadsfri genomgång.",
+  "url": "https://stoltmarketing.se/tjanster/managed-hemsida",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://stoltmarketing.se/#organization",
+    "name": "Stolt Marketing",
+    "url": "https://stoltmarketing.se"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Skåne"
+    },
+    {
+      "@type": "Country",
+      "name": "Sverige"
+    }
+  ]
+};
+
 export default function Layout({ children }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       {children}
     </>
   );

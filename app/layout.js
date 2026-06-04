@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import ChatWidget from "@/components/ChatWidget";
+import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
 export const metadata = {
   metadataBase: new URL("https://stoltmarketing.se"),
@@ -9,18 +10,18 @@ export const metadata = {
     template: "%s | Stolt Marketing",
   },
   description:
-    "Webbyrå i Hässleholm. Moderna hemsidor, e-handel, SEO och AI-automation för företag. 10+ års erfarenhet, enterprise-kvalitet, personlig service.",
+    "Webbyrå i Hässleholm och Skåne. Moderna hemsidor, e-handel, SEO, Google Ads och AI-automation för företag. 10+ års erfarenhet, fast pris, personlig service.",
   keywords: [
-    "digital konsult",
     "webbyrå hässleholm",
-    "AI konsult",
+    "webbyrå skåne",
+    "seo skåne",
+    "google ads skåne",
     "webbutvecklare",
     "SEO",
-    "WooCommerce",
-    "Next.js",
-    "webbplats företag",
-    "managed hemsida",
     "AI automation",
+    "hemsida företag",
+    "managed hemsida",
+    "digital byrå skåne",
   ],
   authors: [{ name: "Joel Stolt" }],
   creator: "Joel Stolt",
@@ -29,10 +30,17 @@ export const metadata = {
     locale: "sv_SE",
     url: "https://stoltmarketing.se",
     siteName: "Stolt Marketing",
-    title: "Webbyrå Hässleholm — Hemsida, SEO & AI",
+    title: "Webbyrå i Skåne — Hemsida, SEO, Google Ads & AI",
     description:
-      "Moderna hemsidor, e-handel, SEO och AI-automation för företag i Skåne och Sverige.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+      "Moderna hemsidor, e-handel, SEO, Google Ads och AI-automation för företag i Skåne och hela Sverige.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing — webbyrå i Skåne" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webbyrå i Skåne — Hemsida, SEO, Google Ads & AI",
+    description:
+      "Moderna hemsidor, SEO, Google Ads och AI-automation för företag i Skåne. 10+ års erfarenhet, fast pris.",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://stoltmarketing.se",
@@ -50,36 +58,68 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Stolt Marketing",
-    url: "https://stoltmarketing.se",
+  const orgId = `${SITE.url}/#organization`;
+
+  const organization = {
+    "@type": ["ProfessionalService", "Organization"],
+    "@id": orgId,
+    name: SITE.name,
+    url: SITE.url,
+    email: SITE.email,
+    image: `${SITE.url}/og-image.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE.url}/og-image.png`,
+      width: 1200,
+      height: 630,
+    },
     description:
-      "Digital konsult med 10+ års erfarenhet. Moderna webbplatser, e-handel, AI-lösningar och SEO.",
+      "Digital byrå i Hässleholm och Skåne med 10+ års erfarenhet. Moderna hemsidor, e-handel, SEO, Google Ads och AI-automation för företag.",
+    priceRange: SITE.priceRange,
     founder: {
       "@type": "Person",
-      name: "Joel Stolt",
+      name: SITE.founder,
       jobTitle: "Digital konsult & AI-specialist",
+      image: `${SITE.url}/joel-stolt.png`,
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Hässleholm",
-      addressRegion: "Skåne",
-      addressCountry: "SE",
+      addressLocality: SITE.baseCity,
+      addressRegion: SITE.region,
+      addressCountry: SITE.country,
     },
-    areaServed: {
-      "@type": "Country",
-      name: "Sweden",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: CITIES.hassleholm.lat,
+      longitude: CITIES.hassleholm.lng,
     },
-    serviceType: [
-      "Webbutveckling",
-      "E-handel",
-      "SEO",
-      "AI-automation",
-      "Digital strategi",
-      "Managed hemsida",
+    areaServed: [
+      ...CITY_ORDER.map((c) => ({ "@type": "City", name: CITIES[c].name })),
+      { "@type": "AdministrativeArea", name: "Skåne" },
+      { "@type": "Country", name: "Sverige" },
     ],
+    knowsAbout: SERVICE_ORDER.map((s) => SERVICES[s].serviceType),
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    slogan: "Enterprise-kvalitet till småföretag.",
+  };
+
+  const website = {
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    inLanguage: "sv-SE",
+    publisher: { "@id": orgId },
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [organization, website],
   };
 
   return (

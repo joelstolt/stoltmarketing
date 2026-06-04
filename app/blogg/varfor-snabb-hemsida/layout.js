@@ -1,6 +1,9 @@
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  image: ["https://stoltmarketing.se/og-image.png"],
+  mainEntityOfPage: "https://stoltmarketing.se/blogg/varfor-snabb-hemsida",
+  inLanguage: "sv-SE",
   headline: "Varför en snabb hemsida ger dig fler kunder (och bättre SEO)",
   description: "Lär dig varför hemsidans hastighet är kritisk för konvertering och Google-ranking. Core Web Vitals förklarade enkelt. Praktiska tips för att göra din sajt snabbare.",
   author: { "@type": "Person", name: "Joel Stolt" },
