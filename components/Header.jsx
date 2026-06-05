@@ -12,6 +12,8 @@ import {
   Shield,
   Megaphone,
   MonitorSmartphone,
+  ShoppingCart,
+  LayoutTemplate,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -21,6 +23,18 @@ const serviceItems = [
     label: "Webbutveckling",
     desc: "Moderna sajter som konverterar",
     href: "/tjanster/webbutveckling",
+  },
+  {
+    icon: ShoppingCart,
+    label: "E-handel",
+    desc: "Butiker som konverterar",
+    href: "/tjanster/e-handel",
+  },
+  {
+    icon: LayoutTemplate,
+    label: "WordPress",
+    desc: "Snabba, säkra WP-sidor",
+    href: "/tjanster/wordpress",
   },
   {
     icon: Cpu,

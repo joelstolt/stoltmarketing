@@ -9,12 +9,12 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "SEO Hässleholm — Synlighet som ger fler kunder",
-  description: "SEO-tjänster i Hässleholm för att dina kunder hittar dig på Google. Teknisk SEO, sökordsanalys, lokal optimering. Mätbara resultat. Boka kostnadsfri genomgång.",
+  title: "SEO-byrå & sökmotoroptimering för företag",
+  description: "SEO-byrå för företag i hela Sverige. Sökmotoroptimering, teknisk SEO och lokal optimering som ger mätbara resultat och fler kunder. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://stoltmarketing.se/tjanster/seo" },
   openGraph: {
-    title: "SEO Hässleholm — Synlighet som ger fler kunder",
-    description: "Sökmotoroptimering för företag i Hässleholm. Teknisk SEO, lokal optimering, mätbara resultat.",
+    title: "SEO-byrå & sökmotoroptimering för företag",
+    description: "Sökmotoroptimering och teknisk SEO som ger fler kunder. SEO-byrå för företag i hela Sverige — mätbara resultat, fast pris.",
     url: "https://stoltmarketing.se/tjanster/seo",
   },
 };
@@ -22,9 +22,9 @@ export const metadata = {
 const serviceLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Sökmotoroptimering (SEO)",
+  "name": "SEO-byrå & sökmotoroptimering",
   "serviceType": "Sökmotoroptimering (SEO)",
-  "description": "SEO-tjänster i Hässleholm för att dina kunder hittar dig på Google. Teknisk SEO, sökordsanalys, lokal optimering. Mätbara resultat. Boka kostnadsfri genomgång.",
+  "description": "SEO-byrå för företag i hela Sverige. Sökmotoroptimering, teknisk SEO och lokal optimering som ger mätbara resultat och fler kunder.",
   "url": "https://stoltmarketing.se/tjanster/seo",
   "provider": {
     "@type": "ProfessionalService",

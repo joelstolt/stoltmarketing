@@ -32,9 +32,9 @@ export default function SeoContent() {
           { label: "Tjänster", href: "/tjanster" },
           { label: "SEO" },
         ]}
-        badge="SEO"
-        title="Bättre synlighet på Google — så att rätt kunder hittar dig."
-        subtitle="Teknisk SEO, sökordsanalys och lokal optimering som ger mätbara resultat. Ingen fluff, bara det som driver trafik och förfrågningar."
+        badge="SEO-byrå"
+        title="Sökmotoroptimering som ger dig fler kunder."
+        subtitle="Som SEO-byrå hjälper jag företag i hela Sverige att ranka högre på Google — teknisk SEO, sökordsanalys och lokal optimering med mätbara resultat. Ingen fluff."
         bullets={["Teknisk SEO-audit", "Lokal & nationell optimering", "Mätbar uppföljning"]}
       />
 

@@ -6,6 +6,8 @@ import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES } from "@/lib/local/data";
 
 const services = [
   { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+  { label: "E-handel", href: "/tjanster/e-handel" },
+  { label: "WordPress-hemsida", href: "/tjanster/wordpress" },
   { label: "AI & Automation", href: "/tjanster/ai-automation" },
   { label: "SEO & Synlighet", href: "/tjanster/seo" },
   { label: "Google Ads", href: "/tjanster/google-ads" },

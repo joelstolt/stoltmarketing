@@ -15,6 +15,8 @@ import {
   MessageCircle,
   FileText,
   Rocket,
+  ShoppingCart,
+  LayoutTemplate,
 } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
 
@@ -107,6 +109,50 @@ const services = [
       { value: "7d", label: "Till första resultaten" },
     ],
     href: "/tjanster/google-ads",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-handel som säljer",
+    subtitle:
+      "WooCommerce-butiker som laddar snabbt, konverterar och är enkla att driva.",
+    when: "När du vill sälja online — eller har en butik som inte konverterar.",
+    expect: [
+      "Fler köp och högre snittorder",
+      "Snabb, smidig checkout",
+      "Klarna, Swish och kort",
+    ],
+    includes: [
+      "WooCommerce-bygge",
+      "Betal- & fraktlösningar",
+      "SEO för produktsidor",
+    ],
+    stats: [
+      { value: "3 900", label: "kr från" },
+      { value: "100%", label: "Du äger butiken" },
+    ],
+    href: "/tjanster/e-handel",
+  },
+  {
+    icon: LayoutTemplate,
+    title: "WordPress-hemsidor",
+    subtitle:
+      "Snabba, säkra WordPress-sidor du enkelt uppdaterar själv — utan WP-långsamheten.",
+    when: "När du vill ha ett flexibelt CMS du kan sköta själv.",
+    expect: [
+      "Du uppdaterar enkelt själv",
+      "Snabb och säker sajt",
+      "SEO-optimerad från start",
+    ],
+    includes: [
+      "WordPress & WooCommerce",
+      "Säkerhet & backup",
+      "Drift från 390 kr/mån",
+    ],
+    stats: [
+      { value: "10+", label: "Års WP-erfarenhet" },
+      { value: "390", label: "kr/mån drift" },
+    ],
+    href: "/tjanster/wordpress",
   },
   {
     icon: Shield,
