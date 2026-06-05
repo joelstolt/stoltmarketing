@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Webbyrå Helsingborg — Hemsida, SEO & Webbutveckling | Stolt Marketing",
+  title: "Webbyrå Helsingborg — Hemsida, SEO & Webbutveckling",
   description:
     "Digital byrå i Helsingborg. Vi bygger moderna webbplatser, hanterar SEO och digital marknadsföring för lokala företag och startups.",
   alternates: {

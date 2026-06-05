@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Webbyrå Kristianstad — Hemsida, SEO & Webbutveckling | Stolt Marketing",
+  title: "Webbyrå Kristianstad — Hemsida, SEO & Webbutveckling",
   description:
     "Digital byrå i Kristianstad. Vi bygger moderna webbplatser, hanterar SEO och digital marknadsföring för lokala företag. Kostnadsfri genomgång.",
   alternates: {
