@@ -80,7 +80,10 @@ export default function KontaktContent() {
           _subject: `Ny förfrågan från ${formData.name} — ${formData.company || "Ej angivet"}`,
         }),
       });
-      if (res.ok) setSubmitted(true);
+      if (res.ok) {
+        setSubmitted(true);
+        if (typeof window !== "undefined" && window.umami) { window.umami.track("lead-kontaktformular"); }
+      }
     } catch (err) {
       console.error(err);
     }
