@@ -11,7 +11,7 @@ const breadcrumb = {
 export const metadata = {
   title: "Webbutveckling Hässleholm — Moderna hemsidor för företag",
   description:
-    "Webbutveckling i Hässleholm — moderna hemsidor och e-handelslösningar i Next.js, React, WordPress. Snabba, responsiva sajter. Från 3 900 kr. Boka kostnadsfri genomgång.",
+    "Webbutveckling i Hässleholm — moderna hemsidor och e-handel i Next.js, React och WordPress. Snabba, responsiva sajter från 3 900 kr. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://stoltmarketing.se/tjanster/webbutveckling" },
   openGraph: {
     title: "Webbutveckling Hässleholm — Moderna hemsidor för företag",

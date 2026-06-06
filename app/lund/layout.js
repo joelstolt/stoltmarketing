@@ -2,7 +2,7 @@ import { HubFaqSchema } from "@/lib/local/hub-schema";
 export const metadata = {
   title: "Webbyrå Lund — Hemsida, SEO & Webbutveckling",
   description:
-    "Digital byrå i Lund för innovatörer och tech-företag. Vi byggar moderna webbplatser och hanterar digital marknadsföring för startups från Ideon och Lund University.",
+    "Webbyrå i Lund för tech-företag och startups. Vi bygger moderna webbplatser och sköter SEO och marknadsföring för bolag kring Ideon och Lunds universitet.",
   alternates: {
     canonical: "https://stoltmarketing.se/lund",
   },

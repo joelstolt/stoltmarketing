@@ -8,7 +8,7 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Blogg — Guider om webb, SEO och AI | Stolt Marketing",
+  title: "Blogg — Guider om webb, SEO och AI",
   description:
     "Praktiska guider och tips om webbutveckling, SEO, AI-automation och digital strategi för småföretag. Skrivet av Joel Stolt, digital konsult i Hässleholm.",
   alternates: {
