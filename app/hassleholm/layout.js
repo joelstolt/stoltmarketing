@@ -1,3 +1,4 @@
+import { HubFaqSchema } from "@/lib/local/hub-schema";
 export const metadata = {
   title: "Webbyrå i Hässleholm — webb, SEO, Google Ads & AI",
   description:
@@ -43,6 +44,7 @@ export default function Layout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
       />
+      <HubFaqSchema city="hassleholm" />
       {children}
     </>
   );

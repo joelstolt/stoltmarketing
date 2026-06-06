@@ -10,6 +10,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
+import CityHubExtra from "@/components/CityHubExtra";
 
 const services = [
   {
@@ -206,6 +207,8 @@ export default function MalmoContent() {
           </Reveal>
         </div>
       </section>
+
+      <CityHubExtra city="malmo" />
 
       {/* ═══ CTA ═══ */}
       <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
