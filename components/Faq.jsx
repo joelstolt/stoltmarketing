@@ -99,12 +99,9 @@ export default function Faq() {
                   </motion.span>
                 </button>
 
-                <AnimatePresence>
-                  {open === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+                <motion.div
+                      initial={false}
+                      animate={{ height: open === i ? "auto" : 0, opacity: open === i ? 1 : 0 }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
@@ -112,8 +109,6 @@ export default function Faq() {
                         {faq.a}
                       </p>
                     </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
             </Reveal>
           ))}

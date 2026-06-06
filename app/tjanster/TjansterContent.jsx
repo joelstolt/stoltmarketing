@@ -458,24 +458,16 @@ export default function TjansterContent() {
                       <Plus size={20} />
                     </motion.span>
                   </button>
-                  <AnimatePresence>
-                    {openFaq === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{
-                          duration: 0.3,
-                          ease: [0.16, 1, 0.3, 1],
-                        }}
-                        className="overflow-hidden"
-                      >
+                  <motion.div
+                      initial={false}
+                      animate={{ height: openFaq === i ? "auto" : 0, opacity: openFaq === i ? 1 : 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
                         <p className="pb-5 text-[14px] sm:text-[15px] leading-relaxed text-body">
                           {faq.a}
                         </p>
                       </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               </Reveal>
             ))}
