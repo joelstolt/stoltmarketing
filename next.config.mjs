@@ -1,3 +1,8 @@
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+// Gör Cloudflare-bindings/env tillgängliga under `next dev`.
+initOpenNextCloudflareForDev();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {

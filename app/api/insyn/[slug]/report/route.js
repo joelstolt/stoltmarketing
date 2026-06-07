@@ -1,8 +1,6 @@
 import { getClient } from "@/lib/insyn/clients";
 import { getReport, getRange } from "@/lib/umami";
-import { renderToBuffer } from "@react-pdf/renderer";
-import React from "react";
-import { ReportDocument } from "./ReportDocument";
+import { buildReportPdf } from "./report-pdf";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -21,9 +19,7 @@ export async function GET(request, { params }) {
 
   try {
     const report = await getReport(client.websiteId, range);
-    const buffer = await renderToBuffer(
-      React.createElement(ReportDocument, { client, range, report })
-    );
+    const buffer = await buildReportPdf({ client, range, report });
 
     const filename = `insyn-${slug}-${range.key}.pdf`;
     return new Response(buffer, {
