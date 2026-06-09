@@ -1,4 +1,15 @@
-export default function robots() {
+import { headers } from "next/headers";
+
+export default async function robots() {
+  const host = (await headers()).get("host") || "";
+
+  // Preview-deployar (workers.dev m.m.) ska aldrig indexeras
+  if (!host.endsWith("stoltmarketing.se")) {
+    return {
+      rules: [{ userAgent: "*", disallow: "/" }],
+    };
+  }
+
   return {
     rules: [
       {
