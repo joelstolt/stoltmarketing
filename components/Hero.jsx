@@ -77,10 +77,9 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.06}>
-              <h1 className="mt-7 font-heading font-600 text-[clamp(34px,5vw,62px)] leading-[1.07] tracking-[-0.015em] text-heading">
-                Moderna webbplatser, SEO och AI som gör det enklare för dina
-                kunder att <span className="stolt-mark">hitta dig</span> och ta
-                kontakt.
+              <h1 className="mt-7 font-heading font-600 text-[clamp(36px,5.4vw,68px)] leading-[1.07] tracking-[-0.015em] text-heading">
+                Webbplatser, SEO och AI som gör dig{" "}
+                <span className="stolt-mark">lätt att hitta</span>.
               </h1>
             </Reveal>
 
