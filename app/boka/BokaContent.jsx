@@ -41,7 +41,10 @@ export default function BokaContent() {
           _subject: `Bokningsförfrågan från ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`,
         }),
       });
-      if (res.ok) setSubmitted(true);
+      if (res.ok) {
+        setSubmitted(true);
+        if (typeof window !== "undefined" && window.umami) { window.umami.track("lead-boka"); }
+      }
     } catch (err) {
       console.error(err);
     }

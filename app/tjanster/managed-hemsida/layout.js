@@ -2,9 +2,9 @@ const breadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://stoltmarketing.se/tjanster" },
-    { "@type": "ListItem", position: 3, name: "Managed Hemsida", item: "https://stoltmarketing.se/tjanster/managed-hemsida" },
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://www.stoltmarketing.se/tjanster" },
+    { "@type": "ListItem", position: 3, name: "Managed Hemsida", item: "https://www.stoltmarketing.se/tjanster/managed-hemsida" },
   ],
 };
 
@@ -12,11 +12,11 @@ export const metadata = {
   title: "Managed Hemsida Hässleholm — Drift, säkerhet & support",
   description:
     "Managed hemsida för företag i Hässleholm — drift, säkerhet, uppdateringar, innehållsändringar. Från 390 kr/mån. Boka kostnadsfri genomgång.",
-  alternates: { canonical: "https://stoltmarketing.se/tjanster/managed-hemsida" },
+  alternates: { canonical: "https://www.stoltmarketing.se/tjanster/managed-hemsida" },
   openGraph: {
     title: "Managed Hemsida Hässleholm — Drift, säkerhet & support",
     description: "Hemsida med drift, säkerhet, uppdateringar. Från 390 kr/mån.",
-    url: "https://stoltmarketing.se/tjanster/managed-hemsida",
+    url: "https://www.stoltmarketing.se/tjanster/managed-hemsida",
   },
 };
 
@@ -26,12 +26,12 @@ const serviceLd = {
   "name": "Managed hemsida",
   "serviceType": "Drift, underhåll & support",
   "description": "Managed hemsida för företag i Hässleholm — drift, säkerhet, uppdateringar, innehållsändringar. Från 390 kr/mån. Boka kostnadsfri genomgång.",
-  "url": "https://stoltmarketing.se/tjanster/managed-hemsida",
+  "url": "https://www.stoltmarketing.se/tjanster/managed-hemsida",
   "provider": {
     "@type": "ProfessionalService",
-    "@id": "https://stoltmarketing.se/#organization",
+    "@id": "https://www.stoltmarketing.se/#organization",
     "name": "Stolt Marketing",
-    "url": "https://stoltmarketing.se"
+    "url": "https://www.stoltmarketing.se"
   },
   "areaServed": [
     {

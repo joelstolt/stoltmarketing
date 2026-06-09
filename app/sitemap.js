@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://stoltmarketing.se";
+  const baseUrl = "https://www.stoltmarketing.se";
   // Stabil lastmod för statiska sidor (ändras inte vid varje bygge).
   const LASTMOD = new Date("2026-06-05");
 

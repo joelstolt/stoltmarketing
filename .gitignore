@@ -2,3 +2,8 @@ node_modules/
 .next/
 .env.local
 .env.local
+.dev.vars
+.open-next/
+.wrangler/
+.vercel/
+.DS_Store

@@ -4,7 +4,7 @@ import ChatWidget from "@/components/ChatWidget";
 import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
 export const metadata = {
-  metadataBase: new URL("https://stoltmarketing.se"),
+  metadataBase: new URL("https://www.stoltmarketing.se"),
   title: {
     default: "Webbyrå Hässleholm — Hemsida, SEO & AI | Stolt Marketing",
     template: "%s | Stolt Marketing",
@@ -28,7 +28,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "sv_SE",
-    url: "https://stoltmarketing.se",
+    url: "https://www.stoltmarketing.se",
     siteName: "Stolt Marketing",
     title: "Webbyrå i Skåne — Hemsida, SEO, Google Ads & AI",
     description:
@@ -43,7 +43,7 @@ export const metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://stoltmarketing.se",
+    canonical: "https://www.stoltmarketing.se",
   },
   robots: {
     index: true,

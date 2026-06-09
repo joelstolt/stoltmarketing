@@ -2,9 +2,9 @@ const breadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://stoltmarketing.se/tjanster" },
-    { "@type": "ListItem", position: 3, name: "Google Ads", item: "https://stoltmarketing.se/tjanster/google-ads" },
+    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://www.stoltmarketing.se/tjanster" },
+    { "@type": "ListItem", position: 3, name: "Google Ads", item: "https://www.stoltmarketing.se/tjanster/google-ads" },
   ],
 };
 
@@ -13,12 +13,12 @@ export const metadata = {
   description:
     "Google Ads-förvaltning för företag i Hässleholm. Sökordsanalys, annonstext, optimering och rapportering. Fler samtal och förfrågningar. Boka kostnadsfri genomgång.",
   alternates: {
-    canonical: "https://stoltmarketing.se/tjanster/google-ads",
+    canonical: "https://www.stoltmarketing.se/tjanster/google-ads",
   },
   openGraph: {
     title: "Google Ads Hässleholm — Fler kunder med annonsering",
     description: "Google Ads-förvaltning för företag i Hässleholm. Optimering, rapportering, resultat.",
-    url: "https://stoltmarketing.se/tjanster/google-ads",
+    url: "https://www.stoltmarketing.se/tjanster/google-ads",
   },
 };
 
@@ -28,12 +28,12 @@ const serviceLd = {
   "name": "Google Ads",
   "serviceType": "Google Ads & sökordsannonsering",
   "description": "Google Ads-förvaltning för företag i Hässleholm. Sökordsanalys, annonstext, optimering och rapportering. Fler samtal och förfrågningar. Boka kostnadsfri genomgång.",
-  "url": "https://stoltmarketing.se/tjanster/google-ads",
+  "url": "https://www.stoltmarketing.se/tjanster/google-ads",
   "provider": {
     "@type": "ProfessionalService",
-    "@id": "https://stoltmarketing.se/#organization",
+    "@id": "https://www.stoltmarketing.se/#organization",
     "name": "Stolt Marketing",
-    "url": "https://stoltmarketing.se"
+    "url": "https://www.stoltmarketing.se"
   },
   "areaServed": [
     {

@@ -70,7 +70,7 @@ function BlobImage({ className = "" }) {
         }}
       >
         <img
-          src="/hassleholm-hero.png"
+          src="/hassleholm-hero.webp"
           alt="Hässleholm stad"
           style={{
             width: "100%",

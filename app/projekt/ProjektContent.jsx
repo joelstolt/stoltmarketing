@@ -22,7 +22,7 @@ const projects = [
       { label: "Status", value: "Live" },
     ],
     tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-    screenshot: "/case-lia.png",
+    screenshot: "/case-lia.webp",
   },
   {
     title: "RBN Utbildning",
@@ -40,7 +40,7 @@ const projects = [
     ],
     tech: ["WordPress", "Bricks Builder", "REST API", "SEO"],
     url: "https://rbnutbildning.se",
-    screenshot: "/case-rbn.png",
+    screenshot: "/case-rbn.webp",
   },
   {
     title: "Förskolan Harpan",
@@ -57,7 +57,7 @@ const projects = [
       { label: "Status", value: "Live" },
     ],
     tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    screenshot: "/case-harpan.png",
+    screenshot: "/case-harpan.webp",
   },
   {
     title: "Omniway",
@@ -75,7 +75,7 @@ const projects = [
     ],
     tech: ["WordPress", "WCAG 2.1", "Tillgänglighet", "SEO"],
     url: "https://omniway.se",
-    screenshot: "/case-omniway.png",
+    screenshot: "/case-omniway.webp",
   },
   {
     title: "Kvota.se",
@@ -93,7 +93,7 @@ const projects = [
     ],
     tech: ["Next.js", "React", "Claude AI", "jsPDF", "Resend", "Vercel"],
     url: "https://kvota.se",
-    screenshot: "/case-kvota.png",
+    screenshot: "/case-kvota.webp",
   },
   {
     title: "SMH / KYH / Hermods",
@@ -110,7 +110,7 @@ const projects = [
       { label: "Drift", value: "Löpande" },
     ],
     tech: ["WordPress", "WooCommerce", "Bricks Builder", "Stripe"],
-    screenshot: "/case-smh.png",
+    screenshot: "/case-smh.webp",
   },
 ];
 
