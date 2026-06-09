@@ -3,7 +3,7 @@ export const metadata = {
   description:
     "Så hanterar Stolt Marketing dina personuppgifter. Läs om cookies, datalagring och dina rättigheter.",
   alternates: {
-    canonical: "https://stoltmarketing.se/integritet",
+    canonical: "https://www.stoltmarketing.se/integritet",
   },
 };
 

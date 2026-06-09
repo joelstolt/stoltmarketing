@@ -33,7 +33,7 @@ function FramedImage() {
         style={{ border: "1px solid rgba(26,22,17,0.15)" }}
       >
         <img
-          src="/hassleholm-hero-duo.png"
+          src="/hassleholm-hero-duo.webp"
           alt="Hässleholm från ovan"
           style={{
             width: "100%",

@@ -43,8 +43,13 @@ export default async function RapportPage({ params }) {
             </a>
           </div>
           <a
-            href="https://stoltmarketing.se"
+<<<<<<< HEAD
+            href="https://www.stoltmarketing.se"
             className="text-xs text-[#A89F8D] hover:text-[#9A7409]"
+=======
+            href="https://www.stoltmarketing.se"
+            className="text-xs text-[#9CA3AF] hover:text-[#1D4ED8]"
+>>>>>>> seo-fixes
           >
             Levererad av Stolt Marketing
           </a>

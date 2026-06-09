@@ -18,6 +18,6 @@ export default async function robots() {
         disallow: ["/avtal/"],
       },
     ],
-    sitemap: "https://stoltmarketing.se/sitemap.xml",
+    sitemap: "https://www.stoltmarketing.se/sitemap.xml",
   };
 }

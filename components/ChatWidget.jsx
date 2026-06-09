@@ -308,7 +308,7 @@ export default function ChatWidget() {
 
         {/* Footer */}
         <div style={{ padding: "3px 14px 8px", textAlign: "center", fontSize: "10px", color: isDark ? "rgba(255,255,255,0.2)" : "#c0c0c0", flexShrink: 0 }}>
-          <a href="https://stoltmarketing.se/tjanster/ai-automation" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.color = pc)} onMouseLeave={(e) => (e.currentTarget.style.color = isDark ? "rgba(255,255,255,0.2)" : "#c0c0c0")}>
+          <a href="https://www.stoltmarketing.se/tjanster/ai-automation" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.color = pc)} onMouseLeave={(e) => (e.currentTarget.style.color = isDark ? "rgba(255,255,255,0.2)" : "#c0c0c0")}>
             Powered by Stolt Chat ⚡
           </a>
         </div>

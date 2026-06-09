@@ -221,7 +221,7 @@ export default function OmContent() {
                     }}
                   >
                     <img
-                      src="/joel-stolt.png"
+                      src="/joel-stolt.webp"
                       alt="Joel Stolt — Digital konsult & AI-specialist"
                       style={{
                         width: "100%",
