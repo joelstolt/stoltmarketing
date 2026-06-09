@@ -61,7 +61,7 @@ export default function AiSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, #FAFAF8 0%, #EEF2FF 50%, #FAFAF8 100%)",
+            "linear-gradient(180deg, #FAF5EC 0%, #F8F0DC 50%, #FAF5EC 100%)",
         }}
       />
 
@@ -70,13 +70,13 @@ export default function AiSection() {
           {/* Left: Text */}
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-white/70 border border-primary/10 backdrop-blur-sm uppercase">
+              <span className="eyebrow">
                 AI & Automation
               </span>
             </Reveal>
 
             <Reveal delay={0.06}>
-              <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading">
+              <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading">
                 AI är inte framtiden.{" "}
                 <span className="text-primary">Det är nu.</span>
               </h2>
@@ -147,7 +147,7 @@ export default function AiSection() {
                   >
                     <div className="flex items-center gap-2 mb-1.5">
                       <s.icon size={14} className="text-primary" />
-                      <span className="text-[16px] font-800 font-heading text-heading tracking-tight">
+                      <span className="text-[16px] font-600 font-heading text-heading tracking-tight">
                         {s.value}
                       </span>
                     </div>

@@ -67,13 +67,13 @@ export default function ManagedSection() {
     <section id="managed" className="py-20 sm:py-28 px-5 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+          <span className="eyebrow">
             Managed hemsida
           </span>
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading max-w-[700px]">
+          <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[700px]">
             Drift, underhåll och förbättringar — utan att du behöver tänka på det.
           </h2>
         </Reveal>
@@ -109,7 +109,7 @@ export default function ManagedSection() {
               <div
                 className={`relative h-full rounded-[20px] p-7 transition-all duration-300 ${
                   pkg.popular
-                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(29,78,216,0.08)]"
+                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,188,27,0.18)]"
                     : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15"
                 }`}
               >
@@ -124,7 +124,7 @@ export default function ManagedSection() {
                 </h3>
 
                 <div className="mt-3 flex items-baseline gap-1">
-                  <span className="font-heading font-800 text-[36px] tracking-tight text-heading">
+                  <span className="font-heading font-600 text-[36px] tracking-tight text-heading">
                     {pkg.price}
                   </span>
                   <span className="text-[15px] text-muted">kr/mån</span>

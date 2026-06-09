@@ -51,19 +51,19 @@ export default function Process() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, #FAFAF8 0%, #F4F4F1 50%, #FAFAF8 100%)",
+            "linear-gradient(180deg, #FAF5EC 0%, #F3EDDF 50%, #FAF5EC 100%)",
         }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <Reveal>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+          <span className="eyebrow">
             Process
           </span>
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading max-w-[500px]">
+          <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[500px]">
             Så funkar det att jobba med mig.
           </h2>
         </Reveal>
@@ -76,7 +76,7 @@ export default function Process() {
                   <div className="w-12 h-12 rounded-[14px] bg-primary/6 flex items-center justify-center">
                     <step.icon size={22} className="text-primary" />
                   </div>
-                  <span className="text-[48px] font-800 font-heading text-primary/10 leading-none">
+                  <span className="text-[48px] font-600 font-heading text-primary/10 leading-none">
                     {step.num}
                   </span>
                 </div>

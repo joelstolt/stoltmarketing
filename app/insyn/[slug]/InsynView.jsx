@@ -31,22 +31,22 @@ export default function InsynView({ client, slug, range, report, error }) {
   const isMonth = /^\d{4}-\d{2}$/.test(range.key);
 
   return (
-    <div className="min-h-screen bg-[#FAFAF8]">
+    <div className="min-h-screen bg-[#FAF5EC]">
       {/* Header */}
-      <header className="border-b border-[#E5E5E0] bg-white">
+      <header className="border-b border-[#E6DEC9] bg-white">
         <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-[0.18em] text-[#6B7280] font-semibold mb-1">
+            <div className="text-xs uppercase tracking-[0.18em] text-[#7A7263] font-semibold mb-1">
               Insyn · Trafikrapport
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-[#0C0F1A] tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-bold text-[#1A1611] tracking-tight">
               {client.name}
             </h1>
             <a
               href={`https://${client.domain}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#1D4ED8] mt-1"
+              className="inline-flex items-center gap-1.5 text-sm text-[#7A7263] hover:text-[#9A7409] mt-1"
             >
               {client.domain}
               <ExternalLink size={13} />
@@ -75,16 +75,16 @@ export default function InsynView({ client, slug, range, report, error }) {
                 href={`/insyn/${slug}?range=${r.key}`}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                   active
-                    ? "bg-[#0C0F1A] text-white"
-                    : "bg-white text-[#3B3F4A] border border-[#E5E5E0] hover:border-[#0C0F1A]"
+                    ? "bg-[#1A1611] text-white"
+                    : "bg-white text-[#433D33] border border-[#E6DEC9] hover:border-[#1A1611]"
                 }`}
               >
                 {r.label}
               </Link>
             );
           })}
-          <div className="w-px h-6 bg-[#E5E5E0] mx-2" />
-          <span className="text-xs text-[#6B7280] uppercase tracking-wider font-semibold">
+          <div className="w-px h-6 bg-[#E6DEC9] mx-2" />
+          <span className="text-xs text-[#7A7263] uppercase tracking-wider font-semibold">
             Månad:
           </span>
           {months.map((m) => {
@@ -95,8 +95,8 @@ export default function InsynView({ client, slug, range, report, error }) {
                 href={`/insyn/${slug}?range=${m.key}`}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition ${
                   active
-                    ? "bg-[#0C0F1A] text-white"
-                    : "bg-white text-[#3B3F4A] border border-[#E5E5E0] hover:border-[#0C0F1A]"
+                    ? "bg-[#1A1611] text-white"
+                    : "bg-white text-[#433D33] border border-[#E6DEC9] hover:border-[#1A1611]"
                 }`}
               >
                 {m.label}
@@ -105,8 +105,8 @@ export default function InsynView({ client, slug, range, report, error }) {
           })}
         </div>
 
-        <div className="text-sm text-[#6B7280] mb-6">
-          Period: <span className="font-medium text-[#3B3F4A]">{range.label}</span>
+        <div className="text-sm text-[#7A7263] mb-6">
+          Period: <span className="font-medium text-[#433D33]">{range.label}</span>
         </div>
 
         {error ? (
@@ -120,12 +120,12 @@ export default function InsynView({ client, slug, range, report, error }) {
           <>
             <StatsGrid stats={report.stats} totalTime={report.stats.totaltime} />
 
-            <section className="mt-10 rounded-2xl border border-[#E5E5E0] bg-white p-6 md:p-8 shadow-sm">
+            <section className="mt-10 rounded-2xl border border-[#E6DEC9] bg-white p-6 md:p-8 shadow-sm">
               <div className="flex items-baseline justify-between mb-4">
-                <h2 className="text-lg font-bold text-[#0C0F1A]">
+                <h2 className="text-lg font-bold text-[#1A1611]">
                   Trafik över tid
                 </h2>
-                <span className="text-xs text-[#6B7280] uppercase tracking-wider">
+                <span className="text-xs text-[#7A7263] uppercase tracking-wider">
                   {report.unit === "hour"
                     ? "Per timme"
                     : report.unit === "month"
@@ -163,10 +163,10 @@ export default function InsynView({ client, slug, range, report, error }) {
           </>
         )}
 
-        <footer className="mt-16 pt-6 border-t border-[#E5E5E0] text-xs text-[#9CA3AF] flex justify-between flex-wrap gap-3">
+        <footer className="mt-16 pt-6 border-t border-[#E6DEC9] text-xs text-[#A89F8D] flex justify-between flex-wrap gap-3">
           <span>
             Rapport genererad av{" "}
-            <a href="/" className="text-[#1D4ED8] hover:underline">
+            <a href="/" className="text-[#9A7409] hover:underline">
               Stolt Marketing
             </a>
           </span>

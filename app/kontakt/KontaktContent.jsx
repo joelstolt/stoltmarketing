@@ -98,22 +98,22 @@ export default function KontaktContent() {
     width: "100%",
     padding: "14px 16px",
     borderRadius: 12,
-    border: "1px solid #E5E5E0",
+    border: "1px solid #E6DEC9",
     background: "#FFFFFF",
     fontSize: 15,
-    color: "#0C0F1A",
+    color: "#1A1611",
     fontFamily: "inherit",
     outline: "none",
     transition: "border-color 0.2s, box-shadow 0.2s",
   };
 
   const inputFocusHandler = (e) => {
-    e.target.style.borderColor = "#1D4ED8";
-    e.target.style.boxShadow = "0 0 0 3px rgba(29,78,216,0.08)";
+    e.target.style.borderColor = "#9A7409";
+    e.target.style.boxShadow = "0 0 0 3px rgba(242,188,27,0.18)";
   };
 
   const inputBlurHandler = (e) => {
-    e.target.style.borderColor = "#E5E5E0";
+    e.target.style.borderColor = "#E6DEC9";
     e.target.style.boxShadow = "none";
   };
 
@@ -171,7 +171,7 @@ export default function KontaktContent() {
                       {/* Name + Email row */}
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                         <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                          <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                             Namn *
                           </label>
                           <input
@@ -187,7 +187,7 @@ export default function KontaktContent() {
                           />
                         </div>
                         <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                          <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                             E-post *
                           </label>
                           <input
@@ -206,7 +206,7 @@ export default function KontaktContent() {
 
                       {/* Company */}
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                           Företag
                         </label>
                         <input
@@ -223,7 +223,7 @@ export default function KontaktContent() {
 
                       {/* Service select */}
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                           Vad behöver du hjälp med?
                         </label>
                         <select
@@ -232,7 +232,7 @@ export default function KontaktContent() {
                           onChange={handleChange}
                           onFocus={inputFocusHandler}
                           onBlur={inputBlurHandler}
-                          style={{ ...inputStyle, appearance: "none", cursor: "pointer", color: formData.service ? "#0C0F1A" : "#9CA3AF" }}
+                          style={{ ...inputStyle, appearance: "none", cursor: "pointer", color: formData.service ? "#1A1611" : "#A89F8D" }}
                         >
                           <option value="">Välj tjänst</option>
                           <option value="Webbplats">Ny webbplats</option>
@@ -246,7 +246,7 @@ export default function KontaktContent() {
 
                       {/* Message */}
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                           Beskriv kort vad du behöver *
                         </label>
                         <textarea
@@ -293,14 +293,14 @@ export default function KontaktContent() {
                             width: 40,
                             height: 40,
                             borderRadius: 10,
-                            background: "rgba(29,78,216,0.06)",
+                            background: "rgba(242,188,27,0.14)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             flexShrink: 0,
                           }}
                         >
-                          <method.icon size={18} color="#1D4ED8" />
+                          <method.icon size={18} color="#9A7409" />
                         </div>
                         <div>
                           <div className="text-[14px] font-600 text-heading">
@@ -342,14 +342,14 @@ export default function KontaktContent() {
                             width: 28,
                             height: 28,
                             borderRadius: 8,
-                            background: "rgba(29,78,216,0.06)",
+                            background: "rgba(242,188,27,0.14)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             flexShrink: 0,
                             fontSize: 13,
                             fontWeight: 700,
-                            color: "#1D4ED8",
+                            color: "#9A7409",
                           }}
                         >
                           {step.num}
@@ -370,7 +370,7 @@ export default function KontaktContent() {
 
               {/* Promises */}
               <Reveal delay={0.2}>
-                <div className="p-6 rounded-[16px]" style={{ background: "linear-gradient(135deg, #EEF2FF, #DBEAFE)" }}>
+                <div className="p-6 rounded-[16px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
                   <h3 className="font-heading font-700 text-[16px] text-heading tracking-tight mb-4">
                     Det du ska få med dig
                   </h3>

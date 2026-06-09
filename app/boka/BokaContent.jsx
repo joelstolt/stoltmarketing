@@ -56,22 +56,22 @@ export default function BokaContent() {
     width: "100%",
     padding: "14px 16px",
     borderRadius: 12,
-    border: "1px solid #E5E5E0",
+    border: "1px solid #E6DEC9",
     background: "#FFFFFF",
     fontSize: 15,
-    color: "#0C0F1A",
+    color: "#1A1611",
     fontFamily: "inherit",
     outline: "none",
     transition: "border-color 0.2s, box-shadow 0.2s",
   };
 
   const inputFocusHandler = (e) => {
-    e.target.style.borderColor = "#1D4ED8";
-    e.target.style.boxShadow = "0 0 0 3px rgba(29,78,216,0.08)";
+    e.target.style.borderColor = "#9A7409";
+    e.target.style.boxShadow = "0 0 0 3px rgba(242,188,27,0.18)";
   };
 
   const inputBlurHandler = (e) => {
-    e.target.style.borderColor = "#E5E5E0";
+    e.target.style.borderColor = "#E6DEC9";
     e.target.style.boxShadow = "none";
   };
 
@@ -83,7 +83,7 @@ export default function BokaContent() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+              "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
           }}
         />
 
@@ -102,7 +102,7 @@ export default function BokaContent() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h1 className="mt-5 font-heading font-800 text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading">
+              <h1 className="mt-5 font-heading font-600 text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading">
                 Boka en kostnadsfri genomgång
               </h1>
             </Reveal>
@@ -158,7 +158,7 @@ export default function BokaContent() {
                     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                         <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                          <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                             Namn *
                           </label>
                           <input
@@ -174,7 +174,7 @@ export default function BokaContent() {
                           />
                         </div>
                         <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                          <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                             E-post *
                           </label>
                           <input
@@ -192,7 +192,7 @@ export default function BokaContent() {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                           Företag
                         </label>
                         <input
@@ -208,7 +208,7 @@ export default function BokaContent() {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#3B3F4A", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
                           Beskriv kort vad du behöver hjälp med
                         </label>
                         <textarea
@@ -254,14 +254,14 @@ export default function BokaContent() {
                             width: 36,
                             height: 36,
                             borderRadius: 10,
-                            background: "rgba(29,78,216,0.06)",
+                            background: "rgba(242,188,27,0.14)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             flexShrink: 0,
                           }}
                         >
-                          <step.icon size={17} color="#1D4ED8" />
+                          <step.icon size={17} color="#9A7409" />
                         </div>
                         <div>
                           <div className="text-[14px] font-600 text-heading">
@@ -279,7 +279,7 @@ export default function BokaContent() {
 
               {/* Benefits */}
               <Reveal delay={0.14}>
-                <div className="p-5 rounded-[16px]" style={{ background: "linear-gradient(135deg, #EEF2FF, #DBEAFE)" }}>
+                <div className="p-5 rounded-[16px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
                   <h3 className="font-heading font-700 text-[15px] text-heading tracking-tight mb-3">
                     Det du får med dig
                   </h3>

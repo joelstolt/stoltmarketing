@@ -44,8 +44,8 @@ export default function ChatWidget() {
   const messageCountRef = useRef(0);
 
   const isDark = chatConfig.darkMode ?? false;
-  const pc = chatConfig.primaryColor || "#1D4ED8";
-  const pcd = chatConfig.primaryColorDark || "#1E3A8A";
+  const pc = chatConfig.primaryColor || "#9A7409";
+  const pcd = chatConfig.primaryColorDark || "#1A1611";
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -271,9 +271,9 @@ export default function ChatWidget() {
               <div style={{ padding: "0 14px 4px", flexShrink: 0 }}>
                 <button
                   onClick={() => setShowEmailForm(true)}
-                  style={{ width: "100%", padding: "8px", fontSize: "12.5px", color: isDark ? "rgba(255,255,255,0.5)" : "#6B7280", background: "transparent", border: `1px dashed ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, borderRadius: "10px", cursor: "pointer", transition: "all 0.25s", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", fontWeight: 500 }}
+                  style={{ width: "100%", padding: "8px", fontSize: "12.5px", color: isDark ? "rgba(255,255,255,0.5)" : "#7A7263", background: "transparent", border: `1px dashed ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, borderRadius: "10px", cursor: "pointer", transition: "all 0.25s", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", fontWeight: 500 }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = isDark ? "rgba(255,255,255,0.05)" : "#f9fafb"; e.currentTarget.style.borderColor = pc; e.currentTarget.style.color = pc; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.currentTarget.style.color = isDark ? "rgba(255,255,255,0.5)" : "#6B7280"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.currentTarget.style.color = isDark ? "rgba(255,255,255,0.5)" : "#7A7263"; }}
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
                   {chatConfig.emailButtonText || "Fick du inte svar? Mejla oss"}
@@ -289,7 +289,7 @@ export default function ChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={chatConfig.placeholder || "Skriv ett meddelande..."}
                   disabled={loading}
-                  style={{ flex: 1, padding: "10px 14px", borderRadius: "12px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#0c0f1a", fontSize: "16px", outline: "none", transition: "all 0.2s", fontFamily: "inherit" }}
+                  style={{ flex: 1, padding: "10px 14px", borderRadius: "12px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#1A1611", fontSize: "16px", outline: "none", transition: "all 0.2s", fontFamily: "inherit" }}
                   onFocus={(e) => { e.target.style.borderColor = pc; e.target.style.boxShadow = `0 0 0 3px ${pc}18`; }}
                   onBlur={(e) => { e.target.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.target.style.boxShadow = "none"; }}
                 />
@@ -384,21 +384,21 @@ function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent, email
         <div style={{ width: "52px", height: "52px", borderRadius: "50%", background: isDark ? "rgba(74,222,128,0.1)" : "#dcfce7", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
         </div>
-        <div style={{ fontSize: "15px", fontWeight: 600, color: isDark ? "#fff" : "#0c0f1a" }}>Meddelandet skickat!</div>
-        <div style={{ fontSize: "13px", color: isDark ? "rgba(255,255,255,0.5)" : "#6B7280" }}>Vi återkommer så snart som möjligt.</div>
+        <div style={{ fontSize: "15px", fontWeight: 600, color: isDark ? "#fff" : "#1A1611" }}>Meddelandet skickat!</div>
+        <div style={{ fontSize: "13px", color: isDark ? "rgba(255,255,255,0.5)" : "#7A7263" }}>Vi återkommer så snart som möjligt.</div>
       </div>
     );
   }
 
-  const inputStyle = { width: "100%", padding: "10px 12px", borderRadius: "10px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#0c0f1a", fontSize: "16px", outline: "none", transition: "border-color 0.2s, box-shadow 0.2s", boxSizing: "border-box", fontFamily: "inherit" };
+  const inputStyle = { width: "100%", padding: "10px 12px", borderRadius: "10px", border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#f4f4f5", color: isDark ? "#fff" : "#1A1611", fontSize: "16px", outline: "none", transition: "border-color 0.2s, box-shadow 0.2s", boxSizing: "border-box", fontFamily: "inherit" };
   const isDisabled = !emailData.name.trim() || !emailData.email.trim() || !emailData.message.trim() || emailSending;
 
   return (
     <div style={{ padding: "4px 0", display: "flex", flexDirection: "column", gap: "16px", animation: "stolt-chat-fadeUp 0.3s ease-out" }}>
       <button onClick={onBack} style={{ background: "none", border: "none", color: primaryColor, fontSize: "13px", cursor: "pointer", padding: "0", display: "flex", alignItems: "center", gap: "4px", fontWeight: 500, fontFamily: "inherit" }}>← Tillbaka till chatten</button>
       <div>
-        <div style={{ fontSize: "16px", fontWeight: 700, color: isDark ? "#fff" : "#0c0f1a", marginBottom: "4px", letterSpacing: "-0.01em" }}>Skriv till oss</div>
-        <div style={{ fontSize: "13px", color: isDark ? "rgba(255,255,255,0.5)" : "#6B7280" }}>Beskriv vad du behöver hjälp med så hör vi av oss.</div>
+        <div style={{ fontSize: "16px", fontWeight: 700, color: isDark ? "#fff" : "#1A1611", marginBottom: "4px", letterSpacing: "-0.01em" }}>Skriv till oss</div>
+        <div style={{ fontSize: "13px", color: isDark ? "rgba(255,255,255,0.5)" : "#7A7263" }}>Beskriv vad du behöver hjälp med så hör vi av oss.</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <input type="text" placeholder="Ditt namn" value={emailData.name} onChange={(e) => setEmailData({ ...emailData, name: e.target.value })} style={inputStyle} onFocus={(e) => { e.target.style.borderColor = primaryColor; e.target.style.boxShadow = `0 0 0 3px ${primaryColor}18`; }} onBlur={(e) => { e.target.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.target.style.boxShadow = "none"; }} />

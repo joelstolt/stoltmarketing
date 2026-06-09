@@ -68,13 +68,13 @@ export default function Faq() {
       />
       <div className="max-w-[720px] mx-auto">
         <Reveal>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+          <span className="eyebrow">
             Vanliga frågor
           </span>
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">
+          <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
             Frågor & Svar
           </h2>
         </Reveal>

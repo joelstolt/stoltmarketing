@@ -33,7 +33,7 @@ const cases = [
       { label: "Plattform", value: "Next.js" },
     ],
     screenshot: "/case-lia.png",
-    color: "#059669",
+    color: "#9A7409",
   },
   {
     client: "RBN Utbildning",
@@ -48,7 +48,7 @@ const cases = [
     ],
     screenshot: "/case-rbn.png",
     href: "https://rbnutbildning.se",
-    color: "#EA580C",
+    color: "#9A7409",
   },
   {
     client: "Förskolan Harpan",
@@ -62,7 +62,7 @@ const cases = [
       { label: "Teknik", value: "Next.js" },
     ],
     screenshot: "/case-harpan.png",
-    color: "#CA8A04",
+    color: "#9A7409",
   },
   {
     client: "Omniway",
@@ -77,7 +77,7 @@ const cases = [
     ],
     screenshot: "/case-omniway.png",
     href: "https://omniway.se",
-    color: "#7C3AED",
+    color: "#9A7409",
   },
 ];
 
@@ -92,19 +92,19 @@ export default function Cases() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, #FAFAF8 0%, #F4F4F1 50%, #FAFAF8 100%)",
+            "linear-gradient(180deg, #FAF5EC 0%, #F3EDDF 50%, #FAF5EC 100%)",
         }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <Reveal>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+          <span className="eyebrow">
             Projekt & Resultat
           </span>
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading max-w-[600px]">
+          <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[600px]">
             Uppdrag som talar för sig själva.
           </h2>
         </Reveal>
@@ -119,7 +119,7 @@ export default function Cases() {
         <div className="mt-12 grid sm:grid-cols-2 gap-5">
           {cases.map((c, i) => (
             <Reveal key={c.client} delay={i * 0.08 + 0.12}>
-              <div className="group h-full bg-surface rounded-[20px] border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-400 hover:-translate-y-1 flex flex-col">
+              <div className="group h-full bg-surface rounded-[10px] border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-400 hover:-translate-y-1 flex flex-col">
                 {/* Screenshot area */}
                 <div
                   className="relative h-[200px] overflow-hidden"
@@ -153,19 +153,7 @@ export default function Cases() {
 
                   {/* Tag overlay */}
                   <div className="absolute top-4 right-4">
-                    <span
-                      className={`text-[11px] font-600 px-2.5 py-1 rounded-full backdrop-blur-sm ${
-                        c.tagColor === "green"
-                          ? "text-emerald-700 bg-emerald-500/12 border border-emerald-500/15"
-                          : c.tagColor === "blue"
-                          ? "text-primary bg-primary/8 border border-primary/12"
-                          : c.tagColor === "yellow"
-                          ? "text-yellow-700 bg-yellow-500/12 border border-yellow-500/15"
-                          : c.tagColor === "purple"
-                          ? "text-violet-700 bg-violet-500/12 border border-violet-500/15"
-                          : "text-muted bg-white/80 border border-black/[0.06]"
-                      }`}
-                    >
+                    <span className="text-[11px] font-600 px-2.5 py-1 text-heading bg-base/95 border border-heading/15 backdrop-blur-sm">
                       {c.tag}
                     </span>
                   </div>
@@ -177,7 +165,7 @@ export default function Cases() {
                     {c.type}
                   </span>
 
-                  <h3 className="font-heading font-700 text-[20px] text-heading tracking-tight group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-heading font-600 text-[21px] text-heading tracking-tight group-hover:text-primary transition-colors duration-300">
                     {c.client}
                   </h3>
 

@@ -90,7 +90,7 @@ export default function ManagedContent() {
               <Reveal key={pkg.name} delay={i * 0.08 + 0.1}>
                 <div className={`relative h-full rounded-[20px] p-7 transition-all duration-300 ${
                   pkg.popular
-                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(29,78,216,0.08)]"
+                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,188,27,0.18)]"
                     : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15"
                 }`}>
                   {pkg.popular && (
@@ -100,7 +100,7 @@ export default function ManagedContent() {
                   )}
                   <h3 className="font-heading font-700 text-[18px] text-heading">{pkg.name}</h3>
                   <div className="mt-3 flex items-baseline gap-1">
-                    <span className="font-heading font-800 text-[36px] tracking-tight text-heading">{pkg.price}</span>
+                    <span className="font-heading font-600 text-[36px] tracking-tight text-heading">{pkg.price}</span>
                     <span className="text-[15px] text-muted">kr/mån</span>
                   </div>
                   <p className="mt-2 text-[14px] text-muted leading-relaxed">{pkg.desc}</p>
@@ -152,9 +152,9 @@ export default function ManagedContent() {
       </section>
 
       <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal><h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">Vill du ha lugn drift och tydlig kontroll?</h2></Reveal>
+          <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Vill du ha lugn drift och tydlig kontroll?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Vi sätter ett upplägg som passar din nivå, prioritet och ambitionsnivå — med tydligt ansvar och uppföljning.</p></Reveal>
           <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>

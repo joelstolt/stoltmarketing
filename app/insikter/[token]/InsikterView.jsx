@@ -21,8 +21,8 @@ function CopyButton({ value, label, variant = "primary" }) {
     "inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition";
   const styles =
     variant === "primary"
-      ? "bg-[#0C0F1A] text-white hover:bg-[#1D4ED8]"
-      : "bg-white text-[#0C0F1A] border border-[#E5E5E0] hover:border-[#0C0F1A]";
+      ? "bg-[#1A1611] text-white hover:bg-[#9A7409]"
+      : "bg-white text-[#1A1611] border border-[#E6DEC9] hover:border-[#1A1611]";
 
   return (
     <button type="button" onClick={handleCopy} className={`${baseStyle} ${styles}`}>
@@ -77,18 +77,18 @@ export default function InsikterView({
   error,
 }) {
   return (
-    <div className="min-h-screen bg-[#FAFAF8]">
+    <div className="min-h-screen bg-[#FAF5EC]">
       {/* Header */}
-      <header className="border-b border-[#E5E5E0] bg-white">
+      <header className="border-b border-[#E6DEC9] bg-white">
         <div className="mx-auto max-w-5xl px-6 py-6 flex items-center justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-[0.18em] text-[#6B7280] font-semibold mb-1">
+            <div className="text-xs uppercase tracking-[0.18em] text-[#7A7263] font-semibold mb-1">
               Internt · AI-Insikter
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-[#0C0F1A] tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-bold text-[#1A1611] tracking-tight">
               Månadsrapport — alla kunder
             </h1>
-            <div className="text-sm text-[#6B7280] mt-1">
+            <div className="text-sm text-[#7A7263] mt-1">
               Generera AI-genererade insikter, granska och mejla manuellt.
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function InsikterView({
       <main className="mx-auto max-w-5xl px-6 py-10">
         {/* Period-väljare */}
         <div className="flex items-center gap-2 flex-wrap mb-6">
-          <span className="text-xs text-[#6B7280] uppercase tracking-wider font-semibold mr-1">
+          <span className="text-xs text-[#7A7263] uppercase tracking-wider font-semibold mr-1">
             Månad:
           </span>
           {months.map((m) => {
@@ -109,8 +109,8 @@ export default function InsikterView({
                 href={`/insikter/${token}?range=${m.key}`}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition ${
                   active
-                    ? "bg-[#0C0F1A] text-white"
-                    : "bg-white text-[#3B3F4A] border border-[#E5E5E0] hover:border-[#0C0F1A]"
+                    ? "bg-[#1A1611] text-white"
+                    : "bg-white text-[#433D33] border border-[#E6DEC9] hover:border-[#1A1611]"
                 }`}
               >
                 {m.label}
@@ -130,27 +130,27 @@ export default function InsikterView({
         ) : (
           <>
             {/* Sammanfattning */}
-            <div className="rounded-2xl border border-[#E5E5E0] bg-white p-6 mb-6">
+            <div className="rounded-2xl border border-[#E6DEC9] bg-white p-6 mb-6">
               <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[#6B7280] font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-[#7A7263] font-semibold mb-1">
                     Rapportperiod
                   </div>
-                  <div className="text-xl font-bold text-[#0C0F1A]">
+                  <div className="text-xl font-bold text-[#1A1611]">
                     {result.range.label}
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs uppercase tracking-wider text-[#6B7280] font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-[#7A7263] font-semibold mb-1">
                     Kunder med data
                   </div>
-                  <div className="text-xl font-bold text-[#0C0F1A]">
+                  <div className="text-xl font-bold text-[#1A1611]">
                     {result.reports.filter((r) => r.ok).length} / {result.reports.length}
                   </div>
                 </div>
               </div>
 
-              <div className="text-sm text-[#3B3F4A] mb-4">
+              <div className="text-sm text-[#433D33] mb-4">
                 <span className="font-semibold">Ämne:</span> {result.subject}
               </div>
 
@@ -159,12 +159,12 @@ export default function InsikterView({
                   <li
                     key={r.slug}
                     className={`flex items-center gap-2 ${
-                      r.ok ? "text-[#3B3F4A]" : "text-red-700"
+                      r.ok ? "text-[#433D33]" : "text-red-700"
                     }`}
                   >
                     <span>{r.ok ? "✓" : "✗"}</span>
                     <span className="font-medium">{r.name}</span>
-                    <span className="text-[#9CA3AF]">{r.domain}</span>
+                    <span className="text-[#A89F8D]">{r.domain}</span>
                     {r.error && (
                       <span className="text-red-600 text-xs">— {r.error}</span>
                     )}
@@ -173,7 +173,7 @@ export default function InsikterView({
               </ul>
 
               {/* Copy-knappar */}
-              <div className="flex gap-3 flex-wrap pt-4 border-t border-[#E5E5E0]">
+              <div className="flex gap-3 flex-wrap pt-4 border-t border-[#E6DEC9]">
                 <CopyHTMLButton html={result.html} />
                 <CopyButton
                   value={result.subject}
@@ -184,7 +184,7 @@ export default function InsikterView({
                   href={`https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=joel@stoltmarketing.se&su=${encodeURIComponent(result.subject)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-white text-[#0C0F1A] border border-[#E5E5E0] hover:border-[#0C0F1A]"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-white text-[#1A1611] border border-[#E6DEC9] hover:border-[#1A1611]"
                 >
                   <Mail size={16} />
                   Öppna Gmail compose
@@ -192,18 +192,18 @@ export default function InsikterView({
                 </a>
               </div>
 
-              <div className="mt-4 text-xs text-[#6B7280] leading-relaxed">
+              <div className="mt-4 text-xs text-[#7A7263] leading-relaxed">
                 <strong>Så här gör du:</strong> 1) Klicka "Kopiera mejl-HTML" 2) Öppna Gmail (eller använd knappen ovan) 3) Klistra in i compose-fönstret (Cmd+V — Gmail renderar HTML automatiskt) 4) Klistra in ämnesraden 5) Lägg till mottagare och skicka.
               </div>
             </div>
 
             {/* Förhandsvisning */}
-            <div className="rounded-2xl border border-[#E5E5E0] bg-white overflow-hidden">
-              <div className="px-6 py-3 border-b border-[#E5E5E0] flex items-center justify-between">
-                <div className="text-sm font-semibold text-[#0C0F1A]">
+            <div className="rounded-2xl border border-[#E6DEC9] bg-white overflow-hidden">
+              <div className="px-6 py-3 border-b border-[#E6DEC9] flex items-center justify-between">
+                <div className="text-sm font-semibold text-[#1A1611]">
                   Mejl-förhandsvisning
                 </div>
-                <div className="text-xs text-[#9CA3AF]">
+                <div className="text-xs text-[#A89F8D]">
                   Så här ser mejlet ut för mottagaren
                 </div>
               </div>
@@ -218,10 +218,10 @@ export default function InsikterView({
           </>
         )}
 
-        <footer className="mt-10 pt-6 border-t border-[#E5E5E0] text-xs text-[#9CA3AF] flex justify-between flex-wrap gap-3">
+        <footer className="mt-10 pt-6 border-t border-[#E6DEC9] text-xs text-[#A89F8D] flex justify-between flex-wrap gap-3">
           <span>
             Genererad live · Cachat 6h per (kund, period) ·{" "}
-            <code className="bg-[#F4F4F1] px-1 py-0.5 rounded">/insikter/{token}</code>
+            <code className="bg-[#F3EDDF] px-1 py-0.5 rounded">/insikter/{token}</code>
           </span>
           <span>Inte indexerad · Endast du som har länken kommer åt</span>
         </footer>

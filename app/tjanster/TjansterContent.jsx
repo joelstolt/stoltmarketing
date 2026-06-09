@@ -346,7 +346,7 @@ export default function TjansterContent() {
                     <div className="flex flex-row lg:flex-col gap-6 lg:gap-8 lg:justify-center lg:border-l lg:border-border-light lg:pl-10">
                       {s.stats.map((stat) => (
                         <div key={stat.label}>
-                          <div className="text-[32px] font-800 font-heading text-heading tracking-tight">
+                          <div className="text-[32px] font-600 font-heading text-heading tracking-tight">
                             {stat.value}
                           </div>
                           <div className="text-[13px] text-muted mt-0.5">
@@ -379,7 +379,7 @@ export default function TjansterContent() {
                   <h3 className="font-heading font-700 text-[18px] text-heading">
                     {pkg.name}
                   </h3>
-                  <div className="mt-2 font-heading font-800 text-[24px] text-primary tracking-tight">
+                  <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">
                     {pkg.price}
                   </div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">
@@ -414,7 +414,7 @@ export default function TjansterContent() {
                     <div className="w-12 h-12 rounded-[14px] bg-primary/6 flex items-center justify-center">
                       <step.icon size={22} className="text-primary" />
                     </div>
-                    <span className="text-[48px] font-800 font-heading text-primary/10 leading-none">
+                    <span className="text-[48px] font-600 font-heading text-primary/10 leading-none">
                       {step.num}
                     </span>
                   </div>
@@ -481,12 +481,12 @@ export default function TjansterContent() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)",
+              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal>
-            <h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">
+            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
               Osäker på vilket upplägg som passar?
             </h2>
           </Reveal>

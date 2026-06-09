@@ -108,7 +108,7 @@ export default function CityServicePage({ service, city }) {
             {s.process.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.06 + 0.1}>
                 <div className="bg-surface rounded-[16px] border border-border p-6 h-full">
-                  <div className="font-heading font-800 text-[22px] text-primary">{`0${i + 1}`}</div>
+                  <div className="font-heading font-600 text-[22px] text-primary">{`0${i + 1}`}</div>
                   <h3 className="mt-2 font-heading font-700 text-[16px] text-heading">{p.title}</h3>
                   <p className="mt-2 text-[14px] text-body leading-relaxed">{p.desc}</p>
                 </div>
@@ -124,7 +124,7 @@ export default function CityServicePage({ service, city }) {
           <div>
             <Badge>Varför Stolt Marketing</Badge>
             <Reveal delay={0.06}>
-              <h2 className="mt-5 font-heading font-800 text-[clamp(26px,3.5vw,38px)] leading-[1.1] tracking-[-0.025em] text-heading max-w-[480px]">
+              <h2 className="mt-5 font-heading font-600 text-[clamp(26px,3.5vw,38px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[480px]">
                 En lokal partner i {c.name} — inte en byrå i kö.
               </h2>
             </Reveal>
@@ -159,7 +159,7 @@ export default function CityServicePage({ service, city }) {
                 { v: "Fast pris", l: "Innan vi börjar" },
               ].map((s2) => (
                 <div key={s2.l} className="bg-surface rounded-[16px] border border-border p-6">
-                  <div className="font-heading font-800 text-[28px] text-heading tracking-tight">{s2.v}</div>
+                  <div className="font-heading font-600 text-[28px] text-heading tracking-tight">{s2.v}</div>
                   <div className="text-[13px] text-muted mt-1">{s2.l}</div>
                 </div>
               ))}
@@ -267,11 +267,11 @@ export default function CityServicePage({ service, city }) {
       <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)" }}
+          style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal>
-            <h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">
+            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
               {s.label} i {c.name}? Då snackar vi.
             </h2>
           </Reveal>

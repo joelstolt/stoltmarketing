@@ -116,7 +116,7 @@ export default function Header() {
           alignItems: "center",
           background:
             scrolled || isOpen
-              ? "rgba(250, 250, 248, 0.95)"
+              ? "rgba(250, 245, 236, 0.95)"
               : "transparent",
           backdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
           WebkitBackdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
@@ -140,31 +140,47 @@ export default function Header() {
         >
           {/* Logo */}
           <Link
+            aria-label="Stolt Marketing — till startsidan"
             href="/"
             className="font-heading"
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: 0,
-              fontSize: 18,
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              color: "#0C0F1A",
+              alignItems: "baseline",
+              gap: 9,
+              fontSize: 24,
+              fontWeight: 600,
+              fontVariationSettings: '"opsz" 100',
+              letterSpacing: "-0.01em",
+              color: "#1A1611",
               textDecoration: "none",
             }}
           >
+            <span style={{ display: "inline-flex", alignItems: "baseline" }}>
+              sto
+              <span
+                aria-hidden="true"
+                style={{
+                  display: "inline-block",
+                  width: "0.115em",
+                  height: "0.72em",
+                  background: "#F2BC1B",
+                  margin: "0 0.075em",
+                }}
+              />
+              t
+            </span>
             <span
+              className="font-body"
               style={{
-                display: "inline-block",
-                width: 3,
-                height: 22,
-                borderRadius: 2,
-                background: "#1D4ED8",
-                marginRight: 10,
-                flexShrink: 0,
+                fontSize: 10.5,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#7A7263",
               }}
-            />
-            stolt marketing
+            >
+              Marketing
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -189,12 +205,12 @@ export default function Header() {
                   gap: 4,
                   fontSize: 15,
                   fontWeight: 500,
-                  color: "#6B7280",
+                  color: "#7A7263",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#0C0F1A")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1611")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#7A7263")}
               >
                 Tjänster
                 <ChevronDown
@@ -226,7 +242,7 @@ export default function Header() {
                         background: "rgba(255,255,255,0.97)",
                         backdropFilter: "blur(20px)",
                         borderRadius: 16,
-                        border: "1px solid #E5E5E0",
+                        border: "1px solid #E6DEC9",
                         boxShadow:
                           "0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
                         padding: 12,
@@ -247,7 +263,7 @@ export default function Header() {
                         }}
                         onMouseEnter={(e) =>
                           (e.currentTarget.style.background =
-                            "rgba(29,78,216,0.04)")
+                            "rgba(242,188,27,0.10)")
                         }
                         onMouseLeave={(e) =>
                           (e.currentTarget.style.background = "transparent")
@@ -258,25 +274,25 @@ export default function Header() {
                             width: 36,
                             height: 36,
                             borderRadius: 8,
-                            background: "rgba(29,78,216,0.06)",
+                            background: "rgba(242,188,27,0.14)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                           }}
                         >
-                          <MonitorSmartphone size={16} color="#1D4ED8" />
+                          <MonitorSmartphone size={16} color="#9A7409" />
                         </div>
                         <div>
                           <div
                             style={{
                               fontSize: 14,
                               fontWeight: 600,
-                              color: "#0C0F1A",
+                              color: "#1A1611",
                             }}
                           >
                             Alla tjänster
                           </div>
-                          <div style={{ fontSize: 12, color: "#6B7280" }}>
+                          <div style={{ fontSize: 12, color: "#7A7263" }}>
                             Översikt av hela erbjudandet
                           </div>
                         </div>
@@ -285,7 +301,7 @@ export default function Header() {
                       <div
                         style={{
                           height: 1,
-                          background: "#F0F0EC",
+                          background: "#EFE9D9",
                           margin: "4px 0",
                         }}
                       />
@@ -306,7 +322,7 @@ export default function Header() {
                           }}
                           onMouseEnter={(e) =>
                             (e.currentTarget.style.background =
-                              "rgba(29,78,216,0.04)")
+                              "rgba(242,188,27,0.10)")
                           }
                           onMouseLeave={(e) =>
                             (e.currentTarget.style.background = "transparent")
@@ -317,25 +333,25 @@ export default function Header() {
                               width: 36,
                               height: 36,
                               borderRadius: 8,
-                              background: "rgba(29,78,216,0.06)",
+                              background: "rgba(242,188,27,0.14)",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
                             }}
                           >
-                            <item.icon size={16} color="#1D4ED8" />
+                            <item.icon size={16} color="#9A7409" />
                           </div>
                           <div>
                             <div
                               style={{
                                 fontSize: 14,
                                 fontWeight: 600,
-                                color: "#0C0F1A",
+                                color: "#1A1611",
                               }}
                             >
                               {item.label}
                             </div>
-                            <div style={{ fontSize: 12, color: "#6B7280" }}>
+                            <div style={{ fontSize: 12, color: "#7A7263" }}>
                               {item.desc}
                             </div>
                           </div>
@@ -354,12 +370,12 @@ export default function Header() {
                 style={{
                   fontSize: 15,
                   fontWeight: 500,
-                  color: "#6B7280",
+                  color: "#7A7263",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#0C0F1A")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1611")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#7A7263")}
               >
                 {item.label}
               </Link>
@@ -376,7 +392,7 @@ export default function Header() {
             className="lg:hidden"
             style={{
               padding: 8,
-              color: "#6B7280",
+              color: "#7A7263",
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -405,7 +421,7 @@ export default function Header() {
               right: 0,
               bottom: 0,
               zIndex: 10000,
-              background: "#FAFAF8",
+              background: "#FAF5EC",
               overflowY: "auto",
               WebkitOverflowScrolling: "touch",
             }}
@@ -417,7 +433,7 @@ export default function Header() {
                 style={{
                   fontSize: 11,
                   fontWeight: 700,
-                  color: "#9CA3AF",
+                  color: "#A89F8D",
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
                   marginBottom: 16,
@@ -435,7 +451,7 @@ export default function Header() {
                   gap: 14,
                   padding: "12px 0",
                   textDecoration: "none",
-                  borderBottom: "1px solid #F0F0EC",
+                  borderBottom: "1px solid #EFE9D9",
                 }}
               >
                 <div
@@ -443,20 +459,20 @@ export default function Header() {
                     width: 40,
                     height: 40,
                     borderRadius: 10,
-                    background: "rgba(29,78,216,0.06)",
+                    background: "rgba(242,188,27,0.14)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
                   }}
                 >
-                  <MonitorSmartphone size={18} color="#1D4ED8" />
+                  <MonitorSmartphone size={18} color="#9A7409" />
                 </div>
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 600, color: "#0C0F1A" }}>
+                  <div style={{ fontSize: 16, fontWeight: 600, color: "#1A1611" }}>
                     Alla tjänster
                   </div>
-                  <div style={{ fontSize: 13, color: "#6B7280" }}>
+                  <div style={{ fontSize: 13, color: "#7A7263" }}>
                     Översikt av erbjudandet
                   </div>
                 </div>
@@ -473,7 +489,7 @@ export default function Header() {
                     gap: 14,
                     padding: "12px 0",
                     textDecoration: "none",
-                    borderBottom: "1px solid #F0F0EC",
+                    borderBottom: "1px solid #EFE9D9",
                   }}
                 >
                   <div
@@ -481,20 +497,20 @@ export default function Header() {
                       width: 40,
                       height: 40,
                       borderRadius: 10,
-                      background: "rgba(29,78,216,0.06)",
+                      background: "rgba(242,188,27,0.14)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                     }}
                   >
-                    <item.icon size={18} color="#1D4ED8" />
+                    <item.icon size={18} color="#9A7409" />
                   </div>
                   <div>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: "#0C0F1A" }}>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: "#1A1611" }}>
                       {item.label}
                     </div>
-                    <div style={{ fontSize: 13, color: "#6B7280" }}>
+                    <div style={{ fontSize: 13, color: "#7A7263" }}>
                       {item.desc}
                     </div>
                   </div>
@@ -502,7 +518,7 @@ export default function Header() {
               ))}
 
               {/* Divider */}
-              <div style={{ height: 1, background: "#E5E5E0", margin: "24px 0" }} />
+              <div style={{ height: 1, background: "#E6DEC9", margin: "24px 0" }} />
 
               {/* Other nav */}
               {navItems.map((item) => (
@@ -516,7 +532,7 @@ export default function Header() {
                     padding: "14px 0",
                     fontSize: 18,
                     fontWeight: 600,
-                    color: "#3B3F4A",
+                    color: "#433D33",
                     textDecoration: "none",
                   }}
                 >

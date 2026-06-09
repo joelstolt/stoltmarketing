@@ -16,7 +16,7 @@ export default function Article() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+                "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
             }}
           />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
@@ -35,7 +35,7 @@ export default function Article() {
               </span>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="font-heading font-800 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading mb-5">
+              <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
                 Lokal SEO — Så syns ditt företag i Google Maps och lokala sökningar
               </h1>
             </Reveal>
@@ -66,7 +66,7 @@ export default function Article() {
             </p>
 
             {/* Section: Varför lokal SEO */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Varför lokal SEO spelar roll — Google Maps är större än Google Search
             </h2>
 
@@ -83,7 +83,7 @@ export default function Article() {
             </p>
 
             {/* Section: Google Business Profile */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 1: Skapa och optimera din Google Business Profile
             </h2>
 
@@ -127,7 +127,7 @@ export default function Article() {
             </p>
 
             {/* Section: NAP */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 2: NAP-konsistens — Namnet måste vara identiskt överallt
             </h2>
 
@@ -161,7 +161,7 @@ export default function Article() {
             </p>
 
             {/* Section: Lokala sökord */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 3: Lokala sökord — Hitta vad folk söker efter i din stad
             </h2>
 
@@ -188,7 +188,7 @@ export default function Article() {
             </p>
 
             {/* Section: Recensioner */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 4: Recensioner — Google bryr sig, och det gör dina kunder också
             </h2>
 
@@ -230,7 +230,7 @@ export default function Article() {
             </p>
 
             {/* Section: On-page SEO */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 5: On-page lokal SEO — Din hemsida måste prata om plats
             </h2>
 
@@ -257,7 +257,7 @@ export default function Article() {
             </div>
 
             {/* Section: Lokala kataloger */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 6: Lokala kataloger och backlinks
             </h2>
 
@@ -290,7 +290,7 @@ export default function Article() {
             </p>
 
             {/* Section: Mät resultat */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 7: Mät dina resultat — Du behöver veta om det fungerar
             </h2>
 
@@ -317,7 +317,7 @@ export default function Article() {
             </p>
 
             {/* Section: Sammanfattning */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Den praktiska checklistan
             </h2>
 
@@ -362,7 +362,7 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-800 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
                 Behöver du hjälp med lokal SEO?
               </h3>
               <p className="text-[15px] text-white/60 leading-relaxed mb-6">

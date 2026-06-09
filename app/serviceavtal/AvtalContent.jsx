@@ -83,7 +83,7 @@ export default function AvtalContent() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+              "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
           }}
         />
         <div
@@ -91,7 +91,7 @@ export default function AvtalContent() {
           style={{
             borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
             background:
-              "radial-gradient(ellipse, rgba(29,78,216,0.08) 0%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(242,188,27,0.18) 0%, transparent 70%)",
           }}
         />
 
@@ -101,7 +101,7 @@ export default function AvtalContent() {
           </Reveal>
 
           <Reveal delay={0.06}>
-            <h1 className="mt-5 font-heading font-800 text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading">
+            <h1 className="mt-5 font-heading font-600 text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading">
               Drift, Säkerhet & Utveckling
             </h1>
           </Reveal>
@@ -122,7 +122,7 @@ export default function AvtalContent() {
       <div className="max-w-[880px] mx-auto px-5 sm:px-8">
         {/* ═══ PACKAGES ═══ */}
         <Reveal delay={0.06}>
-          <h2 className="mt-14 font-heading font-800 text-[28px] text-heading tracking-[-0.02em] text-center">
+          <h2 className="mt-14 font-heading font-600 text-[28px] text-heading tracking-[-0.02em] text-center">
             Förvaltningsnivåer
           </h2>
           <p className="text-center text-[15px] text-muted mt-2">
@@ -142,7 +142,7 @@ export default function AvtalContent() {
                     <div className="text-[13px] text-muted mt-1">{pkg.focus}</div>
                   </div>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-heading font-800 text-[32px] tracking-tight text-heading">
+                    <span className="font-heading font-600 text-[32px] tracking-tight text-heading">
                       {pkg.price}
                     </span>
                     <span className="text-[14px] text-muted">kr/mån ex moms</span>
@@ -229,7 +229,7 @@ export default function AvtalContent() {
               <div className="text-[12px] font-600 text-muted uppercase tracking-wider">
                 Konsulttimme
               </div>
-              <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
+              <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
                 900{" "}
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
@@ -241,7 +241,7 @@ export default function AvtalContent() {
               <div className="text-[12px] font-600 text-muted uppercase tracking-wider">
                 Akut jourtid
               </div>
-              <div className="mt-3 font-heading font-800 text-[32px] text-heading tracking-tight">
+              <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
                 1 500{" "}
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
@@ -286,11 +286,11 @@ export default function AvtalContent() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)",
+                  "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
               }}
             />
             <div className="relative z-10">
-              <h2 className="font-heading font-800 text-[24px] text-heading tracking-[-0.02em]">
+              <h2 className="font-heading font-600 text-[24px] text-heading tracking-[-0.02em]">
                 Varför välja ett aktivt avtal?
               </h2>
               <p className="mt-4 text-[15px] sm:text-[16px] text-body leading-relaxed max-w-[560px] mx-auto">

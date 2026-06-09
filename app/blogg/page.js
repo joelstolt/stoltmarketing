@@ -166,7 +166,7 @@ export default function BloggPage() {
                 <Reveal key={post.slug} delay={i * 0.06}>
                   <a
                     href={`/blogg/${post.slug}`}
-                    className="group block bg-surface border border-border rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_4px_24px_rgba(29,78,216,0.06)]"
+                    className="group block bg-surface border border-border rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_4px_24px_rgba(242,188,27,0.14)]"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
@@ -182,7 +182,7 @@ export default function BloggPage() {
                       </span>
                     </div>
 
-                    <h2 className="text-[20px] sm:text-[24px] font-800 text-heading font-heading tracking-tight leading-tight mb-3 group-hover:text-primary transition-colors">
+                    <h2 className="text-[20px] sm:text-[24px] font-600 text-heading font-heading tracking-tight leading-tight mb-3 group-hover:text-primary transition-colors">
                       {post.title}
                     </h2>
 
@@ -205,7 +205,7 @@ export default function BloggPage() {
         <section className="py-16 px-5 sm:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <Reveal>
-              <h2 className="font-heading font-800 text-[clamp(24px,3.5vw,36px)] leading-tight tracking-tight text-heading mb-4">
+              <h2 className="font-heading font-600 text-[clamp(24px,3.5vw,36px)] leading-tight tracking-tight text-heading mb-4">
                 Vill du ha hjälp med webb, SEO eller AI?
               </h2>
               <p className="text-[16px] text-body mb-8 max-w-[480px] mx-auto">

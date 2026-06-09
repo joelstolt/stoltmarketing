@@ -70,7 +70,7 @@ export default function OmContent() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+              "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
           }}
         />
 
@@ -92,7 +92,7 @@ export default function OmContent() {
               </Reveal>
 
               <Reveal delay={0.08}>
-                <h1 className="mt-5 font-heading font-800 text-[clamp(32px,5vw,52px)] leading-[1.08] tracking-[-0.03em] text-heading">
+                <h1 className="mt-5 font-heading font-600 text-[clamp(32px,5vw,52px)] leading-[1.08] tracking-[-0.015em] text-heading">
                   Joel Stolt
                 </h1>
               </Reveal>
@@ -154,7 +154,7 @@ export default function OmContent() {
                     width: 200,
                     height: 200,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(29,78,216,0.08), rgba(29,78,216,0.02))",
+                    background: "linear-gradient(135deg, rgba(242,188,27,0.18), rgba(242,188,27,0.06))",
                     animation: "float-slow 8s ease-in-out infinite",
                   }}
                 />
@@ -168,7 +168,7 @@ export default function OmContent() {
                     width: 120,
                     height: 120,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.01))",
+                    background: "linear-gradient(135deg, rgba(242,188,27,0.14), rgba(242,188,27,0.04))",
                     animation: "float-medium 6s ease-in-out infinite 1s",
                   }}
                 />
@@ -182,7 +182,7 @@ export default function OmContent() {
                     width: 60,
                     height: 60,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(29,78,216,0.12), rgba(29,78,216,0.04))",
+                    background: "linear-gradient(135deg, rgba(242,188,27,0.25), rgba(242,188,27,0.10))",
                     animation: "float-fast 5s ease-in-out infinite 0.5s",
                   }}
                 />
@@ -196,7 +196,7 @@ export default function OmContent() {
                     width: 40,
                     height: 40,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(29,78,216,0.1), rgba(29,78,216,0.03))",
+                    background: "linear-gradient(135deg, rgba(242,188,27,0.22), rgba(242,188,27,0.08))",
                     animation: "float-medium 7s ease-in-out infinite 2s",
                   }}
                 />
@@ -256,23 +256,23 @@ export default function OmContent() {
                         width: 36,
                         height: 36,
                         borderRadius: 10,
-                        background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                        background: "linear-gradient(135deg, #9A7409, #DFA616)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         color: "#fff",
                         fontSize: 12,
                         fontWeight: 800,
-                        boxShadow: "0 2px 8px rgba(29,78,216,0.25)",
+                        boxShadow: "0 2px 8px rgba(223,166,22,0.35)",
                       }}
                     >
                       150+
                     </div>
                     <div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: "#0C0F1A" }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#1A1611" }}>
                         Projekt levererade
                       </div>
-                      <div style={{ fontSize: 11, color: "#6B7280" }}>
+                      <div style={{ fontSize: 11, color: "#7A7263" }}>
                         Och räknar
                       </div>
                     </div>
@@ -311,10 +311,10 @@ export default function OmContent() {
                       <ExternalLink size={14} color="#fff" />
                     </div>
                     <div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: "#0C0F1A" }}>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: "#1A1611" }}>
                         AcadeMedia
                       </div>
-                      <div style={{ fontSize: 10, color: "#6B7280" }}>Enterprise-kund</div>
+                      <div style={{ fontSize: 10, color: "#7A7263" }}>Enterprise-kund</div>
                     </div>
                   </div>
                 </div>
@@ -349,7 +349,7 @@ export default function OmContent() {
             <div className="flex flex-wrap justify-center gap-12 sm:gap-20">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-[34px] sm:text-[40px] font-800 font-heading text-primary tracking-tight">
+                  <div className="text-[34px] sm:text-[40px] font-600 font-heading text-primary tracking-tight">
                     {stat.num}
                   </div>
                   <div className="text-[14px] text-muted mt-1">{stat.label}</div>
@@ -380,7 +380,7 @@ export default function OmContent() {
                       width: 8,
                       height: 8,
                       borderRadius: "50%",
-                      background: "#1D4ED8",
+                      background: "#9A7409",
                     }}
                   />
                   <p className="text-[12px] font-700 text-primary uppercase tracking-wider">
@@ -400,7 +400,7 @@ export default function OmContent() {
       </section>
 
       {/* ═══ VALUES ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8" style={{ background: "#F4F4F1" }}>
+      <section className="py-16 sm:py-24 px-5 sm:px-8" style={{ background: "#F3EDDF" }}>
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             badge="Hur jag jobbar"
@@ -416,14 +416,14 @@ export default function OmContent() {
                       width: 44,
                       height: 44,
                       borderRadius: 12,
-                      background: "rgba(29,78,216,0.06)",
+                      background: "rgba(242,188,27,0.14)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                     }}
                   >
-                    <v.icon size={20} color="#1D4ED8" />
+                    <v.icon size={20} color="#9A7409" />
                   </div>
                   <div>
                     <h3 className="font-heading font-700 text-[17px] text-heading tracking-tight">
@@ -458,19 +458,19 @@ export default function OmContent() {
                     borderRadius: 10,
                     fontSize: 14,
                     fontWeight: 500,
-                    color: "#3B3F4A",
+                    color: "#433D33",
                     background: "#FFFFFF",
-                    border: "1px solid #E5E5E0",
+                    border: "1px solid #E6DEC9",
                     transition: "all 0.2s",
                     cursor: "default",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(29,78,216,0.3)";
-                    e.currentTarget.style.color = "#1D4ED8";
+                    e.currentTarget.style.borderColor = "rgba(223,166,22,0.45)";
+                    e.currentTarget.style.color = "#9A7409";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "#E5E5E0";
-                    e.currentTarget.style.color = "#3B3F4A";
+                    e.currentTarget.style.borderColor = "#E6DEC9";
+                    e.currentTarget.style.color = "#433D33";
                   }}
                 >
                   {tool}
@@ -487,12 +487,12 @@ export default function OmContent() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)",
+              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal>
-            <h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">
+            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
               Vill du veta mer?
             </h2>
           </Reveal>

@@ -148,9 +148,9 @@ export default function ProjektContent() {
                     cursor: "pointer",
                     border: "1px solid",
                     transition: "all 0.2s",
-                    background: filter === cat ? "#1D4ED8" : "#FFFFFF",
-                    color: filter === cat ? "#FFFFFF" : "#3B3F4A",
-                    borderColor: filter === cat ? "#1D4ED8" : "#E5E5E0",
+                    background: filter === cat ? "#9A7409" : "#FFFFFF",
+                    color: filter === cat ? "#FFFFFF" : "#433D33",
+                    borderColor: filter === cat ? "#9A7409" : "#E6DEC9",
                   }}
                 >
                   {cat}
@@ -179,11 +179,11 @@ export default function ProjektContent() {
                         className="hidden lg:flex h-full items-center justify-center"
                         style={{
                           background:
-                            "linear-gradient(135deg, rgba(29,78,216,0.04) 0%, rgba(29,78,216,0.08) 100%)",
+                            "linear-gradient(135deg, rgba(242,188,27,0.10) 0%, rgba(242,188,27,0.18) 100%)",
                           minHeight: 200,
                         }}
                       >
-                        <span className="text-[40px] font-800 font-heading text-primary/10">
+                        <span className="text-[40px] font-600 font-heading text-primary/10">
                           {project.title.charAt(0)}
                         </span>
                       </div>
@@ -269,7 +269,7 @@ export default function ProjektContent() {
                       <div className="mt-5 pt-5 border-t border-border-light flex flex-wrap gap-8">
                         {project.results.map((r) => (
                           <div key={r.label}>
-                            <div className="text-[22px] font-800 font-heading text-heading tracking-tight">
+                            <div className="text-[22px] font-600 font-heading text-heading tracking-tight">
                               {r.value}
                             </div>
                             <div className="text-[12px] text-muted mt-0.5">
@@ -293,12 +293,12 @@ export default function ProjektContent() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)",
+              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal>
-            <h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">
+            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
               Vill du ha liknande resultat?
             </h2>
           </Reveal>

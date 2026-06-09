@@ -11,7 +11,7 @@ export default function NotFoundContent() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+            "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
         }}
       />
 
@@ -21,7 +21,7 @@ export default function NotFoundContent() {
         style={{
           borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
           background:
-            "radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(242,188,27,0.10) 0%, transparent 70%)",
         }}
       />
 
@@ -33,9 +33,9 @@ export default function NotFoundContent() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <span
-            className="inline-block font-heading font-800 text-[clamp(80px,15vw,160px)] leading-none tracking-[-0.04em]"
+            className="inline-block font-heading font-600 text-[clamp(80px,15vw,160px)] leading-none tracking-[-0.04em]"
             style={{
-              background: "linear-gradient(135deg, #1D4ED8 0%, #3B82F6 50%, #93C5FD 100%)",
+              background: "linear-gradient(135deg, #9A7409 0%, #DFA616 50%, #93C5FD 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -50,7 +50,7 @@ export default function NotFoundContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-4 font-heading font-800 text-[clamp(24px,4vw,40px)] leading-[1.15] tracking-[-0.025em] text-heading"
+          className="mt-4 font-heading font-600 text-[clamp(24px,4vw,40px)] leading-[1.15] tracking-[-0.012em] text-heading"
         >
           Sidan kunde inte hittas
         </motion.h1>

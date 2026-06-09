@@ -12,7 +12,7 @@ export default function Article() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)" }} />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Reveal>
               <nav className="flex items-center gap-2 text-[13px] text-muted mb-6">
@@ -29,7 +29,7 @@ export default function Article() {
               </span>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="font-heading font-800 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading mb-5">
+              <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
                 Google Business Profile — Komplett guide för företagare 2026
               </h1>
             </Reveal>
@@ -56,7 +56,7 @@ export default function Article() {
             </p>
 
             {/* Varför det spelar roll */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Varför Google Business Profile spelar roll — sifforna talar för sig
             </h2>
 
@@ -84,7 +84,7 @@ export default function Article() {
             </p>
 
             {/* Steg 1: Hävda din listing */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 1: Hävda eller skapa din Google Business Profile
             </h2>
 
@@ -112,7 +112,7 @@ export default function Article() {
             </p>
 
             {/* Steg 2: Fyll i allt */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 2: Fyll i alla fält — inget är osignifikant
             </h2>
 
@@ -160,7 +160,7 @@ export default function Article() {
             </div>
 
             {/* Steg 3: Kategorier */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 3: Välj rätt kategori (och sekundära kategorier)
             </h2>
 
@@ -187,7 +187,7 @@ export default function Article() {
             </p>
 
             {/* Steg 4: Bilder */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 4: Ladda upp bilder — många och bra
             </h2>
 
@@ -218,7 +218,7 @@ export default function Article() {
             </p>
 
             {/* Steg 5: Inlägg och uppdateringar */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 5: Publicera inlägg regelbundet — det visar att du är aktiv
             </h2>
 
@@ -246,7 +246,7 @@ export default function Article() {
             </div>
 
             {/* Steg 6: Recensioner */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 6: Samla Google-recensioner — detta är guld
             </h2>
 
@@ -278,7 +278,7 @@ export default function Article() {
             </p>
 
             {/* Steg 7: Attribut och öppettider */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 7: Fyll i attribut och säkerställ korrekt öppettider
             </h2>
 
@@ -307,7 +307,7 @@ export default function Article() {
             </p>
 
             {/* Vanliga misstag */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Vanliga misstag (och hur du undviker dem)
             </h2>
 
@@ -327,7 +327,7 @@ export default function Article() {
             </div>
 
             {/* Mapa och Q&A */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Bonussteg: Använd Q&A och se till att kartan är korrekt
             </h2>
 
@@ -357,7 +357,7 @@ export default function Article() {
             </p>
 
             {/* Sluta */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Sammanfattning — så bygger du en mäktig Google Business Profile
             </h2>
 
@@ -402,7 +402,7 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-800 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
                 Vill du optimera din Google Business Profile?
               </h3>
               <p className="text-[15px] text-white/60 leading-relaxed mb-6">

@@ -76,13 +76,13 @@ export default function Services() {
     <section id="tjanster" className="py-20 sm:py-28 px-5 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+          <span className="eyebrow">
             Tjänster
           </span>
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading max-w-[700px]">
+          <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[700px]">
             Allt du behöver för att växa digitalt — från en och samma konsult.
           </h2>
         </Reveal>

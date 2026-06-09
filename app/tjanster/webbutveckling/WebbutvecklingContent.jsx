@@ -108,11 +108,11 @@ export default function WebbutvecklingContent() {
           <Reveal delay={0.18}>
             <div className="mt-12 grid sm:grid-cols-2 gap-8">
               <div className="bg-surface rounded-[16px] border border-border p-6">
-                <div className="text-[32px] font-800 font-heading text-heading tracking-tight">150+</div>
+                <div className="text-[32px] font-600 font-heading text-heading tracking-tight">150+</div>
                 <div className="text-[14px] text-muted mt-1">Levererade webbprojekt</div>
               </div>
               <div className="bg-surface rounded-[16px] border border-border p-6">
-                <div className="text-[32px] font-800 font-heading text-heading tracking-tight">AcadeMedia</div>
+                <div className="text-[32px] font-600 font-heading text-heading tracking-tight">AcadeMedia</div>
                 <div className="text-[14px] text-muted mt-1">Pågående enterprise-uppdrag i WooCommerce</div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function WebbutvecklingContent() {
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>
                 <div className="bg-surface rounded-[16px] border border-border p-7 h-full">
                   <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
-                  <div className="mt-2 font-heading font-800 text-[24px] text-primary tracking-tight">{p.price}</div>
+                  <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">{p.price}</div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">{p.desc}</p>
                   <a href="/boka" className="secondary-btn mt-5 w-full justify-center text-[14px]">Få upplägg och pris</a>
                 </div>
@@ -171,9 +171,9 @@ export default function WebbutvecklingContent() {
 
       {/* ═══ CTA ═══ */}
       <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #EEF2FF 0%, #E0E7FF 40%, #DBEAFE 70%, #EFF6FF 100%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal><h2 className="font-heading font-800 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] text-heading">Redo för en sajt som levererar?</h2></Reveal>
+          <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Redo för en sajt som levererar?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en kostnadsfri genomgång så pratar vi igenom dina behov och tar fram ett upplägg.</p></Reveal>
           <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>

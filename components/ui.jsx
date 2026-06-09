@@ -21,13 +21,9 @@ export function Reveal({ children, className = "", delay = 0 }) {
   );
 }
 
-/* ── Badge pill ── */
+/* ── Badge — gul flagga + versalrad (Rapsfält) ── */
 export function Badge({ children }) {
-  return (
-    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
-      {children}
-    </span>
-  );
+  return <span className="eyebrow">{children}</span>;
 }
 
 /* ── Section header (badge + h2 + optional subtitle) ── */
@@ -39,7 +35,7 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
       </Reveal>
       <Reveal delay={0.06}>
         <h2
-          className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading"
+          className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading"
           style={{ maxWidth }}
         >
           {title}
@@ -59,22 +55,7 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
 /* ── Page hero for sub-pages (breadcrumb + badge + headline + subtitle + CTAs) ── */
 export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
   return (
-    <section className="relative overflow-hidden">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
-        }}
-      />
-      <div
-        className="absolute -top-[120px] -right-[80px] w-[500px] h-[500px] pointer-events-none"
-        style={{
-          borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
-          background:
-            "radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)",
-        }}
-      />
+    <section className="grain relative overflow-hidden border-b border-border-light">
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
         {/* Breadcrumbs */}
@@ -105,7 +86,7 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <h1 className="mt-5 font-heading font-800 text-[clamp(32px,5vw,56px)] leading-[1.08] tracking-[-0.03em] text-heading max-w-[800px]">
+          <h1 className="mt-5 font-heading font-600 text-[clamp(32px,5vw,56px)] leading-[1.08] tracking-[-0.015em] text-heading max-w-[800px]">
             {title}
           </h1>
         </Reveal>
@@ -126,7 +107,7 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
                   key={b}
                   className="flex items-center gap-2 text-[14px] text-body font-500"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <span className="w-2 h-2 bg-accent" />
                   {b}
                 </li>
               ))}

@@ -16,7 +16,7 @@ export default function Article() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)",
+                "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
             }}
           />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
@@ -35,7 +35,7 @@ export default function Article() {
               </span>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="font-heading font-800 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading mb-5">
+              <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
                 Vad kostar en hemsida 2026? Komplett prisguide för företag
               </h1>
             </Reveal>
@@ -66,7 +66,7 @@ export default function Article() {
             </p>
 
             {/* Section: Snabbversionen */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Snabbversionen — priser 2026
             </h2>
 
@@ -102,7 +102,7 @@ export default function Article() {
             </p>
 
             {/* Section: Vad bestämmer priset */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Vad bestämmer priset på en hemsida?
             </h2>
 
@@ -125,7 +125,7 @@ export default function Article() {
             </div>
 
             {/* Section: DIY */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Alternativ 1: Bygg själv med Wix, Squarespace eller WordPress.com
             </h2>
 
@@ -163,7 +163,7 @@ export default function Article() {
             </p>
 
             {/* Section: Frilansare */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Alternativ 2: Anlita en frilansare eller liten byrå
             </h2>
 
@@ -204,7 +204,7 @@ export default function Article() {
             </div>
 
             {/* Section: Stor byrå */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Alternativ 3: Stor byrå
             </h2>
 
@@ -217,7 +217,7 @@ export default function Article() {
             </p>
 
             {/* Section: Löpande kostnader */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Löpande kostnader — det folk glömmer
             </h2>
 
@@ -246,7 +246,7 @@ export default function Article() {
             </p>
 
             {/* Section: Vad borde du välja? */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Så vad borde du välja?
             </h2>
 
@@ -291,7 +291,7 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-800 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
                 Vill du veta vad en hemsida skulle kosta för just ditt företag?
               </h3>
               <p className="text-[15px] text-white/60 leading-relaxed mb-6">

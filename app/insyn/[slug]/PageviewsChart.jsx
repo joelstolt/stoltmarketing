@@ -74,12 +74,12 @@ function formatTooltipLabel(x, unit) {
   });
 }
 
-export default function PageviewsChart({ data, unit, color = "#1D4ED8" }) {
+export default function PageviewsChart({ data, unit, color = "#9A7409" }) {
   const rows = aggregate(data);
 
   if (rows.length === 0) {
     return (
-      <div className="h-72 flex items-center justify-center text-[#9CA3AF] text-sm">
+      <div className="h-72 flex items-center justify-center text-[#A89F8D] text-sm">
         Ingen data för perioden
       </div>
     );
@@ -95,22 +95,22 @@ export default function PageviewsChart({ data, unit, color = "#1D4ED8" }) {
               <stop offset="100%" stopColor={color} stopOpacity={0} />
             </linearGradient>
             <linearGradient id="gradPageviews" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#0C0F1A" stopOpacity={0.1} />
-              <stop offset="100%" stopColor="#0C0F1A" stopOpacity={0} />
+              <stop offset="0%" stopColor="#1A1611" stopOpacity={0.1} />
+              <stop offset="100%" stopColor="#1A1611" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#F0F0EC" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#EFE9D9" vertical={false} />
           <XAxis
             dataKey="x"
             tickFormatter={(x) => formatTick(x, unit)}
-            stroke="#9CA3AF"
+            stroke="#A89F8D"
             fontSize={12}
             tickMargin={8}
             axisLine={false}
             tickLine={false}
           />
           <YAxis
-            stroke="#9CA3AF"
+            stroke="#A89F8D"
             fontSize={12}
             axisLine={false}
             tickLine={false}
@@ -124,7 +124,7 @@ export default function PageviewsChart({ data, unit, color = "#1D4ED8" }) {
             ]}
             contentStyle={{
               borderRadius: 12,
-              border: "1px solid #E5E5E0",
+              border: "1px solid #E6DEC9",
               boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
               fontSize: 13,
             }}
@@ -132,7 +132,7 @@ export default function PageviewsChart({ data, unit, color = "#1D4ED8" }) {
           <Area
             type="monotone"
             dataKey="pageviews"
-            stroke="#0C0F1A"
+            stroke="#1A1611"
             strokeWidth={1.5}
             fill="url(#gradPageviews)"
             strokeOpacity={0.4}

@@ -26,16 +26,16 @@ const company = [
 
 const linkStyle = {
   fontSize: 14,
-  color: "#3B3F4A",
+  color: "#433D33",
   textDecoration: "none",
   transition: "color 0.2s",
 };
-const hover = (e) => (e.currentTarget.style.color = "#1D4ED8");
-const unhover = (e) => (e.currentTarget.style.color = "#3B3F4A");
+const hover = (e) => (e.currentTarget.style.color = "#9A7409");
+const unhover = (e) => (e.currentTarget.style.color = "#433D33");
 
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid #E5E5E0" }}>
+    <footer style={{ borderTop: "1px solid #E6DEC9" }}>
       {/* Main footer */}
       <div
         style={{
@@ -51,33 +51,50 @@ export default function Footer() {
         {/* Col 1: Brand */}
         <div>
           <Link
+            aria-label="Stolt Marketing — till startsidan"
             href="/"
             className="font-heading"
             style={{
-              fontSize: 18,
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              color: "#0C0F1A",
+              fontSize: 24,
+              fontWeight: 600,
+              fontVariationSettings: '"opsz" 100',
+              letterSpacing: "-0.01em",
+              color: "#1A1611",
               textDecoration: "none",
               display: "flex",
-              alignItems: "center",
+              alignItems: "baseline",
+              gap: 9,
               marginBottom: 12,
             }}
           >
+            <span style={{ display: "inline-flex", alignItems: "baseline" }}>
+              sto
+              <span
+                aria-hidden="true"
+                style={{
+                  display: "inline-block",
+                  width: "0.115em",
+                  height: "0.72em",
+                  background: "#F2BC1B",
+                  margin: "0 0.075em",
+                }}
+              />
+              t
+            </span>
             <span
+              className="font-body"
               style={{
-                display: "inline-block",
-                width: 3,
-                height: 22,
-                borderRadius: 2,
-                background: "#1D4ED8",
-                marginRight: 10,
-                flexShrink: 0,
+                fontSize: 10.5,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#7A7263",
               }}
-            />
-            stolt marketing
+            >
+              Marketing
+            </span>
           </Link>
-          <p style={{ fontSize: 14, color: "#6B7280", lineHeight: 1.7, maxWidth: 300 }}>
+          <p style={{ fontSize: 14, color: "#7A7263", lineHeight: 1.7, maxWidth: 300 }}>
             Digital byrå i Hässleholm med 10+ års erfarenhet. Moderna hemsidor,
             e-handel, SEO, Google Ads och AI-automation — med enterprise-kvalitet
             till företag i hela Skåne och Sverige.
@@ -86,13 +103,13 @@ export default function Footer() {
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
             <a
               href="mailto:joel@stoltmarketing.se"
-              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#3B3F4A", textDecoration: "none" }}
+              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#433D33", textDecoration: "none" }}
             >
-              <Mail size={15} color="#1D4ED8" />
+              <Mail size={15} color="#9A7409" />
               joel@stoltmarketing.se
             </a>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#3B3F4A" }}>
-              <MapPin size={15} color="#1D4ED8" />
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#433D33" }}>
+              <MapPin size={15} color="#9A7409" />
               Hässleholm, Skåne
             </div>
           </div>
@@ -144,7 +161,7 @@ export default function Footer() {
       </div>
 
       {/* Lokalt-band: alla ort × tjänst-länkar för synlighet och crawl */}
-      <div style={{ borderTop: "1px solid #F0F0EC" }}>
+      <div style={{ borderTop: "1px solid #EFE9D9" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "32px 20px 8px" }}>
           <p style={{ ...colHeading, marginBottom: 20 }}>Webbyrå, SEO, Google Ads & AI i Skåne</p>
           <div
@@ -156,9 +173,9 @@ export default function Footer() {
                 <Link
                   href={CITIES[c].hub}
                   className="font-heading"
-                  style={{ fontSize: 14, fontWeight: 700, color: "#0C0F1A", textDecoration: "none", display: "block", marginBottom: 12 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#0C0F1A")}
+                  style={{ fontSize: 14, fontWeight: 700, color: "#1A1611", textDecoration: "none", display: "block", marginBottom: 12 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#9A7409")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#1A1611")}
                 >
                   {CITIES[c].name}
                 </Link>
@@ -167,9 +184,9 @@ export default function Footer() {
                     <Link
                       key={s}
                       href={`/${c}/${s}`}
-                      style={{ fontSize: 13, color: "#6B7280", textDecoration: "none", transition: "color 0.2s" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+                      style={{ fontSize: 13, color: "#7A7263", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#9A7409")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "#7A7263")}
                     >
                       {SERVICES[s].label} {CITIES[c].name}
                     </Link>
@@ -182,7 +199,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid #F0F0EC", padding: "20px 20px", marginTop: 24 }}>
+      <div style={{ borderTop: "1px solid #EFE9D9", padding: "20px 20px", marginTop: 24 }}>
         <div
           style={{
             maxWidth: 1120,
@@ -194,7 +211,7 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <span style={{ fontSize: 13, color: "#9CA3AF" }}>
+          <span style={{ fontSize: 13, color: "#A89F8D" }}>
             © {new Date().getFullYear()} Stolt Marketing. Alla rättigheter förbehållna.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -202,13 +219,13 @@ export default function Footer() {
               href="https://kvota.se"
               target="_blank"
               rel="noopener"
-              style={{ fontSize: 13, color: "#9CA3AF", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#1D4ED8")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#9CA3AF")}
+              style={{ fontSize: 13, color: "#A89F8D", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#9A7409")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#A89F8D")}
             >
               Kvota.se
             </a>
-            <span style={{ fontSize: 13, color: "#9CA3AF" }}>Svar inom 24h på vardagar</span>
+            <span style={{ fontSize: 13, color: "#A89F8D" }}>Svar inom 24h på vardagar</span>
           </div>
         </div>
       </div>
@@ -227,7 +244,7 @@ export default function Footer() {
 const colHeading = {
   fontSize: 12,
   fontWeight: 700,
-  color: "#9CA3AF",
+  color: "#A89F8D",
   textTransform: "uppercase",
   letterSpacing: "0.08em",
   marginBottom: 16,

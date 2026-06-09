@@ -12,7 +12,7 @@ export default function Article() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)" }} />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Reveal>
               <nav className="flex items-center gap-2 text-[13px] text-muted mb-6">
@@ -29,7 +29,7 @@ export default function Article() {
               </span>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="font-heading font-800 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading mb-5">
+              <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
                 Content-strategi för småföretag — Så skapar du innehåll som rankar
               </h1>
             </Reveal>
@@ -56,7 +56,7 @@ export default function Article() {
             </p>
 
             {/* Varför content spelar roll */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Varför content-strategi spelar roll — det är gratis trafik på repeat
             </h2>
 
@@ -81,7 +81,7 @@ export default function Article() {
             </p>
 
             {/* Steg 1: Keyword research */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 1: Keyword research — hitta ord folk faktiskt söker på
             </h2>
 
@@ -151,7 +151,7 @@ export default function Article() {
             </div>
 
             {/* Steg 2: Content-kalender */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 2: Gör en content-kalender — konsistens slår perfekt
             </h2>
 
@@ -178,7 +178,7 @@ export default function Article() {
             </p>
 
             {/* Steg 3: Content-typer */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 3: Välj rätt content-typer — vissa fungerar bättre än andra
             </h2>
 
@@ -212,7 +212,7 @@ export default function Article() {
             </p>
 
             {/* Steg 4: Hur du skriver */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 4: Skriv artiklar som rankar — grundläggande SEO-regler
             </h2>
 
@@ -287,7 +287,7 @@ export default function Article() {
             </p>
 
             {/* Steg 5: Repurposing */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 5: Repurposing — få mer värde ur varje artikel
             </h2>
 
@@ -312,7 +312,7 @@ export default function Article() {
             </p>
 
             {/* Steg 6: Mäta */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Steg 6: Mäta resultat — track vad som fungerar
             </h2>
 
@@ -338,7 +338,7 @@ export default function Article() {
             </p>
 
             {/* Distribution */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Bonus: Distribution — räcka ut med det du skriver
             </h2>
 
@@ -362,7 +362,7 @@ export default function Article() {
             </div>
 
             {/* Sammanfattning */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Sammanfattning — din content-strategi i 6 steg
             </h2>
 
@@ -409,7 +409,7 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-800 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
                 Vill du bygga en content-strategi?
               </h3>
               <p className="text-[15px] text-white/60 leading-relaxed mb-6">

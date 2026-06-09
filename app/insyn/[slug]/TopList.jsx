@@ -7,10 +7,10 @@ export default function TopList({ title, items, formatKey, limit = 8 }) {
   const max = list.reduce((m, i) => Math.max(m, i.y || 0), 0);
 
   return (
-    <div className="rounded-2xl border border-[#E5E5E0] bg-white p-6 shadow-sm">
-      <h3 className="text-base font-bold text-[#0C0F1A] mb-4">{title}</h3>
+    <div className="rounded-2xl border border-[#E6DEC9] bg-white p-6 shadow-sm">
+      <h3 className="text-base font-bold text-[#1A1611] mb-4">{title}</h3>
       {list.length === 0 ? (
-        <div className="text-sm text-[#9CA3AF] py-6 text-center">
+        <div className="text-sm text-[#A89F8D] py-6 text-center">
           Ingen data
         </div>
       ) : (
@@ -21,17 +21,17 @@ export default function TopList({ title, items, formatKey, limit = 8 }) {
             return (
               <li key={`${item.x}-${i}`} className="relative">
                 <div
-                  className="absolute inset-y-0 left-0 bg-[#EFF6FF] rounded-md transition-all"
+                  className="absolute inset-y-0 left-0 bg-[#FBF3DC] rounded-md transition-all"
                   style={{ width: `${pct}%` }}
                 />
                 <div className="relative flex items-center justify-between px-3 py-2 gap-3">
                   <span
-                    className="text-sm text-[#0C0F1A] truncate"
+                    className="text-sm text-[#1A1611] truncate"
                     title={key || ""}
                   >
                     {key || "—"}
                   </span>
-                  <span className="text-sm font-semibold text-[#3B3F4A] tabular-nums shrink-0">
+                  <span className="text-sm font-semibold text-[#433D33] tabular-nums shrink-0">
                     {formatNumber(item.y)}
                   </span>
                 </div>

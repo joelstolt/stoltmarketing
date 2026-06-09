@@ -25,9 +25,9 @@ function pctChange(current, previous) {
 
 function Card({ icon: Icon, label, value, sub, trend }) {
   return (
-    <div className="rounded-2xl border border-[#E5E5E0] bg-white p-6 shadow-sm">
+    <div className="rounded-2xl border border-[#E6DEC9] bg-white p-6 shadow-sm">
       <div className="flex items-center justify-between mb-4">
-        <div className="w-9 h-9 rounded-lg bg-[#EFF6FF] text-[#1D4ED8] flex items-center justify-center">
+        <div className="w-9 h-9 rounded-lg bg-[#FBF3DC] text-[#9A7409] flex items-center justify-center">
           <Icon size={18} />
         </div>
         {trend && (
@@ -44,12 +44,12 @@ function Card({ icon: Icon, label, value, sub, trend }) {
           </span>
         )}
       </div>
-      <div className="text-3xl font-bold text-[#0C0F1A] tracking-tight">
+      <div className="text-3xl font-bold text-[#1A1611] tracking-tight">
         {value}
       </div>
-      <div className="text-sm text-[#6B7280] mt-1">{label}</div>
+      <div className="text-sm text-[#7A7263] mt-1">{label}</div>
       {sub && (
-        <div className="text-xs text-[#9CA3AF] mt-2">{sub}</div>
+        <div className="text-xs text-[#A89F8D] mt-2">{sub}</div>
       )}
     </div>
   );

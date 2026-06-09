@@ -12,7 +12,7 @@ export default function Article() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #F8FAFC 0%, #EEF2FF 25%, #E0E7FF 45%, #DBEAFE 60%, #EFF6FF 80%, #FAFAF8 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)" }} />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Reveal>
               <nav className="flex items-center gap-2 text-[13px] text-muted mb-6">
@@ -29,7 +29,7 @@ export default function Article() {
               </span>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="font-heading font-800 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading mb-5">
+              <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
                 AI för företag 2026 — Praktiska användningsområden som ger resultat
               </h1>
             </Reveal>
@@ -56,7 +56,7 @@ export default function Article() {
             </p>
 
             {/* Chatbots */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               1. Chatbots och kundservice 24/7
             </h2>
 
@@ -87,7 +87,7 @@ export default function Article() {
             </p>
 
             {/* Content och marknadsföring */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               2. Content och marknadsföring — Från idé till publicering
             </h2>
 
@@ -139,7 +139,7 @@ export default function Article() {
             </div>
 
             {/* Automatisering */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               3. Automatisering av repetitiva processer
             </h2>
 
@@ -170,7 +170,7 @@ export default function Article() {
             </p>
 
             {/* AI i webbutveckling */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               4. AI i webbutveckling — Snabbare och bättre design
             </h2>
 
@@ -201,7 +201,7 @@ export default function Article() {
             </p>
 
             {/* Vad AI inte kan ersätta */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               5. Vad AI INTE kan ersätta
             </h2>
 
@@ -234,7 +234,7 @@ export default function Article() {
             </p>
 
             {/* Var börjar du? */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               6. Var börjar du? 3 konkreta steg
             </h2>
 
@@ -255,7 +255,7 @@ export default function Article() {
               ].map((item, i) => (
                 <div key={item.step} className="bg-surface border border-border rounded-xl p-6">
                   <div className="flex items-start gap-4">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-light text-primary font-800 text-[16px] font-heading flex-shrink-0">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-light text-primary font-600 text-[16px] font-heading flex-shrink-0">
                       {i + 1}
                     </span>
                     <div className="flex-1">
@@ -268,7 +268,7 @@ export default function Article() {
             </div>
 
             {/* Vanliga misstag */}
-            <h2 className="text-[22px] sm:text-[26px] font-800 text-heading font-heading tracking-tight mt-12 mb-5">
+            <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               7. Vanliga misstag — undvik dessa
             </h2>
 
@@ -314,7 +314,7 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-800 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
                 Vill du implementera AI i ditt företag?
               </h3>
               <p className="text-[15px] text-white/60 leading-relaxed mb-6">

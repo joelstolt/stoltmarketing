@@ -31,13 +31,13 @@ export default function About() {
       <div className="max-w-6xl mx-auto">
         <div className="max-w-[680px] mx-auto text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+            <span className="eyebrow">
               Om mig
             </span>
           </Reveal>
 
           <Reveal delay={0.06}>
-            <h2 className="mt-5 font-heading font-800 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.025em] text-heading">
+            <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading">
               Joel Stolt
             </h2>
           </Reveal>
@@ -66,7 +66,7 @@ export default function About() {
             <div className="mt-10 flex justify-center gap-12 sm:gap-16">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-[30px] sm:text-[34px] font-800 font-heading text-primary tracking-tight">
+                  <div className="text-[30px] sm:text-[34px] font-600 font-heading text-primary tracking-tight">
                     {stat.num}
                   </div>
                   <div className="text-[13px] text-muted mt-1">
