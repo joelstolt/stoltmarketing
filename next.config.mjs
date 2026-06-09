@@ -1,7 +1,10 @@
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 // Gör Cloudflare-bindings/env tillgängliga under `next dev`.
-initOpenNextCloudflareForDev();
+// Får inte köras i Vercels byggmiljö — workerd-binären startar inte där.
+if (!process.env.VERCEL) {
+  initOpenNextCloudflareForDev();
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
