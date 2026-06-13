@@ -168,16 +168,16 @@ export default function BloggPage() {
                     href={`/blogg/${post.slug}`}
                     className="group block bg-surface border border-border rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_4px_24px_rgba(242,188,27,0.14)]"
                   >
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase shrink-0">
                         {post.category}
                       </span>
-                      <span className="flex items-center gap-1.5 text-[13px] text-muted">
-                        <Calendar size={12} />
+                      <span className="flex items-center gap-1.5 text-[13px] text-muted whitespace-nowrap shrink-0">
+                        <Calendar size={12} className="shrink-0" />
                         {formatDate(post.date)}
                       </span>
-                      <span className="flex items-center gap-1.5 text-[13px] text-muted">
-                        <Clock size={12} />
+                      <span className="flex items-center gap-1.5 text-[13px] text-muted whitespace-nowrap shrink-0">
+                        <Clock size={12} className="shrink-0" />
                         {post.readTime}
                       </span>
                     </div>

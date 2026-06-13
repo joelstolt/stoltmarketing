@@ -7,13 +7,6 @@ export default function NotFoundContent() {
   return (
     <section className="hero-dark relative overflow-hidden min-h-[80vh] flex items-center">
       {/* Gradient background — same as PageHero */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "transparent",
-        }}
-      />
 
       {/* Decorative blob */}
       <div
@@ -85,7 +78,6 @@ export default function NotFoundContent() {
       </div>
 
       {/* Bottom fade — same as PageHero */}
-      <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
     </section>
   );
 }

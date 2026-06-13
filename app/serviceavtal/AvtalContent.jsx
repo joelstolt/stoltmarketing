@@ -80,13 +80,6 @@ export default function AvtalContent() {
       {/* ═══ HERO BANNER ═══ */}
       <section className="hero-dark relative overflow-hidden">
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "transparent",
-          }}
-        />
-        <div
           className="absolute -top-[120px] -right-[80px] w-[400px] h-[400px] pointer-events-none"
           style={{
             borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
@@ -115,8 +108,6 @@ export default function AvtalContent() {
           </Reveal>
 
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
       </section>
 
       <div className="max-w-[880px] mx-auto px-5 sm:px-8">
@@ -282,13 +273,6 @@ export default function AvtalContent() {
         {/* ═══ VARFÖR ═══ */}
         <Reveal>
           <section className="section-gul relative mt-12 mb-16 p-10 rounded-[10px] overflow-hidden text-center">
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "transparent",
-              }}
-            />
             <div className="relative z-10">
               <h2 className="font-heading font-600 text-[24px] text-heading tracking-[-0.02em]">
                 Varför välja ett aktivt avtal?

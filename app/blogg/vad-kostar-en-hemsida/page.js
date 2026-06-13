@@ -12,13 +12,6 @@ export default function Article() {
       <main>
         {/* Hero */}
         <section className="hero-dark relative overflow-hidden">
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "transparent",
-            }}
-          />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Reveal>
               <nav className="flex items-center gap-2 text-[13px] text-muted mb-6">
@@ -40,7 +33,7 @@ export default function Article() {
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
-              <div className="flex items-center gap-4 text-[13px] text-muted">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-muted">
                 <span className="flex items-center gap-1.5">
                   <Calendar size={13} /> 15 mars 2026
                 </span>
@@ -50,7 +43,6 @@ export default function Article() {
               </div>
             </Reveal>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
         </section>
 
         {/* Article */}

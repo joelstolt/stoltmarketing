@@ -82,13 +82,6 @@ export default function BokaContent() {
     <>
       {/* Hero */}
       <section className="hero-dark relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "transparent",
-          }}
-        />
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
           <Reveal>
@@ -118,8 +111,6 @@ export default function BokaContent() {
             </Reveal>
           </div>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
       </section>
 
       {/* Form + sidebar */}
