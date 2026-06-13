@@ -15,6 +15,8 @@ export default function FieldCanvas({ className = "" }) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Geting bara på enheter som kan hovra (dvs ej touch/mobil)
+    const noHoverDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
     let straws = [];
     let raf = 0;
@@ -114,6 +116,8 @@ export default function FieldCanvas({ className = "" }) {
     }
 
     function drawWasp(time) {
+      // Ingen geting på touch/mobil (touch-enhet eller smal vy)
+      if (noHoverDevice || window.innerWidth < 768) return;
       const hovering = mouse.x > -9000 && mouse.y > 0 && mouse.y < H + 80;
       // Mjuk in-/uttoning av aktivitet
       wasp.active += ((hovering ? 1 : 0) - wasp.active) * 0.04;
