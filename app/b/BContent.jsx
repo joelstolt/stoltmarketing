@@ -361,12 +361,15 @@ export default function BContent() {
         </section>
 
         {/* 7. Marquee */}
-        <div style={{ borderTop: "1px solid rgba(250,245,236,0.12)", padding: "34px 0", overflow: "hidden" }} aria-hidden="true">
+        <div style={{ borderTop: "1px solid rgba(250,245,236,0.12)", borderBottom: "1px solid rgba(250,245,236,0.12)", padding: "30px 0 32px", overflow: "hidden" }} aria-hidden="true">
+          <p style={{ textAlign: "center", fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(250,245,236,0.4)", margin: "0 0 22px" }}>
+            Betrodd av företag i hela Sverige
+          </p>
           <div className="b-marquee-inner">
             {[...clients, ...clients].map((c, i) => (
-              <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 56 }}>
-                <span className="font-heading" style={{ fontWeight: 600, fontSize: 44, color: "transparent", WebkitTextStroke: "1px rgba(250,245,236,0.4)", whiteSpace: "nowrap" }}>{c}</span>
-                <span style={{ width: 10, height: 10, background: GUL, display: "inline-block", flexShrink: 0 }} />
+              <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 40 }}>
+                <span className="font-heading" style={{ fontWeight: 500, fontStyle: "italic", fontSize: 34, color: "rgba(250,245,236,0.5)", whiteSpace: "nowrap", letterSpacing: "-0.01em" }}>{c}</span>
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: GUL, display: "inline-block", flexShrink: 0 }} />
               </span>
             ))}
           </div>
