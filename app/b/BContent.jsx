@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import FieldCanvas from "@/components/b/FieldCanvas";
+import BFaq from "@/components/b/BFaq";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -345,9 +346,12 @@ export default function BContent() {
             ))}
           </div>
         </div>
+
+        {/* 8. FAQ — schema + lead-trygghet */}
+        <BFaq />
       </div>
 
-      {/* ═══ 8. Final — gula fältet ═══ */}
+      {/* ═══ 9. Final — gula fältet ═══ */}
       <section className="b-final" style={{ background: GUL, padding: "16vh 24px" }}>
         <div className="b-final-inner" style={{ maxWidth: 1120, margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-heading" style={{ fontWeight: 600, fontSize: "clamp(40px, 6.5vw, 92px)", lineHeight: 1.04, letterSpacing: "-0.02em", color: INK, margin: 0 }}>

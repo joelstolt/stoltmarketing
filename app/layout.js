@@ -10,7 +10,7 @@ export const metadata = {
     template: "%s | Stolt Marketing",
   },
   description:
-    "Webbyrå i Hässleholm och Skåne. Moderna hemsidor, e-handel, SEO, Google Ads och AI-automation för företag. 10+ års erfarenhet, fast pris, personlig service.",
+    "Webbyrå i Hässleholm och Skåne. Hemsidor, SEO, Google Ads och AI som gör dig lätt att hitta — du jobbar direkt med konsulten som bygger, utan byrå-overhead. Fast pris.",
   keywords: [
     "webbyrå hässleholm",
     "webbyrå skåne",
@@ -30,16 +30,16 @@ export const metadata = {
     locale: "sv_SE",
     url: "https://www.stoltmarketing.se",
     siteName: "Stolt Marketing",
-    title: "Webbyrå i Skåne — Hemsida, SEO, Google Ads & AI",
+    title: "Webbplatser, SEO och AI som gör dig lätt att hitta — Stolt Marketing",
     description:
-      "Moderna hemsidor, e-handel, SEO, Google Ads och AI-automation för företag i Skåne och hela Sverige.",
+      "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar — utan byrå-overhead. 10+ års erfarenhet, fast pris.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing — webbyrå i Skåne" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webbyrå i Skåne — Hemsida, SEO, Google Ads & AI",
+    title: "Webbplatser, SEO och AI som gör dig lätt att hitta — Stolt Marketing",
     description:
-      "Moderna hemsidor, SEO, Google Ads och AI-automation för företag i Skåne. 10+ års erfarenhet, fast pris.",
+      "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar — utan byrå-overhead. 10+ års erfarenhet, fast pris.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -53,7 +53,11 @@ export const metadata = {
     google: "IhOfiR7S9Euz_4uL2iM2fUwa5iWetEwr1zVaZmBTrjE",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -125,7 +129,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="sv">
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
