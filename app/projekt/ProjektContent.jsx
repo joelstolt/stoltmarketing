@@ -163,7 +163,7 @@ export default function ProjektContent() {
           <div className="flex flex-col gap-6">
             {filtered.map((project, i) => (
               <Reveal key={project.title} delay={i * 0.06}>
-                <div className="group bg-surface rounded-[20px] border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-400">
+                <div className="group bg-surface rounded-[10px] border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-primary/20 transition-all duration-400">
                   <div className="grid lg:grid-cols-[320px,1fr] gap-0">
                     {/* Screenshot */}
                     {project.screenshot ? (
@@ -288,12 +288,12 @@ export default function ProjektContent() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
+              "transparent",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">

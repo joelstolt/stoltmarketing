@@ -125,7 +125,7 @@ export default function AiSection() {
 
           {/* Right: Kvota proof card */}
           <Reveal delay={0.15}>
-            <div className="bg-white/[0.72] backdrop-blur-xl rounded-[20px] border border-white/80 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)]">
+            <div className="bg-white/[0.72] backdrop-blur-xl rounded-[10px] border border-white/80 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)]">
               <div className="text-[12px] font-700 text-primary uppercase tracking-wider mb-4">
                 Eget AI-projekt
               </div>

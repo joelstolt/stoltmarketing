@@ -26,16 +26,16 @@ const company = [
 
 const linkStyle = {
   fontSize: 14,
-  color: "#433D33",
+  color: "rgba(250,245,236,0.65)",
   textDecoration: "none",
   transition: "color 0.2s",
 };
-const hover = (e) => (e.currentTarget.style.color = "#9A7409");
-const unhover = (e) => (e.currentTarget.style.color = "#433D33");
+const hover = (e) => (e.currentTarget.style.color = "#F2BC1B");
+const unhover = (e) => (e.currentTarget.style.color = "rgba(250,245,236,0.65)");
 
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid #E6DEC9" }}>
+    <footer className="hero-dark" style={{ borderTop: "1px solid rgba(250,245,236,0.12)" }}>
       {/* Main footer */}
       <div
         style={{
@@ -59,7 +59,7 @@ export default function Footer() {
               fontWeight: 600,
               fontVariationSettings: '"opsz" 100',
               letterSpacing: "-0.01em",
-              color: "#1A1611",
+              color: "#FAF5EC",
               textDecoration: "none",
               display: "flex",
               alignItems: "baseline",
@@ -88,13 +88,13 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#7A7263",
+                color: "rgba(250,245,236,0.5)",
               }}
             >
               Marketing
             </span>
           </Link>
-          <p style={{ fontSize: 14, color: "#7A7263", lineHeight: 1.7, maxWidth: 300 }}>
+          <p style={{ fontSize: 14, color: "rgba(250,245,236,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
             Digital byrå i Hässleholm med 10+ års erfarenhet. Moderna hemsidor,
             e-handel, SEO, Google Ads och AI-automation — med enterprise-kvalitet
             till företag i hela Skåne och Sverige.
@@ -103,13 +103,13 @@ export default function Footer() {
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
             <a
               href="mailto:joel@stoltmarketing.se"
-              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#433D33", textDecoration: "none" }}
+              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)", textDecoration: "none" }}
             >
-              <Mail size={15} color="#9A7409" />
+              <Mail size={15} color="#F2BC1B" />
               joel@stoltmarketing.se
             </a>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "#433D33" }}>
-              <MapPin size={15} color="#9A7409" />
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)" }}>
+              <MapPin size={15} color="#F2BC1B" />
               Hässleholm, Skåne
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function Footer() {
       </div>
 
       {/* Lokalt-band: alla ort × tjänst-länkar för synlighet och crawl */}
-      <div style={{ borderTop: "1px solid #EFE9D9" }}>
+      <div style={{ borderTop: "1px solid rgba(250,245,236,0.12)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "32px 20px 8px" }}>
           <p style={{ ...colHeading, marginBottom: 20 }}>Webbyrå, SEO, Google Ads & AI i Skåne</p>
           <div
@@ -173,9 +173,9 @@ export default function Footer() {
                 <Link
                   href={CITIES[c].hub}
                   className="font-heading"
-                  style={{ fontSize: 14, fontWeight: 700, color: "#1A1611", textDecoration: "none", display: "block", marginBottom: 12 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#9A7409")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#1A1611")}
+                  style={{ fontSize: 14, fontWeight: 700, color: "#FAF5EC", textDecoration: "none", display: "block", marginBottom: 12 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#FAF5EC")}
                 >
                   {CITIES[c].name}
                 </Link>
@@ -184,9 +184,9 @@ export default function Footer() {
                     <Link
                       key={s}
                       href={`/${c}/${s}`}
-                      style={{ fontSize: 13, color: "#7A7263", textDecoration: "none", transition: "color 0.2s" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#9A7409")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "#7A7263")}
+                      style={{ fontSize: 13, color: "rgba(250,245,236,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(250,245,236,0.5)")}
                     >
                       {SERVICES[s].label} {CITIES[c].name}
                     </Link>
@@ -199,7 +199,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid #EFE9D9", padding: "20px 20px", marginTop: 24 }}>
+      <div style={{ borderTop: "1px solid rgba(250,245,236,0.12)", padding: "20px 20px", marginTop: 24 }}>
         <div
           style={{
             maxWidth: 1120,
@@ -211,7 +211,7 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <span style={{ fontSize: 13, color: "#A89F8D" }}>
+          <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>
             © {new Date().getFullYear()} Stolt Marketing. Alla rättigheter förbehållna.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -219,13 +219,13 @@ export default function Footer() {
               href="https://kvota.se"
               target="_blank"
               rel="noopener"
-              style={{ fontSize: 13, color: "#A89F8D", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#9A7409")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#A89F8D")}
+              style={{ fontSize: 13, color: "rgba(250,245,236,0.4)", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(250,245,236,0.4)")}
             >
               Kvota.se
             </a>
-            <span style={{ fontSize: 13, color: "#A89F8D" }}>Svar inom 24h på vardagar</span>
+            <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>Svar inom 24h på vardagar</span>
           </div>
         </div>
       </div>
@@ -244,7 +244,7 @@ export default function Footer() {
 const colHeading = {
   fontSize: 12,
   fontWeight: 700,
-  color: "#A89F8D",
+  color: "rgba(250,245,236,0.4)",
   textTransform: "uppercase",
   letterSpacing: "0.08em",
   marginBottom: 16,

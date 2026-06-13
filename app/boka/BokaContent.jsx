@@ -81,12 +81,12 @@ export default function BokaContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="hero-dark relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
+              "transparent",
           }}
         />
 
@@ -128,7 +128,7 @@ export default function BokaContent() {
           <div className="grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start">
             {/* Form */}
             <Reveal>
-              <div className="bg-surface rounded-[20px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+              <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
                 {submitted ? (
                   <div className="text-center py-12">
                     <div
@@ -282,7 +282,7 @@ export default function BokaContent() {
 
               {/* Benefits */}
               <Reveal delay={0.14}>
-                <div className="p-5 rounded-[16px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
+                <div className="p-5 rounded-[10px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
                   <h3 className="font-heading font-700 text-[15px] text-heading tracking-tight mb-3">
                     Det du får med dig
                   </h3>

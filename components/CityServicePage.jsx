@@ -86,7 +86,7 @@ export default function CityServicePage({ service, city }) {
               const Icon = ICONS[f.icon] || Check;
               return (
                 <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                  <div className="bg-surface rounded-[16px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                  <div className="bg-surface rounded-[10px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                     <div className="w-10 h-10 rounded-[10px] bg-primary/6 flex items-center justify-center mb-4">
                       <Icon size={18} className="text-primary" />
                     </div>
@@ -107,7 +107,7 @@ export default function CityServicePage({ service, city }) {
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {s.process.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.06 + 0.1}>
-                <div className="bg-surface rounded-[16px] border border-border p-6 h-full">
+                <div className="bg-surface rounded-[10px] border border-border p-6 h-full">
                   <div className="font-heading font-600 text-[22px] text-primary">{`0${i + 1}`}</div>
                   <h3 className="mt-2 font-heading font-700 text-[16px] text-heading">{p.title}</h3>
                   <p className="mt-2 text-[14px] text-body leading-relaxed">{p.desc}</p>
@@ -158,7 +158,7 @@ export default function CityServicePage({ service, city }) {
                 { v: "24h", l: "Svarstid på vardagar" },
                 { v: "Fast pris", l: "Innan vi börjar" },
               ].map((s2) => (
-                <div key={s2.l} className="bg-surface rounded-[16px] border border-border p-6">
+                <div key={s2.l} className="bg-surface rounded-[10px] border border-border p-6">
                   <div className="font-heading font-600 text-[28px] text-heading tracking-tight">{s2.v}</div>
                   <div className="text-[13px] text-muted mt-1">{s2.l}</div>
                 </div>
@@ -264,10 +264,10 @@ export default function CityServicePage({ service, city }) {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }}
+          style={{ background: "transparent" }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal>

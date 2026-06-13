@@ -55,7 +55,7 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
 /* ── Page hero for sub-pages (breadcrumb + badge + headline + subtitle + CTAs) ── */
 export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
   return (
-    <section className="grain relative overflow-hidden border-b border-border-light">
+    <section className="hero-dark relative overflow-hidden">
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
         {/* Breadcrumbs */}
@@ -86,7 +86,7 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <h1 className="mt-5 font-heading font-600 text-[clamp(32px,5vw,56px)] leading-[1.08] tracking-[-0.015em] text-heading max-w-[800px]">
+          <h1 className="mt-6 font-heading font-600 text-[clamp(38px,5.5vw,72px)] leading-[1.05] tracking-[-0.015em] text-heading max-w-[850px]">
             {title}
           </h1>
         </Reveal>
@@ -125,7 +125,6 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
         </Reveal>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-b from-transparent to-base pointer-events-none" />
     </section>
   );
 }

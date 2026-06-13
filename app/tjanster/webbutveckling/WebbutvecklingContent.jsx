@@ -63,7 +63,7 @@ export default function WebbutvecklingContent() {
                 "Din nuvarande sajt är långsam, otydlig eller ser daterad ut.",
                 "Du behöver en e-handelsplattform som fungerar i praktiken.",
               ].map((text, i) => (
-                <div key={i} className="bg-surface rounded-[16px] border border-border p-6">
+                <div key={i} className="bg-surface rounded-[10px] border border-border p-6">
                   <Check size={18} className="text-primary mb-3" strokeWidth={2.5} />
                   <p className="text-[15px] text-body leading-relaxed">{text}</p>
                 </div>
@@ -80,7 +80,7 @@ export default function WebbutvecklingContent() {
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                <div className="bg-surface rounded-[16px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                <div className="bg-surface rounded-[10px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <div className="w-10 h-10 rounded-[10px] bg-primary/6 flex items-center justify-center mb-4">
                     <f.icon size={18} className="text-primary" />
                   </div>
@@ -107,11 +107,11 @@ export default function WebbutvecklingContent() {
 
           <Reveal delay={0.18}>
             <div className="mt-12 grid sm:grid-cols-2 gap-8">
-              <div className="bg-surface rounded-[16px] border border-border p-6">
+              <div className="bg-surface rounded-[10px] border border-border p-6">
                 <div className="text-[32px] font-600 font-heading text-heading tracking-tight">150+</div>
                 <div className="text-[14px] text-muted mt-1">Levererade webbprojekt</div>
               </div>
-              <div className="bg-surface rounded-[16px] border border-border p-6">
+              <div className="bg-surface rounded-[10px] border border-border p-6">
                 <div className="text-[32px] font-600 font-heading text-heading tracking-tight">AcadeMedia</div>
                 <div className="text-[14px] text-muted mt-1">Pågående enterprise-uppdrag i WooCommerce</div>
               </div>
@@ -130,7 +130,7 @@ export default function WebbutvecklingContent() {
               { name: "Webb + E-handel", price: "Från 7 900 kr", desc: "Fullskalig sajt med WooCommerce, betalningar, SEO-grund och AI-verktyg." },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>
-                <div className="bg-surface rounded-[16px] border border-border p-7 h-full">
+                <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
                   <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
                   <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">{p.price}</div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">{p.desc}</p>
@@ -170,8 +170,8 @@ export default function WebbutvecklingContent() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }} />
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "transparent" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Redo för en sajt som levererar?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en kostnadsfri genomgång så pratar vi igenom dina behov och tar fram ett upplägg.</p></Reveal>

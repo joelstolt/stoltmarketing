@@ -113,7 +113,7 @@ export default function GoogleAdsContent() {
               ].map((text, i) => (
                 <div
                   key={i}
-                  className="bg-surface rounded-[16px] border border-border p-6"
+                  className="bg-surface rounded-[10px] border border-border p-6"
                 >
                   <Check
                     size={18}
@@ -140,7 +140,7 @@ export default function GoogleAdsContent() {
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                <div className="bg-surface rounded-[16px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                <div className="bg-surface rounded-[10px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <div className="w-10 h-10 rounded-[10px] bg-primary/6 flex items-center justify-center mb-4">
                     <f.icon size={18} className="text-primary" />
                   </div>
@@ -178,7 +178,7 @@ export default function GoogleAdsContent() {
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>
-                <div className="bg-surface rounded-[16px] border border-border p-7 h-full">
+                <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
                   <h3 className="font-heading font-700 text-[18px] text-heading">
                     {p.name}
                   </h3>
@@ -245,12 +245,12 @@ export default function GoogleAdsContent() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
+              "transparent",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">

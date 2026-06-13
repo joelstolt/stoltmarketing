@@ -136,7 +136,7 @@ export default function Cases() {
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div
-                        className="w-16 h-16 rounded-[16px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                        className="w-16 h-16 rounded-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                         style={{
                           background: `linear-gradient(135deg, ${c.color}15, ${c.color}08)`,
                           border: `1px solid ${c.color}15`,

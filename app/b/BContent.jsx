@@ -259,11 +259,11 @@ export default function BContent() {
           <p className="b-sub" style={{ marginTop: 28, fontSize: 17, lineHeight: 1.6, color: "#433D33", maxWidth: 460 }}>
             Ingen byrå-overhead. Du jobbar direkt med personen som bygger, optimerar och tar ansvar för resultatet.
           </p>
-          <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34 }}>
-            <a href="/boka" className="premium-btn" data-umami-event="cta-boka-variant-b-hero">
+          <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34, position: "relative", zIndex: 3 }}>
+            <a href="/boka" className="premium-btn" data-umami-event="cta-boka-variant-b-hero" style={{ boxShadow: "0 6px 24px rgba(26,22,17,0.18)" }}>
               Boka kostnadsfri genomgång <ArrowRight size={16} />
             </a>
-            <a href="#tjanster" className="secondary-btn">Se tjänster</a>
+            <a href="#tjanster" className="secondary-btn" style={{ background: PAPER, boxShadow: "0 6px 24px rgba(26,22,17,0.10)" }}>Se tjänster</a>
           </div>
         </div>
         <div className="b-scrollcue" style={{ position: "absolute", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>

@@ -5,13 +5,13 @@ import { ArrowRight, Home } from "lucide-react";
 
 export default function NotFoundContent() {
   return (
-    <section className="relative overflow-hidden min-h-[80vh] flex items-center">
+    <section className="hero-dark relative overflow-hidden min-h-[80vh] flex items-center">
       {/* Gradient background — same as PageHero */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
+            "transparent",
         }}
       />
 

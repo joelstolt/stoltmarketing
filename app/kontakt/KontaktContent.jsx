@@ -134,7 +134,7 @@ export default function KontaktContent() {
           <div className="grid lg:grid-cols-[1fr,380px] gap-12 lg:gap-20 items-start">
             {/* Left: Form */}
             <Reveal>
-              <div className="bg-surface rounded-[20px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+              <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
                 <h2 className="font-heading font-700 text-[22px] text-heading tracking-tight mb-2">
                   Beskriv ditt behov
                 </h2>
@@ -330,7 +330,7 @@ export default function KontaktContent() {
 
               {/* How it works */}
               <Reveal delay={0.14}>
-                <div className="mb-8 p-6 bg-surface rounded-[16px] border border-border">
+                <div className="mb-8 p-6 bg-surface rounded-[10px] border border-border">
                   <h3 className="font-heading font-700 text-[16px] text-heading tracking-tight mb-4">
                     Så går det till
                   </h3>
@@ -370,7 +370,7 @@ export default function KontaktContent() {
 
               {/* Promises */}
               <Reveal delay={0.2}>
-                <div className="p-6 rounded-[16px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
+                <div className="p-6 rounded-[10px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
                   <h3 className="font-heading font-700 text-[16px] text-heading tracking-tight mb-4">
                     Det du ska få med dig
                   </h3>

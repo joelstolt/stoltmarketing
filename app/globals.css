@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   cursor: pointer;
   color: var(--color-heading);
-  background: transparent;
+  background: var(--color-base);
   border: 1px solid rgba(26, 22, 17, 0.3);
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
@@ -167,4 +167,63 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-heading);
   background: rgba(26, 22, 17, 0.04);
   transform: translateY(-1px);
+}
+
+/* === Bläck-hero (B-profilen) — flippar tokens till ljust på mörkt === */
+.hero-dark {
+  background: var(--color-surface-dark);
+}
+
+.hero-dark :is(h1, h2, h3, h4) {
+  color: var(--color-base);
+}
+
+.hero-dark .text-heading { color: var(--color-base); }
+.hero-dark .text-body { color: rgba(250, 245, 236, 0.78); }
+.hero-dark .text-muted { color: rgba(250, 245, 236, 0.55); }
+.hero-dark .text-faint { color: rgba(250, 245, 236, 0.4); }
+.hero-dark .text-border { color: rgba(250, 245, 236, 0.3); }
+.hero-dark .text-primary { color: var(--color-accent); }
+.hero-dark .eyebrow { color: rgba(250, 245, 236, 0.6); }
+.hero-dark [class*="hover:text-heading"]:hover { color: var(--color-base); }
+
+.hero-dark .premium-btn {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-heading);
+}
+
+.hero-dark .premium-btn:hover {
+  background: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-heading);
+}
+
+.hero-dark .secondary-btn {
+  color: var(--color-base);
+  background: transparent;
+  border-color: rgba(250, 245, 236, 0.35);
+}
+
+.hero-dark .secondary-btn:hover {
+  border-color: var(--color-base);
+  background: rgba(250, 245, 236, 0.08);
+}
+
+/* === Gul finale-sektion (B-profilen) === */
+.section-gul {
+  background: var(--color-accent);
+}
+
+.section-gul :is(h1, h2, h3) { color: var(--color-heading); }
+.section-gul .text-heading { color: var(--color-heading); }
+.section-gul .text-body { color: rgba(26, 22, 17, 0.78); }
+.section-gul .text-muted { color: rgba(26, 22, 17, 0.62); }
+.section-gul .eyebrow { color: rgba(26, 22, 17, 0.65); }
+.section-gul .eyebrow::before { background: var(--color-heading); }
+
+.section-gul .premium-btn:hover {
+  background: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-heading);
 }

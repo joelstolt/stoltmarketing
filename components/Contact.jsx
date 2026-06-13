@@ -30,13 +30,13 @@ export default function Contact() {
   return (
     <section
       id="kontakt"
-      className="relative py-20 sm:py-28 px-5 sm:px-8 overflow-hidden"
+      className="section-gul relative py-20 sm:py-28 px-5 sm:px-8 overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
+            "transparent",
         }}
       />
 

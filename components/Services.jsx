@@ -99,7 +99,7 @@ export default function Services() {
             <Reveal key={s.title} delay={i * 0.08 + 0.12}>
               <a
                 href={s.href}
-                className="block h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300 group"
+                className="block h-full bg-surface rounded-[10px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300 group"
               >
                 <div className="w-11 h-11 rounded-[12px] bg-primary/6 group-hover:bg-primary/10 flex items-center justify-center mb-5 transition-colors duration-300">
                   <s.icon size={20} className="text-primary" />

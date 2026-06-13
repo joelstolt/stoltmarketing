@@ -55,7 +55,7 @@ export default function Testimonials() {
         <div className="mt-12 grid sm:grid-cols-2 gap-5">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08 + 0.1}>
-              <div className="h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
+              <div className="h-full bg-surface rounded-[10px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (

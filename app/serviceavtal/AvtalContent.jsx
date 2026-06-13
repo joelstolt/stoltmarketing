@@ -78,12 +78,12 @@ export default function AvtalContent() {
   return (
     <div className="min-h-screen bg-base">
       {/* ═══ HERO BANNER ═══ */}
-      <section className="relative overflow-hidden">
+      <section className="hero-dark relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
+              "transparent",
           }}
         />
         <div
@@ -133,7 +133,7 @@ export default function AvtalContent() {
         <div className="mt-8 flex flex-col gap-6">
           {packages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={i * 0.06 + 0.1}>
-              <div className="relative rounded-[20px] p-7 sm:p-9 bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+              <div className="relative rounded-[10px] p-7 sm:p-9 bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div>
                     <div className="text-[12px] font-600 text-primary uppercase tracking-wider">
@@ -196,7 +196,7 @@ export default function AvtalContent() {
 
         {/* ═══ DEFINITION AV TIMMAR ═══ */}
         <Reveal>
-          <section className="mt-12 p-7 sm:p-9 bg-surface rounded-[20px] border border-border">
+          <section className="mt-12 p-7 sm:p-9 bg-surface rounded-[10px] border border-border">
             <h2 className="font-heading font-700 text-[20px] text-heading mb-3 tracking-tight">
               Definition av avsatta timmar
             </h2>
@@ -225,7 +225,7 @@ export default function AvtalContent() {
         {/* ═══ PRISER ═══ */}
         <Reveal>
           <div className="mt-8 grid grid-cols-2 gap-4">
-            <div className="p-7 bg-surface rounded-[20px] border border-border text-center">
+            <div className="p-7 bg-surface rounded-[10px] border border-border text-center">
               <div className="text-[12px] font-600 text-muted uppercase tracking-wider">
                 Konsulttimme
               </div>
@@ -237,7 +237,7 @@ export default function AvtalContent() {
                 ex moms · Vardagar 07:00–17:00
               </div>
             </div>
-            <div className="p-7 bg-surface rounded-[20px] border border-border text-center">
+            <div className="p-7 bg-surface rounded-[10px] border border-border text-center">
               <div className="text-[12px] font-600 text-muted uppercase tracking-wider">
                 Akut jourtid
               </div>
@@ -254,7 +254,7 @@ export default function AvtalContent() {
 
         {/* ═══ BRA ATT VETA ═══ */}
         <Reveal>
-          <section className="mt-12 p-7 sm:p-9 bg-surface rounded-[20px] border border-border">
+          <section className="mt-12 p-7 sm:p-9 bg-surface rounded-[10px] border border-border">
             <h2 className="font-heading font-700 text-[20px] text-heading mb-5 tracking-tight">
               Bra att veta
             </h2>
@@ -281,12 +281,12 @@ export default function AvtalContent() {
 
         {/* ═══ VARFÖR ═══ */}
         <Reveal>
-          <section className="relative mt-12 mb-16 p-10 rounded-[20px] overflow-hidden text-center">
+          <section className="section-gul relative mt-12 mb-16 p-10 rounded-[10px] overflow-hidden text-center">
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
+                  "transparent",
               }}
             />
             <div className="relative z-10">

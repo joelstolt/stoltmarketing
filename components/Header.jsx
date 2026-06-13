@@ -73,7 +73,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [onDark, setOnDark] = useState(false);
   const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    // Sidor med bläck-hero behöver ljus header tills man scrollat
+    setOnDark(!!document.querySelector("main section")?.classList.contains("hero-dark"));
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -101,10 +107,13 @@ export default function Header() {
     timeoutRef.current = setTimeout(() => setDropdownOpen(false), 150);
   };
 
+  const lightTop = onDark && !scrolled && !isOpen;
+
   return (
     <>
       {/* ═══ HEADER BAR ═══ */}
       <header
+        className={lightTop ? "hero-dark" : undefined}
         style={{
           position: "fixed",
           top: 0,
@@ -151,7 +160,8 @@ export default function Header() {
               fontWeight: 600,
               fontVariationSettings: '"opsz" 100',
               letterSpacing: "-0.01em",
-              color: "#1A1611",
+              color: lightTop ? "#FAF5EC" : "#1A1611",
+              transition: "color 0.3s",
               textDecoration: "none",
             }}
           >
@@ -176,7 +186,8 @@ export default function Header() {
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#7A7263",
+                color: lightTop ? "rgba(250,245,236,0.55)" : "#7A7263",
+                transition: "color 0.3s",
               }}
             >
               Marketing
@@ -205,12 +216,12 @@ export default function Header() {
                   gap: 4,
                   fontSize: 15,
                   fontWeight: 500,
-                  color: "#7A7263",
+                  color: lightTop ? "rgba(250,245,236,0.7)" : "#7A7263",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1611")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#7A7263")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = lightTop ? "#FAF5EC" : "#1A1611")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = lightTop ? "rgba(250,245,236,0.7)" : "#7A7263")}
               >
                 Tjänster
                 <ChevronDown
@@ -370,12 +381,12 @@ export default function Header() {
                 style={{
                   fontSize: 15,
                   fontWeight: 500,
-                  color: "#7A7263",
+                  color: lightTop ? "rgba(250,245,236,0.7)" : "#7A7263",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1611")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#7A7263")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = lightTop ? "#FAF5EC" : "#1A1611")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = lightTop ? "rgba(250,245,236,0.7)" : "#7A7263")}
               >
                 {item.label}
               </Link>
@@ -392,7 +403,7 @@ export default function Header() {
             className="lg:hidden"
             style={{
               padding: 8,
-              color: "#7A7263",
+              color: lightTop ? "#FAF5EC" : "#7A7263",
               background: "none",
               border: "none",
               cursor: "pointer",

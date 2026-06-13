@@ -48,7 +48,7 @@ export default function SeoContent() {
                 "Din sajt syns inte på Google trots att du har bra erbjudande.",
                 "Du behöver bättre lokal synlighet och fler lokala förfrågningar.",
               ].map((text, i) => (
-                <div key={i} className="bg-surface rounded-[16px] border border-border p-6">
+                <div key={i} className="bg-surface rounded-[10px] border border-border p-6">
                   <Check size={18} className="text-primary mb-3" strokeWidth={2.5} />
                   <p className="text-[15px] text-body leading-relaxed">{text}</p>
                 </div>
@@ -64,7 +64,7 @@ export default function SeoContent() {
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                <div className="bg-surface rounded-[16px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                <div className="bg-surface rounded-[10px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <div className="w-10 h-10 rounded-[10px] bg-primary/6 flex items-center justify-center mb-4">
                     <f.icon size={18} className="text-primary" />
                   </div>
@@ -103,8 +103,8 @@ export default function SeoContent() {
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }} />
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "transparent" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Vill du synas bättre på Google?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en genomgång så går jag igenom ditt nuläge och visar var de största möjligheterna finns.</p></Reveal>

@@ -66,7 +66,7 @@ export default function ManagedContent() {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {alwaysIncluded.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                <div className="flex gap-4 p-5 bg-surface rounded-[16px] border border-border">
+                <div className="flex gap-4 p-5 bg-surface rounded-[10px] border border-border">
                   <div className="w-10 h-10 rounded-[12px] bg-primary/6 flex items-center justify-center flex-shrink-0">
                     <f.icon size={18} className="text-primary" />
                   </div>
@@ -88,7 +88,7 @@ export default function ManagedContent() {
           <div className="mt-12 grid md:grid-cols-3 gap-5">
             {packages.map((pkg, i) => (
               <Reveal key={pkg.name} delay={i * 0.08 + 0.1}>
-                <div className={`relative h-full rounded-[20px] p-7 transition-all duration-300 ${
+                <div className={`relative h-full rounded-[10px] p-7 transition-all duration-300 ${
                   pkg.popular
                     ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,188,27,0.18)]"
                     : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15"
@@ -151,8 +151,8 @@ export default function ManagedContent() {
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)" }} />
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "transparent" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Vill du ha lugn drift och tydlig kontroll?</h2></Reveal>
           <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Vi sätter ett upplägg som passar din nivå, prioritet och ambitionsnivå — med tydligt ansvar och uppföljning.</p></Reveal>

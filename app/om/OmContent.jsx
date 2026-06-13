@@ -65,12 +65,12 @@ export default function OmContent() {
   return (
     <>
       {/* ═══ HERO ═══ */}
-      <section className="relative overflow-hidden">
+      <section className="hero-dark relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)",
+              "transparent",
           }}
         />
 
@@ -410,7 +410,7 @@ export default function OmContent() {
           <div className="mt-12 grid md:grid-cols-2 gap-5">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06 + 0.1}>
-                <div className="flex gap-5 p-6 bg-surface rounded-[20px] border border-border hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                <div className="flex gap-5 p-6 bg-surface rounded-[10px] border border-border hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <div
                     style={{
                       width: 44,
@@ -482,12 +482,12 @@ export default function OmContent() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
+              "transparent",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">

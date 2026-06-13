@@ -11,8 +11,8 @@ export default function Article() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "linear-gradient(168deg, #FBF7EE 0%, #F8F0DC 25%, #F5E9C8 45%, #F7E8B8 60%, #FBF3DC 80%, #FAF5EC 100%)" }} />
+        <section className="hero-dark relative overflow-hidden">
+          <div className="absolute inset-0" style={{ background: "transparent" }} />
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Reveal>
               <nav className="flex items-center gap-2 text-[13px] text-muted mb-6">

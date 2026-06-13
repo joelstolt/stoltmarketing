@@ -272,7 +272,7 @@ export default function TjansterContent() {
           <div className="mt-14 flex flex-col gap-8">
             {services.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06 + 0.1}>
-                <div className="bg-surface rounded-[20px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <div className="grid lg:grid-cols-[1fr,320px] gap-8 lg:gap-14">
                     {/* Left */}
                     <div>
@@ -375,7 +375,7 @@ export default function TjansterContent() {
           <div className="mt-12 grid md:grid-cols-3 gap-5">
             {packages.map((pkg, i) => (
               <Reveal key={pkg.name} delay={i * 0.08 + 0.1}>
-                <div className="h-full bg-surface rounded-[20px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
+                <div className="h-full bg-surface rounded-[10px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
                   <h3 className="font-heading font-700 text-[18px] text-heading">
                     {pkg.name}
                   </h3>
@@ -476,12 +476,12 @@ export default function TjansterContent() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
+      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(168deg, #F8F0DC 0%, #F5E9C8 40%, #F7E8B8 70%, #FBF3DC 100%)",
+              "transparent",
           }}
         />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
