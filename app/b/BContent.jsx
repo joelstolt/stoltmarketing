@@ -54,7 +54,6 @@ function Wordmark({ color = "inherit", barColor = GUL }) {
 
 export default function BContent() {
   const root = useRef(null);
-  const headerRef = useRef(null);
   const trackRef = useRef(null);
   const caseSecRef = useRef(null);
   const magnetRef = useRef(null);
@@ -165,14 +164,6 @@ export default function BContent() {
           });
         });
       });
-
-      /* ── Headertema: ljus över mörka partiet ── */
-      ScrollTrigger.create({
-        trigger: ".b-dark",
-        start: "top 64",
-        end: "bottom 64",
-        onToggle: ({ isActive }) => headerRef.current?.classList.toggle("b-header-light", isActive),
-      });
     }, root);
 
     return () => ctx.revert();
@@ -213,8 +204,6 @@ export default function BContent() {
         .b-marquee-inner { display: flex; gap: 56px; width: max-content; animation: b-scroll 36s linear infinite; }
         @keyframes b-scroll { to { transform: translateX(-50%); } }
         @media (prefers-reduced-motion: reduce) { .b-marquee-inner { animation: none; } }
-        .b-header-light .b-nav-text { color: ${PAPER} !important; }
-        .b-header-light .b-nav-pill { background: ${PAPER} !important; color: ${INK} !important; border-color: ${PAPER} !important; }
         .b-case-scroll { display: flex; gap: 28px; }
         @media (max-width: 899px) {
           .b-case-scroll { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
@@ -223,25 +212,7 @@ export default function BContent() {
         }
       `}</style>
 
-      {/* ═══ Toppbar ═══ */}
-      <header
-        ref={headerRef}
-        style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 24px", transition: "all .3s" }}
-      >
-        <Link href="/" aria-label="Stolt Marketing — till startsidan" style={{ textDecoration: "none" }}>
-          <span className="b-nav-text" style={{ transition: "color .3s", color: INK }}>
-            <Wordmark />
-          </span>
-        </Link>
-        <a
-          href="/boka"
-          className="b-nav-pill"
-          data-umami-event="cta-hero-topp"
-          style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: PAPER, background: INK, border: `1px solid ${INK}`, padding: "10px 20px", borderRadius: 8, textDecoration: "none", transition: "all .3s" }}
-        >
-          Boka genomgång
-        </a>
-      </header>
+      {/* Global header (Header.jsx) renderas av app/page.js ovanför denna komponent */}
 
       {/* ═══ 1. Hero — Fältet ═══ */}
       <section style={{ position: "relative", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden" }}>
