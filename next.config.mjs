@@ -10,6 +10,8 @@ if (!process.env.VERCEL) {
 const nextConfig = {
   async redirects() {
     return [
+      // Splittest-varianten /b är nu startsidan
+      { source: "/b", destination: "/", permanent: true },
       // Old service pages
       {
         source: "/hemsida-fastpris",

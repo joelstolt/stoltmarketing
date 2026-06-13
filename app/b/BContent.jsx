@@ -236,7 +236,7 @@ export default function BContent() {
         <a
           href="/boka"
           className="b-nav-pill"
-          data-umami-event="cta-boka-variant-b-topp"
+          data-umami-event="cta-hero-topp"
           style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: PAPER, background: INK, border: `1px solid ${INK}`, padding: "10px 20px", borderRadius: 8, textDecoration: "none", transition: "all .3s" }}
         >
           Boka genomgång
@@ -260,7 +260,7 @@ export default function BContent() {
             Ingen byrå-overhead. Du jobbar direkt med personen som bygger, optimerar och tar ansvar för resultatet.
           </p>
           <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34, position: "relative", zIndex: 3 }}>
-            <a href="/boka" className="premium-btn" data-umami-event="cta-boka-variant-b-hero" style={{ boxShadow: "0 6px 24px rgba(26,22,17,0.18)" }}>
+            <a href="/boka" className="premium-btn" data-umami-event="cta-hero-primar" style={{ boxShadow: "0 6px 24px rgba(26,22,17,0.18)" }}>
               Boka kostnadsfri genomgång <ArrowRight size={16} />
             </a>
             <a href="#tjanster" className="secondary-btn" style={{ background: PAPER, boxShadow: "0 6px 24px rgba(26,22,17,0.10)" }}>Se tjänster</a>
@@ -389,7 +389,7 @@ export default function BContent() {
             <a
               ref={magnetRef}
               href="/boka"
-              data-umami-event="cta-boka-variant-b-final"
+              data-umami-event="cta-hero-final"
               style={{ display: "inline-flex", alignItems: "center", gap: 12, background: INK, color: PAPER, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, padding: "20px 38px", borderRadius: 10, textDecoration: "none", willChange: "transform" }}
             >
               Boka kostnadsfri genomgång <ArrowRight size={17} />
