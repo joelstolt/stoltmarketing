@@ -65,8 +65,8 @@ export default function MalmoContent() {
           { label: "Malmö" },
         ]}
         badge="Malmö"
-        title="Din digitala partner i Malmö."
-        subtitle="Jag hjälper växande företag och startups i Malmö att skala sitt digital närvaro, få fler kunder och automatisera. Med erfarenhet från Öresund-regionen och Malmös vibrerande tech-ekosystem."
+        title="Webbyrå i Malmö — för växande företag och startups."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag, startups och e-handel i Malmö och Öresundsregionen. Du jobbar direkt med personen som bygger — fast pris, utan byrå-overhead."
         bullets={[
           "10+ års erfarenhet",
           "Malmö-baserad",

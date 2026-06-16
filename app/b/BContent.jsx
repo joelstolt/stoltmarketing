@@ -19,7 +19,7 @@ const services = [
   { i: "01", title: "Webbutveckling", desc: "Moderna sajter som konverterar", href: "/tjanster/webbutveckling" },
   { i: "02", title: "E-handel", desc: "Butiker byggda för att sälja", href: "/tjanster/e-handel" },
   { i: "03", title: "WordPress", desc: "Snabba, säkra WP-sidor", href: "/tjanster/wordpress" },
-  { i: "04", title: "AI & Automation", desc: "Arbetsflöden som sparar tid", href: "/tjanster/ai-automation" },
+  { i: "04", title: "AI & Automation", desc: "Mejl & offerter som sköter sig själva", href: "/tjanster/ai-automation" },
   { i: "05", title: "SEO", desc: "Synlighet som ger fler kunder", href: "/tjanster/seo" },
   { i: "06", title: "Google Ads", desc: "Annonsering som ger resultat", href: "/tjanster/google-ads" },
   { i: "07", title: "Managed hemsida", desc: "Drift, underhåll, förbättringar", href: "/tjanster/managed-hemsida" },
@@ -226,10 +226,10 @@ export default function BContent() {
             </span>
           </div>
           <h1 className="b-h1 font-heading" style={{ fontWeight: 600, fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.02em", color: INK, maxWidth: "13ch", margin: 0 }}>
-            Webbplatser, SEO och AI som gör dig lätt att hitta.
+            Webbplatser, SEO och AI som ger ditt företag fler kunder.
           </h1>
           <p className="b-sub" style={{ marginTop: 28, fontSize: 17, lineHeight: 1.6, color: "#433D33", maxWidth: 460 }}>
-            Ingen byrå-overhead. Du jobbar direkt med personen som bygger, optimerar och tar ansvar för resultatet.
+            Enterprise-kvalitet till småföretag — utan byrå-overhead. Du jobbar direkt med personen som bygger, optimerar och tar ansvar för resultatet.
           </p>
           <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34, position: "relative", zIndex: 3 }}>
             <a href="/boka" className="premium-btn" data-umami-event="cta-hero-primar" style={{ boxShadow: "0 6px 24px rgba(26,22,17,0.18)" }}>
@@ -258,7 +258,7 @@ export default function BContent() {
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
             <span aria-hidden="true" style={{ width: 26, height: 5, background: GUL, display: "inline-block" }} />
             <h2 style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(250,245,236,0.55)", margin: 0, fontFamily: "var(--font-body)" }}>
-              Allt du behöver för att växa digitalt
+              Synas, sälja och spara tid — allt under ett tak
             </h2>
           </div>
           <div style={{ borderBottom: "1px solid rgba(250,245,236,0.14)" }}>

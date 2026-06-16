@@ -65,8 +65,8 @@ export default function LundContent() {
           { label: "Lund" },
         ]}
         badge="Lund"
-        title="Digital partner för innovatörer och forskare i Lund."
-        subtitle="Jag hjälper företag från Lund University, Ideon Science Park och närliggande tech-bolag att bygga digital närvaro, få kunder och automatisera. Specialiserad på innovation och vetenskap."
+        title="Webbyrå i Lund — för innovatörer, forskning och tech."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag kring Lunds universitet, Ideon och Medicon Valley. Du pratar med utvecklaren själv — teknisk klass och fast pris."
         bullets={[
           "10+ års erfarenhet",
           "Tech-fokuserad",

@@ -65,8 +65,8 @@ export default function HassleholmContent() {
           { label: "Hässleholm" },
         ]}
         badge="Hässleholm"
-        title="Din digitala partner i Hässleholm."
-        subtitle="Jag hjälper lokala företag att synas online, få fler kunder och spara tid med moderna digitala verktyg. Baserad i Hässleholm — jobbar med företag i hela Skåne och Sverige."
+        title="Webbyrå i Hässleholm — din lokala digitala partner."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag i Hässleholm och nordöstra Skåne. Du jobbar direkt med personen som bygger — fast pris och lokal kontakt, inget byråkrångel."
         bullets={[
           "10+ års erfarenhet",
           "Lokal kontakt",

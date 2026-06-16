@@ -65,8 +65,8 @@ export default function KristianstadContent() {
           { label: "Kristianstad" },
         ]}
         badge="Kristianstad"
-        title="Din digitala partner i Kristianstad."
-        subtitle="Jag hjälper lokala företag att synas online, få fler kunder och spara tid med moderna digitala verktyg. Baserad i Skåne — jobbar med företag i Kristianstad, Vattenrikets närområde och hela Sverige."
+        title="Webbyrå i Kristianstad — din lokala digitala partner."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag i Kristianstad, Åhus och nordöstra Skåne. Du pratar direkt med konsulten som bygger — fast pris och raka besked."
         bullets={[
           "10+ års erfarenhet",
           "Lokal kontakt",

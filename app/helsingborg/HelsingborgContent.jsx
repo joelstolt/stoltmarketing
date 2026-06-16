@@ -65,8 +65,8 @@ export default function HelsingborgContent() {
           { label: "Helsingborg" },
         ]}
         badge="Helsingborg"
-        title="Digital partner för företag i Helsingborg."
-        subtitle="Jag hjälper lokala företag i Skånes näststörsta stad att synas online, få fler kunder och automatisera. Med erfarenhet från den dynamiska Helsingborg-marknaden och starkt startups-ekosystem."
+        title="Webbyrå i Helsingborg — för företag som vill växa."
+        subtitle="Hemsidor, SEO, Google Ads och AI för handels-, logistik- och B2B-företag i Helsingborg. Du jobbar direkt med personen som bygger — fast pris och tydlig avkastning."
         bullets={[
           "10+ års erfarenhet",
           "Lokal marknadskunskap",
