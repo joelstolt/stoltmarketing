@@ -212,9 +212,10 @@ export default function Footer() {
           }}
         >
           <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>
-            © {new Date().getFullYear()} Stolt Marketing. Alla rättigheter förbehållna.
+            © {new Date().getFullYear()} Stolt Marketing — webbyrå i Hässleholm &amp; Skåne för hemsidor, SEO, Google Ads och AI.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>Svar inom 24h på vardagar</span>
             <a
               href="https://kvota.se"
               target="_blank"
@@ -223,9 +224,8 @@ export default function Footer() {
               onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(250,245,236,0.4)")}
             >
-              Kvota.se
+              Egen AI-produkt: Kvota.se
             </a>
-            <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>Svar inom 24h på vardagar</span>
           </div>
         </div>
       </div>
