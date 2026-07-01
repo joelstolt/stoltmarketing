@@ -152,7 +152,7 @@ export default function WebbutvecklingContent() {
                   <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
                   <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">{p.price}</div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">{p.desc}</p>
-                  <a href="/boka" className="secondary-btn mt-5 w-full justify-center text-[14px]">Få upplägg och pris</a>
+                  <a href={`/boka?amne=pris&paket=${encodeURIComponent(p.name)}`} className="secondary-btn mt-5 w-full justify-center text-[14px]">Få upplägg och pris</a>
                 </div>
               </Reveal>
             ))}

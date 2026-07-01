@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, Check, Clock, MessageCircle, Zap } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
 
@@ -25,20 +25,45 @@ export default function BokaContent() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [prisIntent, setPrisIntent] = useState(false);
+
+  // "Få upplägg och pris"-knapparna länkar hit med ?amne=pris(&paket=X).
+  // Förifyll meddelandet så knappens löfte hålls — och så att leadet visar
+  // vilket köpläge personen är i (prisförfrågan vs mötesbokning).
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("amne") !== "pris") return;
+    setPrisIntent(true);
+    const paket = params.get("paket");
+    setFormData((prev) =>
+      prev.message
+        ? prev
+        : {
+            ...prev,
+            message: paket
+              ? `Vill ha upplägg och pris för ${paket}.`
+              : "Vill ha upplägg och pris för en ny hemsida.",
+          },
+    );
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
     try {
-      const res = await fetch("https://formspree.io/f/xreylwen", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           company: formData.company,
-          message: formData.message || "Vill boka en kostnadsfri genomgång.",
-          _subject: `Bokningsförfrågan från ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`,
+          message:
+            formData.message ||
+            (prisIntent
+              ? "Vill ha upplägg och pris."
+              : "Vill boka en kostnadsfri genomgång."),
+          _subject: `${prisIntent ? "Prisförfrågan" : "Bokningsförfrågan"} från ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`,
         }),
       });
       if (res.ok) {

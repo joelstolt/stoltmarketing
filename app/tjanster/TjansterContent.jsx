@@ -386,7 +386,7 @@ export default function TjansterContent() {
                     {pkg.desc}
                   </p>
                   <a
-                    href="/boka"
+                    href={`/boka?amne=pris&paket=${encodeURIComponent(pkg.name)}`}
                     className="secondary-btn mt-6 w-full justify-center text-[14px]"
                   >
                     Få upplägg och pris
