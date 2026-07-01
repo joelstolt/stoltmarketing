@@ -8,6 +8,42 @@ const categories = ["Alla", "Webb", "E-handel", "AI", "SEO", "Tillgänglighet"];
 
 const projects = [
   {
+    title: "Linguista",
+    category: ["Webb", "Tillgänglighet", "SEO"],
+    type: "WordPress → Next.js · Cloudflare",
+    tag: "AcadeMedia",
+    tagColor: "green",
+    desc: "Byggde om Linguistas webbplats från WordPress till en självuppdaterande Next.js-sajt på Cloudflares edge. 100 av 100 i prestanda, tillgänglighet, best practices och AI-läsbarhet — och redaktionen publicerar nu helt själva.",
+    challenge: "En snabb men åldrande WordPress-sajt: tillgänglighet under EU-lagkravsnivå, halva innehållet oläsbart för AI-assistenter, och varje innehållsändring krävde en utvecklare.",
+    solution: "Statisk Next.js på Cloudflares edge med eget CMS (Sanity) och automatisk publiceringspipeline — redaktören trycker publicera, sajten bygger om sig själv och är live på minuter. 70+ artiklar migrerade, kontraster på AAA-nivå.",
+    results: [
+      { label: "Prestanda · A11y · BP · AI", value: "100/100" },
+      { label: "Laddtid (LCP)", value: "−46 %" },
+      { label: "Publicering", value: "Automatisk" },
+    ],
+    tech: ["Next.js", "React", "Cloudflare", "Sanity CMS", "GitHub Actions", "WCAG 2.1"],
+    caseUrl: "/projekt/linguista",
+    screenshot: "/case-linguista.webp",
+  },
+  {
+    title: "EdShare",
+    category: ["Webb", "Tillgänglighet", "SEO"],
+    type: "WordPress → Next.js · Cloudflare",
+    tag: "AcadeMedia",
+    tagColor: "green",
+    desc: "Byggde om EdShares webbplats från WordPress till en statisk Next.js-sajt på Cloudflares edge. 10x snabbare serversvar, 86 % lättare och full pott i prestanda, tillgänglighet och AI-läsbarhet.",
+    challenge: "En WordPress-sajt som nått sin gräns: tung att ladda, beroende av många plugins och tredjepartsskript, med ett växande underhålls- och säkerhetsansvar.",
+    solution: "Statisk Next.js på Cloudflares edge, eget CMS (Sanity) för innehållet, self-hostade fonter och härdning för WCAG 2.1 AA, SEO och AI-läsbarhet.",
+    results: [
+      { label: "Serversvar", value: "10x snabbare" },
+      { label: "Sidvikt", value: "−86 %" },
+      { label: "Prestanda · A11y · AI", value: "100/100" },
+    ],
+    tech: ["Next.js", "React", "Cloudflare", "Sanity CMS", "WCAG 2.1 AA"],
+    caseUrl: "/projekt/edshare",
+    screenshot: "/case-edshare.webp",
+  },
+  {
     title: "LIA-platsbanken",
     category: ["Webb"],
     type: "Webbplattform · Next.js",
@@ -278,6 +314,15 @@ export default function ProjektContent() {
                           </div>
                         ))}
                       </div>
+
+                      {project.caseUrl && (
+                        <a
+                          href={project.caseUrl}
+                          className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary hover:text-primary-hover transition-colors"
+                        >
+                          Se hela caset <ArrowRight size={15} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

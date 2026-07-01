@@ -15,6 +15,8 @@ export default function sitemap() {
     { url: "/tjanster/e-handel", changeFrequency: "monthly", priority: 0.8 },
     { url: "/tjanster/wordpress", changeFrequency: "monthly", priority: 0.8 },
     { url: "/projekt", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/projekt/edshare", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/projekt/linguista", changeFrequency: "monthly", priority: 0.7 },
     { url: "/om", changeFrequency: "monthly", priority: 0.6 },
     { url: "/kontakt", changeFrequency: "monthly", priority: 0.7 },
     { url: "/boka", changeFrequency: "monthly", priority: 0.8 },

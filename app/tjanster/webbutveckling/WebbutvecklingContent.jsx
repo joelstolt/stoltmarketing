@@ -117,6 +117,24 @@ export default function WebbutvecklingContent() {
               </div>
             </div>
           </Reveal>
+
+          {/* Case-bevis — siffrorna ovan blir trovärdiga först med riktiga exempel */}
+          <Reveal delay={0.22}>
+            <div className="mt-8 grid sm:grid-cols-2 gap-8">
+              <a href="/projekt/linguista" className="group block bg-surface rounded-[10px] border border-border p-6 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all">
+                <div className="text-[12px] font-600 text-primary uppercase tracking-wider">Kundcase · AcadeMedia</div>
+                <div className="mt-2 font-heading font-700 text-[18px] text-heading group-hover:text-primary transition-colors">Linguista — 100/100 i fyra kategorier</div>
+                <p className="mt-2 text-[14px] text-body leading-relaxed">WordPress till självuppdaterande Next.js-sajt. Full pott i prestanda, tillgänglighet, best practices och AI-läsbarhet.</p>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">Se hela caset <ArrowRight size={15} /></span>
+              </a>
+              <a href="/projekt/edshare" className="group block bg-surface rounded-[10px] border border-border p-6 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all">
+                <div className="text-[12px] font-600 text-primary uppercase tracking-wider">Kundcase · AcadeMedia</div>
+                <div className="mt-2 font-heading font-700 text-[18px] text-heading group-hover:text-primary transition-colors">EdShare — 10x snabbare serversvar</div>
+                <p className="mt-2 text-[14px] text-body leading-relaxed">Från en WordPress-sajt vid vägs ände till tre 100:or och 86 % lägre sidvikt på Cloudflares edge.</p>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">Se hela caset <ArrowRight size={15} /></span>
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 

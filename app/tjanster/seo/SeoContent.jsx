@@ -74,6 +74,27 @@ export default function SeoContent() {
               </Reveal>
             ))}
           </div>
+
+          {/* Bevis — konkret case istället för bara löften */}
+          <Reveal delay={0.2}>
+            <a href="/projekt/linguista" className="group mt-8 block bg-surface rounded-[10px] border border-border p-6 sm:p-7 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <div className="text-[12px] font-600 text-primary uppercase tracking-wider">Kundcase · AcadeMedia</div>
+                  <div className="mt-2 font-heading font-700 text-[18px] text-heading group-hover:text-primary transition-colors">
+                    Linguista: AI-läsbarhet från 50 till 100 av 100
+                  </div>
+                  <p className="mt-2 text-[14px] text-body leading-relaxed max-w-[560px]">
+                    Halva innehållet var osynligt för AI-assistenter. Efter ombyggnaden: full pott i
+                    varje kategori Lighthouse mäter — och dubbelt så snabb laddning.
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-[14px] font-600 text-primary whitespace-nowrap">
+                  Se hela caset <ArrowRight size={15} />
+                </span>
+              </div>
+            </a>
+          </Reveal>
         </div>
       </section>
 

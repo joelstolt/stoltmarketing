@@ -26,10 +26,10 @@ const services = [
 ];
 
 const cases = [
-  { client: "LIA-platsbanken", tag: "AcadeMedia · Next.js", img: "/case-lia.webp", desc: "Mötesplattform för YH-studenter och arbetsgivare." },
+  { client: "Linguista", tag: "AcadeMedia · 100/100 ×4", img: "/case-linguista.webp", desc: "Självuppdaterande sajt med full pott i prestanda, tillgänglighet och AI.", href: "/projekt/linguista" },
+  { client: "EdShare", tag: "AcadeMedia · 10x snabbare", img: "/case-edshare.webp", desc: "WordPress till statisk edge — 86 % lättare, tre 100:or.", href: "/projekt/edshare" },
   { client: "RBN Utbildning", tag: "Helhetsleverans · WP + API", img: "/case-rbn.webp", desc: "Ny profil, sajt och API-integration i ett." },
   { client: "Förskolan Harpan", tag: "Grafisk profil · Next.js", img: "/case-harpan.webp", desc: "Varm identitet och enkel platsansökan." },
-  { client: "Omniway", tag: "EdTech · WCAG 2.1 AA", img: "/case-omniway.webp", desc: "Tillgänglighet från grunden, mörkt tema." },
 ];
 
 const clients = ["AcadeMedia", "SMH Sverige", "KYH", "Hermods", "Kvota.se", "RBN Utbildning", "Omniway"];
@@ -299,18 +299,31 @@ export default function BContent() {
             </h2>
           </div>
           <div ref={trackRef} className="b-case-scroll" style={{ paddingLeft: "max(24px, calc((100vw - 1120px) / 2))", paddingRight: 24 }}>
-            {cases.map((c) => (
-              <article key={c.client} className="b-case-panel" style={{ flexShrink: 0, width: "min(78vw, 560px)" }}>
-                <div style={{ border: "1px solid rgba(250,245,236,0.16)", background: "rgba(250,245,236,0.04)", overflow: "hidden" }}>
-                  <img src={c.img} alt={c.client} loading="lazy" style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover", objectPosition: "top", display: "block", filter: "saturate(0.92)" }} />
-                </div>
-                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginTop: 18 }}>
-                  <h3 className="font-heading" style={{ fontWeight: 600, fontSize: 26, color: PAPER, margin: 0 }}>{c.client}</h3>
-                  <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: GUL, whiteSpace: "nowrap" }}>{c.tag}</span>
-                </div>
-                <p style={{ marginTop: 8, fontSize: 14.5, lineHeight: 1.55, color: "rgba(250,245,236,0.6)", maxWidth: 420 }}>{c.desc}</p>
-              </article>
-            ))}
+            {cases.map((c) => {
+              const inner = (
+                <>
+                  <div style={{ border: "1px solid rgba(250,245,236,0.16)", background: "rgba(250,245,236,0.04)", overflow: "hidden" }}>
+                    <img src={c.img} alt={c.client} loading="lazy" style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover", objectPosition: "top", display: "block", filter: "saturate(0.92)" }} />
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginTop: 18 }}>
+                    <h3 className="font-heading" style={{ fontWeight: 600, fontSize: 26, color: PAPER, margin: 0 }}>{c.client}</h3>
+                    <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: GUL, whiteSpace: "nowrap" }}>{c.tag}</span>
+                  </div>
+                  <p style={{ marginTop: 8, fontSize: 14.5, lineHeight: 1.55, color: "rgba(250,245,236,0.6)", maxWidth: 420 }}>{c.desc}</p>
+                </>
+              );
+              return (
+                <article key={c.client} className="b-case-panel" style={{ flexShrink: 0, width: "min(78vw, 560px)" }}>
+                  {c.href ? (
+                    <a href={c.href} aria-label={`Se hela caset: ${c.client}`} style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+                      {inner}
+                    </a>
+                  ) : (
+                    inner
+                  )}
+                </article>
+              );
+            })}
             <div style={{ flexShrink: 0, width: "min(60vw, 380px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <a href="/projekt" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: 26, color: GUL, textDecoration: "none" }}>
                 Se alla projekt <ArrowUpRight size={26} />
