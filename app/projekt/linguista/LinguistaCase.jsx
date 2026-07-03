@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Reveal, SectionHeader } from "@/components/ui";
 
 const heroStats = [
@@ -98,7 +98,19 @@ export default function LinguistaCase() {
               ))}
             </div>
           </Reveal>
-          {/* "Se sajten"-knapp läggs till när linguista.se pekats om till nya sajten (DNS-cutover). */}
+          <Reveal delay={0.2}>
+            <div className="flex flex-wrap gap-3 mt-8">
+              <a
+                href="https://www.linguista.se"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="premium-btn"
+              >
+                <span>Se sajten</span>
+                <ArrowUpRight size={16} className="opacity-80" />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
