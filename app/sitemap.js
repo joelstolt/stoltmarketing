@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 export default function sitemap() {
   const baseUrl = "https://www.stoltmarketing.se";
   // Stabil lastmod för statiska sidor (ändras inte vid varje bygge).
@@ -65,16 +67,40 @@ export default function sitemap() {
     { slug: "google-business-profile-guide", date: "2026-05-17" },
     { slug: "varfor-snabb-hemsida", date: "2026-05-24" },
     { slug: "content-strategi-smaforetag", date: "2026-05-31" },
+    { slug: "valja-seo-byra", date: "2026-07-14" },
+    { slug: "hemsida-inga-kunder", date: "2026-07-16" },
+    { slug: "seo-tips-smaforetag", date: "2026-07-18" },
+    { slug: "vad-kostar-google-ads", date: "2026-07-21" },
+    { slug: "chatbot-for-foretag", date: "2026-07-23" },
+    { slug: "seo-analys-sjalv", date: "2026-07-25" },
+    { slug: "vad-kostar-webbutik", date: "2026-07-28" },
+    { slug: "landningssida-som-konverterar", date: "2026-07-30" },
+    { slug: "sokordsanalys-nyborjare", date: "2026-08-01" },
+    { slug: "ai-verktyg-smaforetag", date: "2026-08-04" },
+    { slug: "betallosningar-webbutik", date: "2026-08-06" },
+    { slug: "google-ads-byra-eller-sjalv", date: "2026-08-08" },
+    { slug: "teknisk-seo-guide", date: "2026-08-11" },
+    { slug: "konverteringsoptimering-tips", date: "2026-08-13" },
+    { slug: "marknadsforing-smaforetag", date: "2026-08-15" },
+    { slug: "checklista-ny-hemsida", date: "2026-08-18" },
+    { slug: "automatisera-med-ai", date: "2026-08-20" },
+    { slug: "valja-domannamn", date: "2026-08-22" },
+    { slug: "moms-regler-e-handel", date: "2026-08-25" },
+    { slug: "e-postmarknadsforing-smaforetag", date: "2026-08-27" },
   ];
+
+  const todayStr = new Date().toISOString().slice(0, 10);
 
   const blogPages = [
     { url: "/blogg", changeFrequency: "weekly", priority: 0.8 },
-    ...blogPosts.map((post) => ({
+    ...blogPosts
+      .filter((post) => post.date <= todayStr)
+      .map((post) => ({
       url: `/blogg/${post.slug}`,
       changeFrequency: "monthly",
       priority: 0.7,
       lastModified: new Date(post.date),
-    })),
+      })),
   ];
 
   return [...pages, ...blogPages].map((page) => ({

@@ -127,6 +127,188 @@ const allPosts = [
     readTime: "10 min",
     category: "Marknadsföring",
   },
+
+  /* Runda 2 (juli-aug 2026) — publiceras med spridning via datumfiltret nedan */
+  {
+    slug: "valja-seo-byra",
+    title: "Så väljer du rätt SEO-byrå: 6 tecken på att du blir lurad",
+    excerpt:
+      "SEO-branschen är full av tomma löften och luddiga rapporter. Så skiljer du en byrå som faktiskt levererar från en som bara fakturerar.",
+    date: "2026-07-14",
+    readTime: "9 min",
+    category: "SEO",
+  },
+  {
+    slug: "hemsida-inga-kunder",
+    title: "Därför får din hemsida inga kunder: 7 orsaker (och hur du fixar dem)",
+    excerpt:
+      "Snygg sajt men tyst telefon? Problemet är nästan aldrig designen. Här är de 7 vanligaste orsakerna till att en hemsida inte drar in förfrågningar.",
+    date: "2026-07-16",
+    readTime: "9 min",
+    category: "Konvertering",
+  },
+  {
+    slug: "seo-tips-smaforetag",
+    title: "17 SEO-tips för småföretag som faktiskt ger resultat 2026",
+    excerpt:
+      "Inga hacks, ingen teori. 17 konkreta SEO-tips du kan börja med idag för att synas mer på Google, sorterade från enklast till mest värdefulla.",
+    date: "2026-07-18",
+    readTime: "11 min",
+    category: "SEO",
+  },
+  {
+    slug: "vad-kostar-google-ads",
+    title: "Vad kostar Google Ads i Sverige 2026? En ärlig prisguide",
+    excerpt:
+      "Klickpriser, månadsbudget och byråarvoden, uppdelat. Vad du realistiskt behöver lägga för att Google Ads ska löna sig för ett litet företag.",
+    date: "2026-07-21",
+    readTime: "9 min",
+    category: "Annonsering",
+  },
+  {
+    slug: "chatbot-for-foretag",
+    title: "Chatbot för företag: så fångar din hemsida fler leads dygnet runt",
+    excerpt:
+      "En modern AI-chatbot svarar kunder direkt, kvalificerar dem och fångar leads även när du sover. Så funkar det, vad det kostar och när det lönar sig.",
+    date: "2026-07-23",
+    readTime: "8 min",
+    category: "AI",
+  },
+  {
+    slug: "seo-analys-sjalv",
+    title: "SEO-analys: så gör du en själv på 30 minuter (gratis checklista)",
+    excerpt:
+      "Du behöver inga dyra verktyg för att förstå varför du inte rankar. Gör en enkel SEO-analys själv på en halvtimme med den här steg-för-steg-checklistan.",
+    date: "2026-07-25",
+    readTime: "10 min",
+    category: "SEO",
+  },
+  {
+    slug: "vad-kostar-webbutik",
+    title: "Vad kostar en webbutik 2026? Komplett prisguide för e-handel",
+    excerpt:
+      "Plattform, bygge, betalning, frakt och drift. Vad en webbutik faktiskt kostar att starta och driva, från billigaste vägen till skräddarsytt.",
+    date: "2026-07-28",
+    readTime: "10 min",
+    category: "E-handel",
+  },
+  {
+    slug: "landningssida-som-konverterar",
+    title: "Landningssida som konverterar: anatomin bakom en sida som säljer",
+    excerpt:
+      "En bra landningssida har ett jobb: få besökaren att ta nästa steg. Här är de sektioner, i rätt ordning, som gör en sida som faktiskt konverterar.",
+    date: "2026-07-30",
+    readTime: "9 min",
+    category: "Konvertering",
+  },
+  {
+    slug: "sokordsanalys-nyborjare",
+    title: "Sökordsanalys för nybörjare: hitta orden dina kunder googlar",
+    excerpt:
+      "Rätt sökord är skillnaden mellan att synas för köpare och att skriva för ingen. Så gör du en sökordsanalys från grunden, även utan betalverktyg.",
+    date: "2026-08-01",
+    readTime: "10 min",
+    category: "SEO",
+  },
+  {
+    slug: "ai-verktyg-smaforetag",
+    title: "12 AI-verktyg varje småföretagare borde testa 2026",
+    excerpt:
+      "Praktiska AI-verktyg som sparar tid på riktigt, för text, bild, kundservice, bokföring och marknadsföring. Flera gratis att komma igång med.",
+    date: "2026-08-04",
+    readTime: "9 min",
+    category: "AI",
+  },
+  {
+    slug: "betallosningar-webbutik",
+    title: "Swish, Klarna eller kort? Guide till betallösningar i webbutiken",
+    excerpt:
+      "Rätt betalsätt kan lyfta din konvertering rejält, fel avgifter kan äta din marginal. Så väljer du betallösningar för din svenska webbutik.",
+    date: "2026-08-06",
+    readTime: "9 min",
+    category: "E-handel",
+  },
+  {
+    slug: "google-ads-byra-eller-sjalv",
+    title: "Google Ads-byrå eller sköta det själv? Så avgör du",
+    excerpt:
+      "Google Ads ser enkelt ut tills du ser fakturan. Så avgör du om du ska köra själv, anlita en byrå, eller börja själv och lämna över senare.",
+    date: "2026-08-08",
+    readTime: "8 min",
+    category: "Annonsering",
+  },
+  {
+    slug: "teknisk-seo-guide",
+    title: "Teknisk SEO: nybörjarguiden till en sajt Google älskar",
+    excerpt:
+      "Teknisk SEO låter skrämmande men handlar om enkla saker: att Google kan hitta, läsa och lita på din sajt. Här är grunderna utan jargong.",
+    date: "2026-08-11",
+    readTime: "10 min",
+    category: "SEO",
+  },
+  {
+    slug: "konverteringsoptimering-tips",
+    title: "Konverteringsoptimering: 10 ändringar som ger fler förfrågningar",
+    excerpt:
+      "Samma trafik, fler kunder. 10 konkreta ändringar på sajten som ökar andelen besökare som faktiskt hör av sig, sorterade efter effekt.",
+    date: "2026-08-13",
+    readTime: "9 min",
+    category: "Konvertering",
+  },
+  {
+    slug: "marknadsforing-smaforetag",
+    title: "Marknadsföring för småföretag: mest resultat för minsta budget",
+    excerpt:
+      "Du behöver inte göra allt. Så fördelar du en liten marknadsföringsbudget där den ger mest, och i vilken ordning du bör satsa.",
+    date: "2026-08-15",
+    readTime: "10 min",
+    category: "Marknadsföring",
+  },
+  {
+    slug: "checklista-ny-hemsida",
+    title: "Lansera ny hemsida: 25-punkters checklista innan du går live",
+    excerpt:
+      "Innan du trycker på publicera: 25 saker att bocka av så att SEO, spårning, formulär och prestanda funkar från dag ett, inte tappas tyst.",
+    date: "2026-08-18",
+    readTime: "9 min",
+    category: "Guide",
+  },
+  {
+    slug: "automatisera-med-ai",
+    title: "Automatisera det tråkiga: 8 AI-exempel som sparar tid för småföretag",
+    excerpt:
+      "Repetitivt arbete äter dina timmar. Här är 8 konkreta sätt att låta AI och automation ta hand om det tråkiga, med exempel från riktiga småföretag.",
+    date: "2026-08-20",
+    readTime: "9 min",
+    category: "AI",
+  },
+  {
+    slug: "valja-domannamn",
+    title: "Välja domännamn till företaget: komplett guide (och vanliga misstag)",
+    excerpt:
+      "Ditt domännamn är en av få digitala beslut du sällan ändrar. Så väljer du rätt, .se eller .com, och undviker misstagen som kostar dig senare.",
+    date: "2026-08-22",
+    readTime: "8 min",
+    category: "Guide",
+  },
+  {
+    slug: "moms-regler-e-handel",
+    title: "Moms och regler för e-handel: det här måste du ha koll på",
+    excerpt:
+      "Innan du säljer en enda produkt online: en begriplig genomgång av moms, ångerrätt, villkor och GDPR för svensk e-handel, utan juristsvenska.",
+    date: "2026-08-25",
+    readTime: "9 min",
+    category: "E-handel",
+  },
+  {
+    slug: "e-postmarknadsforing-smaforetag",
+    title: "E-postmarknadsföring för småföretag: bygg en lista som säljer",
+    excerpt:
+      "E-post är fortfarande den kanal som ger mest tillbaka per krona. Så bygger du en e-postlista från noll och gör den till återkommande kunder.",
+    date: "2026-08-27",
+    readTime: "10 min",
+    category: "Marknadsföring",
+  },
 ];
 
 /* Visa bara artiklar vars publiceringsdatum har passerat */
