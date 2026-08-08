@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ArrowRight, Mail, MapPin, Clock, Check, Phone, MessageCircle } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
+import { SITE } from "@/lib/local/data";
+import { trackConversion } from "@/lib/track";
 
 const contactMethods = [
   {
@@ -15,9 +17,9 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Telefon",
-    value: "Ring eller SMS",
-    href: "tel:+46XXXXXXXXX",
-    desc: "Vardagar 08:00–17:00",
+    value: SITE.phone,
+    href: SITE.phoneHref,
+    desc: "Ring eller SMS, vardagar 08:00–17:00",
   },
   {
     icon: MapPin,
@@ -60,15 +62,24 @@ export default function KontaktContent() {
     company: "",
     service: "",
     message: "",
+    hp_field: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  // Sätts vid sidladdning — submits < 3 s efter denna avvisas server-side.
+  const [loadedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Honeypot ifylld = bot. Visa "tack" utan att posta eller trigga
+    // konverterings-eventet, så spam aldrig blir en konvertering i Umami.
+    if (formData.hp_field) {
+      setSubmitted(true);
+      return;
+    }
     setSending(true);
     try {
-      const res = await fetch("https://formspree.io/f/xreylwen", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -77,12 +88,14 @@ export default function KontaktContent() {
           company: formData.company,
           service: formData.service,
           message: formData.message,
+          hp_field: formData.hp_field,
+          _elapsedMs: Date.now() - loadedAt,
           _subject: `Ny förfrågan från ${formData.name} — ${formData.company || "Ej angivet"}`,
         }),
       });
       if (res.ok) {
         setSubmitted(true);
-        if (typeof window !== "undefined" && window.umami) { window.umami.track("lead-kontaktformular"); }
+        trackConversion("lead-kontaktformular", "lead");
       }
     } catch (err) {
       console.error(err);
@@ -261,6 +274,18 @@ export default function KontaktContent() {
                           style={{ ...inputStyle, resize: "vertical", minHeight: 120 }}
                         />
                       </div>
+
+                      {/* Honeypot. Får inte heta company/url/email, autofyll trippar dem. */}
+                      <input
+                        type="text"
+                        name="hp_field"
+                        value={formData.hp_field}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+                      />
 
                       <button
                         type="submit"

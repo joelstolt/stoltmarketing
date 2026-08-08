@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Check, Clock, MessageCircle, Zap } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
+import { trackConversion } from "@/lib/track";
 
 const benefits = [
   "15–20 min samtal — snabbt och konkret",
@@ -22,10 +23,13 @@ export default function BokaContent() {
     email: "",
     company: "",
     message: "",
+    hp_field: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [prisIntent, setPrisIntent] = useState(false);
+  // Sätts vid sidladdning — submits < 3 s efter denna avvisas server-side.
+  const [loadedAt] = useState(() => Date.now());
 
   // "Få upplägg och pris"-knapparna länkar hit med ?amne=pris(&paket=X).
   // Förifyll meddelandet så knappens löfte hålls — och så att leadet visar
@@ -49,6 +53,12 @@ export default function BokaContent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Honeypot ifylld = bot. Visa "tack" utan att posta eller trigga
+    // konverterings-eventet, så spam aldrig blir en konvertering i Umami.
+    if (formData.hp_field) {
+      setSubmitted(true);
+      return;
+    }
     setSending(true);
     try {
       const res = await fetch("/api/contact", {
@@ -58,6 +68,8 @@ export default function BokaContent() {
           name: formData.name,
           email: formData.email,
           company: formData.company,
+          hp_field: formData.hp_field,
+          _elapsedMs: Date.now() - loadedAt,
           message:
             formData.message ||
             (prisIntent
@@ -68,7 +80,7 @@ export default function BokaContent() {
       });
       if (res.ok) {
         setSubmitted(true);
-        if (typeof window !== "undefined" && window.umami) { window.umami.track("lead-boka"); }
+        trackConversion("lead-boka", "lead");
       }
     } catch (err) {
       console.error(err);
@@ -241,6 +253,18 @@ export default function BokaContent() {
                           style={{ ...inputStyle, resize: "vertical", minHeight: 90 }}
                         />
                       </div>
+
+                      {/* Honeypot. Får inte heta company/url/email, autofyll trippar dem. */}
+                      <input
+                        type="text"
+                        name="hp_field"
+                        value={formData.hp_field}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+                      />
 
                       <button
                         type="submit"
