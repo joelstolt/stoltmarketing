@@ -112,6 +112,7 @@ const projects = [
     ],
     tech: ["Next.js", "React", "Cloudflare Pages", "Resend"],
     caseUrl: "/projekt/pingstkyrkan",
+    screenshot: "/case-pingstkyrkan.webp",
   },
   {
     title: "Ebbessonbygg",
@@ -129,6 +130,7 @@ const projects = [
     ],
     tech: ["WordPress", "SEO-struktur", "Responsiv design"],
     caseUrl: "/projekt/ebbessonbygg",
+    screenshot: "/case-ebbessonbygg.webp",
   },
   {
     title: "Gärdets Hundtrim",
@@ -146,6 +148,7 @@ const projects = [
     ],
     tech: ["Responsiv design", "Lokal SEO"],
     caseUrl: "/projekt/gardetshundtrim",
+    screenshot: "/case-gardetshundtrim.webp",
   },
   {
     title: "Omniway",
@@ -217,6 +220,7 @@ const projects = [
     tech: ["Next.js", "Sanity CMS", "Cloudflare", "Resend", "Umami"],
     caseUrl: "/projekt/niklassonsflytt",
     url: "https://www.niklassonsflytt.se",
+    screenshot: "/case-niklassonsflytt.webp",
   },
   {
     title: "Arkipel Entreprenad",
@@ -235,6 +239,7 @@ const projects = [
     tech: ["Next.js", "React", "Cloudflare", "Resend", "Umami"],
     caseUrl: "/projekt/arkipel",
     url: "https://www.arkipel.se",
+    screenshot: "/case-arkipel.webp",
   },
   {
     title: "Norrlands Gräv & Transport",
@@ -253,6 +258,7 @@ const projects = [
     tech: ["Next.js", "React", "Cloudflare", "Resend"],
     caseUrl: "/projekt/ngtab",
     url: "https://www.ngtab.se",
+    screenshot: "/case-ngtab.webp",
   },
   {
     title: "Premie Bygg",
@@ -271,6 +277,7 @@ const projects = [
     tech: ["Next.js", "React", "Cloudflare", "Resend", "Umami"],
     caseUrl: "/projekt/premiebygg",
     url: "https://www.premiebygg.se",
+    screenshot: "/case-premiebygg.webp",
   },
 ];
 
