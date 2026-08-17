@@ -212,7 +212,7 @@ export default function BContent() {
         @media (prefers-reduced-motion: reduce) { .b-marquee-inner { animation: none; } }
         .b-case-scroll { display: flex; gap: 28px; }
         @media (max-width: 899px) {
-          .b-case-scroll { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
+          .b-case-scroll { overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: 24px; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
           .b-case-panel { scroll-snap-align: start; }
           .b-servicerow { grid-template-columns: 44px 1fr auto; padding: 20px 4px; }
         }

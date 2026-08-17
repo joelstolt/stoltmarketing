@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { buildSajtvaktPdf } from "./sajtvakt-pdf";
 
 /**
  * Sajtvaktens rapport-route. Två lägen:
@@ -82,18 +83,28 @@ async function aiSynlighet(apiKey, resultat) {
   }
 }
 
-/* ── Mejl-HTML: ljus botten, mörk text. Sajtens mörka tema hör inte hemma i
-   inkorgen. ── */
+/* ── Mejl-HTML: tabellbaserad layout som håller i Gmail/Outlook/Apple Mail.
+   Mörkt hero-kort med varumärket, ljus kropp med statuschips per kontroll.
+   Sajtens mörka tema hör inte hemma i brödtexten: mörk text på ljust. ── */
 function renderEmail({ resultat, name, diff, unsubUrl, synlighet }) {
-  const farg = (c) => (c.pass ? "#1a7f37" : c.warn ? "#b58900" : "#c0392b");
-  const symbol = (c) => (c.pass ? "&#10003;" : c.warn ? "&#9888;" : "&#10007;");
+  const host = resultat.url.replace(/^https?:\/\//, "");
+  const scoreFarg = resultat.score >= 85 ? "#2EA043" : resultat.score >= 60 ? "#D4A72C" : "#E5534B";
+  const chip = (c) => {
+    const bg = c.pass ? "#DCFCE7" : c.warn ? "#FEF3C7" : "#FEE2E2";
+    const fg = c.pass ? "#166534" : c.warn ? "#854D0E" : "#991B1B";
+    const txt = c.pass ? "OK" : c.warn ? "SE ÖVER" : "ÅTGÄRDA";
+    return `<span style="display:inline-block;background:${bg};color:${fg};font-size:10px;font-weight:700;letter-spacing:0.06em;padding:3px 9px;border-radius:20px;">${txt}</span>`;
+  };
+
   const rows = resultat.checks
     .map(
-      (c) => `<tr>
-        <td style="padding:8px 10px 8px 0;color:${farg(c)};font-weight:bold;white-space:nowrap;vertical-align:top;">${symbol(c)}</td>
-        <td style="padding:8px 12px 8px 0;color:#1A1611;vertical-align:top;"><strong>${esc(c.label)}</strong><br>
-          <span style="color:#6b6b6b;font-size:13px;">${esc(c.detail)}</span></td>
-        <td style="padding:8px 0;color:#1A1611;white-space:nowrap;vertical-align:top;">${esc(c.value)}</td>
+      (c, i) => `<tr>
+        <td style="padding:13px 0 12px;border-top:${i ? "1px solid #EFECE4" : "none"};vertical-align:top;">
+          <div style="font-size:13.5px;font-weight:600;color:#1A1611;">${esc(c.label)}
+            <span style="font-weight:400;color:#8A857A;">&nbsp;·&nbsp;${esc(c.value)}</span></div>
+          <div style="font-size:12.5px;color:#6E6A60;line-height:1.55;margin-top:3px;">${esc(c.detail)}</div>
+        </td>
+        <td style="padding:13px 0 12px 12px;border-top:${i ? "1px solid #EFECE4" : "none"};vertical-align:top;text-align:right;white-space:nowrap;">${chip(c)}</td>
       </tr>`
     )
     .join("");
@@ -101,51 +112,90 @@ function renderEmail({ resultat, name, diff, unsubUrl, synlighet }) {
   const attGora = resultat.checks
     .filter((c) => !c.pass)
     .slice(0, 3)
-    .map((c) => `<li style="margin:0 0 8px;">${esc(c.detail)}</li>`)
+    .map(
+      (c, i) => `<tr><td style="padding:7px 12px 7px 0;vertical-align:top;font-family:Georgia,serif;font-size:17px;font-weight:700;color:#DFA616;">${i + 1}</td>
+      <td style="padding:9px 0 7px;font-size:13.5px;color:#1A1611;line-height:1.6;">${esc(c.detail)}</td></tr>`
+    )
     .join("");
 
+  const sektion = (titel) =>
+    `<div style="font-size:11px;font-weight:700;letter-spacing:0.18em;color:#9B958A;margin:28px 0 10px;">${titel}</div>`;
+
   const diffBlock = diff && diff.length
-    ? `<h3 style="font-size:15px;color:#1A1611;margin:24px 0 8px;">F&ouml;r&auml;ndringar sedan f&ouml;rra rapporten</h3>
-       <ul style="margin:0;padding-left:18px;color:#1A1611;font-size:14px;">${diff
-         .map((d) => `<li style="margin:0 0 6px;">${esc(d)}</li>`)
-         .join("")}</ul>`
+    ? sektion("FÖRÄNDRINGAR SEDAN FÖRRA RAPPORTEN") +
+      `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">${diff
+        .map((d) => `<tr><td style="padding:4px 8px 4px 0;color:#DFA616;font-weight:700;">·</td><td style="padding:4px 0;font-size:13.5px;color:#1A1611;line-height:1.6;">${d}</td></tr>`)
+        .join("")}</table>`
     : "";
 
   const synBlock = synlighet
-    ? `<div style="margin:24px 0;padding:14px 16px;background:#FBF6E8;border:1px solid #E6DEC9;border-radius:8px;">
-        <strong style="color:#1A1611;font-size:14px;">Syns ni n&auml;r kunder fr&aring;gar AI?</strong><br>
-        <span style="color:#1A1611;font-size:14px;">N&auml;r vi bad en AI-assistent rekommendera ${esc(synlighet.bransch)} i ${esc(synlighet.ort)} ${
+    ? `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;margin:24px 0 0;"><tr>
+        <td style="background:#FBF6E8;border:1px solid #EADFC4;border-radius:10px;padding:16px 18px;">
+          <div style="font-size:13px;font-weight:700;color:#1A1611;margin-bottom:4px;">Syns ni när kunder frågar AI?</div>
+          <div style="font-size:13px;color:#4A463D;line-height:1.6;">När vi bad en AI-assistent rekommendera ${esc(synlighet.bransch)} i ${esc(synlighet.ort)} ${
         synlighet.namnd
-          ? "fanns ni med bland f&ouml;rslagen. Bra utg&aring;ngsl&auml;ge att bygga vidare p&aring;."
-          : "n&auml;mndes ni inte bland f&ouml;rslagen. Allt fler kunder fr&aring;gar AI i st&auml;llet f&ouml;r att googla, och det g&aring;r att jobba med."
-      } Detta &auml;r en &ouml;gonblicksbild fr&aring;n en enda AI-modell, inte en fullst&auml;ndig m&auml;tning.</span>
-      </div>`
+          ? "fanns ni med bland förslagen. Bra utgångsläge att bygga vidare på."
+          : "nämndes ni inte bland förslagen. Allt fler kunder frågar AI i stället för att googla, och det går att jobba med."
+      } Ögonblicksbild från en enda AI-modell, inte en fullständig mätning.</div>
+        </td></tr></table>`
     : "";
 
-  return `<div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:600px;color:#1A1611;">
-    <p style="font-size:20px;font-weight:bold;margin:0 0 4px;">stolt<span style="color:#DFA616;">.</span> <span style="font-size:12px;color:#6b6b6b;font-weight:normal;letter-spacing:2px;">SAJTVAKTEN</span></p>
-    <h2 style="font-size:19px;margin:16px 0 4px;">${name ? esc(name) + ", h" : "H"}&auml;r &auml;r rapporten f&ouml;r ${esc(resultat.url.replace(/^https?:\/\//, ""))}</h2>
-    <p style="font-size:40px;font-weight:bold;margin:8px 0 0;">${resultat.score}<span style="font-size:16px;color:#6b6b6b;font-weight:normal;"> av 100</span></p>
-    <p style="font-size:15px;color:#1A1611;margin:4px 0 16px;font-style:italic;">${esc(resultat.verdict)}</p>
-    ${resultat.ai ? `<p style="font-size:14px;color:#1A1611;background:#F7F3E8;border-radius:8px;padding:12px 14px;margin:0 0 8px;">${esc(resultat.ai)}</p><p style="font-size:11px;color:#9b9b9b;margin:0 0 16px;">Sammanfattning framtagen automatiskt ur m&auml;tv&auml;rdena.</p>` : ""}
-    ${synBlock}
-    ${diffBlock}
-    ${attGora ? `<h3 style="font-size:15px;margin:24px 0 8px;">B&ouml;rja h&auml;r</h3><ol style="margin:0;padding-left:18px;font-size:14px;">${attGora}</ol>` : ""}
-    <h3 style="font-size:15px;margin:24px 0 4px;">Alla ${resultat.total} kontroller</h3>
-    <table style="border-collapse:collapse;font-size:14px;width:100%;">${rows}</table>
-    <div style="margin:28px 0;">
-      <a href="https://www.stoltmarketing.se/boka" style="display:inline-block;background:#1A1611;color:#FAF5EC;text-decoration:none;font-size:14px;font-weight:bold;padding:12px 22px;border-radius:24px;">Vill du att vi fixar det h&auml;r? Boka kostnadsfri genomg&aring;ng</a>
-    </div>
-    <p style="font-size:12px;color:#9b9b9b;">Det vi hittar kan vi fixa: granskning, &aring;tg&auml;rder till fast pris eller helt ny sajt d&auml;r allt ing&aring;r. Svar inom 24 timmar p&aring; vardagar. 076-686 74 06.</p>
-    ${unsubUrl ? `<p style="font-size:12px;color:#9b9b9b;">Du f&aring;r detta f&ouml;r att du bevakar din sajt med Sajtvakten. <a href="${unsubUrl}" style="color:#6b6b6b;">Avsluta bevakningen</a> n&auml;r du vill.</p>` : ""}
-  </div>`;
+  return `<!doctype html><html lang="sv"><body style="margin:0;padding:0;background:#F2EFE7;">
+  <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;background:#F2EFE7;"><tr><td align="center" style="padding:28px 14px;">
+  <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;max-width:620px;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+
+    <tr><td style="background:#0F0D08;border-radius:14px 14px 0 0;padding:30px 32px 26px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;"><tr>
+        <td style="font-size:20px;font-weight:800;color:#F2C230;font-family:Georgia,serif;">stolt<span style="color:#F2ECDD;">.</span>
+          <span style="font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:10px;font-weight:600;color:#A19A87;letter-spacing:0.3em;">&nbsp;SAJTVAKTEN</span></td>
+        <td align="right" style="font-size:11px;color:#7B7462;">${new Date().toLocaleDateString("sv-SE")}</td>
+      </tr></table>
+      <div style="font-size:13px;color:#A19A87;margin:24px 0 2px;">${name ? esc(name) + ", här" : "Här"} är rapporten för</div>
+      <div style="font-size:19px;font-weight:700;color:#F2ECDD;">${esc(host)}</div>
+      <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:18px;"><tr>
+        <td style="vertical-align:baseline;font-size:54px;line-height:1;font-weight:800;color:${scoreFarg};font-family:Georgia,serif;">${resultat.score}</td>
+        <td style="vertical-align:baseline;padding-left:8px;font-size:13px;color:#A19A87;">av 100</td>
+      </tr></table>
+      <div style="font-size:14px;font-style:italic;color:#F2ECDD;margin-top:10px;font-family:Georgia,serif;">${esc(resultat.verdict)}</div>
+    </td></tr>
+
+    <tr><td style="background:#FFFFFF;border-radius:0 0 14px 14px;padding:26px 32px 30px;">
+      ${resultat.ai ? `<div style="background:#F7F3E8;border-radius:10px;padding:15px 17px;font-size:13.5px;color:#1A1611;line-height:1.65;">${esc(resultat.ai)}</div><div style="font-size:10.5px;color:#B0AB9F;margin:6px 2px 0;">Sammanfattning framtagen automatiskt ur mätvärdena.</div>` : ""}
+      ${synBlock}
+      ${diffBlock}
+      ${attGora ? sektion("BÖRJA HÄR") + `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">${attGora}</table>` : ""}
+      ${sektion("ALLA " + resultat.total + " KONTROLLER")}
+      <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">${rows}</table>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;margin-top:28px;"><tr><td align="center" style="background:#0F0D08;border-radius:12px;padding:22px 24px;">
+        <div style="font-size:15px;font-weight:700;color:#F2ECDD;margin-bottom:4px;">Vill du att det här blir fixat?</div>
+        <div style="font-size:12.5px;color:#A19A87;margin-bottom:14px;">Kostnadsfri genomgång med Joel: 15 till 20 minuter, ärlig bedömning, inga förpliktelser.</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" align="center"><tr>
+          <td style="background:#F2C230;border-radius:24px;">
+            <a href="https://www.stoltmarketing.se/boka" style="display:inline-block;padding:12px 26px;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#191405;text-decoration:none;">BOKA GENOMGÅNG</a>
+          </td></tr></table>
+        <div style="font-size:11.5px;color:#7B7462;margin-top:12px;">eller ring 076-686 74 06 · svar inom 24 h på vardagar</div>
+      </td></tr></table>
+
+      <div style="font-size:11px;color:#B0AB9F;line-height:1.7;margin-top:22px;">
+        Hela rapporten ligger även som PDF-bilaga, lätt att spara eller skicka vidare.
+        Mätningen läser sajten som en besökare och rapporterar bara det den bevisat.
+        ${unsubUrl ? `Du får detta för att Sajtvakten bevakar din sajt. <a href="${unsubUrl}" style="color:#8A857A;">Avsluta bevakningen</a> när du vill.` : ""}
+      </div>
+    </td></tr>
+
+    <tr><td style="padding:16px 8px;text-align:center;font-size:11px;color:#A9A499;">
+      Sajtvakten från Stolt Marketing · Hässleholm · <a href="https://www.stoltmarketing.se/sajtkoll" style="color:#8A857A;">stoltmarketing.se/sajtkoll</a>
+    </td></tr>
+  </table>
+  </td></tr></table></body></html>`;
 }
 
-async function sendMail(apiKey, { to, subject, html, replyTo }) {
+async function sendMail(apiKey, { to, subject, html, replyTo, attachments }) {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: FROM, to: [to], subject, html, ...(replyTo ? { reply_to: replyTo } : {}) }),
+    body: JSON.stringify({ from: FROM, to: [to], subject, html, ...(replyTo ? { reply_to: replyTo } : {}), ...(attachments ? { attachments } : {}) }),
   });
   const data = await res.json().catch(() => ({}));
   return { ok: res.ok, id: data.id || null };
@@ -209,11 +259,16 @@ export async function POST(req) {
     const diff = bygglDiff(resultat, baseline);
     const synlighet = await aiSynlighet(anthropicKey, resultat);
     const unsubUrl = `${self}/api/sajtkoll/avsluta?t=${sub.token}`;
+    let pdf = null;
+    try {
+      pdf = await buildSajtvaktPdf({ resultat, name: sub.name, diff, datum: new Date().toLocaleDateString("sv-SE") });
+    } catch {}
     const mail = await sendMail(resendKey, {
       to: sub.email,
       subject: `Sajtvakten: månadsrapport för ${sub.url.replace(/^https?:\/\//, "")} (${resultat.score} av 100)`,
       html: renderEmail({ resultat, name: sub.name, diff, unsubUrl, synlighet }),
       replyTo: JOEL,
+      attachments: pdf ? [{ filename: `sajtvakten-${sub.url.replace(/^https?:\/\//, "").replace(/[^a-z0-9.-]/gi, "_")}.pdf`, content: pdf }] : undefined,
     });
 
     await env.DB.prepare(
@@ -257,11 +312,16 @@ export async function POST(req) {
   }
 
   const synlighet = await aiSynlighet(anthropicKey, resultat);
+  let pdf = null;
+  try {
+    pdf = await buildSajtvaktPdf({ resultat, name, diff: null, datum: new Date().toLocaleDateString("sv-SE") });
+  } catch {}
   const mail = await sendMail(resendKey, {
     to: String(email),
     subject: `Rapporten för ${resultat.url.replace(/^https?:\/\//, "")}: ${resultat.score} av 100`,
     html: renderEmail({ resultat, name, diff: null, unsubUrl, synlighet }),
     replyTo: JOEL,
+    attachments: pdf ? [{ filename: `sajtvakten-${resultat.url.replace(/^https?:\/\//, "").replace(/[^a-z0-9.-]/gi, "_")}.pdf`, content: pdf }] : undefined,
   });
   if (!mail.ok) {
     return NextResponse.json({ error: "Mejlet kunde inte skickas. Testa igen om en stund." }, { status: 502 });

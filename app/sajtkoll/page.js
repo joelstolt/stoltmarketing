@@ -369,7 +369,7 @@ export default function SajtkollPage() {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a href="/boka" className="premium-btn" data-umami-event="lead-sajtkoll">
-                      Boka kostnadsfri genomgång <ArrowRight size={15} />
+                      Boka genomgång <ArrowRight size={15} />
                     </a>
                     <a href="/tjanster" className="secondary-btn">Se tjänster</a>
                   </div>

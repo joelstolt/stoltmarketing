@@ -292,7 +292,7 @@ export default function TillganglighetPage() {
             </div>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href="/boka" className="premium-btn">
-                Boka kostnadsfri genomgång <ArrowRight size={15} />
+                Boka genomgång <ArrowRight size={15} />
               </a>
               <a href="/kontakt" className="secondary-btn">Kontakta oss</a>
             </div>

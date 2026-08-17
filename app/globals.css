@@ -314,6 +314,19 @@ h3, h4, h5, h6 {
   color: var(--color-accent);
 }
 
+
+/* Mobil: knappar i samma sektion blir lika breda och håller sig inom kortet */
+@media (max-width: 520px) {
+  .premium-btn,
+  .secondary-btn {
+    width: 100%;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
