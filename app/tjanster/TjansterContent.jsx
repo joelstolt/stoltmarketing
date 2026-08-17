@@ -17,6 +17,7 @@ import {
   Rocket,
   ShoppingCart,
   LayoutTemplate,
+  Accessibility,
 } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
 
@@ -175,6 +176,28 @@ const services = [
       { value: "1 190", label: "kr/mån, allt ingår" },
     ],
     href: "/tjanster/managed-hemsida",
+  },
+  {
+    icon: Accessibility,
+    title: "Tillgänglighet & EAA",
+    subtitle:
+      "Tillgänglighetskraven är lag sedan juni 2025. Jag granskar sajten mot WCAG 2.1 AA och åtgärdar bristerna till fast pris.",
+    when: "När du säljer till konsumenter digitalt, eller vill att sajten ska fungera för fler.",
+    expect: [
+      "Prioriterad rapport utan jurist-svenska",
+      "Genomförda fixar med dokumentation",
+      "Färre tappade besökare",
+    ],
+    includes: [
+      "Granskning: automatisk + manuell",
+      "Åtgärdspaket till fast pris",
+      "Ombygge när det är smartare vägen",
+    ],
+    stats: [
+      { value: "4 900", label: "kr, granskning med rapport" },
+      { value: "100/100", label: "Tillgänglighet i våra byggen" },
+    ],
+    href: "/tillganglighet",
   },
 ];
 

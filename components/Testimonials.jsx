@@ -12,7 +12,7 @@ const testimonials = [
     quote:
       "Joel tog vår idé om en plattform för LIA-platser och förvandlade den till en färdig produkt snabbare än vi trodde var möjligt. Han förstod behoven direkt och levererade en lösning som både studenter och arbetsgivare faktiskt använder.",
     initials: "AN",
-    color: "#9A7409",
+    color: "#F2C230",
   },
   {
     name: "Robin, RBN Utbildning",
@@ -20,7 +20,7 @@ const testimonials = [
     quote:
       "Vi behövde en helhetsleverans — ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
     initials: "RO",
-    color: "#44563C",
+    color: "#8CA05A",
   },
   {
     name: "Susanne, Förskolan Harpan",
@@ -36,7 +36,7 @@ const testimonials = [
     quote:
       "Tillgänglighet var ett krav — inte en bonus. Joel levererade en modern sajt som uppfyller WCAG utan att kompromissa på design. Snabb kommunikation och han förstod EdTech-branschen direkt.",
     initials: "CL",
-    color: "#1A1611",
+    color: "#F2ECDD",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function Testimonials() {
   return (
     <section
       className="py-20 sm:py-28 px-5 sm:px-8"
-      style={{ background: "#F3EDDF" }}
+      style={{ background: "#161309" }}
     >
       <div className="max-w-6xl mx-auto">
         <SectionHeader

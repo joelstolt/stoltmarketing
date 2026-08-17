@@ -312,10 +312,10 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mb-3">
                 Vill du implementera AI i ditt företag?
               </h3>
-              <p className="text-[15px] text-white/60 leading-relaxed mb-6">
+              <p className="text-[15px] text-muted leading-relaxed mb-6">
                 Jag hjälper företag som du att sätta upp AI-automation, chatbots och automatisering av kundservice och interna processer. Vi börjar med en genomgång av där du kan spara mest tid — utan att skapa extra arbete för dig.
               </p>
               <a href="/boka" className="premium-btn">

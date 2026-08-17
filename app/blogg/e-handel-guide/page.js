@@ -392,13 +392,13 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[20px] sm:text-[24px] font-600 text-white font-heading mb-4">
+              <h3 className="text-[20px] sm:text-[24px] font-600 text-heading font-heading mb-4">
                 Redo att starta din webshop?
               </h3>
-              <p className="text-[15px] text-white/80 mb-6 leading-relaxed">
+              <p className="text-[15px] text-body mb-6 leading-relaxed">
                 Vi hjälper hundratals e-handlare i Sverige att bygga, lansera och växa sina webshops. Från Shopify-setup till fullständig custom-lösning.
               </p>
-              <a href="/boka" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-600 text-[14px] hover:bg-primary-dark transition-colors">
+              <a href="/boka" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-[#191405] rounded-lg font-600 text-[14px] hover:bg-accent-deep transition-colors">
                 Boka konsultation <ArrowRight size={16} />
               </a>
             </div>

@@ -84,7 +84,7 @@ export default function AvtalContent() {
           style={{
             borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
             background:
-              "radial-gradient(ellipse, rgba(242,188,27,0.18) 0%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(242,194,48,0.18) 0%, transparent 70%)",
           }}
         />
 

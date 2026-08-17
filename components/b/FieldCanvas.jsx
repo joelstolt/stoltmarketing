@@ -28,8 +28,9 @@ export default function FieldCanvas({ className = "" }) {
     // Getingen: vaknar när pekaren är över fältet, surrar nära den med brus i banan
     const wasp = { x: 0, y: 0, vx: 0, vy: 0, active: 0, t: Math.random() * 100 };
 
-    const YELLOWS = ["#E8B511", "#F2BC1B", "#F7CE45", "#DFA616", "#EFC22E"];
-    const STEMS = ["#7A8A3A", "#44563C", "#5C6B33"];
+    // Nattfältet: ljusare strån och blommor som glöder mot mörk himmel
+    const YELLOWS = ["#F2C230", "#F7CE45", "#FFD95C", "#E8B511", "#EFC22E"];
+    const STEMS = ["#8A9A4A", "#5C6B38", "#6E7D40"];
 
     function build() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -147,7 +148,7 @@ export default function FieldCanvas({ className = "" }) {
 
       // Vingar (fladdrar snabbt)
       const flap = Math.sin(wasp.t * 38) * 0.9;
-      ctx.fillStyle = "rgba(250,245,236,0.75)";
+      ctx.fillStyle = "rgba(242,236,221,0.75)";
       ctx.beginPath();
       ctx.ellipse(-1.5, -5.5, 5.5, 2.6, -0.5 + flap * 0.5, 0, Math.PI * 2);
       ctx.fill();
@@ -156,11 +157,11 @@ export default function FieldCanvas({ className = "" }) {
       ctx.fill();
 
       // Kropp: gul med svarta ränder
-      ctx.fillStyle = "#F2BC1B";
+      ctx.fillStyle = "#F2C230";
       ctx.beginPath();
       ctx.ellipse(0, 0, 7.5, 4.6, 0, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = "#1A1611";
+      ctx.fillStyle = "#191405";
       for (const bx of [-2.6, 0.6, 3.6]) {
         ctx.beginPath();
         ctx.ellipse(bx, 0, 1.2, 4.4, 0, 0, Math.PI * 2);

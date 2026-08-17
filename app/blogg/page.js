@@ -340,7 +340,7 @@ export default function BloggPage() {
                 <Reveal key={post.slug} delay={i * 0.06}>
                   <a
                     href={`/blogg/${post.slug}`}
-                    className="group block bg-surface border border-border rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_4px_24px_rgba(242,188,27,0.14)]"
+                    className="group block bg-surface border border-border rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_4px_24px_rgba(242,194,48,0.14)]"
                   >
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-600 tracking-wide text-primary bg-primary-light border border-primary/10 uppercase shrink-0">

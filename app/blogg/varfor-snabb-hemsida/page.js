@@ -326,10 +326,10 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mb-3">
                 Vill du göra din hemsida snabbare?
               </h3>
-              <p className="text-[15px] text-white/60 leading-relaxed mb-6">
+              <p className="text-[15px] text-muted leading-relaxed mb-6">
                 Jag kan granska din nuvarande hemsida, identifiera flaskhalsar, och sätta upp en plan för att öka prestandan. Boka en kostnadsfri genomgång så visar jag var du kan få störst genomslag.
               </p>
               <a href="/boka" className="premium-btn">

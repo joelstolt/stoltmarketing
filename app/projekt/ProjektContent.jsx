@@ -315,9 +315,9 @@ export default function ProjektContent() {
                     cursor: "pointer",
                     border: "1px solid",
                     transition: "all 0.2s",
-                    background: filter === cat ? "#9A7409" : "#FFFFFF",
-                    color: filter === cat ? "#FFFFFF" : "#433D33",
-                    borderColor: filter === cat ? "#9A7409" : "#E6DEC9",
+                    background: filter === cat ? "#F2C230" : "#161309",
+                    color: filter === cat ? "#191405" : "#CFC9B8",
+                    borderColor: filter === cat ? "#F2C230" : "rgba(242,236,221,0.16)",
                   }}
                 >
                   {cat}
@@ -346,7 +346,7 @@ export default function ProjektContent() {
                         className="hidden lg:flex h-full items-center justify-center"
                         style={{
                           background:
-                            "linear-gradient(135deg, rgba(242,188,27,0.10) 0%, rgba(242,188,27,0.18) 100%)",
+                            "linear-gradient(135deg, rgba(242,194,48,0.10) 0%, rgba(242,194,48,0.18) 100%)",
                           minHeight: 200,
                         }}
                       >

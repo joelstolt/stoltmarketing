@@ -263,7 +263,7 @@ export default function Article() {
                 { num: "4", title: "Månad 9+: Shift focus", desc: "SEO börjar nu dra in trafik på egen hand. Skala ner Ads-budget eller fokusera den på högkonvertierande ord. SEO är nu din tillgång." },
               ].map((item) => (
                 <div key={item.num} className="bg-surface border border-border rounded-xl p-5 flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-600 text-[14px]">{item.num}</div>
+                  <div className="w-8 h-8 rounded-full bg-primary text-[#191405] flex items-center justify-center flex-shrink-0 font-600 text-[14px]">{item.num}</div>
                   <div>
                     <p className="text-[15px] font-600 text-heading mb-1">{item.title}</p>
                     <p className="text-[14px] text-body">{item.desc}</p>
@@ -291,13 +291,13 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[20px] sm:text-[24px] font-600 text-white font-heading mb-4">
+              <h3 className="text-[20px] sm:text-[24px] font-600 text-heading font-heading mb-4">
                 Osäker på vad som passar ditt företag?
               </h3>
-              <p className="text-[15px] text-white/80 mb-6 leading-relaxed">
+              <p className="text-[15px] text-body mb-6 leading-relaxed">
                 Vi hjälper hundratals svenska företag att välja rätt strategi. En kostnadsfri konsultation tar en halvtimme och kan spara dig tusentals kronor.
               </p>
-              <a href="/boka" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-600 text-[14px] hover:bg-primary-dark transition-colors">
+              <a href="/boka" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-[#191405] rounded-lg font-600 text-[14px] hover:bg-accent-deep transition-colors">
                 Boka konsultation <ArrowRight size={16} />
               </a>
             </div>

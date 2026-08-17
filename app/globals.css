@@ -1,101 +1,108 @@
 @import "tailwindcss";
 
 @theme {
-  /* === Rapsfält — varmt papper === */
-  --color-base: #FAF5EC;
-  --color-surface: #FFFDF7;
-  --color-surface-muted: #F3EDDF;
-  --color-surface-dark: #1A1611;
+  /* === Rapsfält i mörker — natthimmel över fältet === */
+  --color-base: #0F0D08;
+  --color-surface: #161309;
+  --color-surface-muted: #1D1912;
+  --color-surface-dark: #0B0A06;
 
-  /* === Primary accent — djup ockra (läsbar som text/ikon) === */
-  --color-primary: #9A7409;
-  --color-primary-hover: #7E5E07;
-  --color-primary-light: #F7E8B8;
-  --color-primary-subtle: #FBF3DC;
+  /* === Primary accent — rapsgul (läsbar som text/ikon på mörkt) === */
+  --color-primary: #F2C230;
+  --color-primary-hover: #FFD34D;
+  --color-primary-light: #2E250D;
+  --color-primary-subtle: #201A0B;
 
-  /* === Rapsgul — signaturfärg (ytor, markeringar, CTA-hover) === */
-  --color-accent: #F2BC1B;
+  /* === Rapsgul — signaturfärg (ytor, markeringar, CTA) === */
+  --color-accent: #F2C230;
   --color-accent-deep: #DFA616;
 
-  /* === Fältgrön — stödfärg === */
-  --color-field: #44563C;
+  /* === Fältgrön — stödfärg (lyft för mörk botten) === */
+  --color-field: #8CA05A;
 
-  /* === Text === */
-  --color-heading: #1A1611;
-  --color-body: #433D33;
-  --color-muted: #7A7263;
-  --color-faint: #A89F8D;
+  /* === Text — papper på bläck === */
+  --color-heading: #F2ECDD;
+  --color-body: #CFC9B8;
+  --color-muted: #A19A87;
+  --color-faint: #7B7462;
 
   /* === Borders === */
-  --color-border: #E6DEC9;
-  --color-border-light: #EFE9D9;
+  --color-border: rgba(242, 236, 221, 0.16);
+  --color-border-light: rgba(242, 236, 221, 0.09);
 
   /* === Typography === */
   --font-heading: "Fraunces", "Georgia", serif;
-  --font-body: "Instrument Sans", system-ui, sans-serif;
+  --font-body: "Fraunces", "Georgia", serif;
+  --font-ui: "Archivo", "Arial", sans-serif;
+}
+
+html {
+  background: var(--color-base);
 }
 
 body {
   background-color: var(--color-base);
   color: var(--color-body);
   font-family: var(--font-body);
-  line-height: 1.65;
+  font-optical-sizing: auto;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-heading);
+  color: #191405;
 }
 
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
   font-family: var(--font-heading);
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 460;
+  letter-spacing: -0.018em;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 540;
   letter-spacing: -0.01em;
 }
 
-/* === Rapsgul markör-highlight för nyckelfraser === */
+/* === Gulmarkering — på mörk botten blir nyckelfraser gul kursiv === */
 .stolt-mark {
-  background-image: linear-gradient(
-    to top,
-    transparent 8%,
-    rgba(242, 188, 27, 0.5) 8%,
-    rgba(242, 188, 27, 0.5) 38%,
-    transparent 38%
-  );
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+  color: var(--color-accent);
+  font-style: italic;
+  background-image: none;
 }
 
-/* === Eyebrow — liten versalrad med gul flagga === */
+/* === Eyebrow / kick — gult streck + versalrad i Archivo === */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-body);
-  font-size: 12px;
+  font-family: var(--font-ui);
+  font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-accent);
 }
 
 .eyebrow::before {
   content: "";
-  width: 22px;
-  height: 4px;
+  width: 30px;
+  height: 2px;
   background: var(--color-accent);
   flex-shrink: 0;
 }
 
-/* === Kornighet — pappers-textur === */
+/* === Kornighet — filmisk textur på mörkt === */
 .grain {
   position: relative;
 }
@@ -105,34 +112,54 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.35;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* === Primär knapp — bläck, blir rapsgul vid hover === */
+/* === Fältglöd — varm raps-glöd nertill (hero, finaler) === */
+.field-glow {
+  position: relative;
+}
+
+.field-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(90% 55% at 85% 118%, rgba(242, 194, 48, 0.16), transparent 60%),
+    radial-gradient(70% 45% at 8% 112%, rgba(122, 148, 64, 0.11), transparent 65%);
+}
+
+/* === Primär knapp — rapsgul pill, Archivo-versaler === */
 .premium-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px 30px;
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 0.01em;
-  border-radius: 8px;
-  border: 1px solid var(--color-heading);
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 3em;
+  border: 1.5px solid var(--color-accent);
   cursor: pointer;
-  color: var(--color-base);
-  background: var(--color-heading);
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  color: #191405;
+  background: var(--color-accent);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
 .premium-btn:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-heading);
+  background: var(--color-heading);
+  border-color: var(--color-heading);
+  color: #191405;
   transform: translateY(-1px);
 }
 
@@ -142,88 +169,155 @@ h1, h2, h3, h4, h5, h6 {
 
 .premium-btn:focus-visible,
 .secondary-btn:focus-visible {
-  outline: 2px solid var(--color-accent-deep);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
+/* === Sekundär knapp — gul kontur-pill === */
 .secondary-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px 26px;
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   font-weight: 600;
-  font-size: 15px;
-  border-radius: 8px;
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 3em;
   cursor: pointer;
-  color: var(--color-heading);
-  background: var(--color-base);
-  border: 1px solid rgba(26, 22, 17, 0.3);
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  color: var(--color-accent);
+  background: transparent;
+  border: 1.5px solid rgba(242, 194, 48, 0.55);
+  transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
 .secondary-btn:hover {
-  border-color: var(--color-heading);
-  background: rgba(26, 22, 17, 0.04);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #191405;
   transform: translateY(-1px);
 }
 
-/* === Bläck-hero (B-profilen) — flippar tokens till ljust på mörkt === */
+/* === Sektionslinjal — nummer i gul kursiv + spärrad rubrik (nya profilen) === */
+.sec-rule {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5em;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.1em;
+}
+
+.sec-no {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.sec-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.sec-eng {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+}
+
+/* === Bläck-sektioner (hero-dark) — hela sajten är mörk, dessa blir djupast === */
 .hero-dark {
   background: var(--color-surface-dark);
 }
 
 .hero-dark :is(h1, h2, h3, h4) {
-  color: var(--color-base);
+  color: var(--color-heading);
 }
 
-.hero-dark .text-heading { color: var(--color-base); }
-.hero-dark .text-body { color: rgba(250, 245, 236, 0.78); }
-.hero-dark .text-muted { color: rgba(250, 245, 236, 0.55); }
-.hero-dark .text-faint { color: rgba(250, 245, 236, 0.4); }
-.hero-dark .text-border { color: rgba(250, 245, 236, 0.3); }
+.hero-dark .text-heading { color: var(--color-heading); }
+.hero-dark .text-body { color: rgba(242, 236, 221, 0.8); }
+.hero-dark .text-muted { color: rgba(242, 236, 221, 0.58); }
+.hero-dark .text-faint { color: rgba(242, 236, 221, 0.42); }
+.hero-dark .text-border { color: rgba(242, 236, 221, 0.3); }
 .hero-dark .text-primary { color: var(--color-accent); }
-.hero-dark .eyebrow { color: rgba(250, 245, 236, 0.6); }
-.hero-dark [class*="hover:text-heading"]:hover { color: var(--color-base); }
+.hero-dark .eyebrow { color: var(--color-accent); }
+.hero-dark [class*="hover:text-heading"]:hover { color: var(--color-heading); }
 
 .hero-dark .premium-btn {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: var(--color-heading);
+  color: #191405;
 }
 
 .hero-dark .premium-btn:hover {
-  background: var(--color-base);
-  border-color: var(--color-base);
-  color: var(--color-heading);
+  background: var(--color-heading);
+  border-color: var(--color-heading);
+  color: #191405;
 }
 
 .hero-dark .secondary-btn {
-  color: var(--color-base);
+  color: var(--color-accent);
   background: transparent;
-  border-color: rgba(250, 245, 236, 0.35);
+  border-color: rgba(242, 194, 48, 0.55);
 }
 
 .hero-dark .secondary-btn:hover {
-  border-color: var(--color-base);
-  background: rgba(250, 245, 236, 0.08);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #191405;
 }
 
-/* === Gul finale-sektion (B-profilen) === */
+/* === Gul finale-sektion — bläck på raps === */
 .section-gul {
   background: var(--color-accent);
 }
 
-.section-gul :is(h1, h2, h3) { color: var(--color-heading); }
-.section-gul .text-heading { color: var(--color-heading); }
-.section-gul .text-body { color: rgba(26, 22, 17, 0.78); }
-.section-gul .text-muted { color: rgba(26, 22, 17, 0.62); }
-.section-gul .eyebrow { color: rgba(26, 22, 17, 0.65); }
-.section-gul .eyebrow::before { background: var(--color-heading); }
+.section-gul :is(h1, h2, h3) { color: #191405; }
+.section-gul .text-heading { color: #191405; }
+.section-gul .text-body { color: rgba(25, 20, 5, 0.8); }
+.section-gul .text-muted { color: rgba(25, 20, 5, 0.64); }
+.section-gul .eyebrow { color: rgba(25, 20, 5, 0.7); }
+.section-gul .eyebrow::before { background: #191405; }
+
+.section-gul .premium-btn {
+  background: #191405;
+  border-color: #191405;
+  color: var(--color-heading);
+}
 
 .section-gul .premium-btn:hover {
-  background: var(--color-base);
-  border-color: var(--color-base);
-  color: var(--color-heading);
+  background: var(--color-heading);
+  border-color: var(--color-heading);
+  color: #191405;
+}
+
+.section-gul .secondary-btn {
+  color: #191405;
+  border-color: rgba(25, 20, 5, 0.45);
+}
+
+.section-gul .secondary-btn:hover {
+  background: #191405;
+  border-color: #191405;
+  color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

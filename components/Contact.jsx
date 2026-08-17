@@ -82,7 +82,7 @@ export default function Contact() {
                 key={text}
                 className="flex items-start gap-3 text-[14px] text-body"
               >
-                <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-white/60 flex items-center justify-center">
+                <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-surface flex items-center justify-center">
                   <Check size={12} className="text-primary" strokeWidth={3} />
                 </span>
                 {text}

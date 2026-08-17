@@ -96,22 +96,22 @@ export default function BokaContent() {
     width: "100%",
     padding: "14px 16px",
     borderRadius: 12,
-    border: "1px solid #E6DEC9",
-    background: "#FFFFFF",
+    border: "1px solid rgba(242,236,221,0.16)",
+    background: "#161309",
     fontSize: 15,
-    color: "#1A1611",
+    color: "#F2ECDD",
     fontFamily: "inherit",
     outline: "none",
     transition: "border-color 0.2s, box-shadow 0.2s",
   };
 
   const inputFocusHandler = (e) => {
-    e.target.style.borderColor = "#9A7409";
-    e.target.style.boxShadow = "0 0 0 3px rgba(242,188,27,0.18)";
+    e.target.style.borderColor = "#F2C230";
+    e.target.style.boxShadow = "0 0 0 3px rgba(242,194,48,0.18)";
   };
 
   const inputBlurHandler = (e) => {
-    e.target.style.borderColor = "#E6DEC9";
+    e.target.style.borderColor = "rgba(242,236,221,0.16)";
     e.target.style.boxShadow = "none";
   };
 
@@ -189,7 +189,7 @@ export default function BokaContent() {
                     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                         <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
+                          <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
                             Namn *
                           </label>
                           <input
@@ -205,7 +205,7 @@ export default function BokaContent() {
                           />
                         </div>
                         <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
+                          <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
                             E-post *
                           </label>
                           <input
@@ -223,7 +223,7 @@ export default function BokaContent() {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
                           Företag
                         </label>
                         <input
@@ -239,7 +239,7 @@ export default function BokaContent() {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#433D33", display: "block", marginBottom: 6 }}>
+                        <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
                           Beskriv kort vad du behöver hjälp med
                         </label>
                         <textarea
@@ -297,14 +297,14 @@ export default function BokaContent() {
                             width: 36,
                             height: 36,
                             borderRadius: 10,
-                            background: "rgba(242,188,27,0.14)",
+                            background: "rgba(242,194,48,0.14)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             flexShrink: 0,
                           }}
                         >
-                          <step.icon size={17} color="#9A7409" />
+                          <step.icon size={17} color="#F2C230" />
                         </div>
                         <div>
                           <div className="text-[14px] font-600 text-heading">
@@ -322,7 +322,7 @@ export default function BokaContent() {
 
               {/* Benefits */}
               <Reveal delay={0.14}>
-                <div className="p-5 rounded-[10px]" style={{ background: "linear-gradient(135deg, #F8F0DC, #F7E8B8)" }}>
+                <div className="p-5 rounded-[10px]" style={{ background: "linear-gradient(135deg, rgba(242,194,48,0.13), rgba(242,194,48,0.04))", border: "1px solid rgba(242,194,48,0.28)" }}>
                   <h3 className="font-heading font-700 text-[15px] text-heading tracking-tight mb-3">
                     Det du får med dig
                   </h3>

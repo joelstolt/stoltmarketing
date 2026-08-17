@@ -354,10 +354,10 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mb-3">
                 Behöver du hjälp med lokal SEO?
               </h3>
-              <p className="text-[15px] text-white/60 leading-relaxed mb-6">
+              <p className="text-[15px] text-muted leading-relaxed mb-6">
                 Vi sätter upp, optimerar och övervakar din Google Business Profile och lokala SEO-strategi. Många företag ökar sina lokala bokningar med 40–100% inom tre månader med rätt strategi på plats.
               </p>
               <a href="/boka" className="premium-btn">

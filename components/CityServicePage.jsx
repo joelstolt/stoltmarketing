@@ -203,7 +203,7 @@ export default function CityServicePage({ service, city }) {
             </Reveal>
             <Reveal delay={0.12}>
               <div className="bg-surface rounded-[10px] border-2 border-primary p-7 h-full flex flex-col relative">
-                <span className="absolute -top-3 left-7 bg-primary text-white text-[11px] font-600 px-2.5 py-1 rounded-full">
+                <span className="absolute -top-3 left-7 bg-primary text-[#191405] text-[11px] font-600 px-2.5 py-1 rounded-full">
                   Mest vald för synlighet
                 </span>
                 <h3 className="font-heading font-700 text-[18px] text-heading">Tillväxt</h3>
@@ -225,7 +225,7 @@ export default function CityServicePage({ service, city }) {
                     </div>
                   ))}
                 </div>
-                <a href="/boka" className="mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 bg-primary text-white rounded-[10px] py-3 px-5 hover:opacity-90 transition-opacity">
+                <a href="/boka" className="mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 bg-primary text-[#191405] rounded-[10px] py-3 px-5 hover:opacity-90 transition-opacity">
                   Boka genomgång <ArrowRight size={15} />
                 </a>
               </div>

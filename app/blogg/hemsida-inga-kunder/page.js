@@ -342,10 +342,10 @@ export default function Article() {
 
             {/* CTA */}
             <div className="bg-surface-dark rounded-2xl px-6 sm:px-8 py-8 sm:py-10 mt-12">
-              <h3 className="text-[22px] sm:text-[26px] font-600 text-white font-heading tracking-tight mb-3">
+              <h3 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mb-3">
                 Vill du veta varför just din sajt är tyst?
               </h3>
-              <p className="text-[15px] text-white/60 leading-relaxed mb-6">
+              <p className="text-[15px] text-muted leading-relaxed mb-6">
                 Boka en kostnadsfri genomgång så går vi igenom din hemsida tillsammans och pekar ut vad som stoppar förfrågningarna.
               </p>
               <a href="/boka" className="premium-btn">

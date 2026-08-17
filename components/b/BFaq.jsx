@@ -3,12 +3,21 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 
-const PAPER = "#FAF5EC";
+const PAPER = "#F2ECDD";
+const GUL = "#F2C230";
 
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha löpande SEO och Google Ads kostar Tillväxt 2 490 kr/mån. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
+    a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Utslaget är det under 40 kronor om dagen. Vill du ha löpande SEO och Google Ads kostar Tillväxt 2 490 kr/mån. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
+  },
+  {
+    q: "Vem äger sajten om vi avslutar?",
+    a: "Du. Sajten, innehållet och domänen är dina, och vill du flytta någon annanstans hjälper jag till med flytten. Ingen inlåsning: poängen med månadsmodellen är att jag ska förtjäna nästa månad, inte att avtalet ska hålla dig kvar.",
+  },
+  {
+    q: "Hur säger jag upp?",
+    a: "Mejla joel@stoltmarketing.se, det räcker. Efter de första 12 månaderna löper allt månadsvis och avslutas till nästa månadsskifte. Inga blanketter och inga kvarhållningssamtal, och du behåller sajten.",
   },
   {
     q: "Jobbar du bara med företag i Hässleholm?",
@@ -52,22 +61,52 @@ export default function BFaq() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
-        <span aria-hidden="true" style={{ width: 26, height: 5, background: "#F2BC1B", display: "inline-block" }} />
-        <h2 style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(250,245,236,0.55)", margin: 0, fontFamily: "var(--font-body)" }}>
+      <div className="sec-rule" style={{ marginBottom: 32 }}>
+        <span className="sec-no" aria-hidden="true">03</span>
+        <h2 className="sec-label" style={{ margin: 0 }}>
           Vanliga frågor
         </h2>
+        <span className="sec-eng" aria-hidden="true">raka svar</span>
       </div>
 
-      <p className="font-heading" style={{ fontWeight: 600, fontSize: "clamp(28px, 4vw, 46px)", lineHeight: 1.1, letterSpacing: "-0.015em", color: PAPER, margin: "0 0 40px", maxWidth: "16ch" }}>
-        Frågor &amp; svar.
+      <p className="font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 120', fontSize: "clamp(28px, 4vw, 46px)", lineHeight: 1.1, letterSpacing: "-0.02em", color: PAPER, margin: "0 0 28px", maxWidth: "16ch" }}>
+        Frågor &amp; <em style={{ fontStyle: "italic", color: GUL }}>svar</em>.
       </p>
+
+      {/* Allt som ingår i 1 190 kr/mån: konkret lista, inte bara ett ord */}
+      <div style={{ margin: "0 0 40px", maxWidth: 760 }}>
+        <p style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)", margin: "0 0 12px" }}>
+          I månadspriset ingår
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {["Sajt & design", "Hosting & drift", "Säkerhet & backuper", "Innehållsändringar", "Support inom 24 h", "SEO-grund & AI-läsbarhet"].map((item) => (
+            <span
+              key={item}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 7,
+                fontFamily: "var(--font-ui)",
+                fontSize: 12.5,
+                fontWeight: 500,
+                color: "rgba(242,236,221,0.8)",
+                border: "1px solid rgba(242,236,221,0.16)",
+                borderRadius: "3em",
+                padding: "7px 14px",
+              }}
+            >
+              <span aria-hidden="true" style={{ width: 5, height: 5, borderRadius: "50%", background: GUL, display: "inline-block" }} />
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
 
       <div style={{ maxWidth: 760 }}>
         {faqs.map((faq, i) => {
           const isOpen = open === i;
           return (
-            <div key={i} style={{ borderBottom: "1px solid rgba(250,245,236,0.14)" }}>
+            <div key={i} style={{ borderBottom: "1px solid rgba(242,236,221,0.14)" }}>
               <button
                 onClick={() => setOpen(isOpen ? null : i)}
                 aria-expanded={isOpen}
@@ -85,14 +124,14 @@ export default function BFaq() {
                   color: PAPER,
                 }}
               >
-                <span className="font-heading" style={{ fontWeight: 600, fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.3, color: PAPER }}>
+                <span className="font-heading" style={{ fontWeight: 480, fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.3, color: PAPER }}>
                   {faq.q}
                 </span>
                 <Plus
                   size={22}
                   style={{
                     flexShrink: 0,
-                    color: "#F2BC1B",
+                    color: GUL,
                     transition: "transform .3s cubic-bezier(.16,1,.3,1)",
                     transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                   }}
@@ -106,7 +145,7 @@ export default function BFaq() {
                 }}
               >
                 <div style={{ overflow: "hidden" }}>
-                  <p style={{ margin: 0, padding: "0 40px 24px 0", fontSize: 15.5, lineHeight: 1.65, color: "rgba(250,245,236,0.68)" }}>
+                  <p style={{ margin: 0, padding: "0 40px 24px 0", fontSize: 16, lineHeight: 1.75, color: "rgba(242,236,221,0.74)" }}>
                     {faq.a}
                   </p>
                 </div>

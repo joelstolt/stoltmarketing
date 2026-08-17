@@ -14,7 +14,7 @@ export default function NotFoundContent() {
         style={{
           borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%",
           background:
-            "radial-gradient(ellipse, rgba(242,188,27,0.10) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(242,194,48,0.10) 0%, transparent 70%)",
         }}
       />
 
@@ -28,7 +28,7 @@ export default function NotFoundContent() {
           <span
             className="inline-block font-heading font-600 text-[clamp(80px,15vw,160px)] leading-none tracking-[-0.04em]"
             style={{
-              background: "linear-gradient(135deg, #9A7409 0%, #DFA616 50%, #93C5FD 100%)",
+              background: "linear-gradient(135deg, #F2C230 0%, #DFA616 50%, #93C5FD 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",

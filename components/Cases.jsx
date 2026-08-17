@@ -33,7 +33,7 @@ const cases = [
       { label: "Plattform", value: "Next.js" },
     ],
     screenshot: "/case-lia.webp",
-    color: "#9A7409",
+    color: "#F2C230",
   },
   {
     client: "RBN Utbildning",
@@ -48,7 +48,7 @@ const cases = [
     ],
     screenshot: "/case-rbn.webp",
     href: "https://rbnutbildning.se",
-    color: "#9A7409",
+    color: "#F2C230",
   },
   {
     client: "Förskolan Harpan",
@@ -62,7 +62,7 @@ const cases = [
       { label: "Teknik", value: "Next.js" },
     ],
     screenshot: "/case-harpan.webp",
-    color: "#9A7409",
+    color: "#F2C230",
   },
   {
     client: "Omniway",
@@ -77,7 +77,7 @@ const cases = [
     ],
     screenshot: "/case-omniway.webp",
     href: "https://omniway.se",
-    color: "#9A7409",
+    color: "#F2C230",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function Cases() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, #FAF5EC 0%, #F3EDDF 50%, #FAF5EC 100%)",
+            "linear-gradient(180deg, #F2ECDD 0%, #1D1912 50%, #F2ECDD 100%)",
         }}
       />
 

@@ -14,6 +14,7 @@ const services = [
   { label: "Facebook-annonsering", href: "/tjanster/facebook-annonsering" },
   { label: "AI-synlighet", href: "/tjanster/ai-synlighet" },
   { label: "AI & Automation", href: "/tjanster/ai-automation" },
+  { label: "Tillgänglighet & EAA", href: "/tillganglighet" },
   { label: "Managed hemsida", href: "/tjanster/managed-hemsida" },
   { label: "Alla tjänster", href: "/tjanster" },
 ];
@@ -21,6 +22,8 @@ const services = [
 const company = [
   { label: "Om mig", href: "/om" },
   { label: "Projekt", href: "/projekt" },
+  { label: "Gratis sajtkoll", href: "/sajtkoll" },
+  { label: "Guider", href: "/guider" },
   { label: "Blogg", href: "/blogg" },
   { label: "Guide: sökmotoroptimering", href: "/sokmotoroptimering" },
   { label: "Vad kostar en hemsida?", href: "/vad-kostar-en-hemsida" },
@@ -32,17 +35,18 @@ const company = [
 ];
 
 const linkStyle = {
-  fontSize: 14,
-  color: "rgba(250,245,236,0.65)",
+  fontFamily: "var(--font-ui)",
+  fontSize: 13.5,
+  color: "rgba(242,236,221,0.65)",
   textDecoration: "none",
   transition: "color 0.2s",
 };
-const hover = (e) => (e.currentTarget.style.color = "#F2BC1B");
-const unhover = (e) => (e.currentTarget.style.color = "rgba(250,245,236,0.65)");
+const hover = (e) => (e.currentTarget.style.color = "#F2C230");
+const unhover = (e) => (e.currentTarget.style.color = "rgba(242,236,221,0.65)");
 
 export default function Footer() {
   return (
-    <footer className="hero-dark" style={{ borderTop: "1px solid rgba(250,245,236,0.12)" }}>
+    <footer className="hero-dark" style={{ borderTop: "1px solid rgba(242,236,221,0.12)" }}>
       {/* Main footer */}
       <div
         style={{
@@ -66,7 +70,7 @@ export default function Footer() {
               fontWeight: 600,
               fontVariationSettings: '"opsz" 100',
               letterSpacing: "-0.01em",
-              color: "#FAF5EC",
+              color: "#F2ECDD",
               textDecoration: "none",
               display: "flex",
               alignItems: "baseline",
@@ -82,7 +86,7 @@ export default function Footer() {
                   display: "inline-block",
                   width: "0.115em",
                   height: "0.72em",
-                  background: "#F2BC1B",
+                  background: "#F2C230",
                   margin: "0 0.075em",
                 }}
               />
@@ -95,13 +99,13 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "rgba(250,245,236,0.5)",
+                color: "rgba(242,236,221,0.5)",
               }}
             >
               Marketing
             </span>
           </Link>
-          <p style={{ fontSize: 14, color: "rgba(250,245,236,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
+          <p style={{ fontSize: 14, color: "rgba(242,236,221,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
             Digital byrå i Hässleholm med 10+ års erfarenhet. Moderna hemsidor,
             e-handel, SEO, Google Ads och AI-automation — med enterprise-kvalitet
             till företag i hela Skåne och Sverige.
@@ -110,20 +114,20 @@ export default function Footer() {
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
             <a
               href={SITE.phoneHref}
-              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)", textDecoration: "none" }}
+              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(242,236,221,0.65)", textDecoration: "none" }}
             >
-              <Phone size={15} color="#F2BC1B" />
+              <Phone size={15} color="#F2C230" />
               {SITE.phone}
             </a>
             <a
               href="mailto:joel@stoltmarketing.se"
-              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)", textDecoration: "none" }}
+              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(242,236,221,0.65)", textDecoration: "none" }}
             >
-              <Mail size={15} color="#F2BC1B" />
+              <Mail size={15} color="#F2C230" />
               joel@stoltmarketing.se
             </a>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)" }}>
-              <MapPin size={15} color="#F2BC1B" />
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(242,236,221,0.65)" }}>
+              <MapPin size={15} color="#F2C230" />
               Hässleholm, Skåne
             </div>
           </div>
@@ -175,7 +179,7 @@ export default function Footer() {
       </div>
 
       {/* Lokalt-band: alla ort × tjänst-länkar för synlighet och crawl */}
-      <div style={{ borderTop: "1px solid rgba(250,245,236,0.12)" }}>
+      <div style={{ borderTop: "1px solid rgba(242,236,221,0.12)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "32px 20px 8px" }}>
           <p style={{ ...colHeading, marginBottom: 20 }}>Webbyrå, SEO, Google Ads & AI i Skåne</p>
           <div
@@ -187,9 +191,9 @@ export default function Footer() {
                 <Link
                   href={CITIES[c].hub}
                   className="font-heading"
-                  style={{ fontSize: 14, fontWeight: 700, color: "#FAF5EC", textDecoration: "none", display: "block", marginBottom: 12 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#FAF5EC")}
+                  style={{ fontSize: 14, fontWeight: 700, color: "#F2ECDD", textDecoration: "none", display: "block", marginBottom: 12 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#F2C230")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#F2ECDD")}
                 >
                   {CITIES[c].name}
                 </Link>
@@ -198,9 +202,9 @@ export default function Footer() {
                     <Link
                       key={s}
                       href={`/${c}/${s}`}
-                      style={{ fontSize: 13, color: "rgba(250,245,236,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(250,245,236,0.5)")}
+                      style={{ fontSize: 13, color: "rgba(242,236,221,0.5)", textDecoration: "none", transition: "color 0.2s" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#F2C230")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,236,221,0.5)")}
                     >
                       {SERVICES[s].label} {CITIES[c].name}
                     </Link>
@@ -213,7 +217,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid rgba(250,245,236,0.12)", padding: "20px 20px", marginTop: 24 }}>
+      <div style={{ borderTop: "1px solid rgba(242,236,221,0.12)", padding: "20px 20px", marginTop: 24 }}>
         <div
           style={{
             maxWidth: 1120,
@@ -225,18 +229,18 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>
+          <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>
             © {new Date().getFullYear()} Stolt Marketing — webbyrå i Hässleholm &amp; Skåne för hemsidor, SEO, Google Ads och AI.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <span style={{ fontSize: 13, color: "rgba(250,245,236,0.4)" }}>Svar inom 24h på vardagar</span>
+            <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>Svar inom 24h på vardagar</span>
             <a
               href="https://kvota.se"
               target="_blank"
               rel="noopener"
-              style={{ fontSize: 13, color: "rgba(250,245,236,0.4)", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(250,245,236,0.4)")}
+              style={{ fontSize: 13, color: "rgba(242,236,221,0.4)", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F2C230")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,236,221,0.4)")}
             >
               Egen AI-produkt: Kvota.se
             </a>
@@ -256,10 +260,11 @@ export default function Footer() {
 }
 
 const colHeading = {
-  fontSize: 12,
-  fontWeight: 700,
-  color: "rgba(250,245,236,0.4)",
+  fontFamily: "var(--font-ui)",
+  fontSize: 10.5,
+  fontWeight: 600,
+  letterSpacing: "0.24em",
+  color: "rgba(242,236,221,0.4)",
   textTransform: "uppercase",
-  letterSpacing: "0.08em",
   marginBottom: 16,
 };

@@ -99,11 +99,11 @@ export default function LpWordpressContent() {
   };
 
   const input =
-    "w-full px-4 py-3 rounded-[10px] border border-border bg-white text-[15px] text-heading placeholder:text-muted focus:outline-none focus:border-[#9A7409] transition-colors";
+    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[15px] text-heading placeholder:text-muted focus:outline-none focus:border-[#F2C230] transition-colors";
 
   const Formular = ({ id }) =>
     done ? (
-      <div className="bg-white rounded-[10px] border border-border p-7 text-center">
+      <div className="bg-surface rounded-[10px] border border-border p-7 text-center">
         <div className="w-11 h-11 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mx-auto">
           <Check size={20} className="text-[#059669]" />
         </div>
@@ -114,7 +114,7 @@ export default function LpWordpressContent() {
         </p>
       </div>
     ) : (
-      <form onSubmit={submit} className="bg-white rounded-[10px] border border-border p-6 sm:p-7">
+      <form onSubmit={submit} className="bg-surface rounded-[10px] border border-border p-6 sm:p-7">
         <div className="grid gap-3">
           <input
             id={`${id}-url`}
@@ -161,7 +161,7 @@ export default function LpWordpressContent() {
           <button
             type="submit"
             disabled={sending}
-            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#1A1611] text-[#FAF5EC] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#2b2318] transition-colors disabled:opacity-60"
+            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
           >
             {sending ? "Skickar…" : "Mät min sajt"}
           </button>
@@ -178,9 +178,9 @@ export default function LpWordpressContent() {
       <header className="border-b border-border">
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="font-heading font-700 text-[19px] text-heading tracking-[-0.01em]">
-            sto<span className="text-[#F2BC1B]">|</span>t
+            sto<span className="text-[#F2C230]">|</span>t
           </Link>
-          <a href={SITE.phoneHref} className="text-[15px] font-500 text-heading hover:text-[#9A7409] transition-colors">
+          <a href={SITE.phoneHref} className="text-[15px] font-500 text-heading hover:text-[#F2C230] transition-colors">
             {SITE.phone}
           </a>
         </div>
@@ -190,7 +190,7 @@ export default function LpWordpressContent() {
       <section className="px-5 sm:px-8 pt-12 sm:pt-16 pb-14">
         <div className="max-w-[1120px] mx-auto grid lg:grid-cols-[1fr,420px] gap-10 lg:gap-16 items-start">
           <div>
-            <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-[#9A7409]">
+            <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-[#F2C230]">
               WordPress-hjälp i Skåne
             </p>
             <h1 className="mt-4 font-heading font-700 text-[clamp(34px,5.6vw,54px)] leading-[1.05] tracking-[-0.02em] text-heading">
@@ -236,8 +236,8 @@ export default function LpWordpressContent() {
           <div className="mt-10 grid sm:grid-cols-3 gap-5">
             {vadDuFar.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.08}>
-                <div className="bg-white rounded-[10px] border border-border p-7 h-full">
-                  <v.icon size={22} className="text-[#9A7409]" />
+                <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
+                  <v.icon size={22} className="text-[#F2C230]" />
                   <h3 className="mt-4 font-heading font-700 text-[18px] text-heading">{v.title}</h3>
                   <p className="mt-2.5 text-[15px] text-body leading-relaxed">{v.desc}</p>
                 </div>
@@ -269,14 +269,14 @@ export default function LpWordpressContent() {
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08}>
-                <div className="bg-white rounded-[10px] border border-border p-7 h-full">
+                <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
                   <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
                   <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">{p.price}</div>
                   <p className="mt-2.5 text-[14px] text-muted">{p.note}</p>
                   <ul className="mt-5 grid gap-2.5">
                     {p.items.map((it) => (
                       <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
-                        <Check size={17} className="text-[#9A7409] shrink-0 mt-0.5" />
+                        <Check size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
                         {it}
                       </li>
                     ))}

@@ -109,12 +109,12 @@ export default function ManagedSection() {
               <div
                 className={`relative h-full rounded-[10px] p-7 transition-all duration-300 ${
                   pkg.popular
-                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,188,27,0.18)]"
+                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,194,48,0.18)]"
                     : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15"
                 }`}
               >
                 {pkg.popular && (
-                  <span className="absolute -top-3 left-7 text-[11px] font-700 text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="absolute -top-3 left-7 text-[11px] font-700 text-heading bg-primary px-3 py-1 rounded-full uppercase tracking-wider">
                     Rekommenderad
                   </span>
                 )}

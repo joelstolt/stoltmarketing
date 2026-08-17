@@ -86,8 +86,8 @@ export default function EdshareCase() {
                   key={s}
                   className="text-[13px] font-600 px-3.5 py-2 rounded-full"
                   style={{
-                    background: "rgba(242,188,27,0.16)",
-                    border: "1px solid rgba(242,188,27,0.32)",
+                    background: "rgba(242,194,48,0.16)",
+                    border: "1px solid rgba(242,194,48,0.32)",
                     color: "var(--color-base)",
                   }}
                 >
@@ -152,7 +152,7 @@ export default function EdshareCase() {
                 <div className="bg-surface rounded-[12px] border border-border p-7 h-full">
                   <div
                     className="flex items-center justify-center w-10 h-10 rounded-lg mb-4"
-                    style={{ background: "rgba(242,188,27,0.18)" }}
+                    style={{ background: "rgba(242,194,48,0.18)" }}
                   >
                     <Check size={18} style={{ color: "var(--color-primary)" }} />
                   </div>

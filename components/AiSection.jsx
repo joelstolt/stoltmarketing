@@ -61,7 +61,7 @@ export default function AiSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, #FAF5EC 0%, #F8F0DC 50%, #FAF5EC 100%)",
+            "linear-gradient(180deg, #F2ECDD 0%, #F8F0DC 50%, #F2ECDD 100%)",
         }}
       />
 
@@ -104,7 +104,7 @@ export default function AiSection() {
                 {aiFeatures.map((f) => (
                   <div
                     key={f.title}
-                    className="flex gap-3.5 p-4 rounded-[14px] bg-white/60 border border-black/[0.04] backdrop-blur-sm"
+                    className="flex gap-3.5 p-4 rounded-[14px] bg-surface border border-black/[0.04] backdrop-blur-sm"
                   >
                     <div className="w-9 h-9 rounded-lg bg-primary/6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <f.icon size={17} className="text-primary" />
@@ -125,7 +125,7 @@ export default function AiSection() {
 
           {/* Right: Kvota proof card */}
           <Reveal delay={0.15}>
-            <div className="bg-white/[0.72] backdrop-blur-xl rounded-[10px] border border-white/80 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)]">
+            <div className="bg-surface backdrop-blur-xl rounded-[10px] border border-white/80 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)]">
               <div className="text-[12px] font-700 text-primary uppercase tracking-wider mb-4">
                 Eget AI-projekt
               </div>

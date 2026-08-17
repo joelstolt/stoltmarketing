@@ -147,7 +147,7 @@ export default function OmContent() {
                     width: 200,
                     height: 200,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(242,188,27,0.18), rgba(242,188,27,0.06))",
+                    background: "linear-gradient(135deg, rgba(242,194,48,0.18), rgba(242,194,48,0.06))",
                     animation: "float-slow 8s ease-in-out infinite",
                   }}
                 />
@@ -161,7 +161,7 @@ export default function OmContent() {
                     width: 120,
                     height: 120,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(242,188,27,0.14), rgba(242,188,27,0.04))",
+                    background: "linear-gradient(135deg, rgba(242,194,48,0.14), rgba(242,194,48,0.04))",
                     animation: "float-medium 6s ease-in-out infinite 1s",
                   }}
                 />
@@ -175,7 +175,7 @@ export default function OmContent() {
                     width: 60,
                     height: 60,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(242,188,27,0.25), rgba(242,188,27,0.10))",
+                    background: "linear-gradient(135deg, rgba(242,194,48,0.25), rgba(242,194,48,0.10))",
                     animation: "float-fast 5s ease-in-out infinite 0.5s",
                   }}
                 />
@@ -189,7 +189,7 @@ export default function OmContent() {
                     width: 40,
                     height: 40,
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, rgba(242,188,27,0.22), rgba(242,188,27,0.08))",
+                    background: "linear-gradient(135deg, rgba(242,194,48,0.22), rgba(242,194,48,0.08))",
                     animation: "float-medium 7s ease-in-out infinite 2s",
                   }}
                 />
@@ -232,10 +232,10 @@ export default function OmContent() {
                       position: "absolute",
                       bottom: -16,
                       right: -16,
-                      background: "rgba(255,255,255,0.92)",
+                      background: "rgba(22,19,9,0.92)",
                       backdropFilter: "blur(12px)",
                       borderRadius: 14,
-                      border: "1px solid rgba(255,255,255,0.9)",
+                      border: "1px solid rgba(242,236,221,0.16)",
                       boxShadow: "0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03)",
                       padding: "10px 16px",
                       display: "flex",
@@ -249,11 +249,11 @@ export default function OmContent() {
                         width: 36,
                         height: 36,
                         borderRadius: 10,
-                        background: "linear-gradient(135deg, #9A7409, #DFA616)",
+                        background: "linear-gradient(135deg, #F2C230, #DFA616)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#fff",
+                        color: "#191405",
                         fontSize: 12,
                         fontWeight: 800,
                         boxShadow: "0 2px 8px rgba(223,166,22,0.35)",
@@ -262,10 +262,10 @@ export default function OmContent() {
                       150+
                     </div>
                     <div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: "#1A1611" }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#F2ECDD" }}>
                         Projekt levererade
                       </div>
-                      <div style={{ fontSize: 11, color: "#7A7263" }}>
+                      <div style={{ fontSize: 11, color: "#A19A87" }}>
                         Och räknar
                       </div>
                     </div>
@@ -277,10 +277,10 @@ export default function OmContent() {
                       position: "absolute",
                       top: -12,
                       left: -16,
-                      background: "rgba(255,255,255,0.92)",
+                      background: "rgba(22,19,9,0.92)",
                       backdropFilter: "blur(12px)",
                       borderRadius: 14,
-                      border: "1px solid rgba(255,255,255,0.9)",
+                      border: "1px solid rgba(242,236,221,0.16)",
                       boxShadow: "0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03)",
                       padding: "8px 14px",
                       display: "flex",
@@ -301,13 +301,13 @@ export default function OmContent() {
                         boxShadow: "0 2px 6px rgba(5,150,105,0.2)",
                       }}
                     >
-                      <ExternalLink size={14} color="#fff" />
+                      <ExternalLink size={14} color="#191405" />
                     </div>
                     <div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: "#1A1611" }}>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: "#F2ECDD" }}>
                         AcadeMedia
                       </div>
-                      <div style={{ fontSize: 10, color: "#7A7263" }}>Enterprise-kund</div>
+                      <div style={{ fontSize: 10, color: "#A19A87" }}>Enterprise-kund</div>
                     </div>
                   </div>
                 </div>
@@ -371,7 +371,7 @@ export default function OmContent() {
                       width: 8,
                       height: 8,
                       borderRadius: "50%",
-                      background: "#9A7409",
+                      background: "#F2C230",
                     }}
                   />
                   <p className="text-[12px] font-700 text-primary uppercase tracking-wider">
@@ -391,7 +391,7 @@ export default function OmContent() {
       </section>
 
       {/* ═══ VALUES ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8" style={{ background: "#F3EDDF" }}>
+      <section className="py-16 sm:py-24 px-5 sm:px-8" style={{ background: "#161309" }}>
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             badge="Hur jag jobbar"
@@ -407,14 +407,14 @@ export default function OmContent() {
                       width: 44,
                       height: 44,
                       borderRadius: 12,
-                      background: "rgba(242,188,27,0.14)",
+                      background: "rgba(242,194,48,0.14)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                     }}
                   >
-                    <v.icon size={20} color="#9A7409" />
+                    <v.icon size={20} color="#F2C230" />
                   </div>
                   <div>
                     <h3 className="font-heading font-700 text-[17px] text-heading tracking-tight">
@@ -449,19 +449,19 @@ export default function OmContent() {
                     borderRadius: 10,
                     fontSize: 14,
                     fontWeight: 500,
-                    color: "#433D33",
-                    background: "#FFFFFF",
-                    border: "1px solid #E6DEC9",
+                    color: "#CFC9B8",
+                    background: "#161309",
+                    border: "1px solid rgba(242,236,221,0.16)",
                     transition: "all 0.2s",
                     cursor: "default",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = "rgba(223,166,22,0.45)";
-                    e.currentTarget.style.color = "#9A7409";
+                    e.currentTarget.style.color = "#F2C230";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "#E6DEC9";
-                    e.currentTarget.style.color = "#433D33";
+                    e.currentTarget.style.borderColor = "rgba(242,236,221,0.16)";
+                    e.currentTarget.style.color = "#CFC9B8";
                   }}
                 >
                   {tool}

@@ -17,9 +17,16 @@ import {
   Phone,
   Users,
   Sparkles,
+  Accessibility,
 } from "lucide-react";
 import Link from "next/link";
 import { SITE } from "@/lib/local/data";
+
+const PAPER = "#F2ECDD";
+const GUL = "#F2C230";
+const DIM = "rgba(242,236,221,0.62)";
+const FAINT = "rgba(242,236,221,0.4)";
+const LINE = "rgba(242,236,221,0.14)";
 
 const serviceItems = [
   {
@@ -71,6 +78,12 @@ const serviceItems = [
     href: "/tjanster/ai-synlighet",
   },
   {
+    icon: Accessibility,
+    label: "Tillgänglighet & EAA",
+    desc: "Granskning och åtgärder, fast pris",
+    href: "/tillganglighet",
+  },
+  {
     icon: Shield,
     label: "Managed hemsida",
     desc: "Drift, underhåll och förbättringar",
@@ -80,22 +93,28 @@ const serviceItems = [
 
 const navItems = [
   { label: "Projekt", href: "/projekt" },
-  { label: "Blogg", href: "/blogg" },
+  { label: "Sajtkoll", href: "/sajtkoll" },
   { label: "Om mig", href: "/om" },
   { label: "Kontakt", href: "/kontakt" },
 ];
+
+const navLinkStyle = {
+  fontFamily: "var(--font-ui)",
+  fontSize: 11,
+  fontWeight: 600,
+  letterSpacing: "0.2em",
+  textTransform: "uppercase",
+  color: DIM,
+  textDecoration: "none",
+  transition: "color 0.2s",
+  whiteSpace: "nowrap",
+};
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [onDark, setOnDark] = useState(false);
   const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    // Sidor med bläck-hero behöver ljus header tills man scrollat
-    setOnDark(!!document.querySelector("main section")?.classList.contains("hero-dark"));
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -123,13 +142,10 @@ export default function Header() {
     timeoutRef.current = setTimeout(() => setDropdownOpen(false), 150);
   };
 
-  const lightTop = onDark && !scrolled && !isOpen;
-
   return (
     <>
       {/* ═══ HEADER BAR ═══ */}
       <header
-        className={lightTop ? "hero-dark" : undefined}
         style={{
           position: "fixed",
           top: 0,
@@ -140,14 +156,12 @@ export default function Header() {
           display: "flex",
           alignItems: "center",
           background:
-            scrolled || isOpen
-              ? "rgba(250, 245, 236, 0.95)"
-              : "transparent",
-          backdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
-          WebkitBackdropFilter: scrolled || isOpen ? "blur(20px)" : "none",
+            scrolled || isOpen ? "rgba(15,13,8,0.85)" : "transparent",
+          backdropFilter: scrolled || isOpen ? "blur(12px)" : "none",
+          WebkitBackdropFilter: scrolled || isOpen ? "blur(12px)" : "none",
           borderBottom:
             scrolled || isOpen
-              ? "1px solid rgba(0,0,0,0.04)"
+              ? `1px solid ${LINE}`
               : "1px solid transparent",
           transition: "background 0.3s, border-color 0.3s, backdrop-filter 0.3s",
           padding: "0 20px",
@@ -174,11 +188,13 @@ export default function Header() {
               gap: 9,
               fontSize: 24,
               fontWeight: 600,
-              fontVariationSettings: '"opsz" 100',
+              fontVariationSettings: '"opsz" 144',
               letterSpacing: "-0.01em",
-              color: lightTop ? "#FAF5EC" : "#1A1611",
-              transition: "color 0.3s",
+              color: PAPER,
               textDecoration: "none",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+              marginRight: 24,
             }}
           >
             <span style={{ display: "inline-flex", alignItems: "baseline" }}>
@@ -189,21 +205,20 @@ export default function Header() {
                   display: "inline-block",
                   width: "0.115em",
                   height: "0.72em",
-                  background: "#F2BC1B",
+                  background: GUL,
                   margin: "0 0.075em",
                 }}
               />
               t
             </span>
             <span
-              className="font-body"
               style={{
-                fontSize: 10.5,
+                fontFamily: "var(--font-ui)",
+                fontSize: 10,
                 fontWeight: 600,
-                letterSpacing: "0.18em",
+                letterSpacing: "0.24em",
                 textTransform: "uppercase",
-                color: lightTop ? "rgba(250,245,236,0.55)" : "#7A7263",
-                transition: "color 0.3s",
+                color: FAINT,
               }}
             >
               Marketing
@@ -215,7 +230,7 @@ export default function Header() {
             className="hidden lg:flex"
             style={{
               alignItems: "center",
-              gap: 28,
+              gap: 22,
             }}
           >
             {/* Tjänster dropdown */}
@@ -227,21 +242,17 @@ export default function Header() {
               <Link
                 href="/tjanster"
                 style={{
+                  ...navLinkStyle,
                   display: "flex",
                   alignItems: "center",
-                  gap: 4,
-                  fontSize: 15,
-                  fontWeight: 500,
-                  color: lightTop ? "rgba(250,245,236,0.7)" : "#7A7263",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
+                  gap: 5,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = lightTop ? "#FAF5EC" : "#1A1611")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = lightTop ? "rgba(250,245,236,0.7)" : "#7A7263")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = GUL)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = DIM)}
               >
                 Tjänster
                 <ChevronDown
-                  size={14}
+                  size={13}
                   style={{
                     transition: "transform 0.2s",
                     transform: dropdownOpen ? "rotate(180deg)" : "rotate(0)",
@@ -266,12 +277,13 @@ export default function Header() {
                   >
                     <div
                       style={{
-                        background: "rgba(255,255,255,0.97)",
+                        background: "rgba(22,19,9,0.97)",
                         backdropFilter: "blur(20px)",
-                        borderRadius: 16,
-                        border: "1px solid #E6DEC9",
+                        WebkitBackdropFilter: "blur(20px)",
+                        borderRadius: 14,
+                        border: `1px solid ${LINE}`,
                         boxShadow:
-                          "0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
+                          "0 12px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)",
                         padding: 12,
                         width: 320,
                       }}
@@ -290,7 +302,7 @@ export default function Header() {
                         }}
                         onMouseEnter={(e) =>
                           (e.currentTarget.style.background =
-                            "rgba(242,188,27,0.10)")
+                            "rgba(242,194,48,0.08)")
                         }
                         onMouseLeave={(e) =>
                           (e.currentTarget.style.background = "transparent")
@@ -301,25 +313,25 @@ export default function Header() {
                             width: 36,
                             height: 36,
                             borderRadius: 8,
-                            background: "rgba(242,188,27,0.14)",
+                            background: "rgba(242,194,48,0.1)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                           }}
                         >
-                          <MonitorSmartphone size={16} color="#9A7409" />
+                          <MonitorSmartphone size={16} color={GUL} />
                         </div>
                         <div>
                           <div
                             style={{
                               fontSize: 14,
                               fontWeight: 600,
-                              color: "#1A1611",
+                              color: PAPER,
                             }}
                           >
                             Alla tjänster
                           </div>
-                          <div style={{ fontSize: 12, color: "#7A7263" }}>
+                          <div style={{ fontSize: 12.5, fontFamily: "var(--font-ui)", color: DIM }}>
                             Översikt av hela erbjudandet
                           </div>
                         </div>
@@ -328,7 +340,7 @@ export default function Header() {
                       <div
                         style={{
                           height: 1,
-                          background: "#EFE9D9",
+                          background: LINE,
                           margin: "4px 0",
                         }}
                       />
@@ -349,7 +361,7 @@ export default function Header() {
                           }}
                           onMouseEnter={(e) =>
                             (e.currentTarget.style.background =
-                              "rgba(242,188,27,0.10)")
+                              "rgba(242,194,48,0.08)")
                           }
                           onMouseLeave={(e) =>
                             (e.currentTarget.style.background = "transparent")
@@ -360,25 +372,25 @@ export default function Header() {
                               width: 36,
                               height: 36,
                               borderRadius: 8,
-                              background: "rgba(242,188,27,0.14)",
+                              background: "rgba(242,194,48,0.1)",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
                             }}
                           >
-                            <item.icon size={16} color="#9A7409" />
+                            <item.icon size={16} color={GUL} />
                           </div>
                           <div>
                             <div
                               style={{
                                 fontSize: 14,
                                 fontWeight: 600,
-                                color: "#1A1611",
+                                color: PAPER,
                               }}
                             >
                               {item.label}
                             </div>
-                            <div style={{ fontSize: 12, color: "#7A7263" }}>
+                            <div style={{ fontSize: 12.5, fontFamily: "var(--font-ui)", color: DIM }}>
                               {item.desc}
                             </div>
                           </div>
@@ -394,15 +406,9 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                style={{
-                  fontSize: 15,
-                  fontWeight: 500,
-                  color: lightTop ? "rgba(250,245,236,0.7)" : "#7A7263",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = lightTop ? "#FAF5EC" : "#1A1611")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = lightTop ? "rgba(250,245,236,0.7)" : "#7A7263")}
+                style={navLinkStyle}
+                onMouseEnter={(e) => (e.currentTarget.style.color = GUL)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = DIM)}
               >
                 {item.label}
               </Link>
@@ -414,24 +420,28 @@ export default function Header() {
                 display: "flex",
                 alignItems: "center",
                 gap: 7,
-                fontSize: 14,
-                fontWeight: 500,
+                fontFamily: "var(--font-ui)",
+                fontSize: 12.5,
+                fontWeight: 600,
+                letterSpacing: "0.06em",
                 whiteSpace: "nowrap",
-                color: lightTop ? "rgba(250,245,236,0.9)" : "#1A1611",
+                color: PAPER,
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = lightTop ? "rgba(250,245,236,0.9)" : "#1A1611")
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.color = GUL)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = PAPER)}
             >
-              <Phone size={15} color="#F2BC1B" />
+              <Phone size={14} color={GUL} />
               {SITE.phone}
             </a>
 
-            <Link href="/boka" className="premium-btn" style={{ fontSize: 14, padding: "10px 20px" }}>
-              Boka kostnadsfri genomgång
+            <Link
+              href="/boka"
+              className="premium-btn"
+              style={{ fontSize: 10.5, padding: "11px 22px" }}
+            >
+              Boka genomgång
             </Link>
           </nav>
 
@@ -441,7 +451,7 @@ export default function Header() {
             className="lg:hidden"
             style={{
               padding: 8,
-              color: lightTop ? "#FAF5EC" : "#7A7263",
+              color: PAPER,
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -470,7 +480,7 @@ export default function Header() {
               right: 0,
               bottom: 0,
               zIndex: 10000,
-              background: "#FAF5EC",
+              background: "#0F0D08",
               overflowY: "auto",
               WebkitOverflowScrolling: "touch",
             }}
@@ -480,11 +490,12 @@ export default function Header() {
               {/* Tjänster section */}
               <p
                 style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  color: "#A89F8D",
+                  fontFamily: "var(--font-ui)",
+                  fontSize: 10.5,
+                  fontWeight: 600,
+                  color: GUL,
                   textTransform: "uppercase",
-                  letterSpacing: "0.1em",
+                  letterSpacing: "0.28em",
                   marginBottom: 16,
                 }}
               >
@@ -500,7 +511,7 @@ export default function Header() {
                   gap: 14,
                   padding: "12px 0",
                   textDecoration: "none",
-                  borderBottom: "1px solid #EFE9D9",
+                  borderBottom: `1px solid ${LINE}`,
                 }}
               >
                 <div
@@ -508,20 +519,20 @@ export default function Header() {
                     width: 40,
                     height: 40,
                     borderRadius: 10,
-                    background: "rgba(242,188,27,0.14)",
+                    background: "rgba(242,194,48,0.1)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
                   }}
                 >
-                  <MonitorSmartphone size={18} color="#9A7409" />
+                  <MonitorSmartphone size={18} color={GUL} />
                 </div>
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 600, color: "#1A1611" }}>
+                  <div style={{ fontSize: 16, fontWeight: 600, color: PAPER }}>
                     Alla tjänster
                   </div>
-                  <div style={{ fontSize: 13, color: "#7A7263" }}>
+                  <div style={{ fontSize: 13, fontFamily: "var(--font-ui)", color: DIM }}>
                     Översikt av erbjudandet
                   </div>
                 </div>
@@ -538,7 +549,7 @@ export default function Header() {
                     gap: 14,
                     padding: "12px 0",
                     textDecoration: "none",
-                    borderBottom: "1px solid #EFE9D9",
+                    borderBottom: `1px solid ${LINE}`,
                   }}
                 >
                   <div
@@ -546,20 +557,20 @@ export default function Header() {
                       width: 40,
                       height: 40,
                       borderRadius: 10,
-                      background: "rgba(242,188,27,0.14)",
+                      background: "rgba(242,194,48,0.1)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                     }}
                   >
-                    <item.icon size={18} color="#9A7409" />
+                    <item.icon size={18} color={GUL} />
                   </div>
                   <div>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: "#1A1611" }}>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: PAPER }}>
                       {item.label}
                     </div>
-                    <div style={{ fontSize: 13, color: "#7A7263" }}>
+                    <div style={{ fontSize: 13, fontFamily: "var(--font-ui)", color: DIM }}>
                       {item.desc}
                     </div>
                   </div>
@@ -567,7 +578,7 @@ export default function Header() {
               ))}
 
               {/* Divider */}
-              <div style={{ height: 1, background: "#E6DEC9", margin: "24px 0" }} />
+              <div style={{ height: 1, background: LINE, margin: "24px 0" }} />
 
               {/* Other nav */}
               {navItems.map((item) => (
@@ -579,9 +590,9 @@ export default function Header() {
                   style={{
                     display: "block",
                     padding: "14px 0",
-                    fontSize: 18,
-                    fontWeight: 600,
-                    color: "#433D33",
+                    fontSize: 20,
+                    fontWeight: 500,
+                    color: PAPER,
                     textDecoration: "none",
                   }}
                 >
@@ -598,7 +609,7 @@ export default function Header() {
                   style={{
                     width: "100%",
                     justifyContent: "center",
-                    fontSize: 16,
+                    fontSize: 11.5,
                     padding: "16px 32px",
                   }}
                 >
@@ -614,13 +625,14 @@ export default function Header() {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: 9,
-                    fontSize: 17,
-                    fontWeight: 500,
-                    color: "#1A1611",
+                    fontFamily: "var(--font-ui)",
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: PAPER,
                     textDecoration: "none",
                   }}
                 >
-                  <Phone size={18} color="#F2BC1B" />
+                  <Phone size={17} color={GUL} />
                   {SITE.phone}
                 </a>
               </div>
