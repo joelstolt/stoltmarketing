@@ -9,7 +9,7 @@ import {
   Bot, Workflow, Mail, Plug, FileText, Sparkles, BrainCircuit,
 } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
-import { CITIES, SERVICES, SITE, CITY_ORDER, SERVICE_ORDER } from "@/lib/local/data";
+import { CITIES, SERVICES, SITE, CITY_ORDER, SERVICE_ORDER, PRICING } from "@/lib/local/data";
 import { getCombo, cityServiceFaqs } from "@/lib/local/seo";
 
 const ICONS = {
@@ -165,6 +165,75 @@ export default function CityServicePage({ service, city }) {
               ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ═══ PRIS ═══ */}
+      <section className="py-16 sm:py-24 px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            badge="Pris"
+            title="Två enkla nivåer. 0 kr i startavgift."
+          />
+          <div className="mt-12 grid sm:grid-cols-2 gap-5 max-w-[820px] mx-auto">
+            <Reveal delay={0.06}>
+              <div className="bg-surface rounded-[10px] border border-border p-7 h-full flex flex-col">
+                <h3 className="font-heading font-700 text-[18px] text-heading">Bas</h3>
+                <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
+                  {PRICING.basManad}
+                </div>
+                <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
+                <div className="mt-5 flex flex-col gap-2.5 flex-1">
+                  {[
+                    "Komplett hemsida, byggd och driftad",
+                    "Hosting, säkerhet och support ingår",
+                    "Småändringar utan extra kostnad",
+                    "Fast pris, inga överraskningar",
+                  ].map((t) => (
+                    <div key={t} className="flex items-start gap-2.5 text-[14px] text-body">
+                      <Check size={17} className="text-primary shrink-0 mt-[2px]" strokeWidth={2.5} />
+                      {t}
+                    </div>
+                  ))}
+                </div>
+                <a href="/boka" className="mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 border border-border rounded-[10px] py-3 px-5 text-heading hover:border-primary hover:text-primary transition-colors">
+                  Boka genomgång <ArrowRight size={15} />
+                </a>
+              </div>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <div className="bg-surface rounded-[10px] border-2 border-primary p-7 h-full flex flex-col relative">
+                <span className="absolute -top-3 left-7 bg-primary text-white text-[11px] font-600 px-2.5 py-1 rounded-full">
+                  Mest vald för synlighet
+                </span>
+                <h3 className="font-heading font-700 text-[18px] text-heading">Tillväxt</h3>
+                <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
+                  {PRICING.tillvaxt}
+                </div>
+                <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
+                <div className="mt-5 flex flex-col gap-2.5 flex-1">
+                  {[
+                    "Allt i Bas",
+                    "Löpande SEO mot sökorden i din bransch",
+                    "Google Ads: uppsättning och förvaltning",
+                    "Nytt innehåll varje månad",
+                    "Månadsrapport med besök och leads",
+                  ].map((t) => (
+                    <div key={t} className="flex items-start gap-2.5 text-[14px] text-body">
+                      <Check size={17} className="text-primary shrink-0 mt-[2px]" strokeWidth={2.5} />
+                      {t}
+                    </div>
+                  ))}
+                </div>
+                <a href="/boka" className="mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 bg-primary text-white rounded-[10px] py-3 px-5 hover:opacity-90 transition-opacity">
+                  Boka genomgång <ArrowRight size={15} />
+                </a>
+              </div>
+            </Reveal>
+          </div>
+          <p className="mt-6 text-center text-[13px] text-muted">
+            E-handel från {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} (0 kr vid drift hos oss) · Annonsbudget tillkommer vid Google Ads
+          </p>
         </div>
       </section>
 
