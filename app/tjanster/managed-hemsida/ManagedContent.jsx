@@ -56,7 +56,7 @@ export default function ManagedContent() {
         badge="Managed hemsida"
         title="Drift, underhåll och förbättringar — utan att du behöver tänka på det."
         subtitle="Jag tar ansvar för din webbplats efter lansering. Uppdateringar, säkerhet, ändringar och löpande förbättringar i ett tydligt månadsabonnemang."
-        bullets={["Från 390 kr/mån", "Svar inom 24h", "Tar över oavsett leverantör"]}
+        bullets={["0 kr start, 1 190 kr/mån", "Svar inom 24h", "Tar över oavsett leverantör"]}
       />
 
       {/* Always included */}

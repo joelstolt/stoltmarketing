@@ -12,11 +12,11 @@ Företaget drivs av Joel Stolt (grundare, digital konsult & AI-specialist) från
 - [SEO](https://www.stoltmarketing.se/tjanster/seo): Sökmotoroptimering med fokus på lokal synlighet i Skåne.
 - [Google Ads](https://www.stoltmarketing.se/tjanster/google-ads): Riktad annonsering för småföretag.
 - [AI & Automation](https://www.stoltmarketing.se/tjanster/ai-automation): AI-chatbotar, automatiserade offerter och smarta arbetsflöden.
-- [Managed hemsida](https://www.stoltmarketing.se/tjanster/managed-hemsida): Drift, underhåll och löpande förbättringar från 390 kr/mån (Start), 790 kr/mån (Bas) eller 1 290 kr/mån (Pro).
+- [Managed hemsida](https://www.stoltmarketing.se/tjanster/managed-hemsida): Drift, underhåll och löpande förbättringar. Ingår i månadspriset 1 190 kr/mån, utan startavgift. Gäller även sajter Stolt Marketing inte byggt själv.
 
 ## Priser
 
-- Managed hemsida: 390–1 290 kr/månad beroende på nivå.
+- Bas: 0 kr i startavgift, 1 190 kr/mån, 12 månaders bindning. Bas + e-handel 1 990 kr/mån. Tillväxt 2 490 kr/mån inkl. SEO och Google Ads. WordPress-migrering 4 900 kr, eller 0 kr med drift i 12 månader.
 - Webbprojekt: fast pris efter kostnadsfri genomgång.
 
 ## Viktiga sidor

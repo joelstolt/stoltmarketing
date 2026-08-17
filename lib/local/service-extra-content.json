@@ -4,13 +4,46 @@
     "deepParagraphs": [
       "Vad är SEO? Kort sagt handlar sökmotoroptimering om att få din sajt att synas högre upp när någon googlar det du säljer. Jag jobbar med tre delar: tekniken under huven, innehållet på sidorna och din auktoritet utåt. När en sökmotor förstår vad din sida handlar om och litar på att den är relevant, klättrar du i resultatet. Jag gissar inte mig fram, utan utgår från riktig sökordsdata: vad folk faktiskt skriver, hur många de är och hur hård konkurrensen är. Det är så jag väljer var insatsen ger mest tillbaka för pengarna.",
       "Teknisk SEO är grunden som allt annat vilar på. Jag ser till att sidorna laddar snabbt, fungerar i mobilen, har rätt rubrikstruktur och kan läsas av Google utan hinder. Sen kommer innehållet: varje viktig sida ska svara på en konkret fråga och rikta in sig på ett sökord som faktiskt har volym. Lokal SEO väver jag in när du vill nå kunder i ett geografiskt område, med Google Företagsprofil och ortsspecifika sidor. Allt görs av mig själv, från start till mål, så att du alltid vet vem som sitter med din sajt och varför.",
-      "Hur lång tid tar SEO? Räkna med tre till sex månader innan du ser tydlig rörelse, och full effekt över ett år, beroende på hur konkurrensutsatt din bransch är. SEO är inte en engångsinsats utan ett arbete som bygger på sig och blir starkare med tiden. Det jag lovar är insyn: du får löpande rapporter där du ser exakt vilka sökord som rör sig, hur trafiken växer och vad jag gör härnäst. Inga floskler, inga svepande löften, bara mätbara resultat och ett fast pris så att du vet vad det kostar från dag ett."
+      "Hur lång tid tar SEO? Räkna med tre till sex månader innan du ser tydlig rörelse, och full effekt över ett år, beroende på hur konkurrensutsatt din bransch är. SEO är inte en engångsinsats utan ett arbete som bygger på sig och blir starkare med tiden. Det jag lovar är insyn: du får löpande rapporter där du ser exakt vilka sökord som rör sig, hur trafiken växer och vad jag gör härnäst. Inga floskler, inga svepande löften, bara mätbara resultat och ett fast pris så att du vet vad det kostar från dag ett.",
+      "Vad gör en SEO-byrå rent konkret varje månad? Hos mig ser det ut så här: jag följer positionerna på de sökord som betyder något för din affär, bygger ut de sidor som är nära att ta sig upp, skriver nya sidor för tjänster och frågor du ännu inte syns på, och håller tekniken ren efter varje ändring på sajten. Du får en rapport där du ser positioner, trafik och vad nästa månad ska ge. Inga hemligheter och ingen jargong.",
+      "Lokal SEO är en egen gren. Kartrutan i Google styrs av närhet, kategori och recensioner, inte av samma faktorer som de vanliga träffarna, och bara en bråkdel av företagen i kartrutan syns också organiskt. Därför jobbar jag med båda ytorna parallellt: Google Företagsprofil med rätt kategori, öppettider och attribut, ett stadigt flöde av äkta recensioner, och sidor som tar de organiska träffarna. I många branscher är tröskeln in i kartrutan förvånansvärt låg, ofta räcker det med ett tjugotal genuina omdömen.",
+      "Det som skiljer sajter som rankar från sajter som inte gör det är oftast inte länkar, utan sidbredd. När jag mätte de bäst rankade företagen i flera tjänstebranscher var antalet tjänstesidor den faktor som starkast följde med antalet sökord de rankade på, medan länkstyrkan i sig spelade förvånansvärt liten roll. En sajt med tio sidor kan inte konkurrera med en som besvarar hundra frågor. Därför börjar min SEO nästan alltid i innehållsplanen, inte i länkjakten.",
+      "AI-söket förändrar inte grunderna, det höjer insatsen. När Google visar ett AI-svar hämtas källorna nästan uteslutande från sidor som redan rankar i topp tio på samma fråga. Det betyder att vanlig, gedigen SEO numera ger dubbel utdelning: den vanliga träffen och chansen att bli citerad i AI-svaret. Sidor med konkreta prisuppgifter och aktuellt innehåll citeras oftare, så den sortens sidor prioriterar jag högt.",
+      "Hur väljer man SEO-byrå? Kräv tre saker. En nollmätning innan arbetet börjar, så att resultat går att bevisa i efterhand. Riktig sökordsdata bakom prioriteringarna, inte magkänsla. Och en tydlig månadsleverans du kan läsa och förstå. Var skeptisk mot garanterade förstaplatser, ingen seriös byrå kan lova det, och mot långa bindningstider som ska ersätta förtroende."
     ],
     "faqs": [
-      { "q": "Vad är skillnaden mellan SEO och Google Ads?", "a": "Google Ads är annonser du betalar för per klick, de syns direkt men försvinner när budgeten tar slut. SEO bygger upp en organisk placering som ligger kvar utan löpande klickkostnad. Funderar du på SEO eller Google Ads? Ofta är svaret båda: Ads ger snabb trafik medan SEO arbetar långsiktigt. Jag hjälper dig välja rätt utifrån din situation." },
-      { "q": "Vad är teknisk SEO och varför spelar det roll?", "a": "Teknisk SEO handlar om allt under huven som påverkar hur Google läser din sajt: laddtid, mobilanpassning, rubrikstruktur, indexering och länkar internt. Spelar det roll? Ja, för även det bästa innehållet rankar dåligt om tekniken hindrar Google från att förstå sidan. Jag börjar alltid här, eftersom det är grunden allt annat vilar på." },
-      { "q": "Kan jag mäta resultatet av SEO?", "a": "Absolut, och det är hela poängen. Du får löpande rapporter där du ser exakt vilka sökord du rankar på, hur placeringarna rör sig och hur den organiska trafiken växer över tid. Jag kopplar det till det som faktiskt betyder något: fler besökare som blir kunder. Inga svepande påståenden, bara siffror du kan följa svart på vitt." },
-      { "q": "Behöver hela min webbplats göras om för SEO?", "a": "Oftast inte. Jag börjar med en genomgång av din nuvarande sajt och åtgärdar det som ger mest effekt: teknik, innehåll och struktur. Ibland räcker det att förbättra befintliga sidor, ibland behövs nya. Är sajten väldigt gammal eller långsam kan en ombyggnad löna sig, men det säger jag rakt ut först, aldrig som standardlösning." }
+      {
+        "q": "Vad är skillnaden mellan SEO och Google Ads?",
+        "a": "Google Ads är annonser du betalar för per klick, de syns direkt men försvinner när budgeten tar slut. SEO bygger upp en organisk placering som ligger kvar utan löpande klickkostnad. Funderar du på SEO eller Google Ads? Ofta är svaret båda: Ads ger snabb trafik medan SEO arbetar långsiktigt. Jag hjälper dig välja rätt utifrån din situation."
+      },
+      {
+        "q": "Vad är teknisk SEO och varför spelar det roll?",
+        "a": "Teknisk SEO handlar om allt under huven som påverkar hur Google läser din sajt: laddtid, mobilanpassning, rubrikstruktur, indexering och länkar internt. Spelar det roll? Ja, för även det bästa innehållet rankar dåligt om tekniken hindrar Google från att förstå sidan. Jag börjar alltid här, eftersom det är grunden allt annat vilar på."
+      },
+      {
+        "q": "Kan jag mäta resultatet av SEO?",
+        "a": "Absolut, och det är hela poängen. Du får löpande rapporter där du ser exakt vilka sökord du rankar på, hur placeringarna rör sig och hur den organiska trafiken växer över tid. Jag kopplar det till det som faktiskt betyder något: fler besökare som blir kunder. Inga svepande påståenden, bara siffror du kan följa svart på vitt."
+      },
+      {
+        "q": "Behöver hela min webbplats göras om för SEO?",
+        "a": "Oftast inte. Jag börjar med en genomgång av din nuvarande sajt och åtgärdar det som ger mest effekt: teknik, innehåll och struktur. Ibland räcker det att förbättra befintliga sidor, ibland behövs nya. Är sajten väldigt gammal eller långsam kan en ombyggnad löna sig, men det säger jag rakt ut först, aldrig som standardlösning."
+      },
+      {
+        "q": "Vad kostar SEO per månad?",
+        "a": "Hos mig ingår löpande SEO i Tillväxt för 2 490 kr/mån, tillsammans med Google Ads och nytt innehåll. En engångsaudit med åtgärdslista kostar 4 900 kr. På den svenska marknaden i övrigt ligger löpande SEO oftast mellan 5 000 och 30 000 kr i månaden beroende på ambitionsnivå och konkurrens."
+      },
+      {
+        "q": "Hur väljer jag rätt SEO-byrå?",
+        "a": "Titta på tre saker: att de mäter ditt nuläge innan de börjar, att de visar vilken data de bygger prioriteringarna på, och att du förstår månadsrapporten. Undvik garantier om förstaplatser och upplägg där du inte äger din egen sajt och data om ni skiljs åt."
+      },
+      {
+        "q": "Fungerar SEO för små företag?",
+        "a": "Ja, ofta bättre än för stora. Lokala sökningar och nischade tjänsteord har lägre konkurrens, och kartrutan går att ta med ett rimligt antal äkta recensioner. Ett litet företag med rätt sidor kan slå betydligt större konkurrenter på de sökningar som faktiskt ger kunder."
+      },
+      {
+        "q": "Vad är AI-SEO och behöver jag det?",
+        "a": "AI-SEO handlar om att synas när kunder frågar ChatGPT eller får Googles AI-svar. Eftersom AI-svaren nästan alltid citerar sidor som redan rankar organiskt är grunden samma som vanlig SEO, plus innehåll med konkreta svar och priser. Jag mäter och bygger det som en del av SEO-arbetet, läs mer under AI-synlighet."
+      }
     ]
   },
   "webbutveckling": {
@@ -18,13 +51,40 @@
     "deepParagraphs": [
       "När jag bygger en hemsida åt ett företag handlar allt om en sak: att den ska förvandla besökare till kunder. En snygg sajt som ingen hittar eller som laddar långsamt gör ingen nytta. Därför utgår jag alltid från vad just dina kunder söker efter och hur de fattar beslut. Jag är en webbutvecklare som gör allt själv – från första skiss till färdig sajt – vilket gör att du slipper möten med fem olika personer. Du pratar med mig, och jag bygger. Det håller både tempot uppe och priset nere.",
       "Som webbyrå jobbar jag med modern teknik och bygger ofta i egen kod istället för tunga färdiga mallar. Resultatet blir en snabb hemsida som laddar på mindre än en sekund, klarar Googles krav och känns proffsig på både mobil och dator. All design är responsiv från start, så sajten ser lika bra ut i fickan som på en stor skärm. Jag sätter ett fast pris innan vi börjar, så att du vet exakt vad det kostar att bygga en hemsida. Inga timdebiteringar som skenar och inga överraskningar på fakturan när projektet är klart.",
-      "Jag sitter i Hässleholm men jobbar med företag i hela Sverige – det mesta sker ändå digitalt via videosamtal, mejl och delade länkar. Oavsett om du behöver en enkel presentationssajt, en sida som drar in leads eller en komplett e-handel så anpassar jag bygget efter ditt mål och din budget. Du får en hemsida som är byggd för att synas i Google, ladda snabbt och vara enkel att växa med när företaget växer. Vill du veta vad en hemsida skulle kosta för just dig? Hör av dig så tar vi ett förutsättningslöst snack."
+      "Jag sitter i Hässleholm men jobbar med företag i hela Sverige – det mesta sker ändå digitalt via videosamtal, mejl och delade länkar. Oavsett om du behöver en enkel presentationssajt, en sida som drar in leads eller en komplett e-handel så anpassar jag bygget efter ditt mål och din budget. Du får en hemsida som är byggd för att synas i Google, ladda snabbt och vara enkel att växa med när företaget växer. Vill du veta vad en hemsida skulle kosta för just dig? Hör av dig så tar vi ett förutsättningslöst snack.",
+      "Bra webbdesign är inte samma sak som snygg design. En sida kan vinna pris och ändå inte generera en enda förfrågan. När jag designar utgår jag från vad besökaren kom för att göra: hitta priset, se bevis på att ni kan er sak och ta kontakt utan friktion. Färg, typografi och rörelse är verktyg för det, inte mål i sig. Snabbheten är också design, för en sida som laddar långsamt tappar besökare innan den ens fått visa sig.",
+      "Så går ett bygge till hos mig: vi börjar med en genomgång av mål, kunder och innehåll, sedan får du en skiss och ett fast pris. När designen är godkänd bygger jag, fyller på med innehåll och optimerar för sök. Vid lansering pekas domänen om utan avbrott, och därefter mäter vi och justerar. En normal företagssajt tar två till fyra veckor från start till lansering.",
+      "Priset är öppet: 0 kr i startavgift och 1 190 kr i månaden, där drift, säkerhet och löpande ändringar redan ingår. Jämför gärna med marknaden, där en byråbyggd sajt oftast kostar 30 000 till 100 000 kr i engångsavgift plus löpande drift. Upplägget gör att jag bara tjänar på att din sajt fortsätter leverera, inte på att fakturera timmar för varje liten ändring."
     ],
     "faqs": [
-      { "q": "Vad kostar en hemsida hos dig?", "a": "Det beror på omfattningen, men jag jobbar alltid med fast pris som vi kommer överens om innan start. En enklare företagssajt landar lägre än en större sida med många funktioner eller e-handel. Du får en tydlig offert där allt ingår, så du slipper rörliga timkostnader och oväntade tillägg. Hör av dig med dina behov så räknar jag på det." },
-      { "q": "Bygger du responsiva hemsidor som funkar i mobilen?", "a": "Ja, all design är responsiv från början. Eftersom majoriteten av alla besök idag sker på mobil bygger jag sajten så att den känns lika snabb och tydlig i telefonen som på datorn. Knappar, text och bilder anpassar sig automatiskt efter skärmen. Google premierar dessutom mobilvänliga sajter, så det är både bra för dina besökare och för din ranking." },
-      { "q": "Kan du bygga e-handel där jag säljer produkter?", "a": "Absolut. Jag bygger e-handel anpassad efter hur många produkter du har och hur du vill hantera beställningar och betalningar. För en mindre butik kan en smidig lösning räcka långt, medan ett större sortiment kräver mer struktur. Vi går igenom dina behov tillsammans så att du får en webshop som är enkel att sköta och snabb för kunderna att handla i." },
-      { "q": "Varför är en snabb hemsida så viktig?", "a": "En långsam sajt tappar besökare – många klickar bort redan efter ett par sekunders väntan. Snabbhet påverkar dessutom direkt hur högt du rankar i Google. Därför bygger jag sajter som laddar på under en sekund genom att hålla koden lätt och optimera bilder. Det ger fler kvarvarande besökare, bättre ranking och fler affärer – utan att du behöver göra något extra." }
+      {
+        "q": "Vad kostar en hemsida hos dig?",
+        "a": "Det beror på omfattningen, men jag jobbar alltid med fast pris som vi kommer överens om innan start. En enklare företagssajt landar lägre än en större sida med många funktioner eller e-handel. Du får en tydlig offert där allt ingår, så du slipper rörliga timkostnader och oväntade tillägg. Hör av dig med dina behov så räknar jag på det."
+      },
+      {
+        "q": "Bygger du responsiva hemsidor som funkar i mobilen?",
+        "a": "Ja, all design är responsiv från början. Eftersom majoriteten av alla besök idag sker på mobil bygger jag sajten så att den känns lika snabb och tydlig i telefonen som på datorn. Knappar, text och bilder anpassar sig automatiskt efter skärmen. Google premierar dessutom mobilvänliga sajter, så det är både bra för dina besökare och för din ranking."
+      },
+      {
+        "q": "Kan du bygga e-handel där jag säljer produkter?",
+        "a": "Absolut. Jag bygger e-handel anpassad efter hur många produkter du har och hur du vill hantera beställningar och betalningar. För en mindre butik kan en smidig lösning räcka långt, medan ett större sortiment kräver mer struktur. Vi går igenom dina behov tillsammans så att du får en webshop som är enkel att sköta och snabb för kunderna att handla i."
+      },
+      {
+        "q": "Varför är en snabb hemsida så viktig?",
+        "a": "En långsam sajt tappar besökare – många klickar bort redan efter ett par sekunders väntan. Snabbhet påverkar dessutom direkt hur högt du rankar i Google. Därför bygger jag sajter som laddar på under en sekund genom att hålla koden lätt och optimera bilder. Det ger fler kvarvarande besökare, bättre ranking och fler affärer – utan att du behöver göra något extra."
+      },
+      {
+        "q": "Vad kostar webbdesign hos dig?",
+        "a": "0 kr i startavgift och 1 190 kr/mån med 12 månaders bindning, därefter månadsvis. I priset ingår design, bygge, drift, säkerhet och löpande innehållsändringar. Behöver du e-handel är priset 1 990 kr/mån."
+      },
+      {
+        "q": "Får jag se en design innan jag bestämmer mig?",
+        "a": "Ja. Efter första genomgången får du en skiss på startsidan och ett fast pris, utan kostnad och utan förpliktelse. Då ser du riktningen innan du säger ja."
+      },
+      {
+        "q": "Hur lång tid tar det att få en ny hemsida?",
+        "a": "En vanlig företagssajt tar två till fyra veckor från genomgång till lansering. E-handel och större byggen tar en till tre månader. Du får en tidplan i förslaget och vet alltid vad nästa steg är."
+      }
     ]
   },
   "google-ads": {
@@ -32,13 +92,45 @@
     "deepParagraphs": [
       "När jag bygger Google Ads-konton börjar jag aldrig i annonstexten, jag börjar i din affär. Vad är en kund värd, vilka tjänster tjänar du mest på och var sitter flaskhalsen i säljet? Utan de svaren blir sökordsannonsering bara dyra klick. Jag spårar inte trafik för trafikens skull, jag spårar samtal, formulär och köp och kopplar dem tillbaka till exakt vilket sökord som drev dem. Det betyder att vi snabbt kan stänga av det som bränner budget och skala det som faktiskt fyller din kalender med rätt sorts kunder.",
       "Som fristående konsult i Hässleholm jobbar jag med kunder i hela Sverige, och du pratar alltid med mig, aldrig med en projektledare som mellanhand. Jag tar ett transparent fast arvode för arbetet och hela annonsbudgeten går oavkortat till Google, du ser varenda krona i ditt eget konto. Inga dolda påslag, inga luddiga byråpaket. Du äger kontot, datan och relationerna. Skulle vi någon gång sluta jobba ihop tar du med dig allt, vilket är precis så det borde fungera men sällan gör hos större byråer.",
-      "Datadrivet betyder konkret att jag styr på ROAS och kostnad per affär, inte på klickpris eller imponerande men tomma volymsiffror. Jag testar sökordsstruktur, annonsvarianter och landningssidor löpande, lägger till negativa sökord varje vecka och låter Performance Max och remarketing göra jobbet där de faktiskt presterar. Du får tydliga rapporter på vanlig svenska som visar vad pengarna gav tillbaka, inte 40 sidor diagram du ändå inte hinner läsa. Målet är enkelt: varje hundralapp in i Google ska ge mer än en hundralapp tillbaka, mätbart och varje månad."
+      "Datadrivet betyder konkret att jag styr på ROAS och kostnad per affär, inte på klickpris eller imponerande men tomma volymsiffror. Jag testar sökordsstruktur, annonsvarianter och landningssidor löpande, lägger till negativa sökord varje vecka och låter Performance Max och remarketing göra jobbet där de faktiskt presterar. Du får tydliga rapporter på vanlig svenska som visar vad pengarna gav tillbaka, inte 40 sidor diagram du ändå inte hinner läsa. Målet är enkelt: varje hundralapp in i Google ska ge mer än en hundralapp tillbaka, mätbart och varje månad.",
+      "Sökordsvalet avgör mer än budgivningen. Jag börjar smalt med exakta matchningar på de ord som signalerar köp, bygger en negativlista som stoppar allt som luktar gratis, jobb eller gör-det-själv, och breddar först när datan visar vilka ord som faktiskt genererar förfrågningar. Ett konto som startar brett bränner budgeten på nyfikna i stället för på kunder.",
+      "Innan ett enda klick köps räknar jag baklänges från din affär: vad är en ny kund värd, vilken andel av besökarna blir förfrågningar, och vad får ett klick då högst kosta? Det talet styr sedan vilka sökord vi över huvud taget bjuder på. Ord som är för dyra för kalkylen väljs bort hur lockande de än ser ut, för en kampanj som inte går ihop per klick går inte ihop alls.",
+      "Landningssidan är halva kampanjen. En annons som leder till startsidan tappar besökaren i tre klick av navigation. Jag skickar i stället trafiken till en sida byggd för exakt det annonsen lovar, med priset synligt, ett kort formulär och telefonnummer högst upp. Ofta är det där den stora förbättringen finns, inte i annonstexten.",
+      "Mätningen sätts upp innan kampanjen tänds, aldrig efteråt. Konverteringar räknas när formuläret faktiskt skickats eller samtalet faktiskt ringts, inte när någon sett en sida. Sedan styr jag budgeten veckovis mot kostnad per förfrågan och pausar utan sentimentalitet det som inte levererar. Du ser samma siffror som jag i varje rapport."
     ],
     "faqs": [
-      { "q": "Vad är skillnaden på Google Ads och SEO, och vilket bör jag välja?", "a": "Google Ads ger synlighet samma dag du startar, medan SEO bygger gratis trafik över månader. De krockar inte, de förstärker varandra. Vill du ha leads snabbt börjar vi med annonser, sedan låter vi SEO ta över de sökord där det är lönsammare på sikt. Jag hjälper dig prioritera utifrån din budget och hur bråttom du har." },
-      { "q": "Vad ligger ett normalt klickpris (CPC) på i Sverige?", "a": "Det varierar enormt mellan branscher, från någon krona upp till över hundra kronor per klick i hårt konkurrensutsatta nischer som juridik eller B2B. Men klickpriset i sig är ointressant, det som räknas är vad ett klick kostar i förhållande till vad en kund är värd. Ett dyrt klick som ofta blir affär slår alltid ett billigt klick som aldrig konverterar." },
-      { "q": "Vad är Performance Max och passar det mitt företag?", "a": "Performance Max är Googles AI-drivna kampanjtyp som visar annonser över Sök, Maps, YouTube, Gmail och Displaynätverket samtidigt. Det kan ge fin räckvidd och låg kostnad per affär, men kräver bra konverteringsdata och tydlig styrning för att inte slösa budget. Jag använder det selektivt, ofta som komplement till vanliga sökkampanjer, när jag ser att din data är mogen nog att lita på." },
-      { "q": "Hur fungerar remarketing och är det värt pengarna?", "a": "Remarketing visar annonser för personer som redan besökt din sajt men inte hört av sig. Eftersom de redan känner till dig är kostnaden per affär oftast mycket lägre än för ny trafik. Det är sällan en stor budgetpost, men ofta en av de mest lönsamma. För de flesta av mina kunder är det självklart att fånga upp besökare som annars hade glömt bort dig." }
+      {
+        "q": "Vad är skillnaden på Google Ads och SEO, och vilket bör jag välja?",
+        "a": "Google Ads ger synlighet samma dag du startar, medan SEO bygger gratis trafik över månader. De krockar inte, de förstärker varandra. Vill du ha leads snabbt börjar vi med annonser, sedan låter vi SEO ta över de sökord där det är lönsammare på sikt. Jag hjälper dig prioritera utifrån din budget och hur bråttom du har."
+      },
+      {
+        "q": "Vad ligger ett normalt klickpris (CPC) på i Sverige?",
+        "a": "Det varierar enormt mellan branscher, från någon krona upp till över hundra kronor per klick i hårt konkurrensutsatta nischer som juridik eller B2B. Men klickpriset i sig är ointressant, det som räknas är vad ett klick kostar i förhållande till vad en kund är värd. Ett dyrt klick som ofta blir affär slår alltid ett billigt klick som aldrig konverterar."
+      },
+      {
+        "q": "Vad är Performance Max och passar det mitt företag?",
+        "a": "Performance Max är Googles AI-drivna kampanjtyp som visar annonser över Sök, Maps, YouTube, Gmail och Displaynätverket samtidigt. Det kan ge fin räckvidd och låg kostnad per affär, men kräver bra konverteringsdata och tydlig styrning för att inte slösa budget. Jag använder det selektivt, ofta som komplement till vanliga sökkampanjer, när jag ser att din data är mogen nog att lita på."
+      },
+      {
+        "q": "Hur fungerar remarketing och är det värt pengarna?",
+        "a": "Remarketing visar annonser för personer som redan besökt din sajt men inte hört av sig. Eftersom de redan känner till dig är kostnaden per affär oftast mycket lägre än för ny trafik. Det är sällan en stor budgetpost, men ofta en av de mest lönsamma. För de flesta av mina kunder är det självklart att fånga upp besökare som annars hade glömt bort dig."
+      },
+      {
+        "q": "Vilken budget behöver jag för att börja med Google Ads?",
+        "a": "För ett lokalt tjänsteföretag räcker ofta 3 000 till 6 000 kr i månaden i annonsbudget för att få tillräckligt med data och ett stadigt flöde av förfrågningar. Viktigare än storleken är att budgeten får verka i minst sex veckor så att kampanjen hinner trimmas in innan den utvärderas."
+      },
+      {
+        "q": "Varför ska annonsen inte leda till startsidan?",
+        "a": "Startsidan är byggd för att presentera hela företaget, inte för att ta emot en specifik förfrågan. En dedikerad landningssida som svarar exakt på det annonsen lovade, med pris och formulär direkt, konverterar nästan alltid bättre och sänker därmed kostnaden per kund."
+      },
+      {
+        "q": "Hur snabbt ger Google Ads resultat?",
+        "a": "Trafiken kommer samma dag som kampanjen tänds. Räkna ändå med fyra till sex veckor innan siffrorna är rättvisande: systemet behöver konverteringar att lära sig på och jag behöver data för att rensa bort sökord som klickar utan att köpa."
+      },
+      {
+        "q": "Vad kostar det att låta dig sköta min annonsering?",
+        "a": "Hanteringen ingår i Tillväxt, 2 490 kr/mån, tillsammans med SEO och innehåll. Annonsbudgeten till Google tillkommer och bestämmer du själv. Inga procentpåslag på mediabudgeten och ingen bindning till stora spendnivåer."
+      }
     ]
   },
   "ai-automation": {
@@ -49,24 +141,104 @@
       "Jag sitter i Hässleholm men jobbar med företag i hela Sverige — allt sker digitalt, så avståndet spelar ingen roll. Det som däremot spelar roll är att du pratar med samma person hela vägen, från första kartläggning till att flödet är igång och du faktiskt sparar tid. Jag lovar inte mirakel och säljer ingen färdig produkt du tvingas anpassa dig till. I stället tittar vi tillsammans på var det klämmer mest, räknar på vad tiden är värd, och bygger något som betalar sig. Hör av dig så tar vi ett förutsättningslöst snack om din vardag."
     ],
     "faqs": [
-      { "q": "Hur lång tid tar det att komma igång med AI-automation?", "a": "Ett första enkelt flöde är ofta igång inom en till två veckor. Vi börjar med att kartlägga en konkret uppgift som tar mycket tid, bygger automationen och testar den skarpt. Större upplägg med flera kopplade system tar längre tid, men jag jobbar alltid stegvis så att du ser nytta tidigt i stället för att vänta på en stor leverans." },
-      { "q": "Kan AI-automation kopplas till systemen jag redan använder?", "a": "Ja, det är själva poängen. Med n8n och Zapier kopplar jag ihop verktyg du redan har — mejl, CRM, kalender, bokföring, kalkylark och tusentals andra tjänster. Du behöver alltså inte byta system eller lära om. Vi bygger broar mellan det som redan finns, så att information flyter automatiskt i stället för att du flyttar den manuellt." },
-      { "q": "Vad händer om en automation slutar fungera eller behöver ändras?", "a": "Du står aldrig ensam. Jag bygger flöden som är lätta att följa och felsöka, och du äger lösningen fullt ut. Behöver något justeras när verksamheten förändras hjälper jag till, antingen löpande eller vid behov. Eftersom vi bygger stegvis och testar ordentligt blir det sällan dramatik — och om något krånglar ser du var det stannat och vi fixar det." },
-      { "q": "Passar AI-automation även för mindre företag?", "a": "Absolut, ofta är det där effekten blir störst. I ett mindre företag gör varje sparad timme stor skillnad eftersom du bär många roller själv. Du behöver ingen IT-avdelning eller stor budget — vi börjar med en enda uppgift som stjäl tid, automatiserar den och bygger vidare därifrån. Jag anpassar alltid omfattningen efter din verksamhet och vad som faktiskt lönar sig." }
+      {
+        "q": "Hur lång tid tar det att komma igång med AI-automation?",
+        "a": "Ett första enkelt flöde är ofta igång inom en till två veckor. Vi börjar med att kartlägga en konkret uppgift som tar mycket tid, bygger automationen och testar den skarpt. Större upplägg med flera kopplade system tar längre tid, men jag jobbar alltid stegvis så att du ser nytta tidigt i stället för att vänta på en stor leverans."
+      },
+      {
+        "q": "Kan AI-automation kopplas till systemen jag redan använder?",
+        "a": "Ja, det är själva poängen. Med n8n och Zapier kopplar jag ihop verktyg du redan har — mejl, CRM, kalender, bokföring, kalkylark och tusentals andra tjänster. Du behöver alltså inte byta system eller lära om. Vi bygger broar mellan det som redan finns, så att information flyter automatiskt i stället för att du flyttar den manuellt."
+      },
+      {
+        "q": "Vad händer om en automation slutar fungera eller behöver ändras?",
+        "a": "Du står aldrig ensam. Jag bygger flöden som är lätta att följa och felsöka, och du äger lösningen fullt ut. Behöver något justeras när verksamheten förändras hjälper jag till, antingen löpande eller vid behov. Eftersom vi bygger stegvis och testar ordentligt blir det sällan dramatik — och om något krånglar ser du var det stannat och vi fixar det."
+      },
+      {
+        "q": "Passar AI-automation även för mindre företag?",
+        "a": "Absolut, ofta är det där effekten blir störst. I ett mindre företag gör varje sparad timme stor skillnad eftersom du bär många roller själv. Du behöver ingen IT-avdelning eller stor budget — vi börjar med en enda uppgift som stjäl tid, automatiserar den och bygger vidare därifrån. Jag anpassar alltid omfattningen efter din verksamhet och vad som faktiskt lönar sig."
+      }
     ]
   },
   "managed-hemsida": {
     "deepHeading": "Din hemsida — skött, säker och uppdaterad varje månad",
     "deepParagraphs": [
-      "En hemsida är inte klar bara för att den är lanserad. Den behöver löpande drift, säkerhetsuppdateringar och tillsyn för att fortsätta fungera, ladda snabbt och inte plötsligt ligga nere. Med min managed hemsida tar jag, Joel, hand om allt det där åt dig till ett fast månadspris från 390 kr. Du slipper teknikstrul, övervakning och oroliga kvällar när något krånglar. Jag sköter hosting, underhåll av hemsidan och support personligen — så att du kan lägga din tid på att driva företaget i stället för att felsöka plugins och servrar.",
+      "En hemsida är inte klar bara för att den är lanserad. Den behöver löpande drift, säkerhetsuppdateringar och tillsyn för att fortsätta fungera, ladda snabbt och inte plötsligt ligga nere. Med min managed hemsida tar jag, Joel, hand om allt det där åt dig för 1 190 kr i månaden, utan startavgift. Du slipper teknikstrul, övervakning och oroliga kvällar när något krånglar. Jag sköter hosting, underhåll av hemsidan och support personligen — så att du kan lägga din tid på att driva företaget i stället för att felsöka plugins och servrar.",
       "Drift av hemsida handlar om mer än ett webbhotell för företag. Jag håller plattformen uppdaterad, gör regelbunden backup, bevakar säkerheten och åtgärdar fel innan de hinner bli ett problem för dina besökare. Körs sajten på WordPress ser jag till att kärna, teman och tillägg alltid är aktuella, eftersom det är där de flesta säkerhetshålen uppstår. Skulle något ändå hända finns en aktuell säkerhetskopia redo att rulla tillbaka. Du har en enda kontakt — mig — i stället för en supportkö, och jag svarar som en människa, inte ett ärendenummer.",
       "Jag jobbar från Hässleholm men sköter hemsidor för företag i hela Sverige, helt på distans. Det spelar ingen roll om du sitter i Stockholm, Göteborg, Malmö eller på en mindre ort — drift, säkerhet och support fungerar precis lika bra ändå. Upplägget passar småföretagare och egenföretagare som vill ha en trygg, snabb och uppdaterad hemsida utan att anställa en webbansvarig eller betala dyra timpriser. Fast pris varje månad, inga överraskningar på fakturan och allt arbete utfört av mig. Vill du veta vad just din sajt behöver är det bara att höra av dig."
     ],
     "faqs": [
-      { "q": "Vad ingår i webbunderhåll varje månad?", "a": "I underhållet ingår löpande uppdateringar av plattform, teman och tillägg, regelbunden backup, säkerhetsbevakning och övervakning av att sajten är uppe och laddar snabbt. Jag åtgärdar fel som dyker upp och gör mindre justeringar av innehåll. Allt sköts av mig personligen, utan supportkö, till ett fast månadspris." },
-      { "q": "Vad kostar en hemsida i månaden hos dig?", "a": "Min managed hemsida börjar på 390 kr per månad och inkluderar drift, hosting, underhåll, säkerhet, backup och support. Priset är fast så att du vet exakt vad det kostar varje månad, utan dolda avgifter eller timdebitering. Behöver du mer omfattande arbete sätter vi ihop ett upplägg som passar din sajt och budget." },
-      { "q": "Hur sköter du säkerhet och backup på en WordPress-sida?", "a": "Jag håller WordPress-kärnan, temat och alla tillägg uppdaterade eftersom det stänger de vanligaste säkerhetshålen. Dessutom bevakar jag sajten löpande och tar regelbunden backup som lagras säkert. Skulle något gå fel, efter en uppdatering eller ett angrepp, kan jag snabbt återställa en fungerande version så att din hemsida är igång igen." },
-      { "q": "Kan du sköta drift av min hemsida om jag inte sitter i Hässleholm?", "a": "Absolut. Jag utgår från Hässleholm men sköter drift, underhåll och support för företag i hela Sverige helt på distans. Var du än har ditt företag fungerar allt precis lika bra — vi håller kontakten via mejl, telefon eller videomöte, och jag tar hand om det tekniska i bakgrunden så att du slipper tänka på det." }
+      {
+        "q": "Vad ingår i webbunderhåll varje månad?",
+        "a": "I underhållet ingår löpande uppdateringar av plattform, teman och tillägg, regelbunden backup, säkerhetsbevakning och övervakning av att sajten är uppe och laddar snabbt. Jag åtgärdar fel som dyker upp och gör mindre justeringar av innehåll. Allt sköts av mig personligen, utan supportkö, till ett fast månadspris."
+      },
+      {
+        "q": "Vad kostar en hemsida i månaden hos dig?",
+        "a": "1 190 kr per månad utan startavgift, och då ingår sajten, drift, hosting, underhåll, säkerhet, backup, innehållsändringar och support. Priset är fast så att du vet exakt vad det kostar varje månad, utan dolda avgifter eller timdebitering. Vill du ha löpande SEO och Google Ads också kostar Tillväxt 2 490 kr/mån."
+      },
+      {
+        "q": "Hur sköter du säkerhet och backup på en WordPress-sida?",
+        "a": "Jag håller WordPress-kärnan, temat och alla tillägg uppdaterade eftersom det stänger de vanligaste säkerhetshålen. Dessutom bevakar jag sajten löpande och tar regelbunden backup som lagras säkert. Skulle något gå fel, efter en uppdatering eller ett angrepp, kan jag snabbt återställa en fungerande version så att din hemsida är igång igen."
+      },
+      {
+        "q": "Kan du sköta drift av min hemsida om jag inte sitter i Hässleholm?",
+        "a": "Absolut. Jag utgår från Hässleholm men sköter drift, underhåll och support för företag i hela Sverige helt på distans. Var du än har ditt företag fungerar allt precis lika bra — vi håller kontakten via mejl, telefon eller videomöte, och jag tar hand om det tekniska i bakgrunden så att du slipper tänka på det."
+      }
+    ]
+  },
+  "facebook-annonsering": {
+    "deepHeading": "Så får du Meta-annonser att betala sig",
+    "deepParagraphs": [
+      "Facebook och Instagram är fortfarande den billigaste vägen till stora, lokala målgrupper, men bara om kampanjen optimeras mot rätt sak. Metas system gör exakt det du ber om: ber du om visningar får du visningar, ber du om interaktion får du tummar. Jag ber om förfrågningar. Det kräver att konverteringsspårningen är korrekt uppsatt från dag ett, så att algoritmen lär sig på riktiga leads i stället för på passiva skrollare.",
+      "Målgruppsarbetet börjar i din kundlista, inte i Metas intressekategorier. De bästa kampanjerna byggs på lookalikes av dina faktiska kunder, kompletterat med geografi och ålder. Sedan får systemet utrymme att optimera inom ramarna. För ett lokalt tjänsteföretag är en radie runt verksamhetsorten plus ett välriktat budskap oftast starkare än avancerade intresselek.",
+      "Det kreativa slits fortare än folk tror. En annons som fungerar i vecka ett är ofta trött i vecka fem, målgruppen har helt enkelt sett den. Därför testar jag alltid flera varianter parallellt, i regel stillbild mot kort video mot ren textannons, och byter ut det som tappar innan kostnaden per lead hinner sticka iväg. Du behöver inte producera reklamfilm, mobilfilmade klipp från verksamheten slår ofta studiomaterial.",
+      "De tre vanligaste misstagen jag får städa upp efter: boostade inlägg i stället för riktiga kampanjer, målgrupper så breda att budgeten försvinner i bruset, och kampanjer som stängs av efter två veckor precis när inlärningen är klar. Meta-annonsering belönar tålamod och struktur, inte panikknappar.",
+      "Facebook-annonsering och Google Ads gör olika jobb. Google fångar den som redan letar efter tjänsten, Meta skapar efterfrågan hos den som inte börjat leta än. För de flesta företag är rätt svar en kombination: Google tar botten av tratten, Meta fyller på toppen. Jag sköter båda och flyttar budget dit varje krona ger mest."
+    ],
+    "faqs": [
+      {
+        "q": "Hur stor annonsbudget behöver jag på Meta?",
+        "a": "För ett lokalt företag är 3 000 till 6 000 kr i månaden en rimlig start, tillräckligt för att systemet ska få data att lära sig på. Under det blir inlärningen så långsam att det är svårt att dra slutsatser. Budgeten kan sedan skalas när kostnaden per lead är bevisad."
+      },
+      {
+        "q": "Fungerar Facebook-annonsering för B2B?",
+        "a": "Ja, oftare än ryktet säger. Beslutsfattare skrollar också på kvällarna, och kostnaden per visning är en bråkdel av LinkedIns. För nischad B2B med små målgrupper kan LinkedIn ändå vara rätt komplement, det avgör vi utifrån vem din kund faktiskt är."
+      },
+      {
+        "q": "Vad är en bra kostnad per lead?",
+        "a": "Det beror helt på vad en kund är värd för dig, och det är där vi börjar räkna. För lokala tjänsteföretag landar en frisk Meta-kampanj ofta på 100 till 400 kr per förfrågan. Viktigast är att talet räknas mot ditt kundvärde, inte mot en generell branschsiffra."
+      },
+      {
+        "q": "Måste jag ta fram bilder och filmer själv?",
+        "a": "Nej. Jag bygger annonsmaterialet utifrån det som finns: foton från verksamheten, kundomdömen och enkla mobilklipp. Äkta material från vardagen presterar i regel bättre än polerad reklam, så tröskeln är lägre än de flesta tror."
+      }
+    ]
+  },
+  "ai-synlighet": {
+    "deepHeading": "Så fungerar AI-sök i praktiken",
+    "deepParagraphs": [
+      "När Google visar ett AI-svar eller när någon frågar ChatGPT om leverantörer hämtas underlaget från vanliga webbsidor. Jag har mätt hur källorna väljs, och mönstret är tydligt: den stora majoriteten av alla citat går till sidor som redan rankar i topp tio organiskt på samma fråga. Det finns alltså ingen separat AI-optimering som ersätter SEO. Det som finns är sidor som är byggda så att AI-motorerna kan och vill använda dem.",
+      "Två saker skiljer sidorna som citeras från sidorna som rankar utan att citeras: konkreta prisspann och aktualitet. Sidor som anger pris från och till, och sidor som visar att innehållet gäller i år, plockas oftare in i AI-svaren. Däremot syns ingen mätbar effekt av FAQ-schema, trots att det ofta säljs som AI-optimering. Jag lägger arbetet där datan visar effekt, inte där myterna pekar.",
+      "Tekniken sätter taket. En sajt som renderar sitt innehåll så att AI-motorernas läsare inte ser det är osynlig hur bra innehållet än är. I ett av mina kundcase var halva innehållet oläsbart för AI-assistenter innan ombyggnaden, efteråt gick sajten från 50 till 100 av 100 i AI-läsbarhet med full pott i varje kategori. Den typen av tekniska genomgång är alltid första steget.",
+      "Google visar i dag AI-svar och kartrutan på olika sökningar, i min mätning aldrig båda samtidigt. Prisfrågor och kunskapsfrågor får AI-svar, lokala köpsökningar får kartrutan. Det gör strategin enkel att rikta: recensioner och företagsprofilen vinner den ena ytan, innehåll och teknisk läsbarhet den andra. Jag kartlägger vilka av dina viktiga sökningar som tillhör vilken yta och bygger därefter.",
+      "Arbetet löper månadsvis: nollmätning av var du nämns i dag, teknisk genomgång av AI-läsbarheten, innehåll som besvarar de frågor dina kunder faktiskt ställer, och återkommande mätning så att du ser utvecklingen mot konkurrenterna. Volymerna i AI-sök är fortfarande små, men de växer, och positionerna som byggs nu blir dyra att ta ikapp senare."
+    ],
+    "faqs": [
+      {
+        "q": "Nämns företag verkligen i ChatGPT-svar?",
+        "a": "Ja, framför allt när frågan gäller val av leverantör eller vad tjänster kostar. Vilka som nämns styrs av vad som går att läsa och verifiera på webben, och där väger sidor som rankar organiskt tyngst. Att synas i AI-svar är därför en förlängning av att synas i sök."
+      },
+      {
+        "q": "Vad betyder GEO och AEO?",
+        "a": "Generative Engine Optimization och Answer Engine Optimization, två namn på samma sak: att optimera för AI-genererade svar i stället för klassiska sökresultat. Jag använder hellre AI-SEO, för i praktiken bygger arbetet på samma grund som vanlig sökmotoroptimering."
+      },
+      {
+        "q": "Hjälper FAQ-schema mig att synas i AI-svar?",
+        "a": "Enligt min egen mätning: nej. Sidorna som citerades i AI-svar hade inte FAQ-schema oftare än sidorna som inte citerades. Det som faktiskt skilde var konkreta prisspann och aktuellt innehåll. Schema har andra poänger, men sälj det inte till dig som AI-magi."
+      },
+      {
+        "q": "Kan du garantera att AI nämner mitt företag?",
+        "a": "Nej, och ingen seriös leverantör kan det, AI-svaren ägs av Google och OpenAI, inte av oss. Det jag kan är att mäta ditt nuläge, bygga de förutsättningar som bevisligen ökar chansen och visa utvecklingen svart på vitt över tid."
+      }
     ]
   }
 }

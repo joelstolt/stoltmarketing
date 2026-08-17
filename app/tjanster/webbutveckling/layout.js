@@ -9,13 +9,13 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Webbutveckling Hässleholm — Moderna hemsidor för företag",
+  title: "Webbdesign & webbutveckling | Hemsida med fast månadspris",
   description:
-    "Webbutveckling i Hässleholm — moderna hemsidor och e-handel i Next.js, React och WordPress. Snabba, responsiva sajter från 3 900 kr. Boka kostnadsfri genomgång.",
+    "Webbutveckling i Hässleholm. Moderna hemsidor och e-handel i Next.js, React och WordPress. 0 kr i startavgift, 1 190 kr/mån. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://www.stoltmarketing.se/tjanster/webbutveckling" },
   openGraph: {
-    title: "Webbutveckling Hässleholm — Moderna hemsidor för företag",
-    description: "Webbutveckling för företag i Hässleholm. Next.js, React, WordPress. Från 3 900 kr.",
+    title: "Webbdesign & webbutveckling | Hemsida med fast månadspris",
+    description: "Webbdesign och webbutveckling för företag i hela Sverige. Next.js, React, WordPress. 0 kr start, 1 190 kr/mån.",
     url: "https://www.stoltmarketing.se/tjanster/webbutveckling",
   },
 };
@@ -25,7 +25,7 @@ const serviceLd = {
   "@type": "Service",
   "name": "Webbutveckling & hemsidor",
   "serviceType": "Webbutveckling",
-  "description": "Webbutveckling i Hässleholm — moderna hemsidor och e-handelslösningar i Next.js, React, WordPress. Snabba, responsiva sajter. Från 3 900 kr. Boka kostnadsfri genomgång.",
+  "description": "Webbutveckling i Hässleholm. Moderna hemsidor och e-handelslösningar i Next.js, React och WordPress. 0 kr i startavgift, 1 190 kr/mån. Boka kostnadsfri genomgång.",
   "url": "https://www.stoltmarketing.se/tjanster/webbutveckling",
   "provider": {
     "@type": "ProfessionalService",

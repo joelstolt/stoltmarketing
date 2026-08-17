@@ -9,15 +9,15 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Google Ads Hässleholm — Fler kunder med annonsering",
+  title: "Google Ads-byrå | Annonsering med fast månadspris",
   description:
     "Google Ads-förvaltning för företag i Hässleholm. Sökordsanalys, annonstext, optimering och rapportering. Fler samtal och förfrågningar. Boka kostnadsfri genomgång.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/tjanster/google-ads",
   },
   openGraph: {
-    title: "Google Ads Hässleholm — Fler kunder med annonsering",
-    description: "Google Ads-förvaltning för företag i Hässleholm. Optimering, rapportering, resultat.",
+    title: "Google Ads-byrå | Annonsering med fast månadspris",
+    description: "Google Ads-byrå för företag i hela Sverige. Kampanjer, optimering och rapporter med riktiga siffror.",
     url: "https://www.stoltmarketing.se/tjanster/google-ads",
   },
 };

@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
-import ChatWidget from "@/components/ChatWidget";
+// import ChatWidget from "@/components/ChatWidget"; // dold tills Anthropic-nyckeln fixats
 import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
 export const metadata = {
@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
     name: SITE.name,
     url: SITE.url,
     email: SITE.email,
+    telephone: SITE.phone,
     image: `${SITE.url}/og-image.png`,
     logo: {
       "@type": "ImageObject",
@@ -146,13 +147,44 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <ChatWidget />
+        {/* Chatten dold 2026-06-26 tills Anthropic-nyckeln är giltig igen (backend 502:ar). Avkommentera för att återaktivera. */}
+        {/* <ChatWidget /> */}
         {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
         <Script
           src="https://umami-analytics-tau-two.vercel.app/script.js"
           data-website-id="3adb02f8-448d-4b39-bc2a-76e9c9b8709e"
           strategy="afterInteractive"
         />
+        {/* Google Ads-konvertering. Consent Mode v2 står på "denied" som default,
+            så INGA kakor sätts och sajten är fortsatt kakfri utan samtyckesruta.
+            Google modellerar konverteringarna i stället. Laddas bara när
+            NEXT_PUBLIC_GOOGLE_ADS_ID finns satt vid bygget. */}
+        {process.env.NEXT_PUBLIC_GOOGLE_ADS_ID && (
+          <>
+            <Script
+              id="gtag-consent"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied'
+});
+gtag('js', new Date());
+gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}');`,
+              }}
+            />
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}`}
+              strategy="afterInteractive"
+            />
+          </>
+        )}
       </body>
     </html>
   );

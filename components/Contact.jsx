@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
+import { SITE } from "@/lib/local/data";
 
 function Reveal({ children, className = "", delay = 0 }) {
   const ref = useRef(null);
@@ -67,7 +68,10 @@ export default function Contact() {
 
         <Reveal delay={0.16}>
           <p className="mt-4 text-[14px] text-muted">
-            joel@stoltmarketing.se · Hässleholm, Sverige
+            <a href={SITE.phoneHref} className="underline-offset-2 hover:underline">
+              {SITE.phone}
+            </a>{" "}
+            · joel@stoltmarketing.se · Hässleholm, Sverige
           </p>
         </Reveal>
 

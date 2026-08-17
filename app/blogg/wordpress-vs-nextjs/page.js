@@ -202,7 +202,7 @@ export default function Article() {
             <h3 className="text-[17px] font-700 text-heading mt-12 mb-3">Läs också</h3>
             <div className="space-y-2 mb-2">
               {[
-                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/blogg/vad-kostar-en-hemsida" },
+                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/vad-kostar-en-hemsida" },
                 { title: "SEO för småföretag — 7 steg som faktiskt fungerar", href: "/blogg/seo-for-smaforetag" },
                 { title: "Webbutveckling — tjänster och priser", href: "/tjanster/webbutveckling" },
               ].map((link) => (

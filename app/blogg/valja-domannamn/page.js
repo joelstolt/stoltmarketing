@@ -335,7 +335,7 @@ export default function Article() {
             <div className="space-y-2 mb-2">
               {[
                 { title: "Lansera ny hemsida: checklista", href: "/blogg/checklista-ny-hemsida" },
-                { title: "Vad kostar en hemsida 2026?", href: "/blogg/vad-kostar-en-hemsida" },
+                { title: "Vad kostar en hemsida 2026?", href: "/vad-kostar-en-hemsida" },
                 { title: "Webbutveckling och design", href: "/tjanster/webbutveckling" },
               ].map((link) => (
                 <a

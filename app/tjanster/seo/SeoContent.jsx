@@ -6,19 +6,19 @@ import { Check, ArrowRight, Plus, Search, BarChart3, MapPin, FileSearch, Gauge, 
 import { Reveal, PageHero, SectionHeader } from "@/components/ui";
 
 const features = [
-  { icon: FileSearch, title: "Teknisk SEO-audit", desc: "Fullständig genomgång av tekniska brister, laddtider, crawl-fel och indexering." },
-  { icon: Search, title: "Sökordsanalys & strategi", desc: "Identifiera vilka sökord som driver affär och prioritera rätt sidor." },
-  { icon: MapPin, title: "Lokal SEO & Google Maps", desc: "Syns lokalt i Hässleholm eller var du än verkar. Google Business Profile-optimering." },
-  { icon: Gauge, title: "Core Web Vitals", desc: "Snabbare sajt, bättre användarupplevelse och högre ranking." },
-  { icon: BarChart3, title: "Uppföljning & rapporter", desc: "Månadsrapporter med trafik, positioner och konkreta förbättringsförslag." },
-  { icon: Link2, title: "Intern länkstruktur", desc: "Optimera hur sidor kopplas ihop för bättre crawlning och användarflöde." },
+  { icon: FileSearch, title: "Nollmätning & teknisk audit", desc: "Innan något görs mäts nuläget: positioner, indexering, teknik. Resultat ska gå att bevisa, inte berättas." },
+  { icon: Search, title: "Sökordsanalys på riktig data", desc: "Sökvolym, konkurrens och klickpris för varje ord. Prioriteringen byggs på siffror, aldrig på magkänsla." },
+  { icon: Gauge, title: "Sidbredd & innehållsplan", desc: "Sajter vinner på att besvara fler frågor. Jag bygger ut tjänste-, orts- och prissidor i rätt ordning." },
+  { icon: MapPin, title: "Lokal SEO & kartrutan", desc: "Google Företagsprofil, kategori och recensioner. Kartrutan är en egen tävling som kräver eget arbete." },
+  { icon: BarChart3, title: "Uppföljning & rapporter", desc: "Månadsrapport med positioner, trafik och nästa steg. Du förstår varje rad, annars har jag misslyckats." },
+  { icon: Link2, title: "AI-synlighet på köpet", desc: "AI-svaren citerar sidor som redan rankar. Rätt byggd SEO ger dig båda ytorna i samma arbete." },
 ];
 
 const faqs = [
-  { q: "Hur lång tid tar det att se resultat av SEO?", a: "Tekniska förbättringar syns ofta inom veckor. Sökordspositioner tar vanligtvis 2–6 månader att förbättra märkbart. Du får månadsrapporter så du ser framstegen." },
-  { q: "Jobbar du med Google Ads också?", a: "Mitt fokus ligger på organisk SEO. Men jag kan ge rådgivning kring Ads-strategi och rekommendera specialister om det behövs." },
-  { q: "Vad kostar SEO?", a: "En engångs SEO-audit kostar från 3 900 kr. Löpande SEO-arbete ingår i managed hemsida från 790 kr/mån. Större SEO-projekt prissätts efter scope." },
-  { q: "Kan du hjälpa med lokalt SEO i Hässleholm?", a: "Absolut. Lokal SEO är en styrka — Google Business Profile, lokala sökord, kartor och recensioner. Fungerar för alla orter i Sverige." },
+  { q: "Hur lång tid tar det att se resultat av SEO?", a: "Tekniska förbättringar syns ofta inom veckor. Sökordspositioner tar vanligtvis 2 till 6 månader att förbättra märkbart. Du får månadsrapporter mot nollmätningen så att du ser varje steg." },
+  { q: "Jobbar du med Google Ads också?", a: "Ja. I Tillväxt ingår både löpande SEO och Google Ads-hantering, och de förstärker varandra: annonserna ger data och förfrågningar direkt medan de organiska positionerna byggs. Du kan läsa mer under Google Ads-tjänsten." },
+  { q: "Vad kostar SEO?", a: "En engångs SEO-audit med prioriterad åtgärdslista kostar 4 900 kr. Löpande SEO ingår i Tillväxt, 2 490 kr/mån, tillsammans med Google Ads och nytt innehåll. Större projekt prissätts efter scope, alltid med fast pris innan start." },
+  { q: "Kan du hjälpa med lokal SEO?", a: "Ja, det är en styrka. Google Företagsprofil, recensionsarbete upp till din bransch-tröskel, ortssidor där sökvolym finns och kartrutans egna faktorer. Fungerar för alla orter i Sverige, inte bara Skåne." },
 ];
 
 export default function SeoContent() {
@@ -33,9 +33,9 @@ export default function SeoContent() {
           { label: "SEO" },
         ]}
         badge="SEO-byrå"
-        title="Sökmotoroptimering som ger dig fler kunder."
-        subtitle="Som SEO-byrå hjälper jag företag i hela Sverige att ranka högre på Google — teknisk SEO, sökordsanalys och lokal optimering med mätbara resultat. Ingen fluff."
-        bullets={["Teknisk SEO-audit", "Lokal & nationell optimering", "Mätbar uppföljning"]}
+        title="SEO-byrå som mäter innan den lovar."
+        subtitle="Jag hjälper företag i hela Sverige att ranka högre på Google: nollmätning först, prioriteringar på riktig sökordsdata och en månadsrapport du faktiskt förstår. Löpande SEO från 2 490 kr/mån. Ingen fluff."
+        bullets={["Nollmätning innan start", "Prioritering på riktig data", "Fast månadspris"]}
       />
 
       <section className="py-16 sm:py-24 px-5 sm:px-8">
@@ -128,7 +128,7 @@ export default function SeoContent() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "transparent" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Vill du synas bättre på Google?</h2></Reveal>
-          <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en genomgång så går jag igenom ditt nuläge och visar var de största möjligheterna finns.</p></Reveal>
+          <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Boka en genomgång så mäter jag ditt nuläge och visar var de största möjligheterna finns. Ny på ämnet? Läs <a href="/sokmotoroptimering" className="font-600 underline">guiden om hur sökmotoroptimering fungerar</a> först.</p></Reveal>
           <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>
       </section>

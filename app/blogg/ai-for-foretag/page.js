@@ -301,7 +301,7 @@ export default function Article() {
             <div className="space-y-2 mb-8">
               {[
                 { title: "AI-automation för företag — så sätter du upp det rätt", href: "/tjanster/ai-automation" },
-                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/blogg/vad-kostar-en-hemsida" },
+                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/vad-kostar-en-hemsida" },
                 { title: "SEO för småföretag — 7 steg som faktiskt fungerar", href: "/blogg/seo-for-smaforetag" },
               ].map((link) => (
                 <a key={link.href} href={link.href} className="block bg-surface-muted hover:bg-surface border border-border rounded-lg p-4 transition-colors">

@@ -27,7 +27,7 @@ const techStack = [
 const faqs = [
   { q: "Vilken teknik bygger du i?", a: "Jag jobbar primärt med Next.js och React för moderna sajter, och WordPress/WooCommerce för e-handel och innehållstunga sidor. Du får alltid en rekommendation baserad på dina behov." },
   { q: "Hur lång tid tar det att bygga en webbplats?", a: "En enklare företagssajt tar 2–4 veckor. E-handelsplattformar och större projekt kan ta 1–3 månader. Du får alltid en tydlig tidplan." },
-  { q: "Vad kostar en webbplats?", a: "Webbstart börjar från 3 900 kr. Större projekt med e-handel och AI-verktyg från 7 900 kr. Fast pris, inga överraskningar." },
+  { q: "Vad kostar en webbplats?", a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår bygget, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha löpande SEO och Google Ads kostar Tillväxt 2 490 kr/mån." },
   { q: "Kan jag uppdatera sajten själv efteråt?", a: "Ja. WordPress-sajter har ett enkelt admin-gränssnitt. Next.js-sajter kan kopplas till ett CMS. Jag erbjuder också managed hemsida om du vill att jag sköter uppdateringar." },
 ];
 
@@ -45,7 +45,7 @@ export default function WebbutvecklingContent() {
         badge="Webbutveckling"
         title="Moderna webbplatser och e-handel som gör det lätt för kunder att hitta dig och ta kontakt."
         subtitle="Ny sajt eller ombyggnad — med fokus på tydlighet, förtroende och fler förfrågningar. Samma kvalitet som jag levererar åt AcadeMedia."
-        bullets={["Från 3 900 kr", "Klar på 2–4 veckor", "Fast pris, inga överraskningar"]}
+        bullets={["0 kr start, 1 190 kr/mån", "Klar på 2-4 veckor", "Allt ingår, ett pris"]}
       />
 
       {/* ═══ PASSAR NÄR ═══ */}
@@ -144,8 +144,8 @@ export default function WebbutvecklingContent() {
           <SectionHeader badge="Pris" title="Tydliga paket. Fast pris." />
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
             {[
-              { name: "Webbstart", price: "Från 3 900 kr", desc: "Enklare företagssajt med tydlig kundresa, responsiv design och snabb leverans." },
-              { name: "Webb + E-handel", price: "Från 7 900 kr", desc: "Fullskalig sajt med WooCommerce, betalningar, SEO-grund och AI-verktyg." },
+              { name: "Bas", price: "0 kr start, 1 190 kr/mån", desc: "Hemsidan, hosting, drift, uppdateringar och support i ett pris. 12 månaders bindning." },
+              { name: "Bas + e-handel", price: "1 990 kr/mån", desc: "Allt i Bas plus WooCommerce, betalningar och SEO-optimerade produktsidor." },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>
                 <div className="bg-surface rounded-[10px] border border-border p-7 h-full">

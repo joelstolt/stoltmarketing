@@ -299,7 +299,7 @@ export default function Article() {
             <h3 className="text-[17px] font-700 text-heading mt-12 mb-3">Läs också</h3>
             <div className="space-y-2 mb-2">
               {[
-                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/blogg/vad-kostar-en-hemsida" },
+                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/vad-kostar-en-hemsida" },
                 { title: "WordPress vs Next.js — vilket passar ditt företag?", href: "/blogg/wordpress-vs-nextjs" },
                 { title: "Lokal SEO-guide för företag i Hässleholm", href: "/blogg/lokal-seo-guide" },
                 { title: "Webbutveckling — tjänster & priser", href: "/tjanster/webbutveckling" },

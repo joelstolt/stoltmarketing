@@ -8,7 +8,7 @@ const PAPER = "#FAF5EC";
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "Det beror på uppdraget. En enklare webbplats startar från 3 900 kr. Större e-handelslösningar och AI-projekt prissätts efter scope. Managed hemsida börjar på 390 kr/mån. Jag ger alltid ett fast pris innan vi börjar.",
+    a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha löpande SEO och Google Ads kostar Tillväxt 2 490 kr/mån. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
   },
   {
     q: "Jobbar du bara med företag i Hässleholm?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Vad händer efter lansering?",
-    a: "Jag erbjuder managed hemsida — löpande drift, underhåll, säkerhet och förbättringar. Du kan välja nivå efter dina behov, från 390 kr/mån. Inget ansvar faller mellan stolarna.",
+    a: "Jag erbjuder managed hemsida med löpande drift, underhåll, säkerhet och förbättringar. Allt ingår i månadspriset på 1 190 kr, och jag tar över även sajter jag inte byggt själv. Inget ansvar faller mellan stolarna.",
   },
 ];
 

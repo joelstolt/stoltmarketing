@@ -51,7 +51,7 @@ const features = [
 const faqs = [
   {
     q: "Vad kostar Google Ads-förvaltning?",
-    a: "Förvaltning börjar från 3 900 kr/mån plus din annonsbudget. Annonsbudgeten bestämmer du själv — jag rekommenderar minst 3 000–5 000 kr/mån för att få tillräcklig data att optimera mot.",
+    a: "Google Ads ingår i Tillväxt, 2 490 kr/mån, plus din annonsbudget. Budgeten bestämmer du själv, och jag rekommenderar minst 3 000 kr/mån för att få tillräckligt med data att optimera mot.",
   },
   {
     q: "Hur snabbt ger Google Ads resultat?",
@@ -167,14 +167,14 @@ export default function GoogleAdsContent() {
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
             {[
               {
-                name: "Ads Start",
-                price: "Från 3 900 kr/mån",
-                desc: "Kampanjsetup, sökordsanalys, annonstext, löpande optimering och månadsrapport. Perfekt för tjänsteföretag som vill komma igång.",
+                name: "Tillväxt",
+                price: "2 490 kr/mån",
+                desc: "Kampanjsetup, sökordsanalys, annonstext, löpande optimering och månadsrapport. Sajten, SEO och innehållet ingår i samma pris. Du styr annonsbudgeten själv.",
               },
               {
-                name: "Ads + Landningssida",
-                price: "Från 7 900 kr",
-                desc: "Allt i Ads Start plus en konverteringsoptimerad landningssida byggd specifikt för din kampanj.",
+                name: "Tillväxt + kampanjsida",
+                price: "2 490 kr/mån + 4 900 kr",
+                desc: "Allt i Tillväxt plus en konverteringsoptimerad landningssida byggd specifikt för din kampanj.",
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>

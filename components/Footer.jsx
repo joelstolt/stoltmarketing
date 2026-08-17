@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, ArrowRight } from "lucide-react";
-import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES } from "@/lib/local/data";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
 const services = [
   { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
+  { label: "Hemsida för företag", href: "/hemsida-foretag" },
   { label: "E-handel", href: "/tjanster/e-handel" },
   { label: "WordPress-hemsida", href: "/tjanster/wordpress" },
-  { label: "AI & Automation", href: "/tjanster/ai-automation" },
   { label: "SEO & Synlighet", href: "/tjanster/seo" },
   { label: "Google Ads", href: "/tjanster/google-ads" },
+  { label: "Facebook-annonsering", href: "/tjanster/facebook-annonsering" },
+  { label: "AI-synlighet", href: "/tjanster/ai-synlighet" },
+  { label: "AI & Automation", href: "/tjanster/ai-automation" },
   { label: "Managed hemsida", href: "/tjanster/managed-hemsida" },
   { label: "Alla tjänster", href: "/tjanster" },
 ];
@@ -19,6 +22,10 @@ const company = [
   { label: "Om mig", href: "/om" },
   { label: "Projekt", href: "/projekt" },
   { label: "Blogg", href: "/blogg" },
+  { label: "Guide: sökmotoroptimering", href: "/sokmotoroptimering" },
+  { label: "Vad kostar en hemsida?", href: "/vad-kostar-en-hemsida" },
+  { label: "Vad kostar SEO?", href: "/vad-kostar-seo" },
+  { label: "Vad kostar Google Ads?", href: "/vad-kostar-google-ads" },
   { label: "Kontakt", href: "/kontakt" },
   { label: "Boka genomgång", href: "/boka" },
   { label: "Integritetspolicy", href: "/integritet" },
@@ -101,6 +108,13 @@ export default function Footer() {
           </p>
 
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
+            <a
+              href={SITE.phoneHref}
+              style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)", textDecoration: "none" }}
+            >
+              <Phone size={15} color="#F2BC1B" />
+              {SITE.phone}
+            </a>
             <a
               href="mailto:joel@stoltmarketing.se"
               style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(250,245,236,0.65)", textDecoration: "none" }}

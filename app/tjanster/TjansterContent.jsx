@@ -105,7 +105,7 @@ const services = [
       "Transparent rapportering",
     ],
     stats: [
-      { value: "3 900", label: "kr/mån från" },
+      { value: "2 490", label: "kr/mån, allt ingår" },
       { value: "7d", label: "Till första resultaten" },
     ],
     href: "/tjanster/google-ads",
@@ -127,7 +127,7 @@ const services = [
       "SEO för produktsidor",
     ],
     stats: [
-      { value: "3 900", label: "kr från" },
+      { value: "1 990", label: "kr/mån med butik" },
       { value: "100%", label: "Du äger butiken" },
     ],
     href: "/tjanster/e-handel",
@@ -146,11 +146,11 @@ const services = [
     includes: [
       "WordPress & WooCommerce",
       "Säkerhet & backup",
-      "Drift från 390 kr/mån",
+      "Drift ingår i månadspriset",
     ],
     stats: [
       { value: "10+", label: "Års WP-erfarenhet" },
-      { value: "390", label: "kr/mån drift" },
+      { value: "1 190", label: "kr/mån, allt ingår" },
     ],
     href: "/tjanster/wordpress",
   },
@@ -172,7 +172,7 @@ const services = [
     ],
     stats: [
       { value: "24h", label: "Svarslöfte på vardagar" },
-      { value: "390", label: "kr/mån från" },
+      { value: "1 190", label: "kr/mån, allt ingår" },
     ],
     href: "/tjanster/managed-hemsida",
   },
@@ -181,19 +181,19 @@ const services = [
 /* ── Pricing data ── */
 const packages = [
   {
-    name: "Webbstart",
-    price: "Från 3 900 kr",
-    desc: "Ny webbplats med fokus på tydlig kundresa och konvertering.",
+    name: "Bas",
+    price: "0 kr start, 1 190 kr/mån",
+    desc: "Hemsidan, hosting, drift, uppdateringar och support i ett pris. 12 månaders bindning, sedan månadsvis.",
   },
   {
-    name: "Tillväxtpaket",
-    price: "Från 7 900 kr",
-    desc: "Webb + SEO + AI-verktyg för dig som vill växa snabbare.",
+    name: "Tillväxt",
+    price: "2 490 kr/mån",
+    desc: "Allt i Bas plus löpande SEO, skötsel av Google Ads och nytt innehåll varje månad.",
   },
   {
-    name: "Trygg drift",
-    price: "Från 390 kr/mån",
-    desc: "Hosting, underhåll och löpande förbättring i ett månadspaket.",
+    name: "WordPress-migrering",
+    price: "4 900 kr",
+    desc: "Långsam WordPress flyttad till edge. 0 kr om du samtidigt tecknar drift i 12 månader.",
   },
 ];
 

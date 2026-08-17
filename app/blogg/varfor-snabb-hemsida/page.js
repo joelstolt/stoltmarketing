@@ -314,7 +314,7 @@ export default function Article() {
             <div className="space-y-2 mb-2">
               {[
                 { title: "WordPress vs Next.js — vilket passar ditt företag?", href: "/blogg/wordpress-vs-nextjs" },
-                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/blogg/vad-kostar-en-hemsida" },
+                { title: "Vad kostar en hemsida 2026? Komplett prisguide", href: "/vad-kostar-en-hemsida" },
                 { title: "Google Business Profile — Komplett guide för företagare", href: "/blogg/google-business-profile-guide" },
                 { title: "Webbutveckling & design — så kan jag hjälpa", href: "/tjanster/webbutveckling" },
               ].map((link) => (

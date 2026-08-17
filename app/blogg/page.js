@@ -9,15 +9,7 @@ import { Reveal, Badge, PageHero } from "@/components/ui";
 
 const allPosts = [
   /* ── Befintliga ── */
-  {
-    slug: "vad-kostar-en-hemsida",
-    title: "Vad kostar en hemsida 2026? Komplett prisguide för företag",
-    excerpt:
-      "Från gratis-verktyg till skräddarsydda lösningar. Vad du faktiskt betalar för, vad som är värt pengarna, och var du bör vara skeptisk.",
-    date: "2026-03-15",
-    readTime: "9 min",
-    category: "Guide",
-  },
+  // vad-kostar-en-hemsida är numera pillar-sidan /vad-kostar-en-hemsida (301 i middleware).
   {
     slug: "wordpress-vs-nextjs",
     title: "WordPress vs Next.js — vilket passar ditt företag?",

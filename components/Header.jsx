@@ -14,8 +14,12 @@ import {
   MonitorSmartphone,
   ShoppingCart,
   LayoutTemplate,
+  Phone,
+  Users,
+  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
+import { SITE } from "@/lib/local/data";
 
 const serviceItems = [
   {
@@ -53,6 +57,18 @@ const serviceItems = [
     label: "Google Ads",
     desc: "Riktad annonsering som ger resultat",
     href: "/tjanster/google-ads",
+  },
+  {
+    icon: Users,
+    label: "Facebook-annonsering",
+    desc: "Meta-kampanjer som ger förfrågningar",
+    href: "/tjanster/facebook-annonsering",
+  },
+  {
+    icon: Sparkles,
+    label: "AI-synlighet",
+    desc: "Syns i ChatGPT och Googles AI-svar",
+    href: "/tjanster/ai-synlighet",
   },
   {
     icon: Shield,
@@ -392,6 +408,28 @@ export default function Header() {
               </Link>
             ))}
 
+            <a
+              href={SITE.phoneHref}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 7,
+                fontSize: 14,
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+                color: lightTop ? "rgba(250,245,236,0.9)" : "#1A1611",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F2BC1B")}
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = lightTop ? "rgba(250,245,236,0.9)" : "#1A1611")
+              }
+            >
+              <Phone size={15} color="#F2BC1B" />
+              {SITE.phone}
+            </a>
+
             <Link href="/boka" className="premium-btn" style={{ fontSize: 14, padding: "10px 20px" }}>
               Boka kostnadsfri genomgång
             </Link>
@@ -566,6 +604,25 @@ export default function Header() {
                 >
                   Boka kostnadsfri genomgång
                 </Link>
+
+                <a
+                  href={SITE.phoneHref}
+                  onClick={() => setIsOpen(false)}
+                  style={{
+                    marginTop: 14,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 9,
+                    fontSize: 17,
+                    fontWeight: 500,
+                    color: "#1A1611",
+                    textDecoration: "none",
+                  }}
+                >
+                  <Phone size={18} color="#F2BC1B" />
+                  {SITE.phone}
+                </a>
               </div>
             </div>
           </motion.div>

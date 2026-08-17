@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import FieldCanvas from "@/components/b/FieldCanvas";
 import BFaq from "@/components/b/BFaq";
+import { SITE } from "@/lib/local/data";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -384,7 +385,8 @@ export default function BContent() {
             </a>
           </div>
           <p style={{ marginTop: 22, fontSize: 14, color: "rgba(26,22,17,0.65)" }}>
-            eller mejla <a href="mailto:joel@stoltmarketing.se" style={{ color: INK, fontWeight: 600 }}>joel@stoltmarketing.se</a>
+            eller ring <a href={SITE.phoneHref} data-umami-event="cta-telefon" style={{ color: INK, fontWeight: 600 }}>{SITE.phone}</a>
+            {" "}· mejla <a href="mailto:joel@stoltmarketing.se" style={{ color: INK, fontWeight: 600 }}>joel@stoltmarketing.se</a>
           </p>
         </div>
       </section>
