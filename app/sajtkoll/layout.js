@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: "Gratis sajtkoll: så bra fungerar din hemsida",
     description:
-      "13 kontroller på 10 sekunder: sidvikt, hastighet, mobil, Google, AI-läsbarhet och trasiga filer. Gratis, ingen registrering.",
+      "14 kontroller på 10 sekunder: sidvikt, hastighet, mobil, Google, AI-läsbarhet och trasiga filer. Gratis, ingen registrering.",
     url: "https://www.stoltmarketing.se/sajtkoll",
   },
 };

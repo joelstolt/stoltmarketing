@@ -8,6 +8,19 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sajtvakten",
+      "database_id": "424b8265-0c57-465d-814a-cec7cc27772d"
+    }
+  ],
+  "triggers": {
+    "crons": ["0 6 * * *"]
+  },
+  "vars": {
+    "SELF_URL": "https://www.stoltmarketing.se"
+  },
   "observability": {
     "enabled": true
   }

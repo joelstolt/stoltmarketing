@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 /**
  * Gratis sajtkoll på stoltmarketing.se/sajtkoll.
@@ -525,6 +526,30 @@ export async function POST(req) {
       : "Utan strukturerad märkning har ChatGPT och Google AI svårt att rekommendera er.",
   });
 
+  /* ── 13. Tillgänglighetsgrund (snabbkoll, inte revision) ── */
+  const altMissing = assets.images.filter((i) => !/alt=["'][^"']+["']/i.test(i.tag)).length;
+  const totalImgs = assets.images.length;
+  const hasLang = /<html[^>]+lang=["']/i.test(html);
+  const a11yOk = hasLang && (totalImgs === 0 || altMissing === 0);
+  checks.push({
+    id: "a11y",
+    label: "Tillgänglighetsgrund",
+    value: !hasLang
+      ? "Språk saknas"
+      : totalImgs === 0
+        ? "Grund ok"
+        : `${totalImgs - altMissing} av ${totalImgs} bilder har alt-text`,
+    pass: a11yOk,
+    warn: hasLang && altMissing > 0 && altMissing <= Math.ceil(totalImgs / 2),
+    detail: !hasLang
+      ? "Sidan saknar språkattribut. Skärmläsare vet inte att innehållet är på svenska."
+      : totalImgs === 0
+        ? "Språkattribut finns. Detta är en snabbkoll av grunderna, inte en full granskning."
+        : altMissing === 0
+          ? "Bilderna har beskrivande alt-texter och språkattribut finns. Snabbkoll, inte full granskning."
+          : `${altMissing} bild${altMissing > 1 ? "er" : ""} saknar alt-text. Sedan juni 2025 ställer tillgänglighetslagen krav på många företag.`,
+  });
+
   // En varning är halvvägs, inte ett underkänt.
   const passed = checks.filter((c) => c.pass).length;
   const weighted = checks.reduce((s, c) => s + (c.pass ? 1 : c.warn ? 0.5 : 0), 0);
@@ -545,6 +570,70 @@ export async function POST(req) {
       "Sidan har filer som inte laddar och kan se trasig ut för besökare. Fixa det först, sedan resten.";
   }
 
+  /* ── AI-sammanfattning: 3-4 meningar klartext, ENBART grundade i mätvärdena.
+     Timeout med tyst fallback: rapporten fungerar utan. Framställs aldrig som
+     personligen skriven. ── */
+  let ai = null;
+  try {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (apiKey) {
+      const fakta = checks
+        .map((c) => `${c.label}: ${c.value} (${c.pass ? "ok" : c.warn ? "varning" : "problem"}) - ${c.detail}`)
+        .join("\n");
+      const aiRes = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "x-api-key": apiKey,
+          "anthropic-version": "2023-06-01",
+          "content-type": "application/json",
+        },
+        signal: AbortSignal.timeout(6500),
+        body: JSON.stringify({
+          model: "claude-haiku-4-5-20251001",
+          max_tokens: 350,
+          messages: [
+            {
+              role: "user",
+              content: `Du skriver en kort sammanfattning av en teknisk sajtmätning åt en svensk webbyrå. Sajtens titel: "${title.slice(0, 120)}". Poäng: ${score} av 100.\n\nMätvärden:\n${fakta}\n\nSkriv 3-4 meningar på svenska, rak och konkret ton, du-tilltal riktat till företagaren som äger sajten. Lyft det viktigaste som fungerar och det som läcker mest besökare, och om titeln avslöjar bransch får du anpassa språket till den. HÅRDA REGLER: referera ENBART mätvärdena ovan, hitta aldrig på något, lova aldrig placeringar eller resultat, nämn inga siffror som inte står ovan. Inga långa tankstreck, inga typografiska citattecken, ingen markdown. Svara med enbart sammanfattningen.`,
+            },
+          ],
+        }),
+      });
+      if (aiRes.ok) {
+        const data = await aiRes.json();
+        const text = (data.content?.[0]?.text || "").trim();
+        if (text.length > 40) ai = text;
+      }
+    }
+  } catch {
+    ai = null;
+  }
+
+  /* ── Spara i D1: ger delbar länk + historik för Sajtvakten ── */
+  let resultId = null;
+  try {
+    const { env } = getCloudflareContext();
+    if (env?.DB) {
+      resultId = crypto.randomUUID().replace(/-/g, "").slice(0, 10);
+      const payload = {
+        url: finalUrl.origin + (finalUrl.pathname === "/" ? "" : finalUrl.pathname),
+        score,
+        passed,
+        total: checks.length,
+        verdict,
+        checks,
+        ai,
+      };
+      await env.DB.prepare(
+        "INSERT INTO results (id, url, score, data) VALUES (?1, ?2, ?3, ?4)"
+      )
+        .bind(resultId, payload.url, score, JSON.stringify(payload))
+        .run();
+    }
+  } catch {
+    resultId = null;
+  }
+
   return NextResponse.json({
     url: finalUrl.origin + (finalUrl.pathname === "/" ? "" : finalUrl.pathname),
     score,
@@ -552,6 +641,8 @@ export async function POST(req) {
     total: checks.length,
     verdict,
     checks,
+    ai,
+    id: resultId,
     sampled: byType.some(([, list, cap]) => list.length > cap),
   });
 }
