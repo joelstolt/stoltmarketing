@@ -193,6 +193,8 @@ export async function POST(req) {
 
   const body = await req.json().catch(() => ({}));
   const target = parseTarget(body.url);
+  // Trafikkälla (utm) följer med från klienten: attribution, aldrig styrning.
+  const kalla = String(body.source || "").slice(0, 120).replace(/[^\w\s=&:./-]/g, "") || null;
   if (!target) {
     return NextResponse.json(
       { error: "Skriv en riktig webbadress, till exempel dittforetag.se" },
@@ -574,12 +576,21 @@ export async function POST(req) {
      Timeout med tyst fallback: rapporten fungerar utan. Framställs aldrig som
      personligen skriven. ── */
   let ai = null;
+  let intro = null;
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (apiKey) {
       const fakta = checks
         .map((c) => `${c.label}: ${c.value} (${c.pass ? "ok" : c.warn ? "varning" : "problem"}) - ${c.detail}`)
         .join("\n");
+      // Synligt innehåll ur sajten = underlaget som gör hälsningen personlig på riktigt.
+      const synligText = html
+        .replace(/<(script|style|noscript)[\s\S]*?<\/\1>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&[a-z#0-9]+;/gi, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 1400);
       const aiRes = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: {
@@ -594,7 +605,7 @@ export async function POST(req) {
           messages: [
             {
               role: "user",
-              content: `Du skriver en kort sammanfattning av en teknisk sajtmätning åt en svensk webbyrå. Sajtens titel: "${title.slice(0, 120)}". Poäng: ${score} av 100.\n\nMätvärden:\n${fakta}\n\nSkriv 3-4 meningar på svenska, rak och konkret ton, du-tilltal riktat till företagaren som äger sajten. Lyft det viktigaste som fungerar och det som läcker mest besökare, och om titeln avslöjar bransch får du anpassa språket till den. HÅRDA REGLER: referera ENBART mätvärdena ovan, hitta aldrig på något, lova aldrig placeringar eller resultat, nämn inga siffror som inte står ovan. Inga långa tankstreck, inga typografiska citattecken, ingen markdown. Svara med enbart sammanfattningen.`,
+              content: `Du hjälper en svensk webbyrå med en sajtmätning. Sajtens titel: "${title.slice(0, 120)}". Poäng: ${score} av 100.${kalla ? ` Besökaren kom via: ${kalla}.` : ""}\n\nSynligt innehåll från sajten:\n"""${synligText}"""\n\nMätvärden:\n${fakta}\n\nSvara med ENDAST giltig JSON: {"intro": "...", "sammanfattning": "..."}\n\nINTRO: 1-2 meningar som hälsar företagaren personligt, byggt på något KONKRET ur det synliga innehållet (vad de gör, hur länge, var, vad de är stolta över). Varm och gärna med en liten blinkning, men ALDRIG skämt om sajtens kvalitet eller brister, ALDRIG ironi om företaget, ALDRIG påhittade fakta. Om innehållet är för tunt för något personligt: sätt intro till null.\n\nSAMMANFATTNING: 3-4 meningar, rak och konkret, du-tilltal, det viktigaste som fungerar och det som läcker mest besökare. Referera ENBART mätvärdena, hitta aldrig på, lova aldrig placeringar. Båda fälten: inga långa tankstreck, inga typografiska citattecken, ingen markdown.`,
             },
           ],
         }),
@@ -602,11 +613,21 @@ export async function POST(req) {
       if (aiRes.ok) {
         const data = await aiRes.json();
         const text = (data.content?.[0]?.text || "").trim();
-        if (text.length > 40) ai = text;
+        const m = text.match(/\{[\s\S]*\}/);
+        if (m) {
+          try {
+            const j = JSON.parse(m[0]);
+            if (j.sammanfattning && j.sammanfattning.length > 40) ai = j.sammanfattning;
+            if (j.intro && typeof j.intro === "string" && j.intro.length > 20) intro = j.intro;
+          } catch {}
+        } else if (text.length > 40) {
+          ai = text;
+        }
       }
     }
   } catch {
     ai = null;
+    intro = null;
   }
 
   /* ── Spara i D1: ger delbar länk + historik för Sajtvakten ── */
@@ -623,6 +644,8 @@ export async function POST(req) {
         verdict,
         checks,
         ai,
+        intro,
+        kalla,
       };
       await env.DB.prepare(
         "INSERT INTO results (id, url, score, data) VALUES (?1, ?2, ?3, ?4)"
@@ -642,6 +665,7 @@ export async function POST(req) {
     verdict,
     checks,
     ai,
+    intro,
     id: resultId,
     sampled: byType.some(([, list, cap]) => list.length > cap),
   });

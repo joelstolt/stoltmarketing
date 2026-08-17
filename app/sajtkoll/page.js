@@ -140,7 +140,7 @@ export default function SajtkollPage() {
       const res = await fetch("/api/sajtkoll", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url, source: window.location.search.slice(1, 121) || null }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -249,6 +249,12 @@ export default function SajtkollPage() {
                     {result.verdict}
                   </p>
                 </div>
+
+                {result.intro && (
+                  <p className="font-heading text-[clamp(17px,2.2vw,21px)] leading-relaxed text-heading mt-6 mb-0" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                    {result.intro}
+                  </p>
+                )}
 
                 {result.ai && (
                   <div className="mt-6 p-5 rounded-[10px]" style={{ background: "rgba(242,194,48,0.07)", border: "1px solid rgba(242,194,48,0.2)" }}>

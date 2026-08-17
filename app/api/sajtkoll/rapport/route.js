@@ -157,6 +157,7 @@ function renderEmail({ resultat, name, diff, unsubUrl, synlighet }) {
         <td style="vertical-align:baseline;padding-left:8px;font-size:13px;color:#A19A87;">av 100</td>
       </tr></table>
       <div style="font-size:14px;font-style:italic;color:#F2ECDD;margin-top:10px;font-family:Georgia,serif;">${esc(resultat.verdict)}</div>
+      ${resultat.intro ? `<div style="font-size:14px;color:#D9D2C0;margin-top:14px;line-height:1.65;">${esc(resultat.intro)}</div>` : ""}
     </td></tr>
 
     <tr><td style="background:#FFFFFF;border-radius:0 0 14px 14px;padding:26px 32px 30px;">
@@ -333,7 +334,7 @@ export async function POST(req) {
     subject: `Sajtvakten-lead: ${String(email)} (${resultat.url.replace(/^https?:\/\//, "")}, ${resultat.score}/100${bevaka ? ", BEVAKAR" : ""})`,
     html: `<div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;color:#1A1611;">
       <p><strong>${esc(name || "Utan namn")}</strong> &lt;${esc(email)}&gt; beställde rapporten.</p>
-      <p>Sajt: <a href="${esc(resultat.url)}">${esc(resultat.url)}</a><br>Poäng: ${resultat.score} av 100<br>Bevakning: ${bevaka ? "JA, månadsrapport aktiv" : "nej"}</p>
+      <p>Sajt: <a href="${esc(resultat.url)}">${esc(resultat.url)}</a><br>Poäng: ${resultat.score} av 100<br>Bevakning: ${bevaka ? "JA, månadsrapport aktiv" : "nej"}${resultat.kalla ? `<br>Källa: ${esc(resultat.kalla)}` : ""}</p>
       <p>${esc(resultat.verdict)}</p>
     </div>`,
     replyTo: String(email),

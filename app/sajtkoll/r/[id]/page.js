@@ -92,6 +92,11 @@ export default async function DelatResultat({ params }) {
           <section className="py-12 sm:py-16 px-5 sm:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="p-7 sm:p-9 rounded-[14px]" style={{ background: "#161309", border: `1px solid ${LINE}` }}>
+                {resultat.intro && (
+                  <p className="font-heading text-[clamp(17px,2.2vw,21px)] leading-relaxed text-heading mt-0 mb-6" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                    {resultat.intro}
+                  </p>
+                )}
                 {resultat.ai && (
                   <div className="mb-6 p-5 rounded-[10px]" style={{ background: "rgba(242,194,48,0.07)", border: "1px solid rgba(242,194,48,0.2)" }}>
                     <p className="text-[15px] leading-relaxed text-body m-0">{resultat.ai}</p>
