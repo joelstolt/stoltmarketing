@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Jobbar du bara med företag i Hässleholm?",
-    a: "Nej, jag jobbar med kunder i hela Sverige. Allt sker digitalt — videomöten, delad projektyta och löpande kommunikation. Geografin spelar ingen roll.",
+    a: "Nej, jag jobbar med kunder i hela Sverige. Allt sker digitalt, videomöten, delad projektyta och löpande kommunikation. Geografin spelar ingen roll.",
   },
   {
     q: "Kan du bygga i WordPress även om du föredrar Next.js?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "Vad menar du med AI-lösningar för småföretag?",
-    a: "Konkreta verktyg som sparar tid. Det kan vara allt från en AI-chatbot som svarar på kundfrågor, till automatiserade offertflöden eller innehållsgenerering. Jag utgår alltid från ditt faktiska behov — inte hypade trender.",
+    a: "Konkreta verktyg som sparar tid. Det kan vara allt från en AI-chatbot som svarar på kundfrågor, till automatiserade offertflöden eller innehållsgenerering. Jag utgår alltid från ditt faktiska behov, inte hypade trender.",
   },
   {
     q: "Hur lång tid tar ett projekt?",

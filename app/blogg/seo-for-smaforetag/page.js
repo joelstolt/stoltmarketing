@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                SEO för småföretag — 7 steg som faktiskt fungerar
+                SEO för småföretag, 7 steg som faktiskt fungerar
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -50,7 +50,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Sanningen är att de flesta SEO-grunderna kan du göra själv — utan verktyg, utan budget och utan teknisk bakgrund. De här 7 stegen har jag sett ge resultat för lokala företag gång på gång. Börja uppifrån och jobba dig nedåt.
+              Sanningen är att de flesta SEO-grunderna kan du göra själv, utan verktyg, utan budget och utan teknisk bakgrund. De här 7 stegen har jag sett ge resultat för lokala företag gång på gång. Börja uppifrån och jobba dig nedåt.
             </p>
 
             {/* Step 1 */}
@@ -62,16 +62,16 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Om du bara gör en sak på den här listan — gör den här. Google Business Profile (tidigare Google My Business) är gratis och styr hur du syns i Google Maps och i lokala sökresultat.
+              Om du bara gör en sak på den här listan, gör den här. Google Business Profile (tidigare Google My Business) är gratis och styr hur du syns i Google Maps och i lokala sökresultat.
             </p>
 
             <div className="space-y-2 mb-6">
               {[
-                "Fyll i alla fält — namn, adress, telefon, öppettider, kategori, webbplats",
+                "Fyll i alla fält, namn, adress, telefon, öppettider, kategori, webbplats",
                 "Ladda upp minst 10 bilder (kontor, projekt, team)",
                 "Skriv en beskrivning som inkluderar ditt geografiska område och dina tjänster",
-                "Svara på alla recensioner — både positiva och negativa",
-                "Publicera inlägg regelbundet (minst 1–2 per månad)",
+                "Svara på alla recensioner, både positiva och negativa",
+                "Publicera inlägg regelbundet (minst 1 till 2 per månad)",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -81,7 +81,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Ett småföretag med en komplett och aktiv Google Business Profile rankar betydligt bättre i lokala sökningar än ett med halvfylld profil. Det tar 30 minuter att fixa — gör det idag.
+              Ett småföretag med en komplett och aktiv Google Business Profile rankar betydligt bättre i lokala sökningar än ett med halvfylld profil. Det tar 30 minuter att fixa, gör det idag.
             </p>
 
             {/* Step 2 */}
@@ -93,18 +93,18 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Title tag är det som visas som blå rubrik i Google-resultaten. Meta description är texten under. De flesta småföretags-sajter har antingen &ldquo;Hem — Företagsnamn&rdquo; på varje sida eller saknar dem helt.
+              Title tag är det som visas som blå rubrik i Google-resultaten. Meta description är texten under. De flesta småföretags-sajter har antingen &ldquo;Hem, Företagsnamn&rdquo; på varje sida eller saknar dem helt.
             </p>
 
             <div className="bg-surface border border-border rounded-xl p-5 mb-6">
               <p className="text-[13px] font-700 text-red-500 uppercase tracking-wide mb-2">Dåligt exempel</p>
-              <p className="text-[15px] text-heading font-600">Hem — AB Johanssons Bygg</p>
+              <p className="text-[15px] text-heading font-600">Hem, AB Johanssons Bygg</p>
               <p className="text-[13px] text-muted mt-1">Välkommen till AB Johanssons Bygg. Vi finns i Hässleholm.</p>
             </div>
 
             <div className="bg-surface border border-primary/15 rounded-xl p-5 mb-6">
               <p className="text-[13px] font-700 text-primary uppercase tracking-wide mb-2">Bra exempel</p>
-              <p className="text-[15px] text-heading font-600">Byggföretag Hässleholm — Renovering, tillbyggnad & nybygge | Johanssons Bygg</p>
+              <p className="text-[15px] text-heading font-600">Byggföretag Hässleholm, Renovering, tillbyggnad & nybygge | Johanssons Bygg</p>
               <p className="text-[13px] text-muted mt-1">Lokalt byggföretag i Hässleholm med 20+ års erfarenhet. Vi utför renovering, tillbyggnad och nybyggnation med fast pris. Boka kostnadsfri besiktning.</p>
             </div>
 
@@ -121,7 +121,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Många småföretag klämmer in alla sina tjänster på en enda sida. Det är ett SEO-misstag. Google rankar sidor — inte sajter. Om du erbjuder tre tjänster behöver du tre separata sidor.
+              Många småföretag klämmer in alla sina tjänster på en enda sida. Det är ett SEO-misstag. Google rankar sidor, inte sajter. Om du erbjuder tre tjänster behöver du tre separata sidor.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -134,7 +134,7 @@ export default function Article() {
                 "300+ ord som beskriver tjänsten, processen och vad som ingår",
                 "Priser eller prisintervall (Google gillar transparens)",
                 "Bilder från verkliga projekt (inte stock photos)",
-                "En tydlig CTA — ring, mejla, boka",
+                "En tydlig CTA, ring, mejla, boka",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -152,7 +152,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Över 70% av lokala Google-sökningar sker på mobilen. Om din sajt laddar långsamt eller ser trasig ut på mobilen tappar du besökare — och Google märker det.
+              Över 70% av lokala Google-sökningar sker på mobilen. Om din sajt laddar långsamt eller ser trasig ut på mobilen tappar du besökare, och Google märker det.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -184,7 +184,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Skapa en kort-länk till din Google-recension (finns i Google Business Profile under &ldquo;Be om recensioner&rdquo;) och skicka den till nöjda kunder efter avslutat jobb. Gör det till en rutin — inte något du gör &ldquo;när du kommer ihåg&rdquo;.
+              Skapa en kort-länk till din Google-recension (finns i Google Business Profile under &ldquo;Be om recensioner&rdquo;) och skicka den till nöjda kunder efter avslutat jobb. Gör det till en rutin, inte något du gör &ldquo;när du kommer ihåg&rdquo;.
             </p>
 
             {/* Step 6 */}
@@ -203,7 +203,7 @@ export default function Article() {
               {[
                 "Registrera sajten och verifiera ägande (DNS eller HTML-tagg)",
                 "Skicka in din sitemap (vanligtvis dinsajt.se/sitemap.xml)",
-                "Kolla rapporten 'Prestanda' varje månad — se vilka sökord du syns på",
+                "Kolla rapporten 'Prestanda' varje månad, se vilka sökord du syns på",
                 "Åtgärda eventuella 'Sidkvalitet'-varningar",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
@@ -222,14 +222,14 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Google belönar sajter som svarar på de frågor folk faktiskt ställer. Tänk på vilka frågor dina kunder frågar dig — och skriv sidor eller bloggartiklar som svarar på dem.
+              Google belönar sajter som svarar på de frågor folk faktiskt ställer. Tänk på vilka frågor dina kunder frågar dig, och skriv sidor eller bloggartiklar som svarar på dem.
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                { q: "Vad kostar en badrumsrenovering?", page: "→ Skapa en sida: 'Badrumsrenovering [stad] — pris och process'" },
-                { q: "Behöver jag bygglov för tillbyggnad?", page: "→ Skriv en guide: 'Bygglov tillbyggnad — vad gäller 2026?'" },
-                { q: "Vilket material är bäst för fasad?", page: "→ Skriv en jämförelse: 'Fasadmaterial — trä vs puts vs plåt'" },
+                { q: "Vad kostar en badrumsrenovering?", page: "→ Skapa en sida: 'Badrumsrenovering [stad], pris och process'" },
+                { q: "Behöver jag bygglov för tillbyggnad?", page: "→ Skriv en guide: 'Bygglov tillbyggnad, vad gäller 2026?'" },
+                { q: "Vilket material är bäst för fasad?", page: "→ Skriv en jämförelse: 'Fasadmaterial, trä vs puts vs plåt'" },
               ].map((item) => (
                 <div key={item.q} className="bg-surface border border-border rounded-lg p-4">
                   <p className="text-[15px] font-600 text-heading mb-1">&ldquo;{item.q}&rdquo;</p>
@@ -244,19 +244,19 @@ export default function Article() {
 
             {/* Sammanfattning */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Sammanfattning — gör dessa 7 saker
+              Sammanfattning, gör dessa 7 saker
             </h2>
 
             <div className="bg-surface border border-border rounded-xl p-6 mb-8">
               <div className="space-y-3">
                 {[
-                  "Google Business Profile — fyll i allt, ladda upp bilder, svara på recensioner",
-                  "Title tags & meta descriptions — unika per sida med sökord + ort",
-                  "En sida per tjänst — inte allt på en sida",
-                  "Snabb och mobilanpassad — testa med PageSpeed Insights",
-                  "Google-recensioner — skapa kort-länk, skicka efter varje jobb",
-                  "Google Search Console — registrera och skicka in sitemap",
-                  "Skriv innehåll — svara på kundernas vanligaste frågor",
+                  "Google Business Profile, fyll i allt, ladda upp bilder, svara på recensioner",
+                  "Title tags & meta descriptions, unika per sida med sökord + ort",
+                  "En sida per tjänst, inte allt på en sida",
+                  "Snabb och mobilanpassad, testa med PageSpeed Insights",
+                  "Google-recensioner, skapa kort-länk, skicka efter varje jobb",
+                  "Google Search Console, registrera och skicka in sitemap",
+                  "Skriv innehåll, svara på kundernas vanligaste frågor",
                 ].map((item, i) => (
                   <div key={item} className="flex items-start gap-3">
                     <span className="flex items-center justify-center w-6 h-6 rounded-md bg-primary-light text-primary text-[12px] font-700 flex-shrink-0 mt-0.5">{i + 1}</span>
@@ -267,7 +267,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Gör du alla sju? Du ligger redan före 90% av småföretag i Sverige. SEO är inte raketvetenskap — det är konsekvent arbete med rätt saker. Behöver du hjälp att komma igång eller vill du ha en <a href="/tjanster/seo" className="text-primary hover:underline font-600">professionell SEO-audit</a>? Hör av dig.
+              Gör du alla sju? Du ligger redan före 90% av småföretag i Sverige. SEO är inte raketvetenskap, det är konsekvent arbete med rätt saker. Behöver du hjälp att komma igång eller vill du ha en <a href="/tjanster/seo" className="text-primary hover:underline font-600">professionell SEO-audit</a>? Hör av dig.
             </p>
 
             {/* Related */}

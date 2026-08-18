@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                Webbdesign-trender 2026 — Vad som faktiskt spelar roll
+                Webbdesign-trender 2026, Vad som faktiskt spelar roll
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -46,7 +46,7 @@ export default function Article() {
           <div className="max-w-3xl mx-auto">
 
             <p className="text-[17px] text-body leading-relaxed mb-6">
-              Varje år flodar det nya design-trender över nätet. Glasmorfi här, neumorphism där, grymt färgstarka gradienter överallt. Men sen — två år senare — är det bara minder från det förgångna.
+              Varje år flodar det nya design-trender över nätet. Glasmorfi här, neumorphism där, grymt färgstarka gradienter överallt. Men sen, två år senare, är det bara minder från det förgångna.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -54,7 +54,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Här är de trenderna 2026 som faktiskt spelar roll — och några du bör undvika helt.
+              Här är de trenderna 2026 som faktiskt spelar roll, och några du bör undvika helt.
             </p>
 
             {/* AI och personalisering */}
@@ -63,7 +63,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              AI är inte längre Science Fiction. Det är här — och det förändrar hur vi bygger sajter. Inte för att ha AI bara för AI:s skull, utan för att det gör sajten smartare.
+              AI är inte längre Science Fiction. Det är här, och det förändrar hur vi bygger sajter. Inte för att ha AI bara för AI:s skull, utan för att det gör sajten smartare.
             </p>
 
             <div className="space-y-3 mb-8">
@@ -89,18 +89,18 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Apple gjorde det. Stripe gjorde det. Nu gör alla det. Och det finns en anledning — det ser ut som det är från 2026, inte 2016.
+              Apple gjorde det. Stripe gjorde det. Nu gör alla det. Och det finns en anledning, det ser ut som det är från 2026, inte 2016.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              En bento grid är en asymmetrisk layout där olika element har olika storlekar — lite som ett bento-låda med olikformade fack. Det ser modernt ut, ja, men det funkar också bra:
+              En bento grid är en asymmetrisk layout där olika element har olika storlekar, lite som ett bento-låda med olikformade fack. Det ser modernt ut, ja, men det funkar också bra:
             </p>
 
             <div className="space-y-2 mb-8">
               {[
-                "Det drar blicken på rätt sätt — stora element för det viktiga, mindre för context",
-                "Det är mobilanpassat från grund — fungerar lika bra på telefon som desktop",
-                "Det är scannbar — ögat vet var det ska titta härnäst",
+                "Det drar blicken på rätt sätt, stora element för det viktiga, mindre för context",
+                "Det är mobilanpassat från grund, fungerar lika bra på telefon som desktop",
+                "Det är scannbar, ögat vet var det ska titta härnäst",
                 "Det sparar utrymme utan att kännas trångt",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
@@ -132,7 +132,7 @@ export default function Article() {
                 <AlertCircle size={18} className="text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-[15px] font-600 text-heading mb-2">Animera med mening</p>
-                  <p className="text-[14px] text-body">Varje animation ska ha ett syfte — visa att något hänt, guida uppmärksamheten eller göra övergångar tydligare. Animera inte bara för att det är möjligt. En sajt som animerar allt är långsammare och mer tröttsam att använda.</p>
+                  <p className="text-[14px] text-body">Varje animation ska ha ett syfte, visa att något hänt, guida uppmärksamheten eller göra övergångar tydligare. Animera inte bara för att det är möjligt. En sajt som animerar allt är långsammare och mer tröttsam att använda.</p>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Det var en tid när dark mode var en extra feature. Nu är det expectation. 50%+ av webben är på dark mode någon gång per dag — ofta på nätterna.
+              Det var en tid när dark mode var en extra feature. Nu är det expectation. 50%+ av webben är på dark mode någon gång per dag, ofta på nätterna.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -156,9 +156,9 @@ export default function Article() {
 
             <div className="space-y-2 mb-8">
               {[
-                "Energi — OLED-skärmar använder betydligt mindre ström med dark backgrounds",
-                "Ögonhälsa — mindre blåljus på kvällen = bättre sömnkvalitet",
-                "Tillgänglighet — kontrast är ofta bättre med dark mode för människor med ljuskänslighet",
+                "Energi, OLED-skärmar använder betydligt mindre ström med dark backgrounds",
+                "Ögonhälsa, mindre blåljus på kvällen = bättre sömnkvalitet",
+                "Tillgänglighet, kontrast är ofta bättre med dark mode för människor med ljuskänslighet",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -168,7 +168,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              I Next.js är det enkelt med Tailwind — använd dark: prefix och låt CSS Variabler hantera färgerna. Din sajt bör redan ha dark mode 2026.
+              I Next.js är det enkelt med Tailwind, använd dark: prefix och låt CSS Variabler hantera färgerna. Din sajt bör redan ha dark mode 2026.
             </p>
 
             {/* Prestanda slår estetik */}
@@ -177,7 +177,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Här är den största trenden 2026 — och den enda som inte är visuell. Google ranking, användarupplevelse och omvandlingar beror alla på prestanda. En 2MB stor banner-bild som tar 3 sekunder att ladda är inte vacker. Det är dåligt.
+              Här är den största trenden 2026, och den enda som inte är visuell. Google ranking, användarupplevelse och omvandlingar beror alla på prestanda. En 2MB stor banner-bild som tar 3 sekunder att ladda är inte vacker. Det är dåligt.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -198,7 +198,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Nästa.js på statiska sidor (SSG) slår WordPress med 10 tyngda plugins vart gång. En WordPress-sajt med ett modernt tema är ofta mellan 3-5MB på första laddningen. En Next.js-sajt kan vara under 200KB. Det är inte nästan att välja — det är det rätta valet för 2026.
+              Nästa.js på statiska sidor (SSG) slår WordPress med 10 tyngda plugins vart gång. En WordPress-sajt med ett modernt tema är ofta mellan 3-5MB på första laddningen. En Next.js-sajt kan vara under 200KB. Det är inte nästan att välja, det är det rätta valet för 2026.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -207,11 +207,11 @@ export default function Article() {
 
             {/* Tillgänglighet */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Tillgänglighet (WCAG) — inte längre frivilligt
+              Tillgänglighet (WCAG), inte längre frivilligt
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Det här är viktigt. Från 2025 är EU:s Accessibility Act (EAA) i kraft. Det betyder att säljbara sajter och appar måste följa WCAG 2.1 AA-standarden. Det är inte längre &ldquo;nice to have&rdquo; — det är lag.
+              Det här är viktigt. Från 2025 är EU:s Accessibility Act (EAA) i kraft. Det betyder att säljbara sajter och appar måste följa WCAG 2.1 AA-standarden. Det är inte längre &ldquo;nice to have&rdquo;, det är lag.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -220,10 +220,10 @@ export default function Article() {
 
             <div className="space-y-2 mb-8">
               {[
-                "Färgblindhet — inte bara röd/grön utan fler nyanser",
-                "Svag syn — text måste vara minst 16px och kontrast minst 4.5:1",
-                "Motoriska problem — allt måste kunna nås från tangentbordet",
-                "Kognitiva funktionshinder — enkel språk, tydlig navigation",
+                "Färgblindhet, inte bara röd/grön utan fler nyanser",
+                "Svag syn, text måste vara minst 16px och kontrast minst 4.5:1",
+                "Motoriska problem, allt måste kunna nås från tangentbordet",
+                "Kognitiva funktionshinder, enkel språk, tydlig navigation",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -233,7 +233,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Om du bygger en ny sajt 2026 utan att tänka på tillgänglighet riskerar du juridiska problem. Inte för att jag är deppig — för att det är realiteten nu.
+              Om du bygger en ny sajt 2026 utan att tänka på tillgänglighet riskerar du juridiska problem. Inte för att jag är deppig, för att det är realiteten nu.
             </p>
 
             {/* Vad du bör undvika */}
@@ -242,7 +242,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
-              Trenderna är inte bara vad du ska göra — de är också vad du ska sluta göra:
+              Trenderna är inte bara vad du ska göra, de är också vad du ska sluta göra:
             </p>
 
             <div className="space-y-3 mb-8">
@@ -265,18 +265,18 @@ export default function Article() {
 
             {/* Sammanfattning */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Sammanfattning — fokus på det som spelar roll
+              Sammanfattning, fokus på det som spelar roll
             </h2>
 
             <div className="bg-surface border border-border rounded-xl p-6 mb-8">
               <div className="space-y-3">
                 {[
-                  "AI och personalisering gör sajten smartare — inte bara flashigare",
+                  "AI och personalisering gör sajten smartare, inte bara flashigare",
                   "Bento grids och asymmetriska layouter ser modernt ut och funkar bra",
-                  "Småa animationer är okay — överdriven animation är aldrig det",
+                  "Småa animationer är okay, överdriven animation är aldrig det",
                   "Dark mode är en expectation, inte en feature",
-                  "Prestanda slår estetik varje gång — en snabb sajt vinner över en fin sajt",
-                  "WCAG AA-tillgänglighet är nu lag i EU — det spelar ingen roll vad du tycker",
+                  "Prestanda slår estetik varje gång, en snabb sajt vinner över en fin sajt",
+                  "WCAG AA-tillgänglighet är nu lag i EU, det spelar ingen roll vad du tycker",
                   "Fokus på verkligt innehål, verkliga bilder och verklig värde för användaren",
                 ].map((item, i) => (
                   <div key={item} className="flex items-start gap-3">
@@ -288,11 +288,11 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              En sajt från 2026 är inte nödvändigtvis flashig eller trendy. Det är en sajt som löser ett problem, laddar snabbt, ser bra ut på alla enheter och är tillgänglig för alla. Trenderna jag nämnt här — de är bara verktyg för att få dit.
+              En sajt från 2026 är inte nödvändigtvis flashig eller trendy. Det är en sajt som löser ett problem, laddar snabbt, ser bra ut på alla enheter och är tillgänglig för alla. Trenderna jag nämnt här, de är bara verktyg för att få dit.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Behöver du <a href="/tjanster/webbutveckling" className="text-primary hover:underline font-600">hjälp att bygga eller uppdatera en sajt</a> som följer dessa trender? Jag gör det till mitt dagliga arbete — från Next.js-arkitektur till WCAG-audit. Hör av dig och vi ses så kan vi gå igenom vad som är viktigt för just din sajt.
+              Behöver du <a href="/tjanster/webbutveckling" className="text-primary hover:underline font-600">hjälp att bygga eller uppdatera en sajt</a> som följer dessa trender? Jag gör det till mitt dagliga arbete, från Next.js-arkitektur till WCAG-audit. Hör av dig och vi ses så kan vi gå igenom vad som är viktigt för just din sajt.
             </p>
 
             {/* Related */}
@@ -316,7 +316,7 @@ export default function Article() {
                 Vill du uppdatera din sajt till 2026-standard?
               </h3>
               <p className="text-[15px] text-muted leading-relaxed mb-6">
-                Jag hjälper företag att bygga snabba, moderna och tillgängliga sajter. Oavsett om du behöver en helt ny sajt eller uppdatering av en befintlig — boka en kostnadsfri genomgång så diskuterar vi vad som är viktigt för dig.
+                Jag hjälper företag att bygga snabba, moderna och tillgängliga sajter. Oavsett om du behöver en helt ny sajt eller uppdatering av en befintlig, boka en kostnadsfri genomgång så diskuterar vi vad som är viktigt för dig.
               </p>
               <a href="/boka" className="premium-btn">
                 <span>Boka kostnadsfri genomgång</span>

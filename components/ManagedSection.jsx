@@ -74,14 +74,14 @@ export default function ManagedSection() {
 
         <Reveal delay={0.06}>
           <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[700px]">
-            Drift, underhåll och förbättringar — utan att du behöver tänka på det.
+            Drift, underhåll och förbättringar, utan att du behöver tänka på det.
           </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
           <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[560px]">
             Jag tar ansvar för din webbplats efter lansering. Uppdateringar,
-            säkerhet, ändringar och förbättringar — allt i ett enkelt
+            säkerhet, ändringar och förbättringar, allt i ett enkelt
             månadsabonnemang.
           </p>
         </Reveal>

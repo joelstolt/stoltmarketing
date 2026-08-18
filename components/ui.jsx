@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-/* ── Scroll-triggered reveal — ENDAST under vecket.
+/* ── Scroll-triggered reveal, ENDAST under vecket.
       Above-the-fold-innehåll får aldrig starta på opacity 0 (LCP). ── */
 export function Reveal({ children, className = "", delay = 0 }) {
   const ref = useRef(null);
@@ -22,7 +22,7 @@ export function Reveal({ children, className = "", delay = 0 }) {
   );
 }
 
-/* ── Badge — gult streck + versalrad i Archivo (nya profilen) ── */
+/* ── Badge, gult streck + versalrad i Archivo (nya profilen) ── */
 export function Badge({ children }) {
   return <span className="eyebrow">{children}</span>;
 }
@@ -56,9 +56,9 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
 /* ── Page hero for sub-pages (breadcrumb + eyebrow + headline + subtitle + CTAs).
       Samma familj som startsidans "fältet i mörker" men gryningsvarianten:
       statiska fältrader i SVG + horisont i stället för canvas. Renderas
-      statiskt — ovanför vecket animeras inget från opacity 0. ── */
+      statiskt, ovanför vecket animeras inget från opacity 0. ── */
 export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
-  /* Sista ordet får guld-kursiven — samma signatur som startsidans gulord. */
+  /* Sista ordet får guld-kursiven, samma signatur som startsidans gulord. */
   let titleHead = title;
   let titleAccent = null;
   if (typeof title === "string") {
@@ -193,7 +193,7 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
           </nav>
         )}
 
-        {/* Eyebrow — samma motiv som startsidan: guldstreck + versaler */}
+        {/* Eyebrow, samma motiv som startsidan: guldstreck + versaler */}
         <div className="flex items-center gap-3.5">
           <span
             aria-hidden="true"

@@ -26,7 +26,7 @@ const breadcrumb = {
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Stolt Marketing — Malmö",
+  name: "Stolt Marketing, Malmö",
   description: "Digital byrå som bygger hemsidor, hanterar SEO och Google Ads i Malmö",
   url: "https://www.stoltmarketing.se/malmo",
   areaServed: ["Malmö", "Öresund", "Skåne", "Sverige"],

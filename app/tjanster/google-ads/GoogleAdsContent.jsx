@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: "Behöver jag en bra hemsida för Google Ads?",
-    a: "Ja — landningssidan är avgörande för resultatet. En snabb, tydlig sida ger lägre klickpris och fler konverteringar. Jag kan bygga en optimerad landningssida om din nuvarande inte håller måttet.",
+    a: "Ja, landningssidan är avgörande för resultatet. En snabb, tydlig sida ger lägre klickpris och fler konverteringar. Jag kan bygga en optimerad landningssida om din nuvarande inte håller måttet.",
   },
   {
     q: "Kan ni kombinera Google Ads med SEO?",
@@ -67,11 +67,11 @@ const faqs = [
   },
   {
     q: "Vilka branscher fungerar Google Ads bra för?",
-    a: "Tjänsteföretag där kunder aktivt söker lösningar — hantverkare, tandläkare, redovisningsbyråer, bilverkstäder, e-handel och B2B-företag. Om dina kunder googlar det du säljer, fungerar Ads.",
+    a: "Tjänsteföretag där kunder aktivt söker lösningar, hantverkare, tandläkare, redovisningsbyråer, bilverkstäder, e-handel och B2B-företag. Om dina kunder googlar det du säljer, fungerar Ads.",
   },
   {
     q: "Vad händer om det inte fungerar?",
-    a: "Vi sätter tydliga mål från start. Om vi inte når dem inom 2–3 månader justerar vi strategi eller pausar kampanjen. Ingen bindningstid — du kan avsluta när som helst.",
+    a: "Vi sätter tydliga mål från start. Om vi inte når dem inom 2 till 3 månader justerar vi strategi eller pausar kampanjen. Ingen bindningstid, du kan avsluta när som helst.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function GoogleAdsContent() {
         ]}
         badge="Google Ads"
         title="Fler kunder med Google Ads — utan att vänta på SEO."
-        subtitle="Du behöver inte vänta 6 månader. Med Google Ads syns du direkt när potentiella kunder söker efter det du erbjuder. Jag sätter upp, optimerar och rapporterar — du får fler samtal och förfrågningar."
+        subtitle="Du behöver inte vänta 6 månader. Med Google Ads syns du direkt när potentiella kunder söker efter det du erbjuder. Jag sätter upp, optimerar och rapporterar, du får fler samtal och förfrågningar."
         bullets={[
           "Resultat redan första veckan",
           "Fast pris på förvaltning",
@@ -102,12 +102,12 @@ export default function GoogleAdsContent() {
           <SectionHeader
             badge="Passar när"
             title="Du vill nå kunder som aktivt letar efter det du erbjuder."
-            subtitle="Google Ads är det snabbaste sättet att synas — men bara om det görs rätt."
+            subtitle="Google Ads är det snabbaste sättet att synas, men bara om det görs rätt."
           />
           <Reveal delay={0.14}>
             <div className="mt-10 grid sm:grid-cols-3 gap-5">
               {[
-                "Du vill ha fler kunder nu — inte om 6 månader.",
+                "Du vill ha fler kunder nu, inte om 6 månader.",
                 "Du har provat Google Ads själv men tycker det är dyrt utan resultat.",
                 "Du vill synas exakt när någon söker din tjänst i ditt område.",
               ].map((text, i) => (

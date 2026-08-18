@@ -5,24 +5,24 @@ import { Reveal, Badge, SectionHeader } from "@/components/ui";
 
 const timeline = [
   {
-    period: "2014–2020",
+    period: "2014 till 2020",
     title: "WordPress & Webdesign",
     desc: "Började bygga webbplatser åt lokala företag. Lärde mig allt från design till hosting, SEO och kundkontakt. Hundratals sajter levererade.",
   },
   {
-    period: "2020–2024",
+    period: "2020 till 2024",
     title: "E-handel & WooCommerce",
     desc: "Fördjupade mig i e-handelslösningar. Byggde komplexa WooCommerce-butiker med betalflöden, lagerhantering och integrationer.",
   },
   {
-    period: "2024–2025",
+    period: "2024 till 2025",
     title: "Next.js, React & Modern stack",
     desc: "Gick över till modern webbutveckling med Next.js och React. Snabbare sajter, bättre prestanda, mer flexibilitet.",
   },
   {
-    period: "2025–nu",
+    period: "2025 till nu",
     title: "AI & Automation",
-    desc: "Byggde Kvota.se — en AI-driven SaaS-produkt. Nu hjälper jag företag implementera AI-verktyg som faktiskt sparar tid i vardagen.",
+    desc: "Byggde Kvota.se, en AI-driven SaaS-produkt. Nu hjälper jag företag implementera AI-verktyg som faktiskt sparar tid i vardagen.",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function OmContent() {
 
               <Reveal delay={0.2}>
                 <p className="mt-4 text-[16px] leading-relaxed text-body max-w-[520px]">
-                  Idag är jag djupt inne i AI — inte som trend, utan som verktyg.
+                  Idag är jag djupt inne i AI, inte som trend, utan som verktyg.
                   Jag har byggt egna AI-produkter, implementerat AI-lösningar åt
                   kunder och använder AI dagligen för att leverera snabbare,
                   smartare och bättre.
@@ -138,7 +138,7 @@ export default function OmContent() {
             {/* Right: Photo + animated elements */}
             <Reveal delay={0.12}>
               <div style={{ position: "relative", minHeight: 460 }}>
-                {/* Animated circle 1 — large, behind photo */}
+                {/* Animated circle 1, large, behind photo */}
                 <div
                   style={{
                     position: "absolute",
@@ -152,7 +152,7 @@ export default function OmContent() {
                   }}
                 />
 
-                {/* Animated circle 2 — medium */}
+                {/* Animated circle 2, medium */}
                 <div
                   style={{
                     position: "absolute",
@@ -166,7 +166,7 @@ export default function OmContent() {
                   }}
                 />
 
-                {/* Animated circle 3 — small accent */}
+                {/* Animated circle 3, small accent */}
                 <div
                   style={{
                     position: "absolute",
@@ -180,7 +180,7 @@ export default function OmContent() {
                   }}
                 />
 
-                {/* Animated circle 4 — tiny */}
+                {/* Animated circle 4, tiny */}
                 <div
                   style={{
                     position: "absolute",
@@ -215,7 +215,7 @@ export default function OmContent() {
                   >
                     <img
                       src="/joel-stolt.webp"
-                      alt="Joel Stolt — Digital konsult & AI-specialist"
+                      alt="Joel Stolt, Digital konsult & AI-specialist"
                       style={{
                         width: "100%",
                         height: "100%",
@@ -226,7 +226,7 @@ export default function OmContent() {
                     />
                   </div>
 
-                  {/* Floating card — projects */}
+                  {/* Floating card, projects */}
                   <div
                     style={{
                       position: "absolute",
@@ -271,7 +271,7 @@ export default function OmContent() {
                     </div>
                   </div>
 
-                  {/* Floating card — AcadeMedia */}
+                  {/* Floating card, AcadeMedia */}
                   <div
                     style={{
                       position: "absolute",
@@ -384,6 +384,44 @@ export default function OmContent() {
                     {item.desc}
                   </p>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ EGNA PRODUKTER ═══ */}
+      <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            badge="Egna produkter"
+            title="Jag bygger inte bara åt kunder."
+            subtitle="Sex produkter jag byggt och driver själv, på samma stack och med samma hantverk som kundsajterna får. Det är så jag vet att det jag säljer håller i drift, på riktigt."
+          />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { namn: "Kvota", rad: "AI-offertgenerator för hantverkare. Färdig offert på under en minut.", url: "https://kvota.se", domn: "kvota.se" },
+              { namn: "Granska", rad: "Tillgänglighetsscanner som mäter e-handel mot EAA-kraven.", url: "https://granska.io", domn: "granska.io" },
+              { namn: "Citero", rad: "Mäter och bygger företags synlighet i AI-sök som ChatGPT.", url: "https://citero.se", domn: "citero.se" },
+              { namn: "Konforma", rad: "CE-dokumentation inför Maskinförordningen 2027.", url: "https://konforma.se", domn: "konforma.se" },
+              { namn: "Tryggadokument", rad: "Framtidsfullmakt online på tio minuter.", url: "https://tryggadokument.se", domn: "tryggadokument.se" },
+              { namn: "Efterbo", rad: "Bouppteckning online till fast pris.", url: "https://efterbo.se", domn: "efterbo.se" },
+            ].map((p, i) => (
+              <Reveal key={p.namn} delay={i * 0.06 + 0.1}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block bg-surface rounded-[10px] border border-border p-6 h-full hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all"
+                  data-umami-event={`produkt-${p.domn}`}
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-heading font-700 text-[18px] text-heading group-hover:text-primary transition-colors">{p.namn}</h3>
+                    <ExternalLink size={15} className="text-muted group-hover:text-primary transition-colors" />
+                  </div>
+                  <p className="mt-2 text-[14px] text-body leading-relaxed">{p.rad}</p>
+                  <p className="mt-3 text-[12px] text-muted" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.06em" }}>{p.domn}</p>
+                </a>
               </Reveal>
             ))}
           </div>

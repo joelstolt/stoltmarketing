@@ -10,7 +10,7 @@ const breadcrumb = {
 export const metadata = {
   title: "Om Joel Stolt — Digital konsult Hässleholm, Skåne",
   description:
-    "Joel Stolt — digital konsult i Hässleholm med 10+ års erfarenhet av webbutveckling, SEO och AI. Kunder från AcadeMedia till lokala småföretag i hela Sverige.",
+    "Joel Stolt, digital konsult i Hässleholm med 10+ års erfarenhet av webbutveckling, SEO och AI. Kunder från AcadeMedia till lokala småföretag i hela Sverige.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/om",
   },

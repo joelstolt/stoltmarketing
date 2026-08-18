@@ -11,7 +11,7 @@ const breadcrumb = {
 export const metadata = {
   title: "Kundcase: Linguista",
   description:
-    "Hur vi byggde om Linguistas webbplats från WordPress till en självuppdaterande Next.js-sajt på Cloudflare. 100 av 100 i prestanda, tillgänglighet, best practices och AI-läsbarhet — och redaktionen publicerar själva.",
+    "Hur vi byggde om Linguistas webbplats från WordPress till en självuppdaterande Next.js-sajt på Cloudflare. 100 av 100 i prestanda, tillgänglighet, best practices och AI-läsbarhet, och redaktionen publicerar själva.",
   alternates: { canonical: "https://www.stoltmarketing.se/projekt/linguista" },
 };
 

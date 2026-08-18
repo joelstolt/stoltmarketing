@@ -6,7 +6,7 @@ import { Reveal, Badge } from "@/components/ui";
 import { trackConversion } from "@/lib/track";
 
 const benefits = [
-  "15–20 min samtal — snabbt och konkret",
+  "15 till 20 min samtal, snabbt och konkret",
   "Du får en tydlig rekommendation, inte en vag byrålista",
   "Helt kostnadsfritt, inga förpliktelser",
 ];
@@ -28,11 +28,11 @@ export default function BokaContent() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [prisIntent, setPrisIntent] = useState(false);
-  // Sätts vid sidladdning — submits < 3 s efter denna avvisas server-side.
+  // Sätts vid sidladdning, submits < 3 s efter denna avvisas server-side.
   const [loadedAt] = useState(() => Date.now());
 
   // "Få upplägg och pris"-knapparna länkar hit med ?amne=pris(&paket=X).
-  // Förifyll meddelandet så knappens löfte hålls — och så att leadet visar
+  // Förifyll meddelandet så knappens löfte hålls, och så att leadet visar
   // vilket köpläge personen är i (prisförfrågan vs mötesbokning).
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -75,7 +75,7 @@ export default function BokaContent() {
             (prisIntent
               ? "Vill ha upplägg och pris."
               : "Vill boka en kostnadsfri genomgång."),
-          _subject: `${prisIntent ? "Prisförfrågan" : "Bokningsförfrågan"} från ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`,
+          _subject: `${prisIntent ? "Prisförfrågan" : "Bokningsförfrågan"} från ${formData.name}${formData.company ? `, ${formData.company}` : ""}`,
         }),
       });
       if (res.ok) {

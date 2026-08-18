@@ -66,7 +66,7 @@ export default function HassleholmContent() {
         ]}
         badge="Hässleholm"
         title="Webbyrå i Hässleholm — din lokala digitala partner."
-        subtitle="Hemsidor, SEO, Google Ads och AI för företag i Hässleholm och nordöstra Skåne. Du jobbar direkt med personen som bygger — fast pris och lokal kontakt, inget byråkrångel."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag i Hässleholm och nordöstra Skåne. Du jobbar direkt med personen som bygger, fast pris och lokal kontakt, inget byråkrångel."
         bullets={[
           "10+ års erfarenhet",
           "Lokal kontakt",
@@ -133,7 +133,7 @@ export default function HassleholmContent() {
                 },
                 {
                   title: "Jag förstår marknaden",
-                  desc: "Lokal kunskap om nordöstra Skåne — vilka branscher som finns, hur folk söker och vad som fungerar.",
+                  desc: "Lokal kunskap om nordöstra Skåne, vilka branscher som finns, hur folk söker och vad som fungerar.",
                 },
                 {
                   title: "Snabb kommunikation",
@@ -163,7 +163,7 @@ export default function HassleholmContent() {
           <SectionHeader
             badge="Serviceområde"
             title="Digital byrå för nordöstra Skåne."
-            subtitle="Baserad i Hässleholm — jobbar med företag lokalt och i hela Sverige."
+            subtitle="Baserad i Hässleholm, jobbar med företag lokalt och i hela Sverige."
           />
           <Reveal delay={0.14}>
             <div className="mt-8 flex flex-wrap gap-3">

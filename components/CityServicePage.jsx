@@ -46,7 +46,7 @@ export default function CityServicePage({ service, city }) {
         badge={`${s.badge} · ${c.name}`}
         title={combo.h1}
         subtitle={combo.heroSubtitle}
-        bullets={["10+ års erfarenhet", "Fast pris innan start", "Allt görs av mig — ingen outsourcing"]}
+        bullets={["10+ års erfarenhet", "Fast pris innan start", "Allt görs av mig, ingen outsourcing"]}
       />
 
       {/* ═══ LOKAL VINKEL (unik per ort × tjänst) ═══ */}
@@ -125,12 +125,12 @@ export default function CityServicePage({ service, city }) {
             <Badge>Varför Stolt Marketing</Badge>
             <Reveal delay={0.06}>
               <h2 className="mt-5 font-heading font-600 text-[clamp(26px,3.5vw,38px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[480px]">
-                En lokal partner i {c.name} — inte en byrå i kö.
+                En lokal partner i {c.name}, inte en byrå i kö.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 text-[16px] leading-relaxed text-body max-w-[520px]">
-                Du jobbar direkt med mig, {SITE.founder.split(" ")[0]}. Allt görs av mig själv — ingen
+                Du jobbar direkt med mig, {SITE.founder.split(" ")[0]}. Allt görs av mig själv, ingen
                 outsourcing, ingen kö och inga ärendenummer. Fast pris innan vi börjar och raka besked
                 hela vägen.
               </p>
@@ -138,7 +138,7 @@ export default function CityServicePage({ service, city }) {
             <Reveal delay={0.14}>
               <div className="mt-6 flex flex-col gap-3">
                 {[
-                  "Allt görs av mig — ingen outsourcing",
+                  "Allt görs av mig, ingen outsourcing",
                   "Fast pris innan start, inga överraskningar",
                   "Lokal i Skåne, nåbar på riktigt",
                 ].map((t) => (
@@ -290,7 +290,7 @@ export default function CityServicePage({ service, city }) {
               </p>
               <div className="flex flex-col gap-2.5">
                 <a href={c.hub} className="text-[14px] font-600 text-heading hover:text-primary transition-colors">
-                  {c.name} — översikt
+                  {c.name}, översikt
                 </a>
                 {otherServices.map((l) => (
                   <a key={l.href} href={l.href} className="text-[14px] text-body hover:text-primary transition-colors">
@@ -310,7 +310,7 @@ export default function CityServicePage({ service, city }) {
                   </a>
                 ))}
                 <a href={s.relatedService} className="text-[14px] font-600 text-heading hover:text-primary transition-colors">
-                  {s.name} — tjänsteöversikt
+                  {s.name}, tjänsteöversikt
                 </a>
               </div>
             </div>

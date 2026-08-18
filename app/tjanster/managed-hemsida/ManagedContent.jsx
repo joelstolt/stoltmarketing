@@ -42,7 +42,7 @@ const faqs = [
   { q: "Vad innebär managed i praktiken?", a: "Jag tar ansvar för uppdateringar, säkerhet, övervakning och innehållsändringar enligt vald nivå. Du får ett tydligt upplägg och rapportering." },
   { q: "Hur snabbt kan du göra ändringar?", a: "Enklare ändringar (text, bilder, länkar) görs normalt inom 24h på vardagar. Större ändringar planeras in enligt din prioritetsnivå." },
   { q: "Tar du över från annan leverantör?", a: "Ja. Jag tar över drift oavsett vem som byggt sajten. Vi gör en ordentlig genomgång av nuläget och sätter tydligt ansvar från start." },
-  { q: "Vad händer om något går sönder?", a: "Jag har backup och återställning på plats. Vid incidenter agerar jag proaktivt — ofta innan du ens märker att något hänt." },
+  { q: "Vad händer om något går sönder?", a: "Jag har backup och återställning på plats. Vid incidenter agerar jag proaktivt, ofta innan du ens märker att något hänt." },
   { q: "Ingår SEO?", a: "I Pro-paketet ingår löpande SEO-optimering. I Start och Bas ingår grundläggande SEO-bevakning men inte aktivt optimeringsarbete." },
 ];
 
@@ -155,7 +155,7 @@ export default function ManagedContent() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "transparent" }} />
         <div className="relative z-10 max-w-[600px] mx-auto text-center">
           <Reveal><h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">Vill du ha lugn drift och tydlig kontroll?</h2></Reveal>
-          <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Vi sätter ett upplägg som passar din nivå, prioritet och ambitionsnivå — med tydligt ansvar och uppföljning.</p></Reveal>
+          <Reveal delay={0.06}><p className="mt-4 text-[16px] leading-relaxed text-body">Vi sätter ett upplägg som passar din nivå, prioritet och ambitionsnivå, med tydligt ansvar och uppföljning.</p></Reveal>
           <Reveal delay={0.12}><a href="/boka" className="premium-btn mt-8 mx-auto"><span>Boka kostnadsfri genomgång</span><ArrowRight size={16} className="opacity-80" /></a></Reveal>
         </div>
       </section>

@@ -10,7 +10,7 @@ const breadcrumb = {
 export const metadata = {
   title: "Projekt & Case — Webbutveckling, SEO, AI, E-handel",
   description:
-    "Utvalda projekt från Stolt Marketing — webbutveckling, e-handel, AI-automation, SEO. Från AcadeMedia till småföretag i Hässleholm och Skåne.",
+    "Utvalda projekt från Stolt Marketing, webbutveckling, e-handel, AI-automation, SEO. Från AcadeMedia till småföretag i Hässleholm och Skåne.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/projekt",
   },

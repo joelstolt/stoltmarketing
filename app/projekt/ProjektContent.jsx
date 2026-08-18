@@ -13,9 +13,9 @@ const projects = [
     type: "WordPress → Next.js · Cloudflare",
     tag: "AcadeMedia",
     tagColor: "green",
-    desc: "Byggde om Linguistas webbplats från WordPress till en självuppdaterande Next.js-sajt på Cloudflares edge. 100 av 100 i prestanda, tillgänglighet, best practices och AI-läsbarhet — och redaktionen publicerar nu helt själva.",
+    desc: "Byggde om Linguistas webbplats från WordPress till en självuppdaterande Next.js-sajt på Cloudflares edge. 100 av 100 i prestanda, tillgänglighet, best practices och AI-läsbarhet, och redaktionen publicerar nu helt själva.",
     challenge: "En snabb men åldrande WordPress-sajt: tillgänglighet under EU-lagkravsnivå, halva innehållet oläsbart för AI-assistenter, och varje innehållsändring krävde en utvecklare.",
-    solution: "Statisk Next.js på Cloudflares edge med eget CMS (Sanity) och automatisk publiceringspipeline — redaktören trycker publicera, sajten bygger om sig själv och är live på minuter. 70+ artiklar migrerade, kontraster på AAA-nivå.",
+    solution: "Statisk Next.js på Cloudflares edge med eget CMS (Sanity) och automatisk publiceringspipeline, redaktören trycker publicera, sajten bygger om sig själv och är live på minuter. 70+ artiklar migrerade, kontraster på AAA-nivå.",
     results: [
       { label: "Prestanda · A11y · BP · AI", value: "100/100" },
       { label: "Laddtid (LCP)", value: "−46 %" },
@@ -50,7 +50,7 @@ const projects = [
     tag: "AcadeMedia",
     tagColor: "green",
     desc: "Byggde en komplett mötesplattform för AcadeMedias YH-studenter och Sveriges arbetsgivare. Studenterna hittar LIA-platser, företagen rekryterar direkt från skolbänken.",
-    challenge: "AcadeMedia behövde en digital plattform som kopplade ihop tusentals YH-studenter med arbetsgivare för LIA-praktik — med registrering, sök och matchning.",
+    challenge: "AcadeMedia behövde en digital plattform som kopplade ihop tusentals YH-studenter med arbetsgivare för LIA-praktik, med registrering, sök och matchning.",
     solution: "Modern Next.js-plattform med registreringsflöden för både studenter och företag, sökfunktion, matchningslogik och responsivt gränssnitt.",
     results: [
       { label: "Kund", value: "AcadeMedia" },
@@ -156,7 +156,7 @@ const projects = [
     type: "Webb · WCAG · Tillgänglighet",
     tag: "EdTech",
     tagColor: "purple",
-    desc: "Modern webbplats för en lärplattform inom utbildningssektorn — byggd med tillgänglighet i fokus.",
+    desc: "Modern webbplats för en lärplattform inom utbildningssektorn, byggd med tillgänglighet i fokus.",
     challenge: "Omniway behövde en ny sajt som uppfyllde WCAG 2.1 AA-krav och kommunicerade deras lärplattform på ett modernt och tillgängligt sätt.",
     solution: "Mörkt tema med hög kontrast, semantisk HTML, skärmläsarstöd och responsiv design. WCAG-anpassad från grunden utan att kompromissa på design.",
     results: [
@@ -174,7 +174,7 @@ const projects = [
     type: "SaaS-produkt · Next.js + AI",
     tag: "Eget projekt",
     tagColor: "blue",
-    desc: "Byggde en AI-driven offertgenerator för svenska hantverkare — från idé till lanserad produkt på 3 veckor.",
+    desc: "Byggde en AI-driven offertgenerator för svenska hantverkare, från idé till lanserad produkt på 3 veckor.",
     challenge: "Hantverkare lägger timmar på att skriva offerter manuellt. Behövde ett verktyg som kunde generera professionella offerter på sekunder.",
     solution: "Next.js-app med Claude AI-integration, röstinspelning via Web Speech API, PDF-generering med jsPDF och e-postutskick via Resend. Från röstinspelning till färdig offert på 45 sekunder.",
     results: [
@@ -295,7 +295,7 @@ export default function ProjektContent() {
         breadcrumbs={[{ label: "Start", href: "/" }, { label: "Projekt" }]}
         badge="Projekt & Resultat"
         title="Uppdrag som talar för sig själva."
-        subtitle="Från enterprise-plattformar åt AcadeMedia till lokala förskolor och AI-produkter — varje projekt får samma engagemang och kvalitet."
+        subtitle="Från enterprise-plattformar åt AcadeMedia till lokala förskolor och AI-produkter, varje projekt får samma engagemang och kvalitet."
       />
 
       <section className="py-16 sm:py-24 px-5 sm:px-8">

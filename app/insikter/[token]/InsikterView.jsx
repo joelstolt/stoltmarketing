@@ -64,7 +64,7 @@ function CopyHTMLButton({ html }) {
       className="premium-btn !py-3 !px-5 !text-sm"
     >
       {copied ? <Check size={16} /> : <Copy size={16} />}
-      {copied ? "Kopierat — klistra in i Gmail" : "Kopiera mejl-HTML"}
+      {copied ? "Kopierat, klistra in i Gmail" : "Kopiera mejl-HTML"}
     </button>
   );
 }
@@ -86,7 +86,7 @@ export default function InsikterView({
               Internt · AI-Insikter
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#1A1611] tracking-tight">
-              Månadsrapport — alla kunder
+              Månadsrapport, alla kunder
             </h1>
             <div className="text-sm text-[#7A7263] mt-1">
               Generera AI-genererade insikter, granska och mejla manuellt.
@@ -193,7 +193,7 @@ export default function InsikterView({
               </div>
 
               <div className="mt-4 text-xs text-[#7A7263] leading-relaxed">
-                <strong>Så här gör du:</strong> 1) Klicka "Kopiera mejl-HTML" 2) Öppna Gmail (eller använd knappen ovan) 3) Klistra in i compose-fönstret (Cmd+V — Gmail renderar HTML automatiskt) 4) Klistra in ämnesraden 5) Lägg till mottagare och skicka.
+                <strong>Så här gör du:</strong> 1) Klicka "Kopiera mejl-HTML" 2) Öppna Gmail (eller använd knappen ovan) 3) Klistra in i compose-fönstret (Cmd+V, Gmail renderar HTML automatiskt) 4) Klistra in ämnesraden 5) Lägg till mottagare och skicka.
               </div>
             </div>
 

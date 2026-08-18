@@ -50,12 +50,12 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Det låter dramatiskt, men siffrorna säger det själva. En delay på bara ett sekund kan resultera i 7% färre konverteringar. Två sekunder? Då är vi uppe på 16%. Och det är bara början. Google har också gjort hemsidans hastighet till en faktisk rankingfaktor — så en långsam sajt får inte bara färre besökare; den hamnar långt ned i sökresultaten.
+              Det låter dramatiskt, men siffrorna säger det själva. En delay på bara ett sekund kan resultera i 7% färre konverteringar. Två sekunder? Då är vi uppe på 16%. Och det är bara början. Google har också gjort hemsidans hastighet till en faktisk rankingfaktor, så en långsam sajt får inte bara färre besökare; den hamnar långt ned i sökresultaten.
             </p>
 
             {/* Varför hastighet spelar roll */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Varför hemsidans hastighet spelar roll — både för människor och för Google
+              Varför hemsidans hastighet spelar roll, både för människor och för Google
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -76,7 +76,7 @@ export default function Article() {
 
             {/* Siffror */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Siffror som bör skrämma dig — men inte måste
+              Siffror som bör skrämma dig, men inte måste
             </h2>
 
             <div className="bg-primary-subtle border border-primary/10 rounded-xl p-6 mb-8">
@@ -101,18 +101,18 @@ export default function Article() {
 
             {/* Core Web Vitals */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Core Web Vitals förklarade enkelt — vad mäter Google egentligen?
+              Core Web Vitals förklarade enkelt, vad mäter Google egentligen?
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Google mäter inte bara "hur snabbt laddar din hemsida". Det skulle vara för enkelt. Istället använder de något som heter Core Web Vitals — tre specifika mätvärden som tillsammans säger något om användarupplevelsen:
+              Google mäter inte bara "hur snabbt laddar din hemsida". Det skulle vara för enkelt. Istället använder de något som heter Core Web Vitals, tre specifika mätvärden som tillsammans säger något om användarupplevelsen:
             </p>
 
             <div className="space-y-4 mb-8">
               {[
-                { metric: "LCP — Largest Contentful Paint", meaning: "Hur snabbt syns det största innehållet på sidan?", target: "Under 2,5 sekunder för bäst resultat", common: "Ofta långsam på grund av stora bilder eller WordPress-teman" },
-                { metric: "FID — First Input Delay", meaning: "Hur snabbt svarar sidan när du klickar på något?", target: "Under 100ms", common: "Ofta långsam på grund av tungt JavaScript eller plugins" },
-                { metric: "CLS — Cumulative Layout Shift", meaning: "Skiftar innehållet omkring när sidan laddar? (irriterande!)", target: "Under 0,1", common: "Ofta orsakad av annonser eller bilder utan definierad storlek" },
+                { metric: "LCP, Largest Contentful Paint", meaning: "Hur snabbt syns det största innehållet på sidan?", target: "Under 2,5 sekunder för bäst resultat", common: "Ofta långsam på grund av stora bilder eller WordPress-teman" },
+                { metric: "FID, First Input Delay", meaning: "Hur snabbt svarar sidan när du klickar på något?", target: "Under 100ms", common: "Ofta långsam på grund av tungt JavaScript eller plugins" },
+                { metric: "CLS, Cumulative Layout Shift", meaning: "Skiftar innehållet omkring när sidan laddar? (irriterande!)", target: "Under 0,1", common: "Ofta orsakad av annonser eller bilder utan definierad storlek" },
               ].map((item) => (
                 <div key={item.metric} className="bg-surface border border-border rounded-lg p-4">
                   <p className="text-[15px] font-700 text-primary mb-2">{item.metric}</p>
@@ -124,7 +124,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Du behöver inte memorera dessa. Du behöver bara veta att om din hemsida inte uppfyller dessa standarder förlorar du ranking på Google OCH förlorar du besökare. Google visar det även i search results nu — en grön bock för snabba sidor, en gul varning för långsamma.
+              Du behöver inte memorera dessa. Du behöver bara veta att om din hemsida inte uppfyller dessa standarder förlorar du ranking på Google OCH förlorar du besökare. Google visar det även i search results nu, en grön bock för snabba sidor, en gul varning för långsamma.
             </p>
 
             {/* Vad gör de flesta långsamt? */}
@@ -142,7 +142,7 @@ export default function Article() {
                 { problem: "Ooptimerade bilder", why: "En 5MB JPG från mobilen istället för en komprimerad 200KB version. Folk övertar ibland 50 bilder på en sida!" },
                 { problem: "För många plugins", why: "15 plugins för 15 saker. Var plugin adderar tid. WordPress med 15 plugins lådar ofta på 4+ sekunder." },
                 { problem: "Inga caching-lösningar", why: "Sidan bygger om sig själv varje gång någon besöker. Är ineffektivt och långsamt." },
-                { problem: "Annonser och tredjepartsskript", why: "Google Analytics, Facebook Pixel, LinkedIn, chat-widgets — allt detta laddar från externa servrar och saktar ned sidan." },
+                { problem: "Annonser och tredjepartsskript", why: "Google Analytics, Facebook Pixel, LinkedIn, chat-widgets, allt detta laddar från externa servrar och saktar ned sidan." },
               ].map((item) => (
                 <div key={item.problem} className="bg-surface border border-border rounded-lg p-4">
                   <p className="text-[14px] font-700 text-heading mb-1">{item.problem}</p>
@@ -157,13 +157,13 @@ export default function Article() {
 
             {/* Lösningar */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Praktiska lösningar — gör din hemsida snabbare idag
+              Praktiska lösningar, gör din hemsida snabbare idag
             </h2>
 
             <h3 className="text-[18px] font-700 text-heading mt-10 mb-4">1. Byt till ett snabbare tema eller platform</h3>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Om du är på WordPress och ditt tema är från 2015 — det är dags att uppdatera. Moderna WordPress-teman (eller helt andra lösningar) är mycket snabbare. Ännu bättre: migrera från WordPress till Next.js eller en statisk site builder. Det kan låta tekniskt, men det är inte det.
+              Om du är på WordPress och ditt tema är från 2015, det är dags att uppdatera. Moderna WordPress-teman (eller helt andra lösningar) är mycket snabbare. Ännu bättre: migrera från WordPress till Next.js eller en statisk site builder. Det kan låta tekniskt, men det är inte det.
             </p>
 
             <div className="space-y-2 mb-8">
@@ -188,9 +188,9 @@ export default function Article() {
             <div className="space-y-2 mb-8">
               {[
                 "Använd ett verktyg som TinyPNG eller ImageOptim för att komprimera före uppladdning",
-                "Ladda upp rätt storlek — en featured image på 1200px bred behöver inte vara 3000x3000px",
-                "Använd moderna format (WebP istället för PNG/JPG) — kan spara 25-30% filstorlek",
-                "Lazy load bilder som ligger längre ned på sidan — de behöver inte ladda direkt",
+                "Ladda upp rätt storlek, en featured image på 1200px bred behöver inte vara 3000x3000px",
+                "Använd moderna format (WebP istället för PNG/JPG), kan spara 25-30% filstorlek",
+                "Lazy load bilder som ligger längre ned på sidan, de behöver inte ladda direkt",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -208,8 +208,8 @@ export default function Article() {
             <div className="space-y-2 mb-8">
               {[
                 "Behållet bara plugins som är helt nödvändiga",
-                "Håll de återstående uppdaterade — gamla versioner är ofta långsammare",
-                "Ersätt flera plugins med en — t.ex. en SEO-plugin istället för tre separata",
+                "Håll de återstående uppdaterade, gamla versioner är ofta långsammare",
+                "Ersätt flera plugins med en, t.ex. en SEO-plugin istället för tre separata",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -239,7 +239,7 @@ export default function Article() {
 
             {/* Mäta */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Hur du mäter din hemsidas hastighet — gratis verktyg
+              Hur du mäter din hemsidas hastighet, gratis verktyg
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -266,7 +266,7 @@ export default function Article() {
 
             {/* Mobile-first */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Mobile-first — det är på mobilen folk är långsam
+              Mobile-first, det är på mobilen folk är långsam
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -274,24 +274,24 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              När du testar din hemsida — testa ALLTID på mobil först. Det är där du förlorar folk. Om din hemsida laddar på 2 sekunder på desktop men 6 sekunder på mobil så har du ett problem.
+              När du testar din hemsida, testa ALLTID på mobil först. Det är där du förlorar folk. Om din hemsida laddar på 2 sekunder på desktop men 6 sekunder på mobil så har du ett problem.
             </p>
 
             {/* Sammanfattning */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Sammanfattning — gör din hemsida snabbare, få fler kunder
+              Sammanfattning, gör din hemsida snabbare, få fler kunder
             </h2>
 
             <div className="bg-surface border border-border rounded-xl p-6 mb-8">
               <div className="space-y-3">
                 {[
-                  "Testa din hemsida idag med PageSpeed Insights — se var du står",
-                  "Optimera dina bilder — ofta den snabbaste win",
+                  "Testa din hemsida idag med PageSpeed Insights, se var du står",
+                  "Optimera dina bilder, ofta den snabbaste win",
                   "Rensa bort onödiga plugins och scripts",
                   "Slå på caching för att spara tid",
                   "Överväg ett tema- eller plattformsbyte om din sida är för långsam",
-                  "Fokusera på mobil-prestanda — det är där folk är",
-                  "Återtest varje månad — track förändringarna",
+                  "Fokusera på mobil-prestanda, det är där folk är",
+                  "Återtest varje månad, track förändringarna",
                 ].map((item, i) => (
                   <div key={item} className="flex items-start gap-3">
                     <span className="flex items-center justify-center w-6 h-6 rounded-md bg-primary-light text-primary text-[12px] font-700 flex-shrink-0 mt-0.5">{i + 1}</span>
@@ -302,7 +302,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              En snabb hemsida är investeringen i din försäljning. Det är inte en teknisk detalj — det är direkta pengar. Om du får 1000 besökare per månad och din sida är långsam jämfört med din konkurrents snabba sida förlorar du försäljning varje dag.
+              En snabb hemsida är investeringen i din försäljning. Det är inte en teknisk detalj, det är direkta pengar. Om du får 1000 besökare per månad och din sida är långsam jämfört med din konkurrents snabba sida förlorar du försäljning varje dag.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">

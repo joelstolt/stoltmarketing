@@ -86,7 +86,7 @@ export default function Article() {
 
             {/* Kostnader, DIY */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Dolda kostnader — DIY är aldrig två tusen kronor
+              Dolda kostnader, DIY är aldrig två tusen kronor
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -156,7 +156,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
-              Nu — DIY är inte alltid dåligt. Det finns fall där det gör perfekt mening:
+              Nu, DIY är inte alltid dåligt. Det finns fall där det gör perfekt mening:
             </p>
 
             <div className="space-y-3 mb-8">
@@ -178,7 +178,7 @@ export default function Article() {
 
             {/* Webbyrå */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Anlita en webbyrå — Det du faktiskt får
+              Anlita en webbyrå, Det du faktiskt får
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -188,7 +188,7 @@ export default function Article() {
             <div className="space-y-3 mb-8">
               {[
                 { item: "Sparat 80+ timmar arbete", desc: "Du lägger 2-3 möten. De gör resten. Du sparar nästan två månader jämfört med DIY." },
-                { item: "Professionell design", desc: "Inte 'ser ut som hundra andra hemsidor'. Din hemsida ser ut som ett professionellt företag — för att det är gjort av proffs." },
+                { item: "Professionell design", desc: "Inte 'ser ut som hundra andra hemsidor'. Din hemsida ser ut som ett professionellt företag, för att det är gjort av proffs." },
                 { item: "SEO redan inbyggt", desc: "Snabb, mobilanpassad, rätt struktur, rätt metadata. Inte något du måste fixa senare eller gissa dig fram till." },
                 { item: "Säkerhet från dag ett", desc: "SSL, backups, uppdateringar, säkerhetspatchning. Du behöver inte oroa dig för hackers eller serverfel." },
                 { item: "Skalbarhet", desc: "Om ditt företag växer kan hemsidan växa. Inte 'nu måste vi bygga om allt'. Den är redan byggd för att växa." },
@@ -206,7 +206,7 @@ export default function Article() {
 
             {/* ROI av webbyrå */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              ROI — Vad är en hemsida värd?
+              ROI, Vad är en hemsida värd?
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -214,7 +214,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
-              Om din hemsida drar in bara 2-3 extra kunder per år — och dessa kunder är värda 20 000+ kronor — så har hemsidan redan betalat för sig själv. Och vi har inte räknat på alla andra årens leads.
+              Om din hemsida drar in bara 2-3 extra kunder per år, och dessa kunder är värda 20 000+ kronor, så har hemsidan redan betalat för sig själv. Och vi har inte räknat på alla andra årens leads.
             </p>
 
             <div className="bg-primary-subtle border border-primary/10 rounded-xl p-6 mb-8">
@@ -260,12 +260,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              "Men DIY är billigare!" — Ja, på papperet. Men glöm inte: DIY-kostnaden räknar inte på att hemsidan är långsammare, svårare att uppdatera, svagare SEO och utan support. Det är inte en apple-to-apple jämförelse.
+              "Men DIY är billigare!", Ja, på papperet. Men glöm inte: DIY-kostnaden räknar inte på att hemsidan är långsammare, svårare att uppdatera, svagare SEO och utan support. Det är inte en apple-to-apple jämförelse.
             </p>
 
             {/* Vad ska du välja? */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Så — Vad ska du välja?
+              Så, Vad ska du välja?
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -286,7 +286,7 @@ export default function Article() {
                 },
                 {
                   situation: "Du behöver en komplex lösning (e-handel, SaaS, många integreringar)",
-                  choice: "Anlita en webbyrå — eller mer utvecklare",
+                  choice: "Anlita en webbyrå, eller mer utvecklare",
                   why: "Ditt projekt är för komplext för DIY. Du behöver någon med kunskap. Det är bara vägen det."
                 },
                 {
@@ -320,7 +320,7 @@ export default function Article() {
                 Osäker på vilket vägen är för dig?
               </h3>
               <p className="text-[15px] text-body mb-6 leading-relaxed">
-                Vi kan berätta om DIY eller professionell byrå är rätt väg för dig. Det finns ingen universell svar — bara rätt svar för ditt företag.
+                Vi kan berätta om DIY eller professionell byrå är rätt väg för dig. Det finns ingen universell svar, bara rätt svar för ditt företag.
               </p>
               <a href="/boka" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-[#191405] rounded-lg font-600 text-[14px] hover:bg-accent-deep transition-colors">
                 Boka samtal <ArrowRight size={16} />

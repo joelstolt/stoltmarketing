@@ -26,7 +26,7 @@ const breadcrumb = {
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Stolt Marketing — Lund",
+  name: "Stolt Marketing, Lund",
   description: "Digital byrå som bygger hemsidor, hanterar SEO och Google Ads för tech-startups i Lund",
   url: "https://www.stoltmarketing.se/lund",
   areaServed: ["Lund", "Ideon", "Skåne", "Sverige"],

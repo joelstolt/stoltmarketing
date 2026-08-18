@@ -66,7 +66,7 @@ export default function KristianstadContent() {
         ]}
         badge="Kristianstad"
         title="Webbyrå i Kristianstad — din lokala digitala partner."
-        subtitle="Hemsidor, SEO, Google Ads och AI för företag i Kristianstad, Åhus och nordöstra Skåne. Du pratar direkt med konsulten som bygger — fast pris och raka besked."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag i Kristianstad, Åhus och nordöstra Skåne. Du pratar direkt med konsulten som bygger, fast pris och raka besked."
         bullets={[
           "10+ års erfarenhet",
           "Lokal kontakt",
@@ -133,7 +133,7 @@ export default function KristianstadContent() {
                 },
                 {
                   title: "Jag förstår marknaden",
-                  desc: "Lokal kunskap om nordöstra Skåne — vilka branscher som finns, hur folk söker och vad som fungerar i Kristianstad-området.",
+                  desc: "Lokal kunskap om nordöstra Skåne, vilka branscher som finns, hur folk söker och vad som fungerar i Kristianstad-området.",
                 },
                 {
                   title: "Snabb kommunikation",
@@ -163,7 +163,7 @@ export default function KristianstadContent() {
           <SectionHeader
             badge="Serviceområde"
             title="Digital byrå för nordöstra Skåne."
-            subtitle="Jag jobbar med företag i Kristianstad, Åhus, Bromölla och övriga Skåne — samt hela Sverige."
+            subtitle="Jag jobbar med företag i Kristianstad, Åhus, Bromölla och övriga Skåne, samt hela Sverige."
           />
           <Reveal delay={0.14}>
             <div className="mt-8 flex flex-wrap gap-3">

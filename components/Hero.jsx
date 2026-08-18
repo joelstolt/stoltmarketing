@@ -45,8 +45,7 @@ function FramedImage() {
       <p className="mt-5 flex items-baseline gap-3 text-[14px] text-muted">
         <span aria-hidden="true" className="w-2 h-2 bg-accent flex-shrink-0 self-center" />
         <span>
-          <span className="font-heading italic text-[15px] text-heading">Hässleholm</span>
-          {" "}— kunder i hela Sverige.
+          <span className="font-heading italic text-[15px] text-heading">Hässleholm</span>, kunder i hela Sverige.
         </span>
       </p>
     </div>
@@ -54,7 +53,7 @@ function FramedImage() {
 }
 
 const bullets = [
-  "Vi börjar med det som ger störst effekt — inte allt på en gång.",
+  "Vi börjar med det som ger störst effekt, inte allt på en gång.",
   "Webb, SEO och AI i samma leverans, från samma person.",
   "Du får ansvar och uppföljning även efter lansering.",
 ];
@@ -86,7 +85,7 @@ export default function Hero() {
             <Reveal delay={0.12}>
               <p className="mt-7 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px]">
                 För småföretag som vill ha tydligare sidor, bättre synlighet och
-                smartare arbetsflöden — med en konsult som faktiskt genomför
+                smartare arbetsflöden, med en konsult som faktiskt genomför
                 förbättringarna.
               </p>
             </Reveal>

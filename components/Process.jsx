@@ -25,7 +25,7 @@ const steps = [
     num: "01",
     icon: MessageCircle,
     title: "Samtal",
-    desc: "Vi börjar med ett kostnadsfritt samtal där jag lyssnar på dina behov, utmaningar och mål. Ingen sälj — bara en ärlig bedömning av hur jag kan hjälpa.",
+    desc: "Vi börjar med ett kostnadsfritt samtal där jag lyssnar på dina behov, utmaningar och mål. Ingen sälj, bara en ärlig bedömning av hur jag kan hjälpa.",
   },
   {
     num: "02",

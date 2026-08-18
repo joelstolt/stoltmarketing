@@ -38,7 +38,7 @@ const cases = [
   {
     client: "RBN Utbildning",
     type: "Webb · API · SEO · Grafisk profil",
-    desc: "Ny webbplats med komplett grafisk profil, sökmotoroptimering och API-integration mot befintliga system. Utbildningar, kunskapsbanken och kundportalen — allt samlat i en tydlig och snabb upplevelse.",
+    desc: "Ny webbplats med komplett grafisk profil, sökmotoroptimering och API-integration mot befintliga system. Utbildningar, kunskapsbanken och kundportalen, allt samlat i en tydlig och snabb upplevelse.",
     tag: "Utbildningsföretag",
     tagColor: "blue",
     icon: Zap,
@@ -53,7 +53,7 @@ const cases = [
   {
     client: "Förskolan Harpan",
     type: "Webb · Grafisk profil",
-    desc: "Ny grafisk profil och modern webbplats för en kristen förskola med musikprofil i Hässleholm. Varm och inbjudande design som speglar verksamheten — med tydlig information för föräldrar och enkel platsansökan.",
+    desc: "Ny grafisk profil och modern webbplats för en kristen förskola med musikprofil i Hässleholm. Varm och inbjudande design som speglar verksamheten, med tydlig information för föräldrar och enkel platsansökan.",
     tag: "Lokal kund",
     tagColor: "yellow",
     icon: Palette,
@@ -67,7 +67,7 @@ const cases = [
   {
     client: "Omniway",
     type: "Webb · WCAG · Tillgänglighet",
-    desc: "Modern webbplats för en lärplattform inom utbildningssektorn — byggd med tillgänglighet i fokus. WCAG-anpassad från grunden, mörkt tema och responsiv design som fungerar för alla användare.",
+    desc: "Modern webbplats för en lärplattform inom utbildningssektorn, byggd med tillgänglighet i fokus. WCAG-anpassad från grunden, mörkt tema och responsiv design som fungerar för alla användare.",
     tag: "EdTech",
     tagColor: "purple",
     icon: Accessibility,
@@ -111,7 +111,7 @@ export default function Cases() {
 
         <Reveal delay={0.1}>
           <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px]">
-            Från enterprise-plattformar till lokala förskolor — varje projekt
+            Från enterprise-plattformar till lokala förskolor, varje projekt
             får samma engagemang och kvalitetsnivå.
           </p>
         </Reveal>

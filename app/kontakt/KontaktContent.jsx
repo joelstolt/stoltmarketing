@@ -19,7 +19,7 @@ const contactMethods = [
     title: "Telefon",
     value: SITE.phone,
     href: SITE.phoneHref,
-    desc: "Ring eller SMS, vardagar 08:00–17:00",
+    desc: "Ring eller SMS, vardagar 08:00 till 17:00",
   },
   {
     icon: MapPin,
@@ -31,10 +31,10 @@ const contactMethods = [
 ];
 
 const promises = [
-  "Du får en tydlig rekommendation — inte en vag byrålista.",
+  "Du får en tydlig rekommendation, inte en vag byrålista.",
   "Vi kan ta webb, SEO, AI och drift i samma upplägg.",
   "Det ska kännas enklare att välja väg framåt efter samtalet.",
-  "Inget sälj, inga förpliktelser — bara en ärlig bedömning.",
+  "Inget sälj, inga förpliktelser, bara en ärlig bedömning.",
 ];
 
 const steps = [
@@ -46,7 +46,7 @@ const steps = [
   {
     num: "2",
     title: "Jag hör av mig inom 24h",
-    desc: "Vi bokar in ett kort samtal på 15–20 min.",
+    desc: "Vi bokar in ett kort samtal på 15 till 20 min.",
   },
   {
     num: "3",
@@ -66,7 +66,7 @@ export default function KontaktContent() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
-  // Sätts vid sidladdning — submits < 3 s efter denna avvisas server-side.
+  // Sätts vid sidladdning, submits < 3 s efter denna avvisas server-side.
   const [loadedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e) => {
@@ -90,7 +90,7 @@ export default function KontaktContent() {
           message: formData.message,
           hp_field: formData.hp_field,
           _elapsedMs: Date.now() - loadedAt,
-          _subject: `Ny förfrågan från ${formData.name} — ${formData.company || "Ej angivet"}`,
+          _subject: `Ny förfrågan från ${formData.name}, ${formData.company || "Ej angivet"}`,
         }),
       });
       if (res.ok) {
@@ -139,7 +139,7 @@ export default function KontaktContent() {
         ]}
         badge="Kontakt & Bokning"
         title="Boka en kostnadsfri genomgång och få tydliga nästa steg."
-        subtitle="Beskriv ditt nuläge så hör jag av mig inom 24 timmar med en konkret rekommendation — helt utan förpliktelser."
+        subtitle="Beskriv ditt nuläge så hör jag av mig inom 24 timmar med en konkret rekommendation, helt utan förpliktelser."
       />
 
       <section className="py-16 sm:py-24 px-5 sm:px-8">

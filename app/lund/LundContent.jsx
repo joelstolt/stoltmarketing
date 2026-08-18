@@ -66,7 +66,7 @@ export default function LundContent() {
         ]}
         badge="Lund"
         title="Webbyrå i Lund — för innovatörer, forskning och tech."
-        subtitle="Hemsidor, SEO, Google Ads och AI för företag kring Lunds universitet, Ideon och Medicon Valley. Du pratar med utvecklaren själv — teknisk klass och fast pris."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag kring Lunds universitet, Ideon och Medicon Valley. Du pratar med utvecklaren själv, teknisk klass och fast pris."
         bullets={[
           "10+ års erfarenhet",
           "Tech-fokuserad",
@@ -163,7 +163,7 @@ export default function LundContent() {
           <SectionHeader
             badge="Serviceområde"
             title="Digital byrå för Lund och Skånes tekniksektor."
-            subtitle="Baserad i Skåne — jobbar med företag i Lund, Ideon och hela Sverige."
+            subtitle="Baserad i Skåne, jobbar med företag i Lund, Ideon och hela Sverige."
           />
           <Reveal delay={0.14}>
             <div className="mt-8 flex flex-wrap gap-3">

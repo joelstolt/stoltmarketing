@@ -6,7 +6,7 @@ import { ArrowRight, Home } from "lucide-react";
 export default function NotFoundContent() {
   return (
     <section className="hero-dark relative overflow-hidden min-h-[80vh] flex items-center">
-      {/* Gradient background — same as PageHero */}
+      {/* Gradient background, same as PageHero */}
 
       {/* Decorative blob */}
       <div
@@ -77,7 +77,7 @@ export default function NotFoundContent() {
         </motion.div>
       </div>
 
-      {/* Bottom fade — same as PageHero */}
+      {/* Bottom fade, same as PageHero */}
     </section>
   );
 }

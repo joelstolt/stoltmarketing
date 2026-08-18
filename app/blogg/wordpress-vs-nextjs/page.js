@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                WordPress vs Next.js — vilket passar ditt företag?
+                WordPress vs Next.js, vilket passar ditt företag?
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -46,11 +46,11 @@ export default function Article() {
           <div className="max-w-3xl mx-auto">
 
             <p className="text-[17px] text-body leading-relaxed mb-6">
-              WordPress driver 43% av alla sajter på internet. Next.js är det snabbast växande ramverket bland professionella utvecklare. Jag har byggt 150+ projekt i båda — och valet beror inte på vilken teknik som är &ldquo;bäst&rdquo;, utan på vad ditt företag faktiskt behöver.
+              WordPress driver 43% av alla sajter på internet. Next.js är det snabbast växande ramverket bland professionella utvecklare. Jag har byggt 150+ projekt i båda, och valet beror inte på vilken teknik som är &ldquo;bäst&rdquo;, utan på vad ditt företag faktiskt behöver.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Den här guiden ger dig en ärlig jämförelse utan agenda. Jag tjänar lika mycket oavsett vad du väljer — mitt jobb är att rekommendera rätt teknik för ditt mål.
+              Den här guiden ger dig en ärlig jämförelse utan agenda. Jag tjänar lika mycket oavsett vad du väljer, mitt jobb är att rekommendera rätt teknik för ditt mål.
             </p>
 
             {/* Section: Snabbjämförelse */}
@@ -69,13 +69,13 @@ export default function Article() {
                 </thead>
                 <tbody className="text-body">
                   {[
-                    ["Laddtid", "2–5 sek (typiskt)", "< 1 sek"],
-                    ["Lighthouse-poäng", "40–75", "90–100"],
+                    ["Laddtid", "2 till 5 sek (typiskt)", "< 1 sek"],
+                    ["Lighthouse-poäng", "40 till 75", "90 till 100"],
                     ["Säkerhet", "Kräver löpande uppdateringar", "Mycket säkert (statisk HTML)"],
                     ["Redigerbarhet", "Visuell editor (Gutenberg/Bricks)", "Kräver utvecklare (eller CMS-koppling)"],
                     ["E-handel", "WooCommerce (komplett)", "Headless + Stripe/Shopify"],
                     ["SEO", "Bra med Yoast/RankMath", "Utmärkt (snabbare = bättre ranking)"],
-                    ["Underhåll", "Plugins, teman, säkerhet — löpande", "Minimalt efter lansering"],
+                    ["Underhåll", "Plugins, teman, säkerhet, löpande", "Minimalt efter lansering"],
                     ["Kostnad att bygga", "Lägre (fler utvecklare)", "Högre (specialistkompetens)"],
                     ["Kostnad att driva", "Högre (hosting + underhåll)", "Lägre (ofta gratis hosting)"],
                   ].map(([label, wp, next]) => (
@@ -91,7 +91,7 @@ export default function Article() {
 
             {/* Section: WordPress */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              WordPress — när det är rätt val
+              WordPress, när det är rätt val
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -101,7 +101,7 @@ export default function Article() {
             <div className="space-y-2 mb-6">
               {[
                 "Du behöver e-handel med WooCommerce (produkter, checkout, lager, frakt)",
-                "Du vill redigera texter, bilder och sidor själv — utan att kontakta en utvecklare",
+                "Du vill redigera texter, bilder och sidor själv, utan att kontakta en utvecklare",
                 "Du har ett befintligt WordPress-ekosystem med plugins och integrationer",
                 "Budgeten är begränsad och du behöver komma igång snabbt",
                 "Du behöver en blogg med många artiklar som publiceras ofta",
@@ -114,12 +114,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Jag bygger fortfarande mycket i WordPress — särskilt för kunder inom AcadeMedia-koncernen (SMH, KYH, Hermods) där WooCommerce-integration och visuella editorer är krav. WordPress är inte dåligt — det är dåligt implementerat WordPress som är dåligt.
+              Jag bygger fortfarande mycket i WordPress, särskilt för kunder inom AcadeMedia-koncernen (SMH, KYH, Hermods) där WooCommerce-integration och visuella editorer är krav. WordPress är inte dåligt, det är dåligt implementerat WordPress som är dåligt.
             </p>
 
             {/* Section: Next.js */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Next.js — när det är rätt val
+              Next.js, när det är rätt val
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -128,7 +128,7 @@ export default function Article() {
 
             <div className="space-y-2 mb-6">
               {[
-                "Prestanda och laddtid är kritiskt — du konkurrerar i Google lokalt",
+                "Prestanda och laddtid är kritiskt, du konkurrerar i Google lokalt",
                 "Du vill ha en sajt som laddar på under 1 sekund, utan undantag",
                 "Sajten behöver inte uppdateras dagligen av icke-teknisk personal",
                 "Du vill ha minimal attack-yta (ingen databas, inga plugins att hacka)",
@@ -148,7 +148,7 @@ export default function Article() {
 
             {/* Section: Prestanda */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Prestanda — varför det spelar roll för SEO
+              Prestanda, varför det spelar roll för SEO
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -175,7 +175,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Det betyder inte att alla WordPress-sajter är långsamma — men det kräver mer arbete att nå samma resultat. Plugins, tunga teman och delade webbhotell drar ner prestanda. Next.js är snabbt ur lådan.
+              Det betyder inte att alla WordPress-sajter är långsamma, men det kräver mer arbete att nå samma resultat. Plugins, tunga teman och delade webbhotell drar ner prestanda. Next.js är snabbt ur lådan.
             </p>
 
             {/* Section: Sammanfattning */}
@@ -195,7 +195,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Osäker? Boka en genomgång så hjälper jag dig välja baserat på dina faktiska behov — inte på vad som är trendigt.
+              Osäker? Boka en genomgång så hjälper jag dig välja baserat på dina faktiska behov, inte på vad som är trendigt.
             </p>
 
             {/* Related */}
@@ -218,7 +218,7 @@ export default function Article() {
                 Osäker på vilken teknik som passar?
               </h3>
               <p className="text-[15px] text-muted leading-relaxed mb-6">
-                Jag bygger i båda. Boka en kostnadsfri genomgång så hjälper jag dig välja rätt — baserat på dina mål, inte på vad som är enklast för mig.
+                Jag bygger i båda. Boka en kostnadsfri genomgång så hjälper jag dig välja rätt, baserat på dina mål, inte på vad som är enklast för mig.
               </p>
               <a href="/boka" className="premium-btn">
                 <span>Boka kostnadsfri genomgång</span>

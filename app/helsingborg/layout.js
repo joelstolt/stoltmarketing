@@ -26,7 +26,7 @@ const breadcrumb = {
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Stolt Marketing — Helsingborg",
+  name: "Stolt Marketing, Helsingborg",
   description: "Digital byrå som bygger hemsidor, hanterar SEO och Google Ads i Helsingborg",
   url: "https://www.stoltmarketing.se/helsingborg",
   areaServed: ["Helsingborg", "Skåne", "Sverige"],

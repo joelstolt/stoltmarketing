@@ -14,7 +14,7 @@ const ALLOWED_ORIGINS = [
   "https://www.stoltmarketing.se",
 ];
 
-// Identiskt med svaret vid riktigt utskick — skiljer sig inte utåt.
+// Identiskt med svaret vid riktigt utskick, skiljer sig inte utåt.
 const okSvar = () => Response.json({ ok: true, success: true });
 
 const esc = (s) =>
@@ -38,7 +38,7 @@ export async function POST(req) {
     const data = await req.json();
     const { name, email, message } = data;
 
-    // 2) Honeypot — dolt fält som människor aldrig ser, bara bottar fyller i.
+    // 2) Honeypot, dolt fält som människor aldrig ser, bara bottar fyller i.
     if (data.hp_field) return okSvar();
 
     // 3) Heuristik: länkspam (fler än 2 URL:er i meddelandet) och omänskligt
@@ -63,7 +63,7 @@ export async function POST(req) {
 
     // Build the subject + rows from whichever fields are present
     const subject =
-      data._subject || `Ny förfrågan från ${name}${data.company ? ` — ${data.company}` : ""}`;
+      data._subject || `Ny förfrågan från ${name}${data.company ? `, ${data.company}` : ""}`;
 
     const rows = [
       ["Namn", name],

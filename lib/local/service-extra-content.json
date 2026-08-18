@@ -49,9 +49,9 @@
   "webbutveckling": {
     "deepHeading": "En hemsida byggd för att ge dig kunder",
     "deepParagraphs": [
-      "När jag bygger en hemsida åt ett företag handlar allt om en sak: att den ska förvandla besökare till kunder. En snygg sajt som ingen hittar eller som laddar långsamt gör ingen nytta. Därför utgår jag alltid från vad just dina kunder söker efter och hur de fattar beslut. Jag är en webbutvecklare som gör allt själv – från första skiss till färdig sajt – vilket gör att du slipper möten med fem olika personer. Du pratar med mig, och jag bygger. Det håller både tempot uppe och priset nere.",
+      "När jag bygger en hemsida åt ett företag handlar allt om en sak: att den ska förvandla besökare till kunder. En snygg sajt som ingen hittar eller som laddar långsamt gör ingen nytta. Därför utgår jag alltid från vad just dina kunder söker efter och hur de fattar beslut. Jag är en webbutvecklare som gör allt själv, från första skiss till färdig sajt, vilket gör att du slipper möten med fem olika personer. Du pratar med mig, och jag bygger. Det håller både tempot uppe och priset nere.",
       "Som webbyrå jobbar jag med modern teknik och bygger ofta i egen kod istället för tunga färdiga mallar. Resultatet blir en snabb hemsida som laddar på mindre än en sekund, klarar Googles krav och känns proffsig på både mobil och dator. All design är responsiv från start, så sajten ser lika bra ut i fickan som på en stor skärm. Jag sätter ett fast pris innan vi börjar, så att du vet exakt vad det kostar att bygga en hemsida. Inga timdebiteringar som skenar och inga överraskningar på fakturan när projektet är klart.",
-      "Jag sitter i Hässleholm men jobbar med företag i hela Sverige – det mesta sker ändå digitalt via videosamtal, mejl och delade länkar. Oavsett om du behöver en enkel presentationssajt, en sida som drar in leads eller en komplett e-handel så anpassar jag bygget efter ditt mål och din budget. Du får en hemsida som är byggd för att synas i Google, ladda snabbt och vara enkel att växa med när företaget växer. Vill du veta vad en hemsida skulle kosta för just dig? Hör av dig så tar vi ett förutsättningslöst snack.",
+      "Jag sitter i Hässleholm men jobbar med företag i hela Sverige, det mesta sker ändå digitalt via videosamtal, mejl och delade länkar. Oavsett om du behöver en enkel presentationssajt, en sida som drar in leads eller en komplett e-handel så anpassar jag bygget efter ditt mål och din budget. Du får en hemsida som är byggd för att synas i Google, ladda snabbt och vara enkel att växa med när företaget växer. Vill du veta vad en hemsida skulle kosta för just dig? Hör av dig så tar vi ett förutsättningslöst snack.",
       "Bra webbdesign är inte samma sak som snygg design. En sida kan vinna pris och ändå inte generera en enda förfrågan. När jag designar utgår jag från vad besökaren kom för att göra: hitta priset, se bevis på att ni kan er sak och ta kontakt utan friktion. Färg, typografi och rörelse är verktyg för det, inte mål i sig. Snabbheten är också design, för en sida som laddar långsamt tappar besökare innan den ens fått visa sig.",
       "Så går ett bygge till hos mig: vi börjar med en genomgång av mål, kunder och innehåll, sedan får du en skiss och ett fast pris. När designen är godkänd bygger jag, fyller på med innehåll och optimerar för sök. Vid lansering pekas domänen om utan avbrott, och därefter mäter vi och justerar. En normal företagssajt tar två till fyra veckor från start till lansering.",
       "Priset är öppet: 0 kr i startavgift och 1 190 kr i månaden, där drift, säkerhet och löpande ändringar redan ingår. Jämför gärna med marknaden, där en byråbyggd sajt oftast kostar 30 000 till 100 000 kr i engångsavgift plus löpande drift. Upplägget gör att jag bara tjänar på att din sajt fortsätter leverera, inte på att fakturera timmar för varje liten ändring."
@@ -71,7 +71,7 @@
       },
       {
         "q": "Varför är en snabb hemsida så viktig?",
-        "a": "En långsam sajt tappar besökare – många klickar bort redan efter ett par sekunders väntan. Snabbhet påverkar dessutom direkt hur högt du rankar i Google. Därför bygger jag sajter som laddar på under en sekund genom att hålla koden lätt och optimera bilder. Det ger fler kvarvarande besökare, bättre ranking och fler affärer – utan att du behöver göra något extra."
+        "a": "En långsam sajt tappar besökare, många klickar bort redan efter ett par sekunders väntan. Snabbhet påverkar dessutom direkt hur högt du rankar i Google. Därför bygger jag sajter som laddar på under en sekund genom att hålla koden lätt och optimera bilder. Det ger fler kvarvarande besökare, bättre ranking och fler affärer, utan att du behöver göra något extra."
       },
       {
         "q": "Vad kostar webbdesign hos dig?",
@@ -134,11 +134,11 @@
     ]
   },
   "ai-automation": {
-    "deepHeading": "AI som sparar tid — inte ett experiment",
+    "deepHeading": "AI som sparar tid, inte ett experiment",
     "deepParagraphs": [
-      "När jag pratar med företag om AI märker jag samma sak om och om igen: alla känner pressen att göra något, men få vet var de ska börja. Jag jobbar tvärtom. Vi utgår aldrig från tekniken utan från din vardag — vilka uppgifter som äter timmar varje vecka, vilka som upprepas och vilka som inte borde kräva en människa alls. Först därefter bygger vi. För mig handlar AI-automation inte om att hänga med i hypen, utan om att du ska få tillbaka tid till det som faktiskt driver intäkter i din verksamhet.",
-      "Konkret kan det vara att offerter skapas automatiskt ur ett mejl, att leads sorteras och hamnar rätt i ditt CRM, eller att kundfrågor besvaras dygnet runt av en chatbot som kan ditt företag. Jag bygger flödena i verktyg som n8n och Zapier och kopplar ihop systemen du redan använder — inget behöver bytas ut. Du ser exakt vad som händer i varje steg, och du äger lösningen. Min utgångspunkt är alltid att börja smått med ett tydligt flöde som ger snabb effekt, inte ett stort projekt som tar månader att landa.",
-      "Jag sitter i Hässleholm men jobbar med företag i hela Sverige — allt sker digitalt, så avståndet spelar ingen roll. Det som däremot spelar roll är att du pratar med samma person hela vägen, från första kartläggning till att flödet är igång och du faktiskt sparar tid. Jag lovar inte mirakel och säljer ingen färdig produkt du tvingas anpassa dig till. I stället tittar vi tillsammans på var det klämmer mest, räknar på vad tiden är värd, och bygger något som betalar sig. Hör av dig så tar vi ett förutsättningslöst snack om din vardag."
+      "När jag pratar med företag om AI märker jag samma sak om och om igen: alla känner pressen att göra något, men få vet var de ska börja. Jag jobbar tvärtom. Vi utgår aldrig från tekniken utan från din vardag, vilka uppgifter som äter timmar varje vecka, vilka som upprepas och vilka som inte borde kräva en människa alls. Först därefter bygger vi. För mig handlar AI-automation inte om att hänga med i hypen, utan om att du ska få tillbaka tid till det som faktiskt driver intäkter i din verksamhet.",
+      "Konkret kan det vara att offerter skapas automatiskt ur ett mejl, att leads sorteras och hamnar rätt i ditt CRM, eller att kundfrågor besvaras dygnet runt av en chatbot som kan ditt företag. Jag bygger flödena i verktyg som n8n och Zapier och kopplar ihop systemen du redan använder, inget behöver bytas ut. Du ser exakt vad som händer i varje steg, och du äger lösningen. Min utgångspunkt är alltid att börja smått med ett tydligt flöde som ger snabb effekt, inte ett stort projekt som tar månader att landa.",
+      "Jag sitter i Hässleholm men jobbar med företag i hela Sverige, allt sker digitalt, så avståndet spelar ingen roll. Det som däremot spelar roll är att du pratar med samma person hela vägen, från första kartläggning till att flödet är igång och du faktiskt sparar tid. Jag lovar inte mirakel och säljer ingen färdig produkt du tvingas anpassa dig till. I stället tittar vi tillsammans på var det klämmer mest, räknar på vad tiden är värd, och bygger något som betalar sig. Hör av dig så tar vi ett förutsättningslöst snack om din vardag."
     ],
     "faqs": [
       {
@@ -147,24 +147,24 @@
       },
       {
         "q": "Kan AI-automation kopplas till systemen jag redan använder?",
-        "a": "Ja, det är själva poängen. Med n8n och Zapier kopplar jag ihop verktyg du redan har — mejl, CRM, kalender, bokföring, kalkylark och tusentals andra tjänster. Du behöver alltså inte byta system eller lära om. Vi bygger broar mellan det som redan finns, så att information flyter automatiskt i stället för att du flyttar den manuellt."
+        "a": "Ja, det är själva poängen. Med n8n och Zapier kopplar jag ihop verktyg du redan har, mejl, CRM, kalender, bokföring, kalkylark och tusentals andra tjänster. Du behöver alltså inte byta system eller lära om. Vi bygger broar mellan det som redan finns, så att information flyter automatiskt i stället för att du flyttar den manuellt."
       },
       {
         "q": "Vad händer om en automation slutar fungera eller behöver ändras?",
-        "a": "Du står aldrig ensam. Jag bygger flöden som är lätta att följa och felsöka, och du äger lösningen fullt ut. Behöver något justeras när verksamheten förändras hjälper jag till, antingen löpande eller vid behov. Eftersom vi bygger stegvis och testar ordentligt blir det sällan dramatik — och om något krånglar ser du var det stannat och vi fixar det."
+        "a": "Du står aldrig ensam. Jag bygger flöden som är lätta att följa och felsöka, och du äger lösningen fullt ut. Behöver något justeras när verksamheten förändras hjälper jag till, antingen löpande eller vid behov. Eftersom vi bygger stegvis och testar ordentligt blir det sällan dramatik, och om något krånglar ser du var det stannat och vi fixar det."
       },
       {
         "q": "Passar AI-automation även för mindre företag?",
-        "a": "Absolut, ofta är det där effekten blir störst. I ett mindre företag gör varje sparad timme stor skillnad eftersom du bär många roller själv. Du behöver ingen IT-avdelning eller stor budget — vi börjar med en enda uppgift som stjäl tid, automatiserar den och bygger vidare därifrån. Jag anpassar alltid omfattningen efter din verksamhet och vad som faktiskt lönar sig."
+        "a": "Absolut, ofta är det där effekten blir störst. I ett mindre företag gör varje sparad timme stor skillnad eftersom du bär många roller själv. Du behöver ingen IT-avdelning eller stor budget, vi börjar med en enda uppgift som stjäl tid, automatiserar den och bygger vidare därifrån. Jag anpassar alltid omfattningen efter din verksamhet och vad som faktiskt lönar sig."
       }
     ]
   },
   "managed-hemsida": {
-    "deepHeading": "Din hemsida — skött, säker och uppdaterad varje månad",
+    "deepHeading": "Din hemsida, skött, säker och uppdaterad varje månad",
     "deepParagraphs": [
-      "En hemsida är inte klar bara för att den är lanserad. Den behöver löpande drift, säkerhetsuppdateringar och tillsyn för att fortsätta fungera, ladda snabbt och inte plötsligt ligga nere. Med min managed hemsida tar jag, Joel, hand om allt det där åt dig för 1 190 kr i månaden, utan startavgift. Du slipper teknikstrul, övervakning och oroliga kvällar när något krånglar. Jag sköter hosting, underhåll av hemsidan och support personligen — så att du kan lägga din tid på att driva företaget i stället för att felsöka plugins och servrar.",
-      "Drift av hemsida handlar om mer än ett webbhotell för företag. Jag håller plattformen uppdaterad, gör regelbunden backup, bevakar säkerheten och åtgärdar fel innan de hinner bli ett problem för dina besökare. Körs sajten på WordPress ser jag till att kärna, teman och tillägg alltid är aktuella, eftersom det är där de flesta säkerhetshålen uppstår. Skulle något ändå hända finns en aktuell säkerhetskopia redo att rulla tillbaka. Du har en enda kontakt — mig — i stället för en supportkö, och jag svarar som en människa, inte ett ärendenummer.",
-      "Jag jobbar från Hässleholm men sköter hemsidor för företag i hela Sverige, helt på distans. Det spelar ingen roll om du sitter i Stockholm, Göteborg, Malmö eller på en mindre ort — drift, säkerhet och support fungerar precis lika bra ändå. Upplägget passar småföretagare och egenföretagare som vill ha en trygg, snabb och uppdaterad hemsida utan att anställa en webbansvarig eller betala dyra timpriser. Fast pris varje månad, inga överraskningar på fakturan och allt arbete utfört av mig. Vill du veta vad just din sajt behöver är det bara att höra av dig."
+      "En hemsida är inte klar bara för att den är lanserad. Den behöver löpande drift, säkerhetsuppdateringar och tillsyn för att fortsätta fungera, ladda snabbt och inte plötsligt ligga nere. Med min managed hemsida tar jag, Joel, hand om allt det där åt dig för 1 190 kr i månaden, utan startavgift. Du slipper teknikstrul, övervakning och oroliga kvällar när något krånglar. Jag sköter hosting, underhåll av hemsidan och support personligen, så att du kan lägga din tid på att driva företaget i stället för att felsöka plugins och servrar.",
+      "Drift av hemsida handlar om mer än ett webbhotell för företag. Jag håller plattformen uppdaterad, gör regelbunden backup, bevakar säkerheten och åtgärdar fel innan de hinner bli ett problem för dina besökare. Körs sajten på WordPress ser jag till att kärna, teman och tillägg alltid är aktuella, eftersom det är där de flesta säkerhetshålen uppstår. Skulle något ändå hända finns en aktuell säkerhetskopia redo att rulla tillbaka. Du har en enda kontakt, mig, i stället för en supportkö, och jag svarar som en människa, inte ett ärendenummer.",
+      "Jag jobbar från Hässleholm men sköter hemsidor för företag i hela Sverige, helt på distans. Det spelar ingen roll om du sitter i Stockholm, Göteborg, Malmö eller på en mindre ort, drift, säkerhet och support fungerar precis lika bra ändå. Upplägget passar småföretagare och egenföretagare som vill ha en trygg, snabb och uppdaterad hemsida utan att anställa en webbansvarig eller betala dyra timpriser. Fast pris varje månad, inga överraskningar på fakturan och allt arbete utfört av mig. Vill du veta vad just din sajt behöver är det bara att höra av dig."
     ],
     "faqs": [
       {
@@ -181,7 +181,7 @@
       },
       {
         "q": "Kan du sköta drift av min hemsida om jag inte sitter i Hässleholm?",
-        "a": "Absolut. Jag utgår från Hässleholm men sköter drift, underhåll och support för företag i hela Sverige helt på distans. Var du än har ditt företag fungerar allt precis lika bra — vi håller kontakten via mejl, telefon eller videomöte, och jag tar hand om det tekniska i bakgrunden så att du slipper tänka på det."
+        "a": "Absolut. Jag utgår från Hässleholm men sköter drift, underhåll och support för företag i hela Sverige helt på distans. Var du än har ditt företag fungerar allt precis lika bra, vi håller kontakten via mejl, telefon eller videomöte, och jag tar hand om det tekniska i bakgrunden så att du slipper tänka på det."
       }
     ]
   },

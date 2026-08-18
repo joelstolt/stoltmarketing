@@ -11,7 +11,7 @@ const breadcrumb = {
 export const metadata = {
   title: "AI-automation | Smartare processer för företag",
   description:
-    "AI-automation för företag i Hässleholm — chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
+    "AI-automation för företag i Hässleholm, chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
   alternates: { canonical: "https://www.stoltmarketing.se/tjanster/ai-automation" },
   openGraph: {
     title: "AI-automation | Smartare processer för företag",
@@ -25,7 +25,7 @@ const serviceLd = {
   "@type": "Service",
   "name": "AI-automation",
   "serviceType": "AI-automation",
-  "description": "AI-automation för företag i Hässleholm — chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
+  "description": "AI-automation för företag i Hässleholm, chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
   "url": "https://www.stoltmarketing.se/tjanster/ai-automation",
   "provider": {
     "@type": "ProfessionalService",

@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                Starta e-handel 2026 — Komplett guide för svenska företag
+                Starta e-handel 2026, Komplett guide för svenska företag
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -50,7 +50,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Det finns juridiska regler, betalningsgatewayer som måste funktionera, logistik som måste planeras och teknik som måste hållas. Denna guide täcker allt — från plattformval till dina första försäljningar.
+              Det finns juridiska regler, betalningsgatewayer som måste funktionera, logistik som måste planeras och teknik som måste hållas. Denna guide täcker allt, från plattformval till dina första försäljningar.
             </p>
 
             {/* Steg 1: Välja plattform */}
@@ -150,13 +150,13 @@ export default function Article() {
             <div className="bg-primary-subtle border border-primary/10 rounded-xl p-6 mb-8 flex gap-3">
               <AlertCircle size={20} className="text-primary flex-shrink-0 mt-0.5" />
               <p className="text-[15px] text-body">
-                <span className="font-600 text-heading">Rekommendation:</span> Starta med Klarna + kort (Stripe) + Swish. Det täcker 95% av svenska webshop-köpare. Lägg inte på PayPal direkt — det är en extra integrering utan mycket värde i Sverige.
+                <span className="font-600 text-heading">Rekommendation:</span> Starta med Klarna + kort (Stripe) + Swish. Det täcker 95% av svenska webshop-köpare. Lägg inte på PayPal direkt, det är en extra integrering utan mycket värde i Sverige.
               </p>
             </div>
 
             {/* Steg 3: Juridik och skatter */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 3: Juridik, GDPR och skatter — Det du måste veta
+              Steg 3: Juridik, GDPR och skatter, Det du måste veta
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -166,7 +166,7 @@ export default function Article() {
             <div className="space-y-3 mb-8">
               {[
                 { rule: "GDPR", what: "Du måste kunna förklara vad du gör med kundens data. En privacy policy på hemsidan är obligatorisk. Du kan inte sälja data till 3e part utan tillstånd.", law: "EU-lag, straffet är massivt" },
-                { rule: "Ångerrätt", what: "Köpare kan ångra sitt köp i 14 dagar. Du måste ha en tydlig returprocess. Inte frivilligt — det är lag.", law: "EU-konsumenträttslagen" },
+                { rule: "Ångerrätt", what: "Köpare kan ångra sitt köp i 14 dagar. Du måste ha en tydlig returprocess. Inte frivilligt, det är lag.", law: "EU-konsumenträttslagen" },
                 { rule: "Konsumentköpslagen", what: "Varor måste vara som de presenteras. Ingen 'såld som den är' på e-handel för konsumenter. Du är ansvarig för fel.", law: "Svensk lag" },
                 { rule: "Momsregistrering", what: "Om du säljer varor måste du vanligtvis registrera moms när försäljningen överstiger vissa gränser. Ungefär 40 000 kr i försäljning per månad.", law: "Skatteverket" },
                 { rule: "Bokföring", what: "Varje försäljning måste bokföras. Vänd dig till en revisor eller använd ett bokföringsprogram.", law: "Bokföringslagen" },
@@ -180,16 +180,16 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Min rekommendation: Prata med en revisor eller juridisk rådgivare innan du lanserar. Det kostar några tusen kronor — mycket billigare än böter senare.
+              Min rekommendation: Prata med en revisor eller juridisk rådgivare innan du lanserar. Det kostar några tusen kronor, mycket billigare än böter senare.
             </p>
 
             {/* Steg 4: Logistik och frakt */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 4: Logistik — Från ditt lager till kundens dörr
+              Steg 4: Logistik, Från ditt lager till kundens dörr
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
-              Frakt är ofta där småföretagare gör misstag. Antingen är det för dyrt för kunden att betala — eller för dyrt för dig att skicka.
+              Frakt är ofta där småföretagare gör misstag. Antingen är det för dyrt för kunden att betala, eller för dyrt för dig att skicka.
             </p>
 
             <div className="space-y-3 mb-8">
@@ -221,7 +221,7 @@ export default function Article() {
 
             {/* Steg 5: Kostnader */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 5: Budget — Vad kostar det att starta en webshop?
+              Steg 5: Budget, Vad kostar det att starta en webshop?
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -293,7 +293,7 @@ export default function Article() {
 
             {/* Steg 6: Lansering och marknadsföring */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 6: SEO och lansering — Få människor att faktiskt besöka
+              Steg 6: SEO och lansering, Få människor att faktiskt besöka
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -304,7 +304,7 @@ export default function Article() {
               {[
                 { task: "SEO-grund", desc: "Produktsidor måste vara optimerade. Rätt keywords, bra metadata, snabb hemsida. Börja här innan du spenderar på annonsering." },
                 { task: "Google Shopping", desc: "Ladda upp dina produkter till Google Merchant Center. Det är gratis och drar in mycket trafik för köp-intentioner." },
-                { task: "Google Ads eller Facebook Ads", desc: "Betalt för att få snabb trafik. Börja litet — 5000 kr/månad för test — och skala vad som fungerar." },
+                { task: "Google Ads eller Facebook Ads", desc: "Betalt för att få snabb trafik. Börja litet, 5000 kr/månad för test, och skala vad som fungerar." },
                 { task: "Email-lister", desc: "Samla mejl från besökare. Skicka erbjudanden, nyheter, kampanjer. Det är din billigaste kanal långsiktigt." },
                 { task: "Sociala medier", desc: "Visa produkter på Instagram/TikTok. Det är gratis och kan generera enormt mycket trafik. Men det tar tid." },
               ].map((item) => (
@@ -320,7 +320,7 @@ export default function Article() {
 
             {/* Realistiska förväntningar */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Realistiska förväntningar — Din första år
+              Realistiska förväntningar, Din första år
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -344,7 +344,7 @@ export default function Article() {
             <div className="bg-primary-subtle border border-primary/10 rounded-xl p-6 mb-8 flex gap-3">
               <AlertCircle size={20} className="text-primary flex-shrink-0 mt-0.5" />
               <p className="text-[15px] text-body">
-                <span className="font-600 text-heading">Verklig siffra:</span> De flesta webshops gör mindre än 20 000 kr i månadlig omsättning första året. Det är inte misslyckande — det är realt. Du måste växa långsamt och lära dig vad som funkar.
+                <span className="font-600 text-heading">Verklig siffra:</span> De flesta webshops gör mindre än 20 000 kr i månadlig omsättning första året. Det är inte misslyckande, det är realt. Du måste växa långsamt och lära dig vad som funkar.
               </p>
             </div>
 

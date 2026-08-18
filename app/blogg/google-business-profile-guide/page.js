@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                Google Business Profile — Komplett guide för företagare 2026
+                Google Business Profile, Komplett guide för företagare 2026
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -50,12 +50,12 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Det är en stor missuppfattning. Din Google Business Profile är inte något du gör en gång och sedan glömmer. Det är något du måste bygga och underhålla aktivt. Jag ska visa dig exakt hur du gör det — från att göra krav på din listing till att ranka högre i Google Maps och få fler kunder direkt från Google.
+              Det är en stor missuppfattning. Din Google Business Profile är inte något du gör en gång och sedan glömmer. Det är något du måste bygga och underhålla aktivt. Jag ska visa dig exakt hur du gör det, från att göra krav på din listing till att ranka högre i Google Maps och få fler kunder direkt från Google.
             </p>
 
             {/* Varför det spelar roll */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Varför Google Business Profile spelar roll — sifforna talar för sig
+              Varför Google Business Profile spelar roll, sifforna talar för sig
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -69,7 +69,7 @@ export default function Article() {
                   <p className="text-[15px] font-700 text-primary mb-2">Varför GBP är kritisk:</p>
                   <ul className="space-y-1 text-[14px] text-body">
                     <li>• 47% av alla Google-sökningar har en lokal avsikt</li>
-                    <li>• En komplett och aktiv profil rankar 3–5x högre än en tom</li>
+                    <li>• En komplett och aktiv profil rankar 3 till 5x högre än en tom</li>
                     <li>• 76% av lokala sökningar på mobilen slutar med ett besök samma dag</li>
                     <li>• Recensioner i din GBP påverkar både ranking och klickfrekvens</li>
                   </ul>
@@ -93,7 +93,7 @@ export default function Article() {
             <div className="space-y-2 mb-8">
               {[
                 "Gå till google.com/business och logga in med ditt Google-konto",
-                "Sök efter ditt företag — det finns förmodligen redan en listing",
+                "Sök efter ditt företag, det finns förmodligen redan en listing",
                 "Klicka 'Hävda denna verksamhet' och följ stegen",
                 "Verifiering görs vanligtvis via SMS eller postkort (kan ta upp till 3 veckor)",
                 "En gång verifierad kan du redigera allt på profilen",
@@ -106,12 +106,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Om du redan hävdat din profil tidigare men tror den inte är helt aktuell: logga in och uppdatera den. Många gamla profiler innehåller felaktig telefonnummer eller fel öppettider — åtgärda det omedelbar.
+              Om du redan hävdat din profil tidigare men tror den inte är helt aktuell: logga in och uppdatera den. Många gamla profiler innehåller felaktig telefonnummer eller fel öppettider, åtgärda det omedelbar.
             </p>
 
             {/* Steg 2: Fyll i allt */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 2: Fyll i alla fält — inget är osignifikant
+              Steg 2: Fyll i alla fält, inget är osignifikant
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -122,12 +122,12 @@ export default function Article() {
               <p className="text-[14px] font-700 text-heading mb-4">Obligatoriska fält:</p>
               <div className="space-y-2">
                 {[
-                  "Företagsnamn — exakt som du är registrerad",
-                  "Adress — måste vara din fysiska adress (hemadress är OK för enskild näringsidkare)",
-                  "Telefonnummer — ett nummer som folk kan ringa på under öppettider",
-                  "Öppettider — fyll i korrekt, inklusive helger",
-                  "Webplats — länken till din hemsida",
-                  "Beskrivning — max 750 tecken. Inkludera: vad du erbjuder, service, område.",
+                  "Företagsnamn, exakt som du är registrerad",
+                  "Adress, måste vara din fysiska adress (hemadress är OK för enskild näringsidkare)",
+                  "Telefonnummer, ett nummer som folk kan ringa på under öppettider",
+                  "Öppettider, fyll i korrekt, inklusive helger",
+                  "Webplats, länken till din hemsida",
+                  "Beskrivning, max 750 tecken. Inkludera: vad du erbjuder, service, område.",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
                     <Check size={13} className="text-primary mt-1 flex-shrink-0" />
@@ -143,7 +143,7 @@ export default function Article() {
 
             <div className="bg-surface border border-border rounded-xl p-5 mb-6">
               <p className="text-[13px] font-700 text-red-500 uppercase tracking-wide mb-2">Dåligt exempel</p>
-              <p className="text-[15px] text-heading">Elektrikern — Hässleholm</p>
+              <p className="text-[15px] text-heading">Elektrikern, Hässleholm</p>
               <p className="text-[13px] text-muted mt-1">Vi gör elektriska installationer och reparationer.</p>
             </div>
 
@@ -153,7 +153,7 @@ export default function Article() {
 
             <div className="bg-surface border border-primary/15 rounded-xl p-5 mb-8">
               <p className="text-[13px] font-700 text-primary uppercase tracking-wide mb-2">Bra exempel</p>
-              <p className="text-[15px] text-heading">Elektrikern Hässleholm — Installationer & reparationer</p>
+              <p className="text-[15px] text-heading">Elektrikern Hässleholm, Installationer & reparationer</p>
               <p className="text-[13px] text-muted mt-1">Lokal elinstallatör med 15+ års erfarenhet i Hässleholm och omkringliggande område. Vi utför nya installationer, felsökning, reparationer och underhåll. Snabb respons, klartecken innan arbete påbörjas. Ring 070-XXXXX eller boka tid på webben.</p>
             </div>
 
@@ -163,7 +163,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Google använder kategorier för att förstå vad du gör och visa dig i rätt sökresultat. Du kan ha en huvudkategori och upp till 9 extra. Många företagare väljer bara en — det är ett misstag.
+              Google använder kategorier för att förstå vad du gör och visa dig i rätt sökresultat. Du kan ha en huvudkategori och upp till 9 extra. Många företagare väljer bara en, det är ett misstag.
             </p>
 
             <div className="space-y-3 mb-8">
@@ -181,12 +181,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Om du inte hittar en exakt kategori — välja den närmaste. Google är ofta flexibel här, men fel kategori är värre än för många kategorier.
+              Om du inte hittar en exakt kategori, välja den närmaste. Google är ofta flexibel här, men fel kategori är värre än för många kategorier.
             </p>
 
             {/* Steg 4: Bilder */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 4: Ladda upp bilder — många och bra
+              Steg 4: Ladda upp bilder, många och bra
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -195,14 +195,14 @@ export default function Article() {
 
             <div className="space-y-2 mb-8">
               {[
-                "Logobild — tydlig, på vit bakgrund, minst 400x400px",
-                "Försidebild — representativ bild av ditt företag eller dina tjänster",
-                "Inomhusfoto — kontor, verkstad, butik eller serviceyta",
-                "Teamfoto — om möjligt med ansikten synliga",
-                "Projekt/innan-efter — visar ditt arbete i praktiken",
-                "Produkter eller tjänster — konkreta exempel på vad du gör",
-                "Kundvyer — om du har en butik, ett väntrum eller liknande",
-                "Utbildning/certifikat — visar din expertis",
+                "Logobild, tydlig, på vit bakgrund, minst 400x400px",
+                "Försidebild, representativ bild av ditt företag eller dina tjänster",
+                "Inomhusfoto, kontor, verkstad, butik eller serviceyta",
+                "Teamfoto, om möjligt med ansikten synliga",
+                "Projekt/innan-efter, visar ditt arbete i praktiken",
+                "Produkter eller tjänster, konkreta exempel på vad du gör",
+                "Kundvyer, om du har en butik, ett väntrum eller liknande",
+                "Utbildning/certifikat, visar din expertis",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -212,16 +212,16 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Använd moderna foton — inte tio år gamla skumma mobil-bilder. Om du inte har bra bilder är det pengarna väl värt att anställa en fotograf för en dag. Dessa bilder är din försäljningsverktyg 24/7.
+              Använd moderna foton, inte tio år gamla skumma mobil-bilder. Om du inte har bra bilder är det pengarna väl värt att anställa en fotograf för en dag. Dessa bilder är din försäljningsverktyg 24/7.
             </p>
 
             {/* Steg 5: Inlägg och uppdateringar */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 5: Publicera inlägg regelbundet — det visar att du är aktiv
+              Steg 5: Publicera inlägg regelbundet, det visar att du är aktiv
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Google gillar aktiva verksamheter. En profil som inte uppdaterats på sex månader signalerar att du är död eller inte bryr dig. Publicera därför inlägg minst 1–2 gånger per månad. Det tar 5 minuter.
+              Google gillar aktiva verksamheter. En profil som inte uppdaterats på sex månader signalerar att du är död eller inte bryr dig. Publicera därför inlägg minst 1 till 2 gånger per månad. Det tar 5 minuter.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -230,12 +230,12 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                "Nya tjänster — \"Nu erbjuder vi även...\"",
-                "Veckoerbjudanden — \"Denna vecka: 10% rabatt på...\"",
-                "Evenemang — \"Vi är på marknaden lördag 25 maj!\"",
-                "Tips & tricks — \"3 enkla sätt att spara pengar på el\"",
-                "Team-uppdateringar — \"Välkommen nya teammedlemmen!\"",
-                "Säsongsinformation — \"Öppet senare under sommaren\"",
+                "Nya tjänster, \"Nu erbjuder vi även...\"",
+                "Veckoerbjudanden, \"Denna vecka: 10% rabatt på...\"",
+                "Evenemang, \"Vi är på marknaden lördag 25 maj!\"",
+                "Tips & tricks, \"3 enkla sätt att spara pengar på el\"",
+                "Team-uppdateringar, \"Välkommen nya teammedlemmen!\"",
+                "Säsongsinformation, \"Öppet senare under sommaren\"",
               ].map((item) => (
                 <div key={item} className="bg-surface border border-border rounded-lg p-4">
                   <span className="text-[14px] text-heading">{item}</span>
@@ -245,7 +245,7 @@ export default function Article() {
 
             {/* Steg 6: Recensioner */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 6: Samla Google-recensioner — detta är guld
+              Steg 6: Samla Google-recensioner, detta är guld
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -260,9 +260,9 @@ export default function Article() {
               {[
                 "Logga in i Google Business Profile och hitta 'Be om recensioner'",
                 "Kopiera länken (eller QR-koden)",
-                "Skicka den till nöjda kunder omedelbar efter avslutat jobb — per SMS eller e-post",
+                "Skicka den till nöjda kunder omedelbar efter avslutat jobb, per SMS eller e-post",
                 "Gör detta till en rutin. Inte något du gör 'när du kommer ihåg'",
-                "Svara på varje recensionen inom 24–48 timmar — både positiva och negativa",
+                "Svara på varje recensionen inom 24 till 48 timmar, både positiva och negativa",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -281,7 +281,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Attribut är verktyg som du kan säga till Google mer specifik information. Beroende på bransch finns olika attribut — använd alla som är relevanta för dig.
+              Attribut är verktyg som du kan säga till Google mer specifik information. Beroende på bransch finns olika attribut, använd alla som är relevanta för dig.
             </p>
 
             <div className="bg-surface border border-border rounded-xl p-5 mb-6">
@@ -301,7 +301,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Och öppettider — för Guds skull, håll dem uppdaterade! Ingenting är mer irriterande än att planera ett besök bara för att découvrir att stället är stängt. Uppdatera omedelbar under semestrar, långa helger, eller när något förändras.
+              Och öppettider, för Guds skull, håll dem uppdaterade! Ingenting är mer irriterande än att planera ett besök bara för att découvrir att stället är stängt. Uppdatera omedelbar under semestrar, långa helger, eller när något förändras.
             </p>
 
             {/* Vanliga misstag */}
@@ -339,9 +339,9 @@ export default function Article() {
 
             <div className="space-y-2 mb-8">
               {[
-                '"Vilka betalningsmetoder accepterar ni?" — Svara med dina faktiska alternativ',
-                '"Erbjuder ni leverans?" — Svara ja eller nej, och i så fall hur långt',
-                '"Är ni öppna på helger?" — Referera till dina öppettider',
+                '"Vilka betalningsmetoder accepterar ni?", Svara med dina faktiska alternativ',
+                '"Erbjuder ni leverans?", Svara ja eller nej, och i så fall hur långt',
+                '"Är ni öppna på helger?", Referera till dina öppettider',
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -351,23 +351,23 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Och kartorna — säkerställ att din pin ligger på rätt plats. Om folk kör efter GPS:n och hamnar på fel adress är de inte glada. Rätta till detta omedelbar om det är fel.
+              Och kartorna, säkerställ att din pin ligger på rätt plats. Om folk kör efter GPS:n och hamnar på fel adress är de inte glada. Rätta till detta omedelbar om det är fel.
             </p>
 
             {/* Sluta */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Sammanfattning — så bygger du en mäktig Google Business Profile
+              Sammanfattning, så bygger du en mäktig Google Business Profile
             </h2>
 
             <div className="bg-surface border border-border rounded-xl p-6 mb-8">
               <div className="space-y-3">
                 {[
-                  "Hävda eller skapa din profil — verifiering tar tid, börja idag",
-                  "Fyll i alla obligatoriska fält — och gör beskrivningen övertygande",
+                  "Hävda eller skapa din profil, verifiering tar tid, börja idag",
+                  "Fyll i alla obligatoriska fält, och gör beskrivningen övertygande",
                   "Välj rätt kategori (en huvudkategori + relevanta sekundära)",
                   "Ladda upp minst 10-15 högkvalitativa bilder",
                   "Publicera inlägg minst 1-2 gånger per månad",
-                  "Samla Google-recensioner aktivt — be efter varje jobb",
+                  "Samla Google-recensioner aktivt, be efter varje jobb",
                   "Svara på alla recensioner inom 24-48 timmar",
                   "Uppdatera öppettider, telefon och adress regelbundet",
                 ].map((item, i) => (
@@ -380,7 +380,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Din Google Business Profile är inte en engångsuppgift — det är något du bygger kontinuerlig. En välkörda profil kan ge dig 10–30 nya leads varje månad helt gratis. Det är verkligen värt tiden. Om du vill att någon annan hanterar detta — eller behöver en komplett <a href="/tjanster/seo" className="text-primary hover:underline font-600">lokal SEO-strategi</a> — kontakta mig. Vi kan också boka en tid för att granska din nuvarande profil och hitta de största förbättringarna.
+              Din Google Business Profile är inte en engångsuppgift, det är något du bygger kontinuerlig. En välkörda profil kan ge dig 10 till 30 nya leads varje månad helt gratis. Det är verkligen värt tiden. Om du vill att någon annan hanterar detta, eller behöver en komplett <a href="/tjanster/seo" className="text-primary hover:underline font-600">lokal SEO-strategi</a>, kontakta mig. Vi kan också boka en tid för att granska din nuvarande profil och hitta de största förbättringarna.
             </p>
 
             {/* Related */}

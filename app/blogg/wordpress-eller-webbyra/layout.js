@@ -5,7 +5,7 @@ const articleSchema = {
   mainEntityOfPage: "https://www.stoltmarketing.se/blogg/wordpress-eller-webbyra",
   inLanguage: "sv-SE",
   headline: "Bygga hemsida själv eller anlita en webbyrå? Ärlig jämförelse",
-  description: "DIY vs webbyrå — en ärlig jämförelse. Kostnader, tid, kvalitet och dolda utgifter. Vad passar ditt företag?",
+  description: "DIY vs webbyrå, en ärlig jämförelse. Kostnader, tid, kvalitet och dolda utgifter. Vad passar ditt företag?",
   author: { "@type": "Person", name: "Joel Stolt" },
   publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },
   datePublished: "2026-05-03",

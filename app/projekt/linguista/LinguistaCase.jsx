@@ -6,7 +6,7 @@ import ForeEfter from "@/components/ForeEfter";
 
 const heroStats = [
   "100/100 i prestanda, tillgänglighet, best practices & AI",
-  "Dubbelt så snabb — trots att den gamla var snabb",
+  "Dubbelt så snabb, trots att den gamla var snabb",
   "Publicera → live på minuter, utan utvecklare",
 ];
 
@@ -17,7 +17,7 @@ const solutions = [
   },
   {
     title: "Innehåll som publicerar sig självt",
-    text: "70+ artiklar migrerades till ett eget CMS (Sanity). När redaktionen trycker publicera byggs sajten om automatiskt och ändringen är live inom minuter — helt utan utvecklare.",
+    text: "70+ artiklar migrerades till ett eget CMS (Sanity). När redaktionen trycker publicera byggs sajten om automatiskt och ändringen är live inom minuter, helt utan utvecklare.",
   },
   {
     title: "Tillgänglighet på lagkravsnivå",
@@ -77,7 +77,7 @@ export default function LinguistaCase() {
             <p className="mt-5 text-[16px] sm:text-[18px] leading-relaxed text-body max-w-[620px]">
               Linguista samordnar modersmålsundervisning, moderna språk och
               studiehandledning för skolor i hela Sverige. Vi byggde om deras
-              webbplats från grunden — pixel-perfect från designskiss till full
+              webbplats från grunden, pixel-perfect från designskiss till full
               pott i varje kategori Lighthouse mäter.
             </p>
           </Reveal>
@@ -125,11 +125,11 @@ export default function LinguistaCase() {
           <Reveal delay={0.1}>
             <div className="mt-6 space-y-4 text-[16px] leading-relaxed text-body">
               <p>
-                Linguistas WordPress-sajt var faktiskt snabb — men snabbhet är
+                Linguistas WordPress-sajt var faktiskt snabb, men snabbhet är
                 bara en av kategorierna som räknas idag. Tillgängligheten låg
                 på 82 av 100, en bra bit under vad EU:s tillgänglighetsdirektiv
                 förväntar sig av aktörer i skolvärlden. AI-läsbarheten låg på
-                50 — hälften av innehållet var i praktiken osynligt för
+                50, hälften av innehållet var i praktiken osynligt för
                 AI-assistenter som allt fler beslutfattare söker med.
               </p>
               <p>

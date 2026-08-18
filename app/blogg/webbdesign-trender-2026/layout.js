@@ -4,7 +4,7 @@ const articleSchema = {
   image: ["https://www.stoltmarketing.se/og-image.png"],
   mainEntityOfPage: "https://www.stoltmarketing.se/blogg/webbdesign-trender-2026",
   inLanguage: "sv-SE",
-  headline: "Webbdesign-trender 2026 — Vad som faktiskt spelar roll",
+  headline: "Webbdesign-trender 2026, Vad som faktiskt spelar roll",
   description: "De viktigaste webbdesign-trenderna 2026. AI-genererat innehåll, bento grids, mikroanimationer, dark mode och varför prestanda slår estetik.",
   author: { "@type": "Person", name: "Joel Stolt" },
   publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },

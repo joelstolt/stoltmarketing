@@ -23,17 +23,17 @@ const allPosts = [
     slug: "seo-for-smaforetag",
     title: "SEO för småföretag — 7 steg som faktiskt fungerar",
     excerpt:
-      "Du behöver inte en byrå eller en stor budget för att synas på Google. Dessa 7 steg kan du göra själv — och de ger resultat.",
+      "Du behöver inte en byrå eller en stor budget för att synas på Google. Dessa 7 steg kan du göra själv, och de ger resultat.",
     date: "2026-03-15",
     readTime: "10 min",
     category: "SEO",
   },
-  /* ── Nya — publiceras en per vecka ── */
+  /* ── Nya, publiceras en per vecka ── */
   {
     slug: "lokal-seo-guide",
     title: "Lokal SEO — Så syns ditt företag i Google Maps och lokala sökningar",
     excerpt:
-      "Komplett guide till lokal SEO. Google Business Profile, lokala sökord, recensioner och NAP-konsistens — steg för steg.",
+      "Komplett guide till lokal SEO. Google Business Profile, lokala sökord, recensioner och NAP-konsistens, steg för steg.",
     date: "2026-04-12",
     readTime: "11 min",
     category: "Guide",
@@ -42,7 +42,7 @@ const allPosts = [
     slug: "webbdesign-trender-2026",
     title: "Webbdesign-trender 2026 — Vad som faktiskt spelar roll",
     excerpt:
-      "AI, bento grids, mikroanimationer och tillgänglighet. De trender som faktiskt gör din sajt bättre — och de du kan skippa.",
+      "AI, bento grids, mikroanimationer och tillgänglighet. De trender som faktiskt gör din sajt bättre, och de du kan skippa.",
     date: "2026-04-12",
     readTime: "8 min",
     category: "Design",
@@ -51,7 +51,7 @@ const allPosts = [
     slug: "ai-for-foretag",
     title: "AI för företag 2026 — Praktiska användningsområden som ger resultat",
     excerpt:
-      "Chatbots, automatisering, content och kundservice. Konkreta AI-användningsområden utan hype — och var du börjar.",
+      "Chatbots, automatisering, content och kundservice. Konkreta AI-användningsområden utan hype, och var du börjar.",
     date: "2026-04-12",
     readTime: "9 min",
     category: "AI",
@@ -78,7 +78,7 @@ const allPosts = [
     slug: "wordpress-eller-webbyra",
     title: "Bygga hemsida själv eller anlita en webbyrå? Ärlig jämförelse",
     excerpt:
-      "DIY vs byrå — dolda kostnader, tidsåtgång och vad som faktiskt lönar sig beroende på ditt behov.",
+      "DIY vs byrå, dolda kostnader, tidsåtgång och vad som faktiskt lönar sig beroende på ditt behov.",
     date: "2026-05-03",
     readTime: "9 min",
     category: "Guide",
@@ -120,7 +120,7 @@ const allPosts = [
     category: "Marknadsföring",
   },
 
-  /* Runda 2 (juli-aug 2026) — publiceras med spridning via datumfiltret nedan */
+  /* Runda 2 (juli-aug 2026), publiceras med spridning via datumfiltret nedan */
   {
     slug: "valja-seo-byra",
     title: "Så väljer du rätt SEO-byrå: 6 tecken på att du blir lurad",
@@ -330,7 +330,7 @@ export default function BloggPage() {
           ]}
           badge="Blogg"
           title="Guider, tips och insikter om webb, SEO och AI."
-          subtitle="Praktiska artiklar för dig som vill förstå vad som faktiskt gör skillnad digitalt — utan buzzwords."
+          subtitle="Praktiska artiklar för dig som vill förstå vad som faktiskt gör skillnad digitalt, utan buzzwords."
         />
 
         <section className="py-16 sm:py-24 px-5 sm:px-8">

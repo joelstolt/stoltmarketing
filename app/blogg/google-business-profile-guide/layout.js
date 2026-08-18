@@ -4,7 +4,7 @@ const articleSchema = {
   image: ["https://www.stoltmarketing.se/og-image.png"],
   mainEntityOfPage: "https://www.stoltmarketing.se/blogg/google-business-profile-guide",
   inLanguage: "sv-SE",
-  headline: "Google Business Profile — Komplett guide för företagare 2026",
+  headline: "Google Business Profile, Komplett guide för företagare 2026",
   description: "Steg-för-steg-guide till Google Business Profile. Så tar du kontroll över din profil, optimerar den, lägger till bilder, svarar på recensioner och rankar högre i Google Maps.",
   author: { "@type": "Person", name: "Joel Stolt" },
   publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },
@@ -18,7 +18,7 @@ const breadcrumb = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
     { "@type": "ListItem", position: 2, name: "Blogg", item: "https://www.stoltmarketing.se/blogg" },
-    { "@type": "ListItem", position: 3, name: "Google Business Profile — Komplett guide för företagare 2026", item: "https://www.stoltmarketing.se/blogg/google-business-profile-guide" },
+    { "@type": "ListItem", position: 3, name: "Google Business Profile, Komplett guide för företagare 2026", item: "https://www.stoltmarketing.se/blogg/google-business-profile-guide" },
   ],
 };
 

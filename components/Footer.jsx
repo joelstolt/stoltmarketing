@@ -77,7 +77,7 @@ export default function Footer() {
         {/* Col 1: Brand */}
         <div>
           <Link
-            aria-label="Stolt Marketing — till startsidan"
+            aria-label="Stolt Marketing, till startsidan"
             href="/"
             className="font-heading"
             style={{
@@ -122,7 +122,7 @@ export default function Footer() {
           </Link>
           <p style={{ fontSize: 14, color: "rgba(242,236,221,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
             Digital byrå i Hässleholm med 10+ års erfarenhet. Moderna hemsidor,
-            e-handel, SEO, Google Ads och AI-automation — med enterprise-kvalitet
+            e-handel, SEO, Google Ads och AI-automation, med enterprise-kvalitet
             till företag i hela Skåne och Sverige.
           </p>
 
@@ -248,7 +248,7 @@ export default function Footer() {
           }}
         >
           <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>
-            © {new Date().getFullYear()} Stolt Marketing — webbyrå i Hässleholm &amp; Skåne för hemsidor, SEO, Google Ads och AI.
+            © {new Date().getFullYear()} Stolt Marketing, webbyrå i Hässleholm &amp; Skåne för hemsidor, SEO, Google Ads och AI.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>Svar inom 24h på vardagar</span>

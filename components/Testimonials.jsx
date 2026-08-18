@@ -18,7 +18,7 @@ const testimonials = [
     name: "Robin, RBN Utbildning",
     role: "Ny webb, API-integration & SEO",
     quote:
-      "Vi behövde en helhetsleverans — ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
+      "Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
     initials: "RO",
     color: "#8CA05A",
   },
@@ -34,7 +34,7 @@ const testimonials = [
     name: "Claudia, Omniway",
     role: "WCAG-anpassad webb",
     quote:
-      "Tillgänglighet var ett krav — inte en bonus. Joel levererade en modern sajt som uppfyller WCAG utan att kompromissa på design. Snabb kommunikation och han förstod EdTech-branschen direkt.",
+      "Tillgänglighet var ett krav, inte en bonus. Joel levererade en modern sajt som uppfyller WCAG utan att kompromissa på design. Snabb kommunikation och han förstod EdTech-branschen direkt.",
     initials: "CL",
     color: "#F2ECDD",
   },

@@ -66,7 +66,7 @@ export default function HelsingborgContent() {
         ]}
         badge="Helsingborg"
         title="Webbyrå i Helsingborg — för företag som vill växa."
-        subtitle="Hemsidor, SEO, Google Ads och AI för handels-, logistik- och B2B-företag i Helsingborg. Du jobbar direkt med personen som bygger — fast pris och tydlig avkastning."
+        subtitle="Hemsidor, SEO, Google Ads och AI för handels-, logistik- och B2B-företag i Helsingborg. Du jobbar direkt med personen som bygger, fast pris och tydlig avkastning."
         bullets={[
           "10+ års erfarenhet",
           "Lokal marknadskunskap",
@@ -163,7 +163,7 @@ export default function HelsingborgContent() {
           <SectionHeader
             badge="Serviceområde"
             title="Digital byrå för västra Skåne."
-            subtitle="Baserad i Skåne — jobbar med företag i Helsingborg, Danmark-närområdet och hela Sverige."
+            subtitle="Baserad i Skåne, jobbar med företag i Helsingborg, Danmark-närområdet och hela Sverige."
           />
           <Reveal delay={0.14}>
             <div className="mt-8 flex flex-wrap gap-3">

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { chatConfig } from "@/lib/chat-config";
 
 // ============================================================
-// STOLT CHAT WIDGET v3 — Premium
+// STOLT CHAT WIDGET v3, Premium
 // AI chat + email fallback + animations + dark theme
 // ============================================================
 
@@ -218,7 +218,7 @@ export default function ChatWidget() {
               <div style={{ fontWeight: 700, fontSize: "15px", lineHeight: 1.2, letterSpacing: "-0.01em" }}>{chatConfig.siteName}</div>
               <div style={{ fontSize: "11.5px", opacity: 0.85, display: "flex", alignItems: "center", gap: "5px", marginTop: "2px" }}>
                 <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 6px rgba(74,222,128,0.5)", animation: "stolt-chat-online 2s ease-in-out infinite" }} />
-                AI-assistent — svarar direkt
+                AI-assistent, svarar direkt
               </div>
             </div>
           </div>

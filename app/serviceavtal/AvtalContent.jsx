@@ -9,7 +9,7 @@ const packages = [
     focus: "Grundtrygghet & drift",
     price: "2 000",
     hours: "0 timmar inkluderade",
-    response: "2–14 dagar",
+    response: "2 till 14 dagar",
     maintenance: "Månadsvis genomgång",
     features: [
       "Daglig säkerhetskopiering av hela sajten",
@@ -25,7 +25,7 @@ const packages = [
     focus: "Aktivt underhåll & prioriterad support",
     price: "9 000",
     hours: "10 timmar/mån",
-    response: "1–2 arbetsdagar",
+    response: "1 till 2 arbetsdagar",
     maintenance: "Veckovis genomgång",
     features: [
       "Daglig säkerhetskopiering av hela sajten",
@@ -225,7 +225,7 @@ export default function AvtalContent() {
                 <span className="text-[15px] text-muted font-500">kr/h</span>
               </div>
               <div className="text-[13px] text-muted mt-1">
-                ex moms · Vardagar 07:00–17:00
+                ex moms · Vardagar 07:00 till 17:00
               </div>
             </div>
             <div className="p-7 bg-surface rounded-[10px] border border-border text-center">

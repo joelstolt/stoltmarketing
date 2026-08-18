@@ -93,7 +93,7 @@ const services = [
     icon: Megaphone,
     title: "Google Ads som ger avkastning",
     subtitle:
-      "Riktad annonsering som ger fler samtal och förfrågningar direkt — utan att vänta på organisk ranking.",
+      "Riktad annonsering som ger fler samtal och förfrågningar direkt, utan att vänta på organisk ranking.",
     when: "När du vill ha fler kunder nu och inte kan vänta på SEO.",
     expect: [
       "Fler samtal och förfrågningar",
@@ -116,7 +116,7 @@ const services = [
     title: "E-handel som säljer",
     subtitle:
       "WooCommerce-butiker som laddar snabbt, konverterar och är enkla att driva.",
-    when: "När du vill sälja online — eller har en butik som inte konverterar.",
+    when: "När du vill sälja online, eller har en butik som inte konverterar.",
     expect: [
       "Fler köp och högre snittorder",
       "Snabb, smidig checkout",
@@ -137,7 +137,7 @@ const services = [
     icon: LayoutTemplate,
     title: "WordPress-hemsidor",
     subtitle:
-      "Snabba, säkra WordPress-sidor du enkelt uppdaterar själv — utan WP-långsamheten.",
+      "Snabba, säkra WordPress-sidor du enkelt uppdaterar själv, utan WP-långsamheten.",
     when: "När du vill ha ett flexibelt CMS du kan sköta själv.",
     expect: [
       "Du uppdaterar enkelt själv",
@@ -321,7 +321,7 @@ const faqs = [
   },
   {
     q: "Kan jag kombinera flera tjänster?",
-    a: "Absolut. De flesta uppdrag kombinerar webb, SEO och drift. Fördelen med att ha allt hos en konsult är att det hänger ihop — ingen samordning krävs.",
+    a: "Absolut. De flesta uppdrag kombinerar webb, SEO och drift. Fördelen med att ha allt hos en konsult är att det hänger ihop, ingen samordning krävs.",
   },
   {
     q: "Hur följer vi upp resultat?",
@@ -346,7 +346,7 @@ export default function TjansterContent() {
         ]}
         badge="Tjänster"
         title="Webb, SEO, AI och drift. Ett mål: fler kunder från webben."
-        subtitle="Jag samlar strategi, design, teknik och drift i en leverans — så du får resultat utan att koordinera flera leverantörer."
+        subtitle="Jag samlar strategi, design, teknik och drift i en leverans, så du får resultat utan att koordinera flera leverantörer."
         bullets={[
           "Fokus på fler förfrågningar",
           "AI & automation som standard",
@@ -436,7 +436,7 @@ export default function TjansterContent() {
                       </Link>
                     </div>
 
-                    {/* Right — stats */}
+                    {/* Right, stats */}
                     <div className="flex flex-row lg:flex-col gap-6 lg:gap-8 lg:justify-center lg:border-l lg:border-border-light lg:pl-10">
                       {s.stats.map((stat) => (
                         <div key={stat.label}>

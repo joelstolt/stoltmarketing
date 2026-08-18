@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                Google Ads vs SEO — Vad ska du satsa på?
+                Google Ads vs SEO, Vad ska du satsa på?
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -46,7 +46,7 @@ export default function Article() {
           <div className="max-w-3xl mx-auto">
 
             <p className="text-[17px] text-body leading-relaxed mb-6">
-              Du sitter med en budget för digital marknadsföring. Den är begränsad. Och du måste välja — ska du spruta pengar på Google Ads eller bygga upp SEO långsiktigt?
+              Du sitter med en budget för digital marknadsföring. Den är begränsad. Och du måste välja, ska du spruta pengar på Google Ads eller bygga upp SEO långsiktigt?
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -59,7 +59,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Kort sagt: Google Ads är betald trafikmedling. Du betalar per klick för att visas längst upp på Google. SEO är organisk trafik — du bygger upp din hemsida så att Google gärna visar dig, utan att du behöver betala per besökare.
+              Kort sagt: Google Ads är betald trafikmedling. Du betalar per klick för att visas längst upp på Google. SEO är organisk trafik, du bygger upp din hemsida så att Google gärna visar dig, utan att du behöver betala per besökare.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -68,7 +68,7 @@ export default function Article() {
 
             {/* Google Ads */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Google Ads — Fördelar och nackdelar
+              Google Ads, Fördelar och nackdelar
             </h2>
 
             <div className="space-y-3 mb-8">
@@ -112,7 +112,7 @@ export default function Article() {
 
             {/* SEO */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              SEO — Fördelar och nackdelar
+              SEO, Fördelar och nackdelar
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -160,7 +160,7 @@ export default function Article() {
 
             {/* Kostnadsjämförelse */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Kostnadsjämförelse — Ett konkret exempel
+              Kostnadsjämförelse, Ett konkret exempel
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">
@@ -214,7 +214,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Ser du mönstret? Google Ads är dyrt från dag ett. Men stabilt. SEO är långsamt från början — men exponentiell växtpotential över tid.
+              Ser du mönstret? Google Ads är dyrt från dag ett. Men stabilt. SEO är långsamt från början, men exponentiell växtpotential över tid.
             </p>
 
             {/* När ska du välja vad? */}
@@ -244,7 +244,7 @@ export default function Article() {
 
             {/* Kombinerad strategi */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Bäst av båda världar — En kombinerad strategi
+              Bäst av båda världar, En kombinerad strategi
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-6">

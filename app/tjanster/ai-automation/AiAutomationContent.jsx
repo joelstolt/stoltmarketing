@@ -15,9 +15,9 @@ const features = [
 ];
 
 const faqs = [
-  { q: "Vad menar du med AI-lösningar för småföretag?", a: "Konkreta verktyg som sparar tid. Chatbotar som svarar kunder, automatiserade offerter, innehållsgenerering. Jag utgår alltid från ditt faktiska behov — inte hypade trender." },
+  { q: "Vad menar du med AI-lösningar för småföretag?", a: "Konkreta verktyg som sparar tid. Chatbotar som svarar kunder, automatiserade offerter, innehållsgenerering. Jag utgår alltid från ditt faktiska behov, inte hypade trender." },
   { q: "Behöver jag teknisk kunskap?", a: "Nej. Jag bygger och sätter upp allt. Du får enkla verktyg som fungerar utan att du behöver förstå tekniken bakom." },
-  { q: "Vad är Kvota.se?", a: "Min egen AI-drivna SaaS-produkt — en offertgenerator för hantverkare. Den är mitt bevis på att jag inte bara pratar om AI, utan bygger det på riktigt." },
+  { q: "Vad är Kvota.se?", a: "Min egen AI-drivna SaaS-produkt, en offertgenerator för hantverkare. Den är mitt bevis på att jag inte bara pratar om AI, utan bygger det på riktigt." },
   { q: "Vad kostar en AI-implementering?", a: "Det varierar beroende på omfattning. En enkel chatbot kan ingå i ett webbprojekt. Större automationslösningar prissätts efter scope. Boka en genomgång så ger jag ett fast pris." },
 ];
 

@@ -26,7 +26,7 @@ const breadcrumb = {
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Stolt Marketing — Kristianstad",
+  name: "Stolt Marketing, Kristianstad",
   description: "Digital byrå som bygger hemsidor, hanterar SEO och Google Ads i Kristianstad",
   url: "https://www.stoltmarketing.se/kristianstad",
   telephone: "",

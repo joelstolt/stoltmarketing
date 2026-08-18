@@ -37,7 +37,7 @@ const services = [
     icon: Cpu,
     title: "AI & Automation",
     href: "/tjanster/ai-automation",
-    desc: "Jag hjälper dig implementera AI-verktyg och automatiserade arbetsflöden som faktiskt sparar tid. Konkreta lösningar — inte buzzwords.",
+    desc: "Jag hjälper dig implementera AI-verktyg och automatiserade arbetsflöden som faktiskt sparar tid. Konkreta lösningar, inte buzzwords.",
     items: [
       "AI-chatbotar & kundtjänst",
       "Automatiserade offerter & dokument",
@@ -61,7 +61,7 @@ const services = [
     icon: Megaphone,
     title: "Google Ads",
     href: "/tjanster/google-ads",
-    desc: "Riktad annonsering som ger fler samtal och förfrågningar direkt. Jag sätter upp, optimerar och rapporterar — du får fler kunder.",
+    desc: "Riktad annonsering som ger fler samtal och förfrågningar direkt. Jag sätter upp, optimerar och rapporterar, du får fler kunder.",
     items: [
       "Sökordsanalys & kampanjstrategi",
       "Annonstext som konverterar",
@@ -83,7 +83,7 @@ export default function Services() {
 
         <Reveal delay={0.06}>
           <h2 className="mt-5 font-heading font-600 text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[700px]">
-            Allt du behöver för att växa digitalt — från en och samma konsult.
+            Allt du behöver för att växa digitalt, från en och samma konsult.
           </h2>
         </Reveal>
 

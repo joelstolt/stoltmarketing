@@ -94,7 +94,7 @@ export default function AiSection() {
             <Reveal delay={0.14}>
               <p className="mt-4 text-[16px] leading-relaxed text-body max-w-[520px]">
                 Det handlar inte om teknik för teknikens skull. Det handlar om
-                att ge ditt företag en orättvis fördel — automatisera det
+                att ge ditt företag en orättvis fördel, automatisera det
                 tråkiga, frigör tid för det som faktiskt växer din verksamhet.
               </p>
             </Reveal>
@@ -134,7 +134,7 @@ export default function AiSection() {
               </h3>
               <p className="mt-2 text-[14px] leading-relaxed text-body">
                 AI-driven offertgenerator för svenska hantverkare. Prata in vad
-                jobbet gäller — få en proffsig PDF-offert med logga, poster och
+                jobbet gäller, få en proffsig PDF-offert med logga, poster och
                 ROT-avdrag på under en minut.
               </p>
 

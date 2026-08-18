@@ -1,9 +1,9 @@
 // ============================================================
-// PDF-generator för Insyn-rapporter — byggd med pdf-lib (ren JS).
+// PDF-generator för Insyn-rapporter, byggd med pdf-lib (ren JS).
 // Ersätter @react-pdf/renderer, som kräver runtime-WASM (yoga-layout)
 // och därför inte kan köra på Cloudflare Workers.
 // Samma layout som tidigare: header, 4 statistikkort, 6 listsektioner, footer.
-// Endast standardteckensnitt (Helvetica) — ingen fontinbäddning behövs.
+// Endast standardteckensnitt (Helvetica), ingen fontinbäddning behövs.
 // ============================================================
 
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
@@ -31,7 +31,7 @@ const COLORS = {
 };
 
 // pdf-lib:s standardfonter kodar text som WinAnsi (CP1252). Sanera bort tecken
-// som inte kan kodas — annars kastar drawText. Normalisera särskilt sv-SE:s
+// som inte kan kodas, annars kastar drawText. Normalisera särskilt sv-SE:s
 // smala no-break space (U+202F), som Intl använder som tusentalsavgränsare.
 function safe(s) {
   return String(s ?? "")
@@ -71,7 +71,7 @@ function countryName(code) {
 
 export async function buildReportPdf({ client, range, report }) {
   const doc = await PDFDocument.create();
-  doc.setTitle(`Insyn — ${client.name}`);
+  doc.setTitle(`Insyn, ${client.name}`);
   doc.setAuthor("Stolt Marketing");
   doc.setSubject(`Trafikrapport för ${client.domain}`);
 

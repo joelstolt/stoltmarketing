@@ -4,7 +4,7 @@ const articleSchema = {
   image: ["https://www.stoltmarketing.se/og-image.png"],
   mainEntityOfPage: "https://www.stoltmarketing.se/blogg/e-handel-guide",
   inLanguage: "sv-SE",
-  headline: "Starta e-handel 2026 — Komplett guide för svenska företag",
+  headline: "Starta e-handel 2026, Komplett guide för svenska företag",
   description: "Komplett guide för att starta e-handel i Sverige 2026. Plattformar, betalningar, juridik, logistik och kostnader allt på ett ställe.",
   author: { "@type": "Person", name: "Joel Stolt" },
   publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },

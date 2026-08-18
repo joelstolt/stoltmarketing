@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                Lokal SEO — Så syns ditt företag i Google Maps och lokala sökningar
+                Lokal SEO, Så syns ditt företag i Google Maps och lokala sökningar
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -50,16 +50,16 @@ export default function Article() {
           <div className="max-w-3xl mx-auto">
 
             <p className="text-[17px] text-body leading-relaxed mb-6">
-              &ldquo;Jag är en frisör i Malmö. Min hemsida visar upp överallt när folk söker på Google. Men varför får jag inte några bokningar?&rdquo; Det är en fråga jag hör ofta. Problemet är inte att hemsidan är dålig — problemet är att folk söker efter &ldquo;frisör malmö&rdquo; på mobilen, och då visas inte hemsidan. Google Maps visas. Och det är där lokal SEO spelar roll.
+              &ldquo;Jag är en frisör i Malmö. Min hemsida visar upp överallt när folk söker på Google. Men varför får jag inte några bokningar?&rdquo; Det är en fråga jag hör ofta. Problemet är inte att hemsidan är dålig, problemet är att folk söker efter &ldquo;frisör malmö&rdquo; på mobilen, och då visas inte hemsidan. Google Maps visas. Och det är där lokal SEO spelar roll.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Den här guiden handlar om hur du får ditt företag att synas när folk i din stad söker efter det du säljer. Baserat på 150+ projekt och tio år av erfarenhet — utan buzzwords, bara det som faktiskt fungerar 2026.
+              Den här guiden handlar om hur du får ditt företag att synas när folk i din stad söker efter det du säljer. Baserat på 150+ projekt och tio år av erfarenhet, utan buzzwords, bara det som faktiskt fungerar 2026.
             </p>
 
             {/* Section: Varför lokal SEO */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Varför lokal SEO spelar roll — Google Maps är större än Google Search
+              Varför lokal SEO spelar roll, Google Maps är större än Google Search
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -67,7 +67,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Det betyder att folk letar aktivt efter företag i sin närhet — precis nu. De vill ha ett nummer att ringa, se var du ligger på kartan, läsa recensioner och se när du öppet. Om du inte är där — om ditt Google Business Profile är kass eller inte ens satt upp — förlorar du affärer till konkurrenten som är.
+              Det betyder att folk letar aktivt efter företag i sin närhet, precis nu. De vill ha ett nummer att ringa, se var du ligger på kartan, läsa recensioner och se när du öppet. Om du inte är där, om ditt Google Business Profile är kass eller inte ens satt upp, förlorar du affärer till konkurrenten som är.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -88,11 +88,11 @@ export default function Article() {
               <div className="space-y-2">
                 {[
                   "Gå till google.com/business och skapa profilen (gratis)",
-                  "Verifiera att du är företagsägare — Google skickar ett brev till din adress",
+                  "Verifiera att du är företagsägare, Google skickar ett brev till din adress",
                   "Fyll i allt: företagsnamn, kategori, telefon, webbadress, öppettider, beskrivning",
                   "Ladda upp minst 10 högkvalitativa bilder från din butik/kontor",
                   "Lägg till tjänster eller produkter med beskrivningar",
-                  "Sätt rätt öppettider — inkludera helger om du är öppen",
+                  "Sätt rätt öppettider, inkludera helger om du är öppen",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
                     <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -108,7 +108,7 @@ export default function Article() {
                 <div>
                   <p className="text-[15px] font-700 text-heading mb-1">Tips: Välj rätt kategori</p>
                   <p className="text-[14px] text-body leading-relaxed">
-                    Google har hundra kategorier. Välj den som bäst matchar vad du gör — inte den som låter viktig. En frisör ska välja &ldquo;Frisörsalong&rdquo;, inte &ldquo;Skönhetssalong&rdquo;. Du kan välja upp till tre kategorier.
+                    Google har hundra kategorier. Välj den som bäst matchar vad du gör, inte den som låter viktig. En frisör ska välja &ldquo;Frisörsalong&rdquo;, inte &ldquo;Skönhetssalong&rdquo;. Du kan välja upp till tre kategorier.
                   </p>
                 </div>
               </div>
@@ -120,11 +120,11 @@ export default function Article() {
 
             {/* Section: NAP */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 2: NAP-konsistens — Namnet måste vara identiskt överallt
+              Steg 2: NAP-konsistens, Namnet måste vara identiskt överallt
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              NAP står för Name, Address, Phone. Google använder detta för att förstå att alla dina online-närvaron (Google Business Profile, hemsida, Eniro, HitTA, andra kataloger) är samma företag — och inte tre olika konkurrenter.
+              NAP står för Name, Address, Phone. Google använder detta för att förstå att alla dina online-närvaron (Google Business Profile, hemsida, Eniro, HitTA, andra kataloger) är samma företag, och inte tre olika konkurrenter.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -149,16 +149,16 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Andra detaljer som måste matchas: telefonnummer (med samma landsnummer), fullständig adress (gata, nummer, postnummer, stad), och webbadress (med eller utan www — men samma överallt).
+              Andra detaljer som måste matchas: telefonnummer (med samma landsnummer), fullständig adress (gata, nummer, postnummer, stad), och webbadress (med eller utan www, men samma överallt).
             </p>
 
             {/* Section: Lokala sökord */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 3: Lokala sökord — Hitta vad folk söker efter i din stad
+              Steg 3: Lokala sökord, Hitta vad folk söker efter i din stad
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Lokal SEO handlar inte om &ldquo;elektriker&rdquo; — det handlar om &ldquo;elektriker malmö&rdquo;, &ldquo;VVS växjö&rdquo;, &ldquo;revisionsbyrå hässleholm&rdquo;. Så hur hittar du de sökord som folk faktiskt använder i din stad?
+              Lokal SEO handlar inte om &ldquo;elektriker&rdquo;, det handlar om &ldquo;elektriker malmö&rdquo;, &ldquo;VVS växjö&rdquo;, &ldquo;revisionsbyrå hässleholm&rdquo;. Så hur hittar du de sökord som folk faktiskt använder i din stad?
             </p>
 
             <div className="bg-surface border border-border rounded-xl p-5 mb-6">
@@ -181,11 +181,11 @@ export default function Article() {
 
             {/* Section: Recensioner */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 4: Recensioner — Google bryr sig, och det gör dina kunder också
+              Steg 4: Recensioner, Google bryr sig, och det gör dina kunder också
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Google rankar företag med fler och bättre recensioner högre i Maps-resultaten. Men det är inte bara algoritmen — 72% av konsumenterna läser recensioner innan de ringer. En 4,8-stjärnig firma med 50 recensioner slår en 5,0-stjärnig firma med två recensioner.
+              Google rankar företag med fler och bättre recensioner högre i Maps-resultaten. Men det är inte bara algoritmen, 72% av konsumenterna läser recensioner innan de ringer. En 4,8-stjärnig firma med 50 recensioner slår en 5,0-stjärnig firma med två recensioner.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -218,12 +218,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Svar på alla recensioner — både positiva och negativa. Det visar att du bryr dig och ger Google signal att profilen är aktiv. Negativa recensioner är inte dåliga — om du svarar snällt och löser problemet, visar det goda omdömen om dig.
+              Svar på alla recensioner, både positiva och negativa. Det visar att du bryr dig och ger Google signal att profilen är aktiv. Negativa recensioner är inte dåliga, om du svarar snällt och löser problemet, visar det goda omdömen om dig.
             </p>
 
             {/* Section: On-page SEO */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 5: On-page lokal SEO — Din hemsida måste prata om plats
+              Steg 5: On-page lokal SEO, Din hemsida måste prata om plats
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -254,7 +254,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Google ser också var du är listad på nätet. En länk från Eniro.se eller HitTA.se — två av Sveriges största företagskataloger — säger &ldquo;detta är ett verkligt, lokalt företag&rdquo;.
+              Google ser också var du är listad på nätet. En länk från Eniro.se eller HitTA.se, två av Sveriges största företagskataloger, säger &ldquo;detta är ett verkligt, lokalt företag&rdquo;.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -263,11 +263,11 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                "Eniro.se — Sveriges största företagskatalog",
-                "HitTA.se — Många lokala sökningar landar här",
-                "Google Maps — redan gjort",
-                "LinkedIn Company Page — bekräftar att du är ett verkligt företag",
-                "Facebook — massa användare söker på Facebook Local",
+                "Eniro.se, Sveriges största företagskatalog",
+                "HitTA.se, Många lokala sökningar landar här",
+                "Google Maps, redan gjort",
+                "LinkedIn Company Page, bekräftar att du är ett verkligt företag",
+                "Facebook, massa användare söker på Facebook Local",
                 "Branschspecifika kataloger (t.ex. Tripadvisor för restauranger, Hitta en advokat för juridiska tjänster)",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
@@ -278,12 +278,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Se till att din NAP är identisk överallt här också. Och uppdatera profilerna — gamla, inaktiva profiler ser spam-aktiga ut.
+              Se till att din NAP är identisk överallt här också. Och uppdatera profilerna, gamla, inaktiva profiler ser spam-aktiga ut.
             </p>
 
             {/* Section: Mät resultat */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 7: Mät dina resultat — Du behöver veta om det fungerar
+              Steg 7: Mät dina resultat, Du behöver veta om det fungerar
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -305,7 +305,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Om du inte ser rörelse efter två-tre månader betyder det att något inte fungerar — antingen är din Google Business Profile inte komplett, din NAP inte konsistent, eller folk söker inte på de ord du optimerar för. Då behöver du justera.
+              Om du inte ser rörelse efter två-tre månader betyder det att något inte fungerar, antingen är din Google Business Profile inte komplett, din NAP inte konsistent, eller folk söker inte på de ord du optimerar för. Då behöver du justera.
             </p>
 
             {/* Section: Sammanfattning */}
@@ -358,7 +358,7 @@ export default function Article() {
                 Behöver du hjälp med lokal SEO?
               </h3>
               <p className="text-[15px] text-muted leading-relaxed mb-6">
-                Vi sätter upp, optimerar och övervakar din Google Business Profile och lokala SEO-strategi. Många företag ökar sina lokala bokningar med 40–100% inom tre månader med rätt strategi på plats.
+                Vi sätter upp, optimerar och övervakar din Google Business Profile och lokala SEO-strategi. Många företag ökar sina lokala bokningar med 40 till 100% inom tre månader med rätt strategi på plats.
               </p>
               <a href="/boka" className="premium-btn">
                 <span>Boka kostnadsfri genomgång</span>

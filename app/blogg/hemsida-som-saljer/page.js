@@ -50,7 +50,7 @@ export default function Article() {
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Du är inte ensam. De flesta hemsidor är designade för att se ut bra — inte för att sälja något. Och det är problemet.
+              Du är inte ensam. De flesta hemsidor är designade för att se ut bra, inte för att sälja något. Och det är problemet.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -72,7 +72,7 @@ export default function Article() {
 
             <div className="bg-surface border border-border rounded-xl p-5 mb-8">
               <p className="text-[15px] font-600 text-heading mb-2">Bra värdeerbjudande:</p>
-              <p className="text-[14px] text-body italic mb-4">"Webbutveckling som genererar leads — inte bara besökare. För svenska småföretag som är trötta på dåliga resultat."</p>
+              <p className="text-[14px] text-body italic mb-4">"Webbutveckling som genererar leads, inte bara besökare. För svenska småföretag som är trötta på dåliga resultat."</p>
               <p className="text-[14px] text-muted mt-4">Du får direkt veta: Vad (webbutveckling), För vem (svenska småföretag), Varför (som genererar leads).</p>
             </div>
 
@@ -92,7 +92,7 @@ export default function Article() {
 
             {/* #2 Social proof */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              2. Social proof — Testimonialer, case studies och logobar
+              2. Social proof, Testimonialer, case studies och logobar
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -105,7 +105,7 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                { item: "Autentiska testimonialer", desc: "Från verkliga kunder. Gärna med namn, foto och företag. Genererad AI-text funkar inte här — det syns på en kilometer håll." },
+                { item: "Autentiska testimonialer", desc: "Från verkliga kunder. Gärna med namn, foto och företag. Genererad AI-text funkar inte här, det syns på en kilometer håll." },
                 { item: "Case studies", desc: "Inte bara 'vi gjorde en hemsida åt dem'. Utan: 'Vi gjorde en hemsida åt dem och de fick 150% fler leads på 6 månader'." },
                 { item: "Logotyper av kunder", desc: "Om du arbetat med kända varumärken, visa det. En logotyp är värd tusen ord. (Men bara om det är sant.)" },
                 { item: "Siffror och resultat", desc: "Inte 'kunderna är nöjda'. Utan '98% av våra kunder ligger kvar efter år två'. Det är övertyg kraft." },
@@ -142,9 +142,9 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                { point: "En primär CTA högst upp", desc: "'Boka konsultation' eller 'Skapa konto' — något som förflyttar besökaren mot nästa steg." },
+                { point: "En primär CTA högst upp", desc: "'Boka konsultation' eller 'Skapa konto', något som förflyttar besökaren mot nästa steg." },
                 { point: "Flera CTAs nedför sidan", desc: "Inte bara en. Människor scrollar olika. Ge dem möjlighet att agera på olika ställen." },
-                { point: "Tydlig knapptext", desc: "'Skicka' är uselt. 'Boka mitt gratis möte' är bra. Spara inte på orden — var spesifik." },
+                { point: "Tydlig knapptext", desc: "'Skicka' är uselt. 'Boka mitt gratis möte' är bra. Spara inte på orden, var spesifik." },
                 { point: "Känsla av brådska när det passar", desc: "'Begränsade platser' eller 'Gratis under april' skapar incitament. Men använd bara om det är sant." },
               ].map((item) => (
                 <div key={item.point} className="bg-surface border border-border rounded-xl p-5 flex gap-3">
@@ -176,7 +176,7 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                { stat: "En sekund för långsam laddningstid", desc: "...kostar dig 7% av konverteringarna. Om du har 1000 besökare per månad och 5% konverterar — det är 35 förlorade leads per månad." },
+                { stat: "En sekund för långsam laddningstid", desc: "...kostar dig 7% av konverteringarna. Om du har 1000 besökare per månad och 5% konverterar, det är 35 förlorade leads per månad." },
                 { stat: "50% av webbtrafiken är mobil", desc: "Om din hemsida inte fungerar på mobil, missade du redan hälften." },
                 { stat: "Dålig mobilupplevelse = dubbel hoppa", desc: "Människor hoppar av långsamt mobila hemsidor två gånger snabbare än från snabba." },
               ].map((item) => (
@@ -206,10 +206,10 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                { element: "Tydliga, sökmotoroptimerade titlar och rubrikstruktur", desc: "H1, H2, H3 — allt är strukturerat. Inte för Google, utan för att göra texten läsbar och skärmbar." },
+                { element: "Tydliga, sökmotoroptimerade titlar och rubrikstruktur", desc: "H1, H2, H3, allt är strukturerat. Inte för Google, utan för att göra texten läsbar och skärmbar." },
                 { element: "Fokuserat innehål om rätt ord", desc: "Du skriver inte bara om allt. Du fokuserar på de ord som din målgrupp faktiskt söker på. Med intention." },
-                { element: "Intern länkning", desc: "Relevanta länkar inom din hemsida — 'Se även' eller 'Läs mer om' — som hjälper besökare att stanna längre och Google att förstå din struktur." },
-                { element: "Metadata är ifylld", desc: "Varje sida har en description, unique title — de små grejer som gör enorm skillnad i klickfrekvensen från sökresultaten." },
+                { element: "Intern länkning", desc: "Relevanta länkar inom din hemsida, 'Se även' eller 'Läs mer om', som hjälper besökare att stanna längre och Google att förstå din struktur." },
+                { element: "Metadata är ifylld", desc: "Varje sida har en description, unique title, de små grejer som gör enorm skillnad i klickfrekvensen från sökresultaten." },
               ].map((item) => (
                 <div key={item.element} className="bg-surface border border-border rounded-xl p-5 flex gap-3">
                   <Check size={20} className="text-primary flex-shrink-0 mt-0.5" />
@@ -222,7 +222,7 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              En hemsida som säljer är inte bara snygg — den är byggd för att sökmotorer och människor förstår den lika väl.
+              En hemsida som säljer är inte bara snygg, den är byggd för att sökmotorer och människor förstår den lika väl.
             </p>
 
             {/* Sammanfattning */}

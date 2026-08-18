@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: "https://www.stoltmarketing.se/tjanster/seo" },
   openGraph: {
     title: "SEO-byrå & sökmotoroptimering för företag",
-    description: "Sökmotoroptimering och teknisk SEO som ger fler kunder. SEO-byrå för företag i hela Sverige — mätbara resultat, fast pris.",
+    description: "Sökmotoroptimering och teknisk SEO som ger fler kunder. SEO-byrå för företag i hela Sverige, mätbara resultat, fast pris.",
     url: "https://www.stoltmarketing.se/tjanster/seo",
   },
 };

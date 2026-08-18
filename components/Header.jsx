@@ -179,7 +179,7 @@ export default function Header() {
         >
           {/* Logo */}
           <Link
-            aria-label="Stolt Marketing — till startsidan"
+            aria-label="Stolt Marketing, till startsidan"
             href="/"
             className="font-heading"
             style={{

@@ -4,7 +4,7 @@ const articleSchema = {
   image: ["https://www.stoltmarketing.se/og-image.png"],
   mainEntityOfPage: "https://www.stoltmarketing.se/blogg/content-strategi-smaforetag",
   inLanguage: "sv-SE",
-  headline: "Content-strategi för småföretag — Så skapar du innehåll som rankar",
+  headline: "Content-strategi för småföretag, Så skapar du innehåll som rankar",
   description: "Lär dig hur du skapar en content-strategi som rankar på Google. Keyword research för småföretag, vilka content-typer som fungerar, och hur du mäter resultat.",
   author: { "@type": "Person", name: "Joel Stolt" },
   publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },

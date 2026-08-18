@@ -26,7 +26,7 @@ const breadcrumb = {
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Stolt Marketing — Hässleholm",
+  name: "Stolt Marketing, Hässleholm",
   description: "Digital byrå som bygger hemsidor, sköter SEO och Google Ads i Hässleholm",
   url: "https://www.stoltmarketing.se/hassleholm",
   areaServed: ["Hässleholm", "Skåne", "Sverige"],

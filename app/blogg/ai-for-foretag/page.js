@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                AI för företag 2026 — Praktiska användningsområden som ger resultat
+                AI för företag 2026, Praktiska användningsområden som ger resultat
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -46,7 +46,7 @@ export default function Article() {
           <div className="max-w-3xl mx-auto">
 
             <p className="text-[17px] text-body leading-relaxed mb-6">
-              AI är inte längre science fiction. Det är ett verktyg som redan sitter på ditt skrivbord — i Google Workspace, i dina e-postprogram, i hur du marknadsför ditt företag. Frågan är inte längre om du ska använda AI. Frågan är: vad ska du använda det till, och var börjar du?
+              AI är inte längre science fiction. Det är ett verktyg som redan sitter på ditt skrivbord, i Google Workspace, i dina e-postprogram, i hur du marknadsför ditt företag. Frågan är inte längre om du ska använda AI. Frågan är: vad ska du använda det till, och var börjar du?
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
@@ -66,11 +66,11 @@ export default function Article() {
               <p className="text-[16px] font-600 text-heading mb-3">Vad kan chatbots göra för dig?</p>
               <div className="space-y-2">
                 {[
-                  "Svara på FAQ — priser, öppettider, produkter, befintliga tjänster",
-                  "Boka möten — integrera med din kalender, se lediga tider",
-                  "Samla kontaktuppgifter — få namn, e-post och telefon innan du säljer",
-                  "Kvalificera leads — ställ automatiska frågor för att filtrera rätt kunder",
-                  "Hantera flera språk — samma chatbot, flera marknader",
+                  "Svara på FAQ, priser, öppettider, produkter, befintliga tjänster",
+                  "Boka möten, integrera med din kalender, se lediga tider",
+                  "Samla kontaktuppgifter, få namn, e-post och telefon innan du säljer",
+                  "Kvalificera leads, ställ automatiska frågor för att filtrera rätt kunder",
+                  "Hantera flera språk, samma chatbot, flera marknader",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
                     <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -81,12 +81,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Vi har sett småföretag öka sin lead-insamling med 40% bara genom att ha en chatbot som svarar när de själva är lediga. Och för större företag sparer en chatbot timmar av kundservicearbete varje vecka. Den tangerar aldrig en äkta kundrelation — men den gör väntande kunder nöjdare.
+              Vi har sett småföretag öka sin lead-insamling med 40% bara genom att ha en chatbot som svarar när de själva är lediga. Och för större företag sparer en chatbot timmar av kundservicearbete varje vecka. Den tangerar aldrig en äkta kundrelation, men den gör väntande kunder nöjdare.
             </p>
 
             {/* Content och marknadsföring */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              2. Content och marknadsföring — Från idé till publicering
+              2. Content och marknadsföring, Från idé till publicering
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -164,27 +164,27 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Att sätta upp automation tar 1–2 timmar en gång. Sedan sparar det dig 3–5 timmar varje vecka för alltid. Det är en av de bästa investeringarna du kan göra.
+              Att sätta upp automation tar 1 till 2 timmar en gång. Sedan sparar det dig 3 till 5 timmar varje vecka för alltid. Det är en av de bästa investeringarna du kan göra.
             </p>
 
             {/* AI i webbutveckling */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              4. AI i webbutveckling — Snabbare och bättre design
+              4. AI i webbutveckling, Snabbare och bättre design
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Om du har en webbplats — eller planerar att bygga en — kan AI påskynda utvecklingen och göra den billigare.
+              Om du har en webbplats, eller planerar att bygga en, kan AI påskynda utvecklingen och göra den billigare.
             </p>
 
             <div className="bg-surface border border-border rounded-xl p-5 mb-6">
               <p className="text-[16px] font-600 text-heading mb-3">Vad AI gör i webbutveckling:</p>
               <div className="space-y-2">
                 {[
-                  "Kodgenerering — skapa komponenter och funktioner snabbare än att skriva allt från noll",
-                  "Design-förslag — få layout- och färgidéer baserat på vad som fungerar för din bransch",
-                  "A/B-testning — AI kan förutse vilka CTA-knapptext och rubriker som fungerar innan du testar",
-                  "Personalisering — visa olika innehål för olika användare — nya besökare vs. återkommande kunder",
-                  "Prestanda-optimering — hitta döda slutar på din sajt där folk hoppar av",
+                  "Kodgenerering, skapa komponenter och funktioner snabbare än att skriva allt från noll",
+                  "Design-förslag, få layout- och färgidéer baserat på vad som fungerar för din bransch",
+                  "A/B-testning, AI kan förutse vilka CTA-knapptext och rubriker som fungerar innan du testar",
+                  "Personalisering, visa olika innehål för olika användare, nya besökare vs. återkommande kunder",
+                  "Prestanda-optimering, hitta döda slutar på din sajt där folk hoppar av",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
                     <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -212,8 +212,8 @@ export default function Article() {
                 { what: "Din affärsstrategi", why: "AI kan inte veta vilka kunderna är eller vad som skiljer dig från konkurrenter. Det måste du veta." },
                 { what: "Kreativt tänkande", why: "AI mixar befintligt material. Det kan inte hitta på något helt nytt eller överraskande." },
                 { what: "Kundrelationer", why: "En kund vill tala med en människa som förstår deras problem och bryr sig om en lösning för just dem." },
-                { what: "Din varumärkesröst", why: "AI kan skriva snyggt och grammatiskt — men det kan inte fånga det sätt som gör ditt företag unikt." },
-                { what: "Moraliska val", why: "Om AI säger något som inte känns rätt — gör det inte bara för att det var enkelt." },
+                { what: "Din varumärkesröst", why: "AI kan skriva snyggt och grammatiskt, men det kan inte fånga det sätt som gör ditt företag unikt." },
+                { what: "Moraliska val", why: "Om AI säger något som inte känns rätt, gör det inte bara för att det var enkelt." },
               ].map((item) => (
                 <div key={item.what} className="bg-surface border border-border rounded-lg p-4">
                   <div className="flex items-start gap-3">
@@ -248,7 +248,7 @@ export default function Article() {
                 },
                 {
                   step: "Steg 3: Mät resultat",
-                  desc: "Hur lång tid tog den här uppgiften innan? Hur lång tid tar den med AI? Sparade du minst 20 minuter? Då är det värt att göra igen nästa gång. Om det tog samma tid eller längre — försök något annat.",
+                  desc: "Hur lång tid tog den här uppgiften innan? Hur lång tid tar den med AI? Sparade du minst 20 minuter? Då är det värt att göra igen nästa gång. Om det tog samma tid eller längre, försök något annat.",
                 },
               ].map((item, i) => (
                 <div key={item.step} className="bg-surface border border-border rounded-xl p-6">
@@ -267,7 +267,7 @@ export default function Article() {
 
             {/* Vanliga misstag */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              7. Vanliga misstag — undvik dessa
+              7. Vanliga misstag, undvik dessa
             </h2>
 
             <div className="space-y-3 mb-8">
@@ -316,7 +316,7 @@ export default function Article() {
                 Vill du implementera AI i ditt företag?
               </h3>
               <p className="text-[15px] text-muted leading-relaxed mb-6">
-                Jag hjälper företag som du att sätta upp AI-automation, chatbots och automatisering av kundservice och interna processer. Vi börjar med en genomgång av där du kan spara mest tid — utan att skapa extra arbete för dig.
+                Jag hjälper företag som du att sätta upp AI-automation, chatbots och automatisering av kundservice och interna processer. Vi börjar med en genomgång av där du kan spara mest tid, utan att skapa extra arbete för dig.
               </p>
               <a href="/boka" className="premium-btn">
                 <span>Boka kostnadsfri genomgång</span>

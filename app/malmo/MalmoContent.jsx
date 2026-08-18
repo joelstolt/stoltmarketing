@@ -66,7 +66,7 @@ export default function MalmoContent() {
         ]}
         badge="Malmö"
         title="Webbyrå i Malmö — för växande företag och startups."
-        subtitle="Hemsidor, SEO, Google Ads och AI för företag, startups och e-handel i Malmö och Öresundsregionen. Du jobbar direkt med personen som bygger — fast pris, utan byrå-overhead."
+        subtitle="Hemsidor, SEO, Google Ads och AI för företag, startups och e-handel i Malmö och Öresundsregionen. Du jobbar direkt med personen som bygger, fast pris, utan byrå-overhead."
         bullets={[
           "10+ års erfarenhet",
           "Malmö-baserad",
@@ -163,7 +163,7 @@ export default function MalmoContent() {
           <SectionHeader
             badge="Serviceområde"
             title="Digital byrå för Öresund-regionen."
-            subtitle="Baserad i Malmö — jobbar med företag lokalt och i hela Skandinavien."
+            subtitle="Baserad i Malmö, jobbar med företag lokalt och i hela Skandinavien."
           />
           <Reveal delay={0.14}>
             <div className="mt-8 flex flex-wrap gap-3">

@@ -27,7 +27,7 @@ export default function CityHubExtra({ city }) {
         </div>
       </section>
 
-      {/* ═══ FAQ (alltid synlig — crawlbar) ═══ */}
+      {/* ═══ FAQ (alltid synlig, crawlbar) ═══ */}
       <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
         <div className="max-w-[760px] mx-auto">
           <SectionHeader badge="Vanliga frågor" title={`Frågor om webb & SEO i ${c.name}.`} />

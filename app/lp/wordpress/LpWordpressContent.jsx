@@ -66,7 +66,7 @@ export default function LpWordpressContent() {
   const [form, setForm] = useState({ url: "", name: "", email: "", hp_field: "" });
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
-  // Sätts vid sidladdning — submits < 3 s efter denna avvisas server-side.
+  // Sätts vid sidladdning, submits < 3 s efter denna avvisas server-side.
   const [loadedAt] = useState(() => Date.now());
 
   const change = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));

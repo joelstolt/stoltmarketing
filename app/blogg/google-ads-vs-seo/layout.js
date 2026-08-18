@@ -4,7 +4,7 @@ const articleSchema = {
   image: ["https://www.stoltmarketing.se/og-image.png"],
   mainEntityOfPage: "https://www.stoltmarketing.se/blogg/google-ads-vs-seo",
   inLanguage: "sv-SE",
-  headline: "Google Ads vs SEO — Vad ska du satsa på?",
+  headline: "Google Ads vs SEO, Vad ska du satsa på?",
   description: "Jämförelse mellan Google Ads och SEO. Vilket är bäst för ditt företag? Kostnader, tid till resultat, långsiktig ROI och hur du kombinerar båda för maximal effekt.",
   author: { "@type": "Person", name: "Joel Stolt" },
   publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },
@@ -28,7 +28,7 @@ export const metadata = {
   alternates: { canonical: "https://www.stoltmarketing.se/blogg/google-ads-vs-seo" },
   openGraph: {
     title: "Google Ads vs SEO — Vad ska du satsa på?",
-    description: "Betald vs organisk trafik — kostnader, tid och resultat jämförda för små och medelstora företag.",
+    description: "Betald vs organisk trafik, kostnader, tid och resultat jämförda för små och medelstora företag.",
     url: "https://www.stoltmarketing.se/blogg/google-ads-vs-seo",
     type: "article",
   },

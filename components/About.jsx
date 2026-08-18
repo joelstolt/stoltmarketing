@@ -54,7 +54,7 @@ export default function About() {
 
           <Reveal delay={0.14}>
             <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body">
-              Idag är jag djupt inne i AI — inte som trend, utan som verktyg.
+              Idag är jag djupt inne i AI, inte som trend, utan som verktyg.
               Jag har byggt egna AI-produkter, implementerat AI-lösningar åt
               kunder och använder AI dagligen för att leverera snabbare,
               smartare och bättre. Min övertygelse: småföretag förtjänar samma

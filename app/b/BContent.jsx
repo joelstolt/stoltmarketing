@@ -32,7 +32,7 @@ const services = [
 
 const cases = [
   { client: "Linguista", tag: "AcadeMedia · 100/100 ×4", img: "/case-linguista.webp", desc: "Självuppdaterande sajt med full pott i prestanda, tillgänglighet och AI.", href: "/projekt/linguista" },
-  { client: "EdShare", tag: "AcadeMedia · 10x snabbare", img: "/case-edshare.webp", desc: "WordPress till statisk edge — 86 % lättare, tre 100:or.", href: "/projekt/edshare" },
+  { client: "EdShare", tag: "AcadeMedia · 10x snabbare", img: "/case-edshare.webp", desc: "WordPress till statisk edge, 86 % lättare, tre 100:or.", href: "/projekt/edshare" },
   { client: "RBN Utbildning", tag: "Helhetsleverans · WP + API", img: "/case-rbn.webp", desc: "Ny profil, sajt och API-integration i ett." },
   { client: "Förskolan Harpan", tag: "Grafisk profil · Next.js", img: "/case-harpan.webp", desc: "Varm identitet och enkel platsansökan." },
 ];
@@ -220,14 +220,14 @@ export default function BContent() {
 
       {/* Global header (Header.jsx) renderas av app/page.js ovanför denna komponent */}
 
-      {/* ═══ 1. Hero — Fältet i mörker ═══ */}
+      {/* ═══ 1. Hero, Fältet i mörker ═══ */}
       <section className="field-glow" style={{ position: "relative", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden", background: BG }}>
         <FieldCanvas className="b-field" />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1120, width: "100%", margin: "0 auto", padding: "110px 24px 38vh" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
             <span className="b-eyebrow-bar" aria-hidden="true" style={{ width: 30, height: 2, background: GUL, display: "inline-block" }} />
             <span className="b-eyebrow-text" style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: GUL }}>
-              Webbyrå i Skåne — något att vara stolt över
+              Webbyrå i Skåne, något att vara stolt över
             </span>
           </div>
           <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "13ch", margin: 0 }}>
@@ -263,7 +263,7 @@ export default function BContent() {
           <div className="sec-rule" style={{ marginBottom: 36 }}>
             <span className="sec-no" aria-hidden="true">01</span>
             <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>
-              Synas, sälja och spara tid — allt under ett tak
+              Synas, sälja och spara tid, allt under ett tak
             </h2>
             <span className="sec-eng" aria-hidden="true">tjänster</span>
           </div>
@@ -327,7 +327,7 @@ export default function BContent() {
           </div>
         </section>
 
-        {/* 5. Case — horisontellt */}
+        {/* 5. Case, horisontellt */}
         <section ref={caseSecRef} style={{ overflow: "hidden", padding: "10vh 0" }}>
           <div className="sec-rule" style={{ maxWidth: 1120, margin: "0 auto 40px", padding: "0 24px", paddingBottom: "1.1em" }}>
             <span className="sec-no" aria-hidden="true">02</span>
@@ -375,10 +375,10 @@ export default function BContent() {
           <span aria-hidden="true" className="font-heading" style={{ display: "block", fontSize: 110, lineHeight: 0.6, color: GUL, fontWeight: 500, marginBottom: 26 }}>”</span>
           <blockquote style={{ margin: 0 }}>
             <p className="b-quote-text font-heading" style={{ fontWeight: 380, fontVariationSettings: '"opsz" 90', fontStyle: "italic", fontSize: "clamp(22px, 3.2vw, 40px)", lineHeight: 1.4, color: PAPER, maxWidth: "30ch", margin: 0 }}>
-              Vi behövde en helhetsleverans — ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt.
+              Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt.
             </p>
             <footer style={{ marginTop: 26, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>
-              Robin — RBN Utbildning
+              Robin, RBN Utbildning
             </footer>
           </blockquote>
         </section>
@@ -398,18 +398,54 @@ export default function BContent() {
           </div>
         </div>
 
-        {/* 8. FAQ — schema + lead-trygghet */}
+        {/* 7b. Egna produkter — bevis på hantverket, inte en butik */}
+        <section style={{ maxWidth: 1120, margin: "0 auto", padding: "9vh 24px 3vh" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
+            <span aria-hidden="true" style={{ width: 30, height: 2, background: GUL, display: "inline-block" }} />
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: GUL }}>
+              Egna produkter
+            </span>
+          </div>
+          <p className="font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 90', fontSize: "clamp(20px, 2.8vw, 32px)", lineHeight: 1.4, color: PAPER, maxWidth: "28ch", margin: 0 }}>
+            Jag bygger inte bara åt kunder. Sex egna produkter driver jag själv,{" "}
+            <em style={{ fontStyle: "italic", color: GUL }}>på samma stack som din sajt får</em>.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 26 }}>
+            {[
+              { namn: "Kvota", rad: "AI-offerter", url: "https://kvota.se" },
+              { namn: "Granska", rad: "EAA-scanner", url: "https://granska.io" },
+              { namn: "Citero", rad: "AI-synlighet", url: "https://citero.se" },
+              { namn: "Konforma", rad: "CE-dokument", url: "https://konforma.se" },
+              { namn: "Tryggadokument", rad: "framtidsfullmakt", url: "https://tryggadokument.se" },
+              { namn: "Efterbo", rad: "bouppteckning", url: "https://efterbo.se" },
+            ].map((p) => (
+              <a
+                key={p.namn}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-umami-event={`produkt-${p.namn.toLowerCase()}`}
+                style={{ display: "inline-flex", alignItems: "baseline", gap: 8, border: `1px solid ${LINE}`, borderRadius: "3em", padding: "10px 18px", textDecoration: "none" }}
+              >
+                <span style={{ fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.05em", color: PAPER }}>{p.namn}</span>
+                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11.5, color: "rgba(242,236,221,0.5)" }}>{p.rad}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* 8. FAQ, schema + lead-trygghet */}
         <BFaq />
       </div>
 
-      {/* ═══ 9. Final — gula fältet ═══ */}
+      {/* ═══ 9. Final, gula fältet ═══ */}
       <section className="b-final" style={{ background: GUL, padding: "16vh 24px" }}>
         <div className="b-final-inner" style={{ maxWidth: 1120, margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-heading" style={{ fontWeight: 460, fontVariationSettings: '"opsz" 144', fontSize: "clamp(40px, 6.5vw, 92px)", lineHeight: 1.04, letterSpacing: "-0.025em", color: INK, margin: 0 }}>
             Något att vara<br /><em style={{ fontStyle: "italic", fontWeight: 380 }}>stolt över</em>.
           </h2>
           <p style={{ margin: "26px auto 0", fontSize: 17, lineHeight: 1.65, color: "rgba(25,20,5,0.78)", maxWidth: 440 }}>
-            Boka en kostnadsfri genomgång — 15–20 minuter, en ärlig bedömning, inga förpliktelser.
+            Boka en kostnadsfri genomgång, 15 till 20 minuter, en ärlig bedömning, inga förpliktelser.
           </p>
           <div style={{ marginTop: 38 }}>
             <a

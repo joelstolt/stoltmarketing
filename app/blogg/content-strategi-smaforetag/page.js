@@ -29,7 +29,7 @@ export default function Article() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="font-heading font-600 text-[clamp(28px,4.5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading mb-5">
-                Content-strategi för småföretag — Så skapar du innehåll som rankar
+                Content-strategi för småföretag, Så skapar du innehåll som rankar
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -46,16 +46,16 @@ export default function Article() {
           <div className="max-w-3xl mx-auto">
 
             <p className="text-[17px] text-body leading-relaxed mb-6">
-              De flesta småföretag har en hemsida. Men väldigt få har en faktisk content-strategi. Vad skiljer är att ett företag med en strategi får 3–5x mer trafik från Google än ett utan — och mycket billigare än annonsering.
+              De flesta småföretag har en hemsida. Men väldigt få har en faktisk content-strategi. Vad skiljer är att ett företag med en strategi får 3 till 5x mer trafik från Google än ett utan, och mycket billigare än annonsering.
             </p>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Det verkar komplicerat, men content-strategi för småföretag behöver inte vara någon 50-sidors marketing-plan. Det behöver bara vara systemet — en plan för vad du ska skriva, när, och varför. Jag ska visa dig exakt hur du bygger det.
+              Det verkar komplicerat, men content-strategi för småföretag behöver inte vara någon 50-sidors marketing-plan. Det behöver bara vara systemet, en plan för vad du ska skriva, när, och varför. Jag ska visa dig exakt hur du bygger det.
             </p>
 
             {/* Varför content spelar roll */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Varför content-strategi spelar roll — det är gratis trafik på repeat
+              Varför content-strategi spelar roll, det är gratis trafik på repeat
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -80,7 +80,7 @@ export default function Article() {
 
             {/* Steg 1: Keyword research */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 1: Keyword research — hitta ord folk faktiskt söker på
+              Steg 1: Keyword research, hitta ord folk faktiskt söker på
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -137,7 +137,7 @@ export default function Article() {
 
             <div className="space-y-3 mb-8">
               {[
-                { name: "Google Search Console", why: "Visar ord DU redan rankar på — börja där." },
+                { name: "Google Search Console", why: "Visar ord DU redan rankar på, börja där." },
                 { name: "Google Ads Keyword Planner", why: "Kostnadsfritt från Google. Visar sökvolym för ord." },
                 { name: "Ubersuggest", why: "Gratis version visar förslag och lite sökvolym." },
               ].map((item) => (
@@ -150,7 +150,7 @@ export default function Article() {
 
             {/* Steg 2: Content-kalender */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 2: Gör en content-kalender — konsistens slår perfekt
+              Steg 2: Gör en content-kalender, konsistens slår perfekt
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -164,8 +164,8 @@ export default function Article() {
             <div className="bg-surface border border-border rounded-xl p-5 mb-6">
               <p className="text-[14px] font-700 text-heading mb-4">Exempel-kalender för målare:</p>
               <div className="space-y-2 text-[13px] text-body">
-                <p><span className="font-600 text-heading">Januari:</span> "Målning av hus innan gips — vad är rätt tidpunkt?"</p>
-                <p><span className="font-600 text-heading">Februari:</span> "Målning av trä utomhus — tips för långvarigt resultat"</p>
+                <p><span className="font-600 text-heading">Januari:</span> "Målning av hus innan gips, vad är rätt tidpunkt?"</p>
+                <p><span className="font-600 text-heading">Februari:</span> "Målning av trä utomhus, tips för långvarigt resultat"</p>
                 <p><span className="font-600 text-heading">Mars:</span> "Vad kostar målning av ett hus? Prisguide 2026"</p>
                 <p><span className="font-600 text-heading">April:</span> "Målning eller tapetsering? Vilket passar ditt hem?"</p>
               </div>
@@ -177,7 +177,7 @@ export default function Article() {
 
             {/* Steg 3: Content-typer */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 3: Välj rätt content-typer — vissa fungerar bättre än andra
+              Steg 3: Välj rätt content-typer, vissa fungerar bättre än andra
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -211,18 +211,18 @@ export default function Article() {
 
             {/* Steg 4: Hur du skriver */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 4: Skriv artiklar som rankar — grundläggande SEO-regler
+              Steg 4: Skriv artiklar som rankar, grundläggande SEO-regler
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Du behöver inte vara författare. Du behöver bara skriva för människor — sedan optimerar du för Google. Här är det viktigaste:
+              Du behöver inte vara författare. Du behöver bara skriva för människor, sedan optimerar du för Google. Här är det viktigaste:
             </p>
 
             <h3 className="text-[18px] font-700 text-heading mt-8 mb-4">1. H1-rubrik med ditt huvudsökord</h3>
 
             <div className="space-y-2 mb-6">
               {[
-                "Bra: 'Målning av hus — Prisguide och tips för året 2026'",
+                "Bra: 'Målning av hus, Prisguide och tips för året 2026'",
                 "Dåligt: 'Tips för målning'",
               ].map((ex, idx) => (
                 <div key={ex} className="flex items-start gap-2.5">
@@ -253,7 +253,7 @@ export default function Article() {
               ))}
             </div>
 
-            <h3 className="text-[18px] font-700 text-heading mt-8 mb-4">3. Längd spelar roll — men bara till en punkt</h3>
+            <h3 className="text-[18px] font-700 text-heading mt-8 mb-4">3. Längd spelar roll, men bara till en punkt</h3>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
               Google gillar innehål som svarar fullt på frågan. Men det behöver inte vara 5000 ord om frågan bara behöver 1500.
@@ -261,9 +261,9 @@ export default function Article() {
 
             <div className="space-y-2 mb-6">
               {[
-                "Guide eller jämförelse: 1500–2500 ord",
-                "FAQ eller snabbtips: 800–1200 ord",
-                "Pressmeddelande eller nyhet: 300–600 ord",
+                "Guide eller jämförelse: 1500 till 2500 ord",
+                "FAQ eller snabbtips: 800 till 1200 ord",
+                "Pressmeddelande eller nyhet: 300 till 600 ord",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -275,7 +275,7 @@ export default function Article() {
             <h3 className="text-[18px] font-700 text-heading mt-8 mb-4">4. Länka till dina tjänstesidor</h3>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
-              Om du skriver en guide om målning — länka till din "Målning"-tjänstesida. Google gillar detta. Besökare gillar det. Alla vinner.
+              Om du skriver en guide om målning, länka till din "Målning"-tjänstesida. Google gillar detta. Besökare gillar det. Alla vinner.
             </p>
 
             <h3 className="text-[18px] font-700 text-heading mt-8 mb-4">5. Skriv för MÄNNISKOR först, Google andra</h3>
@@ -286,7 +286,7 @@ export default function Article() {
 
             {/* Steg 5: Repurposing */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 5: Repurposing — få mer värde ur varje artikel
+              Steg 5: Repurposing, få mer värde ur varje artikel
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -306,12 +306,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              En artikel tar 4–6 timmar att skriva bra. Med repurposing får du 4 veckor av marknadsföring ur den.
+              En artikel tar 4 till 6 timmar att skriva bra. Med repurposing får du 4 veckor av marknadsföring ur den.
             </p>
 
             {/* Steg 6: Mäta */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Steg 6: Mäta resultat — track vad som fungerar
+              Steg 6: Mäta resultat, track vad som fungerar
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -332,12 +332,12 @@ export default function Article() {
             </div>
 
             <p className="text-[16px] text-body leading-relaxed mb-8">
-              Om en artikel inte rankar efter 3 månader — uppdatera den. Lägg till mer innehål, fix titeln, använd bättre underrubriker.
+              Om en artikel inte rankar efter 3 månader, uppdatera den. Lägg till mer innehål, fix titeln, använd bättre underrubriker.
             </p>
 
             {/* Distribution */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Bonus: Distribution — räcka ut med det du skriver
+              Bonus: Distribution, räcka ut med det du skriver
             </h2>
 
             <p className="text-[16px] text-body leading-relaxed mb-4">
@@ -346,11 +346,11 @@ export default function Article() {
 
             <div className="space-y-2 mb-8">
               {[
-                "Email-lista — skicka nya artiklar till dina subscribers",
-                "LinkedIn — länka till artiklar för ett professionellt nätverk",
-                "Instagram/Facebook — kort snippet + länk",
-                "Kundsamtal — nämn relevanta artiklar när du pratar med folk",
-                "Google My Business — länka till articles i dina inlägg",
+                "Email-lista, skicka nya artiklar till dina subscribers",
+                "LinkedIn, länka till artiklar för ett professionellt nätverk",
+                "Instagram/Facebook, kort snippet + länk",
+                "Kundsamtal, nämn relevanta artiklar när du pratar med folk",
+                "Google My Business, länka till articles i dina inlägg",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check size={14} className="text-primary mt-1.5 flex-shrink-0" />
@@ -361,18 +361,18 @@ export default function Article() {
 
             {/* Sammanfattning */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
-              Sammanfattning — din content-strategi i 6 steg
+              Sammanfattning, din content-strategi i 6 steg
             </h2>
 
             <div className="bg-surface border border-border rounded-xl p-6 mb-8">
               <div className="space-y-3">
                 {[
-                  "Keyword research — fråga dina kunder, använd Google suggestions",
-                  "Content-kalender — planera: 1 artikel per månad minst",
-                  "Välj rätt format — guides, jämförelser, prisguider rankar bäst",
-                  "Skriv bra artiklar — H1/H2-struktur, 1500+ ord, länka internt",
-                  "Repurposing — gör 4 sociala inlägg ur varje artikel",
-                  "Mäta resultat — track trafik och ranking i Search Console",
+                  "Keyword research, fråga dina kunder, använd Google suggestions",
+                  "Content-kalender, planera: 1 artikel per månad minst",
+                  "Välj rätt format, guides, jämförelser, prisguider rankar bäst",
+                  "Skriv bra artiklar, H1/H2-struktur, 1500+ ord, länka internt",
+                  "Repurposing, gör 4 sociala inlägg ur varje artikel",
+                  "Mäta resultat, track trafik och ranking i Search Console",
                 ].map((item, i) => (
                   <div key={item} className="flex items-start gap-3">
                     <span className="flex items-center justify-center w-6 h-6 rounded-md bg-primary-light text-primary text-[12px] font-700 flex-shrink-0 mt-0.5">{i + 1}</span>

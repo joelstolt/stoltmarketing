@@ -10,7 +10,7 @@ const breadcrumb = {
 export const metadata = {
   title: "Boka kostnadsfri genomgång — Joel Stolt, Hässleholm",
   description:
-    "Boka ett kostnadsfritt samtal med Joel Stolt. Vi går igenom din digitala strategi — webb, SEO, AI. Inga förpliktelser. 30 minuter.",
+    "Boka ett kostnadsfritt samtal med Joel Stolt. Vi går igenom din digitala strategi, webb, SEO, AI. Inga förpliktelser. 30 minuter.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/boka",
   },
