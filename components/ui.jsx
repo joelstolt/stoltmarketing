@@ -111,24 +111,24 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
         viewBox="0 0 1200 240"
         preserveAspectRatio="none"
       >
-        <line x1="1200" y1="26" x2="0" y2="30" stroke="rgba(242,236,221,0.09)" strokeWidth="1" />
-        <line x1="-140" y1="240" x2="812" y2="28" stroke="rgba(242,194,48,0.05)" strokeWidth="1" />
-        <line x1="40" y1="240" x2="826" y2="28" stroke="rgba(122,148,64,0.09)" strokeWidth="1" />
-        <line x1="220" y1="240" x2="840" y2="28" stroke="rgba(242,194,48,0.08)" strokeWidth="1" />
-        <line x1="400" y1="240" x2="854" y2="28" stroke="rgba(242,194,48,0.11)" strokeWidth="1" />
-        <line x1="580" y1="240" x2="868" y2="28" stroke="rgba(122,148,64,0.10)" strokeWidth="1" />
-        <line x1="760" y1="240" x2="882" y2="28" stroke="rgba(242,194,48,0.13)" strokeWidth="1" />
-        <line x1="940" y1="240" x2="896" y2="28" stroke="rgba(242,194,48,0.10)" strokeWidth="1" />
-        <line x1="1120" y1="240" x2="910" y2="28" stroke="rgba(122,148,64,0.08)" strokeWidth="1" />
-        <line x1="1300" y1="240" x2="924" y2="28" stroke="rgba(242,194,48,0.06)" strokeWidth="1" />
+        <line x1="1200" y1="26" x2="0" y2="30" stroke="rgba(242,236,221,0.18)" strokeWidth="1" />
+        <line x1="-140" y1="240" x2="812" y2="28" stroke="rgba(242,194,48,0.12)" strokeWidth="1" />
+        <line x1="40" y1="240" x2="826" y2="28" stroke="rgba(122,148,64,0.2)" strokeWidth="1" />
+        <line x1="220" y1="240" x2="840" y2="28" stroke="rgba(242,194,48,0.18)" strokeWidth="1" />
+        <line x1="400" y1="240" x2="854" y2="28" stroke="rgba(242,194,48,0.24)" strokeWidth="1" />
+        <line x1="580" y1="240" x2="868" y2="28" stroke="rgba(122,148,64,0.22)" strokeWidth="1" />
+        <line x1="760" y1="240" x2="882" y2="28" stroke="rgba(242,194,48,0.28)" strokeWidth="1" />
+        <line x1="940" y1="240" x2="896" y2="28" stroke="rgba(242,194,48,0.22)" strokeWidth="1" />
+        <line x1="1120" y1="240" x2="910" y2="28" stroke="rgba(122,148,64,0.18)" strokeWidth="1" />
+        <line x1="1300" y1="240" x2="924" y2="28" stroke="rgba(242,194,48,0.14)" strokeWidth="1" />
         {/* Ljuspulser som vandrar längs raderna mot horisonten */}
         {[
-          { x1: 220, x2: 840, d: "8s", del: "-2s", o: 0.35 },
-          { x1: 400, x2: 854, d: "11s", del: "-6s", o: 0.42 },
-          { x1: 580, x2: 868, d: "7s", del: "-1s", o: 0.3 },
-          { x1: 760, x2: 882, d: "9s", del: "-4s", o: 0.48 },
-          { x1: 940, x2: 896, d: "12.5s", del: "-8s", o: 0.32 },
-          { x1: 1120, x2: 910, d: "8.5s", del: "-5s", o: 0.26 },
+          { x1: 220, x2: 840, d: "8s", del: "-2s", o: 0.55 },
+          { x1: 400, x2: 854, d: "11s", del: "-6s", o: 0.62 },
+          { x1: 580, x2: 868, d: "7s", del: "-1s", o: 0.5 },
+          { x1: 760, x2: 882, d: "9s", del: "-4s", o: 0.7 },
+          { x1: 940, x2: 896, d: "12.5s", del: "-8s", o: 0.52 },
+          { x1: 1120, x2: 910, d: "8.5s", del: "-5s", o: 0.45 },
         ].map((l, i) => (
           <line
             key={i}
@@ -137,8 +137,8 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
             x2={l.x2}
             y2="28"
             className="hero-puls"
-            stroke="rgba(242,194,48,0.55)"
-            strokeWidth="1.5"
+            stroke="rgba(242,194,48,0.8)"
+            strokeWidth="2"
             style={{ "--pd": l.d, "--pdel": l.del, opacity: l.o }}
           />
         ))}
@@ -147,10 +147,10 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
       {/* Korn som svävar i gryningsljuset */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
         {[
-          { left: "12%", bottom: "16%", d: "11s", del: "0s", s: 3 },
-          { left: "28%", bottom: "7%", d: "14s", del: "-4s", s: 2 },
-          { left: "55%", bottom: "11%", d: "12s", del: "-7s", s: 2.5 },
-          { left: "73%", bottom: "20%", d: "16s", del: "-2s", s: 2 },
+          { left: "12%", bottom: "16%", d: "11s", del: "0s", s: 4 },
+          { left: "28%", bottom: "7%", d: "14s", del: "-4s", s: 3 },
+          { left: "55%", bottom: "11%", d: "12s", del: "-7s", s: 3.5 },
+          { left: "73%", bottom: "20%", d: "16s", del: "-2s", s: 3 },
           { left: "87%", bottom: "9%", d: "13s", del: "-9s", s: 3 },
         ].map((k, i) => (
           <span

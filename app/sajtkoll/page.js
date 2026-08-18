@@ -162,6 +162,24 @@ export default function SajtkollPage() {
       <main>
         {/* Hero med verktyget: renderas statiskt, inget startar på opacity 0 */}
         <section className="hero-dark field-glow relative overflow-hidden">
+          {/* Fältraderna, samma familj som övriga undersidor */}
+          <svg
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 w-full pointer-events-none"
+            style={{ height: "clamp(120px, 22vw, 230px)", maskImage: "linear-gradient(to top, black 55%, transparent)", WebkitMaskImage: "linear-gradient(to top, black 55%, transparent)" }}
+            viewBox="0 0 1200 240"
+            preserveAspectRatio="none"
+          >
+            <line x1="1200" y1="26" x2="0" y2="30" stroke="rgba(242,236,221,0.18)" strokeWidth="1" />
+            <line x1="220" y1="240" x2="840" y2="28" stroke="rgba(242,194,48,0.18)" strokeWidth="1" />
+            <line x1="400" y1="240" x2="854" y2="28" stroke="rgba(242,194,48,0.24)" strokeWidth="1" />
+            <line x1="580" y1="240" x2="868" y2="28" stroke="rgba(122,148,64,0.22)" strokeWidth="1" />
+            <line x1="760" y1="240" x2="882" y2="28" stroke="rgba(242,194,48,0.28)" strokeWidth="1" />
+            <line x1="940" y1="240" x2="896" y2="28" stroke="rgba(242,194,48,0.22)" strokeWidth="1" />
+            <line x1="220" y1="240" x2="840" y2="28" className="hero-puls" stroke="rgba(242,194,48,0.8)" strokeWidth="2" style={{ "--pd": "8s", "--pdel": "-2s", opacity: 0.55 }} />
+            <line x1="580" y1="240" x2="868" y2="28" className="hero-puls" stroke="rgba(242,194,48,0.8)" strokeWidth="2" style={{ "--pd": "10s", "--pdel": "-6s", opacity: 0.6 }} />
+            <line x1="940" y1="240" x2="896" y2="28" className="hero-puls" stroke="rgba(242,194,48,0.8)" strokeWidth="2" style={{ "--pd": "12s", "--pdel": "-4s", opacity: 0.5 }} />
+          </svg>
           <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Badge>Gratis verktyg</Badge>
             <h1

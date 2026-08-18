@@ -150,8 +150,9 @@ h3, h4, h5, h6 {
 .hero-korn {
   position: absolute;
   border-radius: 9999px;
-  background: rgba(242, 194, 48, 0.55);
+  background: rgba(242, 194, 48, 0.8);
   opacity: 0;
+  box-shadow: 0 0 6px rgba(242, 194, 48, 0.5);
   animation-name: hero-korn;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -163,10 +164,10 @@ h3, h4, h5, h6 {
     opacity: 0;
   }
   12% {
-    opacity: 0.5;
+    opacity: 0.75;
   }
   60% {
-    opacity: 0.25;
+    opacity: 0.4;
   }
   100% {
     transform: translateY(-46vh);
@@ -202,23 +203,24 @@ a[class*="hover:underline"]:focus-visible {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(242, 194, 48, 0.5) 18%, rgba(242, 236, 221, 0.22) 50%, rgba(242, 194, 48, 0.32) 82%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(242, 194, 48, 0.75) 18%, rgba(242, 236, 221, 0.35) 50%, rgba(242, 194, 48, 0.5) 82%, transparent);
 }
 
 .footer-stjarna {
   position: absolute;
-  width: 2px;
-  height: 2px;
+  width: 2.5px;
+  height: 2.5px;
   border-radius: 50%;
-  background: rgba(242, 236, 221, 0.85);
-  opacity: 0.18;
+  background: rgba(242, 236, 221, 0.95);
+  box-shadow: 0 0 4px rgba(242, 236, 221, 0.6);
+  opacity: 0.3;
   z-index: -1;
   animation: stjarnblink 5.5s ease-in-out infinite;
 }
 
 @keyframes stjarnblink {
-  0%, 100% { opacity: 0.12; }
-  50% { opacity: 0.5; }
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
 }
 
 .gardslampa {
@@ -230,7 +232,7 @@ a[class*="hover:underline"]:focus-visible {
   content: "";
   position: absolute;
   inset: -24px -34px;
-  background: radial-gradient(closest-side, rgba(242, 194, 48, 0.3), transparent 72%);
+  background: radial-gradient(closest-side, rgba(242, 194, 48, 0.45), transparent 72%);
   z-index: -1;
   pointer-events: none;
   animation: lampglod 4.5s ease-in-out infinite;
@@ -250,18 +252,18 @@ a[class*="hover:underline"]:focus-visible {
   position: absolute;
   top: -44px;
   left: 4%;
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: radial-gradient(circle at 40% 35%, #F7D96A, #F2C230 62%, rgba(242, 194, 48, 0) 100%);
-  box-shadow: 0 0 26px 7px rgba(242, 194, 48, 0.3);
-  opacity: 0.45;
+  box-shadow: 0 0 34px 10px rgba(242, 194, 48, 0.45);
+  opacity: 0.7;
   pointer-events: none;
 }
 
 @supports (animation-timeline: view()) {
   .process-sol {
-    opacity: 0.9;
+    opacity: 1;
     animation: solvandring linear both;
     animation-timeline: view();
     animation-range: entry 20% exit 80%;
@@ -271,7 +273,7 @@ a[class*="hover:underline"]:focus-visible {
 @keyframes solvandring {
   0% { left: 4%; transform: translateY(16px); }
   50% { transform: translateY(-8px); }
-  100% { left: calc(96% - 26px); transform: translateY(16px); }
+  100% { left: calc(96% - 36px); transform: translateY(16px); }
 }
 
 /* === Läsförloppet som växande strå (guider och blogg, desktop) === */
