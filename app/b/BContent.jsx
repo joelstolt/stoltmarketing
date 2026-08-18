@@ -407,14 +407,13 @@ export default function BContent() {
             </span>
           </div>
           <p className="font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 90', fontSize: "clamp(20px, 2.8vw, 32px)", lineHeight: 1.4, color: PAPER, maxWidth: "28ch", margin: 0 }}>
-            Jag bygger inte bara åt kunder. Sex egna produkter driver jag själv,{" "}
+            Jag bygger inte bara åt kunder. Fem egna produkter driver jag själv,{" "}
             <em style={{ fontStyle: "italic", color: GUL }}>på samma stack som din sajt får</em>.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 26 }}>
             {[
               { namn: "Kvota", rad: "AI-offerter", url: "https://kvota.se" },
               { namn: "Granska", rad: "EAA-scanner", url: "https://granska.io" },
-              { namn: "Citero", rad: "AI-synlighet", url: "https://citero.se" },
               { namn: "Konforma", rad: "CE-dokument", url: "https://konforma.se" },
               { namn: "Tryggadokument", rad: "framtidsfullmakt", url: "https://tryggadokument.se" },
               { namn: "Efterbo", rad: "bouppteckning", url: "https://efterbo.se" },

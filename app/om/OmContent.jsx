@@ -396,13 +396,12 @@ export default function OmContent() {
           <SectionHeader
             badge="Egna produkter"
             title="Jag bygger inte bara åt kunder."
-            subtitle="Sex produkter jag byggt och driver själv, på samma stack och med samma hantverk som kundsajterna får. Det är så jag vet att det jag säljer håller i drift, på riktigt."
+            subtitle="Fem produkter jag byggt och driver själv, på samma stack och med samma hantverk som kundsajterna får. Det är så jag vet att det jag säljer håller i drift, på riktigt."
           />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { namn: "Kvota", rad: "AI-offertgenerator för hantverkare. Färdig offert på under en minut.", url: "https://kvota.se", domn: "kvota.se" },
               { namn: "Granska", rad: "Tillgänglighetsscanner som mäter e-handel mot EAA-kraven.", url: "https://granska.io", domn: "granska.io" },
-              { namn: "Citero", rad: "Mäter och bygger företags synlighet i AI-sök som ChatGPT.", url: "https://citero.se", domn: "citero.se" },
               { namn: "Konforma", rad: "CE-dokumentation inför Maskinförordningen 2027.", url: "https://konforma.se", domn: "konforma.se" },
               { namn: "Tryggadokument", rad: "Framtidsfullmakt online på tio minuter.", url: "https://tryggadokument.se", domn: "tryggadokument.se" },
               { namn: "Efterbo", rad: "Bouppteckning online till fast pris.", url: "https://efterbo.se", domn: "efterbo.se" },
