@@ -613,15 +613,19 @@ export async function POST(req) {
       if (aiRes.ok) {
         const data = await aiRes.json();
         const text = (data.content?.[0]?.text || "").trim();
+        /* Modellen ombeds skippa tankstreck men lyder inte alltid — tvätta
+           deterministiskt så publika rapportsidor aldrig visar dem. */
+        const tvatta = (s) =>
+          typeof s === "string" ? s.replace(/\s*[—–]\s*/g, ", ").replace(/[“”]/g, '"').replace(/[‘’]/g, "'") : s;
         const m = text.match(/\{[\s\S]*\}/);
         if (m) {
           try {
             const j = JSON.parse(m[0]);
-            if (j.sammanfattning && j.sammanfattning.length > 40) ai = j.sammanfattning;
-            if (j.intro && typeof j.intro === "string" && j.intro.length > 20) intro = j.intro;
+            if (j.sammanfattning && j.sammanfattning.length > 40) ai = tvatta(j.sammanfattning);
+            if (j.intro && typeof j.intro === "string" && j.intro.length > 20) intro = tvatta(j.intro);
           } catch {}
         } else if (text.length > 40) {
-          ai = text;
+          ai = tvatta(text);
         }
       }
     }
