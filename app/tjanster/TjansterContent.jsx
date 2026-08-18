@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -336,6 +336,39 @@ const faqs = [
 export default function TjansterContent() {
   const [openFaq, setOpenFaq] = useState(null);
 
+  /* Solvandringen är scroll-driven CSS (animation-timeline) som Safari saknar.
+     Fallback: liten scroll-lyssnare som flyttar solen med samma båge. */
+  const processRef = useRef(null);
+  const solRef = useRef(null);
+  useEffect(() => {
+    if (typeof CSS !== "undefined" && CSS.supports("animation-timeline: view()")) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const falt = processRef.current;
+    const sol = solRef.current;
+    if (!falt || !sol) return;
+    let raf = 0;
+    const rita = () => {
+      raf = 0;
+      const r = falt.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+      sol.style.left = `calc(${(4 + p * 88).toFixed(2)}% - ${(p * 36).toFixed(0)}px)`;
+      sol.style.transform = `translateY(${(16 - Math.sin(p * Math.PI) * 24).toFixed(1)}px)`;
+      sol.style.opacity = "1";
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(rita);
+    };
+    rita();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <>
       {/* ═══ HERO ═══ */}
@@ -519,8 +552,8 @@ export default function TjansterContent() {
             title="Du vet alltid vad som händer härnäst."
           />
 
-          <div className="mt-16 grid md:grid-cols-3 gap-8 sm:gap-10 process-falt">
-            <div aria-hidden="true" className="process-sol" />
+          <div ref={processRef} className="mt-16 grid md:grid-cols-3 gap-8 sm:gap-10 process-falt">
+            <div ref={solRef} aria-hidden="true" className="process-sol" />
             {steps.map((step, i) => (
               <Reveal key={step.num} delay={i * 0.1 + 0.1}>
                 <div>
