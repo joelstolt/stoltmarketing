@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "Vad kostar sökmotoroptimering?",
-    a: "Löpande SEO kostar på svenska marknaden oftast 5 000 till 30 000 kr i månaden. Hos mig ingår löpande SEO i Tillväxt för 2 490 kr/mån, och en engångsaudit med prioriterad åtgärdslista kostar 4 900 kr.",
+    a: "Löpande SEO kostar på svenska marknaden oftast 5 000 till 30 000 kr i månaden. Hos mig ingår löpande SEO i Spets för 2 990 kr/mån, och en engångsaudit med prioriterad åtgärdslista kostar 4 900 kr.",
   },
   {
     q: "Kan jag göra SEO själv?",
@@ -259,7 +259,7 @@ export default function Page() {
             <P>
               På svenska marknaden kostar löpande SEO i regel 5 000 till 30 000 kr i månaden hos
               byrå, engångsprojekt från 20 000 kr och uppåt, och timpriser 800 till 1 500 kr.
-              Hos mig ingår löpande sökmotoroptimering i Tillväxt för 2 490 kr i månaden, och en
+              Hos mig ingår löpande sökmotoroptimering i Spets för 2 990 kr i månaden, och en
               engångsaudit med prioriterad åtgärdslista kostar 4 900 kr. En full genomgång av vad
               du får för pengarna finns i <a href="/vad-kostar-seo" className="text-primary font-600 hover:underline">guiden om vad SEO kostar</a>.
             </P>

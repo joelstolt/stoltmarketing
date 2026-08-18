@@ -206,9 +206,9 @@ export default function CityServicePage({ service, city }) {
                 <span className="absolute -top-3 left-7 bg-primary text-[#191405] text-[11px] font-600 px-2.5 py-1 rounded-full">
                   Mest vald för synlighet
                 </span>
-                <h3 className="font-heading font-700 text-[18px] text-heading">Tillväxt</h3>
+                <h3 className="font-heading font-700 text-[18px] text-heading">Spets</h3>
                 <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
-                  {PRICING.tillvaxt}
+                  {PRICING.spets}
                 </div>
                 <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
                 <div className="mt-5 flex flex-col gap-2.5 flex-1">
@@ -216,6 +216,7 @@ export default function CityServicePage({ service, city }) {
                     "Allt i Bas",
                     "Löpande SEO mot sökorden i din bransch",
                     "Google Ads: uppsättning och förvaltning",
+                    "AI-assistent som svarar kunder dygnet runt",
                     "Nytt innehåll varje månad",
                     "Månadsrapport med besök och leads",
                   ].map((t) => (
@@ -232,7 +233,7 @@ export default function CityServicePage({ service, city }) {
             </Reveal>
           </div>
           <p className="mt-6 text-center text-[13px] text-muted">
-            E-handel från {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} (0 kr vid drift hos oss) · Annonsbudget tillkommer vid Google Ads
+            E-handel {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} (0 kr vid drift hos oss) · Annonsbudget tillkommer vid Google Ads
           </p>
         </div>
       </section>

@@ -86,7 +86,7 @@ async function aiSynlighet(apiKey, resultat) {
 /* ── Mejl-HTML: tabellbaserad layout som håller i Gmail/Outlook/Apple Mail.
    Mörkt hero-kort med varumärket, ljus kropp med statuschips per kontroll.
    Sajtens mörka tema hör inte hemma i brödtexten: mörk text på ljust. ── */
-function renderEmail({ resultat, name, diff, unsubUrl, synlighet }) {
+function renderEmail({ resultat, name, diff, unsubUrl, synlighet, ask }) {
   const host = resultat.url.replace(/^https?:\/\//, "");
   const scoreFarg = resultat.score >= 85 ? "#2EA043" : resultat.score >= 60 ? "#D4A72C" : "#E5534B";
   const chip = (c) => {

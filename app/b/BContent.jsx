@@ -234,7 +234,7 @@ export default function BContent() {
             Webbplatser, SEO och AI som ger ditt företag <span style={{ fontWeight: 640 }}>fler kunder</span><em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>.</em>
           </h1>
           <p className="b-sub" style={{ marginTop: 28, fontSize: "clamp(16px, 1.5vw, 19px)", lineHeight: 1.75, color: DIM, maxWidth: 500 }}>
-            Enterprise-kvalitet till småföretag — utan byrå-overhead. Du jobbar direkt med personen som bygger, optimerar och tar ansvar för resultatet.
+            Din nya sajt görs färdig innan du betalar ett öre: titta, klicka runt, bestäm sedan. Enterprise-kvalitet till småföretag, byggd av personen du pratar med.
           </p>
           <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34, position: "relative", zIndex: 3 }}>
             <a href="/boka" className="premium-btn" data-umami-event="cta-hero-primar">

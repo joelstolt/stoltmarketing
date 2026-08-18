@@ -23,7 +23,7 @@ function Reveal({ children, className = "", delay = 0 }) {
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha löpande SEO och Google Ads kostar Tillväxt 2 490 kr/mån. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
+    a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets för 2 990 kr/mån. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
   },
   {
     q: "Jobbar du bara med företag i Hässleholm?",
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Hur lång tid tar ett projekt?",
-    a: "En enklare webbplats tar oftast 2–4 veckor. Större e-handels- och AI-projekt kan ta 1–3 månader. Du får alltid en tydlig tidplan i förslaget.",
+    a: "En enklare webbplats tar oftast 1-2 veckor. Större e-handels- och AI-projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och alltid en tydlig tidplan i förslaget.",
   },
   {
     q: "Vad händer efter lansering?",

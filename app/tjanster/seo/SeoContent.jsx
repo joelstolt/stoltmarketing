@@ -16,8 +16,8 @@ const features = [
 
 const faqs = [
   { q: "Hur lång tid tar det att se resultat av SEO?", a: "Tekniska förbättringar syns ofta inom veckor. Sökordspositioner tar vanligtvis 2 till 6 månader att förbättra märkbart. Du får månadsrapporter mot nollmätningen så att du ser varje steg." },
-  { q: "Jobbar du med Google Ads också?", a: "Ja. I Tillväxt ingår både löpande SEO och Google Ads-hantering, och de förstärker varandra: annonserna ger data och förfrågningar direkt medan de organiska positionerna byggs. Du kan läsa mer under Google Ads-tjänsten." },
-  { q: "Vad kostar SEO?", a: "En engångs SEO-audit med prioriterad åtgärdslista kostar 4 900 kr. Löpande SEO ingår i Tillväxt, 2 490 kr/mån, tillsammans med Google Ads och nytt innehåll. Större projekt prissätts efter scope, alltid med fast pris innan start." },
+  { q: "Jobbar du med Google Ads också?", a: "Ja. I Spets ingår både löpande SEO och Google Ads-hantering, och de förstärker varandra: annonserna ger data och förfrågningar direkt medan de organiska positionerna byggs. Du kan läsa mer under Google Ads-tjänsten." },
+  { q: "Vad kostar SEO?", a: "En engångs SEO-audit med prioriterad åtgärdslista kostar 4 900 kr. Löpande SEO ingår i Spets, 2 990 kr/mån, tillsammans med Google Ads, AI-assistent och nytt innehåll varje månad. Större projekt prissätts efter scope, alltid med fast pris innan start." },
   { q: "Kan du hjälpa med lokal SEO?", a: "Ja, det är en styrka. Google Företagsprofil, recensionsarbete upp till din bransch-tröskel, ortssidor där sökvolym finns och kartrutans egna faktorer. Fungerar för alla orter i Sverige, inte bara Skåne." },
 ];
 
@@ -34,7 +34,7 @@ export default function SeoContent() {
         ]}
         badge="SEO-byrå"
         title="SEO-byrå som mäter innan den lovar."
-        subtitle="Jag hjälper företag i hela Sverige att ranka högre på Google: nollmätning först, prioriteringar på riktig sökordsdata och en månadsrapport du faktiskt förstår. Löpande SEO från 2 490 kr/mån. Ingen fluff."
+        subtitle="Jag hjälper företag i hela Sverige att ranka högre på Google: nollmätning först, prioriteringar på riktig sökordsdata och en månadsrapport du faktiskt förstår. Löpande SEO från 2 990 kr/mån. Ingen fluff."
         bullets={["Nollmätning innan start", "Prioritering på riktig data", "Fast månadspris"]}
       />
 

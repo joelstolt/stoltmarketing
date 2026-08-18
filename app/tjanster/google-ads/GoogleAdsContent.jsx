@@ -51,11 +51,11 @@ const features = [
 const faqs = [
   {
     q: "Vad kostar Google Ads-förvaltning?",
-    a: "Google Ads ingår i Tillväxt, 2 490 kr/mån, plus din annonsbudget. Budgeten bestämmer du själv, och jag rekommenderar minst 3 000 kr/mån för att få tillräckligt med data att optimera mot.",
+    a: "Google Ads ingår i Spets, 2 990 kr/mån, plus din annonsbudget. Budgeten bestämmer du själv, och jag rekommenderar minst 3 000 kr/mån för att få tillräckligt med data att optimera mot.",
   },
   {
     q: "Hur snabbt ger Google Ads resultat?",
-    a: "Till skillnad från SEO kan du börja få samtal och förfrågningar redan samma vecka som kampanjen startar. Det tar sedan 2–4 veckor att optimera kampanjerna för bästa resultat.",
+    a: "Till skillnad från SEO kan du börja få samtal och förfrågningar redan samma vecka som kampanjen startar. Det tar sedan 2 till 4 veckor att optimera kampanjerna för bästa resultat.",
   },
   {
     q: "Behöver jag en bra hemsida för Google Ads?",
@@ -167,14 +167,14 @@ export default function GoogleAdsContent() {
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
             {[
               {
-                name: "Tillväxt",
-                price: "2 490 kr/mån",
-                desc: "Kampanjsetup, sökordsanalys, annonstext, löpande optimering och månadsrapport. Sajten, SEO och innehållet ingår i samma pris. Du styr annonsbudgeten själv.",
+                name: "Spets",
+                price: "2 990 kr/mån",
+                desc: "Kampanjsetup, sökordsanalys, annonstext, löpande optimering och månadsrapport. Sajten, AI-assistenten, SEO och innehållet ingår i samma pris. Du styr annonsbudgeten själv.",
               },
               {
-                name: "Tillväxt + kampanjsida",
-                price: "2 490 kr/mån + 4 900 kr",
-                desc: "Allt i Tillväxt plus en konverteringsoptimerad landningssida byggd specifikt för din kampanj.",
+                name: "Spets + kampanjsida",
+                price: "2 990 kr/mån + 4 900 kr",
+                desc: "Allt i Spets plus en konverteringsoptimerad landningssida byggd specifikt för din kampanj.",
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>

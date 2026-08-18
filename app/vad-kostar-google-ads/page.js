@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "Vad kostar det att låta någon sköta annonseringen?",
-    a: "Byråer tar oftast 3 000 till 15 000 kr i månaden eller 10 till 20 procent av mediabudgeten. Hos mig ingår Google Ads-hanteringen i Tillväxt för 2 490 kr i månaden, utan procentpåslag på din annonsbudget.",
+    a: "Byråer tar oftast 3 000 till 15 000 kr i månaden eller 10 till 20 procent av mediabudgeten. Hos mig ingår Google Ads-hanteringen i Spets för 2 990 kr i månaden, utan procentpåslag på din annonsbudget.",
   },
   {
     q: "Varför får jag klick men inga kunder?",
@@ -112,7 +112,7 @@ export default function Page() {
               Google Ads kostar två saker: annonsbudgeten som går till Google när någon klickar,
               och arbetet med att sköta kampanjerna. Budgeten bestämmer du själv och den har inget
               golv från Googles sida. Hanteringen kostar 3 000 till 15 000 kr i månaden hos byrå,
-              eller ingår hos mig i Tillväxt för 2 490 kr i månaden utan procent på mediabudgeten.
+              eller ingår hos mig i Spets för 2 990 kr i månaden utan procent på mediabudgeten.
             </P>
 
             <H2>Så mycket kostar ett klick: uppmätta svenska priser</H2>

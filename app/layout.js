@@ -144,6 +144,14 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Skördeklockan: fältglöden följer besökarens dygn (ren CSS-styrning,
+            attributet sätts före första målningen så inget blinkar om). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var h=new Date().getHours();document.documentElement.dataset.dygn=h<5?'natt':h<10?'gryning':h<17?'dag':h<22?'skymning':'natt'}catch(e){}",
+          }}
+        />
       </head>
       <body>
         {children}

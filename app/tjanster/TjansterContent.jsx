@@ -106,7 +106,7 @@ const services = [
       "Transparent rapportering",
     ],
     stats: [
-      { value: "2 490", label: "kr/mån, allt ingår" },
+      { value: "2 990", label: "kr/mån i Spets, allt ingår" },
       { value: "7d", label: "Till första resultaten" },
     ],
     href: "/tjanster/google-ads",
@@ -205,20 +205,91 @@ const services = [
 const packages = [
   {
     name: "Bas",
+    for: "För enmansfirman",
     price: "0 kr start, 1 190 kr/mån",
-    desc: "Hemsidan, hosting, drift, uppdateringar och support i ett pris. 12 månaders bindning, sedan månadsvis.",
+    desc: "Komplett hemsida som gör dig hittad i din ort, utan att du behöver tänka på tekniken.",
+    features: [
+      "Hemsida med upp till fem sidor",
+      "Snabb, mobilanpassad design",
+      "Sökordsgrunden lagd för din huvudort",
+      "Koppling till din Google Företagsprofil",
+      "Hosting, säkerhet, SSL och backuper",
+      "Domän och mejladress på den",
+      "Ändringar klara inom två arbetsdagar",
+    ],
   },
   {
-    name: "Tillväxt",
-    price: "2 490 kr/mån",
-    desc: "Allt i Bas plus löpande SEO, skötsel av Google Ads och nytt innehåll varje månad.",
+    name: "Bredd",
+    for: "För företag med flera tjänster",
+    price: "0 kr start, 1 990 kr/mån",
+    desc: "För dig som säljer mer än en tjänst och vill synas på fler sökningar än en.",
+    featured: true,
+    badge: "Här landar de flesta",
+    features: [
+      "Allt i Bas, och:",
+      "Upp till tolv sidor, en per tjänst",
+      "Formgiven från vitt papper, ingen mall",
+      "Strukturerad märkning som Google och AI-sök läser",
+      "Sökord för din ort och kommunerna runt om",
+      "Flera mejladresser (info@, namn@)",
+      "SEO-rapport varje månad",
+      "Ändringar klara inom ett dygn",
+    ],
   },
   {
-    name: "WordPress-migrering",
-    price: "4 900 kr",
-    desc: "Långsam WordPress flyttad till edge. 0 kr om du samtidigt tecknar drift i 12 månader.",
+    name: "Spets",
+    for: "För dig som vill äga din marknad",
+    price: "0 kr start, 2 990 kr/mån",
+    desc: "Sajten jobbar dygnet runt: AI-assistent, Google Ads och nytt innehåll varje månad.",
+    features: [
+      "Allt i Bredd, och:",
+      "AI-assistent som svarar kunder dygnet runt",
+      "Google Ads: uppsättning och löpande skötsel",
+      "Obegränsat antal sidor",
+      "Egen landningssida för varje ort du jobbar i",
+      "Nya sökmotortexter varje månad",
+      "Löpande tester på det som ger förfrågningar",
+      "Strategisamtal en gång i månaden",
+      "Prioriterad support, svar samma dag",
+    ],
   },
 ];
+
+/* ── Processens illustrationer: sådd, växt, skörd i guldlinje ── */
+function StegIllustration({ index }) {
+  const GULD = "var(--color-accent)";
+  const bas = { stroke: GULD, strokeWidth: 1.6, strokeLinecap: "round", fill: "none" };
+  return (
+    <svg viewBox="0 0 64 56" width="64" height="56" aria-hidden="true">
+      <path d="M4 48 H60" {...bas} opacity="0.45" />
+      {index === 0 && (
+        <>
+          <path d="M12 22 Q24 8 40 13" {...bas} opacity="0.9" />
+          <path d="M27 48 v-4 M36 48 v-4 M45 48 v-4" {...bas} opacity="0.4" />
+          <circle cx="28" cy="27" r="1.9" fill={GULD} />
+          <circle cx="37" cy="33" r="1.9" fill={GULD} opacity="0.8" />
+          <circle cx="22" cy="36" r="1.9" fill={GULD} opacity="0.6" />
+        </>
+      )}
+      {index === 1 && (
+        <>
+          <path d="M32 48 V24" {...bas} />
+          <path d="M32 34 C26 32 22 26 21 19 C28 21 31 27 32 32" {...bas} opacity="0.9" />
+          <path d="M32 28 C38 26 42 20 43 13 C36 15 33 21 32 26" {...bas} opacity="0.9" />
+          <circle cx="32" cy="20" r="3" {...bas} />
+        </>
+      )}
+      {index === 2 && (
+        <>
+          <path d="M20 48 V28 M32 48 V20 M44 48 V28" {...bas} />
+          <path d="M20 28 l-4 -5 M20 28 l4 -5 M20 34 l-4 -5 M20 34 l4 -5" {...bas} opacity="0.75" />
+          <path d="M32 20 l-4 -5 M32 20 l4 -5 M32 26 l-4 -5 M32 26 l4 -5 M32 32 l-4 -5 M32 32 l4 -5" {...bas} />
+          <path d="M44 28 l-4 -5 M44 28 l4 -5 M44 34 l-4 -5 M44 34 l4 -5" {...bas} opacity="0.75" />
+        </>
+      )}
+    </svg>
+  );
+}
 
 /* ── Steps data ── */
 const steps = [
@@ -226,13 +297,13 @@ const steps = [
     num: "01",
     icon: MessageCircle,
     title: "Behov och mål",
-    desc: "Vi börjar med en kort genomgång och prioriterar vad som ger snabbast effekt.",
+    desc: "Vi börjar med en kort genomgång. Inom två arbetsdagar har du sedan ett färdigt designförslag att titta på, utan att det kostar något.",
   },
   {
     num: "02",
     icon: FileText,
     title: "Leverans",
-    desc: "Jag bygger, justerar och lanserar med tydliga avstämningar så du kan följa varje steg.",
+    desc: "Gillar du förslaget bygger jag klart, justerar och lanserar med tydliga avstämningar. Betalningen startar först när du sagt kör.",
   },
   {
     num: "03",
@@ -395,19 +466,31 @@ export default function TjansterContent() {
             subtitle="Välj nivå efter hur snabbt du vill framåt och hur mycket ansvar du vill att jag tar löpande."
           />
 
-          <div className="mt-12 grid md:grid-cols-3 gap-5">
+          <div className="mt-14 grid md:grid-cols-3 gap-5 items-stretch">
             {packages.map((pkg, i) => (
               <Reveal key={pkg.name} delay={i * 0.08 + 0.1}>
-                <div className="h-full bg-surface rounded-[10px] border border-border p-7 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
-                  <h3 className="font-heading font-700 text-[18px] text-heading">
+                <div className={`relative h-full flex flex-col bg-surface rounded-[10px] border p-7 transition-all duration-300 ${pkg.featured ? "border-primary/40 shadow-[0_4px_24px_rgba(242,194,48,0.08)]" : "border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:border-primary/15"}`}>
+                  {pkg.featured && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-[#191405] text-[11px] font-700 tracking-[0.08em] uppercase px-4 py-1 rounded-full whitespace-nowrap">{pkg.badge}</div>
+                  )}
+                  <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">{pkg.for}</div>
+                  <h3 className="mt-2 font-heading font-700 text-[20px] text-heading">
                     {pkg.name}
                   </h3>
-                  <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">
+                  <div className="mt-2 font-heading font-600 text-[22px] text-primary tracking-tight">
                     {pkg.price}
                   </div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">
                     {pkg.desc}
                   </p>
+                  <ul className="mt-5 flex flex-col gap-2.5 flex-1">
+                    {pkg.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-body leading-snug">
+                        <Check size={15} className="text-primary flex-shrink-0 mt-[2px]" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <a
                     href={`/boka?amne=pris&paket=${encodeURIComponent(pkg.name)}`}
                     className="secondary-btn mt-6 w-full justify-center text-[14px]"
@@ -418,6 +501,13 @@ export default function TjansterContent() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={0.3}>
+            <p className="mt-8 text-center text-[13.5px] text-muted leading-relaxed max-w-[640px] mx-auto">
+              12 månaders inledande avtal, därefter månadsvis. Säljer du på nätet? E-handel med betalningar
+              läggs till på valfritt paket för 800 kr/mån. Långsam WordPress? Flytt till modern drift för
+              4 900 kr, 0 kr om du samtidigt tecknar 12 månader.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -429,17 +519,22 @@ export default function TjansterContent() {
             title="Du vet alltid vad som händer härnäst."
           />
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8 sm:gap-10">
+          <div className="mt-16 grid md:grid-cols-3 gap-8 sm:gap-10 process-falt">
+            <div aria-hidden="true" className="process-sol" />
             {steps.map((step, i) => (
               <Reveal key={step.num} delay={i * 0.1 + 0.1}>
                 <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-[14px] bg-primary/6 flex items-center justify-center">
-                      <step.icon size={22} className="text-primary" />
-                    </div>
+                  <div className="flex items-end justify-between mb-3">
+                    <StegIllustration index={i} />
                     <span className="text-[48px] font-600 font-heading text-primary/10 leading-none">
                       {step.num}
                     </span>
+                  </div>
+                  <div
+                    className="text-[10.5px] font-600 uppercase tracking-[0.28em] text-primary mb-2"
+                    style={{ fontFamily: "var(--font-ui)" }}
+                  >
+                    {["Sådd", "Växt", "Skörd"][i]}
                   </div>
                   <h3 className="font-heading font-700 text-[20px] text-heading tracking-tight">
                     {step.title}

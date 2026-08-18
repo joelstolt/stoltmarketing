@@ -46,7 +46,22 @@ const unhover = (e) => (e.currentTarget.style.color = "rgba(242,236,221,0.65)");
 
 export default function Footer() {
   return (
-    <footer className="hero-dark" style={{ borderTop: "1px solid rgba(242,236,221,0.12)" }}>
+    <footer className="hero-dark footer-natt">
+      {/* Natthimlen: horisontlinje + stjärnor bakom innehållet */}
+      <div className="footer-horisont" aria-hidden="true" />
+      <div aria-hidden="true">
+        {[
+          [5, 14, 0], [11, 58, 1.4], [17, 26, 2.8], [24, 72, 0.7], [31, 10, 3.5],
+          [39, 48, 1.1], [46, 22, 4.2], [54, 66, 2.1], [61, 36, 0.4], [69, 12, 3.1],
+          [76, 55, 1.8], [83, 28, 4.6], [89, 68, 0.9], [94, 40, 2.5],
+        ].map(([left, top, delay], i) => (
+          <span
+            key={i}
+            className="footer-stjarna"
+            style={{ left: `${left}%`, top: `${top}%`, animationDelay: `${delay}s` }}
+          />
+        ))}
+      </div>
       {/* Main footer */}
       <div
         style={{
@@ -132,13 +147,16 @@ export default function Footer() {
             </div>
           </div>
 
-          <Link
-            href="/boka"
-            className="premium-btn"
-            style={{ marginTop: 20, fontSize: 13, padding: "10px 20px", display: "inline-flex" }}
-          >
-            Boka kostnadsfri genomgång
-          </Link>
+          {/* Gårdslampan: det enda varma ljuset på natthimlen är vägen in */}
+          <span className="gardslampa" style={{ display: "inline-block", marginTop: 20 }}>
+            <Link
+              href="/boka"
+              className="premium-btn"
+              style={{ fontSize: 13, padding: "10px 20px", display: "inline-flex" }}
+            >
+              Boka kostnadsfri genomgång
+            </Link>
+          </span>
         </div>
 
         {/* Col 2: Tjänster */}

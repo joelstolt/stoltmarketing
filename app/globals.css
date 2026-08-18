@@ -133,6 +133,324 @@ h3, h4, h5, h6 {
     radial-gradient(70% 45% at 8% 112%, rgba(122, 148, 64, 0.11), transparent 65%);
 }
 
+/* === Rörelse i undersidornas hero: ljuspulser längs fältraderna + korn === */
+.hero-puls {
+  stroke-dasharray: 14 700;
+  stroke-dashoffset: 714;
+  animation: hero-puls var(--pd, 9s) linear infinite;
+  animation-delay: var(--pdel, 0s);
+}
+
+@keyframes hero-puls {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hero-korn {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(242, 194, 48, 0.55);
+  opacity: 0;
+  animation-name: hero-korn;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hero-korn {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-46vh);
+    opacity: 0;
+  }
+}
+
+/* === Länkar som tänds: understrykningen växer fram som ett strå === */
+a[class*="hover:underline"] {
+  text-decoration: none !important;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% - 0.08em);
+  background-size: 0% 1.5px;
+  transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a[class*="hover:underline"]:hover,
+a[class*="hover:underline"]:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* === Footern som natthimmel: horisont, stjärnor och gårdslampan === */
+.footer-natt {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.footer-horisont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242, 194, 48, 0.5) 18%, rgba(242, 236, 221, 0.22) 50%, rgba(242, 194, 48, 0.32) 82%, transparent);
+}
+
+.footer-stjarna {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(242, 236, 221, 0.85);
+  opacity: 0.18;
+  z-index: -1;
+  animation: stjarnblink 5.5s ease-in-out infinite;
+}
+
+@keyframes stjarnblink {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.5; }
+}
+
+.gardslampa {
+  position: relative;
+  z-index: 0;
+}
+
+.gardslampa::before {
+  content: "";
+  position: absolute;
+  inset: -24px -34px;
+  background: radial-gradient(closest-side, rgba(242, 194, 48, 0.3), transparent 72%);
+  z-index: -1;
+  pointer-events: none;
+  animation: lampglod 4.5s ease-in-out infinite;
+}
+
+@keyframes lampglod {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.14); }
+}
+
+/* === Processen: solen vandrar över sådd → växt → skörd === */
+.process-falt {
+  position: relative;
+}
+
+.process-sol {
+  position: absolute;
+  top: -44px;
+  left: 4%;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #F7D96A, #F2C230 62%, rgba(242, 194, 48, 0) 100%);
+  box-shadow: 0 0 26px 7px rgba(242, 194, 48, 0.3);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: view()) {
+  .process-sol {
+    opacity: 0.9;
+    animation: solvandring linear both;
+    animation-timeline: view();
+    animation-range: entry 20% exit 80%;
+  }
+}
+
+@keyframes solvandring {
+  0% { left: 4%; transform: translateY(16px); }
+  50% { transform: translateY(-8px); }
+  100% { left: calc(96% - 26px); transform: translateY(16px); }
+}
+
+/* === Läsförloppet som växande strå (guider och blogg, desktop) === */
+.las-stra {
+  position: fixed;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.las-stra-linje {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform-origin: top;
+  transform: scaleY(var(--lasprogress, 0));
+  background: linear-gradient(to bottom, rgba(242, 194, 48, 0.12), var(--color-accent));
+}
+
+.las-stra-blomma {
+  position: absolute;
+  left: -8px;
+  top: calc(var(--lasprogress, 0) * 96%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.las-stra.blommad .las-stra-blomma {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 1023px) {
+  .las-stra { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .las-stra { display: none; }
+}
+
+/* === Vind i fältet: hero-raderna böjer sig med scrollfarten === */
+.vind-svg {
+  transform: skewX(calc(var(--vind, 0) * -3.5deg));
+  transform-origin: bottom center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.vind-korn {
+  transform: translateX(calc(var(--vind, 0) * 12px));
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === Skördeklockan: fältglöden följer dygnet === */
+[data-dygn="gryning"] .field-glow::after {
+  background:
+    radial-gradient(90% 55% at 85% 118%, rgba(242, 194, 48, 0.22), transparent 60%),
+    radial-gradient(70% 45% at 8% 112%, rgba(201, 123, 94, 0.13), transparent 65%);
+}
+
+[data-dygn="dag"] .field-glow::after {
+  background:
+    radial-gradient(90% 55% at 85% 118%, rgba(242, 194, 48, 0.18), transparent 60%),
+    radial-gradient(70% 45% at 8% 112%, rgba(122, 148, 64, 0.14), transparent 65%);
+}
+
+[data-dygn="skymning"] .field-glow::after {
+  background:
+    radial-gradient(90% 55% at 85% 118%, rgba(226, 150, 58, 0.2), transparent 60%),
+    radial-gradient(70% 45% at 8% 112%, rgba(122, 148, 64, 0.1), transparent 65%);
+}
+
+[data-dygn="natt"] .field-glow::after {
+  background:
+    radial-gradient(90% 55% at 85% 118%, rgba(242, 194, 48, 0.11), transparent 60%),
+    radial-gradient(70% 45% at 8% 112%, rgba(96, 116, 152, 0.09), transparent 65%);
+}
+
+/* === Tröskan i Sajtkollen: raderna skördas medan mätningen kör === */
+.troska-falt {
+  position: relative;
+  height: 92px;
+  max-width: 520px;
+}
+
+.troska-rad-bas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(242, 236, 221, 0.1);
+}
+
+.troska-rad {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  opacity: 0.75;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: rad-skordas 1.55s linear forwards;
+}
+
+@keyframes rad-skordas {
+  to { transform: scaleX(1); }
+}
+
+.troska-maskin {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  animation: troska-kor 9.3s linear forwards, troska-vila 2.4s ease-in-out 9.4s infinite;
+}
+
+@keyframes troska-kor {
+  0%    { top: -4px; left: 0; }
+  16.4% { top: -4px; left: calc(100% - 38px); }
+  16.7% { top: 10px; left: 0; }
+  33.1% { top: 10px; left: calc(100% - 38px); }
+  33.4% { top: 24px; left: 0; }
+  49.8% { top: 24px; left: calc(100% - 38px); }
+  50.1% { top: 38px; left: 0; }
+  66.5% { top: 38px; left: calc(100% - 38px); }
+  66.8% { top: 52px; left: 0; }
+  83.2% { top: 52px; left: calc(100% - 38px); }
+  83.5% { top: 66px; left: 0; }
+  100%  { top: 66px; left: calc(100% - 38px); }
+}
+
+@keyframes troska-vila {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* === Före/efter-reglaget i kundcase === */
+.fore-efter-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 100%;
+  background: transparent;
+  cursor: ew-resize;
+  margin: 0;
+}
+
+.fore-efter-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid #191405;
+  box-shadow: 0 0 0 1.5px var(--color-accent), 0 4px 14px rgba(242, 194, 48, 0.35);
+  cursor: ew-resize;
+}
+
+.fore-efter-range::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid #191405;
+  box-shadow: 0 0 0 1.5px var(--color-accent), 0 4px 14px rgba(242, 194, 48, 0.35);
+  cursor: ew-resize;
+}
+
+.fore-efter-range:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 /* === Primär knapp — rapsgul pill, Archivo-versaler === */
 .premium-btn {
   position: relative;

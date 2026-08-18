@@ -37,14 +37,14 @@ const rows = [
   ["Löpande SEO hos byrå", "5 000 till 30 000 kr/mån", "Vanligast. Nivån styrs av konkurrens och hur mycket innehåll som produceras."],
   ["SEO-audit, engång", "5 000 till 25 000 kr", "Nulägesanalys med åtgärdslista. Bra start om du vill veta läget innan du binder dig."],
   ["Timpris konsult", "800 till 1 500 kr/tim", "Flexibelt för punktinsatser, dyrt som löpande modell."],
-  ["Hos mig: Tillväxt", "2 490 kr/mån", "Löpande SEO, Google Ads och nytt innehåll i samma månadspris."],
+  ["Hos mig: Spets", "2 990 kr/mån", "Löpande SEO, Google Ads, AI-assistent och nytt innehåll i samma månadspris."],
   ["Hos mig: audit", "4 900 kr", "Teknisk genomgång, sökordsdata och prioriterad åtgärdslista."],
 ];
 
 const faqs = [
   {
     q: "Vad kostar SEO i månaden?",
-    a: "På svenska marknaden oftast 5 000 till 30 000 kr i månaden hos byrå, beroende på konkurrens och ambition. Hos mig ingår löpande SEO i Tillväxt för 2 490 kr i månaden tillsammans med Google Ads och innehållsproduktion.",
+    a: "På svenska marknaden oftast 5 000 till 30 000 kr i månaden hos byrå, beroende på konkurrens och ambition. Hos mig ingår löpande SEO i Spets för 2 990 kr i månaden tillsammans med Google Ads och innehållsproduktion.",
   },
   {
     q: "Varför är SEO så dyrt?",

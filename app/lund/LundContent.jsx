@@ -32,7 +32,7 @@ const services = [
     title: "Google Ads",
     desc: "Riktad annonsering som ger fler samtal, förfrågningar och besök direkt.",
     href: "/lund/google-ads",
-    price: "Ingår i Tillväxt, 2 490 kr/mån",
+    price: "Ingår i Spets, 2 990 kr/mån",
   },
   {
     icon: BrainCircuit,

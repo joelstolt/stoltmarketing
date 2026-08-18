@@ -42,35 +42,35 @@ const paket = [
     pris: "1 190 kr/mån",
     start: "0 kr i startavgift",
     rader: [
-      "Skräddarsydd design och bygge",
+      "Hemsida med upp till fem sidor",
       "Texter och struktur byggda för sök",
       "Drift, säkerhet och backup",
       "Löpande innehållsändringar",
-      "Klar på 2 till 4 veckor",
+      "Klar på 1 till 2 veckor",
     ],
   },
   {
-    namn: "Bas + e-handel",
+    namn: "Bredd",
     pris: "1 990 kr/mån",
     start: "0 kr i startavgift",
     rader: [
       "Allt i Bas",
-      "Webbshop med WooCommerce",
-      "Klarna, Swish och kortbetalning",
-      "Produktsidor byggda för sök",
-      "Orderflöde och fraktkoppling",
+      "Upp till tolv sidor, en per tjänst",
+      "Design från vitt papper, ingen mall",
+      "Sökord för din ort och kommunerna runt om",
+      "SEO-rapport varje månad",
     ],
   },
   {
-    namn: "Tillväxt",
-    pris: "2 490 kr/mån",
+    namn: "Spets",
+    pris: "2 990 kr/mån",
     start: "0 kr i startavgift",
     rader: [
-      "Allt i Bas",
-      "Löpande SEO varje månad",
+      "Allt i Bredd",
+      "AI-assistent som svarar dygnet runt",
       "Google Ads-hantering",
-      "Nytt innehåll och nya sidor",
-      "Månadsrapport med riktiga siffror",
+      "Nya sökmotortexter varje månad",
+      "Egen landningssida för varje ort",
     ],
   },
 ];
@@ -78,7 +78,7 @@ const paket = [
 const faqs = [
   {
     q: "Vad kostar en hemsida för företag?",
-    a: "Hos mig 0 kr i startavgift och 1 190 kr i månaden, där design, bygge, drift, säkerhet och löpande ändringar ingår. Med webbshop 1 990 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Marknadens engångsprojekt kostar i jämförelse oftast 30 000 till 100 000 kr plus löpande drift.",
+    a: "Hos mig 0 kr i startavgift och 1 190 kr i månaden, där design, bygge, drift, säkerhet och löpande ändringar ingår. Webbshop läggs till på valfritt paket för 800 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Marknadens engångsprojekt kostar i jämförelse oftast 30 000 till 100 000 kr plus löpande drift.",
   },
   {
     q: "Varför månadspris i stället för engångspris?",
@@ -86,11 +86,11 @@ const faqs = [
   },
   {
     q: "Hur lång tid tar det innan sajten är klar?",
-    a: "En vanlig företagssajt lanseras 2 till 4 veckor efter startgenomgången. E-handel och större byggen tar 1 till 3 månader. Du får en tidplan i förslaget och ser en skiss innan du bestämmer dig.",
+    a: "En vanlig företagssajt lanseras 1 till 2 veckor efter startgenomgången. E-handel och större byggen tar 1 till 2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, så du ser riktningen innan du bestämmer dig.",
   },
   {
     q: "Syns hemsidan på Google?",
-    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och en struktur som går att ranka med. Vill du aktivt klättra på konkurrensutsatta sökord ingår löpande sökmotoroptimering i Tillväxt för 2 490 kr/mån.",
+    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och en struktur som går att ranka med. Vill du aktivt klättra på konkurrensutsatta sökord ingår löpande sökmotoroptimering i Spets för 2 990 kr/mån.",
   },
   {
     q: "Vem äger hemsidan och domänen?",
@@ -158,7 +158,7 @@ export default function Page() {
           badge="Hemsida för företag"
           title="En hemsida som ger dig kunder. 0 kr i start, 1 190 kr i månaden."
           subtitle="Design, bygge, drift och löpande ändringar i ett pris. Byggd för att synas på Google och göra besökare till förfrågningar, inte bara för att se bra ut."
-          bullets={["Skiss och fast pris innan du säger ja", "Klar på 2 till 4 veckor", "Du äger domän och innehåll"]}
+          bullets={["Gratis designförslag inom 2 arbetsdagar", "Klar på 1 till 2 veckor", "Du äger domän och innehåll"]}
         />
 
         <section className="py-14 sm:py-20 px-5 sm:px-8">

@@ -207,6 +207,28 @@ export default function SajtkollPage() {
               </button>
             </form>
             {error && <p className="mt-4 text-[14px] m-0" style={{ color: "#C97B5E" }}>{error}</p>}
+            {state === "loading" && (
+              <div className="mt-8" aria-hidden="true">
+                <div className="troska-falt">
+                  {[6, 20, 34, 48, 62, 76].map((y, i) => (
+                    <span key={y}>
+                      <span className="troska-rad-bas" style={{ top: y }} />
+                      <span className="troska-rad" style={{ top: y, animationDelay: `${(i * 1.55).toFixed(2)}s` }} />
+                    </span>
+                  ))}
+                  <svg className="troska-maskin" width="38" height="24" viewBox="0 0 38 24" fill="none">
+                    <path d="M8 16 H26 V8 H16 L13 16" stroke="var(--color-accent)" strokeWidth="1.6" strokeLinejoin="round" />
+                    <path d="M26 12 H33 L36 16" stroke="var(--color-accent)" strokeWidth="1.6" strokeLinecap="round" />
+                    <circle cx="12" cy="19" r="3.2" stroke="var(--color-accent)" strokeWidth="1.6" />
+                    <circle cx="27" cy="19" r="3.2" stroke="var(--color-accent)" strokeWidth="1.6" />
+                    <circle cx="4" cy="17" r="2.4" stroke="var(--color-accent)" strokeWidth="1.4" opacity="0.7" />
+                  </svg>
+                </div>
+                <p className="mt-3 text-[12.5px] m-0" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.08em", color: "rgba(242,236,221,0.55)" }}>
+                  Tröskar sajten, rad för rad. 14 kontroller på cirka 10 sekunder.
+                </p>
+              </div>
+            )}
             <p className="mt-5 text-[12.5px] text-faint" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.06em" }}>
               Allt som rapporteras läses ur ett riktigt svar från din sajt. Inga gissningar, ingen lagring.
             </p>

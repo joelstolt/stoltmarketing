@@ -9,9 +9,54 @@ import {
   X,
   AlertCircle,
 } from "lucide-react";
+import { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Reveal } from "@/components/ui";
+
+/* ── Läsförloppet som växande strå: guldlinje längs vänsterkanten som växer
+      med läsningen och slår ut i en rapsblomma vid slutet. Desktop only,
+      döljs vid prefers-reduced-motion (CSS). ── */
+function LasStra() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const uppdatera = () => {
+      raf = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      el.style.setProperty("--lasprogress", p.toFixed(4));
+      el.classList.toggle("blommad", p > 0.92);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(uppdatera);
+    };
+    uppdatera();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+  return (
+    <div ref={ref} className="las-stra" aria-hidden="true">
+      <span className="las-stra-linje" />
+      <svg className="las-stra-blomma" width="18" height="18" viewBox="0 0 18 18">
+        <g fill="var(--color-accent)">
+          <circle cx="9" cy="4.5" r="2.6" opacity="0.9" />
+          <circle cx="13.5" cy="9" r="2.6" opacity="0.9" />
+          <circle cx="9" cy="13.5" r="2.6" opacity="0.9" />
+          <circle cx="4.5" cy="9" r="2.6" opacity="0.9" />
+          <circle cx="9" cy="9" r="1.7" fill="#191405" />
+        </g>
+      </svg>
+    </div>
+  );
+}
 
 /*
   Delad artikelmall för bloggen. Varje inlägg skickar in sin metadata + ett
@@ -165,6 +210,7 @@ export default function BlogArticle({
   return (
     <>
       <Header />
+      <LasStra />
       <main>
         {/* Hero */}
         <section className="hero-dark relative overflow-hidden">

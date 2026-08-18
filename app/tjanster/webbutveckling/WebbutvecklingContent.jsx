@@ -26,8 +26,8 @@ const techStack = [
 
 const faqs = [
   { q: "Vilken teknik bygger du i?", a: "Jag jobbar primärt med Next.js och React för moderna sajter, och WordPress/WooCommerce för e-handel och innehållstunga sidor. Du får alltid en rekommendation baserad på dina behov." },
-  { q: "Hur lång tid tar det att bygga en webbplats?", a: "En enklare företagssajt tar 2–4 veckor. E-handelsplattformar och större projekt kan ta 1–3 månader. Du får alltid en tydlig tidplan." },
-  { q: "Vad kostar en webbplats?", a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår bygget, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha löpande SEO och Google Ads kostar Tillväxt 2 490 kr/mån." },
+  { q: "Hur lång tid tar det att bygga en webbplats?", a: "En enklare företagssajt tar 1-2 veckor. E-handelsplattformar och större projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och du får alltid en tydlig tidplan." },
+  { q: "Vad kostar en webbplats?", a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår bygget, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets för 2 990 kr/mån." },
   { q: "Kan jag uppdatera sajten själv efteråt?", a: "Ja. WordPress-sajter har ett enkelt admin-gränssnitt. Next.js-sajter kan kopplas till ett CMS. Jag erbjuder också managed hemsida om du vill att jag sköter uppdateringar." },
 ];
 
@@ -45,7 +45,7 @@ export default function WebbutvecklingContent() {
         badge="Webbutveckling"
         title="Moderna webbplatser och e-handel som gör det lätt för kunder att hitta dig och ta kontakt."
         subtitle="Ny sajt eller ombyggnad — med fokus på tydlighet, förtroende och fler förfrågningar. Samma kvalitet som jag levererar åt AcadeMedia."
-        bullets={["0 kr start, 1 190 kr/mån", "Klar på 2-4 veckor", "Allt ingår, ett pris"]}
+        bullets={["0 kr start, 1 190 kr/mån", "Designförslag inom 2 arbetsdagar", "Klar på 1-2 veckor"]}
       />
 
       {/* ═══ PASSAR NÄR ═══ */}
@@ -141,22 +141,89 @@ export default function WebbutvecklingContent() {
       {/* ═══ PRISER ═══ */}
       <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Pris" title="Tydliga paket. Fast pris." />
-          <div className="mt-10 grid sm:grid-cols-2 gap-5">
+          <SectionHeader badge="Pris" title="Tre nivåer. Fast pris." subtitle="0 kr i start på alla paket, och du ser ett färdigt designförslag innan du bestämmer dig. Du väljer hur mycket sajten ska jobba åt dig." />
+          <div className="mt-14 grid md:grid-cols-3 gap-5 items-stretch">
             {[
-              { name: "Bas", price: "0 kr start, 1 190 kr/mån", desc: "Hemsidan, hosting, drift, uppdateringar och support i ett pris. 12 månaders bindning." },
-              { name: "Bas + e-handel", price: "1 990 kr/mån", desc: "Allt i Bas plus WooCommerce, betalningar och SEO-optimerade produktsidor." },
+              {
+                name: "Bas",
+                for: "För enmansfirman",
+                price: "1 190 kr/mån",
+                desc: "Komplett hemsida som gör dig hittad i din ort, utan att du behöver tänka på tekniken.",
+                features: [
+                  "Hemsida med upp till fem sidor",
+                  "Snabb, mobilanpassad design",
+                  "Sökordsgrunden lagd för din huvudort",
+                  "Koppling till din Google Företagsprofil",
+                  "Hosting, säkerhet, SSL och backuper",
+                  "Domän och mejladress på den",
+                  "Ändringar klara inom två arbetsdagar",
+                ],
+              },
+              {
+                name: "Bredd",
+                for: "För företag med flera tjänster",
+                price: "1 990 kr/mån",
+                desc: "För dig som säljer mer än en tjänst och vill synas på fler sökningar än en.",
+                featured: true,
+                badge: "Här landar de flesta",
+                features: [
+                  "Allt i Bas, och:",
+                  "Upp till tolv sidor, en per tjänst",
+                  "Formgiven från vitt papper, ingen mall",
+                  "Strukturerad märkning som Google och AI-sök läser",
+                  "Sökord för din ort och kommunerna runt om",
+                  "Flera mejladresser (info@, namn@)",
+                  "SEO-rapport varje månad",
+                  "Ändringar klara inom ett dygn",
+                ],
+              },
+              {
+                name: "Spets",
+                for: "För dig som vill äga din marknad",
+                price: "2 990 kr/mån",
+                desc: "Sajten jobbar dygnet runt: AI-assistent, Google Ads och nytt innehåll varje månad.",
+                features: [
+                  "Allt i Bredd, och:",
+                  "AI-assistent som svarar kunder dygnet runt",
+                  "Google Ads: uppsättning och löpande skötsel",
+                  "Obegränsat antal sidor",
+                  "Egen landningssida för varje ort du jobbar i",
+                  "Nya sökmotortexter varje månad",
+                  "Löpande tester på det som ger förfrågningar",
+                  "Strategisamtal en gång i månaden",
+                  "Prioriterad support, svar samma dag",
+                ],
+              },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08 + 0.1}>
-                <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
-                  <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
-                  <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">{p.price}</div>
+                <div className={`relative h-full flex flex-col bg-surface rounded-[10px] border p-7 transition-all duration-300 ${p.featured ? "border-primary/40 shadow-[0_4px_24px_rgba(242,194,48,0.08)]" : "border-border hover:border-primary/15"}`}>
+                  {p.featured && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-[#191405] text-[11px] font-700 tracking-[0.08em] uppercase px-4 py-1 rounded-full whitespace-nowrap">{p.badge}</div>
+                  )}
+                  <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">{p.for}</div>
+                  <h3 className="mt-2 font-heading font-700 text-[20px] text-heading">{p.name}</h3>
+                  <div className="mt-2 font-heading font-600 text-[22px] text-primary tracking-tight">0 kr start, {p.price}</div>
                   <p className="mt-3 text-[14px] text-body leading-relaxed">{p.desc}</p>
-                  <a href={`/boka?amne=pris&paket=${encodeURIComponent(p.name)}`} className="secondary-btn mt-5 w-full justify-center text-[14px]">Få upplägg och pris</a>
+                  <ul className="mt-5 flex flex-col gap-2.5 flex-1">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-body leading-snug">
+                        <Check size={15} className="text-primary flex-shrink-0 mt-[2px]" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={`/boka?amne=pris&paket=${encodeURIComponent(p.name)}`} className="secondary-btn mt-6 w-full justify-center text-[14px]">Få upplägg och pris</a>
                 </div>
               </Reveal>
             ))}
           </div>
+          <Reveal delay={0.3}>
+            <p className="mt-8 text-center text-[13.5px] text-muted leading-relaxed max-w-[640px] mx-auto">
+              12 månaders inledande avtal, därefter månadsvis. Säljer du på nätet? E-handel med betalningar
+              läggs till på valfritt paket för 800 kr/mån. Långsam WordPress? Flytt till modern drift för
+              4 900 kr, 0 kr om du samtidigt tecknar 12 månader.
+            </p>
+          </Reveal>
         </div>
       </section>
 

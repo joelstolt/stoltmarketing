@@ -2,6 +2,7 @@
 
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Reveal, SectionHeader } from "@/components/ui";
+import ForeEfter from "@/components/ForeEfter";
 
 const heroStats = [
   "100/100 i prestanda, tillgänglighet, best practices & AI",
@@ -196,6 +197,13 @@ export default function LinguistaCase() {
               </Reveal>
             ))}
           </div>
+
+          {/* Före/efter-reglaget: dra själv mellan lägena */}
+          <Reveal delay={0.08}>
+            <div className="mt-10">
+              <ForeEfter rader={metrics} />
+            </div>
+          </Reveal>
 
           {/* Mätvärden före/efter */}
           <Reveal delay={0.1}>
