@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stoltmarketing-preview",
+  "main": "worker-with-headers.mjs",
+  "compatibility_date": "2025-03-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sajtvakten",
+      "database_id": "424b8265-0c57-465d-814a-cec7cc27772d"
+    }
+  ],
+  "vars": {
+    "SELF_URL": "https://stoltmarketing-preview.joel-d77.workers.dev"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

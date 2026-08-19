@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "Vad händer om det inte fungerar?",
-    a: "Vi sätter tydliga mål från start. Om vi inte når dem inom 2 till 3 månader justerar vi strategi eller pausar kampanjen. Ingen bindningstid, du kan avsluta när som helst.",
+    a: "Vi sätter tydliga mål från start. Om vi inte når dem inom 2 till 3 månader justerar vi strategi eller pausar kampanjen. Annonsbudgeten till Google kan du stoppa när som helst. Själva Spets-avtalet, där Ads-skötseln ingår, är 12 månader och därefter månadsvis, samma som sajten.",
   },
 ];
 

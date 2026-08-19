@@ -31,13 +31,13 @@ const services = [
 ];
 
 const cases = [
-  { client: "Linguista", tag: "AcadeMedia · 100/100 ×4", img: "/case-linguista.webp", desc: "Självuppdaterande sajt med full pott i prestanda, tillgänglighet och AI.", href: "/projekt/linguista" },
-  { client: "EdShare", tag: "AcadeMedia · 10x snabbare", img: "/case-edshare.webp", desc: "WordPress till statisk edge, 86 % lättare, tre 100:or.", href: "/projekt/edshare" },
-  { client: "RBN Utbildning", tag: "Helhetsleverans · WP + API", img: "/case-rbn.webp", desc: "Ny profil, sajt och API-integration i ett." },
-  { client: "Förskolan Harpan", tag: "Grafisk profil · Next.js", img: "/case-harpan.webp", desc: "Varm identitet och enkel platsansökan." },
+  { client: "Niklassons Flytt", tag: "32 offertförfrågningar / 30 dgr", img: "/case-niklassonsflytt.webp", desc: "38 sidor över Skåne, och varje förfrågan mäts. Kunden sköter innehållet själv.", href: "/projekt/niklassonsflytt" },
+  { client: "Arkipel Entreprenad", tag: "Bygg · Norrköping · 61 sidor", img: "/case-arkipel.webp", desc: "En sida per tjänst och ort, mot en branschmedian på 17. Så en byggfirma faktiskt hittas.", href: "/projekt/arkipel" },
+  { client: "Premie Bygg", tag: "Bygg · Örebro · 47 sidor", img: "/case-premiebygg.webp", desc: "Formulärkedjan verifierad på riktigt, så offertförfrågningarna kommer fram.", href: "/projekt/premiebygg" },
+  { client: "Norrlands Gräv & Transport", tag: "Entreprenad · Sundsvall · 69 sidor", img: "/case-ngtab.webp", desc: "Ett tyst canonical-fel tog bort sajten ur Google. Fixat, plus en sida per tjänst och ort.", href: "/projekt/ngtab" },
 ];
 
-const clients = ["AcadeMedia", "SMH Sverige", "KYH", "Hermods", "Kvota.se", "RBN Utbildning", "Omniway"];
+const clients = ["Niklassons Flytt", "Arkipel", "Premie Bygg", "NGTAB", "AcadeMedia", "RBN Utbildning", "Förskolan Harpan"];
 
 const stats = [
   { target: 150, suffix: "+", label: "Levererade projekt" },
@@ -210,6 +210,31 @@ export default function BContent() {
         .b-marquee-inner { display: flex; gap: 56px; width: max-content; animation: b-scroll 36s linear infinite; }
         @keyframes b-scroll { to { transform: translateX(-50%); } }
         @media (prefers-reduced-motion: reduce) { .b-marquee-inner { animation: none; } }
+        .b-cta-secondary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 16px 26px;
+          font-family: var(--font-ui);
+          font-weight: 600;
+          font-size: 11.5px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          border-radius: 3em;
+          text-decoration: none;
+          white-space: nowrap;
+          color: #F2ECDD;
+          background: #0F0D08;
+          border: 1.5px solid rgba(242, 236, 221, 0.72);
+          transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .b-cta-secondary:hover {
+          background: #F2C230;
+          border-color: #F2C230;
+          color: #191405;
+          transform: translateY(-1px);
+        }
         .b-case-scroll { display: flex; gap: 28px; }
         @media (max-width: 899px) {
           .b-case-scroll { overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: 24px; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
@@ -233,14 +258,14 @@ export default function BContent() {
           <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "13ch", margin: 0 }}>
             Webbplatser, SEO och AI som ger ditt företag <span style={{ fontWeight: 640 }}>fler kunder</span><em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>.</em>
           </h1>
-          <p className="b-sub" style={{ marginTop: 28, fontSize: "clamp(16px, 1.5vw, 19px)", lineHeight: 1.75, color: DIM, maxWidth: 500 }}>
+          <p className="b-sub" style={{ marginTop: 28, fontSize: "clamp(16px, 1.5vw, 19px)", lineHeight: 1.75, color: DIM, maxWidth: 540 }}>
             Din nya sajt görs färdig innan du betalar ett öre: titta, klicka runt, bestäm sedan. Enterprise-kvalitet till småföretag, byggd av personen du pratar med.
           </p>
           <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34, position: "relative", zIndex: 3 }}>
             <a href="/boka" className="premium-btn" data-umami-event="cta-hero-primar">
               Boka kostnadsfri genomgång <ArrowRight size={15} />
             </a>
-            <a href="#tjanster" className="secondary-btn">Se tjänster</a>
+            <a href="#tjanster" className="b-cta-secondary">Se tjänster</a>
           </div>
         </div>
         <div className="b-scrollcue" style={{ position: "absolute", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>

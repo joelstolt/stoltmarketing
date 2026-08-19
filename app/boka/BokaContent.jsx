@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Check, Clock, MessageCircle, Zap } from "lucide-react";
+import { ArrowRight, Check, Clock, MessageCircle, Calendar, Zap } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
 import { trackConversion } from "@/lib/track";
+
+const CALENDAR_URL = process.env.NEXT_PUBLIC_CALENDAR_URL || "";
 
 const benefits = [
   "15 till 20 min samtal, snabbt och konkret",
@@ -11,18 +13,14 @@ const benefits = [
   "Helt kostnadsfritt, inga förpliktelser",
 ];
 
-const steps = [
-  { icon: MessageCircle, title: "1. Fyll i formuläret", desc: "Namn, e-post och en kort beskrivning." },
-  { icon: Clock, title: "2. Jag hör av mig inom 24h", desc: "Vi bokar in ett tid som passar dig." },
-  { icon: Zap, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
-];
-
 export default function BokaContent() {
+  const [path, setPath] = useState("meddelande");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     message: "",
+    slot: "",
     hp_field: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -38,6 +36,7 @@ export default function BokaContent() {
     const params = new URLSearchParams(window.location.search);
     if (params.get("amne") !== "pris") return;
     setPrisIntent(true);
+    setPath("meddelande");
     const paket = params.get("paket");
     setFormData((prev) =>
       prev.message
@@ -53,13 +52,21 @@ export default function BokaContent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Honeypot ifylld = bot. Visa "tack" utan att posta eller trigga
-    // konverterings-eventet, så spam aldrig blir en konvertering i Umami.
     if (formData.hp_field) {
       setSubmitted(true);
       return;
     }
     setSending(true);
+    const isSlot = path === "tid" && !CALENDAR_URL;
+    const slotText = formData.slot
+      ? `Önskad tid: ${formData.slot.replace("T", " ")}.`
+      : "";
+    const bodyMessage = isSlot
+      ? [slotText, formData.message].filter(Boolean).join(" ")
+      : formData.message ||
+        (prisIntent
+          ? "Vill ha upplägg och pris."
+          : "Vill boka en kostnadsfri genomgång.");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -70,17 +77,13 @@ export default function BokaContent() {
           company: formData.company,
           hp_field: formData.hp_field,
           _elapsedMs: Date.now() - loadedAt,
-          message:
-            formData.message ||
-            (prisIntent
-              ? "Vill ha upplägg och pris."
-              : "Vill boka en kostnadsfri genomgång."),
-          _subject: `${prisIntent ? "Prisförfrågan" : "Bokningsförfrågan"} från ${formData.name}${formData.company ? `, ${formData.company}` : ""}`,
+          message: bodyMessage,
+          _subject: `${isSlot ? "Tidsönskemål" : prisIntent ? "Prisförfrågan" : "Bokningsförfrågan"} från ${formData.name}${formData.company ? `, ${formData.company}` : ""}`,
         }),
       });
       if (res.ok) {
         setSubmitted(true);
-        trackConversion("lead-boka", "lead");
+        trackConversion(isSlot ? "lead-boka-tid" : "lead-boka", "lead");
       }
     } catch (err) {
       console.error(err);
@@ -115,11 +118,22 @@ export default function BokaContent() {
     e.target.style.boxShadow = "none";
   };
 
+  const steps =
+    path === "tid"
+      ? [
+          { icon: Calendar, title: "1. Välj en tid", desc: "Direkt i kalendern, eller ett tidsönskemål." },
+          { icon: Zap, title: "2. Du får en möteslänk", desc: "Bekräftelse kommer direkt, utan mejltennis." },
+          { icon: Clock, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
+        ]
+      : [
+          { icon: MessageCircle, title: "1. Skicka ett meddelande", desc: "Namn, e-post och vad du behöver hjälp med." },
+          { icon: Clock, title: "2. Jag hör av mig inom 24h", desc: "Vi bokar en tid som passar dig." },
+          { icon: Zap, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
+        ];
+
   return (
     <>
-      {/* Hero */}
       <section className="hero-dark relative overflow-hidden">
-
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
           <Reveal>
             <nav className="flex items-center gap-2 text-[13px] text-muted mb-6">
@@ -142,19 +156,16 @@ export default function BokaContent() {
 
             <Reveal delay={0.12}>
               <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body">
-                Vi tar ett kort samtal där jag lyssnar på dina behov och ger
-                en ärlig bedömning av hur jag kan hjälpa. Inga förpliktelser.
+                Skicka ett meddelande, eller växla till kalendern om du redan vet när det passar. Inga förpliktelser.
               </p>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Form + sidebar */}
       <section className="py-12 sm:py-20 px-5 sm:px-8">
         <div className="max-w-[900px] mx-auto">
           <div className="grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start">
-            {/* Form */}
             <Reveal>
               <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
                 {submitted ? (
@@ -174,116 +185,208 @@ export default function BokaContent() {
                       <Check size={28} color="#059669" strokeWidth={2.5} />
                     </div>
                     <h3 className="font-heading font-700 text-[22px] text-heading">
-                      Tack för din bokning!
+                      Tack, det är framme.
                     </h3>
                     <p className="mt-2 text-[15px] text-body">
-                      Jag hör av mig inom 24 timmar för att boka in en tid.
+                      {path === "tid" && !CALENDAR_URL
+                        ? "Jag bekräftar tiden inom 24 timmar, och skickar en möteslänk."
+                        : "Jag hör av mig inom 24 timmar."}
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit}>
-                    <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-6">
-                      Fyll i dina uppgifter
-                    </h2>
-
-                    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                        <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
-                            Namn *
-                          </label>
-                          <input
-                            type="text"
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleChange}
-                            onFocus={inputFocusHandler}
-                            onBlur={inputBlurHandler}
-                            placeholder="Ditt namn"
-                            style={inputStyle}
-                          />
-                        </div>
-                        <div>
-                          <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
-                            E-post *
-                          </label>
-                          <input
-                            type="email"
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            onFocus={inputFocusHandler}
-                            onBlur={inputBlurHandler}
-                            placeholder="din@epost.se"
-                            style={inputStyle}
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
-                          Företag
-                        </label>
-                        <input
-                          type="text"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          onFocus={inputFocusHandler}
-                          onBlur={inputBlurHandler}
-                          placeholder="Företagsnamn (valfritt)"
-                          style={inputStyle}
-                        />
-                      </div>
-
-                      <div>
-                        <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
-                          Beskriv kort vad du behöver hjälp med
-                        </label>
-                        <textarea
-                          name="message"
-                          rows={3}
-                          value={formData.message}
-                          onChange={handleChange}
-                          onFocus={inputFocusHandler}
-                          onBlur={inputBlurHandler}
-                          placeholder="T.ex. ny webbplats, SEO, AI-verktyg..."
-                          style={{ ...inputStyle, resize: "vertical", minHeight: 90 }}
-                        />
-                      </div>
-
-                      {/* Honeypot. Får inte heta company/url/email, autofyll trippar dem. */}
-                      <input
-                        type="text"
-                        name="hp_field"
-                        value={formData.hp_field}
-                        onChange={handleChange}
-                        tabIndex={-1}
-                        autoComplete="off"
-                        aria-hidden="true"
-                        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
-                      />
-
+                  <>
+                    <div
+                      role="tablist"
+                      aria-label="Sätt att höra av sig"
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: 8,
+                        marginBottom: 22,
+                        padding: 4,
+                        borderRadius: 12,
+                        background: "rgba(242,236,221,0.06)",
+                        border: "1px solid rgba(242,236,221,0.12)",
+                      }}
+                    >
                       <button
-                        type="submit"
-                        disabled={sending}
-                        className="premium-btn w-full justify-center mt-2"
-                        style={{ border: "none", cursor: sending ? "wait" : "pointer", fontFamily: "inherit", opacity: sending ? 0.7 : 1 }}
+                        type="button"
+                        role="tab"
+                        aria-selected={path === "meddelande"}
+                        onClick={() => setPath("meddelande")}
+                        style={{
+                          border: "none",
+                          cursor: "pointer",
+                          borderRadius: 10,
+                          padding: "10px 12px",
+                          fontFamily: "inherit",
+                          fontSize: 13,
+                          fontWeight: 600,
+                          background: path === "meddelande" ? "#F2C230" : "transparent",
+                          color: path === "meddelande" ? "#191405" : "#CFC9B8",
+                        }}
                       >
-                        <span>{sending ? "Skickar..." : "Boka genomgång"}</span>
-                        <ArrowRight size={16} className="opacity-80" />
+                        Skicka ett meddelande
+                      </button>
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={path === "tid"}
+                        onClick={() => setPath("tid")}
+                        style={{
+                          border: "none",
+                          cursor: "pointer",
+                          borderRadius: 10,
+                          padding: "10px 12px",
+                          fontFamily: "inherit",
+                          fontSize: 13,
+                          fontWeight: 600,
+                          background: path === "tid" ? "#F2C230" : "transparent",
+                          color: path === "tid" ? "#191405" : "#CFC9B8",
+                        }}
+                      >
+                        Välj en tid
                       </button>
                     </div>
-                  </form>
+
+                    {path === "tid" && CALENDAR_URL ? (
+                      <div>
+                        <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-3">
+                          Välj en tid som passar
+                        </h2>
+                        <p className="text-[14px] text-body mb-4">
+                          Tiden bokas direkt. Vill du hellre skriva vad det gäller först, byt till meddelande.
+                        </p>
+                        <iframe
+                          title="Boka en tid"
+                          src={CALENDAR_URL}
+                          style={{ width: "100%", minHeight: 640, border: 0, borderRadius: 12, background: "#161309" }}
+                        />
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSubmit}>
+                        <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-6">
+                          {path === "tid" ? "Föreslå en tid" : "Fyll i dina uppgifter"}
+                        </h2>
+
+                        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                            <div>
+                              <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
+                                Namn *
+                              </label>
+                              <input
+                                type="text"
+                                name="name"
+                                required
+                                value={formData.name}
+                                onChange={handleChange}
+                                onFocus={inputFocusHandler}
+                                onBlur={inputBlurHandler}
+                                placeholder="Ditt namn"
+                                style={inputStyle}
+                              />
+                            </div>
+                            <div>
+                              <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
+                                E-post *
+                              </label>
+                              <input
+                                type="email"
+                                name="email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                                onFocus={inputFocusHandler}
+                                onBlur={inputBlurHandler}
+                                placeholder="din@epost.se"
+                                style={inputStyle}
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
+                              Företag
+                            </label>
+                            <input
+                              type="text"
+                              name="company"
+                              value={formData.company}
+                              onChange={handleChange}
+                              onFocus={inputFocusHandler}
+                              onBlur={inputBlurHandler}
+                              placeholder="Företagsnamn (valfritt)"
+                              style={inputStyle}
+                            />
+                          </div>
+
+                          {path === "tid" ? (
+                            <div>
+                              <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
+                                Tid som passar *
+                              </label>
+                              <input
+                                type="datetime-local"
+                                name="slot"
+                                required
+                                value={formData.slot}
+                                onChange={handleChange}
+                                onFocus={inputFocusHandler}
+                                onBlur={inputBlurHandler}
+                                style={inputStyle}
+                              />
+                              <p style={{ margin: "8px 0 0", fontSize: 13, color: "#9A9484" }}>
+                                Jag bekräftar tiden och skickar en möteslänk. Vill du berätta mer först, byt till meddelande.
+                              </p>
+                            </div>
+                          ) : null}
+
+                          <div>
+                            <label style={{ fontSize: 13, fontWeight: 600, color: "#CFC9B8", display: "block", marginBottom: 6 }}>
+                              {path === "tid" ? "Något jag ska veta innan (valfritt)" : "Beskriv kort vad du behöver hjälp med"}
+                            </label>
+                            <textarea
+                              name="message"
+                              rows={3}
+                              value={formData.message}
+                              onChange={handleChange}
+                              onFocus={inputFocusHandler}
+                              onBlur={inputBlurHandler}
+                              placeholder={path === "tid" ? "T.ex. ny sajt, SEO, flera bolag..." : "T.ex. ny webbplats, SEO, AI-verktyg..."}
+                              style={{ ...inputStyle, resize: "vertical", minHeight: 90 }}
+                            />
+                          </div>
+
+                          <input
+                            type="text"
+                            name="hp_field"
+                            value={formData.hp_field}
+                            onChange={handleChange}
+                            tabIndex={-1}
+                            autoComplete="off"
+                            aria-hidden="true"
+                            style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+                          />
+
+                          <button
+                            type="submit"
+                            disabled={sending}
+                            className="premium-btn w-full justify-center mt-2"
+                            style={{ border: "none", cursor: sending ? "wait" : "pointer", fontFamily: "inherit", opacity: sending ? 0.7 : 1 }}
+                          >
+                            <span>{sending ? "Skickar..." : path === "tid" ? "Skicka tidsönskemål" : "Skicka meddelande"}</span>
+                            <ArrowRight size={16} className="opacity-80" />
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  </>
                 )}
               </div>
             </Reveal>
 
-            {/* Sidebar */}
             <div>
-              {/* Steps */}
               <Reveal delay={0.08}>
                 <div className="mb-8">
                   <h3 className="font-heading font-700 text-[16px] text-heading tracking-tight mb-5">
@@ -320,7 +423,6 @@ export default function BokaContent() {
                 </div>
               </Reveal>
 
-              {/* Benefits */}
               <Reveal delay={0.14}>
                 <div className="p-5 rounded-[10px]" style={{ background: "linear-gradient(135deg, rgba(242,194,48,0.13), rgba(242,194,48,0.04))", border: "1px solid rgba(242,194,48,0.28)" }}>
                   <h3 className="font-heading font-700 text-[15px] text-heading tracking-tight mb-3">

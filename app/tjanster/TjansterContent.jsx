@@ -329,7 +329,7 @@ const faqs = [
   },
   {
     q: "Binder jag upp mig länge?",
-    a: "Nej. Managed hemsida körs månad för månad. Webbprojekt har fast pris och tydlig tidplan. Inga dolda bindningstider.",
+    a: "Ja, 12 månader, därefter månadsvis. Du äger sajten, innehållet och domänen. Efter de första 12 månaderna avslutar du till nästa månadsskifte med ett mejl. Inga blanketter, och jag hjälper till med flytten om du vill gå vidare.",
   },
 ];
 

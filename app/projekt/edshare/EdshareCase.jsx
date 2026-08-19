@@ -89,7 +89,7 @@ export default function EdshareCase() {
                   style={{
                     background: "rgba(242,194,48,0.16)",
                     border: "1px solid rgba(242,194,48,0.32)",
-                    color: "var(--color-base)",
+                    color: "var(--color-heading)",
                   }}
                 >
                   {s}

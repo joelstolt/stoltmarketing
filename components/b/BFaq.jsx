@@ -9,7 +9,7 @@ const GUL = "#F2C230";
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Utslaget är det under 40 kronor om dagen. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets för 2 990 kr/mån. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
+    a: "0 kr i startavgift. De flesta landar på Bredd, 1 990 kr/mån. Bas är 1 190 kr/mån och Spets 2 990 kr/mån. 12 månaders bindning, därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
   },
   {
     q: "Vem äger sajten om vi avslutar?",
