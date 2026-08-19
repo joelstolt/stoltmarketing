@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin, Clock, Check, Phone, MessageCircle } from "lucide-react";
-import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
+import { ArrowRight, Mail, MapPin, Check, Phone } from "lucide-react";
+import { Reveal, PageHero } from "@/components/ui";
+import JoelCard from "@/components/JoelCard";
 import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 
@@ -151,8 +152,14 @@ export default function KontaktContent() {
                 <h2 className="font-heading font-700 text-[22px] text-heading tracking-tight mb-2">
                   Beskriv ditt behov
                 </h2>
-                <p className="text-[14px] text-muted mb-7">
+                <p className="text-[14px] text-muted mb-2">
                   Fyll i formuläret så återkommer jag inom 24 timmar.
+                </p>
+                <p className="text-[14px] text-body mb-7">
+                  Vill du välja tid{" "}
+                  <a href="/boka" className="font-600 text-primary hover:text-primary-hover">
+                    → /boka
+                  </a>
                 </p>
 
                 {submitted ? (
@@ -304,6 +311,18 @@ export default function KontaktContent() {
 
             {/* Right: Contact info + process + promises */}
             <div>
+              <Reveal delay={0.06}>
+                <div className="mb-8">
+                  <JoelCard compact />
+                  <p className="mt-3 text-[13px] text-muted">
+                    Vill du välja tid{" "}
+                    <a href="/boka" className="font-600 text-primary hover:text-primary-hover">
+                      → /boka
+                    </a>
+                  </p>
+                </div>
+              </Reveal>
+
               {/* Contact methods */}
               <Reveal delay={0.08}>
                 <div className="mb-8">

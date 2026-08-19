@@ -9,6 +9,8 @@ import {
   Bot, Workflow, Mail, Plug, FileText, Sparkles, BrainCircuit,
 } from "lucide-react";
 import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
+import CloseBlock from "@/components/CloseBlock";
+import CityProof from "@/components/CityProof";
 import { CITIES, SERVICES, SITE, CITY_ORDER, SERVICE_ORDER, PRICING } from "@/lib/local/data";
 import { getCombo, cityServiceFaqs } from "@/lib/local/seo";
 
@@ -17,6 +19,56 @@ const ICONS = {
   FileSearch, MapPin, BarChart3, Link2, Megaphone, Target, RefreshCw,
   Bot, Workflow, Mail, Plug, FileText, Sparkles, BrainCircuit,
 };
+
+const CITY_PACKAGES = [
+  {
+    name: "Bas",
+    for: "För enmansfirman",
+    price: PRICING.basManad,
+    features: [
+      "Hemsida med upp till fem sidor",
+      "Snabb, mobilanpassad design",
+      "Sökordsgrunden lagd för din huvudort",
+      "Koppling till din Google Företagsprofil",
+      "Hosting, säkerhet, SSL och backuper",
+      "Domän och mejladress på den",
+      "Ändringar klara inom två arbetsdagar",
+    ],
+  },
+  {
+    name: "Bredd",
+    for: "För företag med flera tjänster",
+    price: PRICING.bredd,
+    featured: true,
+    badge: "Här landar de flesta",
+    features: [
+      "Allt i Bas, och:",
+      "Upp till tolv sidor, en per tjänst",
+      "Formgiven från vitt papper, ingen mall",
+      "Strukturerad märkning som Google och AI-sök läser",
+      "Sökord för din ort och kommunerna runt om",
+      "Flera mejladresser (info@, namn@)",
+      "SEO-rapport varje månad",
+      "Ändringar klara inom ett dygn",
+    ],
+  },
+  {
+    name: "Spets",
+    for: "För dig som vill äga din marknad",
+    price: PRICING.spets,
+    features: [
+      "Allt i Bredd, och:",
+      "AI-assistent som svarar kunder dygnet runt",
+      "Google Ads: uppsättning och löpande skötsel",
+      "Obegränsat antal sidor",
+      "Egen landningssida för varje ort du jobbar i",
+      "Nya sökmotortexter varje månad",
+      "Löpande tester på det som ger förfrågningar",
+      "Strategisamtal en gång i månaden",
+      "Prioriterad support, svar samma dag",
+    ],
+  },
+];
 
 export default function CityServicePage({ service, city }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -76,6 +128,8 @@ export default function CityServicePage({ service, city }) {
           </Reveal>
         </div>
       </section>
+
+      <CityProof city={city} />
 
       {/* ═══ VAD INGÅR ═══ */}
       <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
@@ -173,64 +227,44 @@ export default function CityServicePage({ service, city }) {
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             badge="Pris"
-            title="Två enkla nivåer. 0 kr i startavgift."
+            title="Tre enkla nivåer. 0 kr i startavgift."
           />
-          <div className="mt-12 grid sm:grid-cols-2 gap-5 max-w-[820px] mx-auto">
-            <Reveal delay={0.06}>
-              <div className="bg-surface rounded-[10px] border border-border p-7 h-full flex flex-col">
-                <h3 className="font-heading font-700 text-[18px] text-heading">Bas</h3>
-                <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
-                  {PRICING.basManad}
+          <div className="mt-14 grid md:grid-cols-3 gap-5 items-stretch">
+            {CITY_PACKAGES.map((pkg, i) => (
+              <Reveal key={pkg.name} delay={i * 0.08 + 0.06}>
+                <div className={`relative h-full flex flex-col bg-surface rounded-[10px] border p-7 ${pkg.featured ? "border-2 border-primary" : "border-border"}`}>
+                  {pkg.featured && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-[#191405] text-[11px] font-600 px-2.5 py-1 rounded-full whitespace-nowrap">
+                      {pkg.badge}
+                    </span>
+                  )}
+                  <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">{pkg.for}</div>
+                  <h3 className="mt-2 font-heading font-700 text-[18px] text-heading">{pkg.name}</h3>
+                  <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
+                    {pkg.price}
+                  </div>
+                  <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
+                  <div className="mt-5 flex flex-col gap-2.5 flex-1">
+                    {pkg.features.map((t) => (
+                      <div key={t} className="flex items-start gap-2.5 text-[14px] text-body">
+                        <Check size={17} className="text-primary shrink-0 mt-[2px]" strokeWidth={2.5} />
+                        {t}
+                      </div>
+                    ))}
+                  </div>
+                  <a
+                    href="/boka"
+                    className={`mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 rounded-[10px] py-3 px-5 transition-colors ${
+                      pkg.featured
+                        ? "bg-primary text-[#191405] hover:opacity-90"
+                        : "border border-border text-heading hover:border-primary hover:text-primary"
+                    }`}
+                  >
+                    Boka genomgång <ArrowRight size={15} />
+                  </a>
                 </div>
-                <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
-                <div className="mt-5 flex flex-col gap-2.5 flex-1">
-                  {[
-                    "Komplett hemsida, byggd och driftad",
-                    "Hosting, säkerhet och support ingår",
-                    "Småändringar utan extra kostnad",
-                    "Fast pris, inga överraskningar",
-                  ].map((t) => (
-                    <div key={t} className="flex items-start gap-2.5 text-[14px] text-body">
-                      <Check size={17} className="text-primary shrink-0 mt-[2px]" strokeWidth={2.5} />
-                      {t}
-                    </div>
-                  ))}
-                </div>
-                <a href="/boka" className="mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 border border-border rounded-[10px] py-3 px-5 text-heading hover:border-primary hover:text-primary transition-colors">
-                  Boka genomgång <ArrowRight size={15} />
-                </a>
-              </div>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <div className="bg-surface rounded-[10px] border-2 border-primary p-7 h-full flex flex-col relative">
-                <span className="absolute -top-3 left-7 bg-primary text-[#191405] text-[11px] font-600 px-2.5 py-1 rounded-full">
-                  Mest vald för synlighet
-                </span>
-                <h3 className="font-heading font-700 text-[18px] text-heading">Spets</h3>
-                <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
-                  {PRICING.spets}
-                </div>
-                <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
-                <div className="mt-5 flex flex-col gap-2.5 flex-1">
-                  {[
-                    "Allt i Bas",
-                    "Löpande SEO mot sökorden i din bransch",
-                    "Google Ads: uppsättning och förvaltning",
-                    "AI-assistent som svarar kunder dygnet runt",
-                    "Nytt innehåll varje månad",
-                    "Månadsrapport med besök och leads",
-                  ].map((t) => (
-                    <div key={t} className="flex items-start gap-2.5 text-[14px] text-body">
-                      <Check size={17} className="text-primary shrink-0 mt-[2px]" strokeWidth={2.5} />
-                      {t}
-                    </div>
-                  ))}
-                </div>
-                <a href="/boka" className="mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 bg-primary text-[#191405] rounded-[10px] py-3 px-5 hover:opacity-90 transition-opacity">
-                  Boka genomgång <ArrowRight size={15} />
-                </a>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
           <p className="mt-6 text-center text-[13px] text-muted">
             E-handel {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} (0 kr vid drift hos oss) · Annonsbudget tillkommer vid Google Ads
@@ -333,40 +367,10 @@ export default function CityServicePage({ service, city }) {
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
-      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "transparent" }}
-        />
-        <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal>
-            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              {s.label} i {c.name}? Då snackar vi.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <p className="mt-4 text-[16px] leading-relaxed text-body">
-              Boka en kostnadsfri genomgång så går jag igenom ditt nuläge och visar vad som ger
-              störst effekt för ditt företag i {c.name}. Svar inom 24h på vardagar.
-            </p>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a href="/boka" className="premium-btn">
-                <span>Boka kostnadsfri genomgång</span>
-                <ArrowRight size={16} className="opacity-80" />
-              </a>
-              <a
-                href="/kontakt"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-600 text-heading border border-border bg-surface hover:border-primary/20 transition-colors"
-              >
-                Kontakta {SITE.founder.split(" ")[0]}
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <CloseBlock
+        title={`${s.label} i ${c.name}? Då snackar vi.`}
+        text={`15–20 min. Jag går igenom ditt nuläge och vad som ger störst effekt för ditt företag i ${c.name}.`}
+      />
     </>
   );
 }

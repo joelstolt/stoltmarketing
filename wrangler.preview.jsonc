@@ -16,7 +16,9 @@
     }
   ],
   "vars": {
-    "SELF_URL": "https://stoltmarketing-preview.joel-d77.workers.dev"
+    "SELF_URL": "https://stoltmarketing-preview.joel-d77.workers.dev",
+    // Google Appointment embed URL with ?gv=true. NEXT_PUBLIC_ is also inlined at OpenNext build from .env.local.
+    "NEXT_PUBLIC_CALENDAR_URL": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0sS7ovkr6ccHemfY6rVeQ1Fyh3v2_DyPHN8pnh4oOs0Ts689T5xop96nICalKI9qGb5bWZlX6d?gv=true"
   },
   "observability": {
     "enabled": true

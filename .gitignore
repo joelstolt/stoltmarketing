@@ -1,18 +1,10 @@
 node_modules/
 .next/
 .env.local
-.env.local
-<<<<<<< HEAD
-.vercel
+.vercel/
+.DS_Store
 
 # Cloudflare / OpenNext
 .open-next/
 .dev.vars
 .wrangler/
-=======
-.dev.vars
-.open-next/
-.wrangler/
-.vercel/
-.DS_Store
->>>>>>> seo-fixes

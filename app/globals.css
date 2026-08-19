@@ -635,6 +635,32 @@ a[class*="hover:underline"]:focus-visible {
 }
 
 
+/* Google Appointment iframe — we cannot restyle the widget (cross-origin).
+   A paper well keeps the white time panel from sitting as a blob on
+   rapsfält brown. Desktop width of the parent card is what switches
+   Google from overlay-times to calendar | times. */
+.boka-cal-well {
+  background: #F2ECDD;
+  border-radius: 14px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.boka-cal-iframe {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 0;
+  border-radius: 8px;
+  background: #F2ECDD;
+}
+
+@media (min-width: 1024px) {
+  .boka-cal-iframe {
+    height: 780px;
+  }
+}
+
 /* Mobil: knappar i samma sektion blir lika breda och håller sig inom kortet */
 @media (max-width: 520px) {
   .premium-btn,

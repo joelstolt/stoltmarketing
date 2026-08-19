@@ -1,17 +1,72 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Check, Clock, MessageCircle, Calendar, Zap } from "lucide-react";
+import { ArrowRight, Check, Clock, MessageCircle, Calendar, Zap, Phone } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
+import JoelCard from "@/components/JoelCard";
+import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 
-const CALENDAR_URL = process.env.NEXT_PUBLIC_CALENDAR_URL || "";
+function calendarEmbedUrl(raw) {
+  const url = (raw || "").trim();
+  if (!url) return "";
+  try {
+    const u = new URL(url);
+    if (!u.searchParams.has("gv")) u.searchParams.set("gv", "true");
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
+const CALENDAR_URL = calendarEmbedUrl(process.env.NEXT_PUBLIC_CALENDAR_URL || "");
 
 const benefits = [
-  "15 till 20 min samtal, snabbt och konkret",
-  "Du får en tydlig rekommendation, inte en vag byrålista",
-  "Helt kostnadsfritt, inga förpliktelser",
+  "Vad som fungerar på sajten nu",
+  "Var ni tappar förfrågningar",
+  "Hur ni står mot konkurrenter",
+  "En konkret plan framåt",
 ];
+
+function CalendarFrame({ live }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        marginBottom: 20,
+        padding: "14px 14px",
+        borderRadius: 12,
+        background: "rgba(242,194,48,0.08)",
+        border: "1px solid rgba(242,194,48,0.28)",
+      }}
+    >
+      <img
+        src="/joel-stolt.webp"
+        alt=""
+        width={48}
+        height={48}
+        style={{
+          width: 48,
+          height: 48,
+          borderRadius: "50%",
+          objectFit: "cover",
+          border: "2px solid #F2C230",
+          flexShrink: 0,
+        }}
+      />
+      <div>
+        <div className="text-[14px] font-600 text-heading">Joel Stolt · 15–20 min</div>
+        <p className="text-[13px] text-body mt-0.5" style={{ margin: "2px 0 0" }}>
+          {live
+            ? "Tiden bokas direkt i kalendern."
+            : "Föreslå en tid, jag skickar möteslänk."}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function BokaContent() {
   const [path, setPath] = useState("meddelande");
@@ -118,13 +173,21 @@ export default function BokaContent() {
     e.target.style.boxShadow = "none";
   };
 
+  const calendarLive = path === "tid" && Boolean(CALENDAR_URL);
+
   const steps =
     path === "tid"
-      ? [
-          { icon: Calendar, title: "1. Välj en tid", desc: "Direkt i kalendern, eller ett tidsönskemål." },
-          { icon: Zap, title: "2. Du får en möteslänk", desc: "Bekräftelse kommer direkt, utan mejltennis." },
-          { icon: Clock, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
-        ]
+      ? CALENDAR_URL
+        ? [
+            { icon: Calendar, title: "1. Välj en tid", desc: "Direkt i kalendern. Inget mejl fram och tillbaka." },
+            { icon: Zap, title: "2. Tiden bokas direkt", desc: "Du får en bekräftelse i kalendern." },
+            { icon: Clock, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
+          ]
+        : [
+            { icon: Calendar, title: "1. Föreslå en tid", desc: "Skriv när det passar. Jag bekräftar." },
+            { icon: Zap, title: "2. Jag skickar möteslänk", desc: "Inom 24 timmar på vardagar." },
+            { icon: Clock, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
+          ]
       : [
           { icon: MessageCircle, title: "1. Skicka ett meddelande", desc: "Namn, e-post och vad du behöver hjälp med." },
           { icon: Clock, title: "2. Jag hör av mig inom 24h", desc: "Vi bokar en tid som passar dig." },
@@ -145,7 +208,7 @@ export default function BokaContent() {
 
           <div className="max-w-[560px] mx-auto text-center">
             <Reveal delay={0.04}>
-              <Badge>Kostnadsfritt</Badge>
+              <Badge>Kostnadsfritt · 15–20 min</Badge>
             </Reveal>
 
             <Reveal delay={0.08}>
@@ -164,10 +227,21 @@ export default function BokaContent() {
       </section>
 
       <section className="py-12 sm:py-20 px-5 sm:px-8">
-        <div className="max-w-[900px] mx-auto">
-          <div className="grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start">
+        <div className={`mx-auto ${calendarLive ? "max-w-[1240px]" : "max-w-[900px]"}`}>
+          <div
+            className={
+              calendarLive
+                ? "flex flex-col gap-12"
+                : "grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start"
+            }
+          >
             <Reveal>
-              <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+              <div className={calendarLive ? "flex flex-col gap-4" : ""}>
+              <div
+                className={`bg-surface rounded-[10px] border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] ${
+                  calendarLive ? "p-5 sm:p-6" : "p-7 sm:p-9"
+                }`}
+              >
                 {submitted ? (
                   <div className="text-center py-12">
                     <div
@@ -232,6 +306,7 @@ export default function BokaContent() {
                         type="button"
                         role="tab"
                         aria-selected={path === "tid"}
+                        data-calendar-url={CALENDAR_URL || undefined}
                         onClick={() => setPath("tid")}
                         style={{
                           border: "none",
@@ -251,20 +326,17 @@ export default function BokaContent() {
 
                     {path === "tid" && CALENDAR_URL ? (
                       <div>
+                        <CalendarFrame live />
                         <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-3">
                           Välj en tid som passar
                         </h2>
-                        <p className="text-[14px] text-body mb-4">
-                          Tiden bokas direkt. Vill du hellre skriva vad det gäller först, byt till meddelande.
+                        <p className="text-[14px] text-body mb-0">
+                          Tiden bokas direkt i kalendern. Vill du hellre skriva vad det gäller först, byt till meddelande.
                         </p>
-                        <iframe
-                          title="Boka en tid"
-                          src={CALENDAR_URL}
-                          style={{ width: "100%", minHeight: 640, border: 0, borderRadius: 12, background: "#161309" }}
-                        />
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit}>
+                        {path === "tid" ? <CalendarFrame live={false} /> : null}
                         <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-6">
                           {path === "tid" ? "Föreslå en tid" : "Fyll i dina uppgifter"}
                         </h2>
@@ -336,8 +408,12 @@ export default function BokaContent() {
                                 onBlur={inputBlurHandler}
                                 style={inputStyle}
                               />
-                              <p style={{ margin: "8px 0 0", fontSize: 13, color: "#9A9484" }}>
-                                Jag bekräftar tiden och skickar en möteslänk. Vill du berätta mer först, byt till meddelande.
+                              <p style={{ margin: "10px 0 0", fontSize: 13, color: "#9A9484", lineHeight: 1.55 }}>
+                                Jag bekräftar tiden och skickar en möteslänk. Hellre ringa?{" "}
+                                <a href={SITE.phoneHref} style={{ color: "#F2C230", fontWeight: 600, textDecoration: "none" }}>
+                                  {SITE.phone}
+                                </a>
+                                {" "}— eller byt till meddelande.
                               </p>
                             </div>
                           ) : null}
@@ -378,17 +454,40 @@ export default function BokaContent() {
                             <span>{sending ? "Skickar..." : path === "tid" ? "Skicka tidsönskemål" : "Skicka meddelande"}</span>
                             <ArrowRight size={16} className="opacity-80" />
                           </button>
+
+                          {path === "tid" ? (
+                            <p style={{ margin: 0, fontSize: 13, color: "#9A9484", textAlign: "center" }}>
+                              <Phone size={12} style={{ display: "inline", verticalAlign: "-1px", marginRight: 4 }} />
+                              Eller ring {SITE.phone} · mejla {SITE.email}
+                            </p>
+                          ) : null}
                         </div>
                       </form>
                     )}
                   </>
                 )}
               </div>
+              {calendarLive && !submitted ? (
+                <div className="boka-cal-well">
+                  <iframe
+                    title="Boka en tid"
+                    src={CALENDAR_URL}
+                    className="boka-cal-iframe"
+                  />
+                </div>
+              ) : null}
+              </div>
             </Reveal>
 
-            <div>
+            <div className={calendarLive ? "grid sm:grid-cols-3 gap-8 items-start" : ""}>
+              <Reveal delay={0.06}>
+                <div className={calendarLive ? "" : "mb-8"}>
+                  <JoelCard compact />
+                </div>
+              </Reveal>
+
               <Reveal delay={0.08}>
-                <div className="mb-8">
+                <div className={calendarLive ? "" : "mb-8"}>
                   <h3 className="font-heading font-700 text-[16px] text-heading tracking-tight mb-5">
                     Så går det till
                   </h3>

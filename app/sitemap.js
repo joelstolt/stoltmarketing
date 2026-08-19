@@ -31,7 +31,6 @@ export default function sitemap() {
     { url: "/vad-kostar-google-ads", changeFrequency: "monthly", priority: 0.8 },
     { url: "/projekt/forskolan-harpan", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt/pingstkyrkan", changeFrequency: "monthly", priority: 0.7 },
-    { url: "/projekt/ebbessonbygg", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt/gardetshundtrim", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt/edshare", changeFrequency: "monthly", priority: 0.7 },

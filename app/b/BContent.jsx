@@ -76,7 +76,7 @@ export default function BContent() {
           .from(".b-eyebrow-bar", { scaleX: 0, transformOrigin: "left center", duration: 0.7 }, 0.1)
           .from(".b-eyebrow-text", { opacity: 0, x: -12, duration: 0.6 }, 0.25)
           .from(split.lines, { yPercent: 115, duration: 1.0, stagger: 0.1 }, 0.35)
-          .from(".b-sub, .b-ctas", { opacity: 0, y: 18, duration: 0.7, stagger: 0.12 }, 0.9)
+          .from(".b-sub, .b-ctas, .b-proof", { opacity: 0, y: 18, duration: 0.7, stagger: 0.12 }, 0.9)
           .from(".b-field", { opacity: 0, duration: 1.4, ease: "power1.inOut" }, 0.5)
           .from(".b-scrollcue", { opacity: 0, duration: 0.8 }, 1.4);
 
@@ -267,6 +267,9 @@ export default function BContent() {
             </a>
             <a href="#tjanster" className="b-cta-secondary">Se tjänster</a>
           </div>
+          <p className="b-proof" style={{ marginTop: 18, fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 500, letterSpacing: "0.04em", color: "rgba(242,236,221,0.62)", position: "relative", zIndex: 3 }}>
+            Niklassons Flytt · 32 offertförfrågningar på 30 dagar
+          </p>
         </div>
         <div className="b-scrollcue" style={{ position: "absolute", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
           <span style={{ fontFamily: "var(--font-ui)", fontSize: 9.5, letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(242,236,221,0.4)", fontWeight: 600 }}>Skrolla</span>

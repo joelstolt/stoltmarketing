@@ -9,8 +9,10 @@ import {
   BrainCircuit,
   MapPin,
 } from "lucide-react";
-import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
+import { Reveal, PageHero, SectionHeader } from "@/components/ui";
 import CityHubExtra from "@/components/CityHubExtra";
+import CityProof from "@/components/CityProof";
+import CloseBlock from "@/components/CloseBlock";
 
 const services = [
   {
@@ -208,37 +210,12 @@ export default function HassleholmContent() {
         </div>
       </section>
 
+      <CityProof city="hassleholm" />
       <CityHubExtra city="hassleholm" />
-
-      {/* ═══ CTA ═══ */}
-      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "transparent",
-          }}
-        />
-        <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal>
-            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              Redo att ta nästa steg?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <p className="mt-4 text-[16px] leading-relaxed text-body">
-              Boka en kostnadsfri genomgång så pratar vi igenom hur jag kan
-              hjälpa ditt företag i Hässleholm.
-            </p>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <a href="/boka" className="premium-btn mt-8 mx-auto">
-              <span>Boka kostnadsfri genomgång</span>
-              <ArrowRight size={16} className="opacity-80" />
-            </a>
-          </Reveal>
-        </div>
-      </section>
+      <CloseBlock
+        title="Redo att ta nästa steg?"
+        text="15–20 min. Vi pratar igenom hur jag kan hjälpa ditt företag i Hässleholm."
+      />
     </>
   );
 }

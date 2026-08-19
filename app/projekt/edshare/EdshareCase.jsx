@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { Reveal, Badge, SectionHeader } from "@/components/ui";
+import CloseBlock from "@/components/CloseBlock";
 import ForeEfter from "@/components/ForeEfter";
 
 const heroStats = [
@@ -262,28 +263,10 @@ export default function EdshareCase() {
         </div>
       </section>
 
-      {/* ── Finale-CTA (rapsgul) ── */}
-      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal>
-            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              Vill du ha samma resa för er sajt?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <p className="mt-4 text-[16px] leading-relaxed text-body">
-              Boka en kostnadsfri genomgång så tittar vi på var er sajt står idag,
-              och vad en ombyggnad skulle ge.
-            </p>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <a href="/boka" className="premium-btn mt-8 mx-auto">
-              <span>Boka kostnadsfri genomgång</span>
-              <ArrowRight size={16} className="opacity-80" />
-            </a>
-          </Reveal>
-        </div>
-      </section>
+      <CloseBlock
+        title="Vill du ha samma resa för er sajt?"
+        text="15–20 min. Vi tittar på var er sajt står idag, och vad en ombyggnad skulle ge."
+      />
     </>
   );
 }

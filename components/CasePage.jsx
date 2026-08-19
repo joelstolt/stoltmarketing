@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowRight, ExternalLink, Check } from "lucide-react";
+import { ExternalLink, Check } from "lucide-react";
 import { Reveal, PageHero } from "@/components/ui";
+import CloseBlock from "@/components/CloseBlock";
 
 // Delad mall for kundcase-sidor under /projekt/[slug].
 // Datadriven sa att nya case ar en dataentry + tva tunna filer.
@@ -94,26 +95,10 @@ export default function CasePage({ data }) {
         </div>
       </section>
 
-      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal>
-            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              Vill du ha ett liknande resultat?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <p className="mt-4 text-[16px] leading-relaxed text-body">
-              Boka en kostnadsfri genomgång så berättar jag hur jag skulle ta mig an just din sajt.
-            </p>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <a href="/boka" className="premium-btn mt-8 mx-auto">
-              <span>Boka kostnadsfri genomgång</span>
-              <ArrowRight size={16} className="opacity-80" />
-            </a>
-          </Reveal>
-        </div>
-      </section>
+      <CloseBlock
+        title="Vill du ha ett liknande resultat?"
+        text="15–20 min. Jag berättar hur jag skulle ta mig an just din sajt."
+      />
     </>
   );
 }
