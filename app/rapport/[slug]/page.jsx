@@ -17,7 +17,11 @@ export default async function RapportPage({ params }) {
   const share = getShare(slug);
   if (!share) notFound();
 
-  const src = `${UMAMI_BASE}/share/${share.umamiSlug}`;
+  // Umami öppnar på senaste dygnet om ingen period anges. För en kund som
+  // klickar in en gång i månaden ser det ut som att ingen besöker sajten.
+  const src = share.defaultRange
+    ? `${UMAMI_BASE}/share/${share.umamiSlug}?date=${share.defaultRange}`
+    : `${UMAMI_BASE}/share/${share.umamiSlug}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF5EC]">
@@ -51,13 +55,15 @@ export default async function RapportPage({ params }) {
         </div>
       </header>
 
-      {/* Fullscreen iframe */}
+      {/* Fullscreen iframe. Inte lazy: den ÄR sidan. Lazy vinner ingenting när
+          ramen fyller hela vyn, och lägger till ett läge där rapporten står tom
+          om intersection-observern aldrig triggar. */}
       <iframe
         src={src}
         title={`Trafikrapport ${share.name}`}
         className="flex-1 w-full border-0"
         style={{ minHeight: "calc(100vh - 56px)" }}
-        loading="lazy"
+        loading="eager"
         allow="fullscreen"
       />
     </div>
