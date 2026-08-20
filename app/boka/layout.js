@@ -22,10 +22,13 @@ export const metadata = {
 };
 
 export default function Layout({ children }) {
-  const calendarUrl = process.env.NEXT_PUBLIC_CALENDAR_URL || "";
   return (
     <>
-      {calendarUrl ? <link rel="prefetch" href={calendarUrl} /> : null}
+      {/* Bara DNS och TLS i förväg. En prefetch av själva bokningssidan hämtar
+          Googles dokument vid varje sidladdning och kan sätta kakor, och sajten
+          är medvetet kakfri tills besökaren själv väljer kalenderfliken. */}
+      <link rel="preconnect" href="https://calendar.google.com" />
+      <link rel="dns-prefetch" href="https://calendar.google.com" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {children}
     </>

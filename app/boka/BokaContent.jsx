@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Check, Clock, MessageCircle, Calendar, Zap, Phone } from "lucide-react";
+import { ArrowRight, Check, Clock, MessageCircle, Calendar, Zap, Phone, ExternalLink } from "lucide-react";
 import { Reveal, Badge } from "@/components/ui";
 import JoelCard from "@/components/JoelCard";
 import { SITE } from "@/lib/local/data";
@@ -68,8 +68,78 @@ function CalendarFrame({ live }) {
   );
 }
 
+/**
+ * Googles bokningsschema inramat som sajtens eget pappersark: mörk listrad
+ * med vem man möter, arket under, och en pappersfärgad hinna som tar bort
+ * skarven mot resten av sidan. Vi kan inte styla Googles innehåll, så allt
+ * runt om måste bära integrationen.
+ */
+function CalendarPanel({ url }) {
+  const [ready, setReady] = useState(false);
+  const [slow, setSlow] = useState(false);
+
+  useEffect(() => {
+    if (ready) return undefined;
+    const timer = setTimeout(() => setSlow(true), 7000);
+    return () => clearTimeout(timer);
+  }, [ready]);
+
+  return (
+    <div className="boka-cal">
+      <div className="boka-cal-bar">
+        <img src="/joel-stolt.webp" alt="" width={40} height={40} className="boka-cal-avatar" />
+        <div style={{ minWidth: 0 }}>
+          <div className="text-[14px] font-600 text-heading" style={{ lineHeight: 1.35 }}>
+            Joel Stolt
+          </div>
+          <div
+            className="text-[12.5px] text-muted"
+            style={{ fontFamily: "var(--font-ui)", lineHeight: 1.4 }}
+          >
+            15–20 min · video eller telefon<span className="boka-cal-tz"> · svensk tid</span>
+          </div>
+        </div>
+        <a className="boka-cal-open" href={url} target="_blank" rel="noopener noreferrer">
+          Öppna i eget fönster
+          <ExternalLink size={13} />
+        </a>
+      </div>
+
+      <div className="boka-cal-sheet" aria-busy={!ready}>
+        {!ready ? (
+          <div className="boka-cal-skeleton" aria-hidden="true">
+            <span style={{ height: 18, width: "44%" }} />
+            <span style={{ height: 12, width: "28%" }} />
+            <span style={{ height: 250, width: "100%", marginTop: 4 }} />
+            <span style={{ height: 12, width: "34%" }} />
+            <span style={{ height: 88, width: "100%" }} />
+          </div>
+        ) : null}
+        <iframe
+          title="Välj en tid i Joels kalender"
+          src={url}
+          className="boka-cal-iframe"
+          loading="lazy"
+          onLoad={() => setReady(true)}
+        />
+      </div>
+
+      {!ready && slow ? (
+        <p className="boka-cal-note">
+          Kalendern tar ovanligt lång tid att ladda.{" "}
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            Öppna bokningssidan i eget fönster
+          </a>{" "}
+          om den inte dyker upp, eller byt till Skicka ett meddelande.
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
 export default function BokaContent() {
   const [path, setPath] = useState("meddelande");
+  const [calendarUrl, setCalendarUrl] = useState(CALENDAR_URL);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -89,6 +159,10 @@ export default function BokaContent() {
   // vilket köpläge personen är i (prisförfrågan vs mötesbokning).
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    // Utskick kan länka rakt in i kalendern: /boka?flik=tid eller /boka#tid
+    if (params.get("flik") === "tid" || window.location.hash === "#tid") {
+      setPath("tid");
+    }
     if (params.get("amne") !== "pris") return;
     setPrisIntent(true);
     setPath("meddelande");
@@ -105,6 +179,38 @@ export default function BokaContent() {
     );
   }, []);
 
+  // Skyddsnät: den inbakade URL:en sätts vid bygget från .env.local. Saknas
+  // den (CI-bygge, ny klon, tömd env) hämtas wrangler-varen vid runtime i
+  // stället, så kalendern inte försvinner tyst till tidsönskemål.
+  useEffect(() => {
+    if (CALENDAR_URL) return undefined;
+    let alive = true;
+    fetch("/api/calendar-url")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (alive && data && data.url) setCalendarUrl(calendarEmbedUrl(data.url));
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  // Kalenderfliken är den enda vägen in som inte lämnar spår i /api/contact.
+  // Umami-eventet är mätpunkten för hur många som faktiskt öppnar den.
+  const selectPath = (next) => {
+    setPath(next);
+    if (next === "tid" && typeof window !== "undefined" && window.umami) {
+      window.umami.track("boka-kalender-oppnad");
+    }
+  };
+
+  const handleTabKey = (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    selectPath(path === "tid" ? "meddelande" : "tid");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.hp_field) {
@@ -112,7 +218,7 @@ export default function BokaContent() {
       return;
     }
     setSending(true);
-    const isSlot = path === "tid" && !CALENDAR_URL;
+    const isSlot = path === "tid" && !calendarUrl;
     const slotText = formData.slot
       ? `Önskad tid: ${formData.slot.replace("T", " ")}.`
       : "";
@@ -173,11 +279,11 @@ export default function BokaContent() {
     e.target.style.boxShadow = "none";
   };
 
-  const calendarLive = path === "tid" && Boolean(CALENDAR_URL);
+  const calendarLive = path === "tid" && Boolean(calendarUrl);
 
   const steps =
     path === "tid"
-      ? CALENDAR_URL
+      ? calendarUrl
         ? [
             { icon: Calendar, title: "1. Välj en tid", desc: "Direkt i kalendern. Inget mejl fram och tillbaka." },
             { icon: Zap, title: "2. Tiden bokas direkt", desc: "Du får en bekräftelse i kalendern." },
@@ -227,16 +333,9 @@ export default function BokaContent() {
       </section>
 
       <section className="py-12 sm:py-20 px-5 sm:px-8">
-        <div className={`mx-auto ${calendarLive ? "max-w-[1240px]" : "max-w-[900px]"}`}>
-          <div
-            className={
-              calendarLive
-                ? "flex flex-col gap-12"
-                : "grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start"
-            }
-          >
+        <div className="mx-auto max-w-[900px]">
+          <div className="grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start">
             <Reveal>
-              <div className={calendarLive ? "flex flex-col gap-4" : ""}>
               <div
                 className={`bg-surface rounded-[10px] border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] ${
                   calendarLive ? "p-5 sm:p-6" : "p-7 sm:p-9"
@@ -262,77 +361,57 @@ export default function BokaContent() {
                       Tack, det är framme.
                     </h3>
                     <p className="mt-2 text-[15px] text-body">
-                      {path === "tid" && !CALENDAR_URL
+                      {path === "tid" && !calendarUrl
                         ? "Jag bekräftar tiden inom 24 timmar, och skickar en möteslänk."
                         : "Jag hör av mig inom 24 timmar."}
                     </p>
                   </div>
                 ) : (
                   <>
-                    <div
-                      role="tablist"
-                      aria-label="Sätt att höra av sig"
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        gap: 8,
-                        marginBottom: 22,
-                        padding: 4,
-                        borderRadius: 12,
-                        background: "rgba(242,236,221,0.06)",
-                        border: "1px solid rgba(242,236,221,0.12)",
-                      }}
-                    >
+                    <div className="boka-tabs" role="tablist" aria-label="Sätt att höra av sig" onKeyDown={handleTabKey}>
                       <button
                         type="button"
                         role="tab"
+                        id="boka-tab-meddelande"
                         aria-selected={path === "meddelande"}
-                        onClick={() => setPath("meddelande")}
-                        style={{
-                          border: "none",
-                          cursor: "pointer",
-                          borderRadius: 10,
-                          padding: "10px 12px",
-                          fontFamily: "inherit",
-                          fontSize: 13,
-                          fontWeight: 600,
-                          background: path === "meddelande" ? "#F2C230" : "transparent",
-                          color: path === "meddelande" ? "#191405" : "#CFC9B8",
-                        }}
+                        aria-controls="boka-panel"
+                        tabIndex={path === "meddelande" ? 0 : -1}
+                        className="boka-tab"
+                        onClick={() => selectPath("meddelande")}
                       >
                         Skicka ett meddelande
                       </button>
                       <button
                         type="button"
                         role="tab"
+                        id="boka-tab-tid"
                         aria-selected={path === "tid"}
-                        data-calendar-url={CALENDAR_URL || undefined}
-                        onClick={() => setPath("tid")}
-                        style={{
-                          border: "none",
-                          cursor: "pointer",
-                          borderRadius: 10,
-                          padding: "10px 12px",
-                          fontFamily: "inherit",
-                          fontSize: 13,
-                          fontWeight: 600,
-                          background: path === "tid" ? "#F2C230" : "transparent",
-                          color: path === "tid" ? "#191405" : "#CFC9B8",
-                        }}
+                        aria-controls="boka-panel"
+                        tabIndex={path === "tid" ? 0 : -1}
+                        className="boka-tab"
+                        onClick={() => selectPath("tid")}
                       >
                         Välj en tid
                       </button>
                     </div>
 
-                    {path === "tid" && CALENDAR_URL ? (
+                    <div
+                      key={path}
+                      id="boka-panel"
+                      role="tabpanel"
+                      className="boka-panel"
+                      aria-labelledby={path === "tid" ? "boka-tab-tid" : "boka-tab-meddelande"}
+                    >
+                    {path === "tid" && calendarUrl ? (
                       <div>
-                        <CalendarFrame live />
-                        <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-3">
+                        <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-2">
                           Välj en tid som passar
                         </h2>
-                        <p className="text-[14px] text-body mb-0">
-                          Tiden bokas direkt i kalendern. Vill du hellre skriva vad det gäller först, byt till meddelande.
+                        <p className="text-[14px] text-body mb-5">
+                          Tiden bokas direkt i kalendern och bekräftelsen kommer med en gång. Vill du
+                          hellre skriva vad det gäller först, byt till Skicka ett meddelande.
                         </p>
+                        <CalendarPanel url={calendarUrl} />
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit}>
@@ -413,7 +492,7 @@ export default function BokaContent() {
                                 <a href={SITE.phoneHref} style={{ color: "#F2C230", fontWeight: 600, textDecoration: "none" }}>
                                   {SITE.phone}
                                 </a>
-                                {" "}— eller byt till meddelande.
+                                . Eller byt till meddelande.
                               </p>
                             </div>
                           ) : null}
@@ -464,30 +543,21 @@ export default function BokaContent() {
                         </div>
                       </form>
                     )}
+                    </div>
                   </>
                 )}
               </div>
-              {calendarLive && !submitted ? (
-                <div className="boka-cal-well">
-                  <iframe
-                    title="Boka en tid"
-                    src={CALENDAR_URL}
-                    className="boka-cal-iframe"
-                  />
-                </div>
-              ) : null}
-              </div>
             </Reveal>
 
-            <div className={calendarLive ? "grid sm:grid-cols-3 gap-8 items-start" : ""}>
+            <div>
               <Reveal delay={0.06}>
-                <div className={calendarLive ? "" : "mb-8"}>
+                <div className="mb-8">
                   <JoelCard compact />
                 </div>
               </Reveal>
 
               <Reveal delay={0.08}>
-                <div className={calendarLive ? "" : "mb-8"}>
+                <div className="mb-8">
                   <h3 className="font-heading font-700 text-[16px] text-heading tracking-tight mb-5">
                     Så går det till
                   </h3>
