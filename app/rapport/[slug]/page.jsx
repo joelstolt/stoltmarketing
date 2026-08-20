@@ -55,6 +55,48 @@ export default async function RapportPage({ params }) {
         </div>
       </header>
 
+      {/* Umami-vyn är på engelska och full av branschord. Utan den här raden
+          är siffrorna obegripliga för kunden, och en rapport ingen förstår är
+          en rapport ingen öppnar igen. Hopfälld som standard så den inte
+          tränger undan innehållet. */}
+      <details className="border-b border-[#E6DEC9] bg-white shrink-0">
+        <summary className="mx-auto max-w-7xl px-6 py-2.5 text-sm text-[#7A7263] cursor-pointer select-none hover:text-[#9A7409]">
+          Vad betyder siffrorna?
+        </summary>
+        <div className="mx-auto max-w-7xl px-6 pb-5 pt-1 text-[13.5px] leading-relaxed text-[#4A443B]">
+          <p className="mb-3 text-[#7A7263]">
+            Rutorna högst upp gäller den period som står i menyn uppe till höger.
+            Ändra period där om du vill titta på en annan tid.
+          </p>
+          <dl className="grid gap-x-10 gap-y-2 sm:grid-cols-2">
+            {[
+              ["Visitors", "Antal personer. Samma person som kommer tillbaka flera gånger räknas en gång."],
+              ["Visits", "Antal besök. Kommer samma person tillbaka en annan dag blir det ett nytt besök."],
+              ["Views", "Antal sidvisningar. Klickar någon runt på fem sidor blir det fem."],
+              ["Bounce rate", "Andel besök där personen såg en enda sida. Högt är inte alltid dåligt: den som hittar telefonnumret direkt och ringer räknas som en studs."],
+              ["Visit duration", "Hur länge ett besök varar i snitt."],
+              ["Pages", "Vilka sidor som besöks. Entry page är sidan de kom in på, exit page den de lämnade från."],
+              ["Referrers", "Var besökarna kom ifrån. Sökningar på Google syns som google."],
+              ["Devices", "Mobil, dator eller surfplatta."],
+            ].map(([term, forklaring]) => (
+              <div key={term} className="sm:flex sm:gap-3">
+                <dt className="font-semibold text-[#1A1611] sm:w-[104px] sm:shrink-0">{term}</dt>
+                <dd className="sm:flex-1">{forklaring}</dd>
+              </div>
+            ))}
+            {share.eventNamn ? (
+              <div className="sm:flex sm:gap-3">
+                <dt className="font-semibold text-[#1A1611] sm:w-[104px] sm:shrink-0">Events</dt>
+                <dd className="sm:flex-1">
+                  Saker vi mäter särskilt. <strong>{share.eventNamn}</strong> betyder att{" "}
+                  {share.eventBetyder}. Det är den siffra som är värd mest av alla här.
+                </dd>
+              </div>
+            ) : null}
+          </dl>
+        </div>
+      </details>
+
       {/* Fullscreen iframe. Inte lazy: den ÄR sidan. Lazy vinner ingenting när
           ramen fyller hela vyn, och lägger till ett läge där rapporten står tom
           om intersection-observern aldrig triggar. */}
@@ -62,7 +104,7 @@ export default async function RapportPage({ params }) {
         src={src}
         title={`Trafikrapport ${share.name}`}
         className="flex-1 w-full border-0"
-        style={{ minHeight: "calc(100vh - 56px)" }}
+        style={{ minHeight: "calc(100vh - 104px)" }}
         loading="eager"
         allow="fullscreen"
       />
