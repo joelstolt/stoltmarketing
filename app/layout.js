@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 // import ChatWidget from "@/components/ChatWidget"; // dold tills Anthropic-nyckeln fixats
+import { KlickIdFangare } from "@/lib/klickid";
 import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
 export const metadata = {
@@ -154,6 +155,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <KlickIdFangare />
         {children}
         {/* Chatten dold 2026-06-26 tills Anthropic-nyckeln är giltig igen (backend 502:ar). Avkommentera för att återaktivera. */}
         {/* <ChatWidget /> */}

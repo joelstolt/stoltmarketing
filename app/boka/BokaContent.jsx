@@ -6,6 +6,7 @@ import { Reveal, Badge } from "@/components/ui";
 import JoelCard from "@/components/JoelCard";
 import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
+import { klickId } from "@/lib/klickid";
 
 function calendarEmbedUrl(raw) {
   const url = (raw || "").trim();
@@ -233,6 +234,7 @@ export default function BokaContent() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          klickId: klickId(),
           name: formData.name,
           email: formData.email,
           company: formData.company,

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { klickId } from "@/lib/klickid";
 import { ArrowRight, Check, ShieldCheck, Search, Hammer, RefreshCw } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -83,6 +84,7 @@ export default function TillganglighetPage() {
       message: `${sajt ? `Sajt: ${sajt}\n\n` : ""}${fd.get("message")}`,
       hp_field: fd.get("hp_field"),
       _subject: "Tillgänglighetsförfrågan (EAA)",
+      klickId: klickId(),
     };
     setStatus("sending");
     setError("");

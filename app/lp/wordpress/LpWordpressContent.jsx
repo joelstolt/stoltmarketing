@@ -6,6 +6,7 @@ import { Check, Gauge, Video, Tag } from "lucide-react";
 import { Reveal } from "@/components/ui";
 import { SITE, PRICING } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
+import { klickId } from "@/lib/klickid";
 
 /* ============================================================
    Annonslandningssida för WordPress-gruppen.
@@ -80,6 +81,7 @@ export default function LpWordpressContent() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          klickId: klickId(),
           name: form.name,
           email: form.email,
           message: `Vill ha en mätning av ${form.url}`,

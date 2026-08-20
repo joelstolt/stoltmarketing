@@ -115,6 +115,36 @@ export async function POST(req) {
       return Response.json({ error: "Failed to send" }, { status: 502 });
     }
 
+    // Annonskonverteringen till Kontrollrummets kö, som sweeperns uppladdare
+    // tömmer mot Google Ads varje timme. Kontot mäter offline import, alltså
+    // registreras ingenting alls om det här steget saknas. Sajten är kakfri,
+    // så klick-id:t är enda kopplingen tillbaka till annonsen.
+    //
+    // Får aldrig fälla formuläret: mejlet har redan gått fram här, och ett
+    // lead är värt oändligt mycket mer än en mätpunkt.
+    if (data.klickId && process.env.KONVERTERING_TOKEN) {
+      try {
+        await fetch("https://api.dash.stoltmarketing.se/api/konvertering", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.KONVERTERING_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            map_id: "stolt-lead",
+            klick_id: data.klickId,
+            // Samma värdeskala som lib/track.js: ett lead är värt 1 000 kr i
+            // budgivningen, ett avtal 15 000. Här rapporteras leadet.
+            value_ore: 100000,
+            currency: "SEK",
+            occurred_at: new Date().toISOString(),
+          }),
+        });
+      } catch (e) {
+        console.error("Konverteringsköet svarade inte:", e);
+      }
+    }
+
     return Response.json({ ok: true, success: true });
   } catch (err) {
     console.error("Contact API error:", err);
