@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Check, Gauge, Video, Tag } from "lucide-react";
 import { Reveal } from "@/components/ui";
-import { SITE } from "@/lib/local/data";
+import { SITE, PRICING } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 
 /* ============================================================
@@ -35,7 +35,7 @@ const vadDuFar = [
   {
     icon: Tag,
     title: "Ett fast pris om du vill vidare",
-    desc: "4 900 kr för migreringen, eller 0 kr om du samtidigt tecknar drift. Inga timmar, inga överraskningar.",
+    desc: "Migreringen kostar 0 kr när du tecknar drift, sedan 1 190 kr i månaden. Inga timmar, inga överraskningar.",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function LpWordpressContent() {
 
       {/* ── Hero. Ingen intoning: LCP-elementet måste vara målat direkt. ── */}
       <section className="px-5 sm:px-8 pt-12 sm:pt-16 pb-14">
-        <div className="max-w-[1120px] mx-auto grid lg:grid-cols-[1fr,420px] gap-10 lg:gap-16 items-start">
+        <div className="max-w-[1120px] mx-auto grid lg:grid-cols-[minmax(0,1fr)_420px] gap-10 lg:gap-16 items-start">
           <div>
             <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-[#F2C230]">
               WordPress-hjälp i Skåne
@@ -206,7 +206,7 @@ export default function LpWordpressContent() {
               {[
                 ["86 %", "lättare sidvikt"],
                 ["3 × 100", "i Lighthouse"],
-                ["4 900 kr", "fast pris på migrering"],
+                ["0 kr", "för migreringen"],
               ].map(([v, l]) => (
                 <div key={l}>
                   <div className="font-heading font-700 text-[26px] text-heading leading-none">{v}</div>
@@ -253,19 +253,25 @@ export default function LpWordpressContent() {
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
             Priset står här, inte i en offert
           </h2>
-          <div className="mt-10 grid sm:grid-cols-2 gap-5 max-w-[760px]">
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               {
                 name: "Migrering",
-                price: "4 900 kr",
-                note: "0 kr om du samtidigt tecknar drift i 12 månader.",
+                price: "0 kr",
+                note: "Ingår när du tecknar drift i 12 månader.",
                 items: ["Hela sajten flyttad till edge", "Omdirigeringar och SEO bevarade", "Mätning före och efter"],
               },
               {
-                name: "Drift",
-                price: "1 190 kr/mån",
+                name: "Drift Bas",
+                price: PRICING.basManad,
                 note: "12 månaders bindning, därefter månadsvis.",
                 items: ["Hosting, uppdateringar och säkerhet", "Innehållsändringar när du behöver", "Svar inom 24 timmar"],
+              },
+              {
+                name: "Drift Bredd",
+                price: PRICING.bredd,
+                note: "Allt i Bas, för dig som behöver mer sajt.",
+                items: ["Upp till tolv sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08}>
@@ -285,6 +291,10 @@ export default function LpWordpressContent() {
               </Reveal>
             ))}
           </div>
+          <p className="mt-5 text-[14px] text-muted">
+            Spets {PRICING.spets} när du vill att jag driver SEO och Google Ads löpande.
+            E-handel på valfritt paket, {PRICING.ehandel}.
+          </p>
         </div>
       </section>
 

@@ -77,7 +77,7 @@ export default function OmContent() {
             </nav>
           </Reveal>
 
-          <div className="grid lg:grid-cols-[1fr,380px] gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_380px] gap-10 lg:gap-16 items-start">
             {/* Left: Text */}
             <div>
               <Reveal delay={0.04}>

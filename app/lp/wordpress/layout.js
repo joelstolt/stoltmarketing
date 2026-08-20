@@ -5,7 +5,7 @@
 export const metadata = {
   title: "WordPress som laddar direkt | Stolt Marketing",
   description:
-    "Långsam WordPress? Skicka adressen så mäter jag sajten och skickar en video på två minuter. Kostnadsfritt, svar inom 24 timmar. Migrering 4 900 kr, drift 1 190 kr/mån.",
+    "Långsam WordPress? Skicka adressen så mäter jag sajten och skickar en video på två minuter. Kostnadsfritt, svar inom 24 timmar. Migrering 0 kr när du tecknar drift, sedan 1 190 kr/mån.",
   robots: {
     index: false,
     follow: false,

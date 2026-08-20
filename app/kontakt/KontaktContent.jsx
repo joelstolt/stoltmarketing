@@ -145,7 +145,7 @@ export default function KontaktContent() {
 
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-[1fr,380px] gap-12 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_380px] gap-12 lg:gap-20 items-start">
             {/* Left: Form */}
             <Reveal>
               <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">

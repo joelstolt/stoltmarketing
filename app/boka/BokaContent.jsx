@@ -333,8 +333,8 @@ export default function BokaContent() {
       </section>
 
       <section className="py-12 sm:py-20 px-5 sm:px-8">
-        <div className="mx-auto max-w-[900px]">
-          <div className="grid lg:grid-cols-[1fr,300px] gap-12 lg:gap-16 items-start">
+        <div className="mx-auto boka-shell" style={{ maxWidth: calendarLive ? 1180 : 900 }}>
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_300px] gap-12 lg:gap-16 items-start">
             <Reveal>
               <div
                 className={`bg-surface rounded-[10px] border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] ${

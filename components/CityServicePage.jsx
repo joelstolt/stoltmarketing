@@ -267,7 +267,7 @@ export default function CityServicePage({ service, city }) {
             ))}
           </div>
           <p className="mt-6 text-center text-[13px] text-muted">
-            E-handel {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} (0 kr vid drift hos oss) · Annonsbudget tillkommer vid Google Ads
+            E-handel {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} · Annonsbudget tillkommer vid Google Ads
           </p>
         </div>
       </section>

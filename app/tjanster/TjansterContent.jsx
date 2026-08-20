@@ -401,7 +401,7 @@ export default function TjansterContent() {
             {services.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06 + 0.1}>
                 <div className="bg-surface rounded-[10px] border border-border p-7 sm:p-9 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
-                  <div className="grid lg:grid-cols-[1fr,320px] gap-8 lg:gap-14">
+                  <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-8 lg:gap-14">
                     {/* Left */}
                     <div>
                       <div className="flex items-center gap-3 mb-4">
@@ -538,8 +538,8 @@ export default function TjansterContent() {
           <Reveal delay={0.3}>
             <p className="mt-8 text-center text-[13.5px] text-muted leading-relaxed max-w-[640px] mx-auto">
               12 månaders inledande avtal, därefter månadsvis. Säljer du på nätet? E-handel med betalningar
-              läggs till på valfritt paket för 800 kr/mån. Långsam WordPress? Flytt till modern drift för
-              4 900 kr, 0 kr om du samtidigt tecknar 12 månader.
+              läggs till på valfritt paket för 800 kr/mån. Långsam WordPress? Flytten till modern drift
+              kostar 0 kr när du tecknar 12 månader.
             </p>
           </Reveal>
         </div>

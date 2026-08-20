@@ -66,7 +66,7 @@ export default function AiSection() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr,420px] gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_420px] gap-12 lg:gap-20 items-start">
           {/* Left: Text */}
           <div>
             <Reveal>

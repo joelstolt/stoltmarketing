@@ -689,6 +689,11 @@ a[class*="hover:underline"]:focus-visible {
   to { opacity: 1; transform: none; }
 }
 
+/* Bredden växer när kalendern fälls fram, i stället för att hoppa */
+.boka-shell {
+  transition: max-width 0.35s ease;
+}
+
 /* === /boka: Googles bokningsschema inramat som ett pappersark === */
 .boka-cal {
   border-radius: 14px;

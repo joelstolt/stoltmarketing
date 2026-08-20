@@ -220,8 +220,8 @@ export default function WebbutvecklingContent() {
           <Reveal delay={0.3}>
             <p className="mt-8 text-center text-[13.5px] text-muted leading-relaxed max-w-[640px] mx-auto">
               12 månaders inledande avtal, därefter månadsvis. Säljer du på nätet? E-handel med betalningar
-              läggs till på valfritt paket för 800 kr/mån. Långsam WordPress? Flytt till modern drift för
-              4 900 kr, 0 kr om du samtidigt tecknar 12 månader.
+              läggs till på valfritt paket för 800 kr/mån. Långsam WordPress? Flytten till modern drift
+              kostar 0 kr när du tecknar 12 månader.
             </p>
           </Reveal>
         </div>

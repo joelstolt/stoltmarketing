@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "Kan du göra om min befintliga hemsida i stället?",
-    a: "Ja. Har du en trött WordPress-sajt flyttar och moderniserar jag den för 4 900 kr, eller 0 kr om du samtidigt tecknar drift. Ofta återanvänder vi det innehåll som fungerar och bygger om resten.",
+    a: "Ja. Har du en trött WordPress-sajt flyttar och moderniserar jag den utan kostnad när du samtidigt tecknar drift. Ofta återanvänder vi det innehåll som fungerar och bygger om resten.",
   },
 ];
 
