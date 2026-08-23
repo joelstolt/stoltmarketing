@@ -57,6 +57,28 @@ export default function Article() {
               Det är precis rätt fråga att ställa. Efter tio år och 150+ webbprojekt har jag sett samma mönster om och om igen: Google Ads är lätt att starta och förvånansvärt svårt att göra lönsamt. Den här guiden hjälper dig avgöra vad som passar dig bäst just nu, att sköta annonseringen själv, anlita en byrå, eller börja själv och lämna över när det växer. Ingen väg är fel för alla, men fel väg för dig kostar pengar varje månad.
             </p>
 
+            {/* Genväg till tjänstesidan, högt upp och med ankartexten
+                "Google Ads-byrå".
+
+                Varför: den här artikeln rankar på position 15,5 för just
+                "google ads byrå" med 1 102 visningar på 90 dagar, medan
+                tjänstesidan inte syns på ordet alls. Den som söker så vill
+                anlita någon, inte läsa en jämförelse. Tidigare låg enda vägen
+                vidare i en relaterat-lista längst ner, efter 250 rader text. */}
+            <div className="rounded-2xl border border-border bg-surface px-6 py-5 mb-10">
+              <p className="text-[15px] text-body leading-relaxed">
+                Vet du redan att du vill lämna över?{" "}
+                <a
+                  href="/tjanster/google-ads"
+                  className="font-600 text-heading underline underline-offset-2 hover:text-[#F2C230] transition-colors"
+                >
+                  Så jobbar jag som Google Ads-byrå
+                </a>
+                {" "}– fast månadspris, inget procentpåslag på annonsbudgeten och
+                rapportering mot förfrågningar i stället för klick.
+              </p>
+            </div>
+
             {/* Section 1 */}
             <h2 className="text-[22px] sm:text-[26px] font-600 text-heading font-heading tracking-tight mt-12 mb-5">
               Lätt att börja, svårt att göra lönsamt

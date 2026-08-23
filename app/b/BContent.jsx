@@ -20,21 +20,24 @@ const GUL = "#F2C230";
 const DIM = "rgba(242,236,221,0.66)";
 const LINE = "rgba(242,236,221,0.14)";
 
-const services = [
-  { i: "01", title: "Webbutveckling", desc: "Moderna sajter som konverterar", href: "/tjanster/webbutveckling" },
-  { i: "02", title: "E-handel", desc: "Butiker byggda för att sälja", href: "/tjanster/e-handel" },
-  { i: "03", title: "WordPress", desc: "Snabba, säkra WP-sidor", href: "/tjanster/wordpress" },
-  { i: "04", title: "AI & Automation", desc: "Mejl & offerter som sköter sig själva", href: "/tjanster/ai-automation" },
-  { i: "05", title: "SEO", desc: "Synlighet som ger fler kunder", href: "/tjanster/seo" },
-  { i: "06", title: "Google Ads", desc: "Annonsering som ger resultat", href: "/tjanster/google-ads" },
-  { i: "07", title: "Managed hemsida", desc: "Drift, underhåll, förbättringar", href: "/tjanster/managed-hemsida" },
+/* Erbjudandet är EN sak (hemsidan). Resten säljs som det det är:
+   sådant som ingår eller läggs till, inte sju likvärdiga byråtjänster. */
+const tillval = [
+  { titel: "SEO", rad: "synlighet på Google", href: "/tjanster/seo" },
+  { titel: "Google Ads", rad: "annonsering", href: "/tjanster/google-ads" },
+  { titel: "AI & automation", rad: "offerter och mejl", href: "/tjanster/ai-automation" },
+  { titel: "E-handel", rad: "butik och betalning", href: "/tjanster/e-handel" },
+  { titel: "WordPress", rad: "när det passar bättre", href: "/tjanster/wordpress" },
+  { titel: "Managed drift", rad: "tar över befintliga sajter", href: "/tjanster/managed-hemsida" },
 ];
 
+/* Taggen är kundens utfall eller bransch · ort, aldrig rått sidantal:
+   antal byggda sidor är inventarie, inte ett resultat köparen bryr sig om. */
 const cases = [
-  { client: "Niklassons Flytt", tag: "32 offertförfrågningar / 30 dgr", img: "/case-niklassonsflytt.webp", desc: "38 sidor över Skåne, och varje förfrågan mäts. Kunden sköter innehållet själv.", href: "/projekt/niklassonsflytt" },
-  { client: "Arkipel Entreprenad", tag: "Bygg · Norrköping · 61 sidor", img: "/case-arkipel.webp", desc: "En sida per tjänst och ort, mot en branschmedian på 17. Så en byggfirma faktiskt hittas.", href: "/projekt/arkipel" },
-  { client: "Premie Bygg", tag: "Bygg · Örebro · 47 sidor", img: "/case-premiebygg.webp", desc: "Formulärkedjan verifierad på riktigt, så offertförfrågningarna kommer fram.", href: "/projekt/premiebygg" },
-  { client: "Norrlands Gräv & Transport", tag: "Entreprenad · Sundsvall · 69 sidor", img: "/case-ngtab.webp", desc: "Ett tyst canonical-fel tog bort sajten ur Google. Fixat, plus en sida per tjänst och ort.", href: "/projekt/ngtab" },
+  { client: "Niklassons Flytt", tag: "32 offertförfrågningar / 30 dgr", img: "/case-niklassonsflytt.webp", desc: "En sida för varje tjänst och ort i Skåne, och varje förfrågan mäts. Kunden sköter innehållet själv.", href: "/projekt/niklassonsflytt" },
+  { client: "Arkipel Entreprenad", tag: "Bygg · Norrköping", img: "/case-arkipel.webp", desc: "Tre gånger fler sidor än branschsnittet, en per tjänst och ort. Så en byggfirma faktiskt hittas.", href: "/projekt/arkipel" },
+  { client: "Premie Bygg", tag: "Bygg · Örebro", img: "/case-premiebygg.webp", desc: "Formulärkedjan verifierad på riktigt, så offertförfrågningarna kommer fram.", href: "/projekt/premiebygg" },
+  { client: "Norrlands Gräv & Transport", tag: "Entreprenad · Sundsvall", img: "/case-ngtab.webp", desc: "Ett tyst canonical-fel tog bort sajten ur Google. Fixat, plus en sida per tjänst och ort.", href: "/projekt/ngtab" },
 ];
 
 const clients = ["Niklassons Flytt", "Arkipel", "Premie Bygg", "NGTAB", "AcadeMedia", "RBN Utbildning", "Förskolan Harpan"];
@@ -43,6 +46,14 @@ const stats = [
   { target: 150, suffix: "+", label: "Levererade projekt" },
   { target: 10, suffix: "+", label: "Års erfarenhet" },
   { target: 24, suffix: "h", label: "Svarslöfte vardagar" },
+];
+
+const produkter = [
+  { namn: "Kvota", url: "https://kvota.se" },
+  { namn: "Granska", url: "https://granska.io" },
+  { namn: "Konforma", url: "https://konforma.se" },
+  { namn: "Tryggadokument", url: "https://tryggadokument.se" },
+  { namn: "Efterbo", url: "https://efterbo.se" },
 ];
 
 function Wordmark({ color = "inherit", barColor = GUL }) {
@@ -207,6 +218,8 @@ export default function BContent() {
         .b-servicerow .b-srv-arrow { color: rgba(242,236,221,0.35); transform: translateX(-8px); opacity: 0; transition: all .3s cubic-bezier(.16,1,.3,1); }
         .b-servicerow:hover .b-srv-title, .b-servicerow:hover .b-srv-i, .b-servicerow:hover .b-srv-desc { color: ${INK}; }
         .b-servicerow:hover .b-srv-arrow { color: ${INK}; transform: translateX(0); opacity: 1; }
+        .b-tillval-pill { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid ${LINE}; border-radius: 3em; padding: 11px 18px; text-decoration: none; transition: border-color .25s, background .25s; }
+        .b-tillval-pill:hover { border-color: ${GUL}; background: rgba(242,194,48,0.08); }
         .b-marquee-inner { display: flex; gap: 56px; width: max-content; animation: b-scroll 36s linear infinite; }
         @keyframes b-scroll { to { transform: translateX(-50%); } }
         @media (prefers-reduced-motion: reduce) { .b-marquee-inner { animation: none; } }
@@ -236,10 +249,15 @@ export default function BContent() {
           transform: translateY(-1px);
         }
         .b-case-scroll { display: flex; gap: 28px; }
+        .b-case-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+        .b-case-head .b-case-tag { white-space: nowrap; }
         @media (max-width: 899px) {
           .b-case-scroll { overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: 24px; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
           .b-case-panel { scroll-snap-align: start; }
           .b-servicerow { grid-template-columns: 44px 1fr auto; padding: 20px 4px; }
+          /* Mobil: tagg på egen rad under rubriken, aldrig bredvid (bryter raden annars) */
+          .b-case-head { flex-direction: column; align-items: flex-start; gap: 7px; }
+          .b-case-head .b-case-tag { white-space: normal; line-height: 1.6; }
         }
       `}</style>
 
@@ -255,11 +273,13 @@ export default function BContent() {
               Webbyrå i Skåne, något att vara stolt över
             </span>
           </div>
-          <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "13ch", margin: 0 }}>
-            Webbplatser, SEO och AI som ger ditt företag <span style={{ fontWeight: 640 }}>fler kunder</span><em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>.</em>
+          {/* H1 bär löftet, inte kategoriorden. Kategoriorden (webbplatser, SEO, AI)
+              bor i title-taggen och i b-sub, så sökorden finns kvar på sidan. */}
+          <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "16ch", margin: 0 }}>
+            Din nya hemsida, <span style={{ fontWeight: 640 }}>färdig innan du betalar</span> ett öre<em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>.</em>
           </h1>
           <p className="b-sub" style={{ marginTop: 28, fontSize: "clamp(16px, 1.5vw, 19px)", lineHeight: 1.75, color: DIM, maxWidth: 540 }}>
-            Din nya sajt görs färdig innan du betalar ett öre: titta, klicka runt, bestäm sedan. Enterprise-kvalitet till småföretag, byggd av personen du pratar med.
+            Webbplatser, SEO och AI för företag som lever på förfrågningar. Du ser sajten klar, klickar runt och bestämmer sedan. Byggd av personen du pratar med.
           </p>
           <div className="b-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 34, position: "relative", zIndex: 3 }}>
             <a href="/boka" className="premium-btn" data-umami-event="cta-hero-primar">
@@ -277,7 +297,8 @@ export default function BContent() {
         </div>
       </section>
 
-      {/* ═══ Mörka partiet ═══ */}
+      {/* ═══ Mörka partiet. Ordningen är medveten: bevis (case, citat, person)
+          FÖRE katalogen (tjänster). Besökaren ska ha sett resultat innan de möter en meny. ═══ */}
       <div className="b-dark" style={{ background: BG }}>
         {/* 2. Manifest */}
         <section style={{ maxWidth: 1120, margin: "0 auto", padding: "16vh 24px 10vh" }}>
@@ -286,45 +307,63 @@ export default function BContent() {
           </p>
         </section>
 
-        {/* 3. Tjänster */}
-        <section id="tjanster" className="b-services" style={{ maxWidth: 1120, margin: "0 auto", padding: "8vh 24px" }}>
-          <div className="sec-rule" style={{ marginBottom: 36 }}>
+        {/* 3. Case, horisontellt */}
+        <section ref={caseSecRef} style={{ overflow: "hidden", padding: "10vh 0" }}>
+          <div className="sec-rule" style={{ maxWidth: 1120, margin: "0 auto 40px", padding: "0 24px", paddingBottom: "1.1em" }}>
             <span className="sec-no" aria-hidden="true">01</span>
             <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>
-              Synas, sälja och spara tid, allt under ett tak
+              Uppdrag som talar för sig själva
             </h2>
-            <span className="sec-eng" aria-hidden="true">tjänster</span>
+            <span className="sec-eng" aria-hidden="true">projekt</span>
           </div>
-          <div style={{ borderBottom: `1px solid ${LINE}` }}>
-            {services.map((s) => (
-              <a key={s.i} href={s.href} className="b-servicerow">
-                <span className="b-srv-i" style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.22em" }}>{s.i}</span>
-                <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(26px, 4.4vw, 54px)", letterSpacing: "-0.015em", lineHeight: 1.1 }}>
-                  {s.title}
-                  <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 13.5, marginTop: 6, letterSpacing: "0.02em" }}>{s.desc}</span>
-                </span>
-                <ArrowUpRight className="b-srv-arrow" size={30} strokeWidth={1.8} />
+          <div ref={trackRef} className="b-case-scroll" style={{ paddingLeft: "max(24px, calc((100vw - 1120px) / 2))", paddingRight: 24 }}>
+            {cases.map((c) => {
+              const inner = (
+                <>
+                  <div style={{ border: `1px solid ${LINE}`, background: BG2, overflow: "hidden" }}>
+                    <img src={c.img} alt={c.client} loading="lazy" style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover", objectPosition: "top", display: "block", filter: "saturate(0.92)" }} />
+                  </div>
+                  <div className="b-case-head" style={{ marginTop: 18 }}>
+                    <h3 className="font-heading" style={{ fontWeight: 560, fontVariationSettings: '"opsz" 110', fontSize: 26, color: PAPER, margin: 0 }}>{c.client}</h3>
+                    <span className="b-case-tag" style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: GUL }}>{c.tag}</span>
+                  </div>
+                  <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.65, color: DIM, maxWidth: 420 }}>{c.desc}</p>
+                </>
+              );
+              return (
+                <article key={c.client} className="b-case-panel" style={{ flexShrink: 0, width: "min(78vw, 560px)" }}>
+                  {c.href ? (
+                    <a href={c.href} aria-label={`Se hela caset: ${c.client}`} style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+                      {inner}
+                    </a>
+                  ) : (
+                    inner
+                  )}
+                </article>
+              );
+            })}
+            <div style={{ flexShrink: 0, width: "min(60vw, 380px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <a href="/projekt" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 460, fontSize: 26, color: GUL, textDecoration: "none" }}>
+                Se alla projekt <ArrowUpRight size={26} />
               </a>
-            ))}
+            </div>
           </div>
         </section>
 
-        {/* 4. Siffror */}
-        <section style={{ maxWidth: 1120, margin: "0 auto", padding: "10vh 24px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 32 }}>
-            {stats.map((s) => (
-              <div key={s.label} style={{ borderTop: `2px solid ${GUL}`, paddingTop: 18 }}>
-                <div className="b-stat-num font-heading" data-target={s.target} style={{ fontWeight: 340, fontVariationSettings: '"opsz" 144', fontSize: "clamp(54px, 7vw, 92px)", lineHeight: 1, color: PAPER }}>
-                  <span>0</span>
-                  <span style={{ color: GUL, fontStyle: "italic" }}>{s.suffix}</span>
-                </div>
-                <div style={{ marginTop: 10, fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
+        {/* 4. Citat */}
+        <section className="b-quote" style={{ maxWidth: 1120, margin: "0 auto", padding: "10vh 24px 12vh" }}>
+          <span aria-hidden="true" className="font-heading" style={{ display: "block", fontSize: 110, lineHeight: 0.6, color: GUL, fontWeight: 500, marginBottom: 26 }}>”</span>
+          <blockquote style={{ margin: 0 }}>
+            <p className="b-quote-text font-heading" style={{ fontWeight: 380, fontVariationSettings: '"opsz" 90', fontStyle: "italic", fontSize: "clamp(22px, 3.2vw, 40px)", lineHeight: 1.4, color: PAPER, maxWidth: "30ch", margin: 0 }}>
+              Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt.
+            </p>
+            <footer style={{ marginTop: 26, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>
+              Robin, RBN Utbildning
+            </footer>
+          </blockquote>
         </section>
 
-        {/* 4b. Personen bakom: en person är poängen, inte ursäkten */}
+        {/* 5. Personen bakom: en person är poängen, inte ursäkten */}
         <section style={{ maxWidth: 1120, margin: "0 auto", padding: "4vh 24px 10vh" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "28px 40px", borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}`, padding: "34px 0" }}>
             <img
@@ -355,63 +394,62 @@ export default function BContent() {
           </div>
         </section>
 
-        {/* 5. Case, horisontellt */}
-        <section ref={caseSecRef} style={{ overflow: "hidden", padding: "10vh 0" }}>
-          <div className="sec-rule" style={{ maxWidth: 1120, margin: "0 auto 40px", padding: "0 24px", paddingBottom: "1.1em" }}>
+        {/* 6. Erbjudandet: en huvudrad med pris, resten som tillval */}
+        <section id="tjanster" className="b-services" style={{ maxWidth: 1120, margin: "0 auto", padding: "8vh 24px" }}>
+          <div className="sec-rule" style={{ marginBottom: 36 }}>
             <span className="sec-no" aria-hidden="true">02</span>
             <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>
-              Uppdrag som talar för sig själva
+              Hemsidor som ger förfrågningar
             </h2>
-            <span className="sec-eng" aria-hidden="true">projekt</span>
+            <span className="sec-eng" aria-hidden="true">tjänster</span>
           </div>
-          <div ref={trackRef} className="b-case-scroll" style={{ paddingLeft: "max(24px, calc((100vw - 1120px) / 2))", paddingRight: 24 }}>
-            {cases.map((c) => {
-              const inner = (
-                <>
-                  <div style={{ border: `1px solid ${LINE}`, background: BG2, overflow: "hidden" }}>
-                    <img src={c.img} alt={c.client} loading="lazy" style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover", objectPosition: "top", display: "block", filter: "saturate(0.92)" }} />
-                  </div>
-                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginTop: 18 }}>
-                    <h3 className="font-heading" style={{ fontWeight: 560, fontVariationSettings: '"opsz" 110', fontSize: 26, color: PAPER, margin: 0 }}>{c.client}</h3>
-                    <span style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: GUL, whiteSpace: "nowrap" }}>{c.tag}</span>
-                  </div>
-                  <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.65, color: DIM, maxWidth: 420 }}>{c.desc}</p>
-                </>
-              );
-              return (
-                <article key={c.client} className="b-case-panel" style={{ flexShrink: 0, width: "min(78vw, 560px)" }}>
-                  {c.href ? (
-                    <a href={c.href} aria-label={`Se hela caset: ${c.client}`} style={{ display: "block", textDecoration: "none", color: "inherit" }}>
-                      {inner}
-                    </a>
-                  ) : (
-                    inner
-                  )}
-                </article>
-              );
-            })}
-            <div style={{ flexShrink: 0, width: "min(60vw, 380px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <a href="/projekt" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 460, fontSize: 26, color: GUL, textDecoration: "none" }}>
-                Se alla projekt <ArrowUpRight size={26} />
+          <a
+            href="/tjanster/webbutveckling"
+            className="b-servicerow"
+            data-umami-event="cta-tjanst-hemsida"
+            style={{ gridTemplateColumns: "1fr auto", borderBottom: `1px solid ${LINE}`, padding: "34px 8px" }}
+          >
+            <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(30px, 5.4vw, 66px)", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
+              Ny hemsida, byggd för att hittas
+              <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14, marginTop: 10, letterSpacing: "0.02em" }}>
+                0 kr i startavgift · från 1 190 kr/mån · drift och ändringar ingår
+              </span>
+            </span>
+            <ArrowUpRight className="b-srv-arrow" size={34} strokeWidth={1.8} />
+          </a>
+          <p style={{ marginTop: 36, marginBottom: 14, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>
+            Ingår eller läggs till efter behov
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {tillval.map((t) => (
+              <a key={t.href} href={t.href} className="b-tillval-pill">
+                <span style={{ fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.05em", color: PAPER }}>{t.titel}</span>
+                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11.5, color: "rgba(242,236,221,0.5)" }}>{t.rad}</span>
               </a>
-            </div>
+            ))}
+            <a href="/tjanster" className="b-tillval-pill" style={{ borderColor: "rgba(242,194,48,0.45)" }}>
+              <span style={{ fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.05em", color: GUL }}>Alla tjänster &rarr;</span>
+            </a>
           </div>
         </section>
 
-        {/* 6. Citat */}
-        <section className="b-quote" style={{ maxWidth: 1120, margin: "0 auto", padding: "10vh 24px 12vh" }}>
-          <span aria-hidden="true" className="font-heading" style={{ display: "block", fontSize: 110, lineHeight: 0.6, color: GUL, fontWeight: 500, marginBottom: 26 }}>”</span>
-          <blockquote style={{ margin: 0 }}>
-            <p className="b-quote-text font-heading" style={{ fontWeight: 380, fontVariationSettings: '"opsz" 90', fontStyle: "italic", fontSize: "clamp(22px, 3.2vw, 40px)", lineHeight: 1.4, color: PAPER, maxWidth: "30ch", margin: 0 }}>
-              Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt.
-            </p>
-            <footer style={{ marginTop: 26, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>
-              Robin, RBN Utbildning
-            </footer>
-          </blockquote>
+        {/* 7. Siffror */}
+        <section style={{ maxWidth: 1120, margin: "0 auto", padding: "10vh 24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 32 }}>
+            {stats.map((s) => (
+              <div key={s.label} style={{ borderTop: `2px solid ${GUL}`, paddingTop: 18 }}>
+                <div className="b-stat-num font-heading" data-target={s.target} style={{ fontWeight: 340, fontVariationSettings: '"opsz" 144', fontSize: "clamp(54px, 7vw, 92px)", lineHeight: 1, color: PAPER }}>
+                  {/* Riktiga talet i SSR-HTML: AI-sök och crawlers läser aldrig GSAP-räknaren */}
+                  <span>{s.target}</span>
+                  <span style={{ color: GUL, fontStyle: "italic" }}>{s.suffix}</span>
+                </div>
+                <div style={{ marginTop: 10, fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* 7. Marquee */}
+        {/* 8. Marquee */}
         <div style={{ borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}`, background: BG2, padding: "30px 0 32px", overflow: "hidden" }} aria-hidden="true">
           <p style={{ textAlign: "center", fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(242,236,221,0.4)", margin: "0 0 22px" }}>
             Betrodd av företag i hela Sverige
@@ -426,46 +464,11 @@ export default function BContent() {
           </div>
         </div>
 
-        {/* 7b. Egna produkter — bevis på hantverket, inte en butik */}
-        <section style={{ maxWidth: 1120, margin: "0 auto", padding: "9vh 24px 3vh" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
-            <span aria-hidden="true" style={{ width: 30, height: 2, background: GUL, display: "inline-block" }} />
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: GUL }}>
-              Egna produkter
-            </span>
-          </div>
-          <p className="font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 90', fontSize: "clamp(20px, 2.8vw, 32px)", lineHeight: 1.4, color: PAPER, maxWidth: "28ch", margin: 0 }}>
-            Jag bygger inte bara åt kunder. Fem egna produkter driver jag själv,{" "}
-            <em style={{ fontStyle: "italic", color: GUL }}>på samma stack som din sajt får</em>.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 26 }}>
-            {[
-              { namn: "Kvota", rad: "AI-offerter", url: "https://kvota.se" },
-              { namn: "Granska", rad: "EAA-scanner", url: "https://granska.io" },
-              { namn: "Konforma", rad: "CE-dokument", url: "https://konforma.se" },
-              { namn: "Tryggadokument", rad: "framtidsfullmakt", url: "https://tryggadokument.se" },
-              { namn: "Efterbo", rad: "bouppteckning", url: "https://efterbo.se" },
-            ].map((p) => (
-              <a
-                key={p.namn}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-umami-event={`produkt-${p.namn.toLowerCase()}`}
-                style={{ display: "inline-flex", alignItems: "baseline", gap: 8, border: `1px solid ${LINE}`, borderRadius: "3em", padding: "10px 18px", textDecoration: "none" }}
-              >
-                <span style={{ fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.05em", color: PAPER }}>{p.namn}</span>
-                <span style={{ fontFamily: "var(--font-ui)", fontSize: 11.5, color: "rgba(242,236,221,0.5)" }}>{p.rad}</span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* 8. FAQ, schema + lead-trygghet */}
+        {/* 9. FAQ, schema + lead-trygghet */}
         <BFaq />
       </div>
 
-      {/* ═══ 9. Final, gula fältet ═══ */}
+      {/* ═══ 10. Final, gula fältet ═══ */}
       <section className="b-final" style={{ background: GUL, padding: "16vh 24px" }}>
         <div className="b-final-inner" style={{ maxWidth: 1120, margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-heading" style={{ fontWeight: 460, fontVariationSettings: '"opsz" 144', fontSize: "clamp(40px, 6.5vw, 92px)", lineHeight: 1.04, letterSpacing: "-0.025em", color: INK, margin: 0 }}>
@@ -484,14 +487,17 @@ export default function BContent() {
               Boka kostnadsfri genomgång <ArrowRight size={15} />
             </a>
           </div>
-          <p style={{ marginTop: 22, fontSize: 14.5, color: "rgba(25,20,5,0.7)" }}>
+          <p style={{ marginTop: 20, fontFamily: "var(--font-ui)", fontSize: 11.5, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(25,20,5,0.62)" }}>
+            0 kr i startavgift · från 1 190 kr/mån · färdig innan du betalar
+          </p>
+          <p style={{ marginTop: 18, fontSize: 14.5, color: "rgba(25,20,5,0.7)" }}>
             eller ring <a href={SITE.phoneHref} data-umami-event="cta-telefon" style={{ color: INK, fontWeight: 600 }}>{SITE.phone}</a>
             {" "}· mejla <a href="mailto:joel@stoltmarketing.se" style={{ color: INK, fontWeight: 600 }}>joel@stoltmarketing.se</a>
           </p>
         </div>
       </section>
 
-      {/* Minifooter */}
+      {/* Minifooter. Egna produkter bor här numera: en rad länkar, inte en startsidesektion. */}
       <footer style={{ background: "#0B0A06", borderTop: `1px solid ${LINE}`, padding: "26px 24px" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
           <Wordmark color={PAPER} barColor={GUL} />
@@ -501,6 +507,23 @@ export default function BContent() {
             ))}
           </nav>
           <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, letterSpacing: "0.14em", color: "rgba(242,236,221,0.4)" }}>© {new Date().getFullYear()} Stolt Marketing</span>
+        </div>
+        <div style={{ maxWidth: 1120, margin: "14px auto 0", display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "6px 16px", borderTop: `1px solid rgba(242,236,221,0.07)`, paddingTop: 14 }}>
+          <span style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(242,236,221,0.35)" }}>
+            Egna produkter
+          </span>
+          {produkter.map((p) => (
+            <a
+              key={p.namn}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event={`produkt-${p.namn.toLowerCase()}`}
+              style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 500, color: "rgba(242,236,221,0.5)", textDecoration: "none" }}
+            >
+              {p.namn}
+            </a>
+          ))}
         </div>
       </footer>
     </div>

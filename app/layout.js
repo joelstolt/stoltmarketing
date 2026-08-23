@@ -31,14 +31,14 @@ export const metadata = {
     locale: "sv_SE",
     url: "https://www.stoltmarketing.se",
     siteName: "Stolt Marketing",
-    title: "Webbplatser, SEO och AI som ger ditt företag fler kunder — Stolt Marketing",
+    title: "Din nya hemsida, färdig innan du betalar ett öre | Stolt Marketing",
     description:
       "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar, utan byrå-overhead. 10+ års erfarenhet, fast pris.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing, webbyrå i Skåne" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webbplatser, SEO och AI som ger ditt företag fler kunder — Stolt Marketing",
+    title: "Din nya hemsida, färdig innan du betalar ett öre | Stolt Marketing",
     description:
       "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar, utan byrå-overhead. 10+ års erfarenhet, fast pris.",
     images: ["/og-image.png"],

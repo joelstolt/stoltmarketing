@@ -15,8 +15,6 @@ export default function FieldCanvas({ className = "" }) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // Geting bara på enheter som kan hovra (dvs ej touch/mobil)
-    const noHoverDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
     let straws = [];
     let raf = 0;
@@ -25,8 +23,6 @@ export default function FieldCanvas({ className = "" }) {
     let H = 0;
     let dpr = 1;
     const mouse = { x: -9999, y: -9999, vx: 0 };
-    // Getingen: vaknar när pekaren är över fältet, surrar nära den med brus i banan
-    const wasp = { x: 0, y: 0, vx: 0, vy: 0, active: 0, t: Math.random() * 100 };
 
     // Nattfältet: ljusare strån och blommor som glöder mot mörk himmel
     const YELLOWS = ["#F2C230", "#F7CE45", "#FFD95C", "#E8B511", "#EFC22E"];
@@ -59,8 +55,6 @@ export default function FieldCanvas({ className = "" }) {
         });
       }
       straws.sort((a, b) => a.depth - b.depth);
-      wasp.x = W * 0.7;
-      wasp.y = H * 0.5;
     }
 
     function draw(t) {
@@ -112,74 +106,6 @@ export default function FieldCanvas({ className = "" }) {
         }
       }
       ctx.globalAlpha = 1;
-
-      drawWasp(time);
-    }
-
-    function drawWasp(time) {
-      // Ingen geting på touch/mobil (touch-enhet eller smal vy)
-      if (noHoverDevice || window.innerWidth < 768) return;
-      const hovering = mouse.x > -9000 && mouse.y > 0 && mouse.y < H + 80;
-      // Mjuk in-/uttoning av aktivitet
-      wasp.active += ((hovering ? 1 : 0) - wasp.active) * 0.04;
-      if (wasp.active < 0.02) return;
-
-      wasp.t += 0.016;
-      // Mål: en surrande omloppsbana kring pekaren
-      const orbitR = 46 + Math.sin(wasp.t * 1.7) * 18;
-      const tx = mouse.x + Math.cos(wasp.t * 2.3) * orbitR + Math.sin(wasp.t * 5.1) * 8;
-      const ty = mouse.y - 26 + Math.sin(wasp.t * 2.9) * orbitR * 0.55 + Math.cos(wasp.t * 6.3) * 6;
-
-      // Fjädrande jakt på målet
-      wasp.vx += (tx - wasp.x) * 0.012;
-      wasp.vy += (ty - wasp.y) * 0.012;
-      wasp.vx *= 0.86;
-      wasp.vy *= 0.86;
-      wasp.x += wasp.vx;
-      wasp.y += wasp.vy;
-
-      const dir = Math.atan2(wasp.vy, wasp.vx);
-      const a = wasp.active;
-
-      ctx.save();
-      ctx.translate(wasp.x, wasp.y);
-      ctx.rotate(dir * 0.25);
-      ctx.globalAlpha = a;
-
-      // Vingar (fladdrar snabbt)
-      const flap = Math.sin(wasp.t * 38) * 0.9;
-      ctx.fillStyle = "rgba(242,236,221,0.75)";
-      ctx.beginPath();
-      ctx.ellipse(-1.5, -5.5, 5.5, 2.6, -0.5 + flap * 0.5, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.ellipse(2.5, -5.5, 5.5, 2.6, 0.5 - flap * 0.5, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Kropp: gul med svarta ränder
-      ctx.fillStyle = "#F2C230";
-      ctx.beginPath();
-      ctx.ellipse(0, 0, 7.5, 4.6, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = "#191405";
-      for (const bx of [-2.6, 0.6, 3.6]) {
-        ctx.beginPath();
-        ctx.ellipse(bx, 0, 1.2, 4.4, 0, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      // Huvud
-      ctx.beginPath();
-      ctx.arc(-8.4, -0.6, 2.6, 0, Math.PI * 2);
-      ctx.fill();
-      // Gadd
-      ctx.beginPath();
-      ctx.moveTo(7.2, -1);
-      ctx.lineTo(10.5, 0);
-      ctx.lineTo(7.2, 1);
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.restore();
     }
 
     function loop(t) {
@@ -256,7 +182,11 @@ export default function FieldCanvas({ className = "" }) {
         right: 0,
         bottom: 0,
         width: "100%",
-        height: "58vh",
+        /* 42vh + topputtoning: de högsta stråna slutar under textblocket
+           (b-sub/CTA/proof bottnar ~38vh upp) i stället för bakom det */
+        height: "42vh",
+        WebkitMaskImage: "linear-gradient(to bottom, transparent 0, black 24%)",
+        maskImage: "linear-gradient(to bottom, transparent 0, black 24%)",
         zIndex: 1,
         pointerEvents: "none",
         display: "block",

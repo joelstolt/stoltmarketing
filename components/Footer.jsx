@@ -28,7 +28,7 @@ const company = [
   { label: "Guide: sökmotoroptimering", href: "/sokmotoroptimering" },
   { label: "Vad kostar en hemsida?", href: "/vad-kostar-en-hemsida" },
   { label: "Vad kostar SEO?", href: "/vad-kostar-seo" },
-  { label: "Vad kostar Google Ads?", href: "/vad-kostar-google-ads" },
+  { label: "Vad kostar Google Ads?", href: "/blogg/vad-kostar-google-ads" },
   { label: "Kontakt", href: "/kontakt" },
   { label: "Boka genomgång", href: "/boka" },
   { label: "Integritetspolicy", href: "/integritet" },
