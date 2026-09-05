@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { rateLimited, clientIp } from "@/lib/rate-limit";
 
 /**
  * Gratis sajtkoll på stoltmarketing.se/sajtkoll.
@@ -30,18 +31,8 @@ const ALLOWED_ORIGINS = [
   "http://localhost:3000",
 ];
 
-/** Skydd mot att någon använder oss som gratis skanner. Nollställs vid kallstart. */
-const RATE_LIMIT = { windowMs: 60_000, max: 5 };
-const hits = new Map();
-
-function rateLimited(key) {
-  const now = Date.now();
-  const bucket = (hits.get(key) || []).filter((t) => now - t < RATE_LIMIT.windowMs);
-  bucket.push(now);
-  hits.set(key, bucket);
-  if (hits.size > 5000) hits.clear();
-  return bucket.length > RATE_LIMIT.max;
-}
+// Skydd mot att någon använder oss som gratis skanner: 5/min/IP via
+// SAJTKOLL_LIMIT-bindingen (se lib/rate-limit.js).
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -183,8 +174,7 @@ export async function POST(req) {
     return NextResponse.json({ error: "Ogiltig begäran." }, { status: 403 });
   }
 
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "okänd";
-  if (rateLimited(ip)) {
+  if (await rateLimited("SAJTKOLL_LIMIT", clientIp(req))) {
     return NextResponse.json(
       { error: "Vänta en stund innan du testar en sajt till." },
       { status: 429 }

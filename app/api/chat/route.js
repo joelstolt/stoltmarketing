@@ -1,5 +1,6 @@
 import { chatConfig } from "@/lib/chat-config";
 import { SNAPSHOT } from "@/lib/kundmotor";
+import { rateLimited, clientIp } from "@/lib/rate-limit";
 
 // ============================================================
 // POST /api/chat
@@ -21,16 +22,8 @@ const ALLOWED_ORIGINS = [
   "http://localhost:3000",
 ];
 
-const RATE_LIMIT = { windowMs: 60_000, max: 12 };
-const hits = new Map();
-function rateLimited(key) {
-  const now = Date.now();
-  const bucket = (hits.get(key) || []).filter((t) => now - t < RATE_LIMIT.windowMs);
-  bucket.push(now);
-  hits.set(key, bucket);
-  if (hits.size > 5000) hits.clear();
-  return bucket.length > RATE_LIMIT.max;
-}
+// Rate limit: 12/min/IP via CHAT_LIMIT-bindingen (se lib/rate-limit.js för
+// varför en Map i modulen inte räckte).
 
 async function liveTal() {
   try {
@@ -53,8 +46,7 @@ export async function POST(req) {
       (!origin && ALLOWED_ORIGINS.some((o) => referer === o || referer.startsWith(`${o}/`)));
     if (!originOk) return Response.json({ error: "Ogiltig begäran." }, { status: 403 });
 
-    const ip = req.headers.get("cf-connecting-ip") || req.headers.get("x-forwarded-for") || "okänd";
-    if (rateLimited(ip)) {
+    if (await rateLimited("CHAT_LIMIT", clientIp(req))) {
       return Response.json({ error: "För många frågor på kort tid. Vänta en minut." }, { status: 429 });
     }
 

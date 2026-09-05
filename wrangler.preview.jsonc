@@ -8,6 +8,15 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  // Rate limits per IP och datacenter (security-check 2026-09-06). Läses via
+  // lib/rate-limit.js. En Map i modulen delas inte mellan edge-servrar.
+  "ratelimits": [
+    { "name": "CONTACT_LIMIT", "namespace_id": "2001", "simple": { "limit": 5, "period": 60 } },
+    { "name": "CHAT_LIMIT", "namespace_id": "2002", "simple": { "limit": 12, "period": 60 } },
+    { "name": "SAJTKOLL_LIMIT", "namespace_id": "2003", "simple": { "limit": 5, "period": 60 } },
+    { "name": "RAPPORT_LIMIT", "namespace_id": "2004", "simple": { "limit": 3, "period": 60 } },
+    { "name": "INSYN_LIMIT", "namespace_id": "2005", "simple": { "limit": 10, "period": 60 } }
+  ],
   "d1_databases": [
     {
       "binding": "DB",
@@ -16,6 +25,7 @@
     }
   ],
   "vars": {
+    "PREVIEW_NOINDEX": "1",
     "SELF_URL": "https://stoltmarketing-preview.joel-d77.workers.dev",
     // Google Appointment embed URL with ?gv=true. NEXT_PUBLIC_ is also inlined at OpenNext build from .env.local.
     "NEXT_PUBLIC_CALENDAR_URL": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0sS7ovkr6ccHemfY6rVeQ1Fyh3v2_DyPHN8pnh4oOs0Ts689T5xop96nICalKI9qGb5bWZlX6d?gv=true"

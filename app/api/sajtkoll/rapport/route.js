@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { rateLimited, clientIp } from "@/lib/rate-limit";
 import { buildSajtvaktPdf } from "./sajtvakt-pdf";
 
 /**
@@ -31,16 +32,7 @@ const ALLOWED_ORIGINS = [
   "http://localhost:3000",
 ];
 
-const RATE_LIMIT = { windowMs: 60_000, max: 3 };
-const hits = new Map();
-function rateLimited(key) {
-  const now = Date.now();
-  const bucket = (hits.get(key) || []).filter((t) => now - t < RATE_LIMIT.windowMs);
-  bucket.push(now);
-  hits.set(key, bucket);
-  if (hits.size > 5000) hits.clear();
-  return bucket.length > RATE_LIMIT.max;
-}
+// 3/min/IP via RAPPORT_LIMIT-bindingen (se lib/rate-limit.js).
 
 const esc = (s) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -233,8 +225,7 @@ export async function POST(req) {
     if (origin && !ALLOWED_ORIGINS.includes(origin)) {
       return NextResponse.json({ error: "Ogiltig begäran." }, { status: 403 });
     }
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "okänd";
-    if (rateLimited(ip)) {
+    if (await rateLimited("RAPPORT_LIMIT", clientIp(req))) {
       return NextResponse.json({ error: "Vänta en stund innan du beställer en rapport till." }, { status: 429 });
     }
   }

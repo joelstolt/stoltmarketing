@@ -1,5 +1,12 @@
+# Statiska filer serveras av Workers asset-lager innan workern körs, så
+# worker-with-headers.mjs kan inte röra dem. Headers för dem sätts här.
+# Regler ADDERAS (Cloudflare slår ihop matchande block), därför detachas
+# Cache-Control med "!" innan chunkarna får sin egen. Utan det fick hashade
+# chunkar "no-cache, public, max-age=31536000, immutable" (uppmätt 2026-09-06).
 /*
   Cache-Control: no-cache
+  X-Content-Type-Options: nosniff
 
 /_next/static/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable

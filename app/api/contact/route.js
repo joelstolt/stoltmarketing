@@ -1,10 +1,12 @@
 // ============================================================
 // POST /api/contact
 // Sends contact / booking / chat form leads via Resend
-// Spam-härdad: origin-allowlist, honeypot (hp_field) och enkel
-// heuristik. Avvisade anrop får SAMMA svar som ett lyckat utskick
+// Spam-härdad: origin-allowlist, rate limit per IP, honeypot (hp_field),
+// fältkap och enkel heuristik. Avvisade anrop får SAMMA svar som ett lyckat utskick
 // (tyst avvisning) så att bottar inte kan lära sig vad som filtreras.
 // ============================================================
+
+import { rateLimited, clientIp } from "@/lib/rate-limit";
 
 const TO = "joel@stoltmarketing.se";
 const FROM = "Stolt Marketing <kontakt@stoltmarketing.se>";
@@ -35,6 +37,16 @@ export async function POST(req) {
         ALLOWED_ORIGINS.some((o) => referer === o || referer.startsWith(`${o}/`)));
     if (!originOk) return okSvar();
 
+    // Rate limit (5/min/IP, CONTACT_LIMIT i wrangler.jsonc): Origin går att
+    // förfalska utanför webbläsaren, så utan tak kan ett skript skicka
+    // obegränsat via vår Resend-nyckel. 429 så klienten ser vad som hände.
+    if (await rateLimited("CONTACT_LIMIT", clientIp(req))) {
+      return Response.json(
+        { error: "För många försök på kort tid. Vänta en minut och testa igen." },
+        { status: 429 }
+      );
+    }
+
     const data = await req.json();
     const { name, email, message } = data;
 
@@ -53,6 +65,18 @@ export async function POST(req) {
 
     if (!name || !email || !message) {
       return Response.json({ error: "Missing fields" }, { status: 400 });
+    }
+
+    // Fältkap: skyddar Resend-anropet och mejlets storlek. Klienterna skickar
+    // aldrig i närheten av det här, så bara skript slår i taket.
+    const MAX = { name: 200, email: 254, company: 200, service: 200, message: 5000, _subject: 200, chatHistory: 20000 };
+    for (const [falt, tak] of Object.entries(MAX)) {
+      if (data[falt] != null && String(data[falt]).length > tak) {
+        return Response.json({ error: "Too long" }, { status: 400 });
+      }
+    }
+    if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+$/.test(email)) {
+      return Response.json({ error: "Invalid email" }, { status: 400 });
     }
 
     const apiKey = process.env.RESEND_API_KEY;

@@ -1,6 +1,7 @@
 import { getClient } from "@/lib/insyn/clients";
 import { getReport, getRange } from "@/lib/umami";
 import { buildReportPdf } from "./report-pdf";
+import { rateLimited, clientIp } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -13,6 +14,11 @@ export async function GET(request, { params }) {
   const client = getClient(slug);
   if (!client) {
     return new Response("Not found", { status: 404 });
+  }
+
+  // PDF-bygget kostar CPU-tid på workern och ett Umami-anrop per träff.
+  if (await rateLimited("INSYN_LIMIT", clientIp(request))) {
+    return new Response("För många anrop. Vänta en minut.", { status: 429 });
   }
 
   const range = getRange(rangeKey);
@@ -31,6 +37,8 @@ export async function GET(request, { params }) {
       },
     });
   } catch (e) {
-    return new Response(`Error: ${e.message}`, { status: 500 });
+    // Felet loggas server-side; klienten får aldrig interna meddelanden.
+    console.error("insyn report:", slug, e?.message);
+    return new Response("Rapporten kunde inte skapas just nu. Testa igen om en stund.", { status: 500 });
   }
 }

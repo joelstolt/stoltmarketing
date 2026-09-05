@@ -9,14 +9,31 @@ export { DOQueueHandler, DOShardedTagCache, BucketCachePurge } from "./.open-nex
 
 const STATISK = /\.(css|js|mjs|png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf|mp4|webm|pdf)$/i;
 
+// Säkerhetsheaders (security-check 2026-09-06). Sätts på allt workern svarar
+// på (SSR-HTML, RSC, API). Statiska filer serveras av asset-lagret före
+// workern och får motsvarande via public/_headers. Ingen CSP här: Next injicerar inline-scripts, så en CSP måste
+// testas som Report-Only först. HSTS utan includeSubDomains tills alla
+// subdomäner (api.dash, umami) är kontrollerade.
+const SAKERHET = {
+  "x-frame-options": "SAMEORIGIN",
+  "x-content-type-options": "nosniff",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "strict-transport-security": "max-age=31536000",
+  "permissions-policy": "camera=(), microphone=(), geolocation=()",
+};
+
 export default {
   async fetch(request, env, ctx) {
     const res = await handler.fetch(request, env, ctx);
     const { pathname } = new URL(request.url);
-    if (pathname.startsWith("/_next/static/") || STATISK.test(pathname)) {
-      return res;
-    }
     const ut = new Response(res.body, res);
+    for (const [namn, varde] of Object.entries(SAKERHET)) {
+      if (!ut.headers.has(namn)) ut.headers.set(namn, varde);
+    }
+    // Statiska filer serveras normalt av asset-lagret innan workern körs och
+    // får sina headers från public/_headers. Hamnar en sådan sökväg ändå här
+    // (t.ex. en 404) ska den inte få HTML-cacheregeln.
+    if (pathname.startsWith("/_next/static/") || STATISK.test(pathname)) return ut;
     ut.headers.set("cache-control", "public, max-age=0, must-revalidate");
     // Preview-workrar (PREVIEW_NOINDEX=1 i wrangler-configen) får aldrig indexeras.
     if (env?.PREVIEW_NOINDEX === "1") ut.headers.set("x-robots-tag", "noindex, nofollow");
@@ -35,6 +52,13 @@ export default {
 
 async function korSajtvakten(env) {
   if (!env?.DB) return;
+
+  // 0. Städa rate limit-räknarna (lib/rate-limit.js): allt äldre än ett dygn.
+  try {
+    await env.DB.prepare("DELETE FROM rate_limits WHERE window_start < ?1")
+      .bind(Math.floor(Date.now() / 60_000) - 1440)
+      .run();
+  } catch {}
   const self = env.SELF_URL || "https://stolt-nydesign.joel-d77.workers.dev";
 
   // 1. Månadsrapporter som är due (max 20 per dygn, resten tas nästa körning)
