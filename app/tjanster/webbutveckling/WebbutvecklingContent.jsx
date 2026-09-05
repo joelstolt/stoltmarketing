@@ -168,7 +168,7 @@ export default function WebbutvecklingContent() {
                 badge: "Här landar de flesta",
                 features: [
                   "Allt i Bas, och:",
-                  "Upp till tolv sidor, en per tjänst",
+                  "Obegränsat antal sidor, en per tjänst",
                   "Formgiven från vitt papper, ingen mall",
                   "Strukturerad märkning som Google och AI-sök läser",
                   "Sökord för din ort och kommunerna runt om",
@@ -186,8 +186,7 @@ export default function WebbutvecklingContent() {
                   "Allt i Bredd, och:",
                   "AI-assistent som svarar kunder dygnet runt",
                   "Google Ads: uppsättning och löpande skötsel",
-                  "Obegränsat antal sidor",
-                  "Egen landningssida för varje ort du jobbar i",
+                              "Egen landningssida för varje ort du jobbar i",
                   "Nya sökmotortexter varje månad",
                   "Löpande tester på det som ger förfrågningar",
                   "Strategisamtal en gång i månaden",

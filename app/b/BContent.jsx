@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Star } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -251,6 +251,11 @@ export default function BContent() {
         .b-case-scroll { display: flex; gap: 28px; }
         .b-case-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
         .b-case-head .b-case-tag { white-space: nowrap; }
+        /* Mobil: hero-knapparna staplade med full bredd, aldrig en stor och en liten */
+        @media (max-width: 640px) {
+          .b-ctas { flex-direction: column; align-items: stretch; }
+          .b-ctas .premium-btn, .b-ctas .b-cta-secondary { width: 100%; justify-content: center; }
+        }
         @media (max-width: 899px) {
           .b-case-scroll { overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: 24px; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
           .b-case-panel { scroll-snap-align: start; }
@@ -350,15 +355,31 @@ export default function BContent() {
           </div>
         </section>
 
-        {/* 4. Citat */}
+        {/* 4. Citat: riktig Google-recension, ordagrann och länkad så den går att
+            verifiera. Antalet recensioner skyltas medvetet inte (local pack-medianen
+            är 11, ett lågt antal ser svagare ut än betyget). */}
         <section className="b-quote" style={{ maxWidth: 1120, margin: "0 auto", padding: "10vh 24px 12vh" }}>
           <span aria-hidden="true" className="font-heading" style={{ display: "block", fontSize: 110, lineHeight: 0.6, color: GUL, fontWeight: 500, marginBottom: 26 }}>”</span>
           <blockquote style={{ margin: 0 }}>
             <p className="b-quote-text font-heading" style={{ fontWeight: 380, fontVariationSettings: '"opsz" 90', fontStyle: "italic", fontSize: "clamp(22px, 3.2vw, 40px)", lineHeight: 1.4, color: PAPER, maxWidth: "30ch", margin: 0 }}>
-              Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt.
+              Vi har arbetat med ett flertal webbyråer genom åren och ingenting kan mäta sig med Stolt Marketing. En liten byrå med den mest otroliga servicementaliteten. Otroligt snabb, lösningsorienterad och ingenting känns någonsin krångligt eller omöjligt.
             </p>
-            <footer style={{ marginTop: 26, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>
-              Robin, RBN Utbildning
+            <div aria-label="5 av 5 i betyg" style={{ display: "flex", gap: 4, marginTop: 24 }}>
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={15} fill={GUL} color={GUL} strokeWidth={1} />
+              ))}
+            </div>
+            <footer style={{ marginTop: 14, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)" }}>
+              Claudia, Omniway ·{" "}
+              <a
+                href="https://www.google.com/maps?cid=8357467268890589983"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-umami-event="recension-google"
+                style={{ color: GUL, textDecoration: "none" }}
+              >
+                Recension på Google &rarr;
+              </a>
             </footer>
           </blockquote>
         </section>
@@ -502,7 +523,7 @@ export default function BContent() {
         <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
           <Wordmark color={PAPER} barColor={GUL} />
           <nav style={{ display: "flex", flexWrap: "wrap", gap: 22 }}>
-            {[["Tjänster", "/tjanster"], ["Projekt", "/projekt"], ["Blogg", "/blogg"], ["Kontakt", "/kontakt"], ["Integritet", "/integritet"]].map(([label, href]) => (
+            {[["Tjänster", "/tjanster"], ["Priser", "/priser"], ["Projekt", "/projekt"], ["Blogg", "/blogg"], ["Kontakt", "/kontakt"], ["Integritet", "/integritet"]].map(([label, href]) => (
               <Link key={href} href={href} style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(242,236,221,0.6)", textDecoration: "none" }}>{label}</Link>
             ))}
           </nav>

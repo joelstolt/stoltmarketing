@@ -55,7 +55,7 @@ const paket = [
     start: "0 kr i startavgift",
     rader: [
       "Allt i Bas",
-      "Upp till tolv sidor, en per tjänst",
+      "Obegränsat antal sidor, en per tjänst",
       "Design från vitt papper, ingen mall",
       "Sökord för din ort och kommunerna runt om",
       "SEO-rapport varje månad",

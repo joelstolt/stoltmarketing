@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
-import { getShare, UMAMI_BASE } from "@/lib/insyn/clients";
+import { getShare, getEvents, UMAMI_BASE } from "@/lib/insyn/clients";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -16,6 +16,8 @@ export default async function RapportPage({ params }) {
   const { slug } = await params;
   const share = getShare(slug);
   if (!share) notFound();
+
+  const events = getEvents(share);
 
   // Umami öppnar på senaste dygnet om ingen period anges. För en kund som
   // klickar in en gång i månaden ser det ut som att ingen besöker sajten.
@@ -84,16 +86,31 @@ export default async function RapportPage({ params }) {
                 <dd className="sm:flex-1">{forklaring}</dd>
               </div>
             ))}
-            {share.eventNamn ? (
-              <div className="sm:flex sm:gap-3">
-                <dt className="font-semibold text-[#1A1611] sm:w-[104px] sm:shrink-0">Events</dt>
-                <dd className="sm:flex-1">
-                  Saker vi mäter särskilt. <strong>{share.eventNamn}</strong> betyder att{" "}
-                  {share.eventBetyder}. Det är den siffra som är värd mest av alla här.
-                </dd>
-              </div>
-            ) : null}
           </dl>
+
+          {/* Under Events står bara kodorden. En kund som ser "lead-ring" utan
+              förklaring vet inte att det är någon som ringt. En rad per event. */}
+          {events.length > 0 ? (
+            <>
+              <p className="mt-5 mb-2 font-semibold text-[#1A1611]">
+                Events, alltså sådant vi mäter särskilt
+              </p>
+              <dl className="grid gap-x-10 gap-y-2 sm:grid-cols-2">
+                {events.map((event) => (
+                  <div key={event.namn} className="sm:flex sm:gap-3">
+                    <dt className="font-mono text-[12.5px] font-semibold text-[#1A1611] sm:w-[152px] sm:shrink-0">
+                      {event.namn}
+                    </dt>
+                    <dd className="sm:flex-1">{event.betyder}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-3 text-[#7A7263]">
+                Raderna som börjar med lead- är förfrågningar från besökare. Det är
+                de siffrorna som är värda mest här.
+              </p>
+            </>
+          ) : null}
         </div>
       </details>
 

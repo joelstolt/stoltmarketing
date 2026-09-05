@@ -68,14 +68,14 @@ const paket = [
     name: "Bredd",
     price: PRICING.bredd,
     note: "Allt i Bas, för dig som behöver mer sajt.",
-    items: ["Upp till tolv sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
+    items: ["Obegränsat antal sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
     highlight: true,
   },
   {
     name: "Spets",
     price: PRICING.spets,
     note: "Allt i Bredd, plus att jag driver synligheten.",
-    items: ["Obegränsat antal sidor", "Aktiv SEO varje månad", "Google Ads med rapportering"],
+    items: ["AI-assistent som svarar dygnet runt", "Aktiv SEO varje månad", "Google Ads med rapportering"],
   },
 ];
 

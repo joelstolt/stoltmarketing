@@ -8,6 +8,25 @@ const categories = ["Alla", "Webb", "E-handel", "AI", "SEO", "Tillgänglighet"];
 
 const projects = [
   {
+    title: "Batteriproffs",
+    category: ["E-handel", "AI", "SEO"],
+    type: "Next.js · Stripe · Vercel",
+    tag: "B2B-e-handel · Egen butik",
+    tagColor: "yellow",
+    desc: "Vår egen butik för truck-, städmaskins- och fritidsbatterier. Fem B2B-ordrar den första månaden, 96 av 100 i hastighet, och den senaste ordern kom via ChatGPT.",
+    challenge: "Byråer visar gärna kunders butiker men står sällan själva bakom en kassa. Vi ville testa varje rekommendation med riktiga ordrar och egna pengar innan den når en kund.",
+    solution: "Next.js med Stripe som kassa och orderdatabas, företagskassa med organisationsnummer, eget omdömessystem och källspårning på varje order, ner till vilken kanal som betalade.",
+    results: [
+      { label: "Hastighet", value: "96/100" },
+      { label: "Ordrar första månaden", value: "5" },
+      { label: "Senaste orderkällan", value: "ChatGPT" },
+    ],
+    tech: ["Next.js", "React", "Stripe", "Resend", "Vercel", "Umami"],
+    caseUrl: "/projekt/batteriproffs",
+    url: "https://www.batteriproffs.se",
+    screenshot: "/case-batteriproffs.webp",
+  },
+  {
     title: "Niklassons Flytt",
     category: ["Webb", "SEO"],
     type: "Next.js · Sanity · Cloudflare",

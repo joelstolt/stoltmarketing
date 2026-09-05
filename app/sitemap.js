@@ -9,6 +9,7 @@ export default function sitemap() {
   const pages = [
     { url: "/", changeFrequency: "weekly", priority: 1.0 },
     { url: "/tjanster", changeFrequency: "monthly", priority: 0.9 },
+    { url: "/priser", changeFrequency: "monthly", priority: 0.9 },
     { url: "/tjanster/webbutveckling", changeFrequency: "monthly", priority: 0.8 },
     { url: "/tjanster/ai-automation", changeFrequency: "monthly", priority: 0.8 },
     { url: "/tjanster/seo", changeFrequency: "monthly", priority: 0.8 },
@@ -28,6 +29,7 @@ export default function sitemap() {
     { url: "/hemsida-foretag", changeFrequency: "monthly", priority: 0.9 },
     { url: "/vad-kostar-en-hemsida", changeFrequency: "monthly", priority: 0.8 },
     { url: "/vad-kostar-seo", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/projekt/batteriproffs", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt/forskolan-harpan", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt/pingstkyrkan", changeFrequency: "monthly", priority: 0.7 },
     { url: "/projekt/gardetshundtrim", changeFrequency: "monthly", priority: 0.7 },

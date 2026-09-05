@@ -14,36 +14,14 @@ const alwaysIncluded = [
   { icon: FileEdit, title: "Dokumentation", desc: "Kort, begriplig dokumentation av setup och access." },
 ];
 
-const packages = [
-  {
-    name: "Start",
-    price: "390",
-    desc: "Trygg basdrift för mindre webbplatser.",
-    features: ["Uppdateringar & säkerhet", "Backup & övervakning", "Enklare innehållsändringar", "Support vid behov"],
-    popular: false,
-  },
-  {
-    name: "Bas",
-    price: "790",
-    desc: "Stabil drift med löpande ändringar och uppföljning.",
-    features: ["Allt i Start", "Löpande innehållsändringar", "Prestandaoptimering", "Månadsrapport", "Prioriterad support"],
-    popular: true,
-  },
-  {
-    name: "Pro",
-    price: "1 290",
-    desc: "För växande företag med högre tempo och ambition.",
-    features: ["Allt i Bas", "Prioriterade ändringar", "Löpande SEO-optimering", "Förbättringsförslag varje månad", "AI-verktyg & automation", "Utökad övervakning"],
-    popular: false,
-  },
-];
-
+/* Managed är ingen egen pristrappa längre: drift ingår i månadspriset och
+   ta-över-sajter går på Bas. Enda prislistan bor på /priser. */
 const faqs = [
-  { q: "Vad innebär managed i praktiken?", a: "Jag tar ansvar för uppdateringar, säkerhet, övervakning och innehållsändringar enligt vald nivå. Du får ett tydligt upplägg och rapportering." },
-  { q: "Hur snabbt kan du göra ändringar?", a: "Enklare ändringar (text, bilder, länkar) görs normalt inom 24h på vardagar. Större ändringar planeras in enligt din prioritetsnivå." },
+  { q: "Vad innebär managed i praktiken?", a: "Jag tar ansvar för uppdateringar, säkerhet, övervakning och innehållsändringar inom månadsabonnemanget. Du får ett tydligt upplägg och rapportering." },
+  { q: "Hur snabbt kan du göra ändringar?", a: "Enklare ändringar (text, bilder, länkar) görs normalt inom 24h på vardagar. Större ändringar planerar vi in tillsammans." },
   { q: "Tar du över från annan leverantör?", a: "Ja. Jag tar över drift oavsett vem som byggt sajten. Vi gör en ordentlig genomgång av nuläget och sätter tydligt ansvar från start." },
   { q: "Vad händer om något går sönder?", a: "Jag har backup och återställning på plats. Vid incidenter agerar jag proaktivt, ofta innan du ens märker att något hänt." },
-  { q: "Ingår SEO?", a: "I Pro-paketet ingår löpande SEO-optimering. I Start och Bas ingår grundläggande SEO-bevakning men inte aktivt optimeringsarbete." },
+  { q: "Ingår SEO?", a: "Sökordsgrunden och teknisk SEO ingår alltid. Från Bredd ingår SEO-rapport varje månad, och i Spets ingår aktiv optimering med nytt innehåll. Hela stegen finns på prissidan." },
 ];
 
 export default function ManagedContent() {
@@ -54,7 +32,7 @@ export default function ManagedContent() {
       <PageHero
         breadcrumbs={[{ label: "Start", href: "/" }, { label: "Tjänster", href: "/tjanster" }, { label: "Managed hemsida" }]}
         badge="Managed hemsida"
-        title="Drift, underhåll och förbättringar — utan att du behöver tänka på det."
+        title="Drift, underhåll och förbättringar, utan att du behöver tänka på det."
         subtitle="Jag tar ansvar för din webbplats efter lansering. Uppdateringar, säkerhet, ändringar och löpande förbättringar i ett tydligt månadsabonnemang."
         bullets={["0 kr start, 1 190 kr/mån", "Svar inom 24h", "Tar över oavsett leverantör"]}
       />
@@ -62,7 +40,7 @@ export default function ManagedContent() {
       {/* Always included */}
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Ingår alltid" title="En stabil grund oavsett nivå." subtitle="Det viktigaste ingår i alla paket — så din sajt alltid känns trygg, uppdaterad och övervakad." />
+          <SectionHeader badge="Ingår alltid" title="En stabil grund, alltid inkluderad." subtitle="Det här ingår i månadspriset, så din sajt alltid känns trygg, uppdaterad och övervakad." />
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {alwaysIncluded.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.06 + 0.1}>
@@ -81,46 +59,36 @@ export default function ManagedContent() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing: en prislapp, ingen egen trappa. Prislistan bor på /priser. */}
       <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Välj nivå" title="Välj nivå efter ansvar och tempo." subtitle="Alla nivåer bygger på samma stabila grund — skillnaden ligger i prioritet, rapportering och förbättringstakt." />
-          <div className="mt-12 grid md:grid-cols-3 gap-5">
-            {packages.map((pkg, i) => (
-              <Reveal key={pkg.name} delay={i * 0.08 + 0.1}>
-                <div className={`relative h-full rounded-[10px] p-7 transition-all duration-300 ${
-                  pkg.popular
-                    ? "bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,194,48,0.18)]"
-                    : "bg-surface border border-border shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15"
-                }`}>
-                  {pkg.popular && (
-                    <span className="absolute -top-3 left-7 text-[11px] font-700 text-heading bg-primary px-3 py-1 rounded-full uppercase tracking-wider">
-                      Rekommenderad
-                    </span>
-                  )}
-                  <h3 className="font-heading font-700 text-[18px] text-heading">{pkg.name}</h3>
-                  <div className="mt-3 flex items-baseline gap-1">
-                    <span className="font-heading font-600 text-[36px] tracking-tight text-heading">{pkg.price}</span>
-                    <span className="text-[15px] text-muted">kr/mån</span>
-                  </div>
-                  <p className="mt-2 text-[14px] text-muted leading-relaxed">{pkg.desc}</p>
-                  <ul className="mt-6 flex flex-col gap-3">
-                    {pkg.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-[14px] text-body">
-                        <Check size={15} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="/boka" className={`mt-7 block text-center text-[14px] font-600 py-3 rounded-[10px] transition-all duration-200 ${
-                    pkg.popular ? "premium-btn justify-center" : "secondary-btn justify-center w-full"
-                  }`}>
-                    Kom igång
-                  </a>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        <div className="max-w-[720px] mx-auto">
+          <SectionHeader
+            badge="Priset"
+            title="En prislapp, inte en till pristrappa."
+            subtitle="Managed är inget eget paket: drift, säkerhet, backup och ändringar ingår redan i månadspriset, oavsett om jag byggt sajten eller tar över den."
+          />
+          <Reveal delay={0.1}>
+            <div className="mt-10 p-8 bg-surface rounded-[10px] border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,194,48,0.18)] text-center">
+              <p className="text-[13px] font-600 uppercase tracking-[0.18em] text-muted">Tar över din befintliga sajt</p>
+              <div className="mt-3 font-heading font-600 text-[36px] tracking-tight text-heading">0 kr start, 1 190 kr/mån</div>
+              <p className="mt-3 text-[14px] leading-relaxed text-muted max-w-[440px] mx-auto">
+                Samma Bas-pris som ett nybygge. Vill du ha fler sidor, aktiv SEO eller
+                annonsering växer du in i Bredd eller Spets när det passar.
+              </p>
+              <ul className="mt-6 flex flex-col gap-3 max-w-[360px] mx-auto text-left">
+                {["Uppdateringar, säkerhet och backup", "Innehållsändringar inom 24 h vardagar", "Övervakning och support", "Oavsett vem som byggt sajten"].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-[14px] text-body">
+                    <Check size={15} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <a href="/boka" className="premium-btn justify-center">Boka genomgång</a>
+                <a href="/priser" className="text-[14px] font-600 text-primary underline underline-offset-2">Se hela prislistan</a>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

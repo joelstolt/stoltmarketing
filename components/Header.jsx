@@ -3,8 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu,
-  X,
   ChevronDown,
   Globe,
   Cpu,
@@ -92,6 +90,7 @@ const serviceItems = [
 ];
 
 const navItems = [
+  { label: "Priser", href: "/priser" },
   { label: "Projekt", href: "/projekt" },
   { label: "Sajtkoll", href: "/sajtkoll" },
   { label: "Om mig", href: "/om" },
@@ -445,22 +444,37 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger: två linjer i olika längd (gul accent, samma
+              signatur som wordmarkens streck) som morfar till ett kryss.
+              Etiketten säger vad knappen gör, ikonen är detaljen. */}
+          <style>{`
+            /* OBS: ingen display här. Inline-<style> ligger efter Tailwind i
+               kaskaden och vann över lg:hidden med samma specificitet, så
+               knappen syntes på desktop (buggen 2026-08-24). Display styrs nu
+               av Tailwind-klasserna flex + lg:hidden på knappen. */
+            .mob-menu-btn { align-items: center; gap: 11px; background: none; border: none; cursor: pointer; padding: 10px 2px 10px 10px; position: relative; z-index: 10002; }
+            .mob-menu-label { font-family: var(--font-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(242,236,221,0.62); transition: color 0.25s; }
+            .mob-menu-btn.is-open .mob-menu-label { color: #F2C230; }
+            .mob-burger { position: relative; width: 26px; height: 14px; display: block; }
+            .mob-burger span { position: absolute; right: 0; height: 2px; border-radius: 2px; transition: transform 0.36s cubic-bezier(0.16,1,0.3,1), width 0.36s cubic-bezier(0.16,1,0.3,1), top 0.36s cubic-bezier(0.16,1,0.3,1), background 0.25s; }
+            .mob-burger .l1 { top: 2px; width: 26px; background: #F2ECDD; }
+            .mob-burger .l2 { top: 10px; width: 15px; background: #F2C230; }
+            .mob-menu-btn:active .mob-burger .l2 { width: 26px; }
+            .mob-menu-btn.is-open .mob-burger .l1 { top: 6px; width: 24px; transform: rotate(45deg); background: #F2C230; }
+            .mob-menu-btn.is-open .mob-burger .l2 { top: 6px; width: 24px; transform: rotate(-45deg); background: #F2C230; }
+            @media (prefers-reduced-motion: reduce) { .mob-burger span { transition: none; } }
+          `}</style>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden"
-            style={{
-              padding: 8,
-              color: PAPER,
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              position: "relative",
-              zIndex: 10002,
-            }}
-            aria-label="Meny"
+            className={`flex lg:hidden mob-menu-btn ${isOpen ? "is-open" : ""}`}
+            aria-label={isOpen ? "Stäng menyn" : "Öppna menyn"}
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="mob-menu-label">{isOpen ? "Stäng" : "Meny"}</span>
+            <span className="mob-burger" aria-hidden="true">
+              <span className="l1" />
+              <span className="l2" />
+            </span>
           </button>
         </div>
       </header>

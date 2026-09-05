@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { packages } from "@/lib/pricing-packages";
 import {
   Check,
   ArrowRight,
@@ -202,59 +203,8 @@ const services = [
   },
 ];
 
-/* ── Pricing data ── */
-const packages = [
-  {
-    name: "Bas",
-    for: "För enmansfirman",
-    price: "0 kr start, 1 190 kr/mån",
-    desc: "Komplett hemsida som gör dig hittad i din ort, utan att du behöver tänka på tekniken.",
-    features: [
-      "Hemsida med upp till fem sidor",
-      "Snabb, mobilanpassad design",
-      "Sökordsgrunden lagd för din huvudort",
-      "Koppling till din Google Företagsprofil",
-      "Hosting, säkerhet, SSL och backuper",
-      "Domän och mejladress på den",
-      "Ändringar klara inom två arbetsdagar",
-    ],
-  },
-  {
-    name: "Bredd",
-    for: "För företag med flera tjänster",
-    price: "0 kr start, 1 990 kr/mån",
-    desc: "För dig som säljer mer än en tjänst och vill synas på fler sökningar än en.",
-    featured: true,
-    badge: "Här landar de flesta",
-    features: [
-      "Allt i Bas, och:",
-      "Upp till tolv sidor, en per tjänst",
-      "Formgiven från vitt papper, ingen mall",
-      "Strukturerad märkning som Google och AI-sök läser",
-      "Sökord för din ort och kommunerna runt om",
-      "Flera mejladresser (info@, namn@)",
-      "SEO-rapport varje månad",
-      "Ändringar klara inom ett dygn",
-    ],
-  },
-  {
-    name: "Spets",
-    for: "För dig som vill äga din marknad",
-    price: "0 kr start, 2 990 kr/mån",
-    desc: "Sajten jobbar dygnet runt: AI-assistent, Google Ads och nytt innehåll varje månad.",
-    features: [
-      "Allt i Bredd, och:",
-      "AI-assistent som svarar kunder dygnet runt",
-      "Google Ads: uppsättning och löpande skötsel",
-      "Obegränsat antal sidor",
-      "Egen landningssida för varje ort du jobbar i",
-      "Nya sökmotortexter varje månad",
-      "Löpande tester på det som ger förfrågningar",
-      "Strategisamtal en gång i månaden",
-      "Prioriterad support, svar samma dag",
-    ],
-  },
-];
+/* Pricing-datan är delad källa med /priser, se lib/pricing-packages.js
+   (importeras i filens importblock). */
 
 /* ── Processens illustrationer: sådd, växt, skörd i guldlinje ── */
 function StegIllustration({ index }) {

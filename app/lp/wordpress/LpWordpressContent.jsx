@@ -379,7 +379,7 @@ export default function LpWordpressContent() {
                 name: "Drift Bredd",
                 price: PRICING.bredd,
                 note: "Allt i Bas, för dig som behöver mer sajt.",
-                items: ["Upp till tolv sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
+                items: ["Obegränsat antal sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08}>

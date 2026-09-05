@@ -43,9 +43,9 @@ export const metadata = {
       "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar, utan byrå-overhead. 10+ års erfarenhet, fast pris.",
     images: ["/og-image.png"],
   },
-  alternates: {
-    canonical: "https://www.stoltmarketing.se",
-  },
+  // OBS: ingen alternates.canonical här — canonical i root-layouten ärvs av ALLA
+  // sidor utan egen och pekar dem tyst mot startsidan. Sätts per sida (startsidans
+  // ligger i app/page.js).
   robots: {
     index: true,
     follow: true,
