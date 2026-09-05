@@ -11,7 +11,7 @@ const breadcrumb = {
 export const metadata = {
   title: "Google Ads-byrå | Annonsering med fast månadspris",
   description:
-    "Google Ads-förvaltning för företag i Hässleholm. Sökordsanalys, annonstext, optimering och rapportering. Fler samtal och förfrågningar. Boka kostnadsfri genomgång.",
+    "Google Ads-byrå med fast månadspris. Sökordsanalys, annonstext, optimering och rapportering mot förfrågningar, inte klick. Du äger kontot och styr budgeten.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/tjanster/google-ads",
   },
@@ -27,7 +27,7 @@ const serviceLd = {
   "@type": "Service",
   "name": "Google Ads",
   "serviceType": "Google Ads & sökordsannonsering",
-  "description": "Google Ads-förvaltning för företag i Hässleholm. Sökordsanalys, annonstext, optimering och rapportering. Fler samtal och förfrågningar. Boka kostnadsfri genomgång.",
+  "description": "Google Ads-byrå med fast månadspris. Sökordsanalys, annonstext, optimering och rapportering mot förfrågningar, inte klick. Du äger kontot och styr budgeten.",
   "url": "https://www.stoltmarketing.se/tjanster/google-ads",
   "provider": {
     "@type": "ProfessionalService",

@@ -461,7 +461,18 @@ export default function BContent() {
               <Link key={href} href={href} style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: FAINT, textDecoration: "none" }}>{label}</Link>
             ))}
           </nav>
-          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, letterSpacing: "0.14em", color: FAINT }}>© 2026 Stolt Marketing</span>
+          <span style={{ display: "inline-flex", flexWrap: "wrap", gap: "6px 18px", alignItems: "baseline" }}>
+            <a
+              href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.stoltmarketing.se%2F"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event="pagespeed-sjalv"
+              style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: GUL, textDecoration: "none" }}
+            >
+              Mät den här sajten själv
+            </a>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, letterSpacing: "0.14em", color: FAINT }}>© 2026 Stolt Marketing</span>
+          </span>
         </div>
       </footer>
     </div>

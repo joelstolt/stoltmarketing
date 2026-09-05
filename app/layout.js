@@ -22,18 +22,18 @@ const archivo = Archivo({
 
 /* Preview-byggen (NEXT_PUBLIC_PREVIEW=1): noindex i metadata och ingen Umami. */
 const PREVIEW = process.env.NEXT_PUBLIC_PREVIEW === "1";
-// import ChatWidget from "@/components/ChatWidget"; // dold tills Anthropic-nyckeln fixats
+import ChatWidget from "@/components/ChatWidget";
 import { KlickIdFangare } from "@/lib/klickid";
 import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
 export const metadata = {
   metadataBase: new URL("https://www.stoltmarketing.se"),
   title: {
-    default: "Webbyrå Hässleholm, Hemsida, SEO & AI | Stolt Marketing",
+    default: "Hemsida för företag, färdig innan du betalar | Stolt Marketing",
     template: "%s | Stolt Marketing",
   },
   description:
-    "Webbyrå i Hässleholm och Skåne. Hemsidor, SEO, Google Ads och AI som ger ditt företag fler kunder, du jobbar direkt med konsulten som bygger, utan byrå-overhead. Fast pris.",
+    "Din nya hemsida, färdig innan du betalar ett öre. Hemsidor, SEO och Google Ads åt företag som lever på förfrågningar. 0 kr i start, från 1 190 kr/mån, drift ingår.",
   keywords: [
     "webbyrå hässleholm",
     "webbyrå skåne",
@@ -169,18 +169,22 @@ export default function RootLayout({ children }) {
       <body>
         <KlickIdFangare />
         {children}
-        {/* Chatten dold 2026-06-26 tills Anthropic-nyckeln är giltig igen (backend 502:ar). Avkommentera för att återaktivera. */}
-        {/* <ChatWidget /> */}
+        {/* Chatten öppnas bara av "Fråga AI:n"-knappen efter en sajtkoll, ingen hörnbubbla annars. */}
+        <ChatWidget />
         {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
         {/* lazyOnload, inte afterInteractive: afterInteractive lägger en preload
             av tredjepartsskriptet i head, och den ensam kostade 10-15 poäng i
             mobil-Lighthouse (uppmätt 2026-09-06: 81-86 med, 96 utan). Umami
             laddar nu efter window.load och mäter ändå sidvisningen. */}
+        {/* Laddas efter window.load och aldrig för automatiserade webbläsare
+            (navigator.webdriver: Lighthouse, Playwright och de flesta skrapare),
+            så egna mätningar och bottar hamnar inte i statistiken. */}
         {!PREVIEW && (
-          <Script
-            src="https://umami-analytics-tau-two.vercel.app/script.js"
-            data-website-id="3adb02f8-448d-4b39-bc2a-76e9c9b8709e"
-            strategy="lazyOnload"
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                "window.addEventListener('load',function(){try{if(navigator.webdriver)return;var s=document.createElement('script');s.defer=true;s.src='https://umami-analytics-tau-two.vercel.app/script.js';s.setAttribute('data-website-id','3adb02f8-448d-4b39-bc2a-76e9c9b8709e');document.body.appendChild(s)}catch(e){}})",
+            }}
           />
         )}
         {/* Google Ads-konvertering. Consent Mode v2 står på "denied" som default,

@@ -262,6 +262,15 @@ export default function Footer() {
             >
               Egen AI-produkt: Kvota.se
             </a>
+            <a
+              href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.stoltmarketing.se%2F"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event="pagespeed-sjalv"
+              style={{ fontSize: 13, color: "rgba(242,236,221,0.62)", textDecoration: "none", marginLeft: 18 }}
+            >
+              Mät den här sajten själv
+            </a>
           </div>
         </div>
       </div>

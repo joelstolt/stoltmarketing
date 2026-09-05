@@ -158,6 +158,40 @@ export default function GoogleAdsContent() {
       </section>
 
       {/* ═══ PRISER ═══ */}
+      {/* ═══ Case: mätt i sajten, inte i annonskontot ═══ */}
+      <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            badge="Mätt, inte påstått"
+            title="Så ser det ut när annonserna och sajten jobbar ihop."
+            subtitle="Niklassons Flytt i Helsingborg kör Google Ads mot en sajt jag byggt: en sida per tjänst och ort, och varje offertförfrågan mäts i sajten oavsett vilken kanal den kom från."
+            maxWidth="720px"
+          />
+          <div className="mt-10 grid sm:grid-cols-3 gap-5">
+            {[
+              { v: "37", l: "offertförfrågningar de senaste 30 dagarna" },
+              { v: "10", l: "samtal via sajten, samma period" },
+              { v: "38", l: "sidor, en per tjänst och ort i Skåne" },
+            ].map((t, i) => (
+              <Reveal key={t.l} delay={i * 0.08}>
+                <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
+                  <div className="font-heading text-heading leading-none" style={{ fontSize: 48, fontWeight: 340, fontVariationSettings: '"opsz" 144' }}>
+                    {t.v}
+                  </div>
+                  <p className="mt-3 text-[14px] text-body leading-relaxed">{t.l}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <p className="mt-6 text-[13.5px] text-muted leading-relaxed max-w-[720px]">
+              Talen är hämtade ur samma mätning kunden får i sin månadsrapport, avlästa 5 september 2026. Annonserna är en av kanalerna in, sajten mäter alla.{" "}
+              <a href="/projekt/niklassonsflytt" className="text-heading underline underline-offset-2">Läs caset</a>.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <SectionHeader

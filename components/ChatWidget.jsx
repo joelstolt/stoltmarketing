@@ -39,6 +39,11 @@ export default function ChatWidget() {
   const [emailSending, setEmailSending] = useState(false);
   const [emailData, setEmailData] = useState({ name: "", email: "", message: "" });
   const [newMsgFlash, setNewMsgFlash] = useState(false);
+  // Chatten är ingen hörnbubbla: den öppnas av "Fråga AI:n"-knappen efter en
+  // sajtkoll (eventet stolt-chat:open) och först därefter finns knappen kvar
+  // nere i hörnet. Kontexten (domän, poäng, brister) följer med till /api/chat.
+  const [everOpened, setEverOpened] = useState(false);
+  const [context, setContext] = useState("");
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const messageCountRef = useRef(0);
@@ -46,6 +51,20 @@ export default function ChatWidget() {
   const isDark = chatConfig.darkMode ?? false;
   const pc = chatConfig.primaryColor || "#9A7409";
   const pcd = chatConfig.primaryColorDark || "#1A1611";
+
+  useEffect(() => {
+    const onOpen = (e) => {
+      const d = (e && e.detail) || {};
+      if (typeof d.context === "string") setContext(d.context);
+      if (typeof d.intro === "string" && d.intro) {
+        setMessages((prev) => (prev.length ? prev : [{ role: "assistant", content: d.intro }]));
+      }
+      setEverOpened(true);
+      setOpen(true);
+    };
+    window.addEventListener("stolt-chat:open", onOpen);
+    return () => window.removeEventListener("stolt-chat:open", onOpen);
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -70,7 +89,6 @@ export default function ChatWidget() {
         setNewMsgFlash(true);
         setTimeout(() => setNewMsgFlash(false), 2000);
       }
-      playNotification();
     }
   }, [messages, open]);
 
@@ -92,7 +110,7 @@ export default function ChatWidget() {
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ messages: newMessages }),
+          body: JSON.stringify({ messages: newMessages, context }),
         });
         if (!res.ok) throw new Error("API error");
 
@@ -121,7 +139,7 @@ export default function ChatWidget() {
         setLoading(false);
       }
     },
-    [input, messages, loading]
+    [input, messages, loading, context]
   );
 
   const handleEmailSubmit = async (e) => {
@@ -248,7 +266,7 @@ export default function ChatWidget() {
                         key={q}
                         onClick={() => { setInput(q); setTimeout(() => document.getElementById("stolt-chat-form")?.requestSubmit(), 50); }}
                         style={{ padding: "7px 14px", fontSize: "12.5px", borderRadius: "20px", border: `1px solid ${isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)"}`, background: isDark ? "rgba(255,255,255,0.05)" : "#fff", color: pc, cursor: "pointer", transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)", whiteSpace: "nowrap", fontWeight: 500, animation: `stolt-chat-fadeUp 0.4s ease-out ${0.5 + i * 0.1}s both` }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = pc; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = pc; e.currentTarget.style.transform = "translateY(-1px)"; }}
+                        onMouseEnter={(e) => { e.currentTarget.style.background = pc; e.currentTarget.style.color = "#191405"; e.currentTarget.style.borderColor = pc; e.currentTarget.style.transform = "translateY(-1px)"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = isDark ? "rgba(255,255,255,0.05)" : "#fff"; e.currentTarget.style.color = pc; e.currentTarget.style.borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)"; e.currentTarget.style.transform = "translateY(0)"; }}
                       >{q}</button>
                     ))}
@@ -297,7 +315,7 @@ export default function ChatWidget() {
                   type="submit"
                   disabled={loading || !input.trim()}
                   aria-label="Skicka"
-                  style={{ width: "40px", height: "40px", borderRadius: "12px", border: "none", background: loading || !input.trim() ? (isDark ? "rgba(255,255,255,0.05)" : "#f0f0f0") : pc, color: loading || !input.trim() ? (isDark ? "rgba(255,255,255,0.2)" : "#aaa") : "#fff", cursor: loading || !input.trim() ? "default" : "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)" }}
+                  style={{ width: "40px", height: "40px", borderRadius: "12px", border: "none", background: loading || !input.trim() ? (isDark ? "rgba(255,255,255,0.05)" : "#f0f0f0") : pc, color: loading || !input.trim() ? (isDark ? "rgba(255,255,255,0.2)" : "#aaa") : "#191405", cursor: loading || !input.trim() ? "default" : "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)" }}
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
                 </button>
@@ -309,7 +327,7 @@ export default function ChatWidget() {
         {/* Footer */}
         <div style={{ padding: "3px 14px 8px", textAlign: "center", fontSize: "10px", color: isDark ? "rgba(255,255,255,0.2)" : "#c0c0c0", flexShrink: 0 }}>
           <a href="https://www.stoltmarketing.se/tjanster/ai-automation" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.color = pc)} onMouseLeave={(e) => (e.currentTarget.style.color = isDark ? "rgba(255,255,255,0.2)" : "#c0c0c0")}>
-            Powered by Stolt Chat ⚡
+            Byggd av Stolt Marketing
           </a>
         </div>
       </div>
@@ -318,7 +336,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((prev) => !prev)}
         aria-label={open ? "Stäng chatt" : "Öppna chatt"}
-        style={{ position: "fixed", bottom: "24px", right: "24px", width: "56px", height: "56px", borderRadius: "16px", border: "none", background: chatConfig.headerGradient || `linear-gradient(135deg, ${pc} 0%, ${pcd} 100%)`, color: "#fff", cursor: "pointer", zIndex: 99999, display: open ? "none" : "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 8px 32px -4px ${pc}66, 0 4px 12px -2px rgba(0,0,0,0.12)`, transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)", transform: "scale(1)" }}
+        style={{ position: "fixed", bottom: "24px", right: "24px", width: "56px", height: "56px", borderRadius: "16px", border: `1px solid ${pc}`, background: chatConfig.headerGradient || `linear-gradient(135deg, ${pc} 0%, ${pcd} 100%)`, color: pc, cursor: "pointer", zIndex: 99999, display: open || !everOpened ? "none" : "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 8px 32px -4px ${pc}66, 0 4px 12px -2px rgba(0,0,0,0.12)`, transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)", transform: "scale(1)" }}
         onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.08)"; }}
         onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
       >
@@ -328,7 +346,7 @@ export default function ChatWidget() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
       </button>
 
-      {!open && !hasInteracted && (
+      {!open && everOpened && !hasInteracted && (
         <div style={{ position: "fixed", bottom: "24px", right: "24px", width: "56px", height: "56px", borderRadius: "16px", zIndex: 99997, pointerEvents: "none", animation: "stolt-chat-pulse 2.5s ease-in-out infinite" }} />
       )}
 
@@ -357,7 +375,7 @@ function MessageBubble({ role, content, isDark, primaryColor, isNew }) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={primaryColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8" /><rect x="4" y="8" width="16" height="12" rx="2" /><path d="M9 13v2" /><path d="M15 13v2" /></svg>
         </div>
       )}
-      <div style={{ maxWidth: "80%", padding: "10px 14px", borderRadius: isUser ? "16px 16px 4px 16px" : "16px 16px 16px 4px", background: isUser ? primaryColor : isDark ? "rgba(255,255,255,0.06)" : "#f2f2f3", color: isUser ? "#fff" : isDark ? "rgba(255,255,255,0.88)" : "#1a1a1a", fontSize: "13.5px", lineHeight: "1.55", wordBreak: "break-word", whiteSpace: "pre-wrap", letterSpacing: "-0.005em" }}>
+      <div style={{ maxWidth: "80%", padding: "10px 14px", borderRadius: isUser ? "16px 16px 4px 16px" : "16px 16px 16px 4px", background: isUser ? primaryColor : isDark ? "rgba(255,255,255,0.06)" : "#f2f2f3", color: isUser ? "#191405" : isDark ? "rgba(255,255,255,0.88)" : "#1a1a1a", fontSize: "13.5px", lineHeight: "1.55", wordBreak: "break-word", whiteSpace: "pre-wrap", letterSpacing: "-0.005em" }}>
         {content}
       </div>
     </div>
@@ -404,7 +422,7 @@ function EmailForm({ emailData, setEmailData, onSubmit, onBack, emailSent, email
         <input type="text" placeholder="Ditt namn" value={emailData.name} onChange={(e) => setEmailData({ ...emailData, name: e.target.value })} style={inputStyle} onFocus={(e) => { e.target.style.borderColor = primaryColor; e.target.style.boxShadow = `0 0 0 3px ${primaryColor}18`; }} onBlur={(e) => { e.target.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.target.style.boxShadow = "none"; }} />
         <input type="email" placeholder="Din e-post" value={emailData.email} onChange={(e) => setEmailData({ ...emailData, email: e.target.value })} style={inputStyle} onFocus={(e) => { e.target.style.borderColor = primaryColor; e.target.style.boxShadow = `0 0 0 3px ${primaryColor}18`; }} onBlur={(e) => { e.target.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.target.style.boxShadow = "none"; }} />
         <textarea placeholder="Ditt meddelande..." value={emailData.message} onChange={(e) => setEmailData({ ...emailData, message: e.target.value })} rows={4} style={{ ...inputStyle, resize: "vertical", minHeight: "80px" }} onFocus={(e) => { e.target.style.borderColor = primaryColor; e.target.style.boxShadow = `0 0 0 3px ${primaryColor}18`; }} onBlur={(e) => { e.target.style.borderColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"; e.target.style.boxShadow = "none"; }} />
-        <button onClick={onSubmit} disabled={isDisabled} style={{ width: "100%", padding: "12px", borderRadius: "10px", border: "none", background: isDisabled ? (isDark ? "rgba(255,255,255,0.05)" : "#f0f0f0") : primaryColor, color: isDisabled ? (isDark ? "rgba(255,255,255,0.2)" : "#aaa") : "#fff", fontSize: "14px", fontWeight: 600, cursor: isDisabled ? "default" : "pointer", transition: "all 0.25s", fontFamily: "inherit" }}>
+        <button onClick={onSubmit} disabled={isDisabled} style={{ width: "100%", padding: "12px", borderRadius: "10px", border: "none", background: isDisabled ? (isDark ? "rgba(255,255,255,0.05)" : "#f0f0f0") : primaryColor, color: isDisabled ? (isDark ? "rgba(255,255,255,0.2)" : "#aaa") : "#191405", fontSize: "14px", fontWeight: 600, cursor: isDisabled ? "default" : "pointer", transition: "all 0.25s", fontFamily: "inherit" }}>
           {emailSending ? "Skickar..." : "Skicka meddelande"}
         </button>
       </div>

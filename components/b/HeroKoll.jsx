@@ -238,6 +238,27 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
             </div>
           )}
 
+          <button
+            type="button"
+            onClick={() => {
+              const kontext = `Domän ${doman}. Poäng ${result.score} av 100. Bedömning: ${result.verdict || ""}. Brister: ${
+                brister.map((b) => `${b.label}: ${b.value} (${b.detail})`).join(" | ") || "inga allvarliga"
+              }.`;
+              window.dispatchEvent(
+                new CustomEvent("stolt-chat:open", {
+                  detail: {
+                    context: kontext,
+                    intro: `Jag såg mätningen av ${doman}: ${result.score} av 100. Fråga mig vad bristerna betyder för just din bransch, hur förslaget går till, eller vad något kostar.`,
+                  },
+                })
+              );
+              if (window.umami) window.umami.track(`chatt-${plats}`);
+            }}
+            style={{ marginTop: 16, background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: GUL, display: "inline-flex", alignItems: "center", gap: 8 }}
+          >
+            Fråga AI:n vad det betyder för din bransch <ArrowRight size={13} />
+          </button>
+
           {lead !== "done" ? (
             <form onSubmit={bestall} style={{ marginTop: 22, paddingTop: 20, borderTop: `1px solid ${LINE}` }} aria-label="Beställ ett förslag">
               <p className="font-heading" style={{ margin: 0, fontSize: 21, fontWeight: 480, lineHeight: 1.3, color: PAPER }}>
