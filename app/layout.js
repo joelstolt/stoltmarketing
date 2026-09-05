@@ -172,11 +172,15 @@ export default function RootLayout({ children }) {
         {/* Chatten dold 2026-06-26 tills Anthropic-nyckeln är giltig igen (backend 502:ar). Avkommentera för att återaktivera. */}
         {/* <ChatWidget /> */}
         {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
+        {/* lazyOnload, inte afterInteractive: afterInteractive lägger en preload
+            av tredjepartsskriptet i head, och den ensam kostade 10-15 poäng i
+            mobil-Lighthouse (uppmätt 2026-09-06: 81-86 med, 96 utan). Umami
+            laddar nu efter window.load och mäter ändå sidvisningen. */}
         {!PREVIEW && (
           <Script
             src="https://umami-analytics-tau-two.vercel.app/script.js"
             data-website-id="3adb02f8-448d-4b39-bc2a-76e9c9b8709e"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
         )}
         {/* Google Ads-konvertering. Consent Mode v2 står på "denied" som default,
