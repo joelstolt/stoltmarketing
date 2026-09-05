@@ -31,9 +31,9 @@
   --color-border-light: rgba(242, 236, 221, 0.09);
 
   /* === Typography === */
-  --font-heading: "Fraunces", "Georgia", serif;
-  --font-body: "Fraunces", "Georgia", serif;
-  --font-ui: "Archivo", "Arial", sans-serif;
+  --font-heading: var(--font-fraunces), "Georgia", serif;
+  --font-body: var(--font-fraunces), "Georgia", serif;
+  --font-ui: var(--font-archivo), "Arial", sans-serif;
 }
 
 html {

@@ -1,5 +1,27 @@
 import "./globals.css";
 import Script from "next/script";
+import { Fraunces, Archivo } from "next/font/google";
+
+/* Självhostade typsnitt via next/font: ingen renderblockerande CSS från Google,
+   bara de axlar som används (opsz + wght, kursiv på Fraunces). */
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+/* Preview-byggen (NEXT_PUBLIC_PREVIEW=1): noindex i metadata och ingen Umami. */
+const PREVIEW = process.env.NEXT_PUBLIC_PREVIEW === "1";
 // import ChatWidget from "@/components/ChatWidget"; // dold tills Anthropic-nyckeln fixats
 import { KlickIdFangare } from "@/lib/klickid";
 import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
@@ -47,8 +69,8 @@ export const metadata = {
   // sidor utan egen och pekar dem tyst mot startsidan. Sätts per sida (startsidans
   // ligger i app/page.js).
   robots: {
-    index: true,
-    follow: true,
+    index: !PREVIEW,
+    follow: !PREVIEW,
   },
   verification: {
     google: "IhOfiR7S9Euz_4uL2iM2fUwa5iWetEwr1zVaZmBTrjE",
@@ -129,18 +151,8 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="sv">
+    <html lang="sv" className={`${fraunces.variable} ${archivo.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -160,11 +172,13 @@ export default function RootLayout({ children }) {
         {/* Chatten dold 2026-06-26 tills Anthropic-nyckeln är giltig igen (backend 502:ar). Avkommentera för att återaktivera. */}
         {/* <ChatWidget /> */}
         {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
-        <Script
-          src="https://umami-analytics-tau-two.vercel.app/script.js"
-          data-website-id="3adb02f8-448d-4b39-bc2a-76e9c9b8709e"
-          strategy="afterInteractive"
-        />
+        {!PREVIEW && (
+          <Script
+            src="https://umami-analytics-tau-two.vercel.app/script.js"
+            data-website-id="3adb02f8-448d-4b39-bc2a-76e9c9b8709e"
+            strategy="afterInteractive"
+          />
+        )}
         {/* Google Ads-konvertering. Consent Mode v2 står på "denied" som default,
             så INGA kakor sätts och sajten är fortsatt kakfri utan samtyckesruta.
             Google modellerar konverteringarna i stället. Laddas bara när

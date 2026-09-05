@@ -18,6 +18,8 @@ export default {
     }
     const ut = new Response(res.body, res);
     ut.headers.set("cache-control", "public, max-age=0, must-revalidate");
+    // Preview-workrar (PREVIEW_NOINDEX=1 i wrangler-configen) får aldrig indexeras.
+    if (env?.PREVIEW_NOINDEX === "1") ut.headers.set("x-robots-tag", "noindex, nofollow");
     return ut;
   },
 

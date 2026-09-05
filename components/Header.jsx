@@ -178,7 +178,6 @@ export default function Header() {
         >
           {/* Logo */}
           <Link
-            aria-label="Stolt Marketing, till startsidan"
             href="/"
             className="font-heading"
             style={{
@@ -196,7 +195,8 @@ export default function Header() {
               marginRight: 24,
             }}
           >
-            <span style={{ display: "inline-flex", alignItems: "baseline" }}>
+            <span className="sr-only">Stolt Marketing, till startsidan</span>
+            <span aria-hidden="true" style={{ display: "inline-flex", alignItems: "baseline" }}>
               sto
               <span
                 aria-hidden="true"
@@ -211,13 +211,14 @@ export default function Header() {
               t
             </span>
             <span
+              aria-hidden="true"
               style={{
                 fontFamily: "var(--font-ui)",
-                fontSize: 10,
+                fontSize: 10.5,
                 fontWeight: 600,
                 letterSpacing: "0.24em",
                 textTransform: "uppercase",
-                color: FAINT,
+                color: DIM,
               }}
             >
               Marketing

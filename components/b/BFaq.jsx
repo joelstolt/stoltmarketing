@@ -12,6 +12,14 @@ const faqs = [
     a: "0 kr i startavgift. De flesta landar på Bredd, 1 990 kr/mån. Bas är 1 190 kr/mån och Spets 2 990 kr/mån. 12 månaders bindning, därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
   },
   {
+    q: "Bygger du verkligen ett förslag gratis?",
+    a: "Ja. Startsida och en tjänstesida, med riktiga texter om ditt företag, på en länk du kan klicka i. Det tar mig några timmar, och det är ett bättre sätt att visa hur jag jobbar än en presentation. Resten av sajten byggs när du sagt ja.",
+  },
+  {
+    q: "Vad händer om jag inte gillar förslaget?",
+    a: "Då säger du det, så lägger jag ner det. Du har inte betalat något, och jag skickar inga påminnelser. Förslaget är mitt sätt att visa hur jag jobbar, inte en faktura i förklädnad.",
+  },
+  {
     q: "Vem äger sajten om vi avslutar?",
     a: "Du. Sajten, innehållet och domänen är dina, och vill du flytta någon annanstans hjälper jag till med flytten. Ingen inlåsning: poängen med månadsmodellen är att jag ska förtjäna nästa månad, inte att avtalet ska hålla dig kvar.",
   },
@@ -39,6 +47,10 @@ const faqs = [
     q: "Vad händer efter lansering?",
     a: "Jag erbjuder managed hemsida med löpande drift, underhåll, säkerhet och förbättringar. Allt ingår i månadspriset på 1 190 kr, och jag tar över även sajter jag inte byggt själv. Inget ansvar faller mellan stolarna.",
   },
+  {
+    q: "Hur vet jag att siffrorna på den här sidan stämmer?",
+    a: "De hämtas varje timme ur samma mätverktyg som mina kunder får sina månadsrapporter från, och du kan be vilken kund som helst visa sin. Sajten du läser på just nu kan du mäta själv i Googles PageSpeed Insights.",
+  },
 ];
 
 const faqSchema = {
@@ -62,7 +74,6 @@ export default function BFaq() {
       />
 
       <div className="sec-rule" style={{ marginBottom: 32 }}>
-        <span className="sec-no" aria-hidden="true">03</span>
         <h2 className="sec-label" style={{ margin: 0 }}>
           Vanliga frågor
         </h2>
@@ -75,7 +86,7 @@ export default function BFaq() {
 
       {/* Allt som ingår i 1 190 kr/mån: konkret lista, inte bara ett ord */}
       <div style={{ margin: "0 0 40px", maxWidth: 760 }}>
-        <p style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.5)", margin: "0 0 12px" }}>
+        <p style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "rgba(242,236,221,0.66)", margin: "0 0 12px" }}>
           I månadspriset ingår
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -145,7 +156,7 @@ export default function BFaq() {
                 }}
               >
                 <div style={{ overflow: "hidden" }}>
-                  <p style={{ margin: 0, padding: "0 40px 24px 0", fontSize: 16, lineHeight: 1.75, color: "rgba(242,236,221,0.74)" }}>
+                  <p style={{ margin: 0, padding: "0 40px 24px 0", fontSize: 16, lineHeight: 1.75, color: "rgba(242,236,221,0.82)" }}>
                     {faq.a}
                   </p>
                 </div>
