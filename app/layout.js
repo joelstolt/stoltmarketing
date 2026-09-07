@@ -171,6 +171,18 @@ export default function RootLayout({ children }) {
         {children}
         {/* Chatten öppnas bara av "Fråga AI:n"-knappen efter en sajtkoll, ingen hörnbubbla annars. */}
         <ChatWidget />
+        {/* Svarslagret (2026-09-07): hörnwidget med Bli uppringd, Meddelande och AI-chatt.
+            Laddar bara en liten launcher direkt, resten vid idle/klick. Tenant stoltmarketing. */}
+        {/* Som JSX-<script> i body dubblerade React taggen vid hydrering (React-fel 418) och
+            kastade ut widgetens element. Därför injiceras den efter window.load, som Umami. */}
+        {!PREVIEW && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                "window.addEventListener('load',function(){try{var s=document.createElement('script');s.defer=true;s.src='https://widget.stoltmarketing.se/widget.js';s.setAttribute('data-client','stoltmarketing');document.body.appendChild(s)}catch(e){}})",
+            }}
+          />
+        )}
         {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
         {/* lazyOnload, inte afterInteractive: afterInteractive lägger en preload
             av tredjepartsskriptet i head, och den ensam kostade 10-15 poäng i
