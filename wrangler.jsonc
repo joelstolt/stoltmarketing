@@ -17,6 +17,10 @@
     { "name": "RAPPORT_LIMIT", "namespace_id": "1004", "simple": { "limit": 3, "period": 60 } },
     { "name": "INSYN_LIMIT", "namespace_id": "1005", "simple": { "limit": 10, "period": 60 } }
   ],
+  // Svarsmotorn: AI-utkast per formulärlead, TTL 30 dagar (lib/svarsmotor.js).
+  "kv_namespaces": [
+    { "binding": "SVAR_KV", "id": "ddf7cca6ec354eb2b4baaec2aeb65f85" }
+  ],
   "d1_databases": [
     {
       "binding": "DB",
@@ -25,7 +29,7 @@
     }
   ],
   "triggers": {
-    "crons": ["0 6 * * *"]
+    "crons": ["0 6 * * *", "* * * * *"]
   },
   "vars": {
     "SELF_URL": "https://www.stoltmarketing.se",

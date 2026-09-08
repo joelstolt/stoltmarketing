@@ -5,6 +5,7 @@
 // annat (HTML, RSC-payloads, robots, sitemap) ska alltid revalideras mot
 // workern.
 import handler from "./.open-next/worker.js";
+import {deliverKvotaForms} from './lib/kvota-outbox.js';
 export { DOQueueHandler, DOShardedTagCache, BucketCachePurge } from "./.open-next/worker.js";
 
 const STATISK = /\.(css|js|mjs|png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf|mp4|webm|pdf)$/i;
@@ -46,7 +47,8 @@ export default {
         skickas ett akutlarm (max ett per vecka per prenumerant). Larmet är
         Sajtvaktens starkaste bevis: någon vakar faktiskt. */
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(korSajtvakten(env));
+    if(event.cron==='* * * * *')ctx.waitUntil(deliverKvotaForms(env));
+    else ctx.waitUntil(korSajtvakten(env));
   },
 };
 
@@ -132,4 +134,3 @@ async function korSajtvakten(env) {
     }
   } catch {}
 }
-

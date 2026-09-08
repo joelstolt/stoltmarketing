@@ -7,6 +7,8 @@
 // ============================================================
 
 import { rateLimited, clientIp } from "@/lib/rate-limit";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+import {saveKvotaForm,deliverKvotaForms} from "@/lib/kvota-outbox";
 
 const TO = "joel@stoltmarketing.se";
 const FROM = "Stolt Marketing <kontakt@stoltmarketing.se>";
@@ -118,33 +120,17 @@ export async function POST(req) {
       ${chatBlock}
     </div>`;
 
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: FROM,
-        to: TO,
-        reply_to: email,
-        subject,
-        html,
-      }),
-    });
-
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("Resend error:", err);
-      return Response.json({ error: "Failed to send" }, { status: 502 });
-    }
+    // Save first. Delivery and AI may continue safely after this request ends.
+    const {env,ctx}=getCloudflareContext();
+    const reference=await saveKvotaForm(env,data,{from:FROM,to:TO,reply_to:email,subject,html:html+'<p><a href="https://app.kvota.se/kundkontakt">Öppna Kundkontakt i Kvota</a> och välj Stolt Marketing för att läsa svarsförslaget och förbereda en offert.</p>'});
+    ctx.waitUntil(deliverKvotaForms(env));
 
     // Annonskonverteringen till Kontrollrummets kö, som sweeperns uppladdare
     // tömmer mot Google Ads varje timme. Kontot mäter offline import, alltså
     // registreras ingenting alls om det här steget saknas. Sajten är kakfri,
     // så klick-id:t är enda kopplingen tillbaka till annonsen.
     //
-    // Får aldrig fälla formuläret: mejlet har redan gått fram här, och ett
+    // Får aldrig fälla formuläret: förfrågan är redan sparad här, och ett
     // lead är värt oändligt mycket mer än en mätpunkt.
     if (data.klickId && process.env.KONVERTERING_TOKEN) {
       try {
@@ -169,9 +155,9 @@ export async function POST(req) {
       }
     }
 
-    return Response.json({ ok: true, success: true });
+    return Response.json({ ok: true, success: true, reference });
   } catch (err) {
     console.error("Contact API error:", err);
-    return Response.json({ error: "Internal error" }, { status: 500 });
+    return Response.json({ error: "Din förfrågan kunde inte sparas. Försök igen om en liten stund." }, { status: 500 });
   }
 }
