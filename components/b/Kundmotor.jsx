@@ -116,7 +116,7 @@ export default function Kundmotor({ data }) {
       </div>
 
       <p style={{ margin: "22px 0 0", fontFamily: "var(--font-ui)", fontSize: 12.5, letterSpacing: "0.04em", color: DIM }}>
-        Senaste {data.dagar} dagarna · {data.sajter} sajter i drift
+        Senaste {data.dagar} dagarna · {data.sajter} av kundsajterna mäts här
         {tid ? ` · uppdaterat ${tid}` : ""}
       </p>
 

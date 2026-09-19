@@ -371,7 +371,7 @@ export default function BContent() {
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10, flexShrink: 0 }}>
-              {["10+ år i branschen", `${km.sajter} kundsajter i drift och mätning`, "Hässleholm, kunder i hela Sverige"].map((f) => (
+              {["10+ år i branschen", "150+ byggda sajter", "Hässleholm, kunder i hela Sverige"].map((f) => (
                 <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 500, color: "rgba(242,236,221,0.78)" }}>
                   <span aria-hidden="true" style={{ width: 5, height: 5, borderRadius: "50%", background: GUL, display: "inline-block" }} />
                   {f}

@@ -71,7 +71,7 @@ export async function POST(req) {
       .map((r) => `${r.name} (${r.ort}): ${r.offert} offertförfrågningar och ${r.samtal} samtal`)
       .join("; ");
     let system =
-      `${chatConfig.systemPrompt}\n\nLIVE-TAL (ur Umami, senaste ${km.dagar} dagarna, ${km.sajter} kundsajter i drift): ` +
+      `${chatConfig.systemPrompt}\n\nLIVE-TAL (ur Umami, senaste ${km.dagar} dagarna, ${km.sajter} av kundsajterna mäts här. Joel har byggt 150+ sajter och har betydligt fler i drift än de som mäts, bland annat ett tjugotal WordPress-sajter): ` +
       `${km.visitors} besökare, ${km.pageviews} sidvisningar, ${km.leads} förfrågningar, samtal och mejlklick. Per case: ${rader}.`;
     if (typeof context === "string" && context.trim()) {
       system += `\n\nBESÖKARENS EGEN SAJTKOLL JUST NU (mätt av vår motor, referera till den när det passar): ${context.slice(0, 900)}`;
