@@ -3,14 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, AlertTriangle, X, Check } from "lucide-react";
 import { trackConversion } from "@/lib/track";
-import { klickId } from "@/lib/klickid";
+import { skickaForslag, varstaBrister } from "@/lib/forslag";
 
 /*
  * Startsidans enda formulär: ett fält. Adressen mäts med samma motor som
  * /sajtkoll (14 kontroller, cirka 10 sekunder), de tre värsta bristerna
  * visas i klartext, och sedan ställs frågan som är hela affären:
  * vill du se den byggd på nytt? Förslagsbegäran går till /api/contact
- * så leadet landar där alla andra leads landar.
+ * så leadet landar där alla andra leads landar (lib/forslag.js).
+ * Skriver besökaren ett företagsnamn i stället för en adress hoppar vi
+ * över mätningen och går rakt på förslagsfrågan: den som saknar hemsida
+ * är också en köpare.
  */
 
 const PAPER = "#F2ECDD";
@@ -19,6 +22,12 @@ const INK = "#191405";
 const BG2 = "#161309";
 const LINE = "rgba(242,236,221,0.22)";
 const DIM = "rgba(242,236,221,0.74)";
+
+/* Ser texten ut som en webbadress? Annars behandlas den som ett företagsnamn.
+   "Bygg AB", "J.P. Snickeri" och "Anderssons Bygg AB." är namn, "x.se/sida" är adress. */
+export function arAdress(u) {
+  return /^(https?:\/\/)?[^\s/]+\.[a-z]{2,}(\/\S*)?$/i.test(String(u || "").trim());
+}
 
 function domanAv(u) {
   try {
@@ -63,11 +72,12 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
   const [lead, setLead] = useState("idle");
   const [leadFel, setLeadFel] = useState("");
   const [loadedAt] = useState(() => Date.now());
+  const [utanNamn, setUtanNamn] = useState("");
   const resRef = useRef(null);
   const gul = tema === "gul";
 
   useEffect(() => {
-    if (state !== "done" || !resRef.current) return;
+    if ((state !== "done" && state !== "utan") || !resRef.current) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     resRef.current.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
   }, [state]);
@@ -75,11 +85,18 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
   async function run(e) {
     e.preventDefault();
     if (!url.trim() || state === "loading") return;
-    setState("loading");
     setError("");
     setResult(null);
     setLead("idle");
     setLeadFel("");
+    // Ser det inte ut som en adress är det ett företagsnamn. Inget att mäta.
+    if (!arAdress(url)) {
+      setUtanNamn(url.trim());
+      setState("utan");
+      if (window.umami) window.umami.track(`utan-sajt-${plats}`);
+      return;
+    }
+    setState("loading");
     try {
       const res = await fetch("/api/sajtkoll", {
         method: "POST",
@@ -101,39 +118,26 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
     }
   }
 
-  const brister = result
-    ? [...result.checks.filter((c) => !c.pass && !c.warn), ...result.checks.filter((c) => !c.pass && c.warn)].slice(0, 3)
-    : [];
-  const doman = domanAv(result?.url || url);
+  const utanSajt = state === "utan";
+  const brister = result ? varstaBrister(result.checks) : [];
+  const doman = utanSajt ? utanNamn : domanAv(result?.url || url);
 
   async function bestall(e) {
     e.preventDefault();
-    if (!email.trim() || lead === "sending" || !result) return;
+    if (!email.trim() || !doman || lead === "sending" || (!result && !utanSajt)) return;
     setLead("sending");
     setLeadFel("");
-    const message = [
-      `Vill se ett färdigt förslag för ${doman}.`,
-      `Sajtkoll: ${result.score} av 100.`,
-      `Brister: ${brister.map((b) => `${b.label} (${b.value})`).join("; ") || "inga allvarliga"}.`,
-      `Skickat från startsidans fält (${plats}).`,
-    ].join("\n");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: doman,
-          email,
-          company: doman,
-          message,
-          _subject: `Förslag: ${doman} (${result.score}/100)`,
-          hp_field: "",
-          _elapsedMs: Date.now() - loadedAt,
-          klickId: klickId(),
-        }),
+      const ok = await skickaForslag({
+        doman,
+        email,
+        score: result?.score,
+        brister,
+        plats: `startsidans fält (${plats})`,
+        loadedAt,
+        utanSajt,
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !(data.ok || data.success)) throw new Error("send");
+      if (!ok) throw new Error("send");
       setLead("done");
       trackConversion("lead-forslag", "lead");
     } catch {
@@ -161,6 +165,60 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
 
   const scoreColor = !result ? GUL : result.score >= 85 ? GUL : result.score >= 60 ? "#E2C36A" : "#E08A6A";
 
+  const forslagsDel = (
+    <>
+      {lead !== "done" ? (
+            <form onSubmit={bestall} style={utanSajt ? { marginTop: 0, paddingTop: 20 } : { marginTop: 22, paddingTop: 20, borderTop: `1px solid ${LINE}` }} aria-label="Beställ ett förslag">
+              <p className="font-heading" style={{ margin: 0, fontSize: 21, fontWeight: 480, lineHeight: 1.3, color: PAPER }}>
+                {utanSajt ? "Ingen hemsida än" : "Vill du se den byggd på nytt"}<em style={{ fontStyle: "italic", color: GUL }}>?</em>
+              </p>
+              <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.6, color: DIM, maxWidth: "46ch" }}>
+                {utanSajt
+                  ? `Då bygger jag den första åt ${doman}. Ett riktigt, klickbart förslag med dina tjänster och dina orter. Det tar mig två arbetsdagar och kostar dig ingenting.`
+                  : "Jag bygger ett riktigt, klickbart förslag med dina tjänster och dina orter. Det tar mig två arbetsdagar och kostar dig ingenting."}
+              </p>
+              <div className="b-koll-form" style={{ marginTop: 14 }}>
+                <label htmlFor={`koll-mejl-${plats}`} className="sr-only">Din mejladress</label>
+                <input
+                  id={`koll-mejl-${plats}`}
+                  type="email"
+                  autoComplete="email"
+                  placeholder="din@mejl.se"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={lead === "sending"}
+                  style={{ ...inputStyle, background: "rgba(15,13,8,0.7)", border: `1.5px solid ${LINE}`, color: PAPER }}
+                />
+                <button type="submit" className="premium-btn" disabled={lead === "sending"} data-umami-event={`forslag-${plats}`}>
+                  {lead === "sending" ? "Skickar" : "Bygg mitt förslag"} <ArrowRight size={15} />
+                </button>
+              </div>
+              {leadFel && (
+                <p role="alert" style={{ margin: "10px 0 0", fontFamily: "var(--font-ui)", fontSize: 13.5, color: "#E08A6A" }}>{leadFel}</p>
+              )}
+              <p style={{ margin: "12px 0 0", fontFamily: "var(--font-ui)", fontSize: 12, letterSpacing: "0.04em", color: DIM }}>
+                Förslaget är gratis och du förbinder dig inte till något. Säger du nej hör du inte av mig igen.
+                {!utanSajt && (
+                  <>
+                    {" "}Alla 14 kontroller finns på <a href="/sajtkoll" style={{ color: GUL }}>sajtkollen</a>.
+                  </>
+                )}
+              </p>
+            </form>
+          ) : (
+            <div style={utanSajt ? { marginTop: 0, paddingTop: 20 } : { marginTop: 22, paddingTop: 20, borderTop: `1px solid ${LINE}` }} role="status">
+              <p className="font-heading" style={{ margin: 0, fontSize: 21, fontWeight: 480, lineHeight: 1.3, color: PAPER, display: "flex", alignItems: "center", gap: 10 }}>
+                <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Om två arbetsdagar har du en länk.
+              </p>
+              <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.6, color: DIM, maxWidth: "48ch" }}>
+                {utanSajt ? "Jag läser på om ditt företag, dina tjänster och din ort" : "Jag läser din sajt, dina tjänster och din ort"}, och bygger ett förslag du kan klicka runt i. Jag ringer inte, jag mejlar. Vill du hellre prata innan dess: <a href="tel:+46766867406" style={{ color: GUL }}>076-686 74 06</a>.
+              </p>
+            </div>
+          )}
+    </>
+  );
+
   return (
     <div className={`b-koll b-koll-${tema}`} style={{ position: "relative", zIndex: 3, maxWidth: 640, width: "100%", margin: gul ? "0 auto" : 0 }}>
       <style>{`
@@ -175,22 +233,21 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
       `}</style>
 
       <form onSubmit={run} className="b-koll-form" aria-label="Mät din hemsida">
-        <label htmlFor={`koll-url-${plats}`} className="sr-only">Adressen till din nuvarande hemsida</label>
+        <label htmlFor={`koll-url-${plats}`} className="sr-only">Adressen till din nuvarande hemsida, eller företagsnamnet om du inte har någon</label>
         <input
           id={`koll-url-${plats}`}
           type="text"
-          inputMode="url"
-          autoComplete="url"
+          autoComplete="off"
           autoCapitalize="none"
           spellCheck={false}
-          placeholder="dittforetag.se"
+          placeholder="dittforetag.se eller företagsnamn"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           disabled={state === "loading"}
           style={inputStyle}
         />
         <button type="submit" className="premium-btn" disabled={state === "loading"} style={knappStyle} data-umami-event={`koll-${plats}`}>
-          {state === "loading" ? "Mäter" : "Mät min sajt"} <ArrowRight size={15} />
+          {state === "loading" ? "Mäter" : url.trim() && !arAdress(url) ? "Få gratis förslag" : "Mät min sajt"} <ArrowRight size={15} />
         </button>
       </form>
       {error && (
@@ -200,6 +257,12 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
       )}
 
       {state === "loading" && <Troska />}
+
+      {utanSajt && (
+        <div ref={resRef} style={{ marginTop: 26, background: BG2, border: `1px solid ${LINE}`, padding: "4px 26px 24px", color: PAPER, textAlign: "left" }}>
+          {forslagsDel}
+        </div>
+      )}
 
       {state === "done" && result && (
         <div ref={resRef} style={{ marginTop: 26, background: BG2, border: `1px solid ${LINE}`, padding: "26px 26px 24px", color: PAPER, textAlign: "left" }}>
@@ -259,48 +322,7 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
             Fråga AI:n vad det betyder för din bransch <ArrowRight size={13} />
           </button>
 
-          {lead !== "done" ? (
-            <form onSubmit={bestall} style={{ marginTop: 22, paddingTop: 20, borderTop: `1px solid ${LINE}` }} aria-label="Beställ ett förslag">
-              <p className="font-heading" style={{ margin: 0, fontSize: 21, fontWeight: 480, lineHeight: 1.3, color: PAPER }}>
-                Vill du se den byggd på nytt<em style={{ fontStyle: "italic", color: GUL }}>?</em>
-              </p>
-              <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.6, color: DIM, maxWidth: "46ch" }}>
-                Jag bygger ett riktigt, klickbart förslag med dina tjänster och dina orter. Det tar mig två arbetsdagar och kostar dig ingenting.
-              </p>
-              <div className="b-koll-form" style={{ marginTop: 14 }}>
-                <label htmlFor={`koll-mejl-${plats}`} className="sr-only">Din mejladress</label>
-                <input
-                  id={`koll-mejl-${plats}`}
-                  type="email"
-                  autoComplete="email"
-                  placeholder="din@mejl.se"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={lead === "sending"}
-                  style={{ ...inputStyle, background: "rgba(15,13,8,0.7)", border: `1.5px solid ${LINE}`, color: PAPER }}
-                />
-                <button type="submit" className="premium-btn" disabled={lead === "sending"} data-umami-event={`forslag-${plats}`}>
-                  {lead === "sending" ? "Skickar" : "Bygg mitt förslag"} <ArrowRight size={15} />
-                </button>
-              </div>
-              {leadFel && (
-                <p role="alert" style={{ margin: "10px 0 0", fontFamily: "var(--font-ui)", fontSize: 13.5, color: "#E08A6A" }}>{leadFel}</p>
-              )}
-              <p style={{ margin: "12px 0 0", fontFamily: "var(--font-ui)", fontSize: 12, letterSpacing: "0.04em", color: DIM }}>
-                Ingen bindning, inga påminnelser. Vill du se alla 14 kontroller finns de på <a href="/sajtkoll" style={{ color: GUL }}>sajtkollen</a>.
-              </p>
-            </form>
-          ) : (
-            <div style={{ marginTop: 22, paddingTop: 20, borderTop: `1px solid ${LINE}` }} role="status">
-              <p className="font-heading" style={{ margin: 0, fontSize: 21, fontWeight: 480, lineHeight: 1.3, color: PAPER, display: "flex", alignItems: "center", gap: 10 }}>
-                <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Om två arbetsdagar har du en länk.
-              </p>
-              <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.6, color: DIM, maxWidth: "48ch" }}>
-                Jag läser din sajt, dina tjänster och din ort, och bygger ett förslag du kan klicka runt i. Jag ringer inte, jag mejlar. Vill du hellre prata innan dess: <a href="tel:+46766867406" style={{ color: GUL }}>076-686 74 06</a>.
-              </p>
-            </div>
-          )}
+          {forslagsDel}
         </div>
       )}
     </div>

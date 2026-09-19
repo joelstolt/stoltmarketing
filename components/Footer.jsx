@@ -121,9 +121,9 @@ export default function Footer() {
             </span>
           </Link>
           <p style={{ fontSize: 14, color: "rgba(242,236,221,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
-            Digital byrå i Hässleholm med 10+ års erfarenhet. Moderna hemsidor,
-            e-handel, SEO, Google Ads och AI-automation, med enterprise-kvalitet
-            till företag i hela Skåne och Sverige.
+            Webbyrå i Hässleholm med 10+ års erfarenhet. Hemsidor, e-handel, SEO,
+            Google Ads och AI-automation till företag i hela Skåne och Sverige.
+            Du ser hemsidan innan du betalar.
           </p>
 
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>

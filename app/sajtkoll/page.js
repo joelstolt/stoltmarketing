@@ -5,13 +5,19 @@ import { ArrowRight, Check, AlertTriangle, X, Search } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui";
+import { SITE, PRICING } from "@/lib/local/data";
+import { trackConversion } from "@/lib/track";
+import { skickaForslag, varstaBrister } from "@/lib/forslag";
 
 const GUL = "#F2C230";
 const LINE = "rgba(242,236,221,0.14)";
 const PAPER = "#F2ECDD";
 
-/* Gratis verktyg: URL in, 14 kontroller ut, ärlig bedömning och en naturlig
-   väg till kostnadsfri genomgång. Mekaniken: det vi hittar kan vi fixa. */
+/* Gratis verktyg: URL in, 14 kontroller ut, ärlig bedömning. Efter resultatet
+   ställs samma fråga som på startsidan: vill du se hemsidan byggd på nytt?
+   Förslaget är huvudvägen (0 av 11 annonsbesökare gick vidare när resultatet
+   bara erbjöd rapport, bevakning och möte, mätt 2026-09-19). Rapport på mejl
+   och alla 14 rader finns kvar, hopfällda under. */
 
 function CheckRow({ c }) {
   const state = c.pass ? "pass" : c.warn ? "warn" : "fail";
@@ -62,6 +68,29 @@ export default function SajtkollPage() {
   const [konkUrl, setKonkUrl] = useState("");
   const [konk, setKonk] = useState(null);
   const [konkState, setKonkState] = useState("idle");
+  const [email, setEmail] = useState("");
+  const [lead, setLead] = useState("idle");
+  const [leadFel, setLeadFel] = useState("");
+  const [loadedAt] = useState(() => Date.now());
+
+  const brister = result ? varstaBrister(result.checks) : [];
+  const doman = result ? result.url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "") : "";
+
+  async function bestallForslag(e) {
+    e.preventDefault();
+    if (!email.trim() || lead === "sending" || !result) return;
+    setLead("sending");
+    setLeadFel("");
+    try {
+      const ok = await skickaForslag({ doman, email, score: result.score, brister, plats: "sajtkollens resultat", loadedAt });
+      if (!ok) throw new Error("send");
+      setLead("done");
+      trackConversion("lead-forslag", "lead");
+    } catch {
+      setLead("idle");
+      setLeadFel(`Det gick inte att skicka just nu. Mejla ${SITE.email || "joel@stoltmarketing.se"} så bygger jag ändå.`);
+    }
+  }
 
   async function bestallRapport(e) {
     e.preventDefault();
@@ -136,6 +165,8 @@ export default function SajtkollPage() {
     setKonk(null);
     setKonkState("idle");
     setKonkUrl("");
+    setLead("idle");
+    setLeadFel("");
     try {
       const res = await fetch("/api/sajtkoll", {
         method: "POST",
@@ -150,6 +181,8 @@ export default function SajtkollPage() {
       }
       setResult(data);
       setState("done");
+      // sajtkoll-kord räknar bara klick på knappen. Den här räknar klara mätningar.
+      trackConversion("sajtkoll-klar", "sajtkoll");
     } catch {
       setError("Något gick fel. Testa igen om en stund.");
       setState("idle");
@@ -189,7 +222,7 @@ export default function SajtkollPage() {
               Hur bra fungerar din hemsida<em style={{ fontStyle: "italic", color: GUL }}>?</em>
             </h1>
             <p className="mt-6 text-[16px] sm:text-[17.5px] leading-relaxed text-body max-w-[560px]">
-              Skriv in din adress så mäter vi sajten på riktigt: sidvikt, hastighet,
+              Skriv in din adress så mäter jag hemsidan på riktigt: sidvikt, hastighet,
               mobilanpassning, Google-synlighet och AI-läsbarhet, och att sidans
               filer faktiskt laddar. 14 kontroller, cirka 10 sekunder, ingen registrering.
             </p>
@@ -220,7 +253,7 @@ export default function SajtkollPage() {
                 data-umami-event="sajtkoll-kord"
                 style={{ opacity: state === "loading" ? 0.7 : 1 }}
               >
-                {state === "loading" ? "Mäter..." : "Testa sajten"}
+                {state === "loading" ? "Mäter..." : "Testa min hemsida"}
                 {state !== "loading" && <Search size={14} />}
               </button>
             </form>
@@ -247,8 +280,14 @@ export default function SajtkollPage() {
                 </p>
               </div>
             )}
-            <p className="mt-5 text-[12.5px] text-faint" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.06em" }}>
-              Allt som rapporteras läses ur ett riktigt svar från din sajt. Inga gissningar, ingen lagring.
+            <p className="mt-5 text-[12.5px] text-muted" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.06em" }}>
+              Allt som rapporteras läses ur ett riktigt svar från din hemsida. Jag sparar resultatet så att du kan dela länken, inget annat.
+            </p>
+            <p className="mt-6 flex items-center gap-3 text-[13.5px] text-muted max-w-[560px]">
+              <img src="/joel-stolt-240.webp" alt="" width={36} height={36} style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+              <span>
+                Jag heter Joel Stolt och bygger hemsidor åt småföretag. 0 kr i start, från {PRICING.basManad} exkl. moms. Du ser hemsidan innan du betalar.
+              </span>
             </p>
           </div>
         </section>
@@ -282,7 +321,7 @@ export default function SajtkollPage() {
                       >
                         {result.score}
                       </span>
-                      <span className="text-[15px] text-muted">av 100</span>
+                      <span className="text-[15px] text-muted">av 100 på tekniken</span>
                     </div>
                   </div>
                   <p className="font-heading text-[clamp(18px,2.4vw,24px)] text-heading m-0 max-w-[380px]" style={{ fontStyle: "italic", fontWeight: 400 }}>
@@ -305,16 +344,90 @@ export default function SajtkollPage() {
                   </div>
                 )}
 
+                {/* De värsta bristerna i klartext, resten ligger hopfällt längre ner */}
+                {brister.length > 0 && (
+                  <div className="mt-7">
+                    <h2 className="font-heading text-[18px] text-heading mt-0 mb-1" style={{ fontWeight: 500 }}>
+                      Här finns mest att hämta
+                    </h2>
+                    {brister.map((c) => (
+                      <CheckRow key={c.id} c={c} />
+                    ))}
+                  </div>
+                )}
+
+                {/* Förslagsfrågan: huvudvägen efter resultatet */}
+                <div
+                  className="mt-8 p-6 sm:p-7 rounded-[12px]"
+                  style={{ background: "linear-gradient(135deg, rgba(242,194,48,0.13), rgba(242,194,48,0.04))", border: "1px solid rgba(242,194,48,0.28)" }}
+                >
+                  {lead !== "done" ? (
+                    <form onSubmit={bestallForslag} aria-label="Beställ ett gratis förslag">
+                      <h2 className="font-heading text-[clamp(21px,2.6vw,26px)] text-heading mt-0 mb-3" style={{ fontWeight: 520 }}>
+                        Vill du se din hemsida byggd på nytt<em style={{ fontStyle: "italic", color: GUL }}>?</em>
+                      </h2>
+                      <p className="text-[14.5px] leading-relaxed text-body mt-0 mb-3 max-w-[600px]">
+                        Den här kollen mäter 14 tekniska saker. Den mäter inte hur många sidor du har som kan dyka upp
+                        när någon söker på din tjänst och din ort. Det tittar jag på när jag bygger ditt förslag.
+                      </p>
+                      <p className="text-[14.5px] leading-relaxed text-body mt-0 mb-5 max-w-[600px]">
+                        Jag bygger startsidan och en tjänstesida åt dig, med dina tjänster och dina orter, på en riktig
+                        länk. Klart om två arbetsdagar. Det kostar ingenting och du förbinder dig inte till något.
+                      </p>
+                      <div className="flex flex-wrap gap-3 max-w-[600px]">
+                        <input
+                          type="email"
+                          required
+                          autoComplete="email"
+                          placeholder="din@mejl.se"
+                          aria-label="Din mejladress"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          disabled={lead === "sending"}
+                          className="flex-1 min-w-0"
+                          style={{ padding: "15px 18px", borderRadius: "3em", border: `1.5px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 16, outline: "none" }}
+                        />
+                        <button type="submit" disabled={lead === "sending"} className="premium-btn" data-umami-event="forslag-sajtkoll" style={{ opacity: lead === "sending" ? 0.7 : 1 }}>
+                          {lead === "sending" ? "Skickar..." : "Bygg mitt förslag"}
+                          {lead !== "sending" && <ArrowRight size={15} />}
+                        </button>
+                      </div>
+                      {leadFel && <p role="alert" className="text-[13.5px] mt-3 mb-0" style={{ color: "#C97B5E" }}>{leadFel}</p>}
+                      <p className="text-[12.5px] text-muted mt-4 mb-0 max-w-[600px] leading-relaxed">
+                        Säger du nej hör du inte av mig igen. Gillar du den: 0 kr i start, från {PRICING.basManad} exkl. moms,
+                        12 månader och sedan månadsvis. Du äger hemsidan.
+                      </p>
+                    </form>
+                  ) : (
+                    <div role="status">
+                      <h2 className="font-heading text-[21px] text-heading mt-0 mb-2 flex items-center gap-2.5" style={{ fontWeight: 520 }}>
+                        <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Om två arbetsdagar har du en länk.
+                      </h2>
+                      <p className="text-[14.5px] leading-relaxed text-body m-0 max-w-[600px]">
+                        Jag läser din hemsida, dina tjänster och din ort, och bygger ett förslag du kan klicka runt i.
+                        Jag ringer inte, jag mejlar.
+                      </p>
+                    </div>
+                  )}
+                  <p className="mt-5 mb-0 pt-5 flex items-center gap-3 text-[13.5px] text-body" style={{ borderTop: "1px solid rgba(242,194,48,0.2)" }}>
+                    <img src="/joel-stolt-240.webp" alt="Joel Stolt" width={40} height={40} loading="lazy" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+                    <span>
+                      Joel Stolt bygger och svarar själv. Hellre prata först?{" "}
+                      <a href={SITE.phoneHref} data-umami-event="cta-telefon-sajtkoll" style={{ color: GUL, whiteSpace: "nowrap" }}>
+                        Ring {SITE.phone}
+                      </a>
+                    </span>
+                  </p>
+                </div>
+
                 <button
                   type="button"
                   onClick={() => {
-                    const brister = [...result.checks.filter((c) => !c.pass && !c.warn), ...result.checks.filter((c) => !c.pass && c.warn)].slice(0, 3);
-                    const dom = result.url.replace(/^https?:\/\//, "").replace(/^www\./, "");
                     window.dispatchEvent(
                       new CustomEvent("stolt-chat:open", {
                         detail: {
-                          context: `Domän ${dom}. Poäng ${result.score} av 100. Bedömning: ${result.verdict || ""}. Brister: ${brister.map((b) => `${b.label}: ${b.value} (${b.detail})`).join(" | ") || "inga allvarliga"}.`,
-                          intro: `Jag såg mätningen av ${dom}: ${result.score} av 100. Fråga mig vad bristerna betyder för just din bransch, hur förslaget går till, eller vad något kostar.`,
+                          context: `Domän ${doman}. Poäng ${result.score} av 100. Bedömning: ${result.verdict || ""}. Brister: ${brister.map((b) => `${b.label}: ${b.value} (${b.detail})`).join(" | ") || "inga allvarliga"}.`,
+                          intro: `Jag såg mätningen av ${doman}: ${result.score} av 100. Fråga mig vad bristerna betyder för just din bransch, hur förslaget går till, eller vad något kostar.`,
                         },
                       })
                     );
@@ -326,60 +439,64 @@ export default function SajtkollPage() {
                   Fråga AI:n vad det betyder för din bransch <ArrowRight size={13} />
                 </button>
 
-                <div className="mt-2">
-                  {result.checks.map((c) => (
-                    <CheckRow key={c.id} c={c} />
-                  ))}
-                </div>
-
-                {result.sampled && (
-                  <p className="text-[12.5px] text-faint mt-4 mb-0">
-                    Sajten laddar väldigt många filer, så vikten är uppmätt på ett representativt urval och uppräknad.
-                  </p>
-                )}
-
-                {/* Sajtvakten: rapporten på mejl + bevakning = lead-fångsten */}
-                <div className="mt-8 p-6 rounded-[12px]" style={{ background: "#0B0A06", border: `1px solid ${LINE}` }}>
-                  <h2 className="font-heading text-[20px] text-heading mt-0 mb-1" style={{ fontWeight: 520 }}>
-                    Få hela rapporten med åtgärdslista på mejl
-                  </h2>
-                  <p className="text-[13.5px] text-muted mt-0 mb-4 max-w-[520px]">
-                    Gratis. Bocka i Sajtvakten så mäter vi om din sajt varje månad och mejlar vad som förändrats, tills du säger stopp.
-                  </p>
-                  {rapport === "sent" ? (
-                    <div className="flex items-start gap-3 p-4 rounded-[10px]" style={{ background: "rgba(242,194,48,0.1)", border: "1px solid rgba(242,194,48,0.3)" }}>
-                      <Check size={18} style={{ color: GUL, flexShrink: 0, marginTop: 2 }} />
-                      <p className="text-[14px] text-body m-0">Rapporten är på väg till din inkorg. Kolla skräpposten om den dröjer.</p>
-                    </div>
-                  ) : (
-                    <form onSubmit={bestallRapport} className="flex flex-col gap-3">
-                      <div className="flex flex-wrap gap-3">
-                        <input name="name" placeholder="Ditt namn" autoComplete="name" className="flex-1 min-w-[160px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#161309", color: PAPER, fontSize: 15, outline: "none" }} />
-                        <input name="email" type="email" required placeholder="Din e-post" autoComplete="email" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#161309", color: PAPER, fontSize: 15, outline: "none" }} />
-                      </div>
-                      <label className="flex items-start gap-2.5 text-[13.5px] text-body cursor-pointer">
-                        <input type="checkbox" name="bevaka" defaultChecked style={{ marginTop: 3, accentColor: GUL }} />
-                        <span>Sajtvakten: mejla mig en ny mätning varje månad med vad som förändrats. Avslutas med ett klick i varje mejl.</span>
-                      </label>
-                      <input name="hp_field" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px", height: 0, width: 0, opacity: 0 }} aria-hidden="true" />
-                      <div className="flex flex-wrap items-center gap-3">
-                        <button type="submit" disabled={rapport === "sending"} className="premium-btn" data-umami-event="lead-sajtkoll-rapport" style={{ opacity: rapport === "sending" ? 0.7 : 1 }}>
-                          {rapport === "sending" ? "Skickar..." : "Skicka rapporten"}
-                          <ArrowRight size={14} />
-                        </button>
-                        {result.id && (
-                          <button type="button" onClick={kopieraLank} className="secondary-btn" data-umami-event="sajtkoll-dela">
-                            {kopierad ? "Länk kopierad!" : "Kopiera delbar länk"}
-                          </button>
-                        )}
-                      </div>
-                      {rapportFel && <p className="text-[13px] m-0" style={{ color: "#C97B5E" }}>{rapportFel}</p>}
-                      <p className="text-[11.5px] text-faint m-0" style={{ fontFamily: "var(--font-ui)" }}>
-                        Vi använder uppgifterna för rapporten och bevakningen, inget annat. Avregistrering i varje mejl.
-                      </p>
-                    </form>
+                {/* Alla 14 rader, hopfällda */}
+                <details className="mt-6" style={{ borderTop: `1px solid ${LINE}` }}>
+                  <summary className="py-4 text-[15px] text-heading cursor-pointer" data-umami-event="sajtkoll-visa-alla" style={{ fontWeight: 500 }}>
+                    Visa alla 14 kontroller
+                  </summary>
+                  <div>
+                    {result.checks.map((c) => (
+                      <CheckRow key={c.id} c={c} />
+                    ))}
+                  </div>
+                  {result.sampled && (
+                    <p className="text-[12.5px] text-faint mt-4 mb-0">
+                      Sajten laddar väldigt många filer, så vikten är uppmätt på ett representativt urval och uppräknad.
+                    </p>
                   )}
-                </div>
+                </details>
+
+                {/* Rapport på mejl: reservvägen. Sajtvakten är ett aktivt val, inte förbockad. */}
+                <details style={{ borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
+                  <summary className="py-4 text-[15px] text-heading cursor-pointer" data-umami-event="sajtkoll-visa-rapport" style={{ fontWeight: 500 }}>
+                    Inte redo för det? Få rapporten med åtgärdslista på mejl i stället
+                  </summary>
+                  <div className="pb-6">
+                    {rapport === "sent" ? (
+                      <div className="flex items-start gap-3 p-4 rounded-[10px]" style={{ background: "rgba(242,194,48,0.1)", border: "1px solid rgba(242,194,48,0.3)" }}>
+                        <Check size={18} style={{ color: GUL, flexShrink: 0, marginTop: 2 }} />
+                        <p className="text-[14px] text-body m-0">Rapporten är på väg till din inkorg. Kolla skräpposten om den dröjer.</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={bestallRapport} className="flex flex-col gap-3">
+                        <div className="flex flex-wrap gap-3">
+                          <input name="name" placeholder="Ditt namn" autoComplete="name" aria-label="Ditt namn" className="flex-1 min-w-[160px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
+                          <input name="email" type="email" required placeholder="Din e-post" autoComplete="email" aria-label="Din e-post" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
+                        </div>
+                        <label className="flex items-start gap-2.5 text-[13.5px] text-body cursor-pointer">
+                          <input type="checkbox" name="bevaka" style={{ marginTop: 3, accentColor: GUL }} />
+                          <span>Mät om min hemsida varje månad och mejla vad som ändrats. Avslutas med ett klick i varje mejl.</span>
+                        </label>
+                        <input name="hp_field" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px", height: 0, width: 0, opacity: 0 }} aria-hidden="true" />
+                        <div className="flex flex-wrap items-center gap-3">
+                          <button type="submit" disabled={rapport === "sending"} className="secondary-btn" data-umami-event="lead-sajtkoll-rapport" style={{ opacity: rapport === "sending" ? 0.7 : 1 }}>
+                            {rapport === "sending" ? "Skickar..." : "Skicka rapporten"}
+                          </button>
+                        </div>
+                        {rapportFel && <p className="text-[13px] m-0" style={{ color: "#C97B5E" }}>{rapportFel}</p>}
+                        <p className="text-[11.5px] text-faint m-0" style={{ fontFamily: "var(--font-ui)" }}>
+                          Jag använder uppgifterna för rapporten och bevakningen, inget annat. Avregistrering i varje mejl.
+                        </p>
+                      </form>
+                    )}
+                  </div>
+                </details>
+
+                {result.id && (
+                  <button type="button" onClick={kopieraLank} className="secondary-btn mt-6" data-umami-event="sajtkoll-dela">
+                    {kopierad ? "Länk kopierad!" : "Kopiera delbar länk"}
+                  </button>
+                )}
 
                 {/* Konkurrentjämförelse */}
                 <div className="mt-5 p-6 rounded-[12px]" style={{ background: "#161309", border: `1px solid ${LINE}` }}>
@@ -387,7 +504,7 @@ export default function SajtkollPage() {
                     Jämför med en konkurrent
                   </h2>
                   <form onSubmit={jamforKonkurrent} className="flex flex-wrap gap-3">
-                    <input value={konkUrl} onChange={(e) => setKonkUrl(e.target.value)} placeholder="konkurrenten.se" inputMode="url" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: "3em", border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
+                    <input value={konkUrl} onChange={(e) => setKonkUrl(e.target.value)} placeholder="konkurrenten.se" aria-label="Konkurrentens webbadress" inputMode="url" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: "3em", border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
                     <button type="submit" disabled={konkState === "loading"} className="secondary-btn" data-umami-event="sajtkoll-jamfor" style={{ opacity: konkState === "loading" ? 0.7 : 1 }}>
                       {konkState === "loading" ? "Mäter..." : "Jämför"}
                     </button>
@@ -421,26 +538,6 @@ export default function SajtkollPage() {
                     </div>
                   )}
                 </div>
-
-                {/* CTA efter resultat */}
-                <div
-                  className="mt-8 p-6 rounded-[12px]"
-                  style={{ background: "linear-gradient(135deg, rgba(242,194,48,0.13), rgba(242,194,48,0.04))", border: "1px solid rgba(242,194,48,0.28)" }}
-                >
-                  <h2 className="font-heading text-[21px] text-heading mt-0 mb-2" style={{ fontWeight: 520 }}>
-                    Vill du att det vi hittade blir fixat?
-                  </h2>
-                  <p className="text-[14.5px] text-body mt-0 mb-5 max-w-[520px]">
-                    Boka en kostnadsfri genomgång så går Joel igenom resultatet med dig:
-                    15 till 20 minuter, en ärlig bedömning av vad som är värt att göra, inga förpliktelser.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <a href="/boka" className="premium-btn" data-umami-event="lead-sajtkoll">
-                      Boka genomgång <ArrowRight size={15} />
-                    </a>
-                    <a href="/tjanster" className="secondary-btn">Se tjänster</a>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
@@ -453,18 +550,18 @@ export default function SajtkollPage() {
               Vad mäter sajtkollen?
             </h2>
             <p className="text-[15.5px] leading-relaxed text-body max-w-[680px]">
-              Tolv saker som avgör om en hemsida drar in kunder eller tappar dem: hur tung sidan är
+              14 saker som avgör om en hemsida drar in kunder eller tappar dem: hur tung sidan är
               och hur många filer den laddar, om bilderna ligger i moderna format, hur snabbt servern
               svarar, om sajten är mobilanpassad och krypterad, hur rubrik och beskrivning ser ut i
               Google, om det går att kontakta er direkt från startsidan, och om innehållet är läsbart
-              för AI-assistenter som ChatGPT. Vi mäter hela sidvikten, inte bara HTML-dokumentet,
-              och vi kontrollerar att filerna faktiskt laddar: en enda trasig stilmall kan få en
+              för AI-assistenter som ChatGPT. Jag mäter hela sidvikten, inte bara HTML-dokumentet,
+              och kontrollerar att filerna faktiskt laddar: en enda trasig stilmall kan få en
               tekniskt hel sida att se sönderslagen ut för besökaren.
             </p>
             <p className="text-[15.5px] leading-relaxed text-body max-w-[680px]">
               Mätningen bedömer teknik och laddning, inte hur designen ser ut eller känns.
-              Verktyget är byggt av samma motor vi använder när vi granskar sajter åt kunder,
-              och det ersätter inte en riktig genomgång, men det visar var läckan sitter.
+              Verktyget är byggt av samma motor jag använder när jag granskar hemsidor åt kunder.
+              Det ersätter inte en riktig genomgång, men det visar var läckan sitter.
             </p>
           </div>
         </section>

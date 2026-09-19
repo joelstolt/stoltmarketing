@@ -133,7 +133,7 @@ export default function RootLayout({ children }) {
       opens: "08:00",
       closes: "17:00",
     },
-    slogan: "Enterprise-kvalitet till småföretag.",
+    slogan: "Din nya hemsida, färdig innan du betalar.",
   };
 
   const website = {

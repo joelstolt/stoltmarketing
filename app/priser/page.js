@@ -54,7 +54,7 @@ export default function Page() {
           breadcrumbs={[{ label: "Start", href: "/" }, { label: "Priser" }]}
           badge="Priser"
           title="Öppna priser, färdig sajt innan du betalar"
-          subtitle="Ett fast månadspris där sajt, hosting, drift och ändringar ingår. Det här är hela prislistan, det finns inga fler rader någon annanstans."
+          subtitle="Ett fast månadspris där sajt, hosting, drift och ändringar ingår. Det här är prislistan för hemsidor, exklusive moms. Större webbutiker och AI-projekt får fast pris efter omfattning innan jag börjar."
           bullets={["0 kr i startavgift", "12 månaders bindning, därefter månadsvis", "Du ser sajten färdig först"]}
         />
 

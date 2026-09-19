@@ -26,8 +26,8 @@ const techStack = [
 
 const faqs = [
   { q: "Vilken teknik bygger du i?", a: "Jag jobbar primärt med Next.js och React för moderna sajter, och WordPress/WooCommerce för e-handel och innehållstunga sidor. Du får alltid en rekommendation baserad på dina behov." },
-  { q: "Hur lång tid tar det att bygga en webbplats?", a: "En enklare företagssajt tar 1-2 veckor. E-handelsplattformar och större projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och du får alltid en tydlig tidplan." },
-  { q: "Vad kostar en webbplats?", a: "0 kr i startavgift och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Då ingår bygget, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets för 2 990 kr/mån." },
+  { q: "Hur lång tid tar det att bygga en webbplats?", a: "En företagssajt är normalt live inom två veckor efter ditt ja. E-handelsplattformar och större projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och du får alltid en tydlig tidplan." },
+  { q: "Vad kostar en webbplats?", a: "0 kr i startavgift och från 1 190 kr/mån exklusive moms, med 12 månaders bindning och därefter månadsvis. Då ingår bygget, hosting, drift, uppdateringar, innehållsändringar och support. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets för 2 990 kr/mån." },
   { q: "Kan jag uppdatera sajten själv efteråt?", a: "Ja. WordPress-sajter har ett enkelt admin-gränssnitt. Next.js-sajter kan kopplas till ett CMS. Jag erbjuder också managed hemsida om du vill att jag sköter uppdateringar." },
 ];
 
@@ -45,7 +45,7 @@ export default function WebbutvecklingContent() {
         badge="Webbutveckling"
         title="Moderna webbplatser och e-handel som gör det lätt för kunder att hitta dig och ta kontakt."
         subtitle="Ny sajt eller ombyggnad, med fokus på tydlighet, förtroende och fler förfrågningar. Samma kvalitet som jag levererar åt AcadeMedia."
-        bullets={["0 kr start, 1 190 kr/mån", "Designförslag inom 2 arbetsdagar", "Klar på 1-2 veckor"]}
+        bullets={["0 kr start, från 1 190 kr/mån", "Klickbart förslag inom 2 arbetsdagar", "Live inom två veckor efter ditt ja"]}
       />
 
       {/* ═══ PASSAR NÄR ═══ */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone, ArrowRight } from "lucide-react";
@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ui";
 import { SITE, PRICING } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
+import { SNAPSHOT } from "@/lib/kundmotor";
 
 /* ============================================================
    Annonslandningssida för hemsida-, pris- och webbyråorden.
@@ -33,8 +34,8 @@ import { klickId } from "@/lib/klickid";
 const steg = [
   {
     n: "1",
-    title: "Boka en kostnadsfri genomgång",
-    desc: "Femton till tjugo minuter över video. Jag frågar vad företaget gör, vilka du vill nå och vad som inte fungerar idag.",
+    title: "Skicka formuläret",
+    desc: "Namn och mejl räcker och det tar en minut. Inget möte, inget säljsamtal. Har du en hemsida idag skriver du adressen, annars lämnar du fältet tomt.",
   },
   {
     n: "2",
@@ -62,7 +63,7 @@ const paket = [
     name: "Bas",
     price: PRICING.basManad,
     note: "För dig som behöver en sajt som gör jobbet.",
-    items: ["Upp till sex sidor", "Design efter din profil", "Drift, support och ändringar"],
+    items: ["Upp till fem sidor", "Design efter din profil", "Drift, support och ändringar"],
   },
   {
     name: "Bredd",
@@ -86,11 +87,11 @@ const faqs = [
   },
   {
     q: "Hur säger jag upp?",
-    a: "Ett mejl räcker. Bindningen är tolv månader, därefter löper avtalet månadsvis med en månads uppsägning. Inga uppsägningsavgifter och ingen förhandling.",
+    a: "Ett mejl räcker. Bindningen är tolv månader, därefter löper avtalet månadsvis och avslutas till nästa månadsskifte. Inga uppsägningsavgifter och ingen förhandling.",
   },
   {
     q: "Hur lång tid tar det?",
-    a: "Designförslaget får du inom två arbetsdagar. Från godkänt förslag till lansering tar det oftast två till fyra veckor, beroende på hur många sidor det handlar om och hur snabbt jag får innehållet.",
+    a: "Designförslaget får du inom två arbetsdagar. Från ditt ja till lansering tar det normalt inom två veckor. Större sajter med många sidor kan ta längre, och då får du en tidplan innan jag börjar.",
   },
   {
     q: "Jobbar du bara i Hässleholm?",
@@ -110,6 +111,24 @@ export default function LpHemsidaContent() {
   const [done, setDone] = useState(false);
   // Sätts vid sidladdning, submits < 3 s efter denna avvisas server-side.
   const [loadedAt] = useState(() => Date.now());
+
+  // Samma live-tal som startsidan: ögonblicksbilden i SSR, Umami-talet efter laddning.
+  const [niklassonsOffert, setNiklassonsOffert] = useState(
+    SNAPSHOT.rows.find((r) => r.slug === "niklassonsflytt")?.offert || 37
+  );
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/kundmotor")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        const rad = d && Array.isArray(d.rows) ? d.rows.find((r) => r.slug === "niklassonsflytt") : null;
+        if (alive && rad && rad.offert) setNiklassonsOffert(rad.offert);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   const change = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
@@ -269,8 +288,8 @@ export default function LpHemsidaContent() {
               Ny hemsida till ditt företag, se den färdig innan du betalar
             </h1>
             <p className="mt-5 text-[17px] sm:text-[18px] leading-relaxed text-body max-w-[560px]">
-              Enterprise-kvalitet till småföretag, byggd av personen du pratar med. Fast pris
-              från {PRICING.basManad}, 0 kr i startavgift och allt ingår.
+              Byggd av personen du pratar med. Fast pris från {PRICING.basManad} exkl. moms,
+              0 kr i startavgift och drift, support och ändringar ingår.
             </p>
 
             {/* Beviset direkt, inte pa skarm fyra. I den har branschen kopper
@@ -280,7 +299,7 @@ export default function LpHemsidaContent() {
                 ytterligare en knapp. */}
             <p className="mt-6 text-[15px] text-body leading-relaxed max-w-[520px]">
               <span className="font-heading font-700 text-heading text-[19px]">
-                32 offertförfrågningar på 30 dagar
+                {niklassonsOffert} offertförfrågningar på 30 dagar
               </span>
               <br />
               för Niklassons Flytt, senast levererade sajten.
@@ -325,7 +344,7 @@ export default function LpHemsidaContent() {
                   Traditionell byrå
                 </p>
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
-                  80 000 till 200 000 kr
+                  30 000 till 100 000 kr
                 </div>
                 <p className="mt-2.5 text-[14px] text-muted">i engångskostnad</p>
                 <ul className="mt-5 grid gap-2.5 text-[15px] text-body leading-snug">
@@ -406,7 +425,7 @@ export default function LpHemsidaContent() {
                 </div>
                 <div className="mt-4">
                   <div className="font-heading font-700 text-[26px] text-heading leading-none">
-                    32 offertförfrågningar
+                    {niklassonsOffert} offertförfrågningar
                   </div>
                   <div className="mt-1.5 text-[14px] text-muted">
                     på 30 dagar, Niklassons Flytt
@@ -605,7 +624,7 @@ export default function LpHemsidaContent() {
                   href="#kontakt"
                   className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-[#F2C230] hover:underline"
                 >
-                  Boka kostnadsfri genomgång
+                  Få gratis förslag
                   <ArrowRight size={15} />
                 </a>
               </div>
@@ -624,7 +643,7 @@ export default function LpHemsidaContent() {
                   href="#kontakt"
                   className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-[#F2C230] hover:underline"
                 >
-                  Boka kostnadsfri genomgång
+                  Få gratis förslag
                   <ArrowRight size={15} />
                 </a>
               </div>

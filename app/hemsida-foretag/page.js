@@ -10,12 +10,12 @@ import { ArrowRight, Check } from "lucide-react";
 const URL = "https://www.stoltmarketing.se/hemsida-foretag";
 
 export const metadata = {
-  title: "Hemsida för företag | 0 kr start, 1 190 kr per månad",
+  title: "Hemsida för företag | 0 kr start, från 1 190 kr per månad",
   description:
-    "Hemsida för företag utan startavgift: design, bygge, drift och ändringar för 1 190 kr/mån. Byggd för att synas på Google och göra besökare till kunder. Se skiss innan du bestämmer dig.",
+    "Hemsida för företag utan startavgift: design, bygge, drift och ändringar från 1 190 kr/mån. Byggd för att synas på Google och göra besökare till kunder. Se ett klickbart förslag innan du bestämmer dig.",
   alternates: { canonical: URL },
   openGraph: {
-    title: "Hemsida för företag | 0 kr start, 1 190 kr per månad",
+    title: "Hemsida för företag | 0 kr start, från 1 190 kr per månad",
     description:
       "Design, bygge, drift och ändringar i ett månadspris. Byggd för att synas på Google.",
     url: URL,
@@ -78,7 +78,7 @@ const paket = [
 const faqs = [
   {
     q: "Vad kostar en hemsida för företag?",
-    a: "Hos mig 0 kr i startavgift och 1 190 kr i månaden, där design, bygge, drift, säkerhet och löpande ändringar ingår. Webbshop läggs till på valfritt paket för 800 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Marknadens engångsprojekt kostar i jämförelse oftast 30 000 till 100 000 kr plus löpande drift.",
+    a: "Hos mig 0 kr i startavgift och från 1 190 kr i månaden exklusive moms, där design, bygge, drift, säkerhet och löpande ändringar ingår. Webbshop läggs till på valfritt paket för 800 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Marknadens engångsprojekt kostar i jämförelse oftast 30 000 till 100 000 kr plus löpande drift.",
   },
   {
     q: "Varför månadspris i stället för engångspris?",
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: "Hur lång tid tar det innan sajten är klar?",
-    a: "En vanlig företagssajt lanseras 1 till 2 veckor efter startgenomgången. E-handel och större byggen tar 1 till 2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, så du ser riktningen innan du bestämmer dig.",
+    a: "En vanlig företagssajt är normalt live inom två veckor efter ditt ja. E-handel och större byggen tar 1 till 2 månader. Ett gratis förslag du kan klicka runt i får du inom 2 arbetsdagar, så du ser hemsidan innan du bestämmer dig.",
   },
   {
     q: "Syns hemsidan på Google?",
@@ -156,7 +156,7 @@ export default function Page() {
         <PageHero
           breadcrumbs={[{ label: "Start", href: "/" }, { label: "Hemsida för företag" }]}
           badge="Hemsida för företag"
-          title="En hemsida som ger dig kunder. 0 kr i start, 1 190 kr i månaden."
+          title="Hemsida för företag. 0 kr i start, från 1 190 kr i månaden."
           subtitle="Design, bygge, drift och löpande ändringar i ett pris. Byggd för att synas på Google och göra besökare till förfrågningar, inte bara för att se bra ut."
           bullets={["Gratis designförslag inom 2 arbetsdagar", "Klar på 1 till 2 veckor", "Du äger domän och innehåll"]}
         />
@@ -177,8 +177,8 @@ export default function Page() {
                       </div>
                     ))}
                   </div>
-                  <a href="/boka" className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">
-                    Boka genomgång <ArrowRight size={15} />
+                  <a href="/#koll-url-hero" className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">
+                    Få gratis förslag <ArrowRight size={15} />
                   </a>
                 </div>
               ))}
@@ -209,10 +209,11 @@ export default function Page() {
 
             <H2>Så går det till</H2>
             <P>
-              Först en genomgång på en halvtimme om mål, kunder och innehåll. Sedan får du en
-              skiss på startsidan och ett fast pris, kostnadsfritt och utan förpliktelse. Säger
-              du ja bygger jag sajten, fyller den med innehåll och optimerar tekniken. Vi
-              lanserar utan avbrott på din domän, och därefter ingår drift, säkerhet och
+              Du skickar din webbadress eller ditt företagsnamn. Inom två arbetsdagar får du ett
+              förslag du kan klicka runt i: startsida och en tjänstesida med texter om ditt
+              företag, kostnadsfritt och utan förpliktelse. Säger du ja bygger jag resten av
+              sajten, fyller den med innehåll och optimerar tekniken. Vi lanserar utan avbrott
+              på din domän, normalt inom två veckor efter ditt ja, och därefter ingår drift, säkerhet och
               ändringar i månadspriset. Du mejlar en ändring, jag gör den. Inga tickets, inga
               timfakturor.
             </P>
@@ -247,10 +248,10 @@ export default function Page() {
               Se hur din nya hemsida skulle se ut.
             </h2>
             <p className="mt-4 text-[16px] leading-relaxed text-body">
-              Boka en kostnadsfri genomgång så får du en skiss och ett fast pris inom några dagar.
+              Skriv din webbadress eller ditt företagsnamn på startsidan, så har du inom två arbetsdagar ett förslag du kan klicka runt i. Gratis och utan möte.
             </p>
-            <a href="/boka" className="premium-btn mt-8 mx-auto">
-              <span>Boka kostnadsfri genomgång</span>
+            <a href="/#koll-url-hero" className="premium-btn mt-8 mx-auto">
+              <span>Få gratis förslag</span>
               <ArrowRight size={16} className="opacity-80" />
             </a>
           </div>

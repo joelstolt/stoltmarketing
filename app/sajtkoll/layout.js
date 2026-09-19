@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Gratis sajtkoll: så bra fungerar din hemsida",
   description:
-    "Testa din hemsida gratis på 10 sekunder. Vi mäter sidvikt, hastighet, mobilanpassning, Google-synlighet, AI-läsbarhet och att sidans filer faktiskt laddar. Ärliga svar på vad som behöver fixas. Ingen registrering.",
+    "Testa din hemsida gratis på 10 sekunder. Jag mäter sidvikt, hastighet, mobilanpassning, Google-synlighet, AI-läsbarhet och att sidans filer faktiskt laddar. Ärliga svar på vad som behöver fixas. Ingen registrering.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/sajtkoll",
   },

@@ -27,7 +27,7 @@ export const maxDuration = 30;
 const ALLOWED_ORIGINS = [
   "https://www.stoltmarketing.se",
   "https://stoltmarketing.se",
-  "https://stolt-nydesign.joel-d77.workers.dev",
+  "https://stoltmarketing-preview.joel-d77.workers.dev",
   "http://localhost:3000",
 ];
 
@@ -213,7 +213,7 @@ export async function POST(req) {
     return NextResponse.json(
       {
         error:
-          "Vi fick inget svar från den adressen. Kontrollera stavningen, eller hör av dig så tittar vi tillsammans.",
+          "Jag fick inget svar från den adressen. Kontrollera stavningen, eller hör av dig så tittar jag på den.",
       },
       { status: 502 }
     );
@@ -226,7 +226,7 @@ export async function POST(req) {
   if (!res.ok) {
     return NextResponse.json(
       {
-        error: `Sajten svarade med felkod HTTP ${res.status} i stället för en sida. Kontrollera adressen, eller hör av dig så tittar vi tillsammans.`,
+        error: `Sajten svarade med felkod HTTP ${res.status} i stället för en sida. Kontrollera adressen, eller hör av dig så tittar jag på den.`,
       },
       { status: 502 }
     );

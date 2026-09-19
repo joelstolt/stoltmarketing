@@ -247,8 +247,8 @@ const steps = [
   {
     num: "01",
     icon: MessageCircle,
-    title: "Behov och mål",
-    desc: "Vi börjar med en kort genomgång. Inom två arbetsdagar har du sedan ett färdigt designförslag att titta på, utan att det kostar något.",
+    title: "Adress och förslag",
+    desc: "Du skickar din webbadress eller ditt företagsnamn. Inom två arbetsdagar har du ett förslag du kan klicka runt i, utan möte och utan att det kostar något.",
   },
   {
     num: "02",

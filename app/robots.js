@@ -15,7 +15,7 @@ export default async function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/avtal/"],
+        disallow: ["/avtal/", "/svar/"],
       },
     ],
     sitemap: "https://www.stoltmarketing.se/sitemap.xml",

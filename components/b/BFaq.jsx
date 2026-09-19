@@ -9,7 +9,7 @@ const GUL = "#F2C230";
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "0 kr i startavgift. De flesta landar på Bredd, 1 990 kr/mån. Bas är 1 190 kr/mån och Spets 2 990 kr/mån. 12 månaders bindning, därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
+    a: "0 kr i startavgift. De flesta landar på Bredd, 1 990 kr/mån. Bas är 1 190 kr/mån och Spets 2 990 kr/mån. 12 månaders bindning, därefter månadsvis. Priserna är exklusive moms. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
   },
   {
     q: "Bygger du verkligen ett förslag gratis?",
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Hur lång tid tar ett projekt?",
-    a: "En enklare webbplats tar oftast 1-2 veckor. Större e-handels- och AI-projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och alltid en tydlig tidplan i förslaget.",
+    a: "En ny hemsida är normalt live inom två veckor efter ditt ja. Större e-handels- och AI-projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och alltid en tydlig tidplan i förslaget.",
   },
   {
     q: "Vad händer efter lansering?",
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "Hur vet jag att siffrorna på den här sidan stämmer?",
-    a: "De hämtas varje timme ur samma mätverktyg som mina kunder får sina månadsrapporter från, och du kan be vilken kund som helst visa sin. Sajten du läser på just nu kan du mäta själv i Googles PageSpeed Insights.",
+    a: "De hämtas varje timme ur samma mätverktyg som mina kunder får sina månadsrapporter från, och säger du till ber jag en kund visa sin. Sajten du läser på just nu kan du mäta själv i Googles PageSpeed Insights.",
   },
 ];
 
