@@ -1,21 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ChevronDown,
-  Globe,
-  Cpu,
-  Search,
-  Shield,
-  Megaphone,
-  MonitorSmartphone,
-  ShoppingCart,
-  LayoutTemplate,
   Phone,
-  Users,
-  Sparkles,
-  Accessibility,
 } from "lucide-react";
 import Link from "next/link";
 import { SITE } from "@/lib/local/data";
@@ -26,70 +14,10 @@ const DIM = "rgba(242,236,221,0.62)";
 const FAINT = "rgba(242,236,221,0.4)";
 const LINE = "rgba(242,236,221,0.14)";
 
-const serviceItems = [
-  {
-    icon: Globe,
-    label: "Webbutveckling",
-    desc: "Moderna sajter som konverterar",
-    href: "/tjanster/webbutveckling",
-  },
-  {
-    icon: ShoppingCart,
-    label: "E-handel",
-    desc: "Butiker som konverterar",
-    href: "/tjanster/e-handel",
-  },
-  {
-    icon: LayoutTemplate,
-    label: "WordPress",
-    desc: "Snabba, säkra WP-sidor",
-    href: "/tjanster/wordpress",
-  },
-  {
-    icon: Cpu,
-    label: "AI & Automation",
-    desc: "Smarta verktyg som sparar tid",
-    href: "/tjanster/ai-automation",
-  },
-  {
-    icon: Search,
-    label: "SEO",
-    desc: "Synlighet som ger fler kunder",
-    href: "/tjanster/seo",
-  },
-  {
-    icon: Megaphone,
-    label: "Google Ads",
-    desc: "Riktad annonsering som ger resultat",
-    href: "/tjanster/google-ads",
-  },
-  {
-    icon: Users,
-    label: "Facebook-annonsering",
-    desc: "Meta-kampanjer som ger förfrågningar",
-    href: "/tjanster/facebook-annonsering",
-  },
-  {
-    icon: Sparkles,
-    label: "AI-synlighet",
-    desc: "Syns i ChatGPT och Googles AI-svar",
-    href: "/tjanster/ai-synlighet",
-  },
-  {
-    icon: Accessibility,
-    label: "Tillgänglighet & EAA",
-    desc: "Granskning och åtgärder, fast pris",
-    href: "/tillganglighet",
-  },
-  {
-    icon: Shield,
-    label: "Managed hemsida",
-    desc: "Drift, underhåll och förbättringar",
-    href: "/tjanster/managed-hemsida",
-  },
-];
-
+/* Menyn säljer en sak först (rutan för förfrågningar). Tjänstesidorna lever kvar på
+   sina adresser och nås via /tjanster, startsidan och sidfoten. */
 const navItems = [
+  { label: "Förfrågningar", href: "/forfragningar" },
   { label: "Priser", href: "/priser" },
   { label: "Projekt", href: "/projekt" },
   { label: "Sajtkoll", href: "/sajtkoll" },
@@ -112,8 +40,6 @@ const navLinkStyle = {
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -131,15 +57,6 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-
-  const handleMouseEnter = () => {
-    clearTimeout(timeoutRef.current);
-    setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setDropdownOpen(false), 150);
-  };
 
   return (
     <>
@@ -233,175 +150,6 @@ export default function Header() {
               gap: 22,
             }}
           >
-            {/* Tjänster dropdown */}
-            <div
-              style={{ position: "relative" }}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link
-                href="/tjanster"
-                style={{
-                  ...navLinkStyle,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 5,
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = GUL)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = DIM)}
-              >
-                Tjänster
-                <ChevronDown
-                  size={13}
-                  style={{
-                    transition: "transform 0.2s",
-                    transform: dropdownOpen ? "rotate(180deg)" : "rotate(0)",
-                  }}
-                />
-              </Link>
-
-              <AnimatePresence>
-                {dropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.15 }}
-                    style={{
-                      position: "absolute",
-                      top: "100%",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      paddingTop: 12,
-                    }}
-                  >
-                    <div
-                      style={{
-                        background: "rgba(22,19,9,0.97)",
-                        backdropFilter: "blur(20px)",
-                        WebkitBackdropFilter: "blur(20px)",
-                        borderRadius: 14,
-                        border: `1px solid ${LINE}`,
-                        boxShadow:
-                          "0 12px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)",
-                        padding: 12,
-                        width: 320,
-                      }}
-                    >
-                      <Link
-                        href="/tjanster"
-                        onClick={() => setDropdownOpen(false)}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 12,
-                          padding: "10px 12px",
-                          borderRadius: 10,
-                          textDecoration: "none",
-                          transition: "background 0.15s",
-                        }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.background =
-                            "rgba(242,194,48,0.08)")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.background = "transparent")
-                        }
-                      >
-                        <div
-                          style={{
-                            width: 36,
-                            height: 36,
-                            borderRadius: 8,
-                            background: "rgba(242,194,48,0.1)",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <MonitorSmartphone size={16} color={GUL} />
-                        </div>
-                        <div>
-                          <div
-                            style={{
-                              fontSize: 14,
-                              fontWeight: 600,
-                              color: PAPER,
-                            }}
-                          >
-                            Alla tjänster
-                          </div>
-                          <div style={{ fontSize: 12.5, fontFamily: "var(--font-ui)", color: DIM }}>
-                            Översikt av hela erbjudandet
-                          </div>
-                        </div>
-                      </Link>
-
-                      <div
-                        style={{
-                          height: 1,
-                          background: LINE,
-                          margin: "4px 0",
-                        }}
-                      />
-
-                      {serviceItems.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setDropdownOpen(false)}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 12,
-                            padding: "10px 12px",
-                            borderRadius: 10,
-                            textDecoration: "none",
-                            transition: "background 0.15s",
-                          }}
-                          onMouseEnter={(e) =>
-                            (e.currentTarget.style.background =
-                              "rgba(242,194,48,0.08)")
-                          }
-                          onMouseLeave={(e) =>
-                            (e.currentTarget.style.background = "transparent")
-                          }
-                        >
-                          <div
-                            style={{
-                              width: 36,
-                              height: 36,
-                              borderRadius: 8,
-                              background: "rgba(242,194,48,0.1)",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <item.icon size={16} color={GUL} />
-                          </div>
-                          <div>
-                            <div
-                              style={{
-                                fontSize: 14,
-                                fontWeight: 600,
-                                color: PAPER,
-                              }}
-                            >
-                              {item.label}
-                            </div>
-                            <div style={{ fontSize: 12.5, fontFamily: "var(--font-ui)", color: DIM }}>
-                              {item.desc}
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -502,99 +250,6 @@ export default function Header() {
             className="lg:hidden"
           >
             <div style={{ padding: "24px 24px 40px" }}>
-              {/* Tjänster section */}
-              <p
-                style={{
-                  fontFamily: "var(--font-ui)",
-                  fontSize: 10.5,
-                  fontWeight: 600,
-                  color: GUL,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.28em",
-                  marginBottom: 16,
-                }}
-              >
-                Tjänster
-              </p>
-
-              <Link
-                href="/tjanster"
-                onClick={() => setIsOpen(false)}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 14,
-                  padding: "12px 0",
-                  textDecoration: "none",
-                  borderBottom: `1px solid ${LINE}`,
-                }}
-              >
-                <div
-                  style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: 10,
-                    background: "rgba(242,194,48,0.1)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  <MonitorSmartphone size={18} color={GUL} />
-                </div>
-                <div>
-                  <div style={{ fontSize: 16, fontWeight: 600, color: PAPER }}>
-                    Alla tjänster
-                  </div>
-                  <div style={{ fontSize: 13, fontFamily: "var(--font-ui)", color: DIM }}>
-                    Översikt av erbjudandet
-                  </div>
-                </div>
-              </Link>
-
-              {serviceItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 14,
-                    padding: "12px 0",
-                    textDecoration: "none",
-                    borderBottom: `1px solid ${LINE}`,
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 10,
-                      background: "rgba(242,194,48,0.1)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <item.icon size={18} color={GUL} />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: PAPER }}>
-                      {item.label}
-                    </div>
-                    <div style={{ fontSize: 13, fontFamily: "var(--font-ui)", color: DIM }}>
-                      {item.desc}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-
-              {/* Divider */}
-              <div style={{ height: 1, background: LINE, margin: "24px 0" }} />
-
               {/* Other nav */}
               {navItems.map((item) => (
                 <Link

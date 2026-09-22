@@ -293,12 +293,12 @@ export default function BokaContent() {
           ]
         : [
             { icon: Calendar, title: "1. Föreslå en tid", desc: "Skriv när det passar. Jag bekräftar." },
-            { icon: Zap, title: "2. Jag skickar möteslänk", desc: "Inom 24 timmar på vardagar." },
+            { icon: Zap, title: "2. Jag skickar möteslänk", desc: "Samma arbetsdag." },
             { icon: Clock, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
           ]
       : [
           { icon: MessageCircle, title: "1. Skicka ett meddelande", desc: "Namn, e-post och vad du behöver hjälp med." },
-          { icon: Clock, title: "2. Jag hör av mig inom 24h", desc: "Vi bokar en tid som passar dig." },
+          { icon: Clock, title: "2. Jag hör av mig samma arbetsdag", desc: "Vi bokar en tid som passar dig." },
           { icon: Zap, title: "3. Vi pratar 15–20 min", desc: "Du får en konkret plan framåt." },
         ];
 
@@ -364,8 +364,8 @@ export default function BokaContent() {
                     </h3>
                     <p className="mt-2 text-[15px] text-body">
                       {path === "tid" && !calendarUrl
-                        ? "Jag bekräftar tiden inom 24 timmar, och skickar en möteslänk."
-                        : "Jag hör av mig inom 24 timmar."}
+                        ? "Jag bekräftar tiden samma arbetsdag, och skickar en möteslänk."
+                        : "Jag hör av mig samma arbetsdag."}
                     </p>
                   </div>
                 ) : (

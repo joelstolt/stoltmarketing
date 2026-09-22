@@ -8,7 +8,19 @@ const GUL = "#F2C230";
 
 const faqs = [
   {
-    q: "Vad kostar det att jobba med dig?",
+    q: "Vad kostar rutan för förfrågningar?",
+    a: "495 kr i månaden exklusive moms, 0 kr i start. De första 30 dagarna kostar ingenting och det finns ingen bindning. Då ingår rutan på varje sida, SMS och mejl när något kommer in, förslag på svar och inkorgen där allt samlas.",
+  },
+  {
+    q: "Svarar ni i telefon åt oss?",
+    a: "Nej. Samtal till ert vanliga nummer går till er som i dag, och inget telefonsvar ingår. En kund som hellre vill prata kan trycka Bli uppringd i rutan, då ringer din mobil.",
+  },
+  {
+    q: "Skickar AI svar till mina kunder?",
+    a: "Inte på förfrågningarna. AI skriver ett förslag, du läser, ändrar och skickar. Har kunden lämnat sin mejl får hen en bekräftelse på att förfrågan kommit fram. Chatten i rutan svarar däremot själv på frågor utifrån det som står på din sajt, och säger att den är AI.",
+  },
+  {
+    q: "Vad kostar en ny hemsida?",
     a: "0 kr i startavgift. De flesta landar på Bredd, 1 990 kr/mån. Bas är 1 190 kr/mån och Spets 2 990 kr/mån. 12 månaders bindning, därefter månadsvis. Priserna är exklusive moms. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Köpt var för sig, med hosting, driftavtal och en byråtimme då och då, passerar samma innehåll lätt det dubbla. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
   },
   {
@@ -90,7 +102,7 @@ export default function BFaq() {
           I månadspriset ingår
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-          {["Sajt & design", "Hosting & drift", "Säkerhet & backuper", "Innehållsändringar", "Support inom 24 h", "SEO-grund & AI-läsbarhet"].map((item) => (
+          {["Sajt & design", "Hosting & drift", "Säkerhet & backuper", "Innehållsändringar", "Support samma arbetsdag", "SEO-grund & AI-läsbarhet"].map((item) => (
             <span
               key={item}
               style={{

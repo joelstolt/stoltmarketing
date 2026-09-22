@@ -405,7 +405,7 @@ export default function SajtkollPage() {
                       </h2>
                       <p className="text-[14.5px] leading-relaxed text-body m-0 max-w-[600px]">
                         Jag läser din hemsida, dina tjänster och din ort, och bygger ett förslag du kan klicka runt i.
-                        Jag ringer inte, jag mejlar.
+                        Länken kommer på mejlen.
                       </p>
                     </div>
                   )}

@@ -5,7 +5,7 @@
 export const metadata = {
   title: "Hjälp med WordPress",
   description:
-    "Långsam, hackad eller övergiven WordPress? Jag tar över även sajter jag inte byggt. Drift, säkerhet, uppdateringar och support till fast pris, 1 190 kr/mån. Svar inom 24 timmar.",
+    "Långsam, hackad eller övergiven WordPress? Jag tar över även sajter jag inte byggt. Drift, säkerhet, uppdateringar och support till fast pris, 1 190 kr/mån. Svar samma arbetsdag.",
   robots: {
     index: false,
     follow: false,

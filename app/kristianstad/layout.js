@@ -1,13 +1,13 @@
 import { HubFaqSchema } from "@/lib/local/hub-schema";
 export const metadata = {
-  title: "Webbyrå Kristianstad — Hemsida, SEO & Webbutveckling",
+  title: "Webbyrå Kristianstad: hemsida, SEO och webbutveckling",
   description:
     "Digital byrå i Kristianstad. Vi bygger moderna webbplatser, hanterar SEO och digital marknadsföring för lokala företag. Kostnadsfri genomgång.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/kristianstad",
   },
   openGraph: {
-    title: "Webbyrå Kristianstad — Hemsida, SEO & Webbutveckling",
+    title: "Webbyrå Kristianstad: hemsida, SEO och webbutveckling",
     description:
       "Modern webbutveckling och digital marknadsföring för företag i Kristianstad och Skåne.",
     url: "https://www.stoltmarketing.se/kristianstad",

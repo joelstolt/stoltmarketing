@@ -8,14 +8,14 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Kontakt Joel Stolt — Boka kostnadsfri genomgång",
+  title: "Kontakt Joel Stolt: boka kostnadsfri genomgång",
   description:
     "Kontakta Joel Stolt i Hässleholm för kostnadsfri genomgång. Webb, SEO, AI, drift. Mejla joel@stoltmarketing.se eller boka direktsamtal.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/kontakt",
   },
   openGraph: {
-    title: "Kontakt — Boka kostnadsfri genomgång | Stolt Marketing",
+    title: "Kontakt: boka kostnadsfri genomgång | Stolt Marketing",
     description: "Kostnadsfri genomgång av ditt digitala behov med Joel Stolt. Webb, SEO, AI.",
     url: "https://www.stoltmarketing.se/kontakt",
   },

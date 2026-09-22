@@ -246,12 +246,12 @@ export default function TillganglighetPage() {
                   Undrar du om din sajt träffas?
                 </h3>
                 <p className="text-[14px] text-muted mt-0 mb-5">
-                  Skriv en rad så återkommer Joel inom 24 timmar på vardagar med en ärlig första bedömning. Inga förpliktelser.
+                  Skriv en rad så återkommer Joel samma arbetsdag med en ärlig första bedömning. Inga förpliktelser.
                 </p>
                 {status === "sent" ? (
                   <div className="flex items-start gap-3 p-4 rounded-[10px]" style={{ background: "rgba(242,194,48,0.1)", border: "1px solid rgba(242,194,48,0.3)" }}>
                     <Check size={18} style={{ color: GUL, flexShrink: 0, marginTop: 2 }} />
-                    <p className="text-[14.5px] text-body m-0">Tack! Ditt meddelande är skickat. Du hör från mig inom 24 timmar på vardagar.</p>
+                    <p className="text-[14.5px] text-body m-0">Tack! Ditt meddelande är skickat. Du hör från mig samma arbetsdag.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">

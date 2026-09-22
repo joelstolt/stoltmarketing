@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Reveal, PageHero } from "@/components/ui";
+import { SNAPSHOT } from "@/lib/kundmotor";
+
+/* Samma tal som Kundmotorn på startsidan, så sajten aldrig säger två olika siffror. */
+const niklassonsOffert = SNAPSHOT.rows.find((r) => r.slug === "niklassonsflytt")?.offert;
 
 const categories = ["Alla", "Webb", "E-handel", "AI", "SEO", "Tillgänglighet"];
 
@@ -32,11 +36,11 @@ const projects = [
     type: "Next.js · Sanity · Cloudflare",
     tag: "Flytt · Helsingborg",
     tagColor: "green",
-    desc: "Byggde en flyttfirmas sajt där varje offertförfrågan mäts. Senaste 30 dagarna: 32 förfrågningar, 38 sidor över Skåne och ett CMS som kunden sköter helt själv.",
+    desc: `Byggde en flyttfirmas sajt där varje offertförfrågan mäts. Senaste 30 dagarna: ${niklassonsOffert} förfrågningar, 38 sidor över Skåne och ett CMS som kunden sköter helt själv.`,
     challenge: "Förfrågningar kom in via mejl och telefon utan att någon kunde säga vilka sidor som faktiskt gav jobb. Utan mätning går det inte att avgöra om sajten lönar sig.",
     solution: "Varje skickad offertförfrågan loggas som ett eget event. Innehållet ligger i Sanity med automatisk publicering, och tjänsterna korsades med orterna i Skåne till 38 sidor.",
     results: [
-      { label: "Offertförfrågningar", value: "32 / 30 dgr" },
+      { label: "Offertförfrågningar", value: `${niklassonsOffert} / 30 dgr` },
       { label: "Sidor", value: "38" },
       { label: "Publicering", value: "Automatisk" },
     ],

@@ -1,13 +1,13 @@
 import { HubFaqSchema } from "@/lib/local/hub-schema";
 export const metadata = {
-  title: "Webbyrå Malmö — Hemsida, SEO & Webbutveckling",
+  title: "Webbyrå Malmö: hemsida, SEO och webbutveckling",
   description:
     "Digital byrå i Malmö. Vi bygger moderna webbplatser, hanterar SEO och digital marknadsföring för startups och etablerade företag.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/malmo",
   },
   openGraph: {
-    title: "Webbyrå Malmö — Hemsida, SEO & Webbutveckling",
+    title: "Webbyrå Malmö: hemsida, SEO och webbutveckling",
     description:
       "Modern webbutveckling och digital marknadsföring för företag i Malmö och Öresund-regionen.",
     url: "https://www.stoltmarketing.se/malmo",

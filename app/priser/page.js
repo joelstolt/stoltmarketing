@@ -53,16 +53,59 @@ export default function Page() {
         <PageHero
           breadcrumbs={[{ label: "Start", href: "/" }, { label: "Priser" }]}
           badge="Priser"
-          title="Öppna priser, färdig sajt innan du betalar"
-          subtitle="Ett fast månadspris där sajt, hosting, drift och ändringar ingår. Det här är prislistan för hemsidor, exklusive moms. Större webbutiker och AI-projekt får fast pris efter omfattning innan jag börjar."
-          bullets={["0 kr i startavgift", "12 månaders bindning, därefter månadsvis", "Du ser sajten färdig först"]}
+          title="Öppna priser, inget finstilt"
+          subtitle="Rutan för förfrågningar kostar 495 kr i månaden. Hemsidor har ett fast månadspris där sajt, hosting, drift och ändringar ingår. Alla priser exklusive moms. Större webbutiker och AI-projekt får fast pris efter omfattning innan jag börjar."
+          bullets={["Rutan: 30 dagar gratis, ingen bindning", "Hemsida: 0 kr i startavgift", "Hemsida: du ser sajten färdig först"]}
         />
+
+        {/* Rutan för förfrågningar, eget erbjudande före hemsidepaketen */}
+        <section className="pt-16 sm:pt-24 px-5 sm:px-8">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader
+              badge="Förfrågningar"
+              title="Rutan för förfrågningar."
+              subtitle="En ruta på din hemsida. Kunden skriver, du får ett SMS direkt och ett förslag på svar som du skickar när du hinner. Fungerar på den hemsida du har, om den tar emot en rad kod."
+            />
+            <Reveal delay={0.1}>
+              <div className="mt-12 relative rounded-[10px] p-7 bg-surface border-2 border-primary/20 shadow-[0_4px_20px_rgba(242,194,48,0.18)] grid md:grid-cols-[1fr_1.4fr] gap-8">
+                <div>
+                  <h2 className="font-heading font-700 text-[18px] text-heading">Rutan</h2>
+                  <p className="mt-1 text-[13px] text-muted">För hantverksföretag med en hemsida</p>
+                  <div className="mt-3 font-heading font-600 text-[26px] tracking-tight text-heading">495 kr/mån</div>
+                  <p className="mt-2 text-[14px] text-muted leading-relaxed">0 kr i start, första 30 dagarna gratis, ingen bindning. Jag installerar.</p>
+                  <a href="/forfragningar" data-umami-event="priser-rutan" className="premium-btn mt-7 inline-flex">
+                    Så fungerar det
+                  </a>
+                </div>
+                <div>
+                  <ul className="flex flex-col gap-3">
+                    {[
+                      "Rutan på varje sida: skriva ett meddelande, bli uppringd eller chatta",
+                      "SMS och mejl till dig direkt när något kommer in",
+                      "Förslag på svar som du läser, ändrar och skickar",
+                      "Bekräftelse till kunden som lämnat sin mejl",
+                      "Upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar i månaden",
+                    ].map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-[14px] text-body">
+                        <Check size={15} className="text-primary flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 text-[13.5px] text-muted leading-relaxed">
+                    Ingår inte: samtal till ditt vanliga nummer, telefonsvar, SMS när du missar ett samtal, mejl direkt till din adress och svar som går ut automatiskt i ditt namn. Rutan ingår i Spets.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
 
         {/* Paketen */}
         <section className="py-16 sm:py-24 px-5 sm:px-8">
           <div className="max-w-6xl mx-auto">
             <SectionHeader
-              badge="Månadsabonnemang"
+              badge="Hemsidor"
               title="Tre paket, en modell."
               subtitle="De flesta landar på Bredd. Osäker? Boka en genomgång så pekar jag på rätt nivå för just din verksamhet, även om det är den billigaste."
             />

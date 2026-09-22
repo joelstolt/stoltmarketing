@@ -8,6 +8,7 @@ export default function sitemap() {
   /* ── Statiska sidor ── */
   const pages = [
     { url: "/", changeFrequency: "weekly", priority: 1.0 },
+    { url: "/forfragningar", changeFrequency: "monthly", priority: 0.95 },
     { url: "/tjanster", changeFrequency: "monthly", priority: 0.9 },
     { url: "/priser", changeFrequency: "monthly", priority: 0.9 },
     { url: "/tjanster/webbutveckling", changeFrequency: "monthly", priority: 0.8 },
@@ -44,7 +45,6 @@ export default function sitemap() {
     { url: "/om", changeFrequency: "monthly", priority: 0.6 },
     { url: "/kontakt", changeFrequency: "monthly", priority: 0.7 },
     { url: "/boka", changeFrequency: "monthly", priority: 0.8 },
-    { url: "/serviceavtal", changeFrequency: "monthly", priority: 0.7 },
     { url: "/integritet", changeFrequency: "yearly", priority: 0.3 },
     /* Platssidor */
     { url: "/hassleholm", changeFrequency: "monthly", priority: 0.8 },

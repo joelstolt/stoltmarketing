@@ -92,16 +92,17 @@ export default function OmContent() {
 
               <Reveal delay={0.12}>
                 <p className="mt-2 text-[17px] sm:text-[18px] text-primary font-600">
-                  Digital konsult & AI-specialist
+                  Förfrågningar och hemsidor för hantverksföretag
                 </p>
               </Reveal>
 
               <Reveal delay={0.16}>
                 <p className="mt-5 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px]">
-                  Jag har byggt webbplatser och digitala lösningar i över 10 år.
-                  Från lokala företag i Hässleholm till Sveriges största
-                  utbildningsföretag. Min drivkraft? Att ge småföretag tillgång
-                  till samma digitala kvalitet som storbolagen.
+                  Jag har byggt webbplatser och digitala lösningar i över 10 år,
+                  från lokala företag i Hässleholm till Sveriges största
+                  utbildningsföretag. I dag hjälper jag främst hantverksföretag
+                  med en sak: att förfrågan som kommer via hemsidan når fram
+                  och får svar. Hemsidan bygger jag när den behövs.
                 </p>
               </Reveal>
 
@@ -215,7 +216,7 @@ export default function OmContent() {
                   >
                     <img
                       src="/joel-stolt.webp"
-                      alt="Joel Stolt, Digital konsult & AI-specialist"
+                      alt="Joel Stolt, förfrågningar och hemsidor för hantverksföretag"
                       style={{
                         width: "100%",
                         height: "100%",
@@ -356,7 +357,7 @@ export default function OmContent() {
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             badge="Min resa"
-            title="Från WordPress till AI — 10 år av utveckling."
+            title="Från WordPress till AI, 10 år av utveckling."
           />
 
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">

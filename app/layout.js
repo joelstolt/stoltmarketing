@@ -29,11 +29,11 @@ import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/d
 export const metadata = {
   metadataBase: new URL("https://www.stoltmarketing.se"),
   title: {
-    default: "Hemsida för företag, färdig innan du betalar | Stolt Marketing",
+    default: "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
     template: "%s | Stolt Marketing",
   },
   description:
-    "Din nya hemsida, färdig innan du betalar ett öre. Hemsidor, SEO och Google Ads åt företag som lever på förfrågningar. 0 kr i start, från 1 190 kr/mån, drift ingår.",
+    "En ruta på din hemsida: kunden skriver, du får ett SMS och ett förslag på svar. 495 kr/mån exkl moms, 30 dagar gratis. Hemsidor från 1 190 kr/mån, 0 kr i start.",
   keywords: [
     "webbyrå hässleholm",
     "webbyrå skåne",
@@ -43,6 +43,8 @@ export const metadata = {
     "SEO",
     "AI automation",
     "hemsida företag",
+    "förfrågningar hemsida",
+    "hemsida hantverkare",
     "managed hemsida",
     "digital byrå skåne",
   ],
@@ -53,16 +55,16 @@ export const metadata = {
     locale: "sv_SE",
     url: "https://www.stoltmarketing.se",
     siteName: "Stolt Marketing",
-    title: "Din nya hemsida, färdig innan du betalar ett öre | Stolt Marketing",
+    title: "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
     description:
-      "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar, utan byrå-overhead. 10+ års erfarenhet, fast pris.",
+      "En ruta på din hemsida: kunden skriver, du får ett SMS och ett förslag på svar. 495 kr/mån exkl moms, 30 dagar gratis. Hemsidor från 1 190 kr/mån, 0 kr i start.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing, webbyrå i Skåne" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Din nya hemsida, färdig innan du betalar ett öre | Stolt Marketing",
+    title: "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
     description:
-      "Webbyrå i Hässleholm och Skåne. Du jobbar direkt med konsulten som bygger, optimerar och tar ansvar, utan byrå-overhead. 10+ års erfarenhet, fast pris.",
+      "En ruta på din hemsida: kunden skriver, du får ett SMS och ett förslag på svar. 495 kr/mån exkl moms, 30 dagar gratis. Hemsidor från 1 190 kr/mån, 0 kr i start.",
     images: ["/og-image.png"],
   },
   // OBS: ingen alternates.canonical här — canonical i root-layouten ärvs av ALLA
@@ -102,12 +104,12 @@ export default function RootLayout({ children }) {
       height: 630,
     },
     description:
-      "Digital byrå i Hässleholm och Skåne med 10+ års erfarenhet. Moderna hemsidor, e-handel, SEO, Google Ads och AI-automation för företag.",
+      "Stolt Marketing i Hässleholm hjälper hantverksföretag att ta emot förfrågningar via hemsidan direkt i mobilen, och bygger hemsidor, SEO och Google Ads. Kunder i hela Sverige.",
     priceRange: SITE.priceRange,
     founder: {
       "@type": "Person",
       name: SITE.founder,
-      jobTitle: "Digital konsult & AI-specialist",
+      jobTitle: "Webbkonsult för hantverksföretag",
       image: `${SITE.url}/joel-stolt.png`,
     },
     address: {
@@ -133,7 +135,7 @@ export default function RootLayout({ children }) {
       opens: "08:00",
       closes: "17:00",
     },
-    slogan: "Din nya hemsida, färdig innan du betalar.",
+    slogan: "Förfrågan via hemsidan, direkt till mobilen.",
   };
 
   const website = {

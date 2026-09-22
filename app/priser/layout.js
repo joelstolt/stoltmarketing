@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Priser: 0 kr i startavgift, fast månadspris",
   description:
-    "Öppna priser på hemsida som abonnemang: Bas 1 190 kr/mån, Bredd 1 990 kr/mån, Spets 2 990 kr/mån. 0 kr i startavgift, du ser sajten färdig innan du betalar. Hosting, drift och ändringar ingår alltid.",
+    "Öppna priser. Rutan för förfrågningar 495 kr/mån, 30 dagar gratis, ingen bindning. Hemsida som abonnemang: Bas 1 190, Bredd 1 990, Spets 2 990 kr/mån, 0 kr i startavgift. Exkl moms.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/priser",
   },
   openGraph: {
     title: "Priser: 0 kr i startavgift, fast månadspris",
     description:
-      "Bas 1 190, Bredd 1 990, Spets 2 990 kr/mån. Sajten byggs färdig innan du betalar, och hosting, drift och ändringar ingår alltid.",
+      "Rutan för förfrågningar 495 kr/mån. Hemsidor: Bas 1 190, Bredd 1 990, Spets 2 990 kr/mån, 0 kr i startavgift. Exkl moms.",
     url: "https://www.stoltmarketing.se/priser",
   },
 };

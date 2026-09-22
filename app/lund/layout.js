@@ -1,13 +1,13 @@
 import { HubFaqSchema } from "@/lib/local/hub-schema";
 export const metadata = {
-  title: "Webbyrå Lund — Hemsida, SEO & Webbutveckling",
+  title: "Webbyrå Lund: hemsida, SEO och webbutveckling",
   description:
     "Webbyrå i Lund för tech-företag och startups. Vi bygger moderna webbplatser och sköter SEO och marknadsföring för bolag kring Ideon och Lunds universitet.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/lund",
   },
   openGraph: {
-    title: "Webbyrå Lund — Hemsida, SEO & Webbutveckling",
+    title: "Webbyrå Lund: hemsida, SEO och webbutveckling",
     description:
       "Modern webbutveckling för tech-startups och företag i Lund och Ideon Science Park.",
     url: "https://www.stoltmarketing.se/lund",

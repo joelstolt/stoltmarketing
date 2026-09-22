@@ -25,8 +25,8 @@ const DIM = "rgba(242,236,221,0.7)";
 const FAINT = "rgba(242,236,221,0.62)"; /* lägsta som klarar 4,5:1 på bläck */
 const LINE = "rgba(242,236,221,0.14)";
 
-/* Erbjudandet är EN sak (hemsidan). Resten säljs som det det är:
-   sådant som ingår eller läggs till, inte sju likvärdiga byråtjänster. */
+/* Erbjudandet är EN sak (rutan för förfrågningar). Hemsidan är det andra, för den
+   som behöver en. Resten säljs som tillval, inte som likvärdiga byråtjänster. */
 const tillval = [
   { titel: "SEO", rad: "synlighet på Google", href: "/tjanster/seo" },
   { titel: "Google Ads", rad: "annonsering", href: "/tjanster/google-ads" },
@@ -244,21 +244,29 @@ export default function BContent() {
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
             <span className="b-eyebrow-bar" aria-hidden="true" style={{ width: 30, height: 2, background: GUL, display: "inline-block" }} />
             <span className="b-eyebrow-text" style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: GUL }}>
-              Hemsidor åt företag som lever på förfrågningar
+              För el, VVS och andra hantverksföretag
             </span>
           </div>
-          {/* H1 bär löftet. Kategoriorden (hemsida, SEO, AI) bor i title-taggen och i b-sub. */}
+          {/* H1 bär problemet. Erbjudandet (rutan för förfrågningar) bor i b-sub och på /forfragningar. */}
           <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "16ch", margin: 0 }}>
-            Din nya hemsida, <span style={{ fontWeight: 640 }}>färdig innan du betalar</span> ett öre<em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>.</em>
+            Hinner ni <span style={{ fontWeight: 640 }}>svara</span> innan kunden frågat någon annan<em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>?</em>
           </h1>
           <p className="b-sub" style={{ marginTop: 28, fontSize: "clamp(16px, 1.5vw, 19px)", lineHeight: 1.75, color: DIM, maxWidth: 580 }}>
-            Klistra in adressen till din nuvarande sajt. Jag mäter den på tio sekunder, och vill du får du sedan ett färdigt förslag på en ny, byggt på ditt företag och dina orter. Gratis, utan möte, utan förpliktelser. Gillar du den: 0 kr i start, från 1 190 kr i månaden, drift och ändringar ingår.
+            En ruta på er hemsida. Kunden skriver, du får ett SMS direkt och ett färdigt förslag på svar. 495 kr i månaden exkl moms, första 30 dagarna gratis.
           </p>
-          <div className="b-koll" style={{ marginTop: 30 }}>
-            <HeroKoll plats="hero" />
+          <div className="b-koll" style={{ marginTop: 30, display: "flex", flexWrap: "wrap", alignItems: "center", gap: "16px 26px" }}>
+            <Link href="/forfragningar" className="premium-btn" data-umami-event="cta-hero-forfragningar">
+              Så fungerar det <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
+            <Link href="/forfragningar#matning" data-umami-event="cta-hero-matning" style={{ fontSize: 15.5, color: PAPER, textDecoration: "underline", textDecorationColor: GUL, textUnderlineOffset: 5 }}>
+              Vet ni hur snabbt ni svarar? Jag mäter det gratis
+            </Link>
           </div>
+          <p style={{ marginTop: 16, fontSize: 14, color: FAINT, position: "relative", zIndex: 3 }}>
+            Söker du en ny hemsida? <a href="#hemsida" data-umami-event="cta-hero-hemsida" style={{ color: DIM, textDecoration: "underline", textUnderlineOffset: 4 }}>Läs mer längre ned.</a>
+          </p>
           <p className="b-proof" style={{ marginTop: 18, fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 500, letterSpacing: "0.04em", color: FAINT, position: "relative", zIndex: 3 }}>
-            Niklassons Flytt · {niklassons?.offert || 37} offertförfrågningar på 30 dagar, mätt i sajten
+            Prova själv: skriv i rutan nere till höger.
           </p>
         </div>
         <div className="b-scrollcue" style={{ position: "absolute", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
@@ -384,33 +392,53 @@ export default function BContent() {
           </div>
         </section>
 
-        {/* 7. Mekanismen: dag 1, dag 3, dag 10 */}
+        {/* 7. Mekanismen: rutans 30 dagar */}
         <SaGarDetTill />
 
-        {/* 8. Erbjudandet: en huvudrad med pris, resten som tillval */}
+        {/* 8. Erbjudandet: rutan först, hemsidan som det andra, resten som tillval */}
         <section id="tjanster" className="b-services" style={{ maxWidth: 1120, margin: "0 auto", padding: "6vh 24px 8vh" }}>
           <div className="sec-rule" style={{ marginBottom: 36 }}>
             <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>
-              Hemsidor som ger förfrågningar
+              Förfrågningar och hemsidor
             </h2>
             <span className="sec-eng" aria-hidden="true">tjänster</span>
           </div>
           <a
-            href="/tjanster/webbutveckling"
+            href="/forfragningar"
             className="b-servicerow"
-            data-umami-event="cta-tjanst-hemsida"
-            style={{ gridTemplateColumns: "1fr auto", borderBottom: `1px solid ${LINE}`, padding: "34px 8px" }}
+            data-umami-event="cta-tjanst-rutan"
+            style={{ gridTemplateColumns: "1fr auto", borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}`, padding: "34px 8px" }}
           >
             <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(30px, 5.4vw, 66px)", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
-              Ny hemsida, byggd för att hittas
+              Rutan för förfrågningar
               <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14, marginTop: 10, letterSpacing: "0.02em" }}>
-                0 kr i startavgift · från 1 190 kr/mån · drift och ändringar ingår
+                495 kr/mån exkl moms · 30 dagar gratis · ingen bindning
               </span>
             </span>
             <ArrowUpRight className="b-srv-arrow" size={34} strokeWidth={1.8} aria-hidden="true" />
           </a>
+          <div id="hemsida" style={{ scrollMarginTop: 90 }}>
+            <a
+              href="/tjanster/webbutveckling"
+              className="b-servicerow"
+              data-umami-event="cta-tjanst-hemsida"
+              style={{ gridTemplateColumns: "1fr auto", borderBottom: `1px solid ${LINE}`, padding: "34px 8px" }}
+            >
+              <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(30px, 5.4vw, 66px)", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
+                Ny hemsida, byggd för att hittas
+                <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14, marginTop: 10, letterSpacing: "0.02em" }}>
+                  0 kr i startavgift · från 1 190 kr/mån · drift och ändringar ingår · rutan läggs till för 495 kr
+                </span>
+              </span>
+              <ArrowUpRight className="b-srv-arrow" size={34} strokeWidth={1.8} aria-hidden="true" />
+            </a>
+            <p style={{ margin: "30px 0 16px", fontSize: 16, lineHeight: 1.7, color: DIM, maxWidth: 580 }}>
+              Vill du se hur en ny hemsida skulle se ut? Klistra in adressen till din nuvarande sajt. Jag mäter den, och vill du får du ett färdigt förslag, gratis och utan möte.
+            </p>
+            <HeroKoll plats="hemsida" />
+          </div>
           <p style={{ marginTop: 36, marginBottom: 14, fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: FAINT }}>
-            Ingår eller läggs till efter behov
+            Läggs till efter behov
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {tillval.map((t) => (
@@ -429,20 +457,22 @@ export default function BContent() {
         <BFaq />
       </div>
 
-      {/* ═══ 10. Final, gula fältet. Samma dörr som i heron. ═══ */}
+      {/* ═══ 10. Final, gula fältet. Samma dörr som i heron: /forfragningar. ═══ */}
       <section className="b-final" style={{ background: GUL, padding: "16vh 24px" }}>
         <div className="b-final-inner" style={{ maxWidth: 1120, margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-heading" style={{ fontWeight: 460, fontVariationSettings: '"opsz" 144', fontSize: "clamp(40px, 6.5vw, 92px)", lineHeight: 1.04, letterSpacing: "-0.025em", color: INK, margin: 0 }}>
-            Något att vara<br /><em style={{ fontStyle: "italic", fontWeight: 380 }}>stolt över</em>.
+            Vet du hur det ser ut<br /><em style={{ fontStyle: "italic", fontWeight: 380 }}>hos er</em>?
           </h2>
           <p style={{ margin: "26px auto 0", fontSize: 17, lineHeight: 1.65, color: "rgba(25,20,5,0.78)", maxWidth: 460 }}>
-            Klistra in din adress. Om två arbetsdagar klickar du runt i din nya hemsida.
+            Skriv i rutan här nere, så ser du vad dina kunder skulle få. Vill du veta hur snabbt ni svarar i dag mäter jag det gratis.
           </p>
           <div ref={magnetRef} style={{ marginTop: 34, willChange: "transform" }}>
-            <HeroKoll plats="final" tema="gul" />
+            <Link href="/forfragningar" className="premium-btn" data-umami-event="cta-final-forfragningar" style={{ background: INK, borderColor: INK, color: PAPER }}>
+              Så fungerar det <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
           </div>
           <p style={{ marginTop: 22, fontFamily: "var(--font-ui)", fontSize: 11.5, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(25,20,5,0.8)" }}>
-            0 kr i startavgift · från 1 190 kr/mån · färdig innan du betalar
+            495 kr/mån exkl moms · 30 dagar gratis · ingen bindning
           </p>
           <p style={{ marginTop: 18, fontSize: 14.5, color: "rgba(25,20,5,0.7)" }}>
             eller ring <a href={SITE.phoneHref} data-umami-event="cta-telefon" style={{ color: INK, fontWeight: 600 }}>{SITE.phone}</a>

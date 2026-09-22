@@ -14,7 +14,7 @@ const contactMethods = [
     title: "E-post",
     value: "joel@stoltmarketing.se",
     href: "mailto:joel@stoltmarketing.se",
-    desc: "Svar inom 24h på vardagar",
+    desc: "Svar samma arbetsdag",
   },
   {
     icon: Phone,
@@ -47,7 +47,7 @@ const steps = [
   },
   {
     num: "2",
-    title: "Jag hör av mig inom 24h",
+    title: "Jag hör av mig samma arbetsdag",
     desc: "Vi bokar in ett kort samtal på 15 till 20 min.",
   },
   {
@@ -142,7 +142,7 @@ export default function KontaktContent() {
         ]}
         badge="Kontakt & Bokning"
         title="Boka en kostnadsfri genomgång och få tydliga nästa steg."
-        subtitle="Beskriv ditt nuläge så hör jag av mig inom 24 timmar med en konkret rekommendation, helt utan förpliktelser."
+        subtitle="Beskriv ditt nuläge så hör jag av mig samma arbetsdag med en konkret rekommendation, helt utan förpliktelser. Vill du se hur rutan för förfrågningar fungerar, skriv i den nere till höger."
       />
 
       <section className="py-16 sm:py-24 px-5 sm:px-8">
@@ -155,7 +155,7 @@ export default function KontaktContent() {
                   Beskriv ditt behov
                 </h2>
                 <p className="text-[14px] text-muted mb-2">
-                  Fyll i formuläret så återkommer jag inom 24 timmar.
+                  Fyll i formuläret så återkommer jag samma arbetsdag.
                 </p>
                 <p className="text-[14px] text-body mb-7">
                   Vill du välja tid{" "}
@@ -184,7 +184,7 @@ export default function KontaktContent() {
                       Tack för din förfrågan!
                     </h3>
                     <p className="mt-2 text-[15px] text-body">
-                      Jag hör av mig inom 24 timmar.
+                      Jag hör av mig samma arbetsdag.
                     </p>
                   </div>
                 ) : (
@@ -257,6 +257,8 @@ export default function KontaktContent() {
                           style={{ ...inputStyle, appearance: "none", cursor: "pointer", color: formData.service ? "#F2ECDD" : "#7B7462" }}
                         >
                           <option value="">Välj tjänst</option>
+                          <option value="Rutan för förfrågningar">Rutan för förfrågningar</option>
+                          <option value="Gratis svarsmätning">Gratis svarsmätning</option>
                           <option value="Webbplats">Ny webbplats</option>
                           <option value="E-handel">E-handel / WooCommerce</option>
                           <option value="AI & Automation">AI & Automation</option>

@@ -8,14 +8,14 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Tjänster Hässleholm — Webb, SEO, AI & Google Ads",
+  title: "Tjänster i Hässleholm: webb, SEO, AI och Google Ads",
   description:
     "Webbutveckling, SEO, AI-automation, Google Ads och managed hemsida för företag i Hässleholm. Allt från en digital konsult. Boka kostnadsfri genomgång.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/tjanster",
   },
   openGraph: {
-    title: "Tjänster Hässleholm — Webb, SEO, AI & Google Ads",
+    title: "Tjänster i Hässleholm: webb, SEO, AI och Google Ads",
     description:
       "Webbutveckling, SEO, AI-automation och Google Ads. En konsult, hela leveransen.",
     url: "https://www.stoltmarketing.se/tjanster",

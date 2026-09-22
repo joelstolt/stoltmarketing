@@ -121,9 +121,8 @@ export default function Footer() {
             </span>
           </Link>
           <p style={{ fontSize: 14, color: "rgba(242,236,221,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
-            Webbyrå i Hässleholm med 10+ års erfarenhet. Hemsidor, e-handel, SEO,
-            Google Ads och AI-automation till företag i hela Skåne och Sverige.
-            Du ser hemsidan innan du betalar.
+            Stolt Marketing i Hässleholm. Förfrågningar via hemsidan direkt till
+            mobilen, hemsidor, SEO och Google Ads för hantverksföretag i hela Sverige.
           </p>
 
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 10 }}>
@@ -248,10 +247,10 @@ export default function Footer() {
           }}
         >
           <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>
-            © {new Date().getFullYear()} Stolt Marketing, webbyrå i Hässleholm &amp; Skåne för hemsidor, SEO, Google Ads och AI.
+            © {new Date().getFullYear()} Stolt Marketing i Hässleholm. Förfrågningar och hemsidor för hantverksföretag.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>Svar inom 24h på vardagar</span>
+            <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>Svar samma arbetsdag</span>
             <a
               href="https://kvota.se"
               target="_blank"

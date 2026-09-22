@@ -167,7 +167,7 @@ function renderEmail({ resultat, name, diff, unsubUrl, synlighet, ask }) {
           <td style="background:#F2C230;border-radius:24px;">
             <a href="https://www.stoltmarketing.se/boka" style="display:inline-block;padding:12px 26px;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#191405;text-decoration:none;">BOKA GENOMGÅNG</a>
           </td></tr></table>
-        <div style="font-size:11.5px;color:#7B7462;margin-top:12px;">eller ring 076-686 74 06 · svar inom 24 h på vardagar</div>
+        <div style="font-size:11.5px;color:#7B7462;margin-top:12px;">eller ring 076-686 74 06 · svar samma arbetsdag</div>
       </td></tr></table>
 
       <div style="font-size:11px;color:#B0AB9F;line-height:1.7;margin-top:22px;">

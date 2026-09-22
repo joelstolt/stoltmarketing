@@ -66,7 +66,7 @@ const overtagande = [
   {
     n: "3",
     title: "Löpande drift till fast pris",
-    desc: "Därefter sköter jag sajten månad för månad. Du vet alltid vad det kostar och du får svar inom 24 timmar.",
+    desc: "Därefter sköter jag sajten månad för månad. Du vet alltid vad det kostar och du får svar samma arbetsdag.",
   },
 ];
 
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: "Hur snabbt kan du hjälpa?",
-    a: "Du får svar inom 24 timmar på vardagar. Är sajten nere eller hackad går det före allt annat, då hör jag av mig samma dag.",
+    a: "Du får svar samma arbetsdag. Är sajten nere eller hackad går det före allt annat, då hör jag av mig samma dag.",
   },
   {
     q: "Behåller jag WordPress som redigeringsverktyg?",
@@ -223,7 +223,7 @@ export default function LpWordpressContent() {
           </button>
         </div>
         <p className="mt-3 text-[13px] text-muted text-center">
-          Kostnadsfritt. Svar inom 24 timmar. Ingen uppföljningskedja.
+          Kostnadsfritt. Svar samma arbetsdag. Ingen uppföljningskedja.
         </p>
       </form>
     );
@@ -373,7 +373,7 @@ export default function LpWordpressContent() {
                 name: "Drift Bas",
                 price: PRICING.basManad,
                 note: "12 månaders bindning, därefter månadsvis.",
-                items: ["Hosting, uppdateringar och säkerhet", "Innehållsändringar när du behöver", "Svar inom 24 timmar"],
+                items: ["Hosting, uppdateringar och säkerhet", "Innehållsändringar när du behöver", "Svar samma arbetsdag"],
               },
               {
                 name: "Drift Bredd",

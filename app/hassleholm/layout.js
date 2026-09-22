@@ -1,13 +1,13 @@
 import { HubFaqSchema } from "@/lib/local/hub-schema";
 export const metadata = {
-  title: "Webbyrå i Hässleholm — webb, SEO, Google Ads & AI",
+  title: "Webbyrå i Hässleholm: webb, SEO, Google Ads och AI",
   description:
     "Digital byrå i Hässleholm. Vi bygger moderna hemsidor, sköter SEO, Google Ads och AI-automation för företag i Hässleholm och nordöstra Skåne.",
   alternates: {
     canonical: "https://www.stoltmarketing.se/hassleholm",
   },
   openGraph: {
-    title: "Webbyrå i Hässleholm — webb, SEO, Google Ads & AI",
+    title: "Webbyrå i Hässleholm: webb, SEO, Google Ads och AI",
     description:
       "Modern webbutveckling och digital marknadsföring för företag i Hässleholm och nordöstra Skåne.",
     url: "https://www.stoltmarketing.se/hassleholm",

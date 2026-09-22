@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Förvaltningsavtal — Drift, Säkerhet & Utveckling",
+  title: "Förvaltningsavtal: drift, säkerhet och utveckling",
   description: "Förvaltningsavtal, Drift, säkerhet och löpande utveckling av er e-handelsplattform.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/serviceavtal" },

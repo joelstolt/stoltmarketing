@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 
 /*
- * Mekanismen bakom "färdig innan du betalar", som en riktig sekvens med
- * dagnummer. Solen vandrar över de tre stegen medan sektionen scrollas
+ * Mekanismen bakom rutan för förfrågningar: de 30 gratis dagarna, som en
+ * riktig sekvens med dagnummer. Solen vandrar över de tre stegen medan sektionen scrollas
  * (CSS animation-timeline där det finns, annars ett litet scroll-script
  * för Safari). Det enda numrerade på startsidan är det här, för det är
  * det enda som faktiskt är en ordning.
@@ -18,18 +18,18 @@ const DIM = "rgba(242,236,221,0.72)";
 const steg = [
   {
     dag: "Dag 1",
-    titel: "Du skickar adressen.",
-    text: "Jag läser din sajt, dina tjänster och orterna du jobbar i. Har du ingen sajt skriver du bara företagsnamnet.",
+    titel: "Jag lägger in rutan.",
+    text: "På varje sida av din hemsida. Jag ställer in din mobil och era öppettider, och du provar själv att skriva, så du ser hur det ser ut för kunden.",
   },
   {
-    dag: "Dag 3",
-    titel: "Du klickar runt i förslaget.",
-    text: "En riktig sajt på en riktig länk: startsida och en tjänstesida, med texter om ditt företag, inte lorem ipsum. Visa den för kollegorna. Ta den tid du vill.",
+    dag: "Dag 1 till 30",
+    titel: "Förfrågningarna kommer till dig.",
+    text: "Ett SMS när något kommer in och ett förslag på svar att skicka. Månaden kostar ingenting.",
   },
   {
-    dag: "Dag 10",
-    titel: "Live på din domän, om du sagt ja.",
-    text: "Resten av sidorna byggs, formuläret kopplas till din mejl och sajten går live. Först då börjar månadspriset. Säger du nej har det inte kostat något, och jag skickar inga påminnelser.",
+    dag: "Dag 30",
+    titel: "Du bestämmer.",
+    text: "Vi tittar tillsammans på vad som kommit in. Vill du fortsätta är det 495 kr i månaden. Vill du inte tar jag bort rutan, och det har inte kostat något.",
   },
 ];
 
@@ -70,11 +70,11 @@ export default function SaGarDetTill() {
   return (
     <section id="sa-gar-det-till" style={{ maxWidth: 1120, margin: "0 auto", padding: "8vh 24px 10vh" }}>
       <div className="sec-rule" style={{ marginBottom: 34 }}>
-        <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>Så går det till</h2>
-        <span className="sec-eng" aria-hidden="true">tre dagar</span>
+        <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>Så kommer du igång</h2>
+        <span className="sec-eng" aria-hidden="true">30 dagar</span>
       </div>
       <p className="font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 120', fontSize: "clamp(28px, 4vw, 46px)", lineHeight: 1.1, letterSpacing: "-0.02em", color: PAPER, margin: "0 0 12px", maxWidth: "18ch" }}>
-        Tre dagar som gör risken till <em style={{ fontStyle: "italic", color: GUL }}>min</em>.
+        En månad där risken är <em style={{ fontStyle: "italic", color: GUL }}>min</em>.
       </p>
 
       <div ref={faltRef} className="process-falt b-steg" style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "32px 40px", borderTop: `1px solid ${LINE}`, paddingTop: 34 }}>

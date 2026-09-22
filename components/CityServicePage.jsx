@@ -208,7 +208,7 @@ export default function CityServicePage({ service, city }) {
               {[
                 { v: "150+", l: "Levererade projekt" },
                 { v: "10+ år", l: "Erfarenhet" },
-                { v: "24h", l: "Svarstid på vardagar" },
+                { v: "Samma dag", l: "Svar på vardagar" },
                 { v: "Fast pris", l: "Innan vi börjar" },
               ].map((s2) => (
                 <div key={s2.l} className="bg-surface rounded-[10px] border border-border p-6">

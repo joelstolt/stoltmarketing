@@ -54,7 +54,7 @@ const ingar = [
   "Hosting och drift på snabb edge",
   "Säkerhet, certifikat och backuper",
   "Innehållsändringar när du behöver",
-  "Support med svar inom 24 timmar",
+  "Support med svar samma arbetsdag",
   "SEO-grund och AI-läsbarhet från start",
 ];
 
@@ -178,7 +178,7 @@ export default function LpHemsidaContent() {
           <Check size={20} className="text-[#059669]" />
         </div>
         <h3 className="mt-4 font-heading font-700 text-[20px] text-heading">
-          Tack, jag hör av mig inom 24 timmar.
+          Tack, jag hör av mig samma arbetsdag.
         </h3>
         <p className="mt-2 text-[15px] text-body leading-relaxed">
           Du får ditt designförslag inom två arbetsdagar. Vill du prata tidigare når du mig
@@ -247,7 +247,7 @@ export default function LpHemsidaContent() {
             disabled={sending}
             className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
           >
-            {sending ? "Skickar…" : "Skicka, svar inom 24 h vardagar"}
+            {sending ? "Skickar…" : "Skicka, svar samma arbetsdag"}
           </button>
         </div>
         <p className="mt-3 text-[13px] text-muted leading-relaxed">
