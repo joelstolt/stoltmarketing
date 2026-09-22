@@ -6,9 +6,9 @@ import { Reveal, SectionHeader, PageHero } from "@/components/ui";
 import { klickId } from "@/lib/klickid";
 import { SITE } from "@/lib/local/data";
 
-/* Svarsspegelns siffror (22 av 30) får visas först när alla 30 firmor fått
+/* Svarsspegelns siffror (23 av 30) får visas först när alla 30 firmor fått
    mejlet om att förfrågan var ett test. Slå på när Smartlead visar att
-   avslöjandet (sekvens A1) levererats till alla 22, tidigast 2026-09-28.
+   avslöjandet (sekvens A1) levererats till alla 23, tidigast 2026-09-28.
    Se docs/ny-ingang-2026-09-23/FORSLAG-NY-INGANG.md avsnitt 3.4. */
 const VISA_MATNINGEN = false;
 
@@ -246,7 +246,7 @@ export default function ForfragningarContent() {
             {VISA_MATNINGEN && (
               <>
                 <p className="mt-6 text-[15.5px] leading-relaxed text-body">
-                  I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund med ett vanligt jobb. 22 av dem
+                  I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund med ett vanligt jobb. 23 av dem
                   hade inte svarat en vecka senare. Hos 20 av 30 hittade min automatiska koll inget formulär på sajten.
                 </p>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-body">

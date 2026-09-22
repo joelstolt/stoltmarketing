@@ -1,3 +1,5 @@
+> **Rättelse 2026-09-23:** Bolag 26:s svar efter 0 timmar var en studs från ett fakturasystem. Rätt siffra är 23 av 30, inte 22. Siffrorna i mejl- och sidtexterna nedan är rättade; där listorna säger "de 22" menas nu de 23 som aldrig svarade. Se kvitto-mejldata.md och kvitto-svarsspegeln.md för övriga fynd (fel mottagare för två bolag, söndagssamtalet, nej tack från Vasa VVS och Phoenix).
+
 # Ny ingång för Stolt Marketing: förslaget
 
 Skrivet onsdag 23 september 2026. Status: KLAR, avsnitt 1 till 7.
@@ -130,7 +132,7 @@ CTA (ersätter HeroKoll, 257-259):
 
 Bevisrad (261, ersätter Niklassons, som inte får kopplas till rutan):
 - Fram till måndag 28 september: **Prova själv: skriv i rutan nere till höger.**
-- Från måndag 28, när A1 levererats till alla 22: **I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund. 22 hade inte svarat en vecka senare.**
+- Från måndag 28, när A1 levererats till alla 22: **I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund. 23 hade inte svarat en vecka senare.**
 
 Final (436-445):
 - Rubrik: **Vet du hur det ser ut hos er?**
@@ -235,7 +237,7 @@ Du behöver inte byta hemsida. Rutan läggs på den du har, om den tar emot en r
 
 *(Stycket nedan visas först från måndag 28 september, när A1 levererats till alla 22. Innan dess står bara erbjudandet och formuläret.)*
 
-I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund med ett vanligt jobb. 22 av dem hade inte svarat en vecka senare. Hos 20 av 30 hittade min automatiska koll inget formulär på sajten.
+I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund med ett vanligt jobb. 23 av dem hade inte svarat en vecka senare. Hos 20 av 30 hittade min automatiska koll inget formulär på sajten.
 
 Det betyder inte att de struntar i sina kunder. Mejlet kom från en adress de aldrig sett och kan ha hamnat i skräpposten. Men för kunden som väntar ser det likadant ut. Alla 30 har fått ett mejl från mig om att det var ett test, och inga namn publiceras.
 
@@ -287,8 +289,8 @@ Repo: /Users/joelstolt/Desktop/Dev/internal/svarsspegeln.
 |---|---|
 | src/rapport.js:188 | 990-rutan byts mot texten nedan. |
 | src/rapport.js:192 | "ring {sondnumret}" blir "ring 076-686 74 06". |
-| src/rapport.js, referensraden (Leadferno 2023) | "Samma mätning hos 30 el- och VVS-firmor i Stockholm i september: 22 hade inte svarat skriftligt en vecka senare." |
-| src/index.js:276-277 (avslöjandemejlet) | Stryk "för de flesta gissar fel om sig själva". Byt "Det gör bara en bråkdel av era konkurrenter." mot "Hos 22 av 30 el- och VVS-firmor i Stockholm kom inget skriftligt svar alls under veckan." |
+| src/rapport.js, referensraden (Leadferno 2023) | "Samma mätning hos 30 el- och VVS-firmor i Stockholm i september: 23 hade inte svarat skriftligt en vecka senare." |
+| src/index.js:276-277 (avslöjandemejlet) | Stryk "för de flesta gissar fel om sig själva". Byt "Det gör bara en bråkdel av era konkurrenter." mot "Hos 23 av 30 el- och VVS-firmor i Stockholm kom inget skriftligt svar alls under veckan." |
 | src/sonder.js, amne | Hela jobbet i ämnet, inte tre ord. Före första nya test. |
 | wrangler.jsonc | BOKNING_URL till https://www.stoltmarketing.se/forfragningar. ELKS_NUMMER: nytt nummer (30 kr/mån) före första nya test, eftersom provtexten skriver ut numret. |
 
@@ -364,7 +366,7 @@ Jag mätte hur snabbt 30 el- och VVS-firmor i Stockholm svarar när en ny kund h
 • {{samtal_rad}}
 • {{formular_rad}}
 
-22 av de 30 hade inte svarat en vecka senare, så ni är inte ensamma. Mejlet kom från en adress ni aldrig sett och kan ha fastnat i skräpposten. Det är i så fall också bra att veta.
+23 av de 30 hade inte svarat en vecka senare, så ni är inte ensamma. Mejlet kom från en adress ni aldrig sett och kan ha fastnat i skräpposten. Det är i så fall också bra att veta.
 
 Svara ja så skickar jag hela mätningen med tider, eller radera så tar jag bort allt om er.
 
@@ -463,11 +465,11 @@ Vilka: 100 aktiebolag, el och VVS i Stockholm, urval ur leads.db med urval.mjs. 
 **B1, dag 0**
 
 ```text
-Ämne: 22 av 30 el- och VVS-firmor svarade inte på en vecka
+Ämne: 23 av 30 el- och VVS-firmor svarade inte på en vecka
 
 {{halsning}}
 
-I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund med ett vanligt jobb. 22 hade inte svarat en vecka senare. Alla 30 har fått ett mejl från mig om att det var ett test. {{company_name}} var inte med.
+I september skrev jag till 30 el- och VVS-firmor i Stockholm som en kund med ett vanligt jobb. 23 hade inte svarat en vecka senare. Alla 30 har fått ett mejl från mig om att det var ett test. {{company_name}} var inte med.
 
 Hade ni svarat? Säg ja så skickar jag samma sorts förfrågan till er någon dag de närmaste två veckorna, som mejl och via formuläret på sajten. Inga samtal. Ni får tiden svart på vitt, och ni behöver inte köpa något.
 
