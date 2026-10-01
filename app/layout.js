@@ -153,7 +153,9 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="sv" className={`${fraunces.variable} ${archivo.variable}`}>
+    // suppressHydrationWarning: Skördeklockan nedan sätter data-dygn på <html> före
+    // hydreringen, så attributet finns i DOM:en men inte i React-trädet (gäller bara html-taggen).
+    <html lang="sv" className={`${fraunces.variable} ${archivo.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
