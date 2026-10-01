@@ -2,6 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "stoltmarketing",
   "main": "worker-with-headers.mjs",
+  // Deployspärren (scripts/deploy-vakt.sh): wrangler kör den före varje prod-deploy och
+  // stoppar allt som inte är pushad main byggd från samma commit. Previewn saknar spärren.
+  "build": { "command": "sh scripts/deploy-vakt.sh" },
   "compatibility_date": "2025-03-25",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
