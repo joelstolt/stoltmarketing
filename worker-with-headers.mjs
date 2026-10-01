@@ -25,8 +25,17 @@ const SAKERHET = {
 
 export default {
   async fetch(request, env, ctx) {
-    const res = await handler.fetch(request, env, ctx);
-    const { pathname } = new URL(request.url);
+    // Apex -> www (canonical = www.stoltmarketing.se). Låg i middleware.js före
+    // Next 16, men där kör middleware/proxy i Node-runtime som OpenNext på
+    // Cloudflare inte stödjer. En has-host-regel i next.config matchade även
+    // www (OpenNext förankrar inte regexet) och gav loop, så den görs här.
+    const url = new URL(request.url);
+    const host = request.headers.get("host") || url.hostname;
+    const res =
+      host === "stoltmarketing.se"
+        ? Response.redirect(`https://www.stoltmarketing.se${url.pathname}${url.search}`, 301)
+        : await handler.fetch(request, env, ctx);
+    const { pathname } = url;
     const ut = new Response(res.body, res);
     for (const [namn, varde] of Object.entries(SAKERHET)) {
       if (!ut.headers.has(namn)) ut.headers.set(namn, varde);

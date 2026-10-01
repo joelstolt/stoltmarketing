@@ -10,6 +10,13 @@ if (!process.env.VERCEL) {
 const nextConfig = {
   async redirects() {
     return [
+      // Apex -> www görs i worker-with-headers.mjs (låg tidigare i middleware.js).
+      // Blogginlägget ersatt av pillar-prissidan 2026-08-07.
+      {
+        source: "/blogg/vad-kostar-en-hemsida",
+        destination: "/vad-kostar-en-hemsida",
+        statusCode: 301,
+      },
       // Splittest-varianten /b är nu startsidan
       { source: "/b", destination: "/", permanent: true },
       /* Dubblett borttagen 2026-08-23. Två sidor täckte exakt samma ämne med

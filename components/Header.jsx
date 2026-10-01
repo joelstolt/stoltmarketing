@@ -195,12 +195,15 @@ export default function Header() {
 
           {/* Mobile hamburger: två linjer i olika längd (gul accent, samma
               signatur som wordmarkens streck) som morfar till ett kryss.
-              Etiketten säger vad knappen gör, ikonen är detaljen. */}
+              Etiketten säger vad knappen gör, ikonen är detaljen.
+              OBS: ingen display i .mob-menu-btn. Inline-stilen ligger efter
+              Tailwind i kaskaden och vann över lg:hidden med samma specificitet,
+              så knappen syntes på desktop (buggen 2026-08-24). Display styrs nu
+              av Tailwind-klasserna flex + lg:hidden på knappen.
+              Skriv aldrig ordet style inom vinkelparenteser i CSS-texten nedan:
+              React escapar det till "\73 tyle" i server-HTML:en men inte på
+              klienten, och den skillnaden gav React-fel 418 på varje sida. */}
           <style>{`
-            /* OBS: ingen display här. Inline-<style> ligger efter Tailwind i
-               kaskaden och vann över lg:hidden med samma specificitet, så
-               knappen syntes på desktop (buggen 2026-08-24). Display styrs nu
-               av Tailwind-klasserna flex + lg:hidden på knappen. */
             .mob-menu-btn { align-items: center; gap: 11px; background: none; border: none; cursor: pointer; padding: 10px 2px 10px 10px; position: relative; z-index: 10002; }
             .mob-menu-label { font-family: var(--font-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(242,236,221,0.62); transition: color 0.25s; }
             .mob-menu-btn.is-open .mob-menu-label { color: #F2C230; }
