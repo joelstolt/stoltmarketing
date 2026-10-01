@@ -177,11 +177,13 @@ export default function RootLayout({ children }) {
             Laddar bara en liten launcher direkt, resten vid idle/klick. Tenant stoltmarketing. */}
         {/* Som JSX-<script> i body dubblerade React taggen vid hydrering (React-fel 418) och
             kastade ut widgetens element. Därför injiceras den efter window.load, som Umami. */}
+        {/* /analys/ är privata genomgångar till prospekt: där öppnas rutan bara vid klick, annars
+            täcker tenantens autoopen ("*" efter 5 s) hela genomgången i mobilen. */}
         {!PREVIEW && (
           <script
             dangerouslySetInnerHTML={{
               __html:
-                "window.addEventListener('load',function(){try{var s=document.createElement('script');s.defer=true;s.src='https://widget.stoltmarketing.se/widget.js';s.setAttribute('data-client','stoltmarketing');document.body.appendChild(s)}catch(e){}})",
+                "window.addEventListener('load',function(){try{var s=document.createElement('script');s.defer=true;s.src='https://widget.stoltmarketing.se/widget.js';s.setAttribute('data-client','stoltmarketing');if(location.pathname.indexOf('/analys/')===0)s.setAttribute('data-open-policy','manual');document.body.appendChild(s)}catch(e){}})",
             }}
           />
         )}
