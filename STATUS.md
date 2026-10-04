@@ -39,4 +39,8 @@ Bygge med pnpm cf:build. Preview med wrangler.preview.jsonc. Produktionsdeploy k
 - Preview deployad och curl-kontrollerad: 100/100 HTTP 200 och noll avvikelser för H1, main, canonical, metadata, schema, ankar-ID och synlig typografi.
 - Webbläsarprov vid 320, 390, 768 och 1280 px: meny/Escape/inert, formulärvalidering och kvarvarande text efter fel, bokningsflikar och kalender, bloggfilter/sökning, artikelankare, kryssrutor, kopieringsknapp, prisberäkning och widgetens manuella öppning/stängning.
 - Efter visuell QA tonades blommorna bakom startsidans brödtext ned. Kalenderns faktiska 30 minuter synkas i bokning/pris.
-- Produktionsbygge, push, publicering och verkligt leveranstest återstår. PageSpeed API svarar 429; inga aktuella prestandapoäng påstås.
+- Klart: kod 00fd929 pushad på main, byggd och publicerad på www.stoltmarketing.se och preview. Slutlig produktionscrawl 100/100 utan fynd.
+- Kontaktformulär provat live: Resend bekräftar delivered till joel@stoltmarketing.se.
+- PageSpeed API gav 429, men webbmätning genomförd: slutligt 97/100/100/100 på startsidan mobil, LCP 2,551 s, TBT 0 ms, CLS 0. CrUX saknar data.
+- Återstår verksamhets-/SEO-effektuppföljning, Search Console-underlag före URL-sammanslagningar och verifiering av aktiva leverantörsavtal. Notion ej uppdaterat.
+- Fullständigt kvitto: docs/frontend-audit-2026-10-04/LEVERANSKVITTO.md.

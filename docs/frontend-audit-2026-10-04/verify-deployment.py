@@ -32,6 +32,9 @@ issues=[]
 for r in results:
     path=r['path']
     if 'error'in r: issues.append([path,'fetch',r['error']]);continue
+    robots=(r['meta'].get('robots','')+' '+next((v for k,v in r['headers'].items() if k.lower()=='x-robots-tag'),'')).lower()
+    expected_noindex='preview' in origin or path in ['/lp/hemsida-foretag','/lp/wordpress','/serviceavtal']
+    if ('noindex' in robots)!=expected_noindex:issues.append([path,'robots',robots])
     if r['main_count']!=1:issues.append([path,'main_count',r['main_count']])
     h1=[h for h in r['headings'] if h['level']=='h1']
     if len(h1)!=1:issues.append([path,'h1',len(h1)])

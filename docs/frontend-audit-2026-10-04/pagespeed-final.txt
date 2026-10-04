@@ -1,0 +1,281 @@
+- banner:
+  - link "PageSpeed Insights logo PageSpeed Insights":
+    - /url: ./
+    - img "PageSpeed Insights logo"
+    - generic: PageSpeed Insights
+  - button "Kopiera länken":
+    - generic: Kopiera länken
+  - generic: Dokument
+  - link "Dokument":
+    - /url: https://developers.google.com/speed/docs/insights/v5/about
+- generic: Den här webbplatsen tillhandahåller tjänster och analyserar trafik med hjälp av cookies från Google.
+- generic: Läs mer.
+- link "Läs mer.":
+  - /url: https://policies.google.com/technologies/cookies
+- button "OK":
+  - generic: OK
+- generic: Rapport från 4 okt. 2026 23:22:02
+- textbox:
+  - /placeholder: Ange webbadressen för en webbsida
+  - text: https://www.stoltmarketing.se/
+- paragraph: Ange en giltig webbadress
+- button "Analysera":
+  - generic: Analysera
+- tablist:
+  - tab "Mobilt" [selected]:
+    - generic: smartphone
+    - generic: Mobilt
+  - tab "Dator":
+    - generic: computer
+    - generic: Dator
+- tabpanel "Mobilt":
+  - generic: Upptäck vad de faktiska användarna upplever
+  - button "button":
+  - generic: Ingen data
+  - separator
+  - generic: Diagnostisera prestandaproblem
+  - article:
+    - link "97 Prestanda":
+      - /url: "#performance"
+      - generic: "97"
+      - generic: Prestanda
+    - link "100 Tillgänglighet":
+      - /url: "#accessibility"
+      - generic: "100"
+      - generic: Tillgänglighet
+    - link "100 Bästa metoder":
+      - /url: "#best-practices"
+      - generic: "100"
+      - generic: Bästa metoder
+    - link "100 SEO":
+      - /url: "#seo"
+      - generic: "100"
+      - generic: SEO
+    - link "3/3 Agentisk webbläsning":
+      - /url: "#agentic-browsing"
+      - generic: 3/3
+      - generic: Agentisk webbläsning
+    - text: Värdena är uppskattningar och kan variera.
+    - link "Prestandapoängen beräknas":
+      - /url: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
+    - text: direkt utifrån dessa mätvärden.
+    - link "Visa kalkylator.":
+      - /url: https://googlechrome.github.io/lighthouse/scorecalc/#FCP=934&LCP=2551&TBT=0&CLS=0&SI=2316&TTI=2551&device=mobile&version=13.5.0
+    - generic: 0–49
+    - generic: 50–89
+    - generic: 90–100
+    - img "Final Screenshot"
+    - checkbox "Toggle the display of metric descriptions"
+    - generic: Mätvärden
+    - generic: Utöka vy
+    - generic: First Contentful Paint
+    - generic: 0,9 s
+    - generic: Largest Contentful Paint
+    - generic: 2,6 s
+    - generic: Total Blocking Time
+    - generic: 0 ms
+    - generic: Cumulative Layout Shift
+    - generic: "0"
+    - generic: Speed Index
+    - generic: 2,3 s
+    - list:
+      - listitem: Captured at 4 okt. 2026 23:22 CEST
+      - listitem: Emulerad Moto G Power with Lighthouse 13.5.0
+      - listitem: Enskild sidsession
+      - listitem: Första sidhämtningen
+      - listitem: Långsam 4G-begränsning
+      - listitem: Using HeadlessChromium 153.0.8010.36 with lr
+    - button "Visa Treemap"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - generic: "Visa granskningar som är relevanta för:"
+    - radio "All" [checked]
+    - generic: All
+    - radio "FCP"
+    - generic "First Contentful Paint": FCP
+    - radio "LCP"
+    - generic "Largest Contentful Paint": LCP
+    - radio "CLS"
+    - generic "Cumulative Layout Shift": CLS
+    - generic: Insikter
+    - 'generic "Begäranden om renderingsblockering —Beräknad besparing: 120 ms"':
+      - generic: Begäranden om renderingsblockering
+      - text: "—Beräknad besparing: 120 ms"
+    - generic "Nätverksberoendeträd":
+      - generic: Nätverksberoendeträd
+    - 'generic "Använd effektiva cachelivslängder —Beräknad besparing: 14 Kibit"':
+      - generic: Använd effektiva cachelivslängder
+      - text: "—Beräknad besparing: 14 Kibit"
+    - 'generic "Äldre JavaScript —Beräknad besparing: 11 Kibit"':
+      - generic: Äldre JavaScript
+      - text: "—Beräknad besparing: 11 Kibit"
+    - generic "Optimera DOM-storlek":
+      - generic: Optimera DOM-storlek
+    - generic "LCP-fördelning":
+      - generic: LCP-fördelning
+    - generic "Tredje part":
+      - generic: Tredje part
+    - text: Dessa insikter är även tillgängliga i prestandapanelen i Chrome DevTools –
+    - link "registrera en spårning":
+      - /url: https://developer.chrome.com/docs/devtools/performance/reference?utm_source=lighthouse&utm_medium=lr
+    - text: för att se mer detaljerad information.
+    - generic: Diagnostik
+    - 'generic "Reducera JavaScript som inte används —Beräknad besparing: 33 Kibit"':
+      - generic: Reducera JavaScript som inte används
+      - text: "—Beräknad besparing: 33 Kibit"
+    - generic "Undvik icke sammansatta animationer —1 animerat element hittades":
+      - generic: Undvik icke sammansatta animationer
+      - text: —1 animerat element hittades
+    - text: Mer information om appens prestanda. Värdena påverkar inte prestandapoängen
+    - link "direkt":
+      - /url: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
+    - text: .
+    - generic "Godkända granskningar (18) Visa":
+      - generic: Godkända granskningar (18)
+      - generic: Visa
+    - text: — — —
+    - heading "100 Tillgänglighet" [level=2]:
+      - generic: "100"
+      - generic: Tillgänglighet
+    - text: Dessa kontroller visar möjligheter att
+    - link "förbättra tillgängligheten för webbappen":
+      - /url: https://developer.chrome.com/docs/lighthouse/accessibility/?utm_source=lighthouse&utm_medium=lr
+    - text: . Automatisk identifiering kan bara identifiera en del av problemen och garanterar inte att webbappen är tillgänglig, så
+    - link "manuell testning":
+      - /url: https://web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
+    - text: rekommenderas också.
+    - generic "Fler saker att kolla manuellt (10) Dölj":
+      - generic: Fler saker att kolla manuellt (10)
+      - generic: Dölj
+    - generic "Interactive controls are keyboard focusable":
+      - generic: Interactive controls are keyboard focusable
+    - generic "Interactive elements indicate their purpose and state":
+      - generic: Interactive elements indicate their purpose and state
+    - generic "The page has a logical tab order":
+      - generic: The page has a logical tab order
+    - generic "Visual order on the page follows DOM order":
+      - generic: Visual order on the page follows DOM order
+    - generic "User focus is not accidentally trapped in a region":
+      - generic: User focus is not accidentally trapped in a region
+    - generic "The user's focus is directed to new content added to the page":
+      - generic: The user's focus is directed to new content added to the page
+    - generic "HTML5 landmark elements are used to improve navigation":
+      - generic: HTML5 landmark elements are used to improve navigation
+    - generic "Offscreen content is hidden from assistive technology":
+      - generic: Offscreen content is hidden from assistive technology
+    - generic "Custom controls have associated labels":
+      - generic: Custom controls have associated labels
+    - generic "Custom controls have ARIA roles":
+      - generic: Custom controls have ARIA roles
+    - text: Dessa punkter beskriver områden som inte kan testas automatiskt. Läs mer i vår guide om att
+    - link "granska tillgängligheten":
+      - /url: https://web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
+    - text: .
+    - generic "Godkända granskningar (26) Visa":
+      - generic: Godkända granskningar (26)
+      - generic: Visa
+    - generic "Ej tillämpligt (37) Visa":
+      - generic: Ej tillämpligt (37)
+      - generic: Visa
+    - heading "100 Bästa metoder" [level=2]:
+      - generic: "100"
+      - generic: Bästa metoder
+    - generic: Tillförlitlighet och säkerhet
+    - generic "Kontrollera att CPS är effektiv mot XSS-attacker":
+      - generic: Kontrollera att CPS är effektiv mot XSS-attacker
+    - generic "Använd en stark HSTS-policy":
+      - generic: Använd en stark HSTS-policy
+    - generic "Säkerställ korrekt isolering för ursprung med COOP":
+      - generic: Säkerställ korrekt isolering för ursprung med COOP
+    - generic "Minska risken med DOM-baserad XSS med hjälp av Trusted Types":
+      - generic: Minska risken med DOM-baserad XSS med hjälp av Trusted Types
+    - generic: Kompatibilitet med webbläsare
+    - generic "Baseline-funktioner":
+      - generic: Baseline-funktioner
+    - generic "Godkända granskningar (13) Visa":
+      - generic: Godkända granskningar (13)
+      - generic: Visa
+    - generic "Ej tillämpligt (3) Visa":
+      - generic: Ej tillämpligt (3)
+      - generic: Visa
+    - heading "100 SEO" [level=2]:
+      - generic: "100"
+      - generic: SEO
+    - text: Dessa kontroller ser till att din sida följer de grundläggande råden för sökmotoroptimering. Det finns fler faktorer som Lighthouse inte bedömer här som kan påverka rankingen i sökresultat, däribland prestandan för
+    - link "Viktiga webbvärden":
+      - /url: https://web.dev/explore/vitals?utm_source=lighthouse&utm_medium=lr
+    - text: .
+    - link "Läs mer om Google Search Essentials":
+      - /url: https://support.google.com/webmasters/answer/35769
+    - text: .
+    - generic "Fler saker att kolla manuellt (1) Dölj":
+      - generic: Fler saker att kolla manuellt (1)
+      - generic: Dölj
+    - generic "Strukturerad data är giltig":
+      - generic: Strukturerad data är giltig
+    - generic: Kontrollera att fler av de bästa metoderna för sökmotoroptimering följs på din webbplats genom att köra dessa extra valideringar.
+    - generic "Godkända granskningar (10) Visa":
+      - generic: Godkända granskningar (10)
+      - generic: Visa
+    - heading "3/3 Agentisk webbläsning" [level=2]:
+      - generic: 3/3
+      - generic: Agentisk webbläsning
+    - text: Dessa kontroller säkerställer att webbplatser är högkvalitativa och
+    - link "kan läsas av AI-agenter":
+      - /url: https://goo.gle/lighthouse-agentic-web
+    - text: samt validerar korrektheten i WebMCP-integrationer. Den här kategorin är fortfarande under utveckling och kan komma att ändras.
+    - generic "Godkända granskningar (3) Visa":
+      - generic: Godkända granskningar (3)
+      - generic: Visa
+    - text: — —
+    - generic "Ej tillämpligt (4) Visa":
+      - generic: Ej tillämpligt (4)
+      - generic: Visa
+- text: — — — — — — — — — —
+- contentinfo:
+  - generic: Läs mer om PageSpeed Insights
+  - link "Nyheter":
+    - /url: https://developers.google.com/speed/docs/insights/release_notes
+  - link "Dokumentation":
+    - /url: https://developers.google.com/speed/docs/insights/v5/about
+  - link "Läs mer om webbprestanda":
+    - /url: https://developers.google.com/speed
+  - link "Ställ frågor i Stack Overflow":
+    - /url: https://stackoverflow.com/questions/tagged/pagespeed-insights
+  - link "E-postlista":
+    - /url: https://groups.google.com/g/pagespeed-insights-discuss
+  - generic: Relaterat innehåll
+  - link "Uppdateringar":
+    - /url: https://developer.chrome.com/blog
+  - link "Webbens grunder":
+    - /url: https://developers.google.com/focus/web-development
+  - link "Fallstudier":
+    - /url: https://web.dev/case-studies
+  - link "Poddar":
+    - /url: https://web.dev/shows
+  - generic: Kontakta oss
+  - link "Twitter":
+    - /url: https://twitter.com/ChromiumDev
+  - link "YouTube":
+    - /url: https://www.youtube.com/user/ChromeDevelopers
+  - link "Google Developers Logo":
+    - /url: https://developers.google.com/
+    - img "Google Developers Logo"
+  - link "Chrome":
+    - /url: https://developer.chrome.com/
+  - link "Firebase":
+    - /url: https://firebase.google.com/
+  - link "Alla produkter":
+    - /url: https://developers.google.com/products/
+  - link "Villkor och integritetspolicy":
+    - /url: https://policies.google.com/
+  - text: Mer information finns i
+  - link "policyerna för webbplatsen Google Developers":
+    - /url: https://developers.google.com/terms/site-policies
+  - text: .
