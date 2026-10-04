@@ -6,6 +6,8 @@ import { klickId } from "@/lib/klickid";
 
 export default function InquiryForm({ service = "Kontakt", initialMessage = "", submitLabel = "Skicka meddelande", eventName = "lead-kontaktformular" }) {
   const id = useId();
+  const started = useRef(false);
+  const trackForm = (event) => { try { window.umami?.track(event, { form_id: eventName, service }); } catch {} };
   const loadedAt = useRef(Date.now());
   const resultRef = useRef(null);
   const [data, setData] = useState({ name: "", email: "", message: initialMessage, hp_field: "" });
@@ -28,13 +30,14 @@ export default function InquiryForm({ service = "Kontakt", initialMessage = "", 
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.reference) throw new Error(response.status === 429 ? "Du har gjort flera försök. Vänta en minut och försök igen." : "Meddelandet kunde inte bekräftas. Dina uppgifter finns kvar så att du kan försöka igen.");
       setReference(result.reference);
-      trackConversion(eventName, "lead");
+      trackConversion(eventName, "lead", { form_id: eventName, service });
     } catch (err) {
+      trackForm("form-error");
       setError(err.name === "TimeoutError" ? "Det tog för lång tid att få svar. Försök igen eller mejla Joel direkt." : err.name === "TypeError" ? "Det gick inte att nå servern. Kontrollera din anslutning och försök igen." : err.message);
     } finally { setSending(false); }
   }
   if (reference) return <div ref={resultRef} tabIndex={-1} role="status" className="py-8"><h3 className="text-[28px] mb-3">Ditt meddelande är mottaget</h3><p>Jag återkommer personligen, normalt samma arbetsdag. Skickar du på kvällen eller helgen får du svar nästa arbetsdag.</p><p className="text-[14px] text-muted mt-4">Du behöver inte skicka igen. Du kan också nå mig på <a href="mailto:joel@stoltmarketing.se" className="underline">joel@stoltmarketing.se</a>.</p></div>;
-  return <form onSubmit={submit} aria-busy={sending} className="space-y-5">
+  return <form onFocusCapture={() => { if (!started.current) { started.current = true; trackForm("form-start"); } }} onInvalidCapture={() => trackForm("form-validation")} onSubmit={submit} aria-busy={sending} className="space-y-5">
     <p className="text-[13px] text-muted">Alla tre fält behövs för att jag ska kunna svara.</p>
     <div className="grid sm:grid-cols-2 gap-5">
       <label className="form-field" htmlFor={`${id}-name`}>Namn<input id={`${id}-name`} name="name" autoComplete="name" maxLength={200} required value={data.name} onChange={change} /></label>

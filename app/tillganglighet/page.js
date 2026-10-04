@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,11 +15,14 @@ const steps = [
 ];
 
 export default function TillganglighetPage() {
+  const started = useRef(false);
+  const trackForm = (event) => { try { window.umami?.track(event, { form_id: "tillganglighet", language: "sv" }); } catch {} };
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
   const [loadedAt] = useState(() => Date.now());
   async function handleSubmit(e) {
     e.preventDefault();
+    if (status === "sending") return;
     const form = e.currentTarget;
     const fd = new FormData(form);
     const sajt = String(fd.get("sajt") || "").trim();
@@ -28,8 +32,10 @@ export default function TillganglighetPage() {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const result = await res.json().catch(() => null);
       if (!res.ok || !result?.ok || !result?.reference) throw new Error("send");
+      trackConversion("lead-tillganglighet", "lead", { form_id: "tillganglighet", language: "sv" });
       setStatus("sent"); form.reset();
     } catch {
+      trackForm("form-error-tillganglighet");
       setStatus("idle"); setError("Meddelandet kunde inte skickas. Försök igen eller mejla joel@stoltmarketing.se.");
     }
   }
@@ -59,7 +65,7 @@ export default function TillganglighetPage() {
         <div><h2 className="font-heading text-[30px] text-heading">Se ett konkret ombyggnadsprojekt</h2><a href="/projekt/linguista" className="block mt-6"><img src="/case-linguista.webp" alt="Linguistas ombyggda webbplats" width="1440" height="900" loading="lazy" className="w-full h-[280px] object-cover object-top rounded-xl border border-border"/></a><p className="mt-5 text-[17px] leading-relaxed text-body">I <a href="/projekt/linguista" className="text-primary underline underline-offset-4">Linguista-caset</a> visar jag leveransen och redovisade Lighthouse-tester. Tillgänglighetspoängen steg från 82 till 100 i det äldre desktop-testet. Det är ett automatiskt deltest och inget intyg om full WCAG-uppfyllelse eller lagefterlevnad.</p></div>
         <div id="tillganglighet-kontakt" className="bg-surface border border-border rounded-xl p-6 sm:p-7 scroll-mt-24">
           <h2 className="font-heading text-[28px] text-heading">Beskriv din sajt</h2><p className="mt-3 mb-6 text-[16px] text-body">Skriv vad besökaren ska kunna göra och om det finns ett köp- eller bokningsflöde. Jag återkommer med förslag på omfattning.</p>
-          {status === "sent" ? <div role="status" className="p-4 border border-border rounded-lg"><p className="text-[16px] text-heading">Tack! Din förfrågan har tagits emot. Jag återkommer till e-postadressen du angav.</p></div> : <form onSubmit={handleSubmit} className="flex flex-col gap-4" aria-busy={status === "sending"}>
+          {status === "sent" ? <div role="status" className="p-4 border border-border rounded-lg"><p className="text-[16px] text-heading">Tack! Din förfrågan har tagits emot. Jag återkommer till e-postadressen du angav.</p></div> : <form onFocusCapture={() => { if (!started.current) { started.current = true; trackForm("form-start-tillganglighet"); } }} onInvalidCapture={() => trackForm("form-validation-tillganglighet")} onSubmit={handleSubmit} className="flex flex-col gap-4" aria-busy={status === "sending"}>
             <div><label htmlFor="access-name" className="block mb-2 text-[15px] text-heading">Ditt namn</label><input id="access-name" name="name" required autoComplete="name" className={inputClass}/></div>
             <div><label htmlFor="access-email" className="block mb-2 text-[15px] text-heading">Din e-post</label><input id="access-email" name="email" type="email" required autoComplete="email" className={inputClass}/></div>
             <div><label htmlFor="access-url" className="block mb-2 text-[15px] text-heading">Webbadress (valfritt)</label><input id="access-url" name="sajt" inputMode="url" autoComplete="url" className={inputClass}/></div>
