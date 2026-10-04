@@ -1,104 +1,46 @@
 "use client";
 
 import { ExternalLink, Check } from "lucide-react";
-import { Reveal, PageHero } from "@/components/ui";
-import CloseBlock from "@/components/CloseBlock";
+import { PageHero } from "@/components/ui";
+import ForeEfter from "@/components/ForeEfter";
 
-// Delad mall for kundcase-sidor under /projekt/[slug].
-// Datadriven sa att nya case ar en dataentry + tva tunna filer.
 export default function CasePage({ data }) {
-  return (
-    <>
-      <PageHero
-        breadcrumbs={[
-          { label: "Start", href: "/" },
-          { label: "Projekt", href: "/projekt" },
-          { label: data.title },
-        ]}
-        badge={data.badge}
-        title={data.heroTitle}
-        subtitle={data.heroSubtitle}
-        bullets={data.bullets}
-      />
-
-      <section className="py-14 sm:py-20 px-5 sm:px-8">
-        <div className="max-w-[760px] mx-auto">
-          <Reveal>
-            <h2 className="font-heading font-700 text-[22px] sm:text-[26px] text-heading tracking-[-0.012em]">
-              Utmaningen
-            </h2>
-          </Reveal>
-          {data.challenge.map((p, i) => (
-            <Reveal key={i} delay={0.06 + i * 0.04}>
-              <p className="mt-4 text-[16px] sm:text-[17px] leading-[1.8] text-body">{p}</p>
-            </Reveal>
-          ))}
-
-          <Reveal>
-            <h2 className="font-heading font-700 text-[22px] sm:text-[26px] text-heading tracking-[-0.012em] mt-12">
-              Lösningen
-            </h2>
-          </Reveal>
-          {data.solution.map((p, i) => (
-            <Reveal key={i} delay={0.06 + i * 0.04}>
-              <p className="mt-4 text-[16px] sm:text-[17px] leading-[1.8] text-body">{p}</p>
-            </Reveal>
-          ))}
-
-          <Reveal delay={0.1}>
-            <div className="mt-12 grid sm:grid-cols-3 gap-4">
-              {data.results.map((r) => (
-                <div key={r.label} className="bg-surface rounded-[10px] border border-border p-5">
-                  <div className="font-heading font-700 text-[20px] text-primary">{r.value}</div>
-                  <div className="mt-1 text-[13px] text-body leading-snug">{r.label}</div>
-                </div>
-              ))}
+  return <>
+    <PageHero
+      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Kundprojekt", href: "/projekt" }, { label: data.title }]}
+      badge={data.badge} title={data.heroTitle} subtitle={data.heroSubtitle}
+      compact={true} cta={false}
+    />
+    <section className="py-10 sm:py-14 px-5 sm:px-8">
+      <div className="max-w-6xl mx-auto">
+        {data.screenshot && <figure className="mb-10 bg-surface border border-border rounded-xl overflow-hidden">
+          <a href={data.screenshot} target="_blank" rel="noopener noreferrer" aria-label={`Öppna större skärmbild av ${data.title}`}>
+            <img src={data.screenshot} alt={`Skärmbild av ${data.title}s webbplats`} className="w-full max-h-[620px] object-cover object-top" width="1440" height="900" fetchPriority="high" />
+          </a>
+          <figcaption className="px-5 py-3 text-[14px] text-body">Sparad skärmbild av leveransen. Öppna bilden för att se den större.</figcaption>
+        </figure>}
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14 items-start">
+          <div className="max-w-[720px]">
+            <h2 className="font-heading text-[28px] text-heading">Behovet</h2>
+            {data.challenge.map((p,i)=><p key={i} className="mt-4 text-[17px] leading-[1.8] text-body">{p}</p>)}
+            <h2 className="mt-10 font-heading text-[28px] text-heading">Det jag byggde</h2>
+            {data.solution.map((p,i)=><p key={i} className="mt-4 text-[17px] leading-[1.8] text-body">{p}</p>)}
+            <h2 className="mt-10 font-heading text-[28px] text-heading">Leverans och redovisade resultat</h2>
+            <div className="mt-5 grid sm:grid-cols-3 gap-4">
+              {data.results.map(r=><div key={r.label} className="bg-surface rounded-xl border border-border p-5"><p className="font-heading text-[24px] text-primary">{r.value}</p><p className="mt-2 text-[14px] leading-relaxed text-body">{r.label}</p></div>)}
             </div>
-          </Reveal>
-
-          <Reveal delay={0.12}>
-            <div className="mt-10 flex flex-wrap gap-2">
-              {data.tech.map((t) => (
-                <span key={t} className="text-[12px] font-600 text-body bg-surface border border-border rounded-full px-3 py-1">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-
-          {data.liveUrl && (
-            <Reveal delay={0.14}>
-              <a
-                href={data.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 text-[15px] font-600 text-primary hover:underline"
-              >
-                Besök {data.title} <ExternalLink size={15} />
-              </a>
-            </Reveal>
-          )}
-
-          <Reveal delay={0.16}>
-            <div className="mt-12 bg-surface rounded-[10px] border border-border p-6">
-              <h3 className="font-heading font-700 text-[16px] text-heading">Det här ingick</h3>
-              <div className="mt-4 grid sm:grid-cols-2 gap-2.5">
-                {data.deliverables.map((d) => (
-                  <div key={d} className="flex gap-2.5 items-start">
-                    <Check size={15} className="text-primary mt-[3px] flex-shrink-0" strokeWidth={2.5} />
-                    <span className="text-[14px] text-body leading-relaxed">{d}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+            {data.comparison && <div className="mt-8"><ForeEfter rader={data.comparison} /></div>}
+            {data.measurementNote && <aside className="mt-6 p-5 border border-border rounded-xl bg-surface" aria-label="Källor och mätningens begränsningar"><h3 className="font-heading text-[20px] text-heading">Så ska uppgifterna läsas</h3><p className="mt-3 text-[15px] leading-[1.8] text-body">{data.measurementNote}</p></aside>}
+          </div>
+          <aside className="bg-surface rounded-xl border border-border p-6">
+            <h2 className="font-heading text-[22px] text-heading">Det här ingick</h2>
+            <ul className="mt-4 space-y-3">{data.deliverables.map(d=><li key={d} className="flex gap-2.5 items-start"><Check size={16} aria-hidden="true" className="text-primary mt-1 shrink-0"/><span className="text-[15px] text-body leading-relaxed">{d}</span></li>)}</ul>
+            {data.liveUrl && <a href={data.liveUrl} target="_blank" rel="noopener noreferrer" className="secondary-btn mt-6">Besök {data.title}<ExternalLink size={15} aria-hidden="true"/></a>}
+            <details className="mt-6"><summary className="text-[14px] text-body cursor-pointer">Teknik i projektet</summary><p className="mt-3 text-[14px] leading-relaxed text-body">{data.tech.join(", ")}</p></details>
+          </aside>
         </div>
-      </section>
-
-      <CloseBlock
-        title="Vill du ha ett liknande resultat?"
-        text="15–20 min. Jag berättar hur jag skulle ta mig an just din sajt."
-      />
-    </>
-  );
+      </div>
+    </section>
+    <section className="section-gul px-5 sm:px-8 py-12 sm:py-16"><div className="max-w-3xl mx-auto"><h2 className="font-heading text-[32px] text-heading">Behöver din verksamhet något liknande?</h2><p className="mt-4 text-[17px] text-body leading-relaxed">Beskriv vad besökaren ska kunna göra på din hemsida. Jag föreslår ett upplägg och visar vad som ingår.</p><div className="mt-6 flex flex-wrap gap-3"><a href="/kontakt" className="premium-btn">Beskriv ditt projekt</a><a href="/hemsida-foretag" className="secondary-btn">Se hemsideupplägget</a></div></div></section>
+  </>;
 }

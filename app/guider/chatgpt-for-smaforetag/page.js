@@ -1,166 +1,207 @@
-"use client";
-
 import BlogArticle from "@/components/BlogArticle";
 
 const blocks = [
   {
-    type: "lead",
-    text: "Du behöver inte förstå hur AI fungerar under huven för att ha nytta av ChatGPT i vardagen. Här är nio konkreta användningsområden där svenska småföretag faktiskt sparar tid, med exempel på hur du kan skriva prompten för var och en. Längst ner hittar du också fällorna att undvika och när det är läge att ta hjälp i stället för att göra allt själv.",
+    "type": "lead",
+    "text": "ChatGPT kan hjälpa dig att komma från ett tomt dokument till ett utkast. Börja med en liten uppgift som du själv kan granska. Mät din egen tidsåtgång innan du drar slutsatsen att arbetet går snabbare."
   },
   {
-    type: "p",
-    text: "Du behöver inte testa alla nio på en gång. Välj den uppgift som stjäl mest av din tid just nu, testa den på ett riktigt jobb i en vecka, och gå vidare till nästa när den sitter.",
+    "type": "tip",
+    "title": "Rensa materialet innan första prompten",
+    "text": "Ta bort namn, e-post, telefonnummer, adresser, ordernummer och andra detaljer som kan identifiera kunden. Utelämna avtal, lösenord och känslig information. Att bara byta namn räcker inte om resten av texten identifierar personen. Använd ett uppdiktat exempel eller en kort avidentifierad sammanfattning om du är osäker."
   },
   {
-    type: "h2",
-    text: "Skriva snabbare: mejl, texter och beskrivningar",
+    "type": "p",
+    "text": "Skilj ett privat konsumentkonto från ett företagsverktyg som din verksamhet har godkänt med rätt villkor, åtkomst och dataskydd. OpenAI beskriver olika regler för konsumenttjänster och företagsprodukter. Att en tjänst inte tränar på materialet som standard betyder inte att allt kundmaterial är lämpligt att skicka dit."
   },
   {
-    type: "p",
-    text: "Här gör AI störst nytta för de flesta: ett första utkast du sedan putsar, i stället för ett tomt dokument.",
+    "type": "h2",
+    "text": "Nio uppgifter att prova"
   },
   {
-    type: "cards",
-    items: [
-      { title: "1. Offertmejl och kundsvar", text: "Klistra in vad kunden frågat och be om ett svarsförslag. Prompt: skriv ett kort, personligt svar till en kund som undrar vad det kostar att byta ut ett kök. Vi tar normalt betalt per timme plus material. Håll tonen hjälpsam, inte säljig. Du redigerar sen det som inte stämmer och skickar." },
-      { title: "2. Annonstexter", text: "Be om flera korta varianter i stället för en enda lång. Prompt: skriv fem korta annonsrubriker för en lokal målare i Malmö, max 30 tecken var, som betonar snabb offert. Testa vilken som funkar bäst i stället för att gissa dig fram." },
-      { title: "3. FAQ-texter till sajten", text: "Låt AI ta första utkastet på svar till frågor du redan får varje vecka. Prompt: här är fem frågor kunder ofta ställer om våra tjänster, lista dem, skriv ett kort och rakt svar på varje som jag kan lägga in på sajten. Byt ut generella påståenden mot dina egna fakta innan du publicerar." },
-    ],
+    "type": "cards",
+    "items": [
+      {
+        "title": "1. Offertmejl och kundsvar",
+        "text": "Gör ett svarsförslag från en avidentifierad sammanfattning. Lägg inte in hela kundmejlet."
+      }
+    ]
   },
   {
-    type: "h2",
-    text: "Bearbeta det som redan finns",
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Skriv ett kort, personligt svar till en kund som frågar om [tjänst]. Utgå endast från dessa fakta: [godkända uppgifter om pris och omfattning]. Markera sådant som jag behöver komplettera. Hitta inte på villkor."
   },
   {
-    type: "p",
-    text: "AI är också bra på att göra om text du redan har till något kortare, tydligare eller på ett annat språk.",
+    "type": "cards",
+    "items": [
+      {
+        "title": "2. Annonstexter",
+        "text": "Variera formuleringen, men kontrollera att varje löfte stämmer."
+      }
+    ]
   },
   {
-    type: "cards",
-    items: [
-      { title: "4. Sammanfatta långa mejltrådar", text: "Klistra in hela tråden och be om en sammanfattning innan du svarar. Prompt: sammanfatta den här mejltråden i fem punkter, vad kunden vill, vad som redan är beslutat och vad som fortfarande är obesvarat. Sparar dig från att läsa om allt från början varje gång du öppnar tråden." },
-      { title: "5. Arbetsbeskrivningar", text: "Bra för att snabbt få ett strukturerat utkast till en jobbannons eller uppdragsbeskrivning. Prompt: skriv en arbetsbeskrivning för en snickare som ska jobba hos oss två dagar i veckan, med tydliga arbetsuppgifter, önskad erfarenhet och vad vi erbjuder. Fyll sedan i dina egna, faktiska villkor." },
-      { title: "6. Översättningar", text: "Snabbare än att slå upp ord för ord, särskilt för enklare texter som produktbeskrivningar eller korta mejl. Prompt: översätt den här texten till engelska och håll en enkel, professionell ton. Läs alltid igenom resultatet själv, eller be någon som kan språket kolla innan det går ut till en kund." },
-    ],
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Skriv fem annonsrubriker för [tjänst] i [ort]. Varje rubrik får vara högst 30 tecken. Använd bara dessa styrkor: [verifierade fakta]. Visa teckenantalet."
   },
   {
-    type: "h2",
-    text: "Strukturera och tänka",
+    "type": "cards",
+    "items": [
+      {
+        "title": "3. Vanliga frågor till sajten",
+        "text": "Utgå från verkliga återkommande frågor och dina egna svar."
+      }
+    ]
   },
   {
-    type: "p",
-    text: "Sist: allt som handlar om att få ordning på tankarna eller göra ett snabbt överslag.",
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Här är frågor kunder brukar ställa: [frågor]. Här är mina svar i kortform: [fakta]. Skriv tydliga FAQ-svar. Behåll sakuppgifterna och markera luckor."
   },
   {
-    type: "cards",
-    items: [
-      { title: "7. Struktur på offerter", text: "Be om en tydlig mall i stället för att bygga offerten från noll varje gång. Prompt: föreslå en struktur för en offert till en villaägare: inledning, vad som ingår, vad som inte ingår, pris och giltighetstid. Fyll sedan i dina egna siffror och villkor." },
-      { title: "8. Brainstorma kampanjidéer", text: "Bra när du kört fast och behöver fler infallsvinklar snabbt. Prompt: ge mig tio idéer på inlägg till sociala medier för en lokal bilverkstad inför vintersäsongen. Plocka de två, tre bästa och gör dem till dina egna i stället för att posta alla rakt av." },
-      { title: "9. Räkna på enkla kalkyler", text: "Bra för snabba överslag, inte för det som ska stämma på kronan. Prompt: om jag tar 650 kronor i timmen och räknar med 6 fakturerbara timmar per dag, hur mycket blir det på en månad med 20 arbetsdagar? Räkna alltid om själv innan du sätter en riktig offert." },
-    ],
+    "type": "cards",
+    "items": [
+      {
+        "title": "4. Sammanfatta en mejltråd",
+        "text": "Ta bort personuppgifter och hemligheter innan du arbetar med ett utdrag. En sammanfattning kan missa detaljer."
+      }
+    ]
   },
   {
-    type: "compare",
-    left: {
-      title: "AI passar bra till",
-      items: [
-        "Första utkast av text du ändå ska redigera själv.",
-        "Uppgifter som upprepar sig men inte kräver hemlig information.",
-        "Att komma i gång när du kört fast eller har vita pappret-panik.",
-      ],
-    },
-    right: {
-      title: "AI passar sämre till",
-      items: [
-        "Sista ordet i något som kräver garantier eller juridisk exakthet.",
-        "Uppgifter där kunduppgifter eller avtal måste klistras in.",
-        "Svar du inte har tid eller möjlighet att dubbelkolla.",
-      ],
-    },
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Sammanfatta följande avidentifierade utdrag i fem punkter: vad kunden vill, vad som är beslutat och vad som är obesvarat. Skilj fakta från antaganden. Utdrag: [rensad text]."
   },
   {
-    type: "h2",
-    text: "Tre fällor, var ärlig med dig själv",
+    "type": "cards",
+    "items": [
+      {
+        "title": "5. Arbetsbeskrivningar",
+        "text": "Be om struktur och fyll själv i korrekta arbetsvillkor."
+      }
+    ]
   },
   {
-    type: "list",
-    title: "Sätt gränserna innan du börjar",
-    items: [
-      "Mata aldrig in kunduppgifter, personnummer eller annan känslig information i ett AI-verktyg där du inte vet var datan lagras.",
-      "Dubbelkolla alltid siffror, lagtext, regler och andra påståenden AI:n ger dig. Den gissar ibland fel med exakt samma säkra ton som när den har rätt.",
-      "Se AI-texten som ett utkast, inte ett färdigt svar. Läs igenom, korrigera och gör den till din egen innan den går ut till en kund.",
-    ],
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Skriv ett utkast till arbetsbeskrivning för [roll]. Uppgifter: [uppgifter]. Krav: [faktiska krav]. Villkor: [villkor]. Lägg inte till andra krav eller förmåner."
   },
   {
-    type: "tip",
-    title: "Ett enkelt test",
-    text: "Fråga AI:n om något du redan vet svaret på. Stämmer svaret, bra tecken. Är det fel, eller bara löst hopdiktat, då vet du att du måste dubbelkolla den typen av frågor extra noga framöver.",
+    "type": "cards",
+    "items": [
+      {
+        "title": "6. Översättningar",
+        "text": "Låt någon som behärskar språket granska kundtext där precisionen spelar roll."
+      }
+    ]
   },
   {
-    type: "h2",
-    text: "När är det läge att ta hjälp i stället för att göra själv?",
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Översätt följande text till [språk] med enkel, professionell ton. Behåll priser, namn och villkor exakt. Markera tvetydiga uttryck. Text: [text utan personuppgifter]."
   },
   {
-    type: "p",
-    text: "De nio exemplen ovan är bra för enstaka uppgifter du gör själv vid tangentbordet. Men när samma uppgift upprepar sig varje dag, som att svara på återkommande kundfrågor dygnet runt eller koppla ihop flera olika system, är det ofta värt att bygga en riktig lösning i stället för att klistra in text i ChatGPT varje gång. Det är skillnaden mellan att spara några minuter enstaka gånger och att spara flera timmar varje vecka, år efter år.",
+    "type": "cards",
+    "items": [
+      {
+        "title": "7. Struktur på offerter",
+        "text": "En mall sparar uppstart, men AI ska inte fatta beslut om pris eller avtal."
+      }
+    ]
   },
   {
-    type: "h2",
-    text: "Testa en av de här i dag",
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Föreslå en tom offertmall med rubriker för omfattning, leverans, avgränsningar, pris, betalning och giltighet. Använd [hakparenteser] för uppgifter som jag ska fylla i."
   },
   {
-    type: "p",
-    text: "Ingen ordning är den enda rätta. Välj den uppgift som känns mest akut för dig just nu.",
+    "type": "cards",
+    "items": [
+      {
+        "title": "8. Kampanjidéer",
+        "text": "Välj och utveckla idéer som passar verksamheten."
+      }
+    ]
   },
   {
-    type: "checklist",
-    items: [
-      "Skriv ett prompt-utkast för den uppgift som stjäl mest tid av dig varje vecka.",
-      "Testa det på ett riktigt jobb, inte bara som lek.",
-      "Läs igenom och korrigera innan du skickar eller publicerar något AI skrivit.",
-      "Spara prompten som fungerade, så slipper du uppfinna den på nytt nästa gång.",
-    ],
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Ge tio idéer på inlägg för [verksamhet] inför [säsong]. Utgå från [kundbehov]. Hitta inte på kundcitat eller resultat. Förklara vilken fråga varje idé besvarar."
   },
   {
-    type: "h2",
-    text: "Vanliga frågor",
+    "type": "cards",
+    "items": [
+      {
+        "title": "9. Enkla kalkyler",
+        "text": "Använd AI till att ställa upp beräkningen. Kontrollräkna i kalkylblad eller miniräknare."
+      }
+    ]
   },
   {
-    type: "rows",
-    items: [
-      { label: "Är gratisversionen av ChatGPT tillräcklig?", text: "Ja, för det mesta av det här. Betalversionen ger snabbare svar och fler funktioner, men gratisnivån räcker långt för en vanlig vecka." },
-      { label: "Kan jag lita på siffror och fakta som ChatGPT ger mig?", text: "Nej, inte utan att kolla. Dubbelkolla alltid siffror, lagtext och andra påståenden mot en riktig källa innan du använder dem i något som går till en kund." },
-      { label: "Är det farligt att skriva in kunduppgifter?", text: "Utgå från att allt du skriver in kan sparas av tjänsten. Skriv aldrig in personnummer, avtal eller annan känslig kundinformation." },
-      { label: "Ersätter AI en riktig anställd eller byrå?", text: "Nej. Den tar bort en del av det repetitiva arbetet. Det som kräver omdöme, relation eller ansvar behöver fortfarande en människa." },
-      { label: "Vilken AI-modell är bäst för småföretag?", text: "Det finns inget enda rätt svar. ChatGPT är ett bra allroundval att börja med. Testa dig fram och byt om ett annat verktyg passar din uppgift bättre." },
-    ],
+    "type": "code",
+    "title": "Prompt att anpassa",
+    "text": "Visa uträkningen för 650 kr per timme, 6 fakturerbara timmar per dag och 20 arbetsdagar. Beskriv beloppet som omsättning före kostnader, inte som vinst. Håll moms och kostnader separata."
   },
   {
-    type: "p",
-    text: "Börja med en enda uppgift från listan i dag. Testa den på ett riktigt jobb, inte bara för skojs skull, och se hur mycket tid den faktiskt sparar innan du bygger ut vidare.",
+    "type": "h2",
+    "text": "Kontrollera innan något går till kund"
   },
+  {
+    "type": "checklist",
+    "items": [
+      "Materialet är rensat innan det läggs in.",
+      "Priser, villkor, datum och faktapåståenden är kontrollerade mot egna uppgifter eller primärkällor.",
+      "Utkastet innehåller inga påhittade kundcitat, garantier eller meriter.",
+      "Jag har läst resultatet och ansvarar för det som skickas.",
+      "Jag har jämfört total tid inklusive granskning med mitt tidigare arbetssätt."
+    ]
+  },
+  {
+    "type": "tip",
+    "title": "Ett rätt testsvar räcker inte",
+    "text": "Fråga gärna om något du kan kontrollera för att upptäcka fel. Ett korrekt svar på den frågan visar bara att just det svaret blev rätt. Fortsätt kontrollera varje leverans, särskilt siffror och regler."
+  },
+  {
+    "type": "h2",
+    "text": "När ett arbetsflöde behöver mer än ett chattfönster"
+  },
+  {
+    "type": "p",
+    "text": "Om du upprepar samma uppgift ofta kan en mall eller vanlig regelstyrd automation räcka. AI kan vara ett steg i ett större flöde, men behöver tydligt underlag, felhantering och kontroll före utskick. Vilken tidsvinst du får måste mätas i din verksamhet. Börja med att dokumentera var tiden går."
+  },
+  {
+    "type": "rows",
+    "items": [
+      {
+        "label": "Behöver jag en betalversion?",
+        "text": "Det beror på funktioner och dina datakrav. Jämför aktuell produktinformation och villkor. Välj inte ett privat konto enbart för att det är gratis om uppgiften kräver ett godkänt företagsverktyg."
+      },
+      {
+        "label": "Kan AI bestämma pris eller ge juridiskt råd?",
+        "text": "Använd utkastet som hjälp med formulering och struktur. Kontrollera ekonomi och regler mot tillförlitliga källor och ta sakkunnig hjälp när det behövs."
+      },
+      {
+        "label": "Hur vet jag om jag sparar tid?",
+        "text": "Räkna med tiden för att rensa underlag, skriva prompten, korrigera svaret och kontrollera resultatet. Jämför flera liknande uppgifter innan du ändrar arbetssätt."
+      }
+    ]
+  }
 ];
 
 export default function Page() {
-  return (
-    <BlogArticle
-      category="AI & Automation"
-      h1="ChatGPT för småföretag: 9 användningsområden som faktiskt sparar tid"
-      dateDisplay="17 augusti 2026"
-      readTime="9 min"
-      breadcrumbName="ChatGPT för småföretag"
-      sectionLabel="Guider"
-      sectionHref="/guider"
-      blocks={blocks}
-      related={[
-        { title: "AI-automation: tjänsten", href: "/tjanster/ai-automation" },
-        { title: "AI-synlighet: tjänsten", href: "/tjanster/ai-synlighet" },
-        { title: "Syns ditt företag i AI-sök?", href: "/guider/synas-i-ai-sok" },
-      ]}
-      cta={{
-        heading: "Vill du automatisera mer än ett ChatGPT-fönster i taget?",
-        text: "Jag bygger chatbotar, automatiserade offerter och arbetsflöden som gör jobbet åt dig varje dag, inte bara när du kommer ihåg att fråga. Boka en kostnadsfri genomgång.",
-      }}
-    />
-  );
+  return <BlogArticle
+    category="AI och automation"
+    h1="ChatGPT för småföretag: nio uppgifter med promptmallar"
+    dateDisplay="17 augusti 2026"
+    updatedDate="2026-10-04"
+    summary="Börja med avidentifierat underlag och en uppgift du kan kontrollera. Använd AI till utkast, granska resultatet själv och mät tidsvinsten inklusive korrigeringar."
+    breadcrumbName="ChatGPT för småföretag: nio uppgifter med promptmallar"
+    sectionLabel="Guider" sectionHref="/guider"
+    blocks={blocks}
+    sources={[{"title": "OpenAI: hur data används i konsument- och företagsprodukter", "href": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance"}]}
+    related={[{"title": "AI-automation: upplägg", "href": "/tjanster/ai-automation"}, {"title": "Åtta exempel på arbetsflöden", "href": "/blogg/automatisera-med-ai"}, {"title": "Synas i AI-sök", "href": "/guider/synas-i-ai-sok"}]}
+    cta={{"heading": "Vill du förenkla en återkommande uppgift?", "text": "Beskriv stegen du gör i dag. Jag bedömer om en mall, vanlig automation eller AI-stöd passar och var du behöver behålla kontrollen.", "label": "Beskriv ditt arbetsflöde", "href": "/kontakt"}}
+  />;
 }

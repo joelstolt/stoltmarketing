@@ -1,35 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Phone, ArrowRight } from "lucide-react";
+import { Check, Phone } from "lucide-react";
 import { Reveal } from "@/components/ui";
 import { SITE, PRICING } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
-import { SNAPSHOT } from "@/lib/kundmotor";
+import { CASES } from "@/lib/case-data";
+import { packages } from "@/lib/pricing-packages";
 
-/* ============================================================
-   Annonslandningssida för hemsida-, pris- och webbyråorden.
-   Täcker fyra annonsgrupper: Hemsida företag, Ny hemsida,
-   Pris & kostnad (#priser) och Webbyrå, plus Skåne-vinkeln
-   (#skane, #seo, #ads) som ligger som sektioner här i stället
-   för på en egen sida. Volymen bär inte två sidor i fas 1.
-
-   Medvetna val, ändra dem inte utan att veta varför:
-   - Ingen Header/Footer. En annonssida ska ha en väg ut, inte tolv.
-     Logga, telefon och integritetspolicy är kvar eftersom Google
-     bedömer transparens i landningssideupplevelsen.
-   - Heron animeras INTE in. Above the fold får aldrig starta på
-     opacity 0, det förstör LCP och därmed klickpriset.
-   - Ingen gtag, ingen kaka, ingen localStorage. Klick-id:t bärs av
-     lib/klickid.js i modulminne och konverteringen skickas server-
-     side av /api/contact till Kontrollrummets uppladdare. Lägg inte
-     tillbaka en pixel här, sajten är kakfri med flit.
-   - Honeypot heter hp_field. Aldrig company/email/url, autofyll
-     trippar dem och leads försvinner tyst.
-   ============================================================ */
+const niklassonsOffert = CASES.niklassonsflytt.results[0].value;
 
 const steg = [
   {
@@ -40,50 +22,30 @@ const steg = [
   {
     n: "2",
     title: "Du får ett färdigt designförslag",
-    desc: "Inom två arbetsdagar, gratis. Inte en skiss i en PDF utan en riktig sida du kan klicka runt i.",
+    desc: "Ett gratis, klickbart förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs efter ditt ja.",
   },
   {
     n: "3",
-    title: "Gillar du det lanserar vi",
-    desc: "Gör du inte det kostar det ingenting. Du har inte skrivit på något och du är inte skyldig mig en krona.",
+    title: "Säg ja till upplägget",
+    desc: "Gillar du förslaget kommer vi överens om paket, omfattning och tidplan. Därefter bygger jag klart och publicerar sajten. Tackar du nej till förslaget kostar det inget.",
   },
 ];
 
 const ingar = [
   "Sajt och design, byggd för din bransch",
-  "Hosting och drift på snabb edge",
+  "Hosting och löpande drift",
   "Säkerhet, certifikat och backuper",
-  "Innehållsändringar när du behöver",
+  "Innehållsändringar inom paketets omfattning",
   "Support med svar samma arbetsdag",
-  "SEO-grund och AI-läsbarhet från start",
+  "Teknisk SEO-grund och läsbart innehåll",
 ];
 
-const paket = [
-  {
-    name: "Bas",
-    price: PRICING.basManad,
-    note: "För dig som behöver en sajt som gör jobbet.",
-    items: ["Upp till fem sidor", "Design efter din profil", "Drift, support och ändringar"],
-  },
-  {
-    name: "Bredd",
-    price: PRICING.bredd,
-    note: "Allt i Bas, för dig som behöver mer sajt.",
-    items: ["Obegränsat antal sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
-    highlight: true,
-  },
-  {
-    name: "Spets",
-    price: PRICING.spets,
-    note: "Allt i Bredd, plus att jag driver synligheten.",
-    items: ["AI-assistent som svarar dygnet runt", "Aktiv SEO varje månad", "Google Ads med rapportering"],
-  },
-];
+const paket = packages.map(p => ({ name: p.name, price: `${p.monthly.toLocaleString("sv-SE")} kr/mån`, note: p.desc, items: p.features, highlight: p.featured }));
 
 const faqs = [
   {
-    q: "Vem äger sajten om vi avslutar?",
-    a: "Du. Domänen och allt innehåll är ditt från dag ett, och säger du upp får du sajten exporterad som färdiga filer utan extra kostnad. Du blir aldrig inlåst hos mig, du väljer att stanna.",
+    q: "Vem äger sajten vid avslut?",
+    a: "Du äger domänen och innehållet. Vid avslut får du en export av sajtens filer. Formulär, CMS, e-post och andra externa tjänster behöver en fortsatt eller ny driftlösning. Jag går igenom vad som behövs för att flytta funktionerna.",
   },
   {
     q: "Hur säger jag upp?",
@@ -91,13 +53,111 @@ const faqs = [
   },
   {
     q: "Hur lång tid tar det?",
-    a: "Designförslaget får du inom två arbetsdagar. Från ditt ja till lansering tar det normalt inom två veckor. Större sajter med många sidor kan ta längre, och då får du en tidplan innan jag börjar.",
+    a: "Förslaget med startsida och en tjänstesida får du inom två arbetsdagar. När du sagt ja bestämmer vi tidplanen för resten utifrån omfattning och när materialet finns.",
   },
   {
     q: "Jobbar du bara i Hässleholm?",
     a: "Nej. Jag sitter i Hässleholm och träffar gärna företag i Skåne på plats, men merparten av kunderna finns i hela Sverige och vi jobbar över video. Det har aldrig varit ett hinder.",
   },
 ];
+
+const Formular = ({ id, rubrik, done, form, sending, error, change, submit, input }) =>
+    done ? (
+      <div role="status" className="bg-surface rounded-[10px] border border-border p-7 text-center">
+        <div className="w-11 h-11 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mx-auto">
+          <Check aria-hidden="true" size={20} className="text-[#059669]" />
+        </div>
+        <h3 className="mt-4 font-heading font-700 text-[20px] text-heading">
+          Tack, jag hör av mig samma arbetsdag.
+        </h3>
+        <p className="mt-2 text-[15px] text-body leading-relaxed">
+          Du får ett förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs efter ditt ja. Vill du prata tidigare når du mig
+          direkt på {SITE.phone}.
+        </p>
+      </div>
+    ) : (
+      <form onSubmit={submit} aria-busy={sending} className="bg-surface rounded-[10px] border border-border p-6 sm:p-7">
+        {rubrik && (
+          <h3 className="font-heading font-700 text-[19px] text-heading mb-4">{rubrik}</h3>
+        )}
+        <div className="grid gap-3">
+          <label htmlFor={`${id}-name`} className="text-[14px] text-heading">Ditt namn</label>
+          <input
+            id={`${id}-name`}
+            autoComplete="name"
+            name="name"
+            value={form.name}
+            onChange={change}
+            required
+            placeholder="Namn"
+            className={input}
+
+          />
+          <label htmlFor={`${id}-email`} className="text-[14px] text-heading">Din e-post</label>
+          <input
+            id={`${id}-email`}
+            autoComplete="email"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={change}
+            required
+            placeholder="E-post"
+            className={input}
+
+          />
+          <label htmlFor={`${id}-phone`} className="text-[14px] text-heading">Telefon (valfritt)</label>
+          <input
+            id={`${id}-phone`}
+            autoComplete="tel"
+            name="phone"
+            type="tel"
+            value={form.phone}
+            onChange={change}
+            placeholder="Telefon (valfritt)"
+            className={input}
+
+          />
+          <label htmlFor={`${id}-url`} className="text-[14px] text-heading">Webbadress (valfritt)</label>
+          <input
+            id={`${id}-url`}
+            autoComplete="url"
+            name="url"
+            value={form.url}
+            onChange={change}
+            placeholder="Nuvarande webbadress (valfritt)"
+            className={input}
+
+          />
+
+          <input
+            type="text"
+            name="hp_field"
+            value={form.hp_field}
+            onChange={change}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+          />
+          <button
+            type="submit"
+            disabled={sending}
+            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
+          >
+            {sending ? "Skickar..." : "Be om gratis förslag"}
+          </button>
+        </div>
+        {error && <p role="alert" className="mt-3 text-[15px] text-heading">{error}</p>}
+        <p className="mt-3 text-[13px] text-muted leading-relaxed">
+          Gratis förslag: startsida och en tjänstesida inom två arbetsdagar, resten efter ditt ja. Uppgifterna används för att svara dig. Ingen uppföljningskedja, inget nyhetsbrev.{" "}
+          <Link href="/integritet" className="underline hover:text-heading transition-colors">
+            Så hanteras de
+          </Link>
+          .
+        </p>
+      </form>
+    );
 
 export default function LpHemsidaContent() {
   const [form, setForm] = useState({
@@ -109,26 +169,9 @@ export default function LpHemsidaContent() {
   });
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
   // Sätts vid sidladdning, submits < 3 s efter denna avvisas server-side.
   const [loadedAt] = useState(() => Date.now());
-
-  // Samma live-tal som startsidan: ögonblicksbilden i SSR, Umami-talet efter laddning.
-  const [niklassonsOffert, setNiklassonsOffert] = useState(
-    SNAPSHOT.rows.find((r) => r.slug === "niklassonsflytt")?.offert || 37
-  );
-  useEffect(() => {
-    let alive = true;
-    fetch("/api/kundmotor")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        const rad = d && Array.isArray(d.rows) ? d.rows.find((r) => r.slug === "niklassonsflytt") : null;
-        if (alive && rad && rad.offert) setNiklassonsOffert(rad.offert);
-      })
-      .catch(() => {});
-    return () => {
-      alive = false;
-    };
-  }, []);
 
   const change = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
@@ -136,6 +179,7 @@ export default function LpHemsidaContent() {
     e.preventDefault();
     if (form.hp_field) return; // bot
     setSending(true);
+    setError("");
     try {
       // De valfria fälten bakas in i message: /api/contact kräver name, email
       // och message, och vill inte veta något om den här sidans fältuppsättning.
@@ -158,111 +202,24 @@ export default function LpHemsidaContent() {
           _subject: `Designförslag: ${form.name}${form.url ? ` (${form.url})` : ""}`,
         }),
       });
-      if (res.ok) {
+      const result = await res.json().catch(() => null);
+      if (!res.ok || !result?.ok || !result?.reference) throw new Error("send");
+      if (result.ok) {
         setDone(true);
         trackConversion("lead-lp-hemsida", "lead");
       }
     } catch (err) {
-      console.error(err);
+      setError("Meddelandet kunde inte skickas. Försök igen eller mejla joel@stoltmarketing.se.");
     }
     setSending(false);
   };
 
   const input =
-    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[15px] text-heading placeholder:text-muted focus:outline-none focus:border-[#F2C230] transition-colors";
-
-  const Formular = ({ id, rubrik }) =>
-    done ? (
-      <div className="bg-surface rounded-[10px] border border-border p-7 text-center">
-        <div className="w-11 h-11 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mx-auto">
-          <Check size={20} className="text-[#059669]" />
-        </div>
-        <h3 className="mt-4 font-heading font-700 text-[20px] text-heading">
-          Tack, jag hör av mig samma arbetsdag.
-        </h3>
-        <p className="mt-2 text-[15px] text-body leading-relaxed">
-          Du får ditt designförslag inom två arbetsdagar. Vill du prata tidigare når du mig
-          direkt på {SITE.phone}.
-        </p>
-      </div>
-    ) : (
-      <form onSubmit={submit} className="bg-surface rounded-[10px] border border-border p-6 sm:p-7">
-        {rubrik && (
-          <h3 className="font-heading font-700 text-[19px] text-heading mb-4">{rubrik}</h3>
-        )}
-        <div className="grid gap-3">
-          <input
-            id={`${id}-name`}
-            name="name"
-            value={form.name}
-            onChange={change}
-            required
-            placeholder="Namn"
-            className={input}
-            aria-label="Namn"
-          />
-          <input
-            id={`${id}-email`}
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={change}
-            required
-            placeholder="E-post"
-            className={input}
-            aria-label="E-post"
-          />
-          <input
-            id={`${id}-phone`}
-            name="phone"
-            type="tel"
-            value={form.phone}
-            onChange={change}
-            placeholder="Telefon (valfritt)"
-            className={input}
-            aria-label="Telefon, valfritt"
-          />
-          <input
-            id={`${id}-url`}
-            name="url"
-            value={form.url}
-            onChange={change}
-            placeholder="Nuvarande webbadress (valfritt)"
-            className={input}
-            aria-label="Nuvarande webbadress, valfritt"
-          />
-          {/* Honeypot. Får inte heta company/url/email, autofyll trippar dem. */}
-          <input
-            type="text"
-            name="hp_field"
-            value={form.hp_field}
-            onChange={change}
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden="true"
-            style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
-          />
-          <button
-            type="submit"
-            disabled={sending}
-            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
-          >
-            {sending ? "Skickar…" : "Skicka, svar samma arbetsdag"}
-          </button>
-        </div>
-        <p className="mt-3 text-[13px] text-muted leading-relaxed">
-          Uppgifterna används bara för att svara dig. Ingen uppföljningskedja, inget nyhetsbrev.{" "}
-          <Link href="/integritet" className="underline hover:text-heading transition-colors">
-            Så hanteras de
-          </Link>
-          .
-        </p>
-      </form>
-    );
+    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[16px] text-heading placeholder:text-muted focus:border-[#F2C230] transition-colors";
 
   return (
-    <main className="pb-20 lg:pb-0">
-      {/* ── Minimal topp. Bara logga och telefon, ingen meny. ── */}
+    <main id="main-content" className="pb-20 lg:pb-0">
+
       <header className="border-b border-border">
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="font-heading font-700 text-[19px] text-heading tracking-[-0.01em]">
@@ -277,7 +234,6 @@ export default function LpHemsidaContent() {
         </div>
       </header>
 
-      {/* ── Hero. Ingen intoning: LCP-elementet måste vara målat direkt. ── */}
       <section className="px-5 sm:px-8 pt-12 sm:pt-16 pb-14">
         <div className="max-w-[1120px] mx-auto grid lg:grid-cols-[minmax(0,1fr)_420px] gap-10 lg:gap-16 items-start">
           <div>
@@ -285,53 +241,41 @@ export default function LpHemsidaContent() {
               Hemsida till fast pris
             </p>
             <h1 className="mt-4 font-heading font-700 text-[clamp(34px,5.6vw,54px)] leading-[1.05] tracking-[-0.02em] text-heading">
-              Ny hemsida till ditt företag, se den färdig innan du betalar
+              Ny hemsida till ditt företag. Börja med ett gratis förslag.
             </h1>
             <p className="mt-5 text-[17px] sm:text-[18px] leading-relaxed text-body max-w-[560px]">
               Byggd av personen du pratar med. Fast pris från {PRICING.basManad} exkl. moms,
-              0 kr i startavgift och drift, support och ändringar ingår.
+              0 kr i startavgift. Bas omfattar högst fem sidor med drift, support och ändringar enligt paketet. Tolv månaders bindning, sedan månadsvis.
             </p>
 
-            {/* Beviset direkt, inte pa skarm fyra. I den har branschen kopper
-                folk pa resultat: case-sidor korrelerar starkast med trafik
-                (+0,64) av allt vi matt, starkare an bade ortssidor och
-                tjanstedjup. En resultatsiffra ovanfor vecket gor mer an
-                ytterligare en knapp. */}
             <p className="mt-6 text-[15px] text-body leading-relaxed max-w-[520px]">
               <span className="font-heading font-700 text-heading text-[19px]">
-                {niklassonsOffert} offertförfrågningar på 30 dagar
+                {niklassonsOffert} registrerade offert-events i ett historiskt 30-dagarsutdrag
               </span>
               <br />
-              för Niklassons Flytt, senast levererade sajten.
+              för Niklassons Flytt. Hämtat 5 september 2026 från Umami. Events är inte verifierade unika kunder. Se period och begränsningar i caset.
             </p>
 
-            {/* Knapparna ar dolda pa mobil med flit: dar ligger formularet
-                direkt under den har texten, och sticky-raden i botten bar bade
-                ring och boka. Tva extra knappar hade bara tryckt ner formularet
-                under vecket och gett fem klickbara mal i forsta vyn. */}
             <div className="mt-8 hidden lg:flex flex-wrap gap-3">
               <a
                 href="#kontakt"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] hover:bg-[#F2ECDD] transition-colors"
               >
-                Få gratis designförslag inom 2 dagar
-                <ArrowRight size={16} className="opacity-80" />
-              </a>
+                Få gratis förslag inom två arbetsdagar
+                    </a>
             </div>
 
             <p className="mt-7 text-[14px] text-muted">
-              10+ år i branschen · 150+ levererade projekt · Kunder i hela Sverige
+              10+ år i branschen · Direktkontakt med mig · Kunder i hela Sverige
             </p>
           </div>
 
           <div className="lg:sticky lg:top-8">
-            <Formular id="top" rubrik="Få ditt gratis designförslag" />
+            <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="top" rubrik="Få ditt gratis designförslag" />
           </div>
         </div>
       </section>
 
-      {/* ── Prisankaret. Den största invändningen är engångskostnaden,
-             så den möts före allt annat. ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading max-w-[620px]">
@@ -341,16 +285,16 @@ export default function LpHemsidaContent() {
             <Reveal>
               <div className="rounded-[10px] border border-border p-7 h-full">
                 <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-muted">
-                  Traditionell byrå
+                  När du jämför offerter
                 </p>
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
-                  30 000 till 100 000 kr
+                  Jämför hela kostnaden
                 </div>
-                <p className="mt-2.5 text-[14px] text-muted">i engångskostnad</p>
+                <p className="mt-2.5 text-[14px] text-muted">över samma tidsperiod</p>
                 <ul className="mt-5 grid gap-2.5 text-[15px] text-body leading-snug">
-                  <li>Hosting och driftavtal tillkommer</li>
-                  <li>Byråtimmar vid varje ändring</li>
-                  <li>Projektledare mellan dig och den som bygger</li>
+                  <li>Ingår hosting, drift och underhåll?</li>
+                  <li>Vad ingår vid innehållsändringar?</li>
+                  <li>Vilka sidor och funktioner ingår?</li>
                 </ul>
               </div>
             </Reveal>
@@ -362,15 +306,15 @@ export default function LpHemsidaContent() {
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
                   Från {PRICING.basManad}
                 </div>
-                <p className="mt-2.5 text-[14px] text-muted">0 kr i startavgift</p>
+                <p className="mt-2.5 text-[14px] text-muted">0 kr i startavgift. Exkl. moms. Tolv månader, sedan månadsvis.</p>
                 <ul className="mt-5 grid gap-2.5">
                   {[
-                    "Sajt, hosting, drift och säkerhet ingår",
-                    "Innehållsändringar ingår, inga timmar",
-                    "Du äger sajten och domänen",
+                    "Bas: högst fem sidor, hosting och drift",
+                    "Ändringar inom avtalad omfattning",
+                    "Du äger innehållet och domänen",
                   ].map((it) => (
                     <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
-                      <Check size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
+                      <Check aria-hidden="true" size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
                       {it}
                     </li>
                   ))}
@@ -381,7 +325,6 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Så funkar det ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -403,7 +346,6 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Bevis ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading max-w-[620px]">
@@ -425,13 +367,13 @@ export default function LpHemsidaContent() {
                 </div>
                 <div className="mt-4">
                   <div className="font-heading font-700 text-[26px] text-heading leading-none">
-                    {niklassonsOffert} offertförfrågningar
+                    {niklassonsOffert} registrerade offert-events
                   </div>
                   <div className="mt-1.5 text-[14px] text-muted">
-                    på 30 dagar, Niklassons Flytt
+                    historiskt 30-dagarsutdrag, hämtat 5 september 2026
                   </div>
                   <p className="mt-3 text-[15px] text-body leading-relaxed">
-                    38 sidor över Skåne, och varje förfrågan mäts. Kunden sköter innehållet
+                    38 sitemap-URL:er. Formulärevents är kontaktaktiviteter, inte genomförda affärer. Kunden redigerar innehållet
                     själv.{" "}
                     <span className="text-[#F2C230] group-hover:underline">Läs caset</span>
                   </p>
@@ -441,11 +383,7 @@ export default function LpHemsidaContent() {
 
             <Reveal delay={0.08}>
               <div className="grid gap-5">
-                {/* Google-recensionerna forst. De ar verifierbara: besokaren kan
-                    klicka och se dem hos Google, till skillnad fran en citatruta
-                    vi skrivit sjalva. Antalet skyltas medvetet INTE, branschens
-                    median i local pack ar 11 och tva ser svagt ut i jamforelse.
-                    Betyget staller sig starkare an rakningen. */}
+
                 {[
                   {
                     quote:
@@ -509,7 +447,6 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Personen bakom ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[900px] mx-auto grid sm:grid-cols-[200px_minmax(0,1fr)] gap-8 items-center">
           <Reveal>
@@ -533,14 +470,13 @@ export default function LpHemsidaContent() {
                 som inte vet vad du beställt.
               </p>
               <p className="mt-3 text-[15px] text-muted">
-                10+ års erfarenhet · 150+ levererade projekt · {SITE.baseCity}
+                10+ års erfarenhet · {SITE.baseCity}
               </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── Detta ingår ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-[900px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -549,7 +485,7 @@ export default function LpHemsidaContent() {
           <ul className="mt-9 grid sm:grid-cols-2 gap-x-8 gap-y-4">
             {ingar.map((it) => (
               <li key={it} className="flex gap-3 text-[16px] text-body leading-snug">
-                <Check size={19} className="text-[#F2C230] shrink-0 mt-0.5" />
+                <Check aria-hidden="true" size={19} className="text-[#F2C230] shrink-0 mt-0.5" />
                 {it}
               </li>
             ))}
@@ -557,7 +493,6 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Priser. Ankarmål för annonsgruppen Pris & kostnad. ── */}
       <section id="priser" className="px-5 sm:px-8 py-14 sm:py-20 scroll-mt-4">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -579,7 +514,7 @@ export default function LpHemsidaContent() {
                   <ul className="mt-5 grid gap-2.5">
                     {p.items.map((it) => (
                       <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
-                        <Check size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
+                        <Check aria-hidden="true" size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
                         {it}
                       </li>
                     ))}
@@ -589,14 +524,13 @@ export default function LpHemsidaContent() {
             ))}
           </div>
           <p className="mt-5 text-[14px] text-muted">
-            0 kr i startavgift på alla paket. {PRICING.bindning}. Du äger sajt, innehåll och
-            domän. E-handel som tillägg, {PRICING.ehandel}.
+            Alla priser exkl. moms. 0 kr start. Tolv månaders bindning, sedan månadsvis.
+            Bas har högst fem sidor. Sidor, ändringar och nya funktioner följer avtalad omfattning.
+            Annonsbudget betalas separat. E-handel kan läggas till för 800 kr/mån exkl. moms, med omfattning och externa avgifter avtalade före start.
           </p>
         </div>
       </section>
 
-      {/* ── Skåne. Ankarmål för de lokala annonsgrupperna, som ligger här
-             i stället för på en egen sida: volymen bär inte två sidor. ── */}
       <section id="skane" className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border scroll-mt-4">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading max-w-[620px]">
@@ -617,22 +551,21 @@ export default function LpHemsidaContent() {
                 </h3>
                 <p className="mt-3 text-[15px] text-body leading-relaxed">
                   En sida per tjänst och ort, en teknisk grund som faktiskt går att indexera,
-                  och mätning som visar förfrågningar i stället för klick. Så byggs synlighet
-                  som håller över tid, till fast månadspris.
+                  och uppföljning som skiljer formulärevents från mottagna förfrågningar.
+                  Innehållet förbättras utifrån vad kunderna behöver och vad mätningen visar.
                 </p>
                 <a
                   href="#kontakt"
                   className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-[#F2C230] hover:underline"
                 >
                   Få gratis förslag
-                  <ArrowRight size={15} />
                 </a>
               </div>
             </Reveal>
             <Reveal delay={0.08}>
               <div id="ads" className="rounded-[10px] border border-border p-7 h-full bg-surface scroll-mt-4">
                 <h3 className="font-heading font-700 text-[19px] text-heading">
-                  Google Ads som ger förfrågningar
+                  Google Ads med uppföljning
                 </h3>
                 <p className="mt-3 text-[15px] text-body leading-relaxed">
                   Rätt struktur från start, spårning mot riktiga förfrågningar och löpande
@@ -644,7 +577,6 @@ export default function LpHemsidaContent() {
                   className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-[#F2C230] hover:underline"
                 >
                   Få gratis förslag
-                  <ArrowRight size={15} />
                 </a>
               </div>
             </Reveal>
@@ -652,8 +584,6 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Invändningar. Alltid monterade, aldrig conditional mount:
-             AnimatePresence gömmer svaren för Google. ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[760px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -670,17 +600,16 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Avslut ── */}
       <section id="kontakt" className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-t border-border scroll-mt-4">
         <div className="max-w-[560px] mx-auto text-center">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
             Få ditt gratis designförslag
           </h2>
           <p className="mt-4 text-[16px] text-body leading-relaxed">
-            Inom två arbetsdagar ser du din nya sajt. Gillar du den inte kostar det ingenting.
+            Inom två arbetsdagar får du ett klickbart förslag med startsida och en tjänstesida. Resten byggs efter ditt ja. Tackar du nej till förslaget kostar det inget.
           </p>
           <div className="mt-8 text-left">
-            <Formular id="bottom" />
+            <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="bottom" />
           </div>
           <p className="mt-5 text-[15px] text-muted">
             Hellre prata direkt?{" "}
@@ -698,7 +627,6 @@ export default function LpHemsidaContent() {
         </div>
       </section>
 
-      {/* ── Minimal fot. Transparens väger in i landningssideupplevelsen. ── */}
       <footer className="border-t border-border">
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-8 flex flex-wrap gap-x-6 gap-y-2 justify-between text-[14px] text-muted">
           <span>
@@ -718,21 +646,16 @@ export default function LpHemsidaContent() {
         </div>
       </footer>
 
-      {/* ── Sticky CTA på mobil. Ringknappen går till telefon, den andra
-             till formuläret. Döljs från lg och uppåt där formuläret är
-             synligt i sidokolumnen ändå. ── */}
       <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 border-t border-border bg-surface/95 backdrop-blur-sm">
         <div className="flex gap-2 px-4 py-3">
           <a
             href={SITE.phoneHref}
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-[10px] border border-border text-[15px] font-600 text-heading"
           >
-            <Phone size={16} />
+            <Phone aria-hidden="true" size={16} />
             Ring
           </a>
-          {/* Samma lofte som formularets rubrik. Stod tidigare "Boka genomgang",
-              vilket lovade ett mote men landade i ett formular som erbjod ett
-              designforslag: tva olika loften for samma klick. */}
+
           <a
             href="#kontakt"
             className="flex-[1.4] inline-flex items-center justify-center px-4 py-3 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[15px]"

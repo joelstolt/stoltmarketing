@@ -65,7 +65,7 @@ const hourUsage = [
   "Nya sidor eller kampanjsidor",
   "Designändringar och förbättringar av användarupplevelsen",
   "Uppdatering av utbildningar, produkter och kampanjmaterial",
-  "Uppsättning av rabattkoder och automatiska mailutskick",
+  "Uppsättning av rabattkoder och automatiska mejlutskick",
   "Banners, pop-ups och säsongsanpassningar",
   "Snabbare laddtider och bättre prestanda",
   "Felsökning och buggfixar",
@@ -95,15 +95,13 @@ export default function AvtalContent() {
 
           <Reveal delay={0.06}>
             <h1 className="mt-5 font-heading font-600 text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              Drift, Säkerhet & Utveckling
+              Drift, säkerhet och utveckling
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px] mx-auto">
-              Ett aktivt förvaltningsavtal som säkerställer att er
-              e-handelsplattform är tekniskt optimerad, säker och i ständig
-              tillväxt.
+              Förvaltning för en befintlig, större e-handelsplattform. Dessa nivåer är separata från hemsidepaketen Bas, Bredd och Spets på prissidan. Omfattning och villkor fastställs i det individuella avtalet.
             </p>
           </Reveal>
 
@@ -144,7 +142,7 @@ export default function AvtalContent() {
                   <div className="flex items-center gap-2.5 text-[13px] text-body">
                     <Clock size={16} className="text-primary flex-shrink-0" />
                     <div>
-                      <div className="font-600">Svarstid</div>
+                      <div className="font-600">Tid till första svar</div>
                       <div className="text-muted">{pkg.response}</div>
                     </div>
                   </div>

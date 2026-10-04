@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <BContent />
+      <main id="main-content"><BContent /></main>
     </>
   );
 }

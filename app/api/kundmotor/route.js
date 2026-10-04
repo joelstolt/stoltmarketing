@@ -71,7 +71,7 @@ async function hamta() {
 
   if (sajter === 0) throw new Error("Umami svarade inte för någon sajt");
   rows.sort((a, b) => b.offert - a.offert);
-  return { dagar: 30, sajter, visitors, pageviews, leads, rows, updatedAt: new Date(endAt).toISOString(), kalla: "umami" };
+  return { dagar: 30, sajter, visitors, pageviews, leads, rows, periodStart: new Date(startAt).toISOString(), periodEnd: new Date(endAt).toISOString(), updatedAt: new Date(endAt).toISOString(), kalla: "umami" };
 }
 
 function svar(data, via) {

@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <CityServicePage service="hemsida" city="lund" />
       </main>
       <Footer />

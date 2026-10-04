@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { Reveal, SectionHeader, PageHero } from "@/components/ui";
 import { klickId } from "@/lib/klickid";
+import RequestFlowDemo from "@/components/RequestFlowDemo";
+import InquiryForm from "@/components/InquiryForm";
 import { SITE } from "@/lib/local/data";
 
 /* Svarsspegelns siffror (23 av 30) får visas först när alla 30 firmor fått
@@ -88,13 +90,16 @@ function MatForm() {
     e.preventDefault();
     setFel("");
     if (!falt.ja) {
-      setFel("Kryssa i rutan så vet jag att det är okej att mäta er.");
+      setFel("Kryssa i rutan så vet jag att det är okej att mäta ditt företag.");
       return;
     }
     setStatus("sending");
     try {
+      const remaining = 3000 - (Date.now() - laddad);
+      if (laddad && remaining > 0) await new Promise((resolve) => setTimeout(resolve, remaining));
       const res = await fetch("/api/contact", {
         method: "POST",
+        signal: AbortSignal.timeout(20000),
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           klickId: klickId(),
@@ -108,7 +113,7 @@ function MatForm() {
           _subject: `Svarsmätning: ${falt.sajt || falt.name}`,
         }),
       });
-      if (!res.ok) throw new Error("send");
+      if (!res.ok || !(await res.json()).reference) throw new Error("send");
       setStatus("done");
       if (window.umami) window.umami.track("lead-svarsmatning");
     } catch {
@@ -149,7 +154,7 @@ function MatForm() {
         <input type="checkbox" checked={falt.ja} onChange={satt("ja")} style={{ width: 18, height: 18, accentColor: "#F2C230" }} />
         Ja, mät oss.
       </label>
-      {fel && <p className="text-[14px] m-0" style={{ color: "#E08A6A" }}>{fel}</p>}
+      {fel && <p role="alert" className="text-[14px] m-0" style={{ color: "#E08A6A" }}>{fel}</p>}
       <button type="submit" className="premium-btn" disabled={status === "sending"} data-umami-event="svarsmatning-skicka">
         {status === "sending" ? "Skickar" : "Mät oss"} <ArrowRight size={15} aria-hidden="true" />
       </button>
@@ -163,22 +168,14 @@ export default function ForfragningarContent() {
       <PageHero
         breadcrumbs={[{ label: "Start", href: "/" }, { label: "Förfrågningar" }]}
         badge="För el, VVS och andra hantverksföretag"
-        title="Det svåra är att hinna svara innan kunden frågat någon annan."
+        title="Förfrågningar från hemsidan direkt till din mobil"
+        highlight="direkt till din mobil"
+        cta={{ href: "#prova", label: "Jag vill prova rutan" }}
         subtitle="Jag sätter en ruta på din hemsida. Kunden skriver där, du får ett SMS direkt, och när du sätter dig och tittar ligger ett förslag på svar färdigt. Du ändrar om du vill och skickar."
         bullets={["495 kr/mån exkl moms", "Första 30 dagarna gratis", "Ingen bindning"]}
       />
 
-      <section className="pt-4 pb-6 px-5 sm:px-8">
-        <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-x-6 gap-y-3">
-          <a href="/kontakt" className="premium-btn" data-umami-event="cta-forfragningar-skriv">
-            <span>Skriv till mig</span>
-            <ArrowRight size={16} className="opacity-80" />
-          </a>
-          <p className="text-[15px] text-body m-0">
-            eller skriv direkt i rutan nere till höger. Det är samma ruta som du skulle få.
-          </p>
-        </div>
-      </section>
+      <RequestFlowDemo />
 
       <section className="py-16 sm:py-20 px-5 sm:px-8">
         <div className="max-w-4xl mx-auto">
@@ -198,8 +195,7 @@ export default function ForfragningarContent() {
           </ol>
           <Reveal delay={0.1}>
             <p className="mt-8 text-[15.5px] leading-relaxed text-body max-w-[680px]">
-              Vill kunden hellre prata trycker hen Bli uppringd, och din mobil ringer. Under 10 sekunder från klick till
-              att mobilen ringer, i mitt test. Utanför era öppettider bokas samtalet till nästa gång ni öppnar. Chatten
+              Vill kunden hellre prata kan hen välja Bli uppringd. Rutan försöker då koppla ihop kunden med dig. Utanför dina öppettider hanteras önskemålet vid nästa öppning. Chatten
               svarar utifrån det som står på din sajt och säger att den är AI.
             </p>
           </Reveal>
@@ -233,7 +229,7 @@ export default function ForfragningarContent() {
               Du behöver inte byta hemsida. Rutan läggs på den du har, om den tar emot en rad kod. Det kollar jag innan
               du bestämmer dig, och sköter någon annan din sajt skickar jag raden till dem. Går det inte, eller finns
               ingen sajt som fungerar, börjar vi med hemsidan. Priserna för hemsidor står på{" "}
-              <a href="/priser" className="underline" style={{ textUnderlineOffset: 4 }}>/priser</a>.
+              <a href="/priser" className="underline" style={{ textUnderlineOffset: 4 }}>sidan med priser och paket</a>.
             </p>
           </div>
         </div>
@@ -257,7 +253,7 @@ export default function ForfragningarContent() {
               </>
             )}
             <p className="mt-6 text-[15.5px] leading-relaxed text-body">
-              Vill du veta hur det ser ut hos er? Jag skickar samma sorts förfrågan till er, som mejl och via formuläret på
+              Vill du veta hur det ser ut hos dig? Jag skickar samma sorts förfrågan till ditt företag, som mejl och via formuläret på
               sajten, någon dag de närmaste två veckorna. Inga samtal. Du får tiden svart på vitt, gratis.
             </p>
           </div>
@@ -269,7 +265,7 @@ export default function ForfragningarContent() {
         <div className="max-w-4xl mx-auto">
           <SectionHeader badge="Min egen sajt" title="Jag kör det själv" maxWidth="680px" />
           <p className="mt-6 text-[15.5px] leading-relaxed text-body max-w-[680px]">
-            Rutan nere till höger är samma ruta. Skriv något där, så ser du vad som händer. Jag svarar samma arbetsdag.
+            Rutan nere till höger är samma ruta. Skriv något där, så ser du vad som händer. Jag svarar normalt samma arbetsdag.
           </p>
           <p className="mt-4 text-[15.5px] leading-relaxed text-body max-w-[680px]">
             Du skulle vara bland de första firmorna utanför mitt eget bolag som kör den. Därför sätter jag upp den själv,
@@ -291,6 +287,8 @@ export default function ForfragningarContent() {
           </div>
         </div>
       </section>
+
+      <section id="prova" className="py-12 sm:py-20 px-5 sm:px-8 scroll-mt-24"><div className="max-w-3xl mx-auto bg-surface border border-primary/40 rounded-2xl p-5 sm:p-9"><h2 className="text-[clamp(28px,4vw,38px)] leading-tight mb-4">Prova rutan på din hemsida</h2><p className="mb-6">Skriv din webbadress i meddelandet. Jag kontrollerar att rutan fungerar där och återkommer om installation. Du beställer inget abonnemang genom formuläret.</p><InquiryForm service="Prova förfrågningsrutan" initialMessage="Jag vill prova förfrågningsrutan i 30 dagar. Min hemsida är: " submitLabel="Skicka intresseanmälan" eventName="lead-prova-rutan" /><p className="text-[14px] text-muted mt-6">0 kr start och 30 dagar gratis. Därefter 495 kr/mån exkl moms om du vill fortsätta. Ingen bindning; avsluta med ett mejl till Joel. Uppgifter om avtalet och personuppgiftsbiträdesavtalet får du före aktivering.</p></div></section>
 
       <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div className="relative z-10 max-w-[620px] mx-auto text-center">

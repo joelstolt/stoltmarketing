@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <ForfragningarContent />
       </main>
       <Footer />

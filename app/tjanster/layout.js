@@ -1,32 +1,13 @@
-const breadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://www.stoltmarketing.se/tjanster" },
-  ],
-};
+const title = "Tjänster: hemsida, SEO, annonsering och förfrågningar";
+const description = "Välj hjälp efter ditt behov: hemsida, SEO-audit, Google Ads eller rutan för förfrågningar. Joel Stolt utgår från Hässleholm och avgränsar arbetet före start.";
+const url = "https://www.stoltmarketing.se/tjanster";
 
 export const metadata = {
-  title: "Tjänster i Hässleholm: webb, SEO, AI och Google Ads",
-  description:
-    "Webbutveckling, SEO, AI-automation, Google Ads och managed hemsida för företag i Hässleholm. Allt från en digital konsult. Boka kostnadsfri genomgång.",
-  alternates: {
-    canonical: "https://www.stoltmarketing.se/tjanster",
-  },
-  openGraph: {
-    title: "Tjänster i Hässleholm: webb, SEO, AI och Google Ads",
-    description:
-      "Webbutveckling, SEO, AI-automation och Google Ads. En konsult, hela leveransen.",
-    url: "https://www.stoltmarketing.se/tjanster",
-  },
+  title, description, alternates: { canonical: url },
+  openGraph: { title, description, url, type: "website", locale: "sv_SE" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
-export default function TjansterLayout({ children }) {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      {children}
-    </>
-  );
+export default function Layout({ children }) {
+  return children;
 }

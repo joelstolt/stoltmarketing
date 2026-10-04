@@ -64,7 +64,7 @@ export default function InsynView({ client, slug, range, report, error }) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-6 py-10">
+      <main id="main-content" tabIndex={-1} className="mx-auto max-w-6xl px-6 py-10">
         {/* Period-väljare */}
         <div className="flex items-center gap-2 flex-wrap mb-8">
           {RANGES.map((r) => {

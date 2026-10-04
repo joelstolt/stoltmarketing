@@ -18,7 +18,7 @@ export default async function SvarSida({ params }) {
 
   if (!post) {
     return (
-      <main className="svar-sida">
+      <main id="main-content" tabIndex={-1} className="svar-sida">
         <h1>Utkastet finns inte</h1>
         <p>Länken är fel eller äldre än 30 dagar. Leadmejlet i inkorgen har allt du behöver.</p>
       </main>
@@ -29,7 +29,7 @@ export default async function SvarSida({ params }) {
   const forslag = `${ai.svar}\n\n${signatur(ai.hantverkare)}`;
 
   return (
-    <main className="svar-sida">
+    <main id="main-content" tabIndex={-1} className="svar-sida">
       <p className="svar-eyebrow">
         <span className={`svar-prio svar-prio-${ai.prioritet}`}>{ai.prioritet}</span> {ai.prioritet_motivering}
       </p>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -10,6 +10,7 @@ import FieldCanvas from "@/components/b/FieldCanvas";
 import BFaq from "@/components/b/BFaq";
 import HeroKoll from "@/components/b/HeroKoll";
 import Kundmotor from "@/components/b/Kundmotor";
+import RequestFlowDemo from "@/components/RequestFlowDemo";
 import SaGarDetTill from "@/components/b/SaGarDetTill";
 import { SITE } from "@/lib/local/data";
 import { SNAPSHOT } from "@/lib/kundmotor";
@@ -40,9 +41,9 @@ const tillval = [
    Aldrig rått sidantal: byggda sidor är inventarie, inte ett resultat. */
 const cases = [
   { slug: "niklassonsflytt", client: "Niklassons Flytt", tag: "Flytt · Helsingborg", img: "case-niklassonsflytt", desc: "En sida för varje tjänst och ort i Skåne, och varje förfrågan mäts. Kunden sköter innehållet själv.", href: "/projekt/niklassonsflytt" },
-  { slug: "arkipel", client: "Arkipel Entreprenad", tag: "Bygg · Norrköping", img: "case-arkipel", desc: "Tre gånger fler sidor än branschsnittet, en per tjänst och ort. Så en byggfirma faktiskt hittas.", href: "/projekt/arkipel" },
+  { slug: "arkipel", client: "Arkipel Entreprenad", tag: "Bygg · Norrköping", img: "case-arkipel", desc: "Tjänster och arbetsområden har egna sidor som hjälper kunden att hitta rätt.", href: "/projekt/arkipel" },
   { slug: "premiebygg", client: "Premie Bygg", tag: "Bygg · Örebro", img: "case-premiebygg", desc: "Formulärkedjan verifierad på riktigt, så offertförfrågningarna kommer fram.", href: "/projekt/premiebygg" },
-  { slug: "ngtab", client: "Norrlands Gräv & Transport", tag: "Entreprenad · Sundsvall", img: "case-ngtab", desc: "Ett tyst canonical-fel tog bort sajten ur Google. Fixat, plus en sida per tjänst och ort.", href: "/projekt/ngtab" },
+  { slug: "ngtab", client: "Norrlands Gräv & Transport", tag: "Entreprenad · Sundsvall", img: "case-ngtab", desc: "Felaktiga canonical-adresser rättades. Tjänster och arbetsområden fick egna sidor.", href: "/projekt/ngtab" },
 ];
 
 function Wordmark({ color = "inherit", barColor = GUL }) {
@@ -80,14 +81,6 @@ export default function BContent() {
     };
   }, []);
 
-  const liveRad = (slug) => km.rows.find((r) => r.slug === slug);
-  const liveTag = (slug, fallback) => {
-    const r = liveRad(slug);
-    if (!r || !r.offert) return fallback;
-    return `${r.offert} offerter${r.samtal ? ` · ${r.samtal} samtal` : ""} / 30 dgr`;
-  };
-  const niklassons = liveRad("niklassonsflytt");
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
@@ -118,7 +111,7 @@ export default function BContent() {
         const words = new SplitText(".b-manifest", { type: "words", aria: "none" }).words;
         gsap.fromTo(
           words,
-          { color: "rgba(242,236,221,0.46)" },
+          { color: "rgba(242,236,221,0.7)" },
           {
             color: PAPER,
             stagger: 0.04,
@@ -232,15 +225,18 @@ export default function BContent() {
           .b-case-head .b-case-tag { white-space: normal; line-height: 1.6; }
         }
         /* Mobil: fältet ska glöda, inte canvasen */
+        .b-field-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(15,13,8,.96), rgba(15,13,8,.88) 60%, rgba(15,13,8,.12)); }
         @media (max-width: 640px) { .b-field { opacity: 0.55; } }
+        @media (max-width: 640px) { .b-field-shade { background: linear-gradient(180deg, rgba(15,13,8,.88) 75%, rgba(15,13,8,.35)); } }
       `}</style>
 
       {/* Global header (Header.jsx) renderas av app/page.js ovanför denna komponent */}
 
       {/* ═══ 1. Hero, Fältet i mörker. Ett fält, en dörr. ═══ */}
-      <section className="field-glow" style={{ position: "relative", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden", background: BG }}>
+      <section className="field-glow" style={{ position: "relative", minHeight: "min(850px, 100svh)", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden", background: BG }}>
         <FieldCanvas className="b-field" />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1120, width: "100%", margin: "0 auto", padding: "110px 24px 34vh" }}>
+        <div className="b-field-shade" aria-hidden="true" />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1120, width: "100%", margin: "0 auto", padding: "120px 24px 120px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
             <span className="b-eyebrow-bar" aria-hidden="true" style={{ width: 30, height: 2, background: GUL, display: "inline-block" }} />
             <span className="b-eyebrow-text" style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: GUL }}>
@@ -248,25 +244,25 @@ export default function BContent() {
             </span>
           </div>
           {/* H1 bär problemet. Erbjudandet (rutan för förfrågningar) bor i b-sub och på /forfragningar. */}
-          <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(42px, 7.2vw, 104px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "16ch", margin: 0 }}>
-            Hinner ni <span style={{ fontWeight: 640 }}>svara</span> innan kunden frågat någon annan<em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>?</em>
+          <h1 className="b-h1 font-heading" style={{ fontWeight: 360, fontVariationSettings: '"opsz" 144', fontSize: "clamp(40px, 6.5vw, 88px)", lineHeight: 1.02, letterSpacing: "-0.025em", color: PAPER, maxWidth: "16ch", margin: 0 }}>
+            Förfrågningar från hemsidan.<br /><em style={{ fontStyle: "italic", color: GUL, fontWeight: 400 }}>Direkt till din mobil.</em>
           </h1>
           <p className="b-sub" style={{ marginTop: 28, fontSize: "clamp(16px, 1.5vw, 19px)", lineHeight: 1.75, color: DIM, maxWidth: 580 }}>
-            En ruta på er hemsida. Kunden skriver, du får ett SMS direkt och ett färdigt förslag på svar. 495 kr i månaden exkl moms, första 30 dagarna gratis.
+            Kunden skriver. Du får ett SMS och ett förslag på svar som du granskar och skickar. För hantverksföretag som vill fånga upp fler av frågorna på sin hemsida.
           </p>
           <div className="b-koll" style={{ marginTop: 30, display: "flex", flexWrap: "wrap", alignItems: "center", gap: "16px 26px" }}>
-            <Link href="/forfragningar" className="premium-btn" data-umami-event="cta-hero-forfragningar">
-              Så fungerar det <ArrowUpRight size={15} aria-hidden="true" />
+            <Link href="/forfragningar#prova" className="premium-btn" data-umami-event="cta-hero-forfragningar">
+              Jag vill prova rutan
             </Link>
-            <Link href="/forfragningar#matning" data-umami-event="cta-hero-matning" style={{ fontSize: 15.5, color: PAPER, textDecoration: "underline", textDecorationColor: GUL, textUnderlineOffset: 5 }}>
-              Vet ni hur snabbt ni svarar? Jag mäter det gratis
+            <Link href="/hemsida-foretag" data-umami-event="cta-hero-hemsida" style={{ fontSize: 15.5, color: PAPER, textDecoration: "underline", textDecorationColor: GUL, textUnderlineOffset: 5 }}>
+              Jag behöver en ny hemsida
             </Link>
           </div>
           <p style={{ marginTop: 16, fontSize: 14, color: FAINT, position: "relative", zIndex: 3 }}>
-            Söker du en ny hemsida? <a href="#hemsida" data-umami-event="cta-hero-hemsida" style={{ color: DIM, textDecoration: "underline", textUnderlineOffset: 4 }}>Läs mer längre ned.</a>
+            495 kr/mån exkl moms. Första 30 dagarna gratis, ingen bindning.
           </p>
           <p className="b-proof" style={{ marginTop: 18, fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 500, letterSpacing: "0.04em", color: FAINT, position: "relative", zIndex: 3 }}>
-            Prova själv: skriv i rutan nere till höger.
+            Joel Stolt installerar och hjälper dig komma igång.
           </p>
         </div>
         <div className="b-scrollcue" style={{ position: "absolute", bottom: 22, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
@@ -278,10 +274,12 @@ export default function BContent() {
       {/* ═══ Mörka partiet. Ordningen är medveten: bevis (kundmotor, case, citat,
           person) och mekanism FÖRE katalogen (tjänster). ═══ */}
       <div className="b-dark" style={{ background: BG }}>
+        <RequestFlowDemo />
+        <SaGarDetTill />
         {/* 2. Manifest */}
         <section style={{ maxWidth: 1120, margin: "0 auto", padding: "16vh 24px 8vh" }}>
-          <p className="b-manifest font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 90', fontSize: "clamp(26px, 4vw, 52px)", lineHeight: 1.32, letterSpacing: "-0.01em", maxWidth: "24ch", margin: 0, color: "rgba(242,236,221,0.46)" }}>
-            Inga mellanhänder. Inga projektledare på timpris. Du pratar direkt med mig, Joel Stolt, och resultatet ska vara <em className="b-gulord" style={{ fontStyle: "italic" }}>något att vara stolt över</em>.
+          <p className="b-manifest font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 90', fontSize: "clamp(26px, 4vw, 52px)", lineHeight: 1.32, letterSpacing: "-0.01em", maxWidth: "24ch", margin: 0, color: "rgba(242,236,221,0.7)" }}>
+            Du pratar direkt med mig, Joel Stolt. Jag bygger hemsidor och hjälper dig ta hand om förfrågningarna. Resultatet ska vara <em className="b-gulord" style={{ fontStyle: "italic" }}>något att vara stolt över</em>.
           </p>
         </section>
 
@@ -292,7 +290,7 @@ export default function BContent() {
         <section ref={caseSecRef} style={{ overflow: "hidden", padding: "6vh 0 10vh" }}>
           <div className="sec-rule" style={{ maxWidth: 1120, margin: "0 auto 40px", padding: "0 24px", paddingBottom: "1.1em" }}>
             <h2 className="sec-label" style={{ margin: 0, letterSpacing: "0.22em" }}>
-              Uppdrag som talar för sig själva
+              Hemsidor jag har byggt
             </h2>
             <span className="sec-eng" aria-hidden="true">projekt</span>
           </div>
@@ -315,7 +313,7 @@ export default function BContent() {
                   </div>
                   <div className="b-case-head" style={{ marginTop: 18 }}>
                     <h3 className="font-heading" style={{ fontWeight: 560, fontVariationSettings: '"opsz" 110', fontSize: 26, color: PAPER, margin: 0, transition: "color .25s" }}>{c.client}</h3>
-                    <span className="b-case-tag" style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: GUL }}>{liveTag(c.slug, c.tag)}</span>
+                    <span className="b-case-tag" style={{ fontFamily: "var(--font-ui)", fontSize: 10.5, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: GUL }}>{c.tag}</span>
                   </div>
                   <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.65, color: DIM, maxWidth: 420 }}>{c.desc}</p>
                 </a>
@@ -323,7 +321,7 @@ export default function BContent() {
             ))}
             <div style={{ flexShrink: 0, width: "min(60vw, 380px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <a href="/projekt" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 460, fontSize: 26, color: GUL, textDecoration: "none" }}>
-                Se alla projekt <ArrowUpRight size={26} />
+                Se alla projekt
               </a>
             </div>
           </div>
@@ -331,7 +329,7 @@ export default function BContent() {
 
         {/* 5. Citat: riktig Google-recension, ordagrann och länkad så den går att verifiera. */}
         <section className="b-quote" style={{ maxWidth: 1120, margin: "0 auto", padding: "8vh 24px 12vh" }}>
-          <span aria-hidden="true" className="font-heading" style={{ display: "block", fontSize: 110, lineHeight: 0.6, color: GUL, fontWeight: 500, marginBottom: 26 }}>”</span>
+          <span aria-hidden="true" className="font-heading" style={{ display: "block", fontSize: 110, lineHeight: 0.6, color: GUL, fontWeight: 500, marginBottom: 26 }}>&quot;</span>
           <blockquote style={{ margin: 0 }}>
             <p className="b-quote-text font-heading" style={{ fontWeight: 380, fontVariationSettings: '"opsz" 90', fontStyle: "italic", fontSize: "clamp(22px, 3.2vw, 40px)", lineHeight: 1.4, color: PAPER, maxWidth: "30ch", margin: 0 }}>
               Vi har arbetat med ett flertal webbyråer genom åren och ingenting kan mäta sig med Stolt Marketing. En liten byrå med den mest otroliga servicementaliteten. Otroligt snabb, lösningsorienterad och ingenting känns någonsin krångligt eller omöjligt.
@@ -350,7 +348,7 @@ export default function BContent() {
                 data-umami-event="recension-google"
                 style={{ color: GUL, textDecoration: "none" }}
               >
-                Recension på Google &rarr;
+                Recension på Google
               </a>
             </footer>
           </blockquote>
@@ -375,25 +373,24 @@ export default function BContent() {
                 Personen bakom
               </p>
               <p className="font-heading" style={{ fontWeight: 420, fontVariationSettings: '"opsz" 100', fontSize: "clamp(20px, 2.6vw, 28px)", lineHeight: 1.35, color: PAPER, margin: 0, maxWidth: "26em" }}>
-                Jag heter <em style={{ fontStyle: "italic", color: GUL }}>Joel Stolt</em>. Jag bygger själv, svarar själv och tar ansvar själv. Inget lämnas bort, ingen sitter emellan.
+                Jag heter <em style={{ fontStyle: "italic", color: GUL }}>Joel Stolt</em>. Jag bygger, svarar på dina frågor och ansvarar för leveransen.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10, flexShrink: 0 }}>
-              {["10+ år i branschen", "150+ byggda sajter", "Hässleholm, kunder i hela Sverige"].map((f) => (
+              {["10+ år i branschen", "Du har direktkontakt med mig", "Hässleholm, kunder i hela Sverige"].map((f) => (
                 <span key={f} style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 500, color: "rgba(242,236,221,0.78)" }}>
                   <span aria-hidden="true" style={{ width: 5, height: 5, borderRadius: "50%", background: GUL, display: "inline-block" }} />
                   {f}
                 </span>
               ))}
               <a href="/om" style={{ marginTop: 4, fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: GUL, textDecoration: "none" }}>
-                Mer om mig &rarr;
+                Mer om mig
               </a>
             </div>
           </div>
         </section>
 
-        {/* 7. Mekanismen: rutans 30 dagar */}
-        <SaGarDetTill />
+
 
         {/* 8. Erbjudandet: rutan först, hemsidan som det andra, resten som tillval */}
         <section id="tjanster" className="b-services" style={{ maxWidth: 1120, margin: "0 auto", padding: "6vh 24px 8vh" }}>
@@ -415,7 +412,7 @@ export default function BContent() {
                 495 kr/mån exkl moms · 30 dagar gratis · ingen bindning
               </span>
             </span>
-            <ArrowUpRight className="b-srv-arrow" size={34} strokeWidth={1.8} aria-hidden="true" />
+
           </a>
           <div id="hemsida" style={{ scrollMarginTop: 90 }}>
             <a
@@ -427,13 +424,13 @@ export default function BContent() {
               <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(30px, 5.4vw, 66px)", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
                 Ny hemsida, byggd för att hittas
                 <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14, marginTop: 10, letterSpacing: "0.02em" }}>
-                  0 kr i startavgift · från 1 190 kr/mån · drift och ändringar ingår · rutan läggs till för 495 kr
+                  0 kr start · från 1 190 kr/mån exkl moms · 12 månader, sedan månadsvis
                 </span>
               </span>
-              <ArrowUpRight className="b-srv-arrow" size={34} strokeWidth={1.8} aria-hidden="true" />
+
             </a>
             <p style={{ margin: "30px 0 16px", fontSize: 16, lineHeight: 1.7, color: DIM, maxWidth: 580 }}>
-              Vill du se hur en ny hemsida skulle se ut? Klistra in adressen till din nuvarande sajt. Jag mäter den, och vill du får du ett färdigt förslag, gratis och utan möte.
+              Vill du se hur en ny hemsida skulle se ut? Klistra in adressen till din nuvarande sajt. Jag mäter den, och vill du får du ett klickbart förslag med startsida och en tjänstesida, gratis och utan möte.
             </p>
             <HeroKoll plats="hemsida" />
           </div>
@@ -448,7 +445,7 @@ export default function BContent() {
               </a>
             ))}
             <a href="/tjanster" className="b-tillval-pill" style={{ borderColor: "rgba(242,194,48,0.45)" }}>
-              <span style={{ fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.05em", color: GUL }}>Alla tjänster &rarr;</span>
+              <span style={{ fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.05em", color: GUL }}>Alla tjänster</span>
             </a>
           </div>
         </section>
@@ -461,14 +458,14 @@ export default function BContent() {
       <section className="b-final" style={{ background: GUL, padding: "16vh 24px" }}>
         <div className="b-final-inner" style={{ maxWidth: 1120, margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-heading" style={{ fontWeight: 460, fontVariationSettings: '"opsz" 144', fontSize: "clamp(40px, 6.5vw, 92px)", lineHeight: 1.04, letterSpacing: "-0.025em", color: INK, margin: 0 }}>
-            Vet du hur det ser ut<br /><em style={{ fontStyle: "italic", fontWeight: 380 }}>hos er</em>?
+            Få frågorna till mobilen.<br /><em style={{ fontStyle: "italic", fontWeight: 380 }}>Prova i 30 dagar.</em>
           </h2>
           <p style={{ margin: "26px auto 0", fontSize: 17, lineHeight: 1.65, color: "rgba(25,20,5,0.78)", maxWidth: 460 }}>
-            Skriv i rutan här nere, så ser du vad dina kunder skulle få. Vill du veta hur snabbt ni svarar i dag mäter jag det gratis.
+            Jag kontrollerar att rutan fungerar på din hemsida, installerar den och testar tillsammans med dig.
           </p>
           <div ref={magnetRef} style={{ marginTop: 34, willChange: "transform" }}>
-            <Link href="/forfragningar" className="premium-btn" data-umami-event="cta-final-forfragningar" style={{ background: INK, borderColor: INK, color: PAPER }}>
-              Så fungerar det <ArrowUpRight size={15} aria-hidden="true" />
+            <Link href="/forfragningar#prova" className="premium-btn" data-umami-event="cta-final-forfragningar" style={{ background: INK, borderColor: INK, color: PAPER }}>
+              Jag vill prova rutan
             </Link>
           </div>
           <p style={{ marginTop: 22, fontFamily: "var(--font-ui)", fontSize: 11.5, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(25,20,5,0.8)" }}>

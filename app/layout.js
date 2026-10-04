@@ -23,6 +23,7 @@ const archivo = Archivo({
 /* Preview-byggen (NEXT_PUBLIC_PREVIEW=1): noindex i metadata och ingen Umami. */
 const PREVIEW = process.env.NEXT_PUBLIC_PREVIEW === "1";
 import ChatWidget from "@/components/ChatWidget";
+import ContactWidget from "@/components/ContactWidget";
 import { KlickIdFangare } from "@/lib/klickid";
 import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
 
@@ -62,9 +63,6 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
-    description:
-      "En ruta på din hemsida: kunden skriver, du får ett SMS och ett förslag på svar. 495 kr/mån exkl moms, 30 dagar gratis. Hemsidor från 1 190 kr/mån, 0 kr i start.",
     images: ["/og-image.png"],
   },
   // OBS: ingen alternates.canonical här — canonical i root-layouten ärvs av ALLA
@@ -175,20 +173,7 @@ export default function RootLayout({ children }) {
         {children}
         {/* Chatten öppnas bara av "Fråga AI:n"-knappen efter en sajtkoll, ingen hörnbubbla annars. */}
         <ChatWidget />
-        {/* Svarslagret (2026-09-07): hörnwidget med Bli uppringd, Meddelande och AI-chatt.
-            Laddar bara en liten launcher direkt, resten vid idle/klick. Tenant stoltmarketing. */}
-        {/* Som JSX-<script> i body dubblerade React taggen vid hydrering (React-fel 418) och
-            kastade ut widgetens element. Därför injiceras den efter window.load, som Umami. */}
-        {/* /analys/ är privata genomgångar till prospekt: där öppnas rutan bara vid klick, annars
-            täcker tenantens autoopen ("*" efter 5 s) hela genomgången i mobilen. */}
-        {!PREVIEW && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html:
-                "window.addEventListener('load',function(){try{var s=document.createElement('script');s.defer=true;s.src='https://widget.stoltmarketing.se/widget.js';s.setAttribute('data-client','stoltmarketing');if(location.pathname.indexOf('/analys/')===0)s.setAttribute('data-open-policy','manual');document.body.appendChild(s)}catch(e){}})",
-            }}
-          />
-        )}
+        <ContactWidget />
         {/* Umami analytics (self-hosted, GDPR-compliant, no cookies) */}
         {/* lazyOnload, inte afterInteractive: afterInteractive lägger en preload
             av tredjepartsskriptet i head, och den ensam kostade 10-15 poäng i

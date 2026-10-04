@@ -1,36 +1,33 @@
 # Stolt Marketing
 
-> Digital konsult och webbyrå i Hässleholm, Skåne. Joel Stolt bygger moderna hemsidor, e-handel, SEO och AI-automation för småföretag i hela Sverige — utan byrå-overhead. Kunden jobbar direkt med konsulten. 10+ års erfarenhet, 150+ levererade projekt, fast pris.
+> Joel Stolt i Hässleholm hjälper hantverksföretag att ta emot förfrågningar via hemsidan och bygger hemsidor, e-handel och marknadsföring. Kunder i hela Sverige.
 
-Företaget drivs av Joel Stolt (grundare, digital konsult & AI-specialist) från Hässleholm och betjänar kunder i hela Skåne (Malmö, Lund, Helsingborg, Kristianstad, Hässleholm) och Sverige. Kontakt: joel@stoltmarketing.se. Svarstid vardagar: inom 24 timmar.
+## Förfrågningsrutan
 
-## Tjänster
+[Förfrågningsrutan](https://www.stoltmarketing.se/forfragningar): Kvota Kundkontakt på en befintlig hemsida. Kunden kan skriva, be att bli uppringd eller använda AI-chatten. Företaget får avisering och ett svarsförslag som det granskar och skickar. Chatten svarar automatiskt och presenteras som AI.
 
-- [Webbutveckling](https://www.stoltmarketing.se/tjanster/webbutveckling): Moderna, snabba webbplatser i Next.js, React och WordPress. Fast pris.
-- [E-handel](https://www.stoltmarketing.se/tjanster/e-handel): WooCommerce och skräddarsydda e-handelslösningar.
-- [WordPress](https://www.stoltmarketing.se/tjanster/wordpress): Snabba och säkra WordPress-sidor.
-- [SEO](https://www.stoltmarketing.se/tjanster/seo): Sökmotoroptimering med fokus på lokal synlighet i Skåne.
-- [Google Ads](https://www.stoltmarketing.se/tjanster/google-ads): Riktad annonsering för småföretag.
-- [AI & Automation](https://www.stoltmarketing.se/tjanster/ai-automation): AI-chatbotar, automatiserade offerter och smarta arbetsflöden.
-- [Managed hemsida](https://www.stoltmarketing.se/tjanster/managed-hemsida): Drift, underhåll och löpande förbättringar. Ingår i månadspriset 1 190 kr/mån, utan startavgift. Gäller även sajter Stolt Marketing inte byggt själv.
+495 kr/mån exkl moms, 0 kr start och 30 dagar gratis. Ingen bindning. Upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar per månad. Ingen telefonpassning, inget SMS vid missat vanligt telefonsamtal, ingen automatisk kalenderbokning. Intresseanmälan på sidan är ingen beställning av abonnemang. Joel går igenom installation och avtal före aktivering.
 
-## Priser
+## Hemsidor
 
-- Bas: 0 kr i startavgift, 1 190 kr/mån, 12 månaders bindning, därefter månadsvis. Bredd 1 990 kr/mån. Spets 2 990 kr/mån inkl. löpande SEO och Google Ads. E-handel läggs till på valfritt paket för 800 kr/mån. WordPress-migrering 0 kr när kunden tecknar drift i 12 månader.
-- Gratis förslag: skicka webbadress eller företagsnamn via fältet på startsidan, så byggs ett klickbart förslag (startsida och en tjänstesida) inom två arbetsdagar, utan möte. Alla priser är exklusive moms. Hemsidan är normalt live inom två veckor efter ja.
+[Priser och paket](https://www.stoltmarketing.se/priser): Bas 1 190 kr/mån för upp till fem sidor. Bredd 1 990 kr/mån för flera tjänster och sidor inom avtalad omfattning. Spets 2 990 kr/mån inkluderar löpande innehåll, Google Ads-arbete och förfrågningsrutan. Alla priser exkl moms. 0 kr start. Hemsidor har 12 månaders bindning, därefter månadsvis. Annonsbudget betalas separat till Google. Meta-annonsering offereras separat.
 
-## Viktiga sidor
+[Gratis designförslag](https://www.stoltmarketing.se/hemsida-foretag#forslag): startsida och en tjänstesida på en klickbar länk inom två arbetsdagar. Resten av sajten byggs efter kundens ja. Avtalad sajt, hosting, drift, säkerhet och innehållsändringar ingår i hemsidepaketet. Större funktioner och integrationer avtalas separat.
 
-- [Boka samtal](https://www.stoltmarketing.se/boka): 15 till 20 minuters samtal, inga förpliktelser.
-- [Projekt & kundcase](https://www.stoltmarketing.se/projekt): Bl.a. AcadeMedia (LIA-platsbanken), RBN Utbildning, Omniway, Förskolan Harpan.
-- [Blogg](https://www.stoltmarketing.se/blogg): Guider om hemsidor, SEO och AI för småföretag.
-- [Om Joel Stolt](https://www.stoltmarketing.se/om)
+Webbshopstillägg 800 kr/mån ovanpå valt paket. Betal-, frakt- och externa licensavgifter kan tillkomma. Större e-handelsprojekt har separat omfattning och offert. SEO-audit 4 900 kr exkl moms, genomförande av åtgärder avtalas separat.
+
+## Tjänster och underlag
+
+- [Alla tjänster](https://www.stoltmarketing.se/tjanster)
+- [SEO](https://www.stoltmarketing.se/tjanster/seo)
+- [Google Ads](https://www.stoltmarketing.se/tjanster/google-ads)
+- [Kundprojekt](https://www.stoltmarketing.se/projekt): daterade mätningar med metod och begränsningar. Telefonklick är inte bevisade samtal, formulärevents är inte unika kunder eller affärer.
+- [Kartläggning av hantverksföretag](https://www.stoltmarketing.se/hantverkssajter): 4 864 företagsposter, inte lika många unika webbplatser. Tester har olika nämnare och täckning, se metodavsnittet.
+- [Guider](https://www.stoltmarketing.se/guider)
+- [Blogg](https://www.stoltmarketing.se/blogg)
+- [Boka samtal](https://www.stoltmarketing.se/boka)
+- [Om Joel](https://www.stoltmarketing.se/om)
 - [Kontakt](https://www.stoltmarketing.se/kontakt)
+- [Integritet](https://www.stoltmarketing.se/integritet)
 
-## Lokal närvaro
-
-- [Webbyrå Hässleholm](https://www.stoltmarketing.se/hassleholm)
-- [Webbyrå Malmö](https://www.stoltmarketing.se/malmo)
-- [Webbyrå Lund](https://www.stoltmarketing.se/lund)
-- [Webbyrå Helsingborg](https://www.stoltmarketing.se/helsingborg)
-- [Webbyrå Kristianstad](https://www.stoltmarketing.se/kristianstad)
+Kontakt: joel@stoltmarketing.se, 076-686 74 06. Normalt svar samma arbetsdag. Verksamheten utgår från Hässleholm och hjälper även företag i Kristianstad, Helsingborg, Malmö och Lund; ortssidor innebär inte ett eget kontor i respektive stad.

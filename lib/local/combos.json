@@ -1,229 +1,329 @@
 {
-  "seo": {
-    "malmo": {
-      "metaTitle": "SEO Malmö, sökmotoroptimering som ger ROI",
-      "metaDescription": "SEO i Malmö för e-handel, SaaS och tech. Teknisk audit, lokal SEO och Core Web Vitals. Fast pris, allt görs av mig själv. Boka kostnadsfri genomgång idag.",
-      "h1": "SEO i Malmö",
-      "heroSubtitle": "Malmö har Skånes hårdaste byråmarknad och en av landets tätaste e-handels- och techscener. Jag hjälper dig synas där köpkraften finns, med SEO som mäts i intäkter, inte i löften och floskler.",
-      "localAngle": "Malmö är Sveriges tredje stad och kryllar av e-handlare, SaaS-bolag och kreativa byråer, många sprungna ur startup-miljön kring Minc. Det betyder att konkurrensen om sökorden är stenhård, oavsett om du sitter i Västra Hamnen, Hyllie eller på ett kontor vid Möllevången. Jag jobbar därför nischat: hellre topplaceringar på de sökord som faktiskt konverterar för just din produkt än bred synlighet som inte säljer. Med Öresundsbron några minuter bort vänder sig många Malmöbolag även mot Köpenhamn, och då bygger vi en struktur som håller för både svensk och dansk söktrafik. Teknisk audit, lokal SEO och löpande optimering, med ett pris du känner till innan vi börjar.",
+  "hemsida": {
+    "hassleholm": {
+      "metaTitle": "Webbyrå Hässleholm: hemsidor för företag",
+      "metaDescription": "Webbyrå för företag i Hässleholm. Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm.",
+      "h1": "Webbyrå för företag i Hässleholm",
+      "heroSubtitle": "Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm. 12 månader, sedan månadsvis.",
+      "localHeading": "Visa tjänster och gör det lätt att fråga om ett jobb",
+      "localAngle": "Jag utgår från Hässleholm. För en mindre företagssajt börjar jag med det kunden behöver veta: vad du gör, var du tar uppdrag och hur man kontaktar dig. Förskolan Harpan och Pingstkyrkan är två dokumenterade projekt på orten.",
+      "example": {
+        "title": "Fem sidor kan räcka",
+        "text": "Exempel: startsida, tjänster, om företaget, referenser och kontakt. Behöver varje tjänst en egen sida passar Bredd bättre. Vi väljer omfattning efter ditt innehåll."
+      },
       "cityFaq": {
-        "q": "Hur sticker man ut i Malmös tuffa SEO-konkurrens?",
-        "a": "I Malmö konkurrerar du mot både lokala byråer och nationella e-handlare, så bred synlighet räcker sällan. Jag fokuserar på de sökord som verkligen leder till köp för just din nisch, optimerar Google Business Profile för stadsdelen du sitter i, Västra Hamnen, Hyllie eller centralt, och bygger en sidstruktur som rankar långsiktigt. Allt mäts i affärsresultat, inte bara placeringar."
-      }
-    },
-    "lund": {
-      "metaTitle": "SEO Lund, sökmotoroptimering för tech & forskning",
-      "metaDescription": "SEO i Lund för Ideon, life science och mjukvara. Teknisk audit, AI-vänlig struktur och lokal SEO. Fast pris, allt görs av mig. Boka kostnadsfri genomgång.",
-      "h1": "SEO i Lund",
-      "heroSubtitle": "Lund har Sveriges mest tech-litterata köpare, forskare, grundare och produktbolag kring Ideon och Medicon Valley. Här räcker inte ytliga knep. Jag bygger SEO på data och en struktur som både Google och AI-sökmotorer förstår.",
-      "localAngle": "Få platser i Sverige har en så kunskapstät köpargrupp som Lund. Runt Ideon Science Park, Nordens äldsta, med närmare 400 bolag, sitter deep tech, life science och mjukvaruföretag, och tyngre forskning pågår vid universitetet, MAX IV och ESS. De här köparna genomskådar tomma löften direkt, så jag jobbar transparent och evidensbaserat: sökordsanalys som bottnar i faktisk efterfrågan, teknisk SEO som håller måttet och en innehållsstruktur som rankar i både Google och AI-drivna svar. För life science- och SaaS-bolag som vänder sig till en internationell publik bygger vi sajten flerspråkigt och tekniskt vattentätt. Det är SEO anpassad för en stad som lever på spjutspetskunskap, levererat till ett fast, förutsägbart pris.",
-      "cityFaq": {
-        "q": "Passar AI-driven SEO för techbolagen i Lund?",
-        "a": "Ja, särskilt i Lund. Köparna kring Ideon och Medicon Valley använder i hög grad AI-verktyg för att hitta leverantörer, så vi strukturerar innehållet så att både Google och språkmodeller plockar upp din sida. Kombinerat med klassisk teknisk SEO och sökordsanalys ger det life science- och mjukvarubolag synlighet där deras kunniga målgrupp faktiskt letar idag."
-      }
-    },
-    "helsingborg": {
-      "metaTitle": "SEO Helsingborg, synas i handel & logistik",
-      "metaDescription": "SEO i Helsingborg för handel och logistik. Lokal SEO, Core Web Vitals och rapporter med tydlig ROI. Fast pris, en kontaktperson. Boka kostnadsfri genomgång.",
-      "h1": "SEO i Helsingborg",
-      "heroSubtitle": "Helsingborg lever på handel och logistik, och de etablerade bolagen här förväntar sig både polish och svart-på-vitt ROI. Jag levererar SEO som ger dig fler kvalificerade kunder, och rapporter du faktiskt förstår.",
-      "localAngle": "Helsingborg är en av Sveriges viktigaste hamnstäder, och handel utgör ungefär halva stadens ekonomi medan logistiken knyter ihop resten, med färjan till Helsingör som en daglig länk mot Danmark. Kring Oceanhamnen och stadens innovationsdistrikt växer dessutom nya bolag fram. De medelstora handels- och logistikföretag jag möter här är vana vid proffsiga leverantörer och vill se konkret avkastning, inte fina ord. Därför bygger jag SEO med tydlig affärslogik: lokal SEO som fångar köpstarka sökningar i Helsingborg med omnejd, snabba sidor som klarar Core Web Vitals även med tunga produktkataloger, och månadsrapporter där du ser exakt vad varje krona ger. En kontaktperson, fast pris och raka besked.",
-      "cityFaq": {
-        "q": "Hur mäter ni att SEO faktiskt lönar sig i Helsingborg?",
-        "a": "För handels- och logistikbolagen i Helsingborg knyter jag SEO direkt till affären: jag följer vilka lokala sökningar som leder till offertförfrågningar och köp, inte bara placeringar i sig. Du får en månadsrapport som visar trafik, ranking och konkreta leads, så att du som van inköpare ser den ROI du förväntar dig, klart och utan svepande formuleringar."
+        "q": "Kan vi ses i Hässleholm?",
+        "a": "Jag utgår från Hässleholm. Ett möte på plats kan vi planera när det behövs; det löpande arbetet kan också skötas via telefon, mejl och video."
       }
     },
     "kristianstad": {
-      "metaTitle": "SEO Kristianstad, synlighet för matregionen",
-      "metaDescription": "SEO i Kristianstad för livsmedel, handel och byggföretag. Lokal SEO, teknisk audit och rapporter. Fast pris, allt görs av mig. Boka kostnadsfri genomgång.",
-      "h1": "SEO i Kristianstad",
-      "heroSubtitle": "Kristianstad är Sveriges matregion, med allt från livsmedelsproducenter till bygg och handel. Jag hjälper de här bolagen att synas, lokalt i Skåne och mot kunder över hela landet, med SEO byggd för faktiska affärer.",
-      "localAngle": "Kristianstad är hjärtat i Sveriges matregion, med tunga livsmedelsnamn som Absolut i Åhus, Orkla Foods, Skånemejerier och Lyckeby inom räckhåll, och en högskola som utbildar inom mat, hälsa och handel. Runt omkring finns en stark väv av detaljhandel och byggföretag, och vid kusten ligger Åhus. Många av bolagen här är tillverkande och exportinriktade, vilket ställer särskilda krav: du behöver synas både lokalt och nationellt, ofta mot inköpare och återförsäljare som söker leverantörer. Jag bygger SEO som täcker hela den resan, lokal SEO för synlighet i regionen, teknisk audit som lyfter sajten och sökordsstrategi riktad mot dina B2B- och konsumentkunder. Allt till ett fast pris du känner till från start.",
+      "metaTitle": "Webbyrå Kristianstad: hemsidor för företag",
+      "metaDescription": "Webbyrå för företag i Kristianstad. Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm.",
+      "h1": "Webbyrå för företag i Kristianstad",
+      "heroSubtitle": "Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm. 12 månader, sedan månadsvis.",
+      "localHeading": "Hjälp kunden hitta rätt tjänst",
+      "localAngle": "För ett företag i Kristianstad som erbjuder flera tjänster är första jobbet att sortera dem. Jag skiljer på vad kunden kan beställa, vad du behöver för att lämna pris och hur förfrågan skickas. Samarbetet sköter jag från Hässleholm.",
+      "example": {
+        "title": "En sida per tydligt behov",
+        "text": "Exempel: en firma som erbjuder både installation och service får skilda tjänstesidor med rätt underlag för respektive förfrågan. Det gör också innehållsomfattningen lättare att bestämma före start."
+      },
       "cityFaq": {
-        "q": "Hur funkar lokal SEO för livsmedels- och byggbolag i Kristianstad?",
-        "a": "I Kristianstad handlar det ofta om att synas både för lokala kunder och för inköpare i hela landet. Jag optimerar din Google Business Profile för regionen, ser till att kontaktuppgifter och recensioner stämmer, och bygger sökordsstrategin kring både nära mig-sökningar och de branschtermer som producenter, handlare och byggföretag faktiskt använder när de letar leverantör."
+        "q": "Har du ett kontor i Kristianstad?",
+        "a": "Min bas är Hässleholm. Jag hjälper företag i Kristianstad via mejl, telefon och video. Möte på plats planeras efter projektets behov."
       }
     },
-    "hassleholm": {
-      "metaTitle": "SEO Hässleholm, lokal sökmotoroptimering",
-      "metaDescription": "SEO i Hässleholm för logistik, industri och hantverkare. Din lokala byrå, fast pris, allt görs av mig själv. Boka din kostnadsfria genomgång idag.",
-      "h1": "SEO i Hässleholm",
-      "heroSubtitle": "Hässleholm är min hemmabas, jag finns här lokalt. Få konkurrerar om seo hässleholm, så för logistikbolag, industri och hantverkare i stan finns en ovanligt öppen chans att ta förstaplatsen på Google nu.",
-      "localAngle": "Hässleholm är en av Sydsveriges stora järnvägsknutpunkter på Södra stambanan, och med kommande höghastighetståg och logistikparken Hässleholm Nord växer transport- och logistiknäringen snabbt. Här finns också tillverkningsindustri, handel och en stark grund av lokala småföretag och hantverkare. Det här är min hemmaplan, jag sitter här lokalt, känner orten och kan träffas på riktigt. Det fina för dig är att konkurrensen på seo hässleholm fortfarande är låg, så ett företag som satsar nu kan ta topplaceringarna innan andra vaknar. Jag bygger lokal SEO som sätter dig på kartan när Hässleholmsbor och kunder i närområdet söker, snabbar upp sajten och ser till att du syns för exakt de tjänster du vill sälja, till fast pris.",
+    "helsingborg": {
+      "metaTitle": "Webbyrå Helsingborg: hemsidor för företag",
+      "metaDescription": "Webbyrå för företag i Helsingborg. Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm.",
+      "h1": "Webbyrå för företag i Helsingborg",
+      "heroSubtitle": "Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm. 12 månader, sedan månadsvis.",
+      "localHeading": "En hemsida för tjänsten och området kunden söker",
+      "localAngle": "Niklassons Flytt i Helsingborg är ett dokumenterat exempel: 38 sidor för företagets tjänster och områden i Skåne, med mätning av offertförfrågningar. För din sajt börjar jag med de tjänster och områden där du faktiskt tar uppdrag.",
+      "example": {
+        "title": "Börja med rätt omfattning",
+        "text": "En flyttfirma kan behöva skilja bohagsflytt från företagsflytt. En mindre firma kan klara sig med fem sidor. Antalet avgörs av vad kunden behöver hitta, och du får paket och avgränsning före start."
+      },
       "cityFaq": {
-        "q": "Varför är det rätt läge att satsa på SEO i Hässleholm nu?",
-        "a": "För att konkurrensen på seo hässleholm är låg samtidigt som orten växer kring logistik och Hässleholm Nord. Det betyder att du kan ta förstaplatserna på Google innan dina konkurrenter börjar optimera. Jag finns lokalt i Hässleholm, så vi kan ses på plats, och jag bygger lokal SEO som gör att kunder i närområdet hittar just ditt företag först."
+        "q": "Kan jag se ett projekt från Helsingborg?",
+        "a": "Ja, Niklassons Flytt finns under Kundprojekt. Där visas sidstruktur, formulär och dokumenterad mätning. Projektets omfattning är ett exempel och bestämmer inte vad din sajt behöver."
+      }
+    },
+    "malmo": {
+      "metaTitle": "Webbyrå Malmö: hemsidor för företag",
+      "metaDescription": "Webbyrå för företag i Malmö. Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm.",
+      "h1": "Webbyrå för företag i Malmö",
+      "heroSubtitle": "Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm. 12 månader, sedan månadsvis.",
+      "localHeading": "Förklara erbjudandet innan kunden tar kontakt",
+      "localAngle": "Jag hjälper företag i Malmö och utgår från Hässleholm. För en sajt med flera erbjudanden börjar jag med att ge varje kundgrupp en begriplig ingång. Kunden ska kunna se vad tjänsten omfattar och vad nästa steg är.",
+      "example": {
+        "title": "Ett kontaktflöde med rätt underlag",
+        "text": "Exempel: en konsultfirma kan fråga efter uppdragstyp och önskad start, medan en servicefirma behöver adress och felbeskrivning. Formuläret utformas efter beslutet du ska kunna ta."
+      },
+      "cityFaq": {
+        "q": "Är Stolt Marketing baserat i Malmö?",
+        "a": "Nej, jag utgår från Hässleholm. Du som driver företag i Malmö kan arbeta direkt med mig via mejl, telefon och video. Ett möte på plats kan planeras vid behov."
+      }
+    },
+    "lund": {
+      "metaTitle": "Webbyrå Lund: hemsidor för företag",
+      "metaDescription": "Webbyrå för företag i Lund. Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm.",
+      "h1": "Webbyrå för företag i Lund",
+      "heroSubtitle": "Hemsida med tydliga tjänster och kontaktvägar. Från 1 190 kr/mån exkl. moms, 0 kr start. Jag utgår från Hässleholm. 12 månader, sedan månadsvis.",
+      "localHeading": "Gör ett komplext erbjudande lätt att förstå",
+      "localAngle": "För ett företag i Lund med en tjänst som kräver förklaring börjar jag med kundens frågor. Vad får kunden, vem passar tjänsten för och vilket underlag behövs? Jag utgår från Hässleholm och bestämmer struktur och teknik efter ditt arbetssätt.",
+      "example": {
+        "title": "Bestäm vem som ska uppdatera",
+        "text": "Exempel: om du ofta byter projekt, personal eller öppettider behöver vi välja vilka delar du själv ska kunna ändra. Redaktörsverktyg och genomgång avtalas som en del av upplägget."
+      },
+      "cityFaq": {
+        "q": "Hur väljer du upplägg för mitt företag i Lund?",
+        "a": "Jag utgår från din tjänst, ditt innehåll och eventuella integrationsbehov. Namngivna kundprojekt visar tidigare leveranser. Du får förslag, omfattning och tidplan innan du beställer bygget."
       }
     }
   },
-  "hemsida": {
-    "malmo": {
-      "metaTitle": "Webbyrå Malmö, snabba hemsidor som konverterar",
-      "metaDescription": "Webbyrå i Malmö som bygger snabba, säljande hemsidor i modern teknik. Allt av mig själv, fast månadspris och kostnadsfri första skiss. 0 kr i startavgift.",
-      "h1": "Webbyrå i Malmö",
-      "heroSubtitle": "På Malmös tuffaste byråmarknad vinner du inte på prat, utan på prestanda. Jag bygger snabba, mätbara hemsidor i modern teknik som laddar direkt, rankar i Google och faktiskt omvandlar besökare till kunder, utan agencypriser.",
-      "localAngle": "Malmö är Sveriges hetaste startup- och e-handelsstad, med Minc, SaaS-bolag och kreativa byråer tätt i Västra Hamnen, Hyllie och kring Möllevången. Här räcker det inte med en snygg sida, köparna är digitalt mogna och jämför laddtid, Core Web Vitals och konvertering. Jag bygger hemsidor och e-handel i rätt teknik (modern kod eller WordPress efter behov), SEO-optimerade från start och redo att möta trafik från både Skåne och Köpenhamn via Öresundsbron. För en växande SaaS, butik eller konsult i Malmö betyder det en sida som lastar snabbt, mäts på riktig ROI och sticker ut i en stad full av konkurrenter.",
+  "seo": {
+    "hassleholm": {
+      "metaTitle": "SEO Hässleholm: sökord och en konkret åtgärdsplan",
+      "metaDescription": "SEO för företag i Hässleholm. Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "h1": "SEO för företag i Hässleholm",
+      "heroSubtitle": "Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "localHeading": "Börja med det dina kunder söker efter",
+      "localAngle": "En rörmokare i Hässleholm behöver en sida om rörmokartjänster som kunden söker. Jag kartlägger dina tjänster och ditt serviceområde och använder tillgänglig sökdata för att välja vad som ska förbättras först. Konkurrensen undersöks för just din bransch.",
+      "example": {
+        "title": "Exempel på kundens sökord",
+        "text": "Rörmokare Hässleholm är ett illustrativt exempel, ingen uppmätt volym i denna text. I din audit kontrollerar jag relevans, befintliga sidor och tillgänglig data innan jag rekommenderar en ny sida."
+      },
       "cityFaq": {
-        "q": "Vad kostar en hemsida för företag i Malmö?",
-        "a": "En hemsida hos mig kostar 0 kr i start och 1 190 kr/mån, med 12 månaders bindning och därefter månadsvis. Drift, hosting, uppdateringar och support ingår redan i priset, så det tillkommer ingenting i efterhand. I konkurrensutsatta Malmö får du enterprise-kvalitet och snabba laddtider till småföretagspris, allt byggt av mig själv."
-      }
-    },
-    "lund": {
-      "metaTitle": "Webbyrå Lund, teknisk webb med hög kvalitet",
-      "metaDescription": "Webbyrå i Lund för forsknings- och techbolag som kräver kvalitet. Snabba, SEO-optimerade hemsidor i modern teknik, fast månadspris och gratis skiss. 0 kr i startavgift.",
-      "h1": "Webbyrå i Lund",
-      "heroSubtitle": "I en stad där köparna ofta är ingenjörer, forskare och grundare nöjer man sig inte med ungefär. Jag bygger tekniskt välgjorda, snabba hemsidor med ren kod och mätbar prestanda, för bolag i Lund som ställer höga krav på både form och funktion.",
-      "localAngle": "Lund lever på kunskap: Lunds universitet, Ideon Science Park och Medicon Valley samlar deep tech, life science och mjukvarubolag, med MAX IV och ESS som dragplåster för forskningstunga aktörer. Det är en publik som läser källkod lika gärna som copy och genomskådar en svag sida direkt. Därför bygger jag hemsidor som håller teknisk granskning: snabba laddtider, korrekt struktur, SEO från grunden och en design som signalerar att ni är seriösa. Oavsett om du är en startup på Ideon, ett life science-bolag eller en konsult nära campus får du en sida i rätt teknik, modern kod eller WordPress, byggd för krävande, tech-litterata besökare.",
-      "cityFaq": {
-        "q": "Kan du bygga en teknisk hemsida för ett bolag på Ideon i Lund?",
-        "a": "Absolut. Många av mina kunder i Lund kommer från tech och life science och har höga krav på kvalitet. Jag bygger i modern teknik som Next.js när det behövs, med ren kod, snabba laddtider och SEO från start. Du får fast pris innan vi börjar och en kostnadsfri första genomgång där vi går igenom vad just ert bolag behöver."
-      }
-    },
-    "helsingborg": {
-      "metaTitle": "Webbyrå Helsingborg, hemsidor för handel",
-      "metaDescription": "Webbyrå i Helsingborg för handels- och logistikbolag. Polerade, säljande hemsidor i modern teknik med fast månadspris och gratis skiss. 0 kr i startavgift.",
-      "h1": "Webbyrå i Helsingborg",
-      "heroSubtitle": "Helsingborgs handels- och logistikbolag lever på flöde och förtroende. Jag bygger polerade, snabba hemsidor som matchar etablerade företags nivå, proffsig design, tydliga vägar till kontakt och konvertering som faktiskt fyller pipelinen med rätt kunder.",
-      "localAngle": "Helsingborg är en av Sveriges viktigaste hamnstäder, där handel och logistik dominerar och nya innovationsdistrikt växer fram kring Oceanhamnen. Här finns gott om etablerade, medelstora handels- och logistikbolag som rör varor varje dag, och deras kunder förväntar sig samma polish online som offline. Jag bygger hemsidor som speglar den nivån: ren och förtroendeingivande design, snabba laddtider och tydliga konverteringsvägar, oavsett om ni säljer B2B, driver e-handel eller vill fånga leads. Med färjan till Danmark och ett aktivt näringsliv i ryggen får ditt Helsingborgsföretag en sida i rätt teknik som både ser proffsig ut och driver affärer.",
-      "cityFaq": {
-        "q": "Behöver mitt logistikföretag i Helsingborg en ny hemsida?",
-        "a": "Om din nuvarande sida är långsam, daterad eller svår att läsa i mobilen, ja. I Helsingborg konkurrerar handels- och logistikbolag om förtroende, och en proffsig sida som laddar snabbt gör skillnad. Jag bygger en modern, konverteringsfokuserad hemsida för 0 kr i start och 1 190 kr/mån, och börjar alltid med en kostnadsfri skiss."
+        "q": "Kan jag rikta SEO till flera orter runt Hässleholm?",
+        "a": "Ja, om du faktiskt tar uppdrag där och har relevant innehåll för kunderna. Vi börjar med dina viktigaste tjänster och serviceområden och undviker att skapa ortssidor enbart för ortsnamnets skull."
       }
     },
     "kristianstad": {
-      "metaTitle": "Webbyrå Kristianstad, hemsidor för företag",
-      "metaDescription": "Webbyrå i Kristianstad för livsmedels-, bygg- och tillverkningsbolag. Proffsiga, säljande hemsidor med fast månadspris och gratis skiss. 0 kr i startavgift.",
-      "h1": "Webbyrå i Kristianstad",
-      "heroSubtitle": "Kristianstad är Skånes matregion med starka tillverkare och exportbolag. Jag bygger proffsiga, snabba hemsidor som ger lokala producenter, byggföretag och handlare en digital närvaro i klass med produkterna, byggd för att skapa förtroende och leads.",
-      "localAngle": "Kristianstad är hjärtat i Skånes livsmedelsproduktion, med namn som Absolut i Åhus, Orkla Foods och Skånemejerier i regionen, plus en stark detaljhandel och många byggföretag. Högskolan Kristianstad tillför kompetens och nya bolag. Gemensamt för många här är att produkten håller världsklass medan webben halkat efter. Det fixar jag: snabba, mobilanpassade hemsidor i rätt teknik som lyfter tillverkande och exportinriktade bolag, byggföretag och butiker. SEO-optimerade från start så att kunder hittar er, med en design som signalerar kvalitet och ett CMS där ni enkelt uppdaterar själva. Resultatet är en digital närvaro som matchar Kristianstads företag på riktigt.",
+      "metaTitle": "SEO Kristianstad: sökord och en konkret åtgärdsplan",
+      "metaDescription": "SEO för företag i Kristianstad. Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "h1": "SEO för företag i Kristianstad",
+      "heroSubtitle": "Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "localHeading": "Prioritera sökningar som matchar din tjänst",
+      "localAngle": "För ett företag i Kristianstad utgår jag från tjänsten kunden vill köpa. En verkstad behöver till exempel beskriva reparationer och service med kundens ord. Jag kontrollerar vilka sidor du redan har och var relevant sökdata visar ett behov.",
+      "example": {
+        "title": "Exempel: tjänst före ortslista",
+        "text": "Bilservice Kristianstad är ett exempel på en kundnära sökning. Om du också tar kunder från Åhus behöver vi först kontrollera erbjudande och efterfrågan där. Exemplen är inte uppmätta sökvolymer."
+      },
       "cityFaq": {
-        "q": "Bygger du hemsidor åt tillverkande företag i Kristianstad?",
-        "a": "Ja, det är en av mina vanligaste kundtyper i Kristianstad-regionen. Tillverkande och exportinriktade bolag behöver en sida som ser lika proffsig ut som produkten är bra. Jag bygger snabba, säljande hemsidor i rätt teknik, SEO-optimerade från start, för 0 kr i start och 1 190 kr/mån. Första genomgången och skissen är alltid kostnadsfri."
+        "q": "Behöver jag en sida för varje ort runt Kristianstad?",
+        "a": "Inte automatiskt. Jag prioriterar tydliga tjänstesidor och innehåll som hjälper kunden. Fler ortssidor rekommenderas först när serviceområdet, sökdata och innehållet motiverar dem."
       }
     },
-    "hassleholm": {
-      "metaTitle": "Webbyrå Hässleholm, lokal webbyrå på plats",
-      "metaDescription": "Webbyrå i Hässleholm, jag finns här lokalt. Snabba, säljande hemsidor till företag, hantverkare och logistik. Fast månadspris, gratis skiss, 0 kr i startavgift.",
-      "h1": "Webbyrå i Hässleholm",
-      "heroSubtitle": "Hässleholm är min hemmabas, här finns jag lokalt, inte bakom en växel i en storstad. Jag bygger snabba, säljande hemsidor åt logistikbolag, tillverkare, handlare och hantverkare som vill synas bättre i en stad där bra webb fortfarande är en konkurrensfördel.",
-      "localAngle": "Hässleholm är en av Sveriges stora järnvägsknutpunkter, och med framtida höghastighetståg och logistikparken Hässleholm Nord växer transport, logistik och tillverkning snabbt. Runt det finns ett stabilt nät av handel, lokala småföretag och hantverkare. Det fina är att konkurrensen om en riktigt bra hemsida fortfarande är låg här, du kan bli den som syns bäst i din bransch. Som lokal webbyrå på plats bygger jag snabba, mobilanpassade och SEO-optimerade sidor i rätt teknik, och vi kan ses över en kaffe istället för bara över mejl. För Hässleholms företag betyder det enterprise-kvalitet, en kontaktperson och en webb som faktiskt drar in kunder.",
+    "helsingborg": {
+      "metaTitle": "SEO Helsingborg: sökord och en konkret åtgärdsplan",
+      "metaDescription": "SEO för företag i Helsingborg. Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "h1": "SEO för företag i Helsingborg",
+      "heroSubtitle": "Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "localHeading": "Koppla rätt sökning till rätt tjänstesida",
+      "localAngle": "I projektet Niklassons Flytt finns separata tjänster och områden, exempelvis flyttstädning Helsingborg. Den principen kan användas när ditt företag säljer flera tjänster: besökaren ska landa på den tjänst som motsvarar frågan. Din audit avgör vilka sidor som ska prioriteras.",
+      "example": {
+        "title": "Följ kontakter tillsammans med synlighet",
+        "text": "För en lokal tjänst behöver jag veta vilka förfrågningar du kan ta emot. Nollmätningen kan innehålla sökningar, sidor och registrerade kontakter. Du hjälper till att bedöma om kontakterna passar verksamheten."
+      },
       "cityFaq": {
-        "q": "Finns du på plats i Hässleholm om jag vill träffas?",
-        "a": "Ja, Hässleholm är min hemmabas, så vi kan ses lokalt och inte bara prata över mejl. Det gör det enkelt och personligt, du har en kontaktperson som känner orten. Jag bygger snabba, säljande hemsidor för 0 kr i start och 1 190 kr/mån, med kostnadsfri första genomgång. Här är konkurrensen på bra webb låg, så du kan ta täten i din bransch."
+        "q": "Vad kan Niklassons-projektet visa om SEO?",
+        "a": "Det visar en byggd struktur med tjänste- och ortssidor och mätning av offertförfrågningar. För att bedöma SEO-effekt behövs även sökdata och jämförelse över tid; antalet förfrågningar är inte ensamt ett bevis på orsaken."
+      }
+    },
+    "malmo": {
+      "metaTitle": "SEO Malmö: sökord och en konkret åtgärdsplan",
+      "metaDescription": "SEO för företag i Malmö. Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "h1": "SEO för företag i Malmö",
+      "heroSubtitle": "Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "localHeading": "Välj ett tydligt kundbehov före ett brett ortsord",
+      "localAngle": "Malmö som ortsnamn säger inte vilka konkurrenter eller sökningar som är relevanta för din verksamhet. Jag skiljer tjänsterna åt och börjar med din befintliga synlighet. En klinik, en konsult och en hantverkare behöver olika sidor även om alla verkar i Malmö.",
+      "example": {
+        "title": "Exempel: skilj tjänster med olika avsikt",
+        "text": "En firma som erbjuder både flytt och flyttstädning kan behöva separata sidor. Jag kontrollerar sökavsikt och befintligt innehåll innan jag föreslår ändringar. Sökord och konkurrens bedöms utifrån ditt företag."
+      },
+      "cityFaq": {
+        "q": "Hur väljer du sökord för ett företag i Malmö?",
+        "a": "Jag utgår från dina tjänster, vilka kunder du kan hjälpa och var du tar uppdrag. Därefter väger jag in tillgänglig sökdata, nuvarande sidor och vilka frågor kunderna behöver svar på."
+      }
+    },
+    "lund": {
+      "metaTitle": "SEO Lund: sökord och en konkret åtgärdsplan",
+      "metaDescription": "SEO för företag i Lund. Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "h1": "SEO för företag i Lund",
+      "heroSubtitle": "Sökordsval, teknisk genomgång och tydlig åtgärdslista. SEO-audit 4 900 kr exkl. moms. Jag utgår från Hässleholm.",
+      "localHeading": "Skilj lokala kunder från kunder i hela landet",
+      "localAngle": "Säljer du en tjänst på plats i Lund behöver sidan göra det lokala erbjudandet tydligt. Säljer du konsultarbete i hela Sverige kan kundens problem vara viktigare än ortsnamnet. Jag börjar med den skillnaden innan jag väljer sökord och sidor.",
+      "example": {
+        "title": "Exempel: två skilda sökbehov",
+        "text": "Fysioterapeut Lund beskriver en lokal tjänst. En konsulttjänst som levereras på distans behöver i stället förklara vilken uppgift kunden får hjälp med. Exemplen är illustrativa och sökvolymer kontrolleras i ditt uppdrag."
+      },
+      "cityFaq": {
+        "q": "Passar lokal SEO alla företag i Lund?",
+        "a": "Nej. Om kunderna söker hjälp på plats kan orten vara central. För en verksamhet som säljer till hela landet prioriterar jag tjänsten och kundens problem. Din marknad avgör inriktningen."
       }
     }
   },
   "google-ads": {
-    "malmo": {
-      "metaTitle": "Google Ads Malmö, ROAS-fokus & vass targeting",
-      "metaDescription": "Google Ads i Malmö för e-handel, tech och startups. Jag bygger kampanjer som vinner i hård konkurrens med skarp targeting och ROAS-fokus. Boka kostnadsfri genomgång.",
-      "h1": "Google Ads i Malmö",
-      "heroSubtitle": "I Malmö slåss e-handlare, techbolag och startups om samma klick, och budpriserna märks. Jag bygger Google Ads-kampanjer med skarp targeting och stenhård ROAS-koll, så din budget går till köpare och inte till spill.",
-      "localAngle": "Malmö är Sveriges tredje största marknad och en av landets tuffaste annonsmiljöer. E-handel, SaaS och kreativa byråer från Västra Hamnen till Hyllie konkurrerar om samma sökningar, vilket pressar upp klickpriserna rejält. Då räcker det inte att bara vara igång, varje krona måste arbeta. Jag jobbar datadrivet med tät budstyrning, negativa sökord, Performance Max och remarketing mot dina varmaste segment, plus landningssidor som faktiskt konverterar trafiken. Allt sköts av mig själv, ingen outsourcing, med transparent arvode och tydlig ROAS-rapport varje månad. I en marknad där alla annonserar är vinsten att annonsera vassare än konkurrenten, inte mer.",
+    "hassleholm": {
+      "metaTitle": "Google Ads Hässleholm: annonsering och uppföljning",
+      "metaDescription": "Google Ads för företag i Hässleholm. Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer.",
+      "h1": "Google Ads för företag i Hässleholm",
+      "heroSubtitle": "Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer. Spets: 12 månader, sedan månadsvis.",
+      "localHeading": "Räkna på ett uppdrag innan du väljer budget",
+      "localAngle": "Klickpris och lönsamhet måste undersökas för din tjänst. Hässleholm som ort ger ingen garanti om billig annonsering. Jag börjar med serviceområde, marginal och hur du kan bedöma en relevant förfrågan.",
+      "example": {
+        "title": "Räkneexempel, ingen prognos",
+        "text": "Anta 5 000 kr i annonsbudget och 25 kr per klick: 200 klick. Om 5 procent blir kontakter får du 10, och om 20 procent av dem blir kunder får du 2. Med 5 000 kr i täckningsbidrag per kund blir det 10 000 kr före annonsering och arbete. Efter 5 000 kr budget och hela Spets-paketets 2 990 kr återstår 2 010 kr före övriga kostnader. Utfallet kan bli både bättre och sämre. Alla belopp är exkl. moms."
+      },
       "cityFaq": {
-        "q": "Vad kostar Google Ads för företag i Malmö?",
-        "a": "I Malmö är klickpriserna högre än i övriga Skåne eftersom konkurrensen i e-handel och tech är stenhård. Du betalar din annonsbudget plus mitt transparenta arvode, ofta från några tusen kronor i månaden. Med rätt targeting syns de första klicken och konverteringarna redan inom några dagar."
-      }
-    },
-    "lund": {
-      "metaTitle": "Google Ads Lund, B2B & life science",
-      "metaDescription": "Google Ads i Lund för nischade B2B-, tech- och life science-bolag. Färre men värdefulla leads via precisa sökord. Boka en kostnadsfri första genomgång med mig.",
-      "h1": "Google Ads i Lund",
-      "heroSubtitle": "Lund är universitet, Ideon och djup specialistkompetens. Här handlar Google Ads inte om volym utan om att fånga rätt person på exakt rätt sökord, färre klick, men varje lead kan vara värt mycket för ett nischat B2B- eller life science-bolag.",
-      "localAngle": "Kring Lunds universitet och Ideon Science Park sitter några av Sveriges mest specialiserade bolag inom deep tech, life science och B2B. Sökvolymerna för era tjänster är ofta små, men en enda kvalificerad förfrågan kan vara värd hundratusentals kronor. Då är breda kampanjer rena pengaslöseriet. Jag bygger smala, precisa annonsgrupper kring era exakta nischsökord, med skräddarsydd annonstext som talar forskarens och inköparens språk, och konverteringsspårning som visar vad varje lead faktiskt kostar. Allt görs av mig, transparent prissatt. I Lund vinner du inte på flest klick, utan på att synas för precis rätt handfull köpare när de söker.",
-      "cityFaq": {
-        "q": "Funkar Google Ads när min nisch i Lund har låg sökvolym?",
-        "a": "Ja. Många B2B- och life science-bolag i Lund har få sökningar men extremt värdefulla leads. Jag fokuserar budgeten på era exakta nischsökord istället för bred volym, så du betalar bara för relevanta klick. Ett par tusen i månadsbudget räcker ofta långt när varje förfrågan är så värdefull."
-      }
-    },
-    "helsingborg": {
-      "metaTitle": "Google Ads Helsingborg, fler leads & samtal",
-      "metaDescription": "Google Ads i Helsingborg för handel, logistik och B2B. Jag bygger kampanjer som ger fler samtal, offerter och mätbar avkastning. Boka kostnadsfri genomgång.",
-      "h1": "Google Ads i Helsingborg",
-      "heroSubtitle": "Helsingborg lever på hamn, handel och logistik med många etablerade medelstora bolag. Här ska Google Ads leverera konkret affär: fler inkommande samtal, fler offertförfrågningar och en avkastning du kan följa krona för krona.",
-      "localAngle": "Helsingborg är en handels- och logistikstad där etablerade medelstora bolag konkurrerar om både konsumenter och B2B-kunder. Många här har ett funkande företag men en otydlig bild av vad marknadsföringen faktiskt ger tillbaka. Det löser jag. Jag sätter upp Google Ads med samtals- och formulärspårning så varje lead går att koppla till en kampanj, plus remarketing mot besökare som inte hörde av sig första gången. Fokus ligger på köpstarka sökningar, offert, pris, leverans, near me, inte på fina visningssiffror. Allt sköts av mig personligen med transparent arvode och en månadsrapport som visar kostnad per lead, inte bara klick. Mätbar avkastning, inte gissningar.",
-      "cityFaq": {
-        "q": "Hur snabbt ger Google Ads resultat för mitt företag i Helsingborg?",
-        "a": "Snabbt. Till skillnad från SEO syns Google Ads i Helsingborg samma dag kampanjen går live, och de första samtalen eller offertförfrågningarna kommer ofta inom några dagar. Med samtals- och konverteringsspårning ser du direkt vad varje lead kostar och kan skala upp det som ger bäst avkastning."
+        "q": "Är Google Ads billigare i Hässleholm?",
+        "a": "Det går inte att avgöra från orten. Klickkostnaden påverkas bland annat av tjänst, sökning och konkurrens. Jag bedömer ditt konto och budget utifrån relevanta kontakter och deras värde."
       }
     },
     "kristianstad": {
-      "metaTitle": "Google Ads Kristianstad, billiga klick, fler kunder",
-      "metaDescription": "Google Ads i Kristianstad för handel, bygg och tillverkning. Lägre konkurrens ger billigare klick och snabb lönsamhet. Boka en kostnadsfri första genomgång.",
-      "h1": "Google Ads i Kristianstad",
-      "heroSubtitle": "Kristianstad är regioncentrum i nordöstra Skåne med livsmedel, tillverkning, bygg och stark lokal handel. Konkurrensen i annonseringen är lägre än i Malmö, vilket betyder billigare klick och snabbare lönsamhet för dig som agerar nu.",
-      "localAngle": "Som regioncentrum för nordöstra Skåne har Kristianstad ett brett näringsliv: livsmedels- och tillverkningsindustri, byggföretag och en levande detaljhandel med kunder från hela omlandet. Den stora fördelen mot Malmö är att färre lokala företag annonserar seriöst på Google, konkurrensen om sökorden är lägre, vilket pressar ner klickpriserna och gör att budgeten räcker längre. Jag bygger lokala sökkampanjer för din tjänst i Kristianstad och kringliggande orter, med konverteringsspårning på samtal och formulär samt remarketing. Du fångar både privatkunder och B2B när de söker. Allt görs av mig, fast och transparent pris. Här blir Google Ads ofta lönsamt fortare just för att klicken är billigare.",
+      "metaTitle": "Google Ads Kristianstad: annonsering och uppföljning",
+      "metaDescription": "Google Ads för företag i Kristianstad. Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer.",
+      "h1": "Google Ads för företag i Kristianstad",
+      "heroSubtitle": "Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer. Spets: 12 månader, sedan månadsvis.",
+      "localHeading": "Annonsera där du kan ta nästa uppdrag",
+      "localAngle": "Tar du uppdrag i Kristianstad men bara i delar av området runt omkring behöver kampanjen följa det. Jag sätter upp geografiskt urval och granskar söktermer. Du återkopplar när en förfrågan ligger utanför serviceområdet eller gäller fel tjänst.",
+      "example": {
+        "title": "Exempel: serviceområde och fel förfrågan",
+        "text": "En kontakt från en ort där du inte arbetar registreras som irrelevant i uppföljningen. Den informationen används för att ändra annonser och urval. Geografiska inställningar tar inte bort behovet av den kontrollen."
+      },
       "cityFaq": {
-        "q": "Är Google Ads billigare i Kristianstad än i Malmö?",
-        "a": "Oftast ja. Eftersom färre företag i Kristianstad annonserar aktivt är konkurrensen om sökorden lägre, vilket ger billigare klick än i Malmö. Det betyder att din budget räcker till fler köpstarka besökare och att kampanjen ofta blir lönsam snabbare, ibland redan inom de första veckorna."
+        "q": "Kan du begränsa annonserna till Kristianstad och mitt serviceområde?",
+        "a": "Jag kan anpassa geografiskt urval och innehåll till de områden där du arbetar. Vi följer även inkomna kontakter, eftersom inställningarna inte garanterar att varje förfrågan passar."
       }
     },
-    "hassleholm": {
-      "metaTitle": "Google Ads Hässleholm, låg CPC, snabb lönsamhet",
-      "metaDescription": "Google Ads i Hässleholm för hantverkare, handel och lokala företag. Låg konkurrens ger billiga klick och snabb lönsamhet. Boka kostnadsfri genomgång med mig.",
-      "h1": "Google Ads i Hässleholm",
-      "heroSubtitle": "Hässleholm är min hemmabas, logistik, tillverkning, handel och massor av lokala hantverkare och småföretag. Här är konkurrensen på Google låg, klicken billiga och vägen till lönsamhet kort för dig som vill synas först.",
-      "localAngle": "Hässleholm är min hemmaplan, och jag känner näringslivet här: transport- och logistikbolag, tillverkning, lokal handel och en mängd hantverkare och småföretag. Det allra flesta annonserar inte alls på Google, och det är just därför läget är så bra. Låg konkurrens betyder låg kostnad per klick, så även en blygsam budget kan göra dig till det första företaget en lokal kund ser när de söker rörmokare, snickare eller en tjänst i Hässleholm. Jag bygger träffsäkra lokala sökkampanjer med samtalsspårning, så telefonen faktiskt ringer. Allt sköts av mig personligen, med fast transparent pris och snabb kommunikation. För lokala Hässleholmsföretag är det här ofta den snabbaste vägen till nya kunder.",
+    "helsingborg": {
+      "metaTitle": "Google Ads Helsingborg: annonsering och uppföljning",
+      "metaDescription": "Google Ads för företag i Helsingborg. Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer.",
+      "h1": "Google Ads för företag i Helsingborg",
+      "heroSubtitle": "Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer. Spets: 12 månader, sedan månadsvis.",
+      "localHeading": "Följ rätt sorts förfrågan",
+      "localAngle": "För ditt företag i Helsingborg behöver vi bestämma vad som räknas som relevant: rätt tjänst, rätt område och ett uppdrag du kan ta. Jag matchar annonserna med landningssidan och följer både kostnad och din bedömning av inkomna kontakter.",
+      "example": {
+        "title": "Exempel: samtal och affär är olika steg",
+        "text": "Ett klick på telefonnumret kan visa intresse. Ett genomfört samtal med en möjlig kund ger mer information. För att räkna lönsamhet behöver vi också veta vilka kontakter som blev affär och med vilken marginal."
+      },
       "cityFaq": {
-        "q": "Lönar sig Google Ads för ett litet lokalt företag i Hässleholm?",
-        "a": "Absolut. I Hässleholm är konkurrensen på Google låg, så klicken är billiga och även en liten budget på några tusen i månaden kan ge riktig effekt. Hör en lokal kund av sig efter ett enda klick är annonsen redan betald. Som hemmabasen är det här jag ser snabbast lönsamhet för lokala företag."
+        "q": "Vad räknar du som resultat för annonsering i Helsingborg?",
+        "a": "Vi bestämmer relevanta kontaktmål före start, till exempel en mottagen offertförfrågan. Du återkopplar kontaktkvalitet och vunna uppdrag. Då kan kostnad per kontakt skiljas från kostnad per kund."
+      }
+    },
+    "malmo": {
+      "metaTitle": "Google Ads Malmö: annonsering och uppföljning",
+      "metaDescription": "Google Ads för företag i Malmö. Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer.",
+      "h1": "Google Ads för företag i Malmö",
+      "heroSubtitle": "Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer. Spets: 12 månader, sedan månadsvis.",
+      "localHeading": "Ge varje erbjudande en matchande annons",
+      "localAngle": "Om du säljer flera tjänster i Malmö behöver kunden kunna hitta just den tjänst som annonseras. Jag delar upp sökningar och annonser och kontrollerar att landningssidan beskriver samma erbjudande. Budgeten bedöms utifrån dina mål och marginaler.",
+      "example": {
+        "title": "Exempel: skilj information från köp",
+        "text": "En sökning efter att jämföra lösningar kan behöva en annan sida än en sökning efter att boka en viss tjänst. I uppföljningen tittar jag på vilka sökningar som ger användbara kontakter, inte bara vilka som ger klick."
+      },
+      "cityFaq": {
+        "q": "Kan du rikta annonser till exakt rätt kunder i Malmö?",
+        "a": "Jag kan använda sökord, geografiskt urval och annonsinnehåll för att förbättra relevansen. Varje kontakt kan ändå inte garanteras passa. Därför granskar vi söktermer och kontaktkvalitet löpande."
+      }
+    },
+    "lund": {
+      "metaTitle": "Google Ads Lund: annonsering och uppföljning",
+      "metaDescription": "Google Ads för företag i Lund. Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer.",
+      "h1": "Google Ads för företag i Lund",
+      "heroSubtitle": "Annonser, landningssidor och uppföljning. Arbete ingår i Spets, 2 990 kr/mån exkl. moms. Annonsbudget tillkommer. Spets: 12 månader, sedan månadsvis.",
+      "localHeading": "Skilj lokal bokning från längre företagsaffärer",
+      "localAngle": "En tjänst som bokas på plats i Lund kan behöva lokala annonser. En konsulttjänst med köpare i flera regioner behöver ett bredare urval och uppföljning av affären över längre tid. Jag väljer upplägg efter vem du säljer till och hur kunden bestämmer sig.",
+      "example": {
+        "title": "Exempel: två olika kontaktmål",
+        "text": "För en bokningsbar tjänst kan en bokning vara målet. För ett större företagsuppdrag kan första målet vara en relevant förfrågan som du kvalificerar. Jag räknar inte en kontakt som en vunnen affär."
+      },
+      "cityFaq": {
+        "q": "Kan Google Ads användas för både lokala kunder och företagskunder?",
+        "a": "Ja, men mål, sökord, geografiskt urval och uppföljning behöver anpassas. Vi skiljer en lokal bokning från en förfrågan som kräver flera steg innan kunden fattar beslut."
       }
     }
   },
   "ai-automation": {
-    "malmo": {
-      "metaTitle": "AI-automation Malmö, spara tid i ditt bolag",
-      "metaDescription": "AI automation Malmö för e-handel, SaaS och scale-ups. Automatisera kundtjänst, leads och orderflöden. Fast pris, allt görs av Joel. Kostnadsfri genomgång.",
-      "h1": "AI-automation i Malmö",
-      "heroSubtitle": "Malmö skalar snabbt, e-handel, SaaS och startups som växer ur sina manuella rutiner. Jag bygger AI-automation som tar hand om kundtjänst, leads och orderflöden, så att tillväxten inte fastnar i mejlkorgen.",
-      "localAngle": "Malmös näringsliv är fullt av e-handlare, SaaS-bolag och startups som växer fortare än sina processer. Det är precis där AI-automation gör skillnad: en chatbot som svarar på orderstatus och returer dygnet runt, automatiska leadflöden som kvalificerar och fördelar inkommande förfrågningar, och e-postautomation som följer upp kunder utan att någon behöver klistra in mallar. Jag kopplar ihop din webbutik, ditt CRM och dina verktyg via n8n eller API så att data flödar av sig själv. För ett skalande Malmöbolag betyder det att du kan ta fler kunder utan att anställa fler för repetitivt arbete. Allt byggs av mig, till fast pris.",
+    "hassleholm": {
+      "metaTitle": "AI-automation Hässleholm: förfrågningar och avgränsade flöden",
+      "metaDescription": "AI-automation för företag i Hässleholm. Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "h1": "AI-automation för företag i Hässleholm",
+      "heroSubtitle": "Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "localHeading": "Fånga förfrågan medan du är på jobb",
+      "localAngle": "Exempel: en servicefirma i Hässleholm får en fråga via hemsidan medan ägaren är ute på ett uppdrag. Rutan samlar upp förfrågan, skickar SMS och ger ett svarsförslag. Du granskar svaret och avgör om du kan ta jobbet.",
+      "example": {
+        "title": "Bestäm nästa mänskliga beslut",
+        "text": "Rutan kan hjälpa till med första svaret. Ett bindande pris eller en bekräftad tid behöver fortfarande rätt underlag och ditt godkännande. Kalenderkoppling och offertautomation är separata specialbyggen."
+      },
       "cityFaq": {
-        "q": "Vad kan AI-automation göra för mitt e-handelsbolag i Malmö?",
-        "a": "Mycket av det som äter tid i en växande Malmö-butik går att automatisera: en AI-chatbot som svarar kunder om leverans och returer dygnet runt, automatisk orderhantering mellan butik och CRM, och uppföljningsmejl som triggas av kundens beteende. Du frigör timmar varje vecka och kan skala utan att bemanningen exploderar. Vi börjar med en kostnadsfri genomgång av dina flöden."
-      }
-    },
-    "lund": {
-      "metaTitle": "AI-automation Lund, för tech- och R&D-bolag",
-      "metaDescription": "AI automation Lund för deep tech, life science och mjukvara kring Ideon. Automatisera dataflöden, kundtjänst och rapporter. Fast pris, allt byggs av Joel.",
-      "h1": "AI-automation i Lund",
-      "heroSubtitle": "Lund har Skånes mest tech-litterata köpare, Ideon, life science och mjukvarubolag som redan tänker i data och flöden. Jag bygger AI-automation som tar undan det repetitiva så era kloka huvuden kan ägna sig åt forskningen och produkten.",
-      "localAngle": "I Lund sitter kanske landets mest tech-mogna företag: deep tech och life science kring Ideon, mjukvarubolag och R&D-tunga verksamheter med universitetet runt hörnet. Här behöver jag inte förklara vad AI kan göra, frågan är hur man får det i drift utan att binda upp utvecklare. Jag bygger automation som strukturerar och flyttar dataflöden mellan system, sammanfattar dokument och rapporter, automatiserar inkommande förfrågningar och kopplar ihop era verktyg via API och n8n. För ett forsknings- eller mjukvarubolag innebär det att tid som idag går till manuell datahantering och administration istället läggs på det som faktiskt skapar värde. Konkret, mätbart, till fast pris.",
-      "cityFaq": {
-        "q": "Passar AI-automation tech- och forskningsbolag i Lund?",
-        "a": "Ja, Lund är förmodligen den ort i Skåne där AI-automation landar starkast. För deep tech, life science och mjukvarubolag kring Ideon automatiserar jag dataflöden mellan system, dokumentsammanfattning, rapportgenerering och inkommande förfrågningar. Det frigör era specialister från administration utan att låsa upp utvecklartid. Vi inleder med en kostnadsfri genomgång av var ni förlorar mest tid idag."
-      }
-    },
-    "helsingborg": {
-      "metaTitle": "AI-automation Helsingborg, handel & logistik",
-      "metaDescription": "AI automation Helsingborg för handel, logistik och hamnnära bolag. Automatisera order, dokument och kundservice. Fast pris, allt görs av Joel själv.",
-      "h1": "AI-automation i Helsingborg",
-      "heroSubtitle": "Helsingborg lever på hamn, handel och logistik, branscher där ordrar, dokument och kundärenden aldrig tar slut. Jag bygger AI-automation som hanterar flödena i bakgrunden så att leveranserna rullar och kunderna får svar snabbare.",
-      "localAngle": "Helsingborgs näringsliv kretsar kring hamnen, handeln och logistiken, verksamheter med stora volymer av ordrar, fraktdokument och kundärenden. Det är ett tacksamt underlag för AI-automation. Jag bygger flöden som läser av och sorterar inkommande dokument, automatiserar orderbekräftelser och statusuppdateringar, och en AI-chatbot som svarar kunder om leveranser och frakt utan att belasta kundtjänst. Genom integrationer mellan ert affärssystem, lager och CRM via API eller Make slipper personalen mata in samma uppgifter flera gånger. För ett handels- eller logistikbolag i Helsingborg betyder det färre fel, snabbare ledtider och tid över till det som kräver en människa. Fast pris, byggt av mig.",
-      "cityFaq": {
-        "q": "Hur hjälper AI-automation handels- och logistikbolag i Helsingborg?",
-        "a": "I Helsingborgs hamn- och handelsbolag går mycket tid till orderhantering, fraktdokument och kundfrågor om leveranser. Jag automatiserar dokumentläsning och inmatning, orderbekräftelser och statusuppdateringar, plus en AI-chatbot för leveransfrågor. Resultatet är snabbare ledtider och färre manuella fel. Vi börjar alltid med en kostnadsfri genomgång av era flöden."
+        "q": "Kan rutan boka in jobb åt en hantverkare i Hässleholm?",
+        "a": "Standardrutan tar emot förfrågan och föreslår svar. Automatisk kalenderbokning eller en koppling till ditt planeringssystem ingår inte. Ett sådant flöde behöver avgränsas och prissättas separat."
       }
     },
     "kristianstad": {
-      "metaTitle": "AI-automation Kristianstad, tillverkning & handel",
-      "metaDescription": "AI automation Kristianstad för tillverkning, livsmedel och detaljhandel. Automatisera offert, order, lager och kundtjänst. Fast pris, allt byggs av Joel.",
-      "h1": "AI-automation i Kristianstad",
-      "heroSubtitle": "Kristianstad bygger på livsmedelsproduktion, tillverkning och handel, bolag där offerter, ordrar och lager kräver ständig handpåläggning. Jag bygger AI-automation som tar över de manuella stegen så att produktionen och försäljningen flyter.",
-      "localAngle": "Kristianstad är en stark industri- och livsmedelsort med tillverkning, detaljhandel och bygg i ryggraden. I tillverkande bolag göms mycket tid i manuella offerter, orderregistrering och lagerhantering, perfekt terräng för AI-automation. Jag bygger automatiserade offertflöden som plockar fram rätt priser och underlag, orderhantering som för in uppgifter i affärssystemet utan handpåläggning, lagernotiser som triggas automatiskt, och en AI-chatbot som svarar kunder och återförsäljare. Med integrationer mellan era system via n8n eller API slipper kontoret dubbelarbete. För ett tillverkande eller handlande bolag i Kristianstad innebär det snabbare offerter, färre fel i orderledet och tid över till kärnverksamheten. Allt till fast pris, byggt av mig.",
+      "metaTitle": "AI-automation Kristianstad: förfrågningar och avgränsade flöden",
+      "metaDescription": "AI-automation för företag i Kristianstad. Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "h1": "AI-automation för företag i Kristianstad",
+      "heroSubtitle": "Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "localHeading": "Minska dubbel inmatning i ett bestämt flöde",
+      "localAngle": "Exempel: ett företag i Kristianstad skriver samma uppgifter från en förfrågan i två system. Jag börjar med att kartlägga fälten, vem som kontrollerar dem och vad som händer vid fel. En systemkoppling behöver egen analys och offert.",
+      "example": {
+        "title": "Mät stegen före och efter",
+        "text": "Räkna antal manuella steg och hur lång tid ett exempelärende tar idag. Efter ett avgränsat test jämför vi samma uppgift. Då kan du bedöma nyttan innan fler flöden kopplas på."
+      },
       "cityFaq": {
-        "q": "Vad kan AI-automation göra för tillverkande företag i Kristianstad?",
-        "a": "I Kristianstads tillverknings-, livsmedels- och handelsbolag ligger tidstjuvarna ofta i offerter, orderregistrering och lager. Jag bygger automatiserade offert- och orderflöden, lagernotiser och en AI-chatbot för kund- och återförsäljarfrågor, kopplat till ert affärssystem. Det ger snabbare offerter och färre fel i orderledet. Vi inleder med en kostnadsfri genomgång av era manuella moment."
+        "q": "Kan du koppla förfrågningar till mitt affärssystem?",
+        "a": "Det behöver bedömas utifrån systemets gränssnitt, behörigheter och ditt arbetsflöde. Kopplingen ingår inte i standardrutan. Jag lämnar en offert som beskriver arbete, test och drift innan start."
       }
     },
-    "hassleholm": {
-      "metaTitle": "AI-automation Hässleholm, mer tid för småföretag",
-      "metaDescription": "AI automation Hässleholm för hantverkare, transport och småföretag. Automatisera offerter, bokning och kundsvar. Fast pris, allt görs av Joel på orten.",
-      "h1": "AI-automation i Hässleholm",
-      "heroSubtitle": "Hässleholm är min hemmabas, logistik, tillverkning och massor av hantverkare och småföretag. Här är AI-automation fortfarande nytt, och just därför finns störst vinst: jag hjälper lokala bolag spara tid på offerter, bokning och kundsvar.",
-      "localAngle": "Hässleholm lever på transport och logistik, tillverkning och en stomme av lokala småföretag och hantverkare, och det är här jag har min bas. För en hantverkare eller ett litet bolag är AI-automation inte science fiction, det är konkret tidsbesparing: en AI-assistent som svarar på kundfrågor och bokningsförfrågningar dygnet runt, automatiska offertutkast utifrån vad kunden fyllt i, och påminnelser och uppföljning som sköter sig själva. Nästan ingen lokal byrå erbjuder det här på riktigt, så konkurrensen är låg och försprånget blir ditt. Jag tar gärna ett första fördomsfritt snack om vad som är värt att automatisera först, utan tekniksnack och utan att du behöver kunna något om AI. Fast pris, allt byggt av mig på orten.",
+    "helsingborg": {
+      "metaTitle": "AI-automation Helsingborg: förfrågningar och avgränsade flöden",
+      "metaDescription": "AI-automation för företag i Helsingborg. Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "h1": "AI-automation för företag i Helsingborg",
+      "heroSubtitle": "Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "localHeading": "Förbered svaret och låt ansvarig godkänna",
+      "localAngle": "Exempel: ett företag i Helsingborg får återkommande frågor om ett uppdrag. Ett flöde kan samla kundens fråga och relevant underlag till ett svarsförslag. Den ansvarige kontrollerar fakta och godkänner innan kunden får besked.",
+      "example": {
+        "title": "Visa var uppgiften kommer ifrån",
+        "text": "Vid specialarbete behöver vi veta vilket system som innehåller rätt status och vem som får läsa den. Flödet ska kunna lämna över till en människa när underlaget saknas eller frågan kräver ett beslut."
+      },
       "cityFaq": {
-        "q": "Är AI-automation något för småföretag och hantverkare i Hässleholm?",
-        "a": "Absolut, och som lokal byrå i Hässleholm ser jag tidsvinsten varje vecka. För hantverkare och småföretag bygger jag enkla automationer: en AI-assistent som svarar kunder och tar emot bokningar dygnet runt, automatiska offertutkast och uppföljning som sköter sig själv. Du slipper teknikkrångel, vi tar ett kostnadsfritt snack om vad som sparar dig mest tid först."
+        "q": "Kan AI ge kunden besked om leverans eller bokning?",
+        "a": "Det kräver rätt underlag och tydliga gränser. Standardrutan föreslår ett svar som du granskar. Tillgång till orderstatus eller kalender kräver separata systemkopplingar och överenskommet ansvar."
+      }
+    },
+    "malmo": {
+      "metaTitle": "AI-automation Malmö: förfrågningar och avgränsade flöden",
+      "metaDescription": "AI-automation för företag i Malmö. Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "h1": "AI-automation för företag i Malmö",
+      "heroSubtitle": "Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "localHeading": "Börja med en sorts inkommande ärende",
+      "localAngle": "Exempel: en firma i Malmö får frågor om pris, öppettider och om en tjänst passar kunden. Jag skiljer allmän information från sådant som kräver ditt beslut. Rutan kan samla frågan och ge ett utkast till svar utifrån ditt godkända underlag.",
+      "example": {
+        "title": "Avgränsa innan något kopplas ihop",
+        "text": "Om du också vill uppdatera ett kundregister behöver jag veta system, fält och behörigheter. Den delen får en egen offert. Börja med ett testärende och granska vad som faktiskt händer i varje steg."
+      },
+      "cityFaq": {
+        "q": "Måste hela mitt kundflöde byggas om för att testa AI?",
+        "a": "Nej. Du kan börja med standardrutan på hemsidan. Om du behöver fler funktioner kartlägger vi ett avgränsat moment och testar det innan ett större integrationsarbete beställs."
+      }
+    },
+    "lund": {
+      "metaTitle": "AI-automation Lund: förfrågningar och avgränsade flöden",
+      "metaDescription": "AI-automation för företag i Lund. Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "h1": "AI-automation för företag i Lund",
+      "heroSubtitle": "Rutan för förfrågningar: 495 kr/mån exkl. moms, 30 dagar gratis, ingen bindning. Kalender och systemkopplingar enligt separat offert.",
+      "localHeading": "Samla underlag till ett granskat utkast",
+      "localAngle": "Exempel: en konsult i Lund sammanfattar kundens behov inför ett första samtal. Ett avgränsat flöde kan sortera inkomna uppgifter till ett utkast. Du kontrollerar innehållet innan det används för ett beslut eller delas vidare.",
+      "example": {
+        "title": "Välj underlag och kontrollpunkt",
+        "text": "Beskriv vilka uppgifter som får användas, vem som får se utkastet och vem som godkänner. Om materialet ska hämtas från andra system behöver åtkomst, drift och felhantering ingå i offerten."
+      },
+      "cityFaq": {
+        "q": "Kan du automatisera sammanfattningar för ett företag i Lund?",
+        "a": "Ett sådant projekt behöver avgränsas utifrån material, behörigheter och granskning. Jag börjar med ett exempel och beskriver vad flödet gör och vem som godkänner. Det ingår inte i standardrutans månadspris."
       }
     }
   }

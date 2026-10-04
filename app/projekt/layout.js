@@ -1,31 +1,18 @@
-const breadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Projekt", item: "https://www.stoltmarketing.se/projekt" },
-  ],
-};
-
 export const metadata = {
-  title: "Projekt och case: webbutveckling, SEO, AI och e-handel",
-  description:
-    "Utvalda projekt från Stolt Marketing, webbutveckling, e-handel, AI-automation, SEO. Från AcadeMedia till småföretag i Hässleholm och Skåne.",
-  alternates: {
-    canonical: "https://www.stoltmarketing.se/projekt",
+  "title": "Kundprojekt: se hemsidor, publicering och webbutik",
+  "description": "Se vad Joel Stolt har byggt för företag och verksamheter. Skärmbilder, leverans och historiska mätvärden med källor och begränsningar.",
+  "alternates": {
+    "canonical": "https://www.stoltmarketing.se/projekt"
   },
-  openGraph: {
-    title: "Projekt och case: webbutveckling, SEO och AI",
-    description: "Portfolio med resultat från webbutveckling, e-handel, AI-automation, SEO.",
-    url: "https://www.stoltmarketing.se/projekt",
+  "openGraph": {
+    "title": "Kundprojekt: se hemsidor, publicering och webbutik",
+    "description": "Se vad Joel Stolt har byggt för företag och verksamheter. Skärmbilder, leverans och historiska mätvärden med källor och begränsningar.",
+    "url": "https://www.stoltmarketing.se/projekt"
   },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Kundprojekt: se hemsidor, publicering och webbutik",
+    "description": "Se vad Joel Stolt har byggt för företag och verksamheter. Skärmbilder, leverans och historiska mätvärden med källor och begränsningar."
+  }
 };
-
-export default function Layout({ children }) {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      {children}
-    </>
-  );
-}
+export default function Layout({ children }) { return children; }

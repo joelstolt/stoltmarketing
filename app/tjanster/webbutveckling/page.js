@@ -1,17 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WebbutvecklingContent from "./WebbutvecklingContent";
-import ServiceExtra from "@/components/ServiceExtra";
+import ServicePage from "@/components/ServicePage";
+import { EXTRA_SERVICES } from "@/lib/services-extra";
 
 export default function Page() {
-  return (
-    <>
-      <Header />
-      <main>
-        <WebbutvecklingContent />
-        <ServiceExtra service="webbutveckling" />
-      </main>
-      <Footer />
-    </>
-  );
+  return (<><Header /><main id="main-content" tabIndex={-1}><ServicePage data={EXTRA_SERVICES["webbutveckling"]} /></main><Footer /></>);
 }

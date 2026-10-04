@@ -41,7 +41,7 @@ export default function BrevView({ m }) {
   const domän = (m.sajt || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
 
   return (
-    <main className="min-h-screen bg-[#FAF5EC] text-[#1A1611]">
+    <main id="main-content" tabIndex={-1} className="min-h-screen bg-[#FAF5EC] text-[#1A1611]">
       <div className="mx-auto max-w-2xl px-5 py-10 sm:py-14">
 
         <p className="text-[0.7rem] uppercase tracking-[0.18em] text-[#9A7409] font-semibold">

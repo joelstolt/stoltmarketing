@@ -1,56 +1,7 @@
-const breadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://www.stoltmarketing.se/tjanster" },
-    { "@type": "ListItem", position: 3, name: "AI & Automation", item: "https://www.stoltmarketing.se/tjanster/ai-automation" },
-  ],
-};
+import { extraServiceMetadata, ExtraServiceSchema } from "@/lib/services-extra";
 
-export const metadata = {
-  title: "AI-automation | Smartare processer för företag",
-  description:
-    "AI-automation för företag i Hässleholm, chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
-  alternates: { canonical: "https://www.stoltmarketing.se/tjanster/ai-automation" },
-  openGraph: {
-    title: "AI-automation | Smartare processer för företag",
-    description: "AI-automation för företag. Chatbotar, arbetsflöden och effektivisering som sparar timmar varje vecka.",
-    url: "https://www.stoltmarketing.se/tjanster/ai-automation",
-  },
-};
-
-const serviceLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "AI-automation",
-  "serviceType": "AI-automation",
-  "description": "AI-automation för företag i Hässleholm, chatbotar, automatiserade arbetsflöden, smarta verktyg. Spara tid och pengar. Boka kostnadsfri genomgång.",
-  "url": "https://www.stoltmarketing.se/tjanster/ai-automation",
-  "provider": {
-    "@type": "ProfessionalService",
-    "@id": "https://www.stoltmarketing.se/#organization",
-    "name": "Stolt Marketing",
-    "url": "https://www.stoltmarketing.se"
-  },
-  "areaServed": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "Skåne"
-    },
-    {
-      "@type": "Country",
-      "name": "Sverige"
-    }
-  ]
-};
+export const metadata = extraServiceMetadata("ai-automation");
 
 export default function Layout({ children }) {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
-      {children}
-    </>
-  );
+  return (<><ExtraServiceSchema serviceKey="ai-automation" />{children}</>);
 }

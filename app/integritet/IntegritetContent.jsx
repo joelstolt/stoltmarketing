@@ -1,123 +1,20 @@
 "use client";
 
-import { Reveal, PageHero } from "@/components/ui";
+import { PageHero } from "@/components/ui";
 
 const sections = [
-  {
-    title: "1. Personuppgiftsansvarig",
-    content: `Stolt Marketing, med säte i Hässleholm, Sverige, är personuppgiftsansvarig för behandlingen av dina personuppgifter i enlighet med EU:s dataskyddsförordning (GDPR).
-
-Kontaktuppgifter:
-Joel Stolt
-E-post: joel@stoltmarketing.se
-Ort: Hässleholm, Sverige`,
-  },
-  {
-    title: "2. Vilka uppgifter samlar vi in?",
-    content: `Vi kan komma att samla in följande personuppgifter:
-
-• Kontaktuppgifter, namn, e-postadress, telefonnummer och företagsnamn som du lämnar via vårt kontaktformulär.
-• Teknisk data, IP-adress, webbläsartyp, enhet och operativsystem vid besök på webbplatsen.
-• Användningsdata, information om hur du interagerar med webbplatsen, vilka sidor du besöker och hur länge du stannar.`,
-  },
-  {
-    title: "3. Hur använder vi dina uppgifter?",
-    content: `Vi behandlar dina personuppgifter för följande ändamål:
-
-• Kontakt och kommunikation, för att besvara förfrågningar du skickar via kontaktformuläret eller e-post.
-• Förbättring av tjänsten, för att analysera och förbättra webbplatsens innehåll och prestanda.
-• Statistik och analys, för att förstå hur besökare använder webbplatsen (via anonymiserad data).
-
-Rättslig grund: Berättigat intresse (webbplatsanalys) och samtycke (kontaktformulär).`,
-  },
-  {
-    title: "4. Cookies",
-    content: `Webbplatsen kan använda cookies för att förbättra din upplevelse. Cookies är små textfiler som lagras på din enhet.
-
-Vi kan använda:
-• Nödvändiga cookies, som krävs för att webbplatsen ska fungera korrekt.
-• Analyscookies, för att samla in anonymiserad statistik om besökare (t.ex. Google Analytics).
-
-Du kan när som helst ändra dina cookie-inställningar i din webbläsare. Observera att detta kan påverka webbplatsens funktionalitet.`,
-  },
-  {
-    title: "5. Tredjeparter",
-    content: `Vi kan komma att dela data med följande tredjeparter:
-
-• Vercel, hosting och leverans av webbplatsen.
-• Google Analytics, anonymiserad besöksstatistik (om aktiverat).
-
-Vi säljer aldrig dina personuppgifter till tredje part.`,
-  },
-  {
-    title: "6. Lagring och säkerhet",
-    content: `Dina personuppgifter lagras så länge det är nödvändigt för att uppfylla de ändamål som beskrivs i denna policy. Kontaktuppgifter som lämnas via formuläret sparas tills ärendet är avslutat, om inte annat avtalats.
-
-Vi vidtar lämpliga tekniska och organisatoriska åtgärder för att skydda dina personuppgifter mot obehörig åtkomst, förlust eller missbruk.`,
-  },
-  {
-    title: "7. Dina rättigheter",
-    content: `Enligt GDPR har du rätt att:
-
-• Begära tillgång, få veta vilka personuppgifter vi behandlar om dig.
-• Begära rättelse, korrigera felaktiga eller ofullständiga uppgifter.
-• Begära radering, be oss radera dina personuppgifter ("rätten att bli glömd").
-• Begära begränsning, begränsa behandlingen av dina uppgifter.
-• Invända, invända mot behandling baserad på berättigat intresse.
-• Dataportabilitet, få ut dina uppgifter i ett maskinläsbart format.
-
-Kontakta joel@stoltmarketing.se för att utöva dina rättigheter. Du har även rätt att lämna klagomål till Integritetsskyddsmyndigheten (IMY).`,
-  },
-  {
-    title: "8. Ändringar i denna policy",
-    content: `Vi kan komma att uppdatera denna integritetspolicy. Vid väsentliga ändringar informerar vi om detta på webbplatsen. Senast uppdaterad: mars 2026.`,
-  },
+  { title: "Ansvar och kontakt", paragraphs: ["Joel Stolt, Stolt Marketing i Hässleholm, ansvarar för hur uppgifter som du lämnar på stoltmarketing.se används för kontakt och kundrelationer. Frågor om personuppgifter, registerutdrag och radering skickas till joel@stoltmarketing.se.", "Den här informationen gäller Stolt Marketings egen webbplats. Om du som företag köper förfrågningsrutan regleras hanteringen av dina kunders uppgifter i det separata avtalet och personuppgiftsbiträdesavtalet för Kvota Kundkontakt."] },
+  { title: "När du skriver eller bokar", paragraphs: ["Kontaktformuläret tar emot ditt namn, din e-postadress och ditt meddelande. Företagsnamn, webbadress eller andra uppgifter kan finnas i den text du lämnar. Kontaktwidgeten kan även ta emot telefonnummer, chattmeddelanden och önskemål om uppringning. Bokningskalendern tar emot de uppgifter som efterfrågas i Googles bokningsflöde.", "Uppgifterna används för att besvara din fråga, följa upp en begäran, förbereda en offert eller hantera en bokning. När du själv vill ingå avtal används uppgifterna för åtgärder före avtal och för att fullgöra avtalet. Övrig företagskontakt hanteras med stöd av intresset av att kunna besvara relevanta affärsförfrågningar. Formuläret innebär inte ett samtycke till nyhetsbrev eller reklam."] },
+  { title: "Kontaktverktyg och AI", paragraphs: ["Meddelanden från kontaktformuläret sparas först i en leveranskö på Cloudflare och skickas vidare till Kvota Kundkontakt samt till Joel via e-posttjänsten Resend. Kvota samlar ärendet och kan bearbeta innehållet med AI för att ta fram ett svarsförslag. Joel granskar svaret innan det skickas.", "Kontaktwidgeten är Svarslagret från Invox AB. AI-chatten i widgeten svarar automatiskt och kan spara samtalshistorik så att dialogen går att fortsätta. Funktionen Frågor om din sajtkoll skickar ditt meddelande och sajtkollens sammanhang till Anthropic för att skapa ett svar. Skriv inte känsliga personuppgifter, personnummer, lösenord eller uppgifter om andra som inte behövs för din fråga.", "AI-svar kan bli fel. Inga köp, avtal eller beslut om dig fattas enbart av AI på den här webbplatsen. Du kan alltid kontakta Joel direkt via e-post eller telefon."] },
+  { title: "Besöksstatistik, drift och annonser", paragraphs: ["Webbplatsen levereras genom Cloudflare. Tekniska uppgifter, exempelvis IP-adress och uppgifter om enheten, behandlas för att leverera sajten, begränsa spam och hantera fel. Ändamålet är en fungerande och säker webbplats.", "Besöksstatistik samlas med Umami, vars statistikinstallation körs på Vercel. Statistiken används för att förstå vilka sidor och kontaktvägar som fungerar. Sajten använder inte Google Analytics. Umamis statistikskript använder inte analyscookies.", "Kommer du från en annons kan annonsens klick-id finnas i adressen. Sajten håller det tillfälligt i den öppna sidans minne och kan skicka det tillsammans med en formulärförfrågan för konverteringsmätning i Google Ads. Det sparas inte av sajten i en cookie. Det är skilt från meddelandets innehåll och används för att följa upp annonsernas resultat."] },
+  { title: "Lagring i webbläsaren och externa tjänster", paragraphs: ["Kontaktwidgeten använder webbläsarlagring för funktioner som öppet eller stängt läge, utkast och fortsatt chatt. Den laddar kontaktfunktionerna när du väljer att öppna rutan. Sådan funktionslagring är skild från Umamis besöksstatistik.", "På bokningssidan bäddas Google Kalender in. Google får då tekniska uppgifter från webbläsaren och behandlar bokningsuppgifter när du använder kalendern. Du kan i stället skicka ett vanligt meddelande eller mejla Joel."] },
+  { title: "Leverantörer och överföring utanför EU/EES", paragraphs: ["De centrala tjänsterna är Cloudflare för webbplats, lagring och skydd; Resend för e-post; Svarslagret från Invox AB för kontaktwidgeten; 46elks för SMS och telefoni i kontaktwidgeten; Kvota Kundkontakt för kontaktärenden och svarsförslag; Anthropic för AI; Umami på Vercel för besöksstatistik; samt Google för bokning och annonsmätning. Vilka tjänster som tar emot dina uppgifter beror på vilka funktioner du använder.", "En del av bearbetningen sker hos leverantörer i USA. EU-baserad datalagring innebär därför inte att all behandling sker inom EU. Leverantörernas dataskyddsvillkor och underbiträden styr de enskilda överföringarna. Kontakta Joel för information om aktuella mottagare, avtal och vilka överföringsskydd som gäller för ditt ärende. Uppgifter säljs inte."] },
+  { title: "Hur länge uppgifterna behövs", paragraphs: ["Kontaktuppgifter och korrespondens behövs medan förfrågan hanteras och för relevant uppföljning. Om kontakten leder till ett uppdrag kan delar behövas under kundrelationen och för att uppfylla avtals- eller lagkrav. Lagringstiden beror alltså på ärendet och dess fortsättning; radering av ett meddelande i ett system innebär inte automatiskt att alla leverantörers säkerhetskopior försvinner samma dag.", "Den tekniska leveranskön på webbplatsen rensar normalt färdigbehandlade poster efter 30 dagar. Det är en kö för säker leverans, inte ett löfte om att kundärendet och mejlet raderas efter 30 dagar. För uppgift om vad som finns sparat i ditt ärende eller begäran om radering, kontakta Joel."] },
+  { title: "Dina rättigheter", paragraphs: ["Du kan begära information och tillgång till dina uppgifter, rättelse, radering och begränsning av behandlingen. Du kan invända mot behandling som grundas på berättigat intresse. Rätt till dataportabilitet gäller när förutsättningarna i dataskyddsförordningen är uppfyllda. Rättigheterna kan begränsas av exempelvis lagkrav och behovet att hantera rättsliga anspråk.", "Mejla joel@stoltmarketing.se så hjälper jag dig. Du har också rätt att lämna klagomål till Integritetsskyddsmyndigheten, IMY."] },
 ];
 
 export default function IntegritetContent() {
-  return (
-    <>
-      <PageHero
-        breadcrumbs={[
-          { label: "Start", href: "/" },
-          { label: "Integritetspolicy" },
-        ]}
-        badge="Juridiskt"
-        title="Integritetspolicy"
-        subtitle="Så hanterar Stolt Marketing dina personuppgifter. Vi värnar om din integritet och följer GDPR."
-      />
-
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
-        <div className="max-w-[720px] mx-auto">
-          {sections.map((section, i) => (
-            <Reveal key={i} delay={i * 0.03}>
-              <div className="mb-10">
-                <h2 className="font-heading font-700 text-[20px] text-heading tracking-tight mb-4">
-                  {section.title}
-                </h2>
-                <div className="text-[15px] leading-relaxed text-body whitespace-pre-line">
-                  {section.content}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-
-          <Reveal>
-            <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-[14px] text-muted">
-                Har du frågor om hur vi hanterar dina personuppgifter?
-                Kontakta oss på{" "}
-                <a
-                  href="mailto:joel@stoltmarketing.se"
-                  className="text-primary hover:text-primary-hover transition-colors"
-                >
-                  joel@stoltmarketing.se
-                </a>
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    </>
-  );
+  return <><PageHero compact cta={false} breadcrumbs={[{ label: "Start", href: "/" }, { label: "Integritet" }]} badge="Personuppgifter" title="Så används dina uppgifter" subtitle="Här beskriver jag vad som händer när du besöker sajten, skriver ett meddelande, använder AI-chatten eller bokar en tid. Uppdaterad 4 oktober 2026." />
+    <section className="px-5 sm:px-8 py-10 sm:py-14"><div className="article-body mx-auto">{sections.map((section) => <section key={section.title}><h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph} className="mb-5">{paragraph}</p>)}</section>)}<p className="mt-8"><a href="https://www.imy.se/privatperson/dataskydd/dina-rattigheter/" className="text-primary underline">Läs om dina rättigheter hos IMY</a>.</p><p className="mt-5"><a href="mailto:joel@stoltmarketing.se" className="text-primary underline">Kontakta Joel om personuppgifter</a>.</p></div></section>
+  </>;
 }

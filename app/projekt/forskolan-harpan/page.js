@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <CasePage data={CASES["forskolan-harpan"]} />
       </main>
       <Footer />

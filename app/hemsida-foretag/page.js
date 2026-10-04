@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageHero } from "@/components/ui";
+import { packages, websiteTerms } from "@/lib/pricing-packages";
+import InquiryForm from "@/components/InquiryForm";
 import { ArrowRight, Check } from "lucide-react";
 
 // Landningssida for "hemsida foretag" (590 sok/man, KD 19).
@@ -36,53 +38,16 @@ function P({ children }) {
   return <p className="text-[16px] sm:text-[17px] leading-[1.8] text-body mb-5">{children}</p>;
 }
 
-const paket = [
-  {
-    namn: "Bas",
-    pris: "1 190 kr/mån",
-    start: "0 kr i startavgift",
-    rader: [
-      "Hemsida med upp till fem sidor",
-      "Texter och struktur byggda för sök",
-      "Drift, säkerhet och backup",
-      "Löpande innehållsändringar",
-      "Klar på 1 till 2 veckor",
-    ],
-  },
-  {
-    namn: "Bredd",
-    pris: "1 990 kr/mån",
-    start: "0 kr i startavgift",
-    rader: [
-      "Allt i Bas",
-      "Obegränsat antal sidor, en per tjänst",
-      "Design från vitt papper, ingen mall",
-      "Sökord för din ort och kommunerna runt om",
-      "SEO-rapport varje månad",
-    ],
-  },
-  {
-    namn: "Spets",
-    pris: "2 990 kr/mån",
-    start: "0 kr i startavgift",
-    rader: [
-      "Allt i Bredd",
-      "AI-assistent som svarar dygnet runt",
-      "Google Ads-hantering",
-      "Nya sökmotortexter varje månad",
-      "Egen landningssida för varje ort",
-    ],
-  },
-];
+const paket = packages.map((item) => ({ namn: item.name, pris: `${item.monthly.toLocaleString("sv-SE")} kr/mån`, start: "0 kr start, exklusive moms", rader: item.features }));
 
 const faqs = [
   {
     q: "Vad kostar en hemsida för företag?",
-    a: "Hos mig 0 kr i startavgift och från 1 190 kr i månaden exklusive moms, där design, bygge, drift, säkerhet och löpande ändringar ingår. Webbshop läggs till på valfritt paket för 800 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Marknadens engångsprojekt kostar i jämförelse oftast 30 000 till 100 000 kr plus löpande drift.",
+    a: "Hos mig 0 kr i startavgift och från 1 190 kr i månaden exklusive moms, där design, bygge, drift, säkerhet och löpande ändringar ingår. Webbshop läggs till på valfritt paket för 800 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Bas omfattar upp till fem sidor.",
   },
   {
     q: "Varför månadspris i stället för engångspris?",
-    a: "För att en hemsida inte är klar vid lansering. Den behöver drift, säkerhet och uppdateringar för att fortsätta leverera. Med månadspriset slipper du stor startinvestering, timfakturor för varje ändring, och en leverantör som försvinner efter leverans. Jag tjänar på att din sajt fortsätter fungera.",
+    a: "För att en hemsida inte är klar vid lansering. Den behöver drift, säkerhet och uppdateringar för att fortsätta leverera. Med månadspriset slipper du stor startinvestering, timfakturor för varje ändring, och oklar ansvarsfördelning efter leverans. Jag tjänar på att din sajt fortsätter fungera.",
   },
   {
     q: "Hur lång tid tar det innan sajten är klar?",
@@ -90,15 +55,15 @@ const faqs = [
   },
   {
     q: "Syns hemsidan på Google?",
-    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och en struktur som går att ranka med. Vill du aktivt klättra på konkurrensutsatta sökord ingår löpande sökmotoroptimering i Spets för 2 990 kr/mån.",
+    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och begriplig struktur. Vill du aktivt klättra på konkurrensutsatta sökord ingår löpande sökmotoroptimering i Spets för 2 990 kr/mån.",
   },
   {
     q: "Vem äger hemsidan och domänen?",
-    a: "Du äger din domän och ditt innehåll, alltid. Väljer du att avsluta efter bindningstiden hjälper jag till med flytten. Inga inlåsningar och inga gisslansituationer, det står i avtalet.",
+    a: "Du äger din domän och ditt innehåll, alltid. Väljer du att avsluta efter bindningstiden hjälper jag till med flytten. Ägande och överlämning framgår av avtalet.",
   },
   {
     q: "Kan du göra om min befintliga hemsida i stället?",
-    a: "Ja. Har du en trött WordPress-sajt flyttar och moderniserar jag den utan kostnad när du samtidigt tecknar drift. Ofta återanvänder vi det innehåll som fungerar och bygger om resten.",
+    a: "Ja. Har du en befintlig WordPress-sajt börjar jag med att kontrollera teknik och omfattning. Avgränsad migrering kostar 0 kr när du samtidigt tecknar drift. Nya funktioner och större ombyggnad specificeras separat före start.",
   },
 ];
 
@@ -127,7 +92,7 @@ const serviceLd = {
   name: "Hemsida för företag",
   serviceType: "Webbutveckling",
   description:
-    "Hemsida för företag som abonnemang: design, bygge, drift och löpande ändringar för 1 190 kr per månad utan startavgift.",
+    "Hemsida för företag som abonnemang: design, bygge, drift och löpande ändringar från 1 190 kr per månad exklusive moms utan startavgift. Bas omfattar upp till fem sidor, med 12 månaders bindning och därefter månadsvis.",
   url: URL,
   provider: {
     "@type": "ProfessionalService",
@@ -140,7 +105,8 @@ const serviceLd = {
     "@type": "Offer",
     price: "1190",
     priceCurrency: "SEK",
-    description: "0 kr i startavgift, 1 190 kr per månad.",
+    name: "Bas, upp till fem sidor",
+    description: "0 kr start. 1 190 kr/mån exkl moms. 12 månader, därefter månadsvis.",
   },
 };
 
@@ -148,17 +114,19 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
         <PageHero
+          cta={{ href: "#forslag", label: "Be om gratis designförslag" }}
+          highlight="Hemsida för företag"
           breadcrumbs={[{ label: "Start", href: "/" }, { label: "Hemsida för företag" }]}
           badge="Hemsida för företag"
-          title="Hemsida för företag. 0 kr i start, från 1 190 kr i månaden."
-          subtitle="Design, bygge, drift och löpande ändringar i ett pris. Byggd för att synas på Google och göra besökare till förfrågningar, inte bara för att se bra ut."
-          bullets={["Gratis designförslag inom 2 arbetsdagar", "Klar på 1 till 2 veckor", "Du äger domän och innehåll"]}
+          title="Hemsida för företag som gör nästa steg tydligt"
+          subtitle="Design, bygge, drift och innehållsändringar från 1 190 kr/mån exkl moms. 0 kr i startavgift. Du får ett gratis förslag med startsida och en tjänstesida innan du bestämmer dig."
+          bullets={["Gratis designförslag inom 2 arbetsdagar", "12 månader, sedan månadsvis", "Du äger domän och innehåll"]}
         />
 
         <section className="py-14 sm:py-20 px-5 sm:px-8">
@@ -177,7 +145,7 @@ export default function Page() {
                       </div>
                     ))}
                   </div>
-                  <a href="/#koll-url-hero" className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">
+                  <a href="#forslag" className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">
                     Få gratis förslag <ArrowRight size={15} />
                   </a>
                 </div>
@@ -190,21 +158,16 @@ export default function Page() {
         </section>
 
         <article className="py-4 sm:py-8 px-5 sm:px-8">
-          <div className="max-w-[760px] mx-auto">
+          <div className="article-body mx-auto">
 
             <H2>Därför räcker det inte med en snygg sajt</H2>
             <P>
-              De flesta företagshemsidor är digitala visitkort: snygga, stumma och osynliga.
-              När jag mätte lokala tjänsteföretag var sajter med färre än 50 sidor i praktiken
-              osynliga i sök, medan de bredaste drog tolv gånger mer trafik än de smalaste.
-              Därför bygger jag inte bara en startsida och fem undersidor, jag bygger den
-              struktur av tjänste- och innehållssidor som gör att kunder faktiskt hittar dig.
+              Kunden behöver förstå vad du hjälper till med, var du arbetar och hur det går till att anlita dig. En liten verksamhet kan få en tydlig sajt med fem sidor. Har du flera tjänster behövs ofta egna sidor för att kunna förklara dem ordentligt. Antalet sidor är inget mål i sig; varje sida ska svara på en verklig kundfråga.
             </P>
             <P>
               Väl framme ska besökaren konvertera. Det betyder pris eller prisidé synlig,
               telefonnummer som går att klicka på i mobilen, formulär utan onödiga fält och
-              bevis i form av riktiga kundcase. Det låter självklart. Det är det inte:
-              hälften av alla sajter jag granskar saknar minst två av delarna.
+              bevis i form av riktiga kundcase. Jag går igenom dessa vägar på både mobil och dator innan lansering.
             </P>
 
             <H2>Så går det till</H2>
@@ -212,17 +175,15 @@ export default function Page() {
               Du skickar din webbadress eller ditt företagsnamn. Inom två arbetsdagar får du ett
               förslag du kan klicka runt i: startsida och en tjänstesida med texter om ditt
               företag, kostnadsfritt och utan förpliktelse. Säger du ja bygger jag resten av
-              sajten, fyller den med innehåll och optimerar tekniken. Vi lanserar utan avbrott
+              sajten, fyller den med innehåll och optimerar tekniken. Vi planerar lanseringen
               på din domän, normalt inom två veckor efter ditt ja, och därefter ingår drift, säkerhet och
-              ändringar i månadspriset. Du mejlar en ändring, jag gör den. Inga tickets, inga
-              timfakturor.
+              ändringar i månadspriset. Du mejlar en ändring, jag gör den. Om en ändring går utanför den avtalade sajten får du priset först.
             </P>
 
             <H2>Vad som ingår, på riktigt</H2>
             <P>
-              Skräddarsydd design i stället för igenkännbar mall. Texter skrivna för både
-              kunder och sök. Teknik som laddar snabbt även i mobilen, vilket Google numera
-              kräver för bra positioner. Formulär med skydd mot skräppost. Statistik så att du
+              Design och innehåll anpassade efter valt paket. Texter skrivna för både
+              kunder och sök. Teknik som testas även i mobilen. Formulär med skydd mot skräppost. Statistik så att du
               ser vad besökarna gör. Och löpande: uppdateringar, säkerhet, backup och de där
               småändringarna som annars aldrig blir gjorda. Hela listan gås igenom i förslaget,
               och vill du jämföra marknaden först finns{" "}
@@ -242,22 +203,8 @@ export default function Page() {
           </div>
         </article>
 
-        <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-          <div className="relative z-10 max-w-[600px] mx-auto text-center">
-            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              Se hur din nya hemsida skulle se ut.
-            </h2>
-            <p className="mt-4 text-[16px] leading-relaxed text-body">
-              Skriv din webbadress eller ditt företagsnamn på startsidan, så har du inom två arbetsdagar ett förslag du kan klicka runt i. Gratis och utan möte.
-            </p>
-            <a href="/#koll-url-hero" className="premium-btn mt-8 mx-auto">
-              <span>Få gratis förslag</span>
-              <ArrowRight size={16} className="opacity-80" />
-            </a>
-          </div>
-        </section>
-      </main>
-      <Footer />
+        <section id="forslag" className="px-5 sm:px-8 py-14 scroll-mt-24"><div className="max-w-3xl mx-auto bg-surface border border-primary/40 rounded-xl p-5 sm:p-8"><h2 className="text-[32px] leading-tight mb-4">Se hur din nya hemsida kan se ut</h2><p className="mb-6">{websiteTerms.proposal} Skriv din webbadress eller ditt företagsnamn och vad du vill förbättra. Ingen beställning eller bindning uppstår genom formuläret.</p><InquiryForm service="Gratis designförslag" initialMessage="Jag vill se ett gratis designförslag. Mitt företag eller min webbadress: " submitLabel="Be om gratis designförslag" eventName="lead-designforslag" /></div></section>
+      </main><Footer />
     </>
   );
 }
