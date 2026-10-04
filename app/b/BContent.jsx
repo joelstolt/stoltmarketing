@@ -86,15 +86,10 @@ export default function BContent() {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        /* ── Hero-intro. Texten är synlig från första målningen (LCP), den
-           sätter sig bara till rätta: ingen opacity, ingen mask. ── */
-        const split = new SplitText(".b-h1", { type: "lines", linesClass: "b-h1-line", aria: "none" });
+        /* Hero text stays still from first paint. Animate only decoration. */
         gsap
-          .timeline({ defaults: { ease: "power3.out" }, onComplete: () => split.revert() })
+          .timeline({ defaults: { ease: "power3.out" } })
           .from(".b-eyebrow-bar", { scaleX: 0, transformOrigin: "left center", duration: 0.7 }, 0.1)
-          .from(".b-eyebrow-text", { x: -12, duration: 0.6 }, 0.25)
-          .from(split.lines, { y: 26, duration: 0.9, stagger: 0.08 }, 0.2)
-          .from(".b-sub, .b-koll, .b-proof", { y: 14, duration: 0.7, stagger: 0.1 }, 0.6)
           .from(".b-field", { opacity: 0, duration: 1.4, ease: "power1.inOut" }, 0.5)
           .from(".b-scrollcue", { opacity: 0, duration: 0.8 }, 1.4);
 

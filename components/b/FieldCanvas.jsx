@@ -19,6 +19,8 @@ export default function FieldCanvas({ className = "" }) {
     let straws = [];
     let raf = 0;
     let running = false;
+    let visible = true;
+    let lastFrame = 0;
     let W = 0;
     let H = 0;
     let dpr = 1;
@@ -36,7 +38,7 @@ export default function FieldCanvas({ className = "" }) {
       canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.round(Math.min(Math.max(W / 1.9, 320), 860));
+      const count = Math.round(Math.min(Math.max(W / 3.2, 130), 440));
       straws = [];
       for (let i = 0; i < count; i++) {
         const depth = Math.random(); // 0 = bakre raden, 1 = främsta
@@ -109,12 +111,15 @@ export default function FieldCanvas({ className = "" }) {
     }
 
     function loop(t) {
-      draw(t);
+      if (t - lastFrame >= 1000 / 30) {
+        draw(t);
+        lastFrame = t;
+      }
       raf = requestAnimationFrame(loop);
     }
 
     function start() {
-      if (!running && !reduceMotion) {
+      if (!running && !reduceMotion && visible && !document.hidden) {
         running = true;
         raf = requestAnimationFrame(loop);
       }
@@ -141,7 +146,7 @@ export default function FieldCanvas({ className = "" }) {
       mouse.y = -9999;
     };
     const io = new IntersectionObserver(
-      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      ([entry]) => { visible = entry.isIntersecting; visible ? start() : stop(); },
       { threshold: 0.05 }
     );
     io.observe(canvas);
