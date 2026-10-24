@@ -17,7 +17,7 @@ export default function ContactWidget() {
     document.body.appendChild(script);
   }, []);
   useEffect(() => {
-    const suppressed = ["/kontakt", "/boka", "/integritet", "/serviceavtal"].includes(pathname) || pathname.startsWith("/analys/");
+    const suppressed = ["/kontakt", "/boka", "/integritet", "/serviceavtal", "/vvs"].includes(pathname) || pathname.startsWith("/analys/");
     let menuOpen = document.querySelector('[aria-controls="mobile-navigation"]')?.getAttribute("aria-expanded") === "true";
     const apply = (close = false) => {
       const widget = document.querySelector("svarslagret-widget");

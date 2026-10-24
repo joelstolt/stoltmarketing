@@ -11,6 +11,7 @@ export default function sitemap() {
   const pages = [
     { url: "/", changeFrequency: "weekly", priority: 1.0 },
     { url: "/forfragningar", changeFrequency: "monthly", priority: 0.95 },
+    { url: "/vvs", changeFrequency: "monthly", priority: 0.8, lastModified: new Date("2026-10-17") },
     { url: "/tjanster", changeFrequency: "monthly", priority: 0.9 },
     { url: "/priser", changeFrequency: "monthly", priority: 0.9 },
     { url: "/tjanster/webbutveckling", changeFrequency: "monthly", priority: 0.8 },

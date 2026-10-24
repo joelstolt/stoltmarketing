@@ -83,13 +83,17 @@ function CalendarPanel({ url }) {
 
 export default function BokaContent() {
   const [path, setPath] = useState("tid");
+  const [vvs, setVvs] = useState(false);
   const [calendarUrl, setCalendarUrl] = useState(CALENDAR_URL);
   const [message, setMessage] = useState("");
   const [calendarChecked, setCalendarChecked] = useState(Boolean(CALENDAR_URL));
   const timeRef = useRef(null), messageRef = useRef(null);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("amne") === "pris") {
+    if (params.get("amne") === "vvs") {
+      setVvs(true);
+      setMessage("Jag driver en VVS-firma och vill prova ett eget upplägg för offerter, automatisk uppföljning, jobböverblick och omdömen. Vi vill även se hur webben kan hänga ihop med flödet. Firman heter: ");
+    } else if (params.get("amne") === "pris") {
       setPath("meddelande");
       setMessage(`Jag vill ha upplägg och pris för ${params.get("paket") || "en ny hemsida"}.`);
     } else if (params.get("flik") === "meddelande" || window.location.hash === "#meddelande") setPath("meddelande");
@@ -110,7 +114,7 @@ export default function BokaContent() {
     }
   }
   return <>
-    <PageHero compact cta={false} breadcrumbs={[{label:"Start",href:"/"},{label:"Boka"}]} badge="30 minuter med Joel" title="Välj en tid som passar dig" subtitle="Vi går igenom ditt behov och vad jag kan hjälpa till med. Samtalet är kostnadsfritt och du förbinder dig inte till något." />
+    <PageHero compact cta={false} breadcrumbs={[{label:"Start",href:"/"},{label:"Boka"}]} badge="30 minuter med Joel" title={vvs ? "Låt oss börja med er VVS-firma" : "Välj en tid som passar dig"} subtitle={vvs ? "Ta med ett vanligt jobb eller en offert. Vi går igenom vad som tar tid och planerar ert eget prov av webb, offert, uppföljning och jobböverblick före köp. Första samtalet är kostnadsfritt och innebär ingen beställning." : "Vi går igenom ditt behov och vad jag kan hjälpa till med. Samtalet är kostnadsfritt och du förbinder dig inte till något."} />
     <section className="px-5 sm:px-8 py-10 sm:py-14"><div className="max-w-4xl mx-auto">
       <div role="tablist" aria-label="Välj hur du vill ta kontakt" onKeyDown={tabKeys} className="grid sm:grid-cols-2 gap-3 mb-8">
         {[{id:"tid",label:"Välj tid i kalendern",ref:timeRef},{id:"meddelande",label:"Skicka ett meddelande",ref:messageRef}].map((tab) => <button key={tab.id} ref={tab.ref} type="button" role="tab" id={`tab-${tab.id}`} aria-controls={`panel-${tab.id}`} aria-selected={path === tab.id} tabIndex={path === tab.id ? 0 : -1} onClick={() => select(tab.id)} className={`rounded-xl p-4 border font-[family-name:var(--font-ui)] text-[15px] ${path === tab.id ? "border-primary bg-primary-light text-primary" : "border-border bg-surface text-body"}`}>{tab.label}</button>)}
@@ -118,7 +122,7 @@ export default function BokaContent() {
       <div role="tabpanel" id="panel-tid" aria-labelledby="tab-tid" hidden={path !== "tid"}>
         {calendarUrl ? <><p className="text-[14px] text-muted mb-4">Kalendern tillhandahålls av Google. När du bokar får du en bekräftelse och uppgifter om mötet via e-post. <a href="/integritet" className="underline">Om personuppgifter</a>.</p><CalendarPanel url={calendarUrl} /></> : !calendarChecked ? <p role="status">Hämtar kalendern...</p> : <><h2 className="text-[26px] mb-3">Föreslå en tid</h2><p className="mb-6">Kalendern kunde inte visas. Skriv när du kan prata så bekräftar jag tiden via mejl.</p><InquiryForm service="Tidsönskemål" initialMessage="Jag vill boka ett samtal. Jag kan följande tider: " eventName="lead-boka-tid" /></>}
       </div>
-      <div role="tabpanel" id="panel-meddelande" aria-labelledby="tab-meddelande" hidden={path !== "meddelande"}><div className="bg-surface border border-border rounded-xl p-5 sm:p-8"><h2 className="text-[26px] mb-3">Skriv det du funderar på</h2><p className="mb-6">Jag återkommer normalt samma arbetsdag. Ett meddelande bokar ingen tid automatiskt.</p><InquiryForm service={message ? "Prisförfrågan" : "Bokningsförfrågan"} initialMessage={message} eventName="lead-boka" /></div></div>
+      <div role="tabpanel" id="panel-meddelande" aria-labelledby="tab-meddelande" hidden={path !== "meddelande"}><div className="bg-surface border border-border rounded-xl p-5 sm:p-8"><h2 className="text-[26px] mb-3">Skriv det du funderar på</h2><p className="mb-6">Jag återkommer normalt samma arbetsdag. Ett meddelande bokar ingen tid automatiskt.</p><InquiryForm service={vvs ? "VVS-genomgång" : message ? "Prisförfrågan" : "Bokningsförfrågan"} initialMessage={message} eventName="lead-boka" /></div></div>
     </div></section>
   </>;
 }
