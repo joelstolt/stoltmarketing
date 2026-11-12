@@ -53,7 +53,7 @@ export default async function DelatResultat({ params }) {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="hero-dark field-glow relative overflow-hidden">
           <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-12">
             <span className="eyebrow">Delat resultat</span>

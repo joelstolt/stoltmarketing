@@ -88,7 +88,7 @@ export default function SajtkollPage() {
       trackConversion("lead-forslag", "lead");
     } catch {
       setLead("idle");
-      setLeadFel(`Det gick inte att skicka just nu. Mejla ${SITE.email || "joel@stoltmarketing.se"} så bygger jag ändå.`);
+      setLeadFel(`Det gick inte att skicka just nu. Mejla ${SITE.email || "joel@stoltmarketing.se"} så hjälper jag dig vidare.`);
     }
   }
 
@@ -192,7 +192,7 @@ export default function SajtkollPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         {/* Hero med verktyget: renderas statiskt, inget startar på opacity 0 */}
         <section className="hero-dark field-glow relative overflow-hidden">
           {/* Fältraderna, samma familj som övriga undersidor */}
@@ -223,8 +223,8 @@ export default function SajtkollPage() {
             </h1>
             <p className="mt-6 text-[16px] sm:text-[17.5px] leading-relaxed text-body max-w-[560px]">
               Skriv in din adress så mäter jag hemsidan på riktigt: sidvikt, hastighet,
-              mobilanpassning, Google-synlighet och AI-läsbarhet, och att sidans
-              filer faktiskt laddar. 14 kontroller, cirka 10 sekunder, ingen registrering.
+              mobilanpassning, Google-synlighet och åtkomlig sidtext, och att sidans
+              filer faktiskt laddar. 14 tekniska kontroller av startsidan, normalt cirka 10 sekunder. Ingen registrering behövs.
             </p>
 
             <form onSubmit={run} className="mt-9 flex flex-wrap gap-3 max-w-[620px]">
@@ -276,7 +276,7 @@ export default function SajtkollPage() {
                   </svg>
                 </div>
                 <p className="mt-3 text-[12.5px] m-0" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.08em", color: "rgba(242,236,221,0.55)" }}>
-                  Tröskar sajten, rad för rad. 14 kontroller på cirka 10 sekunder.
+                  Kontrollerar startsidans teknik. Det brukar ta cirka 10 sekunder.
                 </p>
               </div>
             )}
@@ -404,7 +404,7 @@ export default function SajtkollPage() {
                         <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Om två arbetsdagar har du en länk.
                       </h2>
                       <p className="text-[14.5px] leading-relaxed text-body m-0 max-w-[600px]">
-                        Jag läser din hemsida, dina tjänster och din ort, och bygger ett förslag du kan klicka runt i.
+                        Jag läser din hemsida, dina tjänster och din ort, och bygger ett förslag med startsida och en tjänstesida.
                         Länken kommer på mejlen.
                       </p>
                     </div>
@@ -550,18 +550,17 @@ export default function SajtkollPage() {
               Vad mäter sajtkollen?
             </h2>
             <p className="text-[15.5px] leading-relaxed text-body max-w-[680px]">
-              14 saker som avgör om en hemsida drar in kunder eller tappar dem: hur tung sidan är
+              14 tekniska indikationer på startsidan: hur tung sidan är
               och hur många filer den laddar, om bilderna ligger i moderna format, hur snabbt servern
               svarar, om sajten är mobilanpassad och krypterad, hur rubrik och beskrivning ser ut i
-              Google, om det går att kontakta er direkt från startsidan, och om innehållet är läsbart
-              för AI-assistenter som ChatGPT. Jag mäter hela sidvikten, inte bara HTML-dokumentet,
+              Google, om det går att kontakta er direkt från startsidan, och om innehållet finns i den hämtade HTML-koden. Jag mäter hela sidvikten, inte bara HTML-dokumentet,
               och kontrollerar att filerna faktiskt laddar: en enda trasig stilmall kan få en
               tekniskt hel sida att se sönderslagen ut för besökaren.
             </p>
             <p className="text-[15.5px] leading-relaxed text-body max-w-[680px]">
               Mätningen bedömer teknik och laddning, inte hur designen ser ut eller känns.
               Verktyget är byggt av samma motor jag använder när jag granskar hemsidor åt kunder.
-              Det ersätter inte en riktig genomgång, men det visar var läckan sitter.
+              Det ersätter inte en riktig genomgång, men kan visa vad som behöver undersökas. Poängen är verktygets egen tekniska sammanvägning, inte ett Lighthouse-resultat, ett rankingmått eller bevis på förlorade kunder.
             </p>
           </div>
         </section>

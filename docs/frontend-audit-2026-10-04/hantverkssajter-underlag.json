@@ -1,0 +1,66 @@
+{
+  "n": 4864,
+  "tech_dates": [
+    "2026-04-22 17:22:13",
+    "2026-05-02 12:11:40"
+  ],
+  "branch": {
+    "Elektriker": 3260,
+    "Hantverkare": 885,
+    "Målare": 376,
+    "Snickare": 343
+  },
+  "tech_https": {
+    "n": 4621,
+    "no": 203,
+    "pct_no": 4.4,
+    "missing": 243
+  },
+  "tech_has_schema": {
+    "n": 4621,
+    "no": 2102,
+    "pct_no": 45.5,
+    "missing": 243
+  },
+  "tech_has_viewport": {
+    "n": 4621,
+    "no": 288,
+    "pct_no": 6.2,
+    "missing": 243
+  },
+  "has_ga": {
+    "n": 4585,
+    "no": 2215,
+    "pct_no": 48.3,
+    "missing": 279
+  },
+  "has_cookie_banner": {
+    "n": 4585,
+    "no": 3116,
+    "pct_no": 68.0,
+    "missing": 279
+  },
+  "wordpress": {
+    "n_valid": 4621,
+    "yes": 2458
+  },
+  "chatbot": {
+    "detected": 114,
+    "known_extras": 4864
+  },
+  "sitemap": {
+    "n_positive": 1961,
+    "n_checked": 2718,
+    "median": 17,
+    "counts": [
+      623,
+      585,
+      168,
+      585
+    ],
+    "dates": [
+      "2026-04-22 17:25:34",
+      "2026-04-23 09:52:48"
+    ]
+  }
+}

@@ -1,19 +1,19 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 /* ── Scroll-triggered reveal, ENDAST under vecket.
       Above-the-fold-innehåll får aldrig starta på opacity 0 (LCP). ── */
 export function Reveal({ children, className = "", delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
+  const reduceMotion = useReducedMotion();
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+      initial={false}
+      animate={{ y: inView || reduceMotion ? 0 : 12 }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
@@ -57,17 +57,8 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
       Samma familj som startsidans "fältet i mörker" men gryningsvarianten:
       statiska fältrader i SVG + horisont i stället för canvas. Renderas
       statiskt, ovanför vecket animeras inget från opacity 0. ── */
-export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
-  /* Sista ordet får guld-kursiven, samma signatur som startsidans gulord. */
-  let titleHead = title;
-  let titleAccent = null;
-  if (typeof title === "string") {
-    const m = title.trim().match(/^(.*?)(\S+)$/s);
-    if (m && m[1]) {
-      titleHead = m[1];
-      titleAccent = m[2];
-    }
-  }
+export function PageHero({ breadcrumbs, badge, title, subtitle, bullets, highlight, compact = false, cta = { href: "/boka", label: "Boka kostnadsfri genomgång" } }) {
+  const accentIndex = typeof title === "string" && highlight ? title.indexOf(highlight) : -1;
 
   /* Vinden: scrollfarten böjer fältraderna (--vind 0..1), fjädrar tillbaka
      via CSS-transition. Passiv lyssnare, av vid prefers-reduced-motion. */
@@ -168,12 +159,13 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-20 sm:pb-28">
+      <div className={`relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 ${compact ? "sm:pt-28 pb-10 sm:pb-12" : "sm:pt-32 pb-14 sm:pb-20"}`}>
         {/* Breadcrumbs */}
         {breadcrumbs && (
           <nav
-            className="flex items-center gap-2 text-[12px] text-muted mb-6"
-            style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.08em" }}
+            aria-label="Brödsmulor"
+            className="flex flex-wrap items-center gap-2 text-[13px] text-muted mb-6"
+            style={{ fontFamily: "var(--font-ui)" }}
           >
             {breadcrumbs.map((bc, i) => (
               <span key={i} className="flex items-center gap-2">
@@ -186,7 +178,7 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
                     {bc.label}
                   </a>
                 ) : (
-                  <span className="text-heading font-500">{bc.label}</span>
+                  <span aria-current="page" className="text-heading font-500">{bc.label}</span>
                 )}
               </span>
             ))}
@@ -215,15 +207,16 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
         </div>
 
         <h1
-          className="mt-6 font-heading text-[clamp(40px,5.8vw,78px)] leading-[1.03] tracking-[-0.025em] text-heading max-w-[900px]"
+          className={`mt-6 font-heading ${compact ? "text-[clamp(32px,4.5vw,56px)]" : "text-[clamp(36px,5.8vw,72px)]"} leading-[1.08] tracking-[-0.025em] text-heading max-w-[900px]`}
           style={{ fontWeight: 380, fontVariationSettings: '"opsz" 144' }}
         >
-          {titleAccent ? (
+          {accentIndex >= 0 ? (
             <>
-              {titleHead}
+              {title.slice(0, accentIndex)}
               <em style={{ fontStyle: "italic", color: "var(--color-accent)", fontWeight: 400 }}>
-                {titleAccent}
+                {highlight}
               </em>
+              {title.slice(accentIndex + highlight.length)}
             </>
           ) : (
             title
@@ -251,12 +244,11 @@ export function PageHero({ breadcrumbs, badge, title, subtitle, bullets }) {
           </ul>
         )}
 
-        <div className="flex flex-wrap gap-3 mt-9">
-          <a href="/boka" className="premium-btn">
-            <span>Boka kostnadsfri genomgång</span>
-            <ArrowRight size={15} className="opacity-80" />
+        {cta && <div className="flex flex-wrap gap-3 mt-8">
+          <a href={cta.href} className="premium-btn">
+            <span>{cta.label}</span>
           </a>
-        </div>
+        </div>}
       </div>
 
     </section>

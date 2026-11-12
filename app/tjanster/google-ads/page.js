@@ -1,17 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import GoogleAdsContent from "./GoogleAdsContent";
-import ServiceExtra from "@/components/ServiceExtra";
+import ServicePage from "@/components/ServicePage";
+import { EXTRA_SERVICES } from "@/lib/services-extra";
 
 export default function Page() {
-  return (
-    <>
-      <Header />
-      <main>
-        <GoogleAdsContent />
-        <ServiceExtra service="google-ads" />
-      </main>
-      <Footer />
-    </>
-  );
+  return (<><Header /><main id="main-content" tabIndex={-1}><ServicePage data={EXTRA_SERVICES["google-ads"]} /></main><Footer /></>);
 }

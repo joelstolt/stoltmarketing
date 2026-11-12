@@ -57,7 +57,7 @@ function Troska() {
         </svg>
       </div>
       <p style={{ margin: "12px 0 0", fontFamily: "var(--font-ui)", fontSize: 12.5, letterSpacing: "0.08em", color: DIM }}>
-        Tröskar sajten, rad för rad. 14 kontroller på cirka 10 sekunder.
+        Kontrollerar startsidans teknik. Det brukar ta cirka 10 sekunder.
       </p>
     </div>
   );
@@ -142,7 +142,7 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
       trackConversion("lead-forslag", "lead");
     } catch {
       setLead("idle");
-      setLeadFel("Det gick inte att skicka just nu. Mejla joel@stoltmarketing.se så bygger jag ändå.");
+      setLeadFel("Det gick inte att skicka just nu. Mejla joel@stoltmarketing.se så hjälper jag dig vidare.");
     }
   }
 
@@ -174,8 +174,8 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
               </p>
               <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.6, color: DIM, maxWidth: "46ch" }}>
                 {utanSajt
-                  ? `Då bygger jag den första åt ${doman}. Ett riktigt, klickbart förslag med dina tjänster och dina orter. Det tar mig två arbetsdagar och kostar dig ingenting.`
-                  : "Jag bygger ett riktigt, klickbart förslag med dina tjänster och dina orter. Det tar mig två arbetsdagar och kostar dig ingenting."}
+                  ? `Då bygger jag den första åt ${doman}. Ett klickbart förslag med startsida och en tjänstesida. Det tar mig två arbetsdagar och kostar dig ingenting.`
+                  : "Jag bygger ett klickbart förslag med startsida och en tjänstesida. Det tar mig två arbetsdagar och kostar dig ingenting."}
               </p>
               <div className="b-koll-form" style={{ marginTop: 14 }}>
                 <label htmlFor={`koll-mejl-${plats}`} className="sr-only">Din mejladress</label>
@@ -212,7 +212,7 @@ export default function HeroKoll({ plats = "hero", tema = "mork" }) {
                 <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Om två arbetsdagar har du en länk.
               </p>
               <p style={{ margin: "8px 0 0", fontSize: 14.5, lineHeight: 1.6, color: DIM, maxWidth: "48ch" }}>
-                {utanSajt ? "Jag läser på om ditt företag, dina tjänster och din ort" : "Jag läser din sajt, dina tjänster och din ort"}, och bygger ett förslag du kan klicka runt i. Jag ringer inte, jag mejlar. Vill du hellre prata innan dess: <a href="tel:+46766867406" style={{ color: GUL }}>076-686 74 06</a>.
+                {utanSajt ? "Jag läser på om ditt företag, dina tjänster och din ort" : "Jag läser din sajt, dina tjänster och din ort"}, och bygger ett förslag med startsida och en tjänstesida. Jag ringer inte, jag mejlar. Vill du hellre prata innan dess: <a href="tel:+46766867406" style={{ color: GUL }}>076-686 74 06</a>.
               </p>
             </div>
           )}

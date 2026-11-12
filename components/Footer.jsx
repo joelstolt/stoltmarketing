@@ -1,37 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
-import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/data";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { CITY_ORDER, CITIES, SITE } from "@/lib/local/data";
 
 const services = [
-  { label: "Webbutveckling", href: "/tjanster/webbutveckling" },
-  { label: "Hemsida för företag", href: "/hemsida-foretag" },
-  { label: "E-handel", href: "/tjanster/e-handel" },
-  { label: "WordPress-hemsida", href: "/tjanster/wordpress" },
-  { label: "SEO & Synlighet", href: "/tjanster/seo" },
+  { label: "Förfrågningsrutan", href: "/forfragningar" },
+  { label: "Hemsidor", href: "/hemsida-foretag" },
+  { label: "SEO", href: "/tjanster/seo" },
   { label: "Google Ads", href: "/tjanster/google-ads" },
-  { label: "Facebook-annonsering", href: "/tjanster/facebook-annonsering" },
-  { label: "AI-synlighet", href: "/tjanster/ai-synlighet" },
-  { label: "AI & Automation", href: "/tjanster/ai-automation" },
-  { label: "Tillgänglighet & EAA", href: "/tillganglighet" },
-  { label: "Managed hemsida", href: "/tjanster/managed-hemsida" },
+  { label: "Priser och paket", href: "/priser" },
   { label: "Alla tjänster", href: "/tjanster" },
 ];
-
 const company = [
-  { label: "Om mig", href: "/om" },
-  { label: "Projekt", href: "/projekt" },
+  { label: "Om Joel", href: "/om" },
+  { label: "Kundprojekt", href: "/projekt" },
   { label: "Gratis sajtkoll", href: "/sajtkoll" },
   { label: "Guider", href: "/guider" },
   { label: "Blogg", href: "/blogg" },
-  { label: "Guide: sökmotoroptimering", href: "/sokmotoroptimering" },
-  { label: "Vad kostar en hemsida?", href: "/vad-kostar-en-hemsida" },
-  { label: "Vad kostar SEO?", href: "/vad-kostar-seo" },
-  { label: "Vad kostar Google Ads?", href: "/blogg/vad-kostar-google-ads" },
   { label: "Kontakt", href: "/kontakt" },
-  { label: "Boka genomgång", href: "/boka" },
-  { label: "Integritetspolicy", href: "/integritet" },
 ];
 
 const linkStyle = {
@@ -114,13 +101,13 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "rgba(242,236,221,0.5)",
+                color: "rgba(242,236,221,0.65)",
               }}
             >
               Marketing
             </span>
           </Link>
-          <p style={{ fontSize: 14, color: "rgba(242,236,221,0.5)", lineHeight: 1.7, maxWidth: 300 }}>
+          <p style={{ fontSize: 14, color: "rgba(242,236,221,0.65)", lineHeight: 1.7, maxWidth: 300 }}>
             Stolt Marketing i Hässleholm. Förfrågningar via hemsidan direkt till
             mobilen, hemsidor, SEO och Google Ads för hantverksföretag i hela Sverige.
           </p>
@@ -130,18 +117,18 @@ export default function Footer() {
               href={SITE.phoneHref}
               style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(242,236,221,0.65)", textDecoration: "none" }}
             >
-              <Phone size={15} color="#F2C230" />
+              <Phone aria-hidden="true" size={15} color="#F2C230" />
               {SITE.phone}
             </a>
             <a
               href="mailto:joel@stoltmarketing.se"
               style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(242,236,221,0.65)", textDecoration: "none" }}
             >
-              <Mail size={15} color="#F2C230" />
+              <Mail aria-hidden="true" size={15} color="#F2C230" />
               joel@stoltmarketing.se
             </a>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "rgba(242,236,221,0.65)" }}>
-              <MapPin size={15} color="#F2C230" />
+              <MapPin aria-hidden="true" size={15} color="#F2C230" />
               Hässleholm, Skåne
             </div>
           </div>
@@ -188,46 +175,8 @@ export default function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {CITY_ORDER.map((c) => (
               <Link key={c} href={CITIES[c].hub} style={{ ...linkStyle, fontWeight: 600 }} onMouseEnter={hover} onMouseLeave={unhover}>
-                {SERVICES.hemsida.label} & SEO {CITIES[c].name}
+                {CITIES[c].name}
               </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Lokalt-band: alla ort × tjänst-länkar för synlighet och crawl */}
-      <div style={{ borderTop: "1px solid rgba(242,236,221,0.12)" }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "32px 20px 8px" }}>
-          <p style={{ ...colHeading, marginBottom: 20 }}>Webbyrå, SEO, Google Ads & AI i Skåne</p>
-          <div
-            className="footer-local-grid"
-            style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 28 }}
-          >
-            {CITY_ORDER.map((c) => (
-              <div key={c}>
-                <Link
-                  href={CITIES[c].hub}
-                  className="font-heading"
-                  style={{ fontSize: 14, fontWeight: 700, color: "#F2ECDD", textDecoration: "none", display: "block", marginBottom: 12 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#F2C230")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#F2ECDD")}
-                >
-                  {CITIES[c].name}
-                </Link>
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  {SERVICE_ORDER.map((s) => (
-                    <Link
-                      key={s}
-                      href={`/${c}/${s}`}
-                      style={{ fontSize: 13, color: "rgba(242,236,221,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#F2C230")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,236,221,0.5)")}
-                    >
-                      {SERVICES[s].label} {CITIES[c].name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
             ))}
           </div>
         </div>
@@ -246,18 +195,18 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>
+          <span style={{ fontSize: 13, color: "rgba(242,236,221,0.65)" }}>
             © {new Date().getFullYear()} Stolt Marketing i Hässleholm. Förfrågningar och hemsidor för hantverksföretag.
           </span>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <span style={{ fontSize: 13, color: "rgba(242,236,221,0.4)" }}>Svar samma arbetsdag</span>
+            <Link href="/integritet" style={linkStyle}>Integritet och personuppgifter</Link>
             <a
               href="https://kvota.se"
               target="_blank"
               rel="noopener"
-              style={{ fontSize: 13, color: "rgba(242,236,221,0.4)", textDecoration: "none", transition: "color 0.2s" }}
+              style={{ fontSize: 13, color: "rgba(242,236,221,0.65)", textDecoration: "none", transition: "color 0.2s" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#F2C230")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,236,221,0.4)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,236,221,0.65)")}
             >
               Egen AI-produkt: Kvota.se
             </a>
@@ -290,7 +239,7 @@ const colHeading = {
   fontSize: 10.5,
   fontWeight: 600,
   letterSpacing: "0.24em",
-  color: "rgba(242,236,221,0.4)",
+  color: "rgba(242,236,221,0.65)",
   textTransform: "uppercase",
   marginBottom: 16,
 };

@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /avtal/
+Disallow: /svar/
+
+Sitemap: https://www.stoltmarketing.se/sitemap.xml

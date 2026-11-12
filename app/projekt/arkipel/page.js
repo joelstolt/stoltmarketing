@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <ArkipelCase />
       </main>
       <Footer />

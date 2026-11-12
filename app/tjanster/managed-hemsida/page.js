@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ManagedContent from "./ManagedContent";
-import ServiceExtra from "@/components/ServiceExtra";
+import ServicePage from "@/components/ServicePage";
+import { EXTRA_SERVICES } from "@/lib/services-extra";
 
 export default function Page() {
-  return (<><Header /><main><ManagedContent /><ServiceExtra service="managed-hemsida" /></main><Footer /></>);
+  return (<><Header /><main id="main-content" tabIndex={-1}><ServicePage data={EXTRA_SERVICES["managed-hemsida"]} /></main><Footer /></>);
 }

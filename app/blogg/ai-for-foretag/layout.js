@@ -1,44 +1,14 @@
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  image: ["https://www.stoltmarketing.se/og-image.png"],
-  mainEntityOfPage: "https://www.stoltmarketing.se/blogg/ai-for-foretag",
-  inLanguage: "sv-SE",
-  headline: "AI för företag 2026, Praktiska användningsområden som ger resultat",
-  description: "Så använder svenska företag AI i vardagen 2026. Chatbots, automatisering, content och kundservice. Konkreta exempel och var du börjar.",
-  author: { "@type": "Person", name: "Joel Stolt" },
-  publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },
-  datePublished: "2026-04-12",
-  dateModified: "2026-04-12",
-};
+import { getBlogMetadata, getBlogSchema } from "@/lib/blog-data";
 
-const breadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Blogg", item: "https://www.stoltmarketing.se/blogg" },
-    { "@type": "ListItem", position: 3, name: "AI för företag", item: "https://www.stoltmarketing.se/blogg/ai-for-foretag" },
-  ],
-};
-
-export const metadata = {
-  title: "AI för företag 2026 — Praktiska användningsområden som ger resultat",
-  description: "Så använder svenska småföretag AI i vardagen. Chatbots, automatisering, content-skapande och kundservice. Konkreta exempel utan hype.",
-  alternates: { canonical: "https://www.stoltmarketing.se/blogg/ai-for-foretag" },
-  openGraph: {
-    title: "AI för företag 2026 — Praktiska användningsområden",
-    description: "Konkreta AI-användningsområden för svenska företag. Chatbots, automatisering och content.",
-    url: "https://www.stoltmarketing.se/blogg/ai-for-foretag",
-    type: "article",
-  },
-};
+export const metadata = getBlogMetadata("ai-for-foretag");
 
 export default function ArticleLayout({ children }) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBlogSchema("ai-for-foretag")).replace(/</g, "\\u003c") }}
+      />
       {children}
     </>
   );

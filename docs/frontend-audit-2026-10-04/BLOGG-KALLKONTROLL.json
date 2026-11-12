@@ -1,0 +1,133 @@
+{
+  "checkedAt": "2026-10-04",
+  "sources": [
+    {
+      "href": "https://developer.chrome.com/docs/lighthouse/overview",
+      "status": 200,
+      "finalUrl": "https://developer.chrome.com/docs/lighthouse/overview"
+    },
+    {
+      "href": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/docs/crawling-indexing/block-indexing"
+    },
+    {
+      "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+    },
+    {
+      "href": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"
+    },
+    {
+      "href": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+    },
+    {
+      "href": "https://developers.google.com/search/updates",
+      "status": 200,
+      "finalUrl": "https://developers.google.com/search/updates"
+    },
+    {
+      "href": "https://nextjs.org/docs",
+      "status": 200,
+      "finalUrl": "https://nextjs.org/docs"
+    },
+    {
+      "href": "https://pagespeed.web.dev/",
+      "status": 200,
+      "finalUrl": "https://pagespeed.web.dev/"
+    },
+    {
+      "href": "https://pts.se/digital-inkludering/lagen-om-vissa-produkters-och-tjansters-tillganglighet/vanliga-fragor-och-svar-om-tillganglighetslagen/",
+      "status": 200,
+      "finalUrl": "https://pts.se/digital-inkludering/lagen-om-vissa-produkters-och-tjansters-tillganglighet/vanliga-fragor-och-svar-om-tillganglighetslagen/"
+    },
+    {
+      "href": "https://search.google.com/test/rich-results",
+      "status": 200,
+      "finalUrl": "https://search.google.com/test/rich-results"
+    },
+    {
+      "href": "https://stripe.com/se/pricing",
+      "status": 200,
+      "finalUrl": "https://stripe.com/se/pricing"
+    },
+    {
+      "href": "https://support.google.com/business/answer/3038177",
+      "status": 200,
+      "finalUrl": "https://support.google.com/business/answer/3038177"
+    },
+    {
+      "href": "https://support.google.com/business/answer/7091",
+      "status": 200,
+      "finalUrl": "https://support.google.com/business/answer/7091"
+    },
+    {
+      "href": "https://support.google.com/business/answer/7107242",
+      "status": 200,
+      "finalUrl": "https://support.google.com/business/answer/7107242"
+    },
+    {
+      "href": "https://support.google.com/contributionpolicy/answer/7400114",
+      "status": 200,
+      "finalUrl": "https://support.google.com/contributionpolicy/answer/7400114"
+    },
+    {
+      "href": "https://support.google.com/google-ads/answer/10486637",
+      "status": 200,
+      "finalUrl": "https://support.google.com/google-ads/answer/10486637"
+    },
+    {
+      "href": "https://web.dev/articles/defining-core-web-vitals-thresholds",
+      "status": 200,
+      "finalUrl": "https://web.dev/articles/defining-core-web-vitals-thresholds"
+    },
+    {
+      "href": "https://wordpress.org/documentation/article/updating-wordpress/",
+      "status": 200,
+      "finalUrl": "https://wordpress.org/documentation/article/updating-wordpress/"
+    },
+    {
+      "href": "https://www.konsumentverket.se/konsumentratt-process/angerratt/",
+      "status": 200,
+      "finalUrl": "https://www.konsumentverket.se/konsumentratt-process/angerratt/"
+    },
+    {
+      "href": "https://www.konsumentverket.se/marknadsratt-foretag/informationskrav-vid-distansavtal-regler-for-foretag",
+      "status": 200,
+      "finalUrl": "https://www.konsumentverket.se/marknadsratt-foretag/informationskrav-vid-distansavtal-regler-for-foretag"
+    },
+    {
+      "href": "https://www.pts.se/internet-och-telefoni/kakor-cookies/",
+      "status": 200,
+      "finalUrl": "https://www.pts.se/internet-och-telefoni/kakor-cookies/"
+    },
+    {
+      "href": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/marknadsforingslag-2008486_sfs-2008-486/",
+      "status": 200,
+      "finalUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/marknadsforingslag-2008486_sfs-2008-486/"
+    },
+    {
+      "href": "https://www.skatteverket.se/foretag/moms/momsregistrering/momsregistreringnararsomsattningenarhogst120000kronor.4.3152d9ac158968eb8fd1efe.html",
+      "status": "[Errno 54] Connection reset by peer",
+      "browserCheck": {
+        "checkedAt": "2026-10-04",
+        "accessible": true,
+        "note": "Primärkällans sidinnehåll öppnat och kontrollerat med webbläsningsverktyget. Shellkontrollens anslutningsfel behålls separat."
+      }
+    },
+    {
+      "href": "https://www.skatteverket.se/omoss/pressochmedia/nyheter/2026/nyheter/livsmedelsmomsensankstill6procent.5.70685bee19c85dd5dd0a3f.html",
+      "status": "[Errno 54] Connection reset by peer",
+      "browserCheck": {
+        "checkedAt": "2026-10-04",
+        "accessible": true,
+        "note": "Primärkällans sidinnehåll öppnat och kontrollerat med webbläsningsverktyget. Shellkontrollens anslutningsfel behålls separat."
+      }
+    }
+  ]
+}

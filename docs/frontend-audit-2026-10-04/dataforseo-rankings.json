@@ -1,0 +1,954 @@
+{
+  "fetchedAt": "2026-10-04",
+  "market": "Sweden",
+  "language": "sv",
+  "result": {
+    "id": "10041853-1881-0381-0000-d55c7a5faf63",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "total_count": 9,
+    "items": [
+      {
+        "keyword_data": {
+          "keyword": "google ads byrå",
+          "keyword_info": {
+            "last_updated_time": "2026-09-15 18:28:42 +00:00",
+            "competition": 0.58,
+            "competition_level": "MEDIUM",
+            "cpc": 24.38,
+            "search_volume": 480,
+            "low_top_of_page_bid": 11.28,
+            "high_top_of_page_bid": 27.36,
+            "categories": [
+              10004,
+              10276,
+              11088
+            ],
+            "monthly_searches": {
+              "2026-08": 170,
+              "2026-07": 210,
+              "2026-06": 480,
+              "2026-05": 210,
+              "2026-04": 320,
+              "2026-03": 590,
+              "2026-02": 320,
+              "2026-01": 320,
+              "2025-12": 260,
+              "2025-11": 320,
+              "2025-10": 720,
+              "2025-09": 2400
+            },
+            "search_volume_trend": {
+              "monthly": -19,
+              "quarterly": -65,
+              "yearly": -71
+            }
+          },
+          "keyword_properties": {
+            "synonym_clustering_algorithm": "text_processing",
+            "detected_language": "sv"
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=google%20ads%20byr%C3%A5&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "ai_overview",
+              "organic",
+              "people_also_ask"
+            ],
+            "se_results_count": 106,
+            "last_updated_time": "2026-09-10 03:56:01 +00:00",
+            "previous_updated_time": "2026-07-06 16:54:31 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 7.8,
+            "dofollow": 7.4,
+            "referring_pages": 7.6,
+            "referring_domains": 1.5,
+            "referring_main_domains": 1.4,
+            "rank": 37.3,
+            "main_domain_rank": 273.6,
+            "last_updated_time": "2026-09-10 03:57:59 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "commercial",
+            "last_updated_time": "2026-04-28 07:36:01 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 16,
+            "rank_absolute": 18,
+            "domain": "www.stoltmarketing.se",
+            "title": "Google Ads: byrå eller sköta själv? Så avgör du - Stolt Marketing",
+            "url": "https://www.stoltmarketing.se/blogg/google-ads-byra-eller-sjalv",
+            "breadcrumb": "https://www.stoltmarketing.se › Blogg",
+            "website_name": "stoltmarketing.se",
+            "description": "8 aug. 2026 — Ska du sköta Google Ads själv eller anlita en byrå? Vad var och en kostar i tid och pengar, och när det lönar sig att lämna över.",
+            "pre_snippet": "08/08/2026 00:00:00",
+            "highlighted": [
+              "Google Ads",
+              "byrå"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/blogg/google-ads-byra-eller-sjalv",
+            "etv": 2.064,
+            "estimated_paid_traffic_cost": 50.32,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 184
+            }
+          },
+          "check_url": "https://www.google.com/search?q=google%20ads%20byr%C3%A5&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask"
+          ],
+          "se_results_count": 106,
+          "last_updated_time": "2026-09-10 03:56:01 +00:00",
+          "previous_updated_time": "2026-07-06 16:54:31 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "seo analys",
+          "keyword_info": {
+            "last_updated_time": "2026-09-17 13:51:23 +00:00",
+            "competition": 0.6,
+            "competition_level": "MEDIUM",
+            "cpc": 11.44,
+            "search_volume": 480,
+            "low_top_of_page_bid": 4.37,
+            "high_top_of_page_bid": 11.65,
+            "categories": [
+              10004,
+              10276,
+              11088,
+              12376,
+              13152
+            ],
+            "monthly_searches": {
+              "2026-08": 170,
+              "2026-07": 140,
+              "2026-06": 170,
+              "2026-05": 320,
+              "2026-04": 320,
+              "2026-03": 720,
+              "2026-02": 480,
+              "2026-01": 390,
+              "2025-12": 170,
+              "2025-11": 170,
+              "2025-10": 480,
+              "2025-09": 2400
+            },
+            "search_volume_trend": {
+              "monthly": 21,
+              "yearly": -35
+            }
+          },
+          "keyword_properties": {
+            "synonym_clustering_algorithm": "text_processing",
+            "keyword_difficulty": 4,
+            "detected_language": "de",
+            "is_another_language": true
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=seo%20analys&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "ai_overview",
+              "organic",
+              "people_also_ask",
+              "related_searches"
+            ],
+            "se_results_count": 116,
+            "last_updated_time": "2026-09-11 03:00:31 +00:00",
+            "previous_updated_time": "2026-07-05 13:06:11 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 2585.5,
+            "dofollow": 2073.4,
+            "referring_pages": 2486.1,
+            "referring_domains": 270.4,
+            "referring_main_domains": 247.6,
+            "rank": 102.5,
+            "main_domain_rank": 273.3,
+            "last_updated_time": "2026-09-11 03:00:32 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "commercial",
+            "last_updated_time": "2026-04-28 21:48:19 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 19,
+            "rank_absolute": 22,
+            "domain": "www.stoltmarketing.se",
+            "title": "SEO-analys: gör en själv på 30 minuter - Stolt Marketing",
+            "url": "https://www.stoltmarketing.se/blogg/seo-analys-sjalv",
+            "breadcrumb": "https://www.stoltmarketing.se › Blogg",
+            "website_name": "stoltmarketing.se",
+            "description": "25 juli 2026 — Gör en SEO-analys av din egen sajt på 30 minuter: teknik, innehåll, sökord och konkurrenter. Gratis checklista, inga dyra verktyg.",
+            "pre_snippet": "07/25/2026 00:00:00",
+            "highlighted": [
+              "Gör en SEO-analys av din egen sajt på 30 minuter"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/blogg/seo-analys-sjalv",
+            "etv": 1.296,
+            "estimated_paid_traffic_cost": 14.826,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 184
+            }
+          },
+          "check_url": "https://www.google.com/search?q=seo%20analys&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 116,
+          "keyword_difficulty": 4,
+          "last_updated_time": "2026-09-11 03:00:31 +00:00",
+          "previous_updated_time": "2026-07-05 13:06:11 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "google ads kostnad",
+          "keyword_info": {
+            "last_updated_time": "2026-09-17 14:26:51 +00:00",
+            "competition": 0.69,
+            "competition_level": "HIGH",
+            "cpc": 14.89,
+            "search_volume": 110,
+            "low_top_of_page_bid": 2.45,
+            "high_top_of_page_bid": 13.68,
+            "categories": [
+              10004,
+              10276
+            ],
+            "monthly_searches": {
+              "2026-08": 40,
+              "2026-07": 50,
+              "2026-06": 70,
+              "2026-05": 70,
+              "2026-04": 70,
+              "2026-03": 170,
+              "2026-02": 90,
+              "2026-01": 110,
+              "2025-12": 30,
+              "2025-11": 50,
+              "2025-10": 110,
+              "2025-09": 390
+            },
+            "search_volume_trend": {
+              "monthly": -20,
+              "quarterly": -43,
+              "yearly": -56
+            }
+          },
+          "keyword_properties": {
+            "synonym_clustering_algorithm": "text_processing",
+            "detected_language": "sv"
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=google%20ads%20kostnad&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "ai_overview",
+              "organic",
+              "people_also_ask",
+              "related_searches"
+            ],
+            "se_results_count": 107,
+            "last_updated_time": "2026-08-29 10:42:44 +00:00",
+            "previous_updated_time": "2026-04-27 18:03:04 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 0.7,
+            "dofollow": 0.7,
+            "referring_pages": 0.7,
+            "referring_domains": 0.4,
+            "referring_main_domains": 0.4,
+            "rank": 14.2,
+            "main_domain_rank": 419.2,
+            "last_updated_time": "2026-08-29 10:42:45 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "commercial",
+            "last_updated_time": "2026-04-27 20:32:04 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 21,
+            "rank_absolute": 25,
+            "domain": "www.stoltmarketing.se",
+            "title": "Vad kostar Google Ads i Sverige 2026? En ärlig prisguide",
+            "url": "https://www.stoltmarketing.se/blogg/vad-kostar-google-ads",
+            "breadcrumb": "https://www.stoltmarketing.se › Blogg",
+            "website_name": "stoltmarketing.se",
+            "description": "21 juli 2026 — Sex tusen kronor in till Google, plus ett arvode, ger runt 48 000 kr ut. Även med byråkostnad är det en tydlig vinst. Men vrid ner andelen som ...",
+            "pre_snippet": "07/21/2026 00:00:00",
+            "highlighted": [
+              "Sex tusen kronor in till Google",
+              "plus ett arvode",
+              "ger runt 48 000 kr ut"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/blogg/vad-kostar-google-ads",
+            "etv": 0.253,
+            "estimated_paid_traffic_cost": 3.767,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 184
+            }
+          },
+          "check_url": "https://www.google.com/search?q=google%20ads%20kostnad&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 107,
+          "last_updated_time": "2026-08-29 10:42:44 +00:00",
+          "previous_updated_time": "2026-04-27 18:03:04 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "tar normal swish",
+          "keyword_info": {
+            "last_updated_time": "2026-09-15 03:50:42 +00:00",
+            "competition": 0,
+            "competition_level": "LOW",
+            "search_volume": 170,
+            "categories": [
+              10008
+            ],
+            "monthly_searches": {
+              "2026-08": 210,
+              "2026-07": 170,
+              "2026-06": 210,
+              "2026-05": 210,
+              "2026-04": 170,
+              "2026-03": 210,
+              "2026-02": 110,
+              "2026-01": 140,
+              "2025-12": 210,
+              "2025-11": 170,
+              "2025-10": 170,
+              "2025-09": 170
+            },
+            "search_volume_trend": {
+              "monthly": 24,
+              "yearly": 24
+            }
+          },
+          "keyword_properties": {
+            "keyword_difficulty": 2,
+            "detected_language": "en",
+            "is_another_language": true
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=tar%20normal%20swish&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "ai_overview",
+              "people_also_ask",
+              "organic",
+              "related_searches"
+            ],
+            "se_results_count": 95,
+            "last_updated_time": "2026-09-27 09:41:43 +00:00",
+            "previous_updated_time": "2026-04-18 01:35:03 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 3.9,
+            "dofollow": 3.1,
+            "referring_pages": 3.7,
+            "referring_domains": 3.1,
+            "referring_main_domains": 3,
+            "rank": 72.9,
+            "main_domain_rank": 426,
+            "last_updated_time": "2026-09-27 09:41:45 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "transactional",
+            "last_updated_time": "2026-04-29 22:06:13 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 24,
+            "rank_absolute": 28,
+            "domain": "www.stoltmarketing.se",
+            "title": "Betallösningar för webbutik: Swish, Klarna eller kort?",
+            "url": "https://www.stoltmarketing.se/blogg/betallosningar-webbutik",
+            "breadcrumb": "https://www.stoltmarketing.se › Blogg",
+            "website_name": "stoltmarketing.se",
+            "description": "6 aug. 2026 — Guide till betallösningar för svensk e-handel: Swish, Klarna, kort och faktura jämfört på avgifter, konvertering och krångel.",
+            "pre_snippet": "08/06/2026 00:00:00",
+            "highlighted": [
+              "Swish"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/blogg/betallosningar-webbutik",
+            "etv": 0.357,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 179
+            }
+          },
+          "check_url": "https://www.google.com/search?q=tar%20normal%20swish&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "ai_overview",
+            "people_also_ask",
+            "organic",
+            "related_searches"
+          ],
+          "se_results_count": 95,
+          "keyword_difficulty": 2,
+          "last_updated_time": "2026-09-27 09:41:43 +00:00",
+          "previous_updated_time": "2026-04-18 01:35:03 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "webbyrå lund",
+          "keyword_info": {
+            "last_updated_time": "2026-09-16 13:39:11 +00:00",
+            "competition": 0.44,
+            "competition_level": "MEDIUM",
+            "cpc": 16.96,
+            "search_volume": 110,
+            "low_top_of_page_bid": 3.76,
+            "high_top_of_page_bid": 10.27,
+            "categories": [
+              10007,
+              11493,
+              13418
+            ],
+            "monthly_searches": {
+              "2026-08": 50,
+              "2026-07": 90,
+              "2026-06": 70,
+              "2026-05": 110,
+              "2026-04": 90,
+              "2026-03": 110,
+              "2026-02": 110,
+              "2026-01": 50,
+              "2025-12": 40,
+              "2025-11": 50,
+              "2025-10": 110,
+              "2025-09": 320
+            },
+            "search_volume_trend": {
+              "monthly": -44,
+              "quarterly": -29,
+              "yearly": -64
+            }
+          },
+          "keyword_properties": {
+            "synonym_clustering_algorithm": "text_processing",
+            "detected_language": "sv"
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=webbyr%C3%A5%20lund&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "local_pack",
+              "organic",
+              "related_searches"
+            ],
+            "se_results_count": 111,
+            "last_updated_time": "2026-08-16 19:15:48 +00:00",
+            "previous_updated_time": "2026-05-02 14:51:22 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 2.6,
+            "dofollow": 2.6,
+            "referring_pages": 2.6,
+            "referring_domains": 0.1,
+            "referring_main_domains": 0.1,
+            "rank": 27.4,
+            "main_domain_rank": 276.9,
+            "last_updated_time": "2026-08-16 19:15:50 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "navigational",
+            "foreign_intent": [
+              "commercial"
+            ],
+            "last_updated_time": "2026-04-30 01:28:33 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 33,
+            "rank_absolute": 42,
+            "domain": "www.stoltmarketing.se",
+            "title": "Webbyrå Lund — Hemsida, SEO & Webbutveckling",
+            "url": "https://www.stoltmarketing.se/lund",
+            "breadcrumb": "https://www.stoltmarketing.se › lund",
+            "website_name": "stoltmarketing.se",
+            "description": "Webbyrå i Lund för tech-företag och startups. Vi bygger moderna webbplatser och sköter SEO och marknadsföring för bolag kring Ideon och Lunds universitet.",
+            "highlighted": [
+              "Webbyrå i Lund för tech-företag och startups"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/lund",
+            "etv": 0.231,
+            "estimated_paid_traffic_cost": 3.918,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 165
+            }
+          },
+          "check_url": "https://www.google.com/search?q=webbyr%C3%A5%20lund&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "local_pack",
+            "organic",
+            "related_searches"
+          ],
+          "se_results_count": 111,
+          "last_updated_time": "2026-08-16 19:15:48 +00:00",
+          "previous_updated_time": "2026-05-02 14:51:22 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "webbyrå helsingborg",
+          "keyword_info": {
+            "last_updated_time": "2026-09-14 19:47:12 +00:00",
+            "competition": 0.6,
+            "competition_level": "MEDIUM",
+            "cpc": 10.99,
+            "search_volume": 110,
+            "low_top_of_page_bid": 3.69,
+            "high_top_of_page_bid": 9.28,
+            "categories": [
+              10007,
+              11493,
+              13418
+            ],
+            "monthly_searches": {
+              "2026-08": 40,
+              "2026-07": 40,
+              "2026-06": 70,
+              "2026-05": 90,
+              "2026-04": 70,
+              "2026-03": 210,
+              "2026-02": 90,
+              "2026-01": 50,
+              "2025-12": 50,
+              "2025-11": 40,
+              "2025-10": 110,
+              "2025-09": 480
+            },
+            "search_volume_trend": {
+              "quarterly": -43,
+              "yearly": -56
+            }
+          },
+          "keyword_properties": {
+            "core_keyword": "webbyråer helsingborg",
+            "synonym_clustering_algorithm": "text_processing",
+            "keyword_difficulty": 7,
+            "detected_language": "sv"
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=webbyr%C3%A5%20helsingborg&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "local_pack",
+              "organic",
+              "people_also_ask",
+              "related_searches"
+            ],
+            "se_results_count": 107,
+            "last_updated_time": "2026-08-16 19:15:47 +00:00",
+            "previous_updated_time": "2026-04-17 12:57:57 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 375.4,
+            "dofollow": 375.4,
+            "referring_pages": 375.4,
+            "referring_domains": 4.4,
+            "referring_main_domains": 3.9,
+            "rank": 109.2,
+            "main_domain_rank": 328.6,
+            "last_updated_time": "2026-08-16 19:15:48 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "commercial",
+            "foreign_intent": [
+              "navigational"
+            ],
+            "last_updated_time": "2026-04-30 03:36:18 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 37,
+            "rank_absolute": 53,
+            "domain": "www.stoltmarketing.se",
+            "title": "Webbyrå Helsingborg — hemsidor för handel - Stolt Marketing",
+            "url": "https://www.stoltmarketing.se/helsingborg/hemsida",
+            "breadcrumb": "https://www.stoltmarketing.se › Helsingborg",
+            "website_name": "stoltmarketing.se",
+            "description": "Webbyrå i Helsingborg för handels- och logistikbolag. Polerade, säljande hemsidor i modern teknik med fast månadspris och gratis skiss. 0 kr i startavgift.",
+            "highlighted": [
+              "Webbyrå i Helsingborg för handels- och logistikbolag"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/helsingborg/hemsida",
+            "etv": 0.231,
+            "estimated_paid_traffic_cost": 2.539,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 165
+            }
+          },
+          "check_url": "https://www.google.com/search?q=webbyr%C3%A5%20helsingborg&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "local_pack",
+            "organic",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 107,
+          "keyword_difficulty": 7,
+          "last_updated_time": "2026-08-16 19:15:47 +00:00",
+          "previous_updated_time": "2026-04-17 12:57:57 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "seo-byrå jönköping",
+          "keyword_info": {
+            "last_updated_time": "2026-09-14 16:48:38 +00:00",
+            "competition": 0.44,
+            "competition_level": "MEDIUM",
+            "search_volume": 110,
+            "low_top_of_page_bid": 4.37,
+            "high_top_of_page_bid": 23.07,
+            "categories": [
+              10004,
+              10276,
+              11088
+            ],
+            "monthly_searches": {
+              "2026-08": 20,
+              "2026-07": 10,
+              "2026-06": 50,
+              "2026-05": 40,
+              "2026-04": 50,
+              "2026-03": 110,
+              "2026-02": 50,
+              "2026-01": 110,
+              "2025-12": 110,
+              "2025-11": 20,
+              "2025-10": 30,
+              "2025-09": 590
+            },
+            "search_volume_trend": {
+              "monthly": 100,
+              "quarterly": -60
+            }
+          },
+          "keyword_properties": {
+            "synonym_clustering_algorithm": "text_processing",
+            "detected_language": "sv"
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=seo-byr%C3%A5%20j%C3%B6nk%C3%B6ping&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "organic",
+              "local_pack",
+              "people_also_ask",
+              "paid"
+            ],
+            "se_results_count": 13300,
+            "last_updated_time": "2026-08-25 18:10:57 +00:00",
+            "previous_updated_time": "2026-04-24 17:31:41 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 25.9,
+            "dofollow": 18.1,
+            "referring_pages": 24.6,
+            "referring_domains": 13.4,
+            "referring_main_domains": 12.6,
+            "rank": 67.1,
+            "main_domain_rank": 232.3,
+            "last_updated_time": "2026-08-25 18:10:57 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "commercial",
+            "last_updated_time": "2026-04-28 21:49:17 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 60,
+            "rank_absolute": 67,
+            "domain": "www.stoltmarketing.se",
+            "title": "SEO-byrå & sökmotoroptimering för företag - Stolt Marketing",
+            "url": "https://www.stoltmarketing.se/tjanster/seo",
+            "breadcrumb": "https://www.stoltmarketing.se › Tjänster",
+            "website_name": "stoltmarketing.se",
+            "description": "SEO -byrå för företag i hela Sverige. Sökmotoroptimering, teknisk SEO och lokal optimering som ger mätbara resultat och fler kunder.",
+            "highlighted": [
+              "SEO",
+              "byrå"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/tjanster/seo",
+            "etv": 0.217,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 184
+            }
+          },
+          "check_url": "https://www.google.com/search?q=seo-byr%C3%A5%20j%C3%B6nk%C3%B6ping&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "organic",
+            "local_pack",
+            "people_also_ask",
+            "paid"
+          ],
+          "se_results_count": 13300,
+          "last_updated_time": "2026-08-25 18:10:57 +00:00",
+          "previous_updated_time": "2026-04-24 17:31:41 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "seo byrå jönköping",
+          "keyword_info": {
+            "last_updated_time": "2026-09-15 18:18:32 +00:00",
+            "competition": 0.44,
+            "competition_level": "MEDIUM",
+            "search_volume": 110,
+            "low_top_of_page_bid": 4.37,
+            "high_top_of_page_bid": 23.07,
+            "categories": [
+              10004,
+              10276,
+              11088
+            ],
+            "monthly_searches": {
+              "2026-08": 20,
+              "2026-07": 10,
+              "2026-06": 50,
+              "2026-05": 40,
+              "2026-04": 50,
+              "2026-03": 110,
+              "2026-02": 50,
+              "2026-01": 110,
+              "2025-12": 110,
+              "2025-11": 20,
+              "2025-10": 30,
+              "2025-09": 590
+            },
+            "search_volume_trend": {
+              "monthly": 100,
+              "quarterly": -60
+            }
+          },
+          "keyword_properties": {
+            "core_keyword": "seo-byrå jönköping",
+            "synonym_clustering_algorithm": "text_processing",
+            "detected_language": "sv"
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=seo%20byr%C3%A5%20j%C3%B6nk%C3%B6ping&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "organic",
+              "local_pack",
+              "people_also_ask"
+            ],
+            "se_results_count": 107,
+            "last_updated_time": "2026-08-25 18:12:04 +00:00",
+            "previous_updated_time": "2026-04-24 17:32:20 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 25.9,
+            "dofollow": 18.1,
+            "referring_pages": 24.6,
+            "referring_domains": 13.4,
+            "referring_main_domains": 12.6,
+            "rank": 67.1,
+            "main_domain_rank": 272.6,
+            "last_updated_time": "2026-08-25 18:12:04 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "commercial",
+            "last_updated_time": "2026-04-28 23:01:14 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 64,
+            "rank_absolute": 71,
+            "domain": "www.stoltmarketing.se",
+            "title": "SEO-byrå & sökmotoroptimering för företag - Stolt Marketing",
+            "url": "https://www.stoltmarketing.se/tjanster/seo",
+            "breadcrumb": "https://www.stoltmarketing.se › Tjänster",
+            "website_name": "stoltmarketing.se",
+            "description": "SEO -byrå för företag i hela Sverige. Sökmotoroptimering, teknisk SEO och lokal optimering som ger mätbara resultat och fler kunder.",
+            "highlighted": [
+              "SEO",
+              "byrå"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/tjanster/seo",
+            "etv": 0.231,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 184
+            }
+          },
+          "check_url": "https://www.google.com/search?q=seo%20byr%C3%A5%20j%C3%B6nk%C3%B6ping&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "organic",
+            "local_pack",
+            "people_also_ask"
+          ],
+          "se_results_count": 107,
+          "last_updated_time": "2026-08-25 18:12:04 +00:00",
+          "previous_updated_time": "2026-04-24 17:32:20 +00:00"
+        }
+      },
+      {
+        "keyword_data": {
+          "keyword": "seo halmstad",
+          "keyword_info": {
+            "last_updated_time": "2026-09-13 14:39:02 +00:00",
+            "competition": 0.2,
+            "competition_level": "LOW",
+            "search_volume": 170,
+            "low_top_of_page_bid": 4.54,
+            "high_top_of_page_bid": 90.39,
+            "categories": [
+              10004,
+              10276,
+              11088
+            ],
+            "monthly_searches": {
+              "2026-08": 40,
+              "2026-07": 30,
+              "2026-06": 70,
+              "2026-05": 70,
+              "2026-04": 90,
+              "2026-03": 210,
+              "2026-02": 140,
+              "2026-01": 110,
+              "2025-12": 140,
+              "2025-11": 140,
+              "2025-10": 170,
+              "2025-09": 880
+            },
+            "search_volume_trend": {
+              "monthly": 33,
+              "quarterly": -43,
+              "yearly": -81
+            }
+          },
+          "keyword_properties": {
+            "detected_language": "de",
+            "is_another_language": true
+          },
+          "serp_info": {
+            "check_url": "https://www.google.com/search?q=seo%20halmstad&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+            "serp_item_types": [
+              "ai_overview",
+              "organic",
+              "people_also_ask",
+              "related_searches"
+            ],
+            "se_results_count": 100,
+            "last_updated_time": "2026-09-28 00:14:13 +00:00",
+            "previous_updated_time": "2026-07-26 12:44:05 +00:00"
+          },
+          "avg_backlinks_info": {
+            "backlinks": 6.6,
+            "dofollow": 5.4,
+            "referring_pages": 6.6,
+            "referring_domains": 5.9,
+            "referring_main_domains": 5.5,
+            "rank": 19.1,
+            "main_domain_rank": 232.1,
+            "last_updated_time": "2026-09-28 00:14:14 +00:00"
+          },
+          "search_intent_info": {
+            "main_intent": "navigational",
+            "foreign_intent": [
+              "commercial"
+            ],
+            "last_updated_time": "2026-04-29 21:28:41 +00:00"
+          }
+        },
+        "ranked_serp_element": {
+          "serp_item": {
+            "type": "organic",
+            "rank_group": 68,
+            "rank_absolute": 76,
+            "domain": "www.stoltmarketing.se",
+            "title": "SEO-byrå & sökmotoroptimering för företag - Stolt Marketing",
+            "url": "https://www.stoltmarketing.se/tjanster/seo",
+            "breadcrumb": "https://www.stoltmarketing.se › Tjänster",
+            "website_name": "stoltmarketing.se",
+            "description": "SEO -byrå för företag i hela Sverige. Sökmotoroptimering, teknisk SEO och lokal optimering som ger mätbara resultat och fler kunder.",
+            "highlighted": [
+              "SEO"
+            ],
+            "main_domain": "stoltmarketing.se",
+            "relative_url": "/tjanster/seo",
+            "etv": 0.357,
+            "rank_changes": {
+              "is_new": true
+            },
+            "rank_info": {
+              "main_domain_rank": 179
+            }
+          },
+          "check_url": "https://www.google.com/search?q=seo%20halmstad&hl=sv&gl=SE&ie=UTF-8&uule=w+CAIQIFISCfHwNW05slxGEWJvrY2i67gi",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 100,
+          "last_updated_time": "2026-09-28 00:14:13 +00:00",
+          "previous_updated_time": "2026-07-26 12:44:05 +00:00"
+        }
+      }
+    ]
+  }
+}

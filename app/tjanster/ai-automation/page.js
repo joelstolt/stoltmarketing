@@ -1,17 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AiAutomationContent from "./AiAutomationContent";
-import ServiceExtra from "@/components/ServiceExtra";
+import ServicePage from "@/components/ServicePage";
+import { EXTRA_SERVICES } from "@/lib/services-extra";
 
 export default function Page() {
-  return (
-    <>
-      <Header />
-      <main>
-        <AiAutomationContent />
-        <ServiceExtra service="ai-automation" />
-      </main>
-      <Footer />
-    </>
-  );
+  return (<><Header /><main id="main-content" tabIndex={-1}><ServicePage data={EXTRA_SERVICES["ai-automation"]} /></main><Footer /></>);
 }

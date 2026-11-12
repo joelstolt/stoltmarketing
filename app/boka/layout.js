@@ -8,17 +8,27 @@ const breadcrumb = {
 };
 
 export const metadata = {
-  title: "Boka kostnadsfri genomgång med Joel Stolt, Hässleholm",
-  description:
-    "Boka ett kostnadsfritt samtal med Joel Stolt. Vi går igenom din digitala strategi, webb, SEO, AI. Inga förpliktelser. 15 till 20 minuter.",
-  alternates: {
-    canonical: "https://www.stoltmarketing.se/boka",
+  "title": "Boka en kostnadsfri genomgång med Joel Stolt",
+  "description": "Välj en tid i kalendern för ett kostnadsfritt samtal på 30 minuter. Gå igenom ditt behov av hemsida, förfrågningar eller marknadsföring.",
+  "alternates": {
+    "canonical": "https://www.stoltmarketing.se/boka"
   },
-  openGraph: {
-    title: "Boka kostnadsfri genomgång | Stolt Marketing",
-    description: "15 till 20 min gratis genomgång. Ingen försäljning. Fokus på ditt behov.",
-    url: "https://www.stoltmarketing.se/boka",
+  "openGraph": {
+    "title": "Boka en kostnadsfri genomgång med Joel Stolt",
+    "description": "Välj en tid i kalendern för ett kostnadsfritt samtal på 30 minuter. Gå igenom ditt behov av hemsida, förfrågningar eller marknadsföring.",
+    "url": "https://www.stoltmarketing.se/boka",
+    "images": [
+      "/og-image.png"
+    ]
   },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Boka en kostnadsfri genomgång med Joel Stolt",
+    "description": "Välj en tid i kalendern för ett kostnadsfritt samtal på 30 minuter. Gå igenom ditt behov av hemsida, förfrågningar eller marknadsföring.",
+    "images": [
+      "/og-image.png"
+    ]
+  }
 };
 
 export default function Layout({ children }) {

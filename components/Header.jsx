@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Phone,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SITE } from "@/lib/local/data";
 
 const PAPER = "#F2ECDD";
@@ -20,17 +21,16 @@ const navItems = [
   { label: "Förfrågningar", href: "/forfragningar" },
   { label: "Priser", href: "/priser" },
   { label: "Projekt", href: "/projekt" },
-  { label: "Sajtkoll", href: "/sajtkoll" },
-  { label: "Om mig", href: "/om" },
+  { label: "Hemsidor", href: "/hemsida-foretag" },
+  { label: "Om Joel", href: "/om" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
 const navLinkStyle = {
   fontFamily: "var(--font-ui)",
-  fontSize: 11,
+  fontSize: 13,
   fontWeight: 600,
-  letterSpacing: "0.2em",
-  textTransform: "uppercase",
+  letterSpacing: "0.01em",
   color: DIM,
   textDecoration: "none",
   transition: "color 0.2s",
@@ -38,28 +38,55 @@ const navLinkStyle = {
 };
 
 export default function Header() {
+  const pathname = usePathname();
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null);
+  const active = (href) => pathname === href || pathname.startsWith(`${href}/`);
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => { setIsOpen(false); }, [pathname]);
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!isOpen) return;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const background = [...document.querySelectorAll("main, footer")];
+    const inertStates = background.map((el) => el.inert);
+    background.forEach((el) => { el.inert = true; });
+    window.dispatchEvent(new CustomEvent("stolt-menu:change", { detail: { open: true } }));
+    menuRef.current?.querySelector("a")?.focus();
+    const keydown = (event) => {
+      if (event.key === "Escape") { event.preventDefault(); setIsOpen(false); }
+      if (event.key !== "Tab") return;
+      const links = [...(menuRef.current?.querySelectorAll('a[href], button:not([disabled])') || [])];
+      const elements = [toggleRef.current, ...links].filter(Boolean);
+      const first = elements[0], last = elements.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    const resize = () => { if (window.innerWidth >= 1024) setIsOpen(false); };
+    document.addEventListener("keydown", keydown);
+    window.addEventListener("resize", resize);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = overflow;
+      background.forEach((el, i) => { el.inert = inertStates[i]; });
+      document.removeEventListener("keydown", keydown);
+      window.removeEventListener("resize", resize);
+      window.dispatchEvent(new CustomEvent("stolt-menu:change", { detail: { open: false } }));
+      toggleRef.current?.focus({ preventScroll: true });
     };
   }, [isOpen]);
 
   return (
     <>
+      <a href="#main-content" className="skip-link">Hoppa till innehållet</a>
       {/* ═══ HEADER BAR ═══ */}
       <header
         style={{
@@ -144,19 +171,21 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav
+            aria-label="Huvudmeny"
             className="hidden lg:flex"
             style={{
               alignItems: "center",
-              gap: 22,
+              gap: 18,
             }}
           >
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                style={navLinkStyle}
+                aria-current={active(item.href) ? "page" : undefined}
+                style={{ ...navLinkStyle, color: active(item.href) ? GUL : DIM }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = GUL)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = DIM)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = active(item.href) ? GUL : DIM)}
               >
                 {item.label}
               </Link>
@@ -164,8 +193,8 @@ export default function Header() {
 
             <a
               href={SITE.phoneHref}
+              className="hidden xl:flex"
               style={{
-                display: "flex",
                 alignItems: "center",
                 gap: 7,
                 fontFamily: "var(--font-ui)",
@@ -180,7 +209,7 @@ export default function Header() {
               onMouseEnter={(e) => (e.currentTarget.style.color = GUL)}
               onMouseLeave={(e) => (e.currentTarget.style.color = PAPER)}
             >
-              <Phone size={14} color={GUL} />
+              <Phone aria-hidden="true" size={14} color={GUL} />
               {SITE.phone}
             </a>
 
@@ -217,6 +246,9 @@ export default function Header() {
             @media (prefers-reduced-motion: reduce) { .mob-burger span { transition: none; } }
           `}</style>
           <button
+            ref={toggleRef}
+            type="button"
+            aria-controls="mobile-navigation"
             onClick={() => setIsOpen(!isOpen)}
             className={`flex lg:hidden mob-menu-btn ${isOpen ? "is-open" : ""}`}
             aria-label={isOpen ? "Stäng menyn" : "Öppna menyn"}
@@ -234,7 +266,10 @@ export default function Header() {
       {/* ═══ MOBILE MENU (portal-style, outside header) ═══ */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <motion.nav
+            ref={menuRef}
+            id="mobile-navigation"
+            aria-label="Mobilmeny"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -259,6 +294,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
+                  aria-current={active(item.href) ? "page" : undefined}
                   className="font-heading"
                   style={{
                     display: "block",
@@ -305,12 +341,12 @@ export default function Header() {
                     textDecoration: "none",
                   }}
                 >
-                  <Phone size={17} color={GUL} />
+                  <Phone aria-hidden="true" size={17} color={GUL} />
                   {SITE.phone}
                 </a>
               </div>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </>

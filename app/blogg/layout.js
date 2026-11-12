@@ -1,35 +1,21 @@
-const breadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Blogg", item: "https://www.stoltmarketing.se/blogg" },
-  ],
-};
-
 export const metadata = {
-  title: "Blogg — Guider om webb, SEO och AI",
-  description:
-    "Praktiska guider och tips om webbutveckling, SEO, AI-automation och digital strategi för småföretag. Skrivet av Joel Stolt, digital konsult i Hässleholm.",
-  alternates: {
-    canonical: "https://www.stoltmarketing.se/blogg",
-  },
+  title: "Blogg: praktiska guider om hemsidor, SEO och AI",
+  description: "32 guider av Joel Stolt med ämnesfilter, checklistor och konkreta exempel. Hitta hjälp med hemsidor, SEO, annonser, AI och e-handel.",
+  alternates: { canonical: "https://www.stoltmarketing.se/blogg" },
   openGraph: {
-    title: "Blogg — Guider om webb, SEO och AI | Stolt Marketing",
-    description:
-      "Praktiska artiklar om webbutveckling, SEO och AI för småföretag.",
+    title: "Guider om hemsidor, SEO och AI | Stolt Marketing",
+    description: "Välj ett problem och hitta en praktisk guide med exempel, källor och tydliga avgränsningar.",
     url: "https://www.stoltmarketing.se/blogg",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guider om hemsidor, SEO och AI | Stolt Marketing",
+    description: "Praktiska guider av Joel Stolt med ämnesfilter, checklistor och konkreta exempel.",
   },
 };
 
+// Each article emits its complete breadcrumb once from its own layout.
 export default function BloggLayout({ children }) {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
-      {children}
-    </>
-  );
+  return children;
 }

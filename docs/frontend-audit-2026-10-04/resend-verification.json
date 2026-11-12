@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-04T21:19:31.445301+00:00",
+  "matches": [
+    {
+      "id": "01a108c9-261d-7134-910a-97f48416f70a",
+      "to": [
+        "joel@stoltmarketing.se"
+      ],
+      "from": "Stolt Marketing <kontakt@stoltmarketing.se>",
+      "subject": "Kontakt: QA frontend 20261004",
+      "created_at": "2026-10-04 21:19:22.806000+00",
+      "last_event": "delivered"
+    }
+  ]
+}

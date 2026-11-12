@@ -1,0 +1,4832 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "words": 1420,
+      "title": "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
+      "title_len": 65,
+      "description_len": 160,
+      "h1": [
+        "Hinner ni svara innan kunden frågat någon annan ?"
+      ],
+      "issues": [],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/forfragningar",
+      "words": 661,
+      "title": "Förfrågningar via hemsidan, direkt till mobilen | Stolt Marketing",
+      "title_len": 65,
+      "description_len": 163,
+      "h1": [
+        "Det svåra är att hinna svara innan kunden frågat någon annan."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/tjanster",
+      "words": 1126,
+      "title": "Tjänster i Hässleholm: webb, SEO, AI och Google Ads | Stolt Marketing",
+      "title_len": 69,
+      "description_len": 150,
+      "h1": [
+        "Webb, SEO, AI och drift. Ett mål: fler kunder från webben."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/priser",
+      "words": 848,
+      "title": "Priser: 0 kr i startavgift, fast månadspris | Stolt Marketing",
+      "title_len": 61,
+      "description_len": 181,
+      "h1": [
+        "Öppna priser, inget finstilt"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "Service",
+        "ProfessionalService",
+        "Offer",
+        "Offer",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/webbutveckling",
+      "words": 1645,
+      "title": "Webbdesign & webbutveckling | Hemsida med fast månadspris",
+      "title_len": 57,
+      "description_len": 152,
+      "h1": [
+        "Moderna webbplatser och e-handel som gör det lätt för kunder att hitta dig och ta kontakt."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/ai-automation",
+      "words": 933,
+      "title": "AI-automation | Smartare processer för företag",
+      "title_len": 46,
+      "description_len": 145,
+      "h1": [
+        "AI-verktyg och automation som faktiskt sparar tid — inte bara buzzwords."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/seo",
+      "words": 1540,
+      "title": "SEO-byrå & sökmotoroptimering för företag",
+      "title_len": 41,
+      "description_len": 159,
+      "h1": [
+        "SEO-byrå som mäter innan den lovar."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/managed-hemsida",
+      "words": 912,
+      "title": "Managed hemsida | Drift, säkerhet och support som ingår",
+      "title_len": 55,
+      "description_len": 159,
+      "h1": [
+        "Drift, underhåll och förbättringar, utan att du behöver tänka på det."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/google-ads",
+      "words": 1595,
+      "title": "Google Ads-byrå | Annonsering med fast månadspris",
+      "title_len": 49,
+      "description_len": 156,
+      "h1": [
+        "Fler kunder med Google Ads — utan att vänta på SEO."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/e-handel",
+      "words": 526,
+      "title": "E-handel | Snabbare webbutik på 30 dagar, fast pris",
+      "title_len": 51,
+      "description_len": 177,
+      "h1": [
+        "Snabbare webbutik på 30 dagar. Betala när den är live."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/wordpress",
+      "words": 338,
+      "title": "WordPress-hemsida | Snabb, säker och byggd av en webbyrå",
+      "title_len": 56,
+      "description_len": 167,
+      "h1": [
+        "WordPress-hemsida byggd av en webbyrå."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/facebook-annonsering",
+      "words": 937,
+      "title": "Facebook-annonsering | Annonsera på Facebook & Instagram",
+      "title_len": 56,
+      "description_len": 183,
+      "h1": [
+        "Annonsera på Facebook och Instagram utan att elda pengar."
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tjanster/ai-synlighet",
+      "words": 972,
+      "title": "AI-SEO | Syns när kunder frågar ChatGPT och Google AI",
+      "title_len": 53,
+      "description_len": 171,
+      "h1": [
+        "Syns när dina kunder frågar AI i stället för att googla."
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "AdministrativeArea",
+        "Country",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/tillganglighet",
+      "words": 720,
+      "title": "Tillgänglighet & EAA: granskning och åtgärder till fast pris | Stolt Marketing",
+      "title_len": 78,
+      "description_len": 201,
+      "h1": [
+        "Tillgänglighetskraven är lag. Vi gör din sajt redo."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "Service",
+        "ProfessionalService",
+        "Offer",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/sajtkoll",
+      "words": 222,
+      "title": "Gratis sajtkoll: så bra fungerar din hemsida | Stolt Marketing",
+      "title_len": 62,
+      "description_len": 214,
+      "h1": [
+        "Hur bra fungerar din hemsida ?"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guider",
+      "words": 163,
+      "title": "Guider: praktisk hjälp för företagare | Stolt Marketing",
+      "title_len": 55,
+      "description_len": 154,
+      "h1": [
+        "Guider som gör jobbet enklare ."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guider/fler-google-recensioner",
+      "words": 1306,
+      "title": "Fler Google-recensioner till ditt företag: guide",
+      "title_len": 48,
+      "description_len": 149,
+      "h1": [
+        "Fler Google-recensioner till ditt företag: så gör du (utan att bryta mot reglerna)"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/guider/synas-i-ai-sok",
+      "words": 1079,
+      "title": "AI-sökmotor: så syns ditt företag i ChatGPT",
+      "title_len": 43,
+      "description_len": 164,
+      "h1": [
+        "Syns ditt företag när kunder frågar ChatGPT? Så fungerar AI-sök"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/guider/chatgpt-for-smaforetag",
+      "words": 1237,
+      "title": "ChatGPT för företag: 9 sätt att spara tid",
+      "title_len": 41,
+      "description_len": 164,
+      "h1": [
+        "ChatGPT för småföretag: 9 användningsområden som faktiskt sparar tid"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/sokmotoroptimering",
+      "words": 1918,
+      "title": "Sökmotoroptimering | Så fungerar SEO 2026, komplett guide | Stolt Marketing",
+      "title_len": 75,
+      "description_len": 173,
+      "h1": [
+        "Sökmotoroptimering: så fungerar SEO 2026."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Organization",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/hemsida-foretag",
+      "words": 768,
+      "title": "Hemsida för företag | 0 kr start, från 1 190 kr per månad | Stolt Marketing",
+      "title_len": 75,
+      "description_len": 201,
+      "h1": [
+        "Hemsida för företag. 0 kr i start, från 1 190 kr i månaden."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Service",
+        "ProfessionalService",
+        "Country",
+        "Offer",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/vad-kostar-en-hemsida",
+      "words": 884,
+      "title": "Vad kostar en hemsida 2026? Priser, exempel och fällor | Stolt Marketing",
+      "title_len": 72,
+      "description_len": 180,
+      "h1": [
+        "Vad kostar en hemsida 2026?"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/vad-kostar-seo",
+      "words": 708,
+      "title": "Vad kostar SEO 2026? Månadspris, engångsjobb och timpris | Stolt Marketing",
+      "title_len": 74,
+      "description_len": 187,
+      "h1": [
+        "Vad kostar SEO 2026?"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/projekt/batteriproffs",
+      "words": 292,
+      "title": "Eget case: Batteriproffs",
+      "title_len": 24,
+      "description_len": 175,
+      "h1": [
+        "Batteriproffs: e-handeln vi driver själva."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/forskolan-harpan",
+      "words": 223,
+      "title": "Kundcase: Förskolan Harpan",
+      "title_len": 26,
+      "description_len": 155,
+      "h1": [
+        "Förskolan Harpan: en profil och sajt varm som verksamheten."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/pingstkyrkan",
+      "words": 222,
+      "title": "Kundcase: Pingstkyrkan Hässleholm",
+      "title_len": 33,
+      "description_len": 141,
+      "h1": [
+        "Pingstkyrkan Hässleholm: en lugn och tydlig plats på nätet."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/gardetshundtrim",
+      "words": 185,
+      "title": "Kundcase: Gärdets Hundtrim",
+      "title_len": 26,
+      "description_len": 140,
+      "h1": [
+        "Gärdets Hundtrim: en sajt lika välkomnande som salongen."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt",
+      "words": 1414,
+      "title": "Projekt och case: webbutveckling, SEO, AI och e-handel | Stolt Marketing",
+      "title_len": 72,
+      "description_len": 139,
+      "h1": [
+        "Uppdrag som talar för sig själva."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/edshare",
+      "words": 434,
+      "title": "Kundcase: EdShare",
+      "title_len": 17,
+      "description_len": 198,
+      "h1": [
+        "Från en WordPress-sajt vid vägs ände till tre 100:or."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/linguista",
+      "words": 517,
+      "title": "Kundcase: Linguista",
+      "title_len": 19,
+      "description_len": 214,
+      "h1": [
+        "Fyra 100:or och en sajt som uppdaterar sig själv."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/hantverkssajter",
+      "words": 521,
+      "title": "Vi mätte 4 864 svenska hantverkssajter | Stolt Marketing",
+      "title_len": 56,
+      "description_len": 170,
+      "h1": [
+        "Vi mätte 4 864 svenska hantverkssajter."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "Dataset",
+        "Organization",
+        "Country",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/niklassonsflytt",
+      "words": 429,
+      "title": "Kundcase: Niklassons Flytt",
+      "title_len": 26,
+      "description_len": 136,
+      "h1": [
+        "32 offertförfrågningar på 30 dagar."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/arkipel",
+      "words": 501,
+      "title": "Kundcase: Arkipel Entreprenad",
+      "title_len": 29,
+      "description_len": 163,
+      "h1": [
+        "61 sidor i stället för 17. Därför syns de."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/ngtab",
+      "words": 433,
+      "title": "Kundcase: Norrlands Gräv & Transport",
+      "title_len": 36,
+      "description_len": 134,
+      "h1": [
+        "En rad kod kan göra hela sajten osynlig."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/projekt/premiebygg",
+      "words": 413,
+      "title": "Kundcase: Premie Bygg",
+      "title_len": 21,
+      "description_len": 132,
+      "h1": [
+        "Formuläret som faktiskt når fram."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/om",
+      "words": 433,
+      "title": "Om Joel Stolt: webbkonsult för hantverksföretag, Hässleholm | Stolt Marketing",
+      "title_len": 77,
+      "description_len": 156,
+      "h1": [
+        "Joel Stolt"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/kontakt",
+      "words": 242,
+      "title": "Kontakt Joel Stolt: boka kostnadsfri genomgång | Stolt Marketing",
+      "title_len": 64,
+      "description_len": 135,
+      "h1": [
+        "Boka en kostnadsfri genomgång och få tydliga nästa steg."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/boka",
+      "words": 127,
+      "title": "Boka kostnadsfri genomgång med Joel Stolt, Hässleholm | Stolt Marketing",
+      "title_len": 71,
+      "description_len": 137,
+      "h1": [
+        "Boka en kostnadsfri genomgång"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/integritet",
+      "words": 445,
+      "title": "Integritetspolicy | Stolt Marketing",
+      "title_len": 35,
+      "description_len": 99,
+      "h1": [
+        "Integritetspolicy"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hassleholm",
+      "words": 935,
+      "title": "Webbyrå i Hässleholm: webb, SEO, Google Ads och AI | Stolt Marketing",
+      "title_len": 68,
+      "description_len": 141,
+      "h1": [
+        "Webbyrå i Hässleholm — din lokala digitala partner."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/hassleholm/hemsida",
+      "words": 1059,
+      "title": "Webbyrå Hässleholm, lokal webbyrå på plats",
+      "title_len": 42,
+      "description_len": 160,
+      "h1": [
+        "Webbyrå i Hässleholm"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/hassleholm/seo",
+      "words": 991,
+      "title": "SEO Hässleholm, lokal sökmotoroptimering",
+      "title_len": 40,
+      "description_len": 146,
+      "h1": [
+        "SEO i Hässleholm"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/hassleholm/google-ads",
+      "words": 961,
+      "title": "Google Ads Hässleholm, låg CPC, snabb lönsamhet",
+      "title_len": 47,
+      "description_len": 157,
+      "h1": [
+        "Google Ads i Hässleholm"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/hassleholm/ai-automation",
+      "words": 974,
+      "title": "AI-automation Hässleholm, mer tid för småföretag",
+      "title_len": 48,
+      "description_len": 151,
+      "h1": [
+        "AI-automation i Hässleholm"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/kristianstad",
+      "words": 883,
+      "title": "Webbyrå Kristianstad: hemsida, SEO och webbutveckling | Stolt Marketing",
+      "title_len": 71,
+      "description_len": 142,
+      "h1": [
+        "Webbyrå i Kristianstad — din lokala digitala partner."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/kristianstad/hemsida",
+      "words": 983,
+      "title": "Webbyrå Kristianstad, hemsidor för företag",
+      "title_len": 42,
+      "description_len": 156,
+      "h1": [
+        "Webbyrå i Kristianstad"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/kristianstad/seo",
+      "words": 927,
+      "title": "SEO Kristianstad, synlighet för matregionen",
+      "title_len": 43,
+      "description_len": 154,
+      "h1": [
+        "SEO i Kristianstad"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/kristianstad/google-ads",
+      "words": 891,
+      "title": "Google Ads Kristianstad, billiga klick, fler kunder",
+      "title_len": 51,
+      "description_len": 156,
+      "h1": [
+        "Google Ads i Kristianstad"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/kristianstad/ai-automation",
+      "words": 898,
+      "title": "AI-automation Kristianstad, tillverkning & handel",
+      "title_len": 49,
+      "description_len": 153,
+      "h1": [
+        "AI-automation i Kristianstad"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/helsingborg",
+      "words": 884,
+      "title": "Webbyrå Helsingborg: hemsida, SEO och webbutveckling | Stolt Marketing",
+      "title_len": 70,
+      "description_len": 131,
+      "h1": [
+        "Webbyrå i Helsingborg — för företag som vill växa."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/helsingborg/hemsida",
+      "words": 1013,
+      "title": "Webbyrå Helsingborg, hemsidor för handel",
+      "title_len": 40,
+      "description_len": 155,
+      "h1": [
+        "Webbyrå i Helsingborg"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/helsingborg/seo",
+      "words": 954,
+      "title": "SEO Helsingborg, synas i handel & logistik",
+      "title_len": 42,
+      "description_len": 156,
+      "h1": [
+        "SEO i Helsingborg"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/helsingborg/google-ads",
+      "words": 924,
+      "title": "Google Ads Helsingborg, fler leads & samtal",
+      "title_len": 43,
+      "description_len": 156,
+      "h1": [
+        "Google Ads i Helsingborg"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/helsingborg/ai-automation",
+      "words": 922,
+      "title": "AI-automation Helsingborg, handel & logistik",
+      "title_len": 44,
+      "description_len": 148,
+      "h1": [
+        "AI-automation i Helsingborg"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/malmo",
+      "words": 883,
+      "title": "Webbyrå Malmö: hemsida, SEO och webbutveckling | Stolt Marketing",
+      "title_len": 64,
+      "description_len": 129,
+      "h1": [
+        "Webbyrå i Malmö — för växande företag och startups."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/malmo/hemsida",
+      "words": 984,
+      "title": "Webbyrå Malmö, snabba hemsidor som konverterar",
+      "title_len": 46,
+      "description_len": 154,
+      "h1": [
+        "Webbyrå i Malmö"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/malmo/seo",
+      "words": 923,
+      "title": "SEO Malmö, sökmotoroptimering som ger ROI",
+      "title_len": 41,
+      "description_len": 154,
+      "h1": [
+        "SEO i Malmö"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/malmo/google-ads",
+      "words": 884,
+      "title": "Google Ads Malmö, ROAS-fokus & vass targeting",
+      "title_len": 45,
+      "description_len": 165,
+      "h1": [
+        "Google Ads i Malmö"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/malmo/ai-automation",
+      "words": 904,
+      "title": "AI-automation Malmö, spara tid i ditt bolag",
+      "title_len": 43,
+      "description_len": 154,
+      "h1": [
+        "AI-automation i Malmö"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/lund",
+      "words": 886,
+      "title": "Webbyrå Lund: hemsida, SEO och webbutveckling | Stolt Marketing",
+      "title_len": 63,
+      "description_len": 154,
+      "h1": [
+        "Webbyrå i Lund — för innovatörer, forskning och tech."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/lund/hemsida",
+      "words": 1007,
+      "title": "Webbyrå Lund, teknisk webb med hög kvalitet",
+      "title_len": 43,
+      "description_len": 168,
+      "h1": [
+        "Webbyrå i Lund"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/lund/seo",
+      "words": 924,
+      "title": "SEO Lund, sökmotoroptimering för tech & forskning",
+      "title_len": 49,
+      "description_len": 154,
+      "h1": [
+        "SEO i Lund"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/lund/google-ads",
+      "words": 897,
+      "title": "Google Ads Lund, B2B & life science",
+      "title_len": 35,
+      "description_len": 159,
+      "h1": [
+        "Google Ads i Lund"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/lund/ai-automation",
+      "words": 905,
+      "title": "AI-automation Lund, för tech- och R&D-bolag",
+      "title_len": 43,
+      "description_len": 154,
+      "h1": [
+        "AI-automation i Lund"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "FAQ_DUPLICATE:2"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "LocalBusiness",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Service",
+        "ProfessionalService",
+        "PostalAddress",
+        "City",
+        "GeoCoordinates",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ]
+    },
+    {
+      "path": "/blogg",
+      "words": 1288,
+      "title": "Blogg — Guider om webb, SEO och AI | Stolt Marketing",
+      "title_len": 52,
+      "description_len": 153,
+      "h1": [
+        "Guider, tips och insikter om webb, SEO och AI."
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/wordpress-vs-nextjs",
+      "words": 561,
+      "title": "WordPress vs Next.js 2026 — ärlig jämförelse för företag",
+      "title_len": 56,
+      "description_len": 127,
+      "h1": [
+        "WordPress vs Next.js, vilket passar ditt företag?"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/seo-for-smaforetag",
+      "words": 895,
+      "title": "SEO för småföretag 2026 — 7 steg som faktiskt fungerar",
+      "title_len": 54,
+      "description_len": 135,
+      "h1": [
+        "SEO för småföretag, 7 steg som faktiskt fungerar"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/lokal-seo-guide",
+      "words": 1315,
+      "title": "Lokal SEO — Så syns ditt företag på Google Maps 2026",
+      "title_len": 52,
+      "description_len": 149,
+      "h1": [
+        "Lokal SEO, Så syns ditt företag i Google Maps och lokala sökningar"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/webbdesign-trender-2026",
+      "words": 1212,
+      "title": "Webbdesign-trender 2026 — Vad som faktiskt spelar roll",
+      "title_len": 54,
+      "description_len": 153,
+      "h1": [
+        "Webbdesign-trender 2026, Vad som faktiskt spelar roll"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/ai-for-foretag",
+      "words": 1200,
+      "title": "AI för företag 2026 — Praktiska användningsområden som ger resultat",
+      "title_len": 67,
+      "description_len": 133,
+      "h1": [
+        "AI för företag 2026, Praktiska användningsområden som ger resultat"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/google-ads-vs-seo",
+      "words": 1050,
+      "title": "Google Ads vs SEO — Vad ska du satsa på?",
+      "title_len": 40,
+      "description_len": 146,
+      "h1": [
+        "Google Ads vs SEO, Vad ska du satsa på?"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/hemsida-som-saljer",
+      "words": 859,
+      "title": "5 saker som skiljer en hemsida som säljer från en som bara finns",
+      "title_len": 64,
+      "description_len": 158,
+      "h1": [
+        "5 saker som skiljer en hemsida som säljer från en som bara finns"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/wordpress-eller-webbyra",
+      "words": 1006,
+      "title": "Bygga hemsida själv eller anlita en webbyrå? Ärlig jämförelse",
+      "title_len": 61,
+      "description_len": 125,
+      "h1": [
+        "Bygga hemsida själv eller anlita en webbyrå? Ärlig jämförelse"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/e-handel-guide",
+      "words": 1134,
+      "title": "Starta e-handel 2026 — Komplett guide för svenska företag",
+      "title_len": 57,
+      "description_len": 120,
+      "h1": [
+        "Starta e-handel 2026, Komplett guide för svenska företag"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/google-business-profile-guide",
+      "words": 1459,
+      "title": "Google Business Profile — Komplett guide för företagare 2026",
+      "title_len": 60,
+      "description_len": 160,
+      "h1": [
+        "Google Business Profile, Komplett guide för företagare 2026"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/varfor-snabb-hemsida",
+      "words": 1320,
+      "title": "Varför en snabb hemsida ger dig fler kunder (och bättre SEO)",
+      "title_len": 60,
+      "description_len": 138,
+      "h1": [
+        "Varför en snabb hemsida ger dig fler kunder (och bättre SEO)"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/content-strategi-smaforetag",
+      "words": 1237,
+      "title": "Content-strategi för småföretag — Så skapar du innehåll som rankar",
+      "title_len": 66,
+      "description_len": 140,
+      "h1": [
+        "Content-strategi för småföretag, Så skapar du innehåll som rankar"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/valja-seo-byra",
+      "words": 1324,
+      "title": "Så väljer du rätt SEO-byrå 2026 (6 varningstecken)",
+      "title_len": 50,
+      "description_len": 129,
+      "h1": [
+        "Så väljer du rätt SEO-byrå (och 6 tecken på att du blir lurad)"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/hemsida-inga-kunder",
+      "words": 1750,
+      "title": "Hemsidan får inga kunder? 7 orsaker och fixar",
+      "title_len": 45,
+      "description_len": 128,
+      "h1": [
+        "Därför får din hemsida inga kunder: 7 orsaker och hur du fixar dem"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/seo-tips-smaforetag",
+      "words": 687,
+      "title": "17 SEO-tips för småföretag som ger resultat 2026",
+      "title_len": 48,
+      "description_len": 119,
+      "h1": [
+        "17 SEO-tips för småföretag som faktiskt ger resultat"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/vad-kostar-google-ads",
+      "words": 1454,
+      "title": "Vad kostar Google Ads 2026? Prisguide för företag",
+      "title_len": 49,
+      "description_len": 136,
+      "h1": [
+        "Vad kostar Google Ads i Sverige 2026? En ärlig prisguide"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/chatbot-for-foretag",
+      "words": 1533,
+      "title": "Chatbot för företag: fånga fler leads dygnet runt",
+      "title_len": 49,
+      "description_len": 146,
+      "h1": [
+        "Chatbot för företag: så fångar din hemsida fler leads dygnet runt"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/seo-analys-sjalv",
+      "words": 699,
+      "title": "SEO-analys: gör en själv på 30 min (gratis checklista)",
+      "title_len": 54,
+      "description_len": 130,
+      "h1": [
+        "SEO-analys: så gör du en själv på 30 minuter"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/vad-kostar-webbutik",
+      "words": 1494,
+      "title": "Vad kostar en webbutik 2026? Prisguide e-handel",
+      "title_len": 47,
+      "description_len": 134,
+      "h1": [
+        "Vad kostar en webbutik 2026? Komplett prisguide för e-handel"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/landningssida-som-konverterar",
+      "words": 1454,
+      "title": "Landningssida som konverterar: anatomin steg för steg",
+      "title_len": 53,
+      "description_len": 144,
+      "h1": [
+        "Landningssida som konverterar: anatomin bakom en sida som säljer"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/sokordsanalys-nyborjare",
+      "words": 1432,
+      "title": "Sökordsanalys för nybörjare: hitta rätt sökord",
+      "title_len": 46,
+      "description_len": 133,
+      "h1": [
+        "Sökordsanalys för nybörjare: hitta orden dina kunder googlar"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/ai-verktyg-smaforetag",
+      "words": 724,
+      "title": "12 AI-verktyg för småföretag att testa 2026",
+      "title_len": 43,
+      "description_len": 135,
+      "h1": [
+        "12 AI-verktyg varje småföretagare borde testa 2026"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/betallosningar-webbutik",
+      "words": 1550,
+      "title": "Betallösningar för webbutik: Swish, Klarna eller kort?",
+      "title_len": 54,
+      "description_len": 144,
+      "h1": [
+        "Swish, Klarna eller kort? Guide till betallösningar i webbutiken"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/google-ads-byra-eller-sjalv",
+      "words": 1501,
+      "title": "Google Ads: byrå eller sköta själv? Så avgör du",
+      "title_len": 47,
+      "description_len": 129,
+      "h1": [
+        "Google Ads-byrå eller sköta det själv? Så avgör du"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/teknisk-seo-guide",
+      "words": 1501,
+      "title": "Teknisk SEO: nybörjarguide till en sajt Google älskar",
+      "title_len": 53,
+      "description_len": 136,
+      "h1": [
+        "Teknisk SEO: nybörjarguiden till en sajt Google älskar"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/konverteringsoptimering-tips",
+      "words": 1284,
+      "title": "Konverteringsoptimering: 10 ändringar för fler leads",
+      "title_len": 52,
+      "description_len": 152,
+      "h1": [
+        "Konverteringsoptimering: 10 ändringar som ger fler förfrågningar"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/marknadsforing-smaforetag",
+      "words": 1620,
+      "title": "Marknadsföring för småföretag: mest för minsta budget",
+      "title_len": 53,
+      "description_len": 136,
+      "h1": [
+        "Marknadsföring för småföretag: mest resultat för minsta budget"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/checklista-ny-hemsida",
+      "words": 1613,
+      "title": "Lansera hemsida: 25-punkters checklista före go-live",
+      "title_len": 52,
+      "description_len": 148,
+      "h1": [
+        "Lansera ny hemsida: 25-punkters checklista innan du går live"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/automatisera-med-ai",
+      "words": 1622,
+      "title": "Automatisera med AI: 8 exempel som sparar tid",
+      "title_len": 45,
+      "description_len": 144,
+      "h1": [
+        "Automatisera det tråkiga: 8 AI-exempel som sparar tid"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/valja-domannamn",
+      "words": 1383,
+      "title": "Välja domännamn till företaget: komplett guide 2026",
+      "title_len": 51,
+      "description_len": 138,
+      "h1": [
+        "Välja domännamn till företaget: komplett guide och vanliga misstag"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/moms-regler-e-handel",
+      "words": 1377,
+      "title": "Moms och regler för e-handel: guide för webbutiker",
+      "title_len": 50,
+      "description_len": 143,
+      "h1": [
+        "Moms och regler för e-handel: det här måste du ha koll på"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/blogg/e-postmarknadsforing-smaforetag",
+      "words": 1418,
+      "title": "E-postmarknadsföring för småföretag: lista som säljer",
+      "title_len": 53,
+      "description_len": 145,
+      "h1": [
+        "E-postmarknadsföring för småföretag: bygg en lista som säljer"
+      ],
+      "issues": [
+        "TWITTER_HOME"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "Article",
+        "Person",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "path": "/lp/hemsida-foretag",
+      "words": 901,
+      "title": "Ny hemsida till ditt företag | Stolt Marketing",
+      "title_len": 46,
+      "description_len": 150,
+      "h1": [
+        "Ny hemsida till ditt företag, se den färdig innan du betalar"
+      ],
+      "issues": [
+        "MISSING_CANONICAL",
+        "TWITTER_HOME",
+        "NOINDEX"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/lp/wordpress",
+      "words": 777,
+      "title": "Hjälp med WordPress | Stolt Marketing",
+      "title_len": 37,
+      "description_len": 178,
+      "h1": [
+        "Hjälp med WordPress, snabbt och till fast pris"
+      ],
+      "issues": [
+        "MISSING_CANONICAL",
+        "TWITTER_HOME",
+        "NOINDEX"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/serviceavtal",
+      "words": 433,
+      "title": "Förvaltningsavtal: drift, säkerhet och utveckling | Stolt Marketing",
+      "title_len": 67,
+      "description_len": 83,
+      "h1": [
+        "Drift, Säkerhet & Utveckling"
+      ],
+      "issues": [
+        "TWITTER_HOME",
+        "NOINDEX"
+      ],
+      "schema_types": [
+        [
+          "ProfessionalService",
+          "Organization"
+        ],
+        "ImageObject",
+        "Person",
+        "PostalAddress",
+        "GeoCoordinates",
+        "City",
+        "City",
+        "City",
+        "City",
+        "City",
+        "AdministrativeArea",
+        "Country",
+        "OpeningHoursSpecification",
+        "WebSite"
+      ]
+    }
+  ],
+  "unknown_paths": {},
+  "missing_hash_targets": [
+    [
+      "/hemsida-foretag",
+      "/#koll-url-hero",
+      "Få gratis förslag "
+    ],
+    [
+      "/hemsida-foretag",
+      "/#koll-url-hero",
+      "Få gratis förslag "
+    ],
+    [
+      "/hemsida-foretag",
+      "/#koll-url-hero",
+      "Få gratis förslag "
+    ],
+    [
+      "/hemsida-foretag",
+      "/#koll-url-hero",
+      "Få gratis förslag "
+    ]
+  ],
+  "issue_counts": {
+    "TWITTER_HOME": 99,
+    "FAQ_DUPLICATE:2": 22,
+    "MISSING_CANONICAL": 2,
+    "NOINDEX": 3
+  }
+}

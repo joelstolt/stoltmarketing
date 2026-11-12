@@ -1,375 +1,157 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight, Plus, Check, MapPin, Building2,
-  Code, Smartphone, MousePointerClick, Gauge, Search, ShoppingCart, Pencil,
-  FileSearch, BarChart3, Link2, Megaphone, Target, RefreshCw,
-  Bot, Workflow, Mail, Plug, FileText, Sparkles, BrainCircuit,
-} from "lucide-react";
-import { Reveal, Badge, PageHero, SectionHeader } from "@/components/ui";
-import CloseBlock from "@/components/CloseBlock";
+import { Check } from "lucide-react";
+import { PageHero, SectionHeader } from "@/components/ui";
 import CityProof from "@/components/CityProof";
-import { CITIES, SERVICES, SITE, CITY_ORDER, SERVICE_ORDER, PRICING } from "@/lib/local/data";
+import { CITIES, SERVICES, SERVICE_ORDER, PRICING } from "@/lib/local/data";
 import { getCombo, cityServiceFaqs } from "@/lib/local/seo";
+import { packages } from "@/lib/pricing-packages";
 
-const ICONS = {
-  Code, Smartphone, MousePointerClick, Gauge, Search, ShoppingCart, Pencil,
-  FileSearch, MapPin, BarChart3, Link2, Megaphone, Target, RefreshCw,
-  Bot, Workflow, Mail, Plug, FileText, Sparkles, BrainCircuit,
-};
+function ServiceOffer({ service, cta }) {
+  const offers = service === "hemsida"
+    ? packages.map((pkg) => ({ ...pkg, terms: `Exkl. moms. ${PRICING.bindning}. Annonsbudget tillkommer vid Google Ads.` }))
+    : service === "seo"
+      ? [
+          { name: "SEO-audit", price: PRICING.seoAudit, desc: "Genomgång av teknik, innehåll och synlighet med prioriterad åtgärdslista.", terms: "Exkl. moms. Engångsgranskning. Åtgärder och fortsatt arbete avtalas separat." },
+          { name: "SEO i Spets", price: PRICING.spets, desc: "Hemsida med löpande innehållsarbete och optimering enligt paketets omfattning. Större SEO-projekt får egen offert.", terms: `Exkl. moms. 0 kr start. ${PRICING.bindning}.` },
+        ]
+      : service === "google-ads"
+        ? [
+            { name: "Google Ads i Spets", price: PRICING.spets, desc: "Hemsidepaket med uppsättning och löpande skötsel av Google Ads.", terms: `Exkl. moms. Annonsbudget tillkommer och betalas till Google. 0 kr start. ${PRICING.bindning}.` },
+            { name: "Ditt befintliga annonskonto", price: "Enligt offert", desc: "Genomgång, kampanjarbete och uppföljning avgränsas utifrån ditt konto och mål.", terms: "Arbetets omfattning och villkor bekräftas före start. Annonsbudget betalas separat." },
+          ]
+        : [
+            { name: "Rutan för förfrågningar", price: "495 kr/mån", desc: "Förfrågningar från hemsidan, SMS direkt och förslag på svar som du granskar.", terms: "Exkl. moms. 30 dagar gratis, ingen bindning.", href: "/forfragningar", label: "Se rutan och prova gratis" },
+            { name: "Ett anpassat arbetsflöde", price: "Enligt offert", desc: "Kalenderbokning, kundsystem, offertautomation och andra systemkopplingar är specialarbete.", terms: "Offerten avgränsar bygge, test, åtkomst och drift. Fast pris för överenskommet arbete före start.", href: "/kontakt", label: "Beskriv ditt arbetsflöde" },
+          ];
 
-const CITY_PACKAGES = [
-  {
-    name: "Bas",
-    for: "För enmansfirman",
-    price: PRICING.basManad,
-    features: [
-      "Hemsida med upp till fem sidor",
-      "Snabb, mobilanpassad design",
-      "Sökordsgrunden lagd för din huvudort",
-      "Koppling till din Google Företagsprofil",
-      "Hosting, säkerhet, SSL och backuper",
-      "Domän och mejladress på den",
-      "Ändringar klara inom två arbetsdagar",
-    ],
-  },
-  {
-    name: "Bredd",
-    for: "För företag med flera tjänster",
-    price: PRICING.bredd,
-    featured: true,
-    badge: "Här landar de flesta",
-    features: [
-      "Allt i Bas, och:",
-      "Obegränsat antal sidor, en per tjänst",
-      "Formgiven från vitt papper, ingen mall",
-      "Strukturerad märkning som Google och AI-sök läser",
-      "Sökord för din ort och kommunerna runt om",
-      "Flera mejladresser (info@, namn@)",
-      "SEO-rapport varje månad",
-      "Ändringar klara inom ett dygn",
-    ],
-  },
-  {
-    name: "Spets",
-    for: "För dig som vill äga din marknad",
-    price: PRICING.spets,
-    features: [
-      "Allt i Bredd, och:",
-      "AI-assistent som svarar kunder dygnet runt",
-      "Google Ads: uppsättning och löpande skötsel",
-      "Egen landningssida för varje ort du jobbar i",
-      "Nya sökmotortexter varje månad",
-      "Löpande tester på det som ger förfrågningar",
-      "Strategisamtal en gång i månaden",
-      "Prioriterad support, svar samma dag",
-    ],
-  },
-];
+  return (
+    <section className="py-14 sm:py-20 px-5 sm:px-8 bg-surface-muted" id="pris">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader badge="Pris och omfattning" title={service === "hemsida" ? "Välj efter hur mycket din sajt behöver." : "Det här kan du beställa."} />
+        <div className={`mt-10 grid gap-5 ${offers.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+          {offers.map((offer) => (
+            <article key={offer.name} className={`bg-surface rounded-[10px] border p-6 sm:p-7 flex flex-col ${offer.featured ? "border-primary" : "border-border"}`}>
+              <h3 className="font-heading font-600 text-[22px] text-heading">{offer.name}</h3>
+              <p className="mt-3 font-heading text-[27px] text-heading">{offer.price}</p>
+              <p className="mt-3 text-[15px] text-body leading-relaxed">{offer.desc}</p>
+              {offer.features && (
+                <ul className="mt-5 space-y-3">
+                  {offer.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5 text-[14px] text-body leading-relaxed">
+                      <Check size={16} aria-hidden="true" className="shrink-0 mt-1 text-primary" />{feature}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="mt-5 text-[13px] text-muted leading-relaxed">{offer.terms}</p>
+              <a href={offer.href || cta.href} className="mt-6 text-[15px] font-600 text-primary underline underline-offset-4">{offer.label || cta.label}</a>
+            </article>
+          ))}
+        </div>
+        {service === "hemsida" && <p className="mt-5 text-[14px] text-body">Bas: högst fem sidor. Bredd: fler tjänster och sidor. Se hela omfattningen på <a href="/priser" className="text-primary underline underline-offset-4">prissidan</a>.</p>}
+      </div>
+    </section>
+  );
+}
 
 export default function CityServicePage({ service, city }) {
-  const [openFaq, setOpenFaq] = useState(null);
-
   const s = SERVICES[service];
   const c = CITIES[city];
   const combo = getCombo(service, city);
   const faqs = cityServiceFaqs(service, city);
 
-  const otherServices = SERVICE_ORDER.filter((x) => x !== service).map((x) => ({
-    label: `${SERVICES[x].label} ${c.name}`,
-    href: `/${city}/${x}`,
-  }));
-  const otherCities = CITY_ORDER.filter((x) => x !== city).map((x) => ({
-    label: `${s.label} ${CITIES[x].name}`,
-    href: `/${x}/${service}`,
-  }));
-
   return (
     <>
       <PageHero
-        breadcrumbs={[
-          { label: "Start", href: "/" },
-          { label: c.name, href: c.hub },
-          { label: s.label },
-        ]}
-        badge={`${s.badge} · ${c.name}`}
+        breadcrumbs={[{ label: "Start", href: "/" }, { label: c.name, href: c.hub }, { label: s.label }]}
+        badge={`${s.badge} i ${c.name}`}
         title={combo.h1}
+        highlight={c.name}
+        compact
         subtitle={combo.heroSubtitle}
-        bullets={["10+ års erfarenhet", "Fast pris innan start", "Allt görs av mig, ingen outsourcing"]}
+        bullets={["Direktkontakt med Joel", "Omfattning före start", "Bas i Hässleholm"]}
+        cta={s.cta}
       />
 
-      {/* ═══ LOKAL VINKEL (unik per ort × tjänst) ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            badge={`${s.label} i ${c.name}`}
-            title={`${s.name} för företag i ${c.name}.`}
-          />
-          <Reveal delay={0.14}>
-            <p className="mt-8 text-[16px] sm:text-[17px] leading-[1.8] text-body max-w-[760px]">
-              {combo.localAngle}
-            </p>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <div className="mt-8 flex flex-wrap gap-2.5">
-              {c.nearby.map((area) => (
-                <span
-                  key={area}
-                  className="inline-flex items-center gap-1.5 text-[13px] font-500 text-body bg-surface border border-border px-3.5 py-1.5 rounded-lg"
-                >
-                  <MapPin size={12} className="text-primary" />
-                  {area}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <CityProof city={city} />
-
-      {/* ═══ VAD INGÅR ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Vad ingår" title={`${s.name} som ger resultat.`} subtitle={s.intro} />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {s.features.map((f, i) => {
-              const Icon = ICONS[f.icon] || Check;
-              return (
-                <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                  <div className="bg-surface rounded-[10px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
-                    <div className="w-10 h-10 rounded-[10px] bg-primary/6 flex items-center justify-center mb-4">
-                      <Icon size={18} className="text-primary" />
-                    </div>
-                    <h3 className="font-heading font-700 text-[16px] text-heading">{f.title}</h3>
-                    <p className="mt-2 text-[14px] text-body leading-relaxed">{f.desc}</p>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SÅ JOBBAR VI ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Så jobbar vi" title={`Från första genomgång till resultat — ${s.priceLabel.toLowerCase()}.`} />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {s.process.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.06 + 0.1}>
-                <div className="bg-surface rounded-[10px] border border-border p-6 h-full">
-                  <div className="font-heading font-600 text-[22px] text-primary">{`0${i + 1}`}</div>
-                  <h3 className="mt-2 font-heading font-700 text-[16px] text-heading">{p.title}</h3>
-                  <p className="mt-2 text-[14px] text-body leading-relaxed">{p.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ VARFÖR / TRUST + PROOF ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
+      <section className="py-14 sm:py-20 px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-14 items-start">
           <div>
-            <Badge>Varför Stolt Marketing</Badge>
-            <Reveal delay={0.06}>
-              <h2 className="mt-5 font-heading font-600 text-[clamp(26px,3.5vw,38px)] leading-[1.1] tracking-[-0.012em] text-heading max-w-[480px]">
-                En lokal partner i {c.name}, inte en byrå i kö.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-4 text-[16px] leading-relaxed text-body max-w-[520px]">
-                Du jobbar direkt med mig, {SITE.founder.split(" ")[0]}. Allt görs av mig själv, ingen
-                outsourcing, ingen kö och inga ärendenummer. Fast pris innan vi börjar och raka besked
-                hela vägen.
-              </p>
-            </Reveal>
-            <Reveal delay={0.14}>
-              <div className="mt-6 flex flex-col gap-3">
-                {[
-                  "Allt görs av mig, ingen outsourcing",
-                  "Fast pris innan start, inga överraskningar",
-                  "Lokal i Skåne, nåbar på riktigt",
-                ].map((t) => (
-                  <div key={t} className="flex items-center gap-2.5 text-[15px] text-body">
-                    <Check size={18} className="text-primary shrink-0" strokeWidth={2.5} />
-                    {t}
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+            <SectionHeader badge={`${s.label} i ${c.name}`} title={combo.localHeading} />
+            <p className="mt-6 text-[17px] leading-[1.8] text-body max-w-[720px]">{combo.localAngle}</p>
           </div>
-          <Reveal delay={0.16}>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { v: "150+", l: "Levererade projekt" },
-                { v: "10+ år", l: "Erfarenhet" },
-                { v: "Samma dag", l: "Svar på vardagar" },
-                { v: "Fast pris", l: "Innan vi börjar" },
-              ].map((s2) => (
-                <div key={s2.l} className="bg-surface rounded-[10px] border border-border p-6">
-                  <div className="font-heading font-600 text-[28px] text-heading tracking-tight">{s2.v}</div>
-                  <div className="text-[13px] text-muted mt-1">{s2.l}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <aside className="bg-surface rounded-[10px] border border-border p-6 sm:p-8">
+            <h2 className="font-heading font-600 text-[22px] text-heading">{combo.example.title}</h2>
+            <p className="mt-4 text-[16px] leading-[1.8] text-body">{combo.example.text}</p>
+          </aside>
         </div>
       </section>
 
-      {/* ═══ PRIS ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
+      <CityProof city={city} service={service} />
+      <ServiceOffer service={service} cta={s.cta} />
+
+      <section className="py-14 sm:py-20 px-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            badge="Pris"
-            title="Tre enkla nivåer. 0 kr i startavgift."
-          />
-          <div className="mt-14 grid md:grid-cols-3 gap-5 items-stretch">
-            {CITY_PACKAGES.map((pkg, i) => (
-              <Reveal key={pkg.name} delay={i * 0.08 + 0.06}>
-                <div className={`relative h-full flex flex-col bg-surface rounded-[10px] border p-7 ${pkg.featured ? "border-2 border-primary" : "border-border"}`}>
-                  {pkg.featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-[#191405] text-[11px] font-600 px-2.5 py-1 rounded-full whitespace-nowrap">
-                      {pkg.badge}
-                    </span>
-                  )}
-                  <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">{pkg.for}</div>
-                  <h3 className="mt-2 font-heading font-700 text-[18px] text-heading">{pkg.name}</h3>
-                  <div className="mt-3 font-heading font-600 text-[32px] text-heading tracking-tight">
-                    {pkg.price}
-                  </div>
-                  <p className="text-[13px] text-muted mt-1">0 kr i startavgift · {PRICING.bindning}</p>
-                  <div className="mt-5 flex flex-col gap-2.5 flex-1">
-                    {pkg.features.map((t) => (
-                      <div key={t} className="flex items-start gap-2.5 text-[14px] text-body">
-                        <Check size={17} className="text-primary shrink-0 mt-[2px]" strokeWidth={2.5} />
-                        {t}
-                      </div>
-                    ))}
-                  </div>
-                  <a
-                    href="/boka"
-                    className={`mt-6 inline-flex items-center justify-center gap-1.5 text-[14px] font-600 rounded-[10px] py-3 px-5 transition-colors ${
-                      pkg.featured
-                        ? "bg-primary text-[#191405] hover:opacity-90"
-                        : "border border-border text-heading hover:border-primary hover:text-primary"
-                    }`}
-                  >
-                    Boka genomgång <ArrowRight size={15} />
-                  </a>
-                </div>
-              </Reveal>
+          <SectionHeader badge="Arbetet" title="Vad jag gör och hur du deltar." subtitle={s.intro} />
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            {s.features.map((feature) => (
+              <article key={feature.title} className="bg-surface rounded-[10px] border border-border p-6">
+                <h3 className="font-heading font-600 text-[19px] text-heading">{feature.title}</h3>
+                <p className="mt-3 text-[15px] text-body leading-relaxed">{feature.desc}</p>
+              </article>
             ))}
           </div>
-          <p className="mt-6 text-center text-[13px] text-muted">
-            E-handel {PRICING.ehandel} · WordPress-migrering {PRICING.wpMigrering} · Annonsbudget tillkommer vid Google Ads
-          </p>
+          <h2 className="mt-12 font-heading font-600 text-[27px] text-heading">Så går det till</h2>
+          <ol className="mt-7 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {s.process.map((step, i) => (
+              <li key={step.title} className="border-t border-border pt-5">
+                <span className="font-heading text-[22px] text-primary" aria-hidden="true">{`0${i + 1}`}</span>
+                <h3 className="mt-3 font-heading font-600 text-[18px] text-heading">{step.title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-body">{step.desc}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* ═══ FAQ ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
-        <div className="max-w-[720px] mx-auto">
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-surface-muted">
+        <div className="max-w-[760px] mx-auto">
           <SectionHeader badge="Vanliga frågor" title={`Frågor om ${s.name.toLowerCase()} i ${c.name}.`} />
-          <div className="mt-10 flex flex-col">
-            {faqs.map((faq, i) => (
-              <Reveal key={i} delay={i * 0.03 + 0.1}>
-                <div className="border-b border-border">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between py-5 text-left group"
-                  >
-                    <span className="font-heading font-600 text-[15px] sm:text-[16px] text-heading group-hover:text-primary transition-colors pr-4">
-                      {faq.q}
-                    </span>
-                    <motion.span
-                      animate={{ rotate: openFaq === i ? 45 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="flex-shrink-0 text-muted"
-                    >
-                      <Plus size={20} />
-                    </motion.span>
-                  </button>
-                  <motion.div
-                      initial={false}
-                      animate={{ height: openFaq === i ? "auto" : 0, opacity: openFaq === i ? 1 : 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                        <p className="pb-5 text-[14px] sm:text-[15px] leading-relaxed text-body">{faq.a}</p>
-                      </motion.div>
-                </div>
-              </Reveal>
+          <div className="mt-8 divide-y divide-border">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="py-5 group">
+                <summary className="cursor-pointer font-heading font-600 text-[17px] text-heading">{faq.q}</summary>
+                <p className="mt-4 text-[16px] leading-[1.8] text-body">{faq.a}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ RELATERAT / INTERN LÄNKNING ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            badge="Mer för dig"
-            title={`Fler tjänster i ${c.name} — och ${s.label.toLowerCase()} på fler orter.`}
-          />
-          <div className="mt-10 grid md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-[12px] font-700 text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
-                <Building2 size={14} className="text-primary" /> Allt i {c.name}
-              </p>
-              <div className="flex flex-col gap-2.5">
-                <a href={c.hub} className="text-[14px] font-600 text-heading hover:text-primary transition-colors">
-                  {c.name}, översikt
-                </a>
-                {otherServices.map((l) => (
-                  <a key={l.href} href={l.href} className="text-[14px] text-body hover:text-primary transition-colors">
-                    {l.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="text-[12px] font-700 text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
-                <MapPin size={14} className="text-primary" /> {s.label} på fler orter
-              </p>
-              <div className="flex flex-col gap-2.5">
-                {otherCities.map((l) => (
-                  <a key={l.href} href={l.href} className="text-[14px] text-body hover:text-primary transition-colors">
-                    {l.label}
-                  </a>
-                ))}
-                <a href={s.relatedService} className="text-[14px] font-600 text-heading hover:text-primary transition-colors">
-                  {s.name}, tjänsteöversikt
-                </a>
-              </div>
-            </div>
-            <div>
-              <p className="text-[12px] font-700 text-muted uppercase tracking-wider mb-4 flex items-center gap-2">
-                <FileText size={14} className="text-primary" /> Läs mer
-              </p>
-              <div className="flex flex-col gap-2.5">
-                {s.blog.map((b) => (
-                  <a key={b.href} href={b.href} className="text-[14px] text-body hover:text-primary transition-colors">
-                    {b.title}
-                  </a>
-                ))}
-                <a href="/projekt" className="text-[14px] text-body hover:text-primary transition-colors">
-                  Se projekt & resultat
-                </a>
-              </div>
-            </div>
+      <section className="py-12 px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 gap-8">
+          <div>
+            <h2 className="font-heading font-600 text-[21px] text-heading">Fler tjänster för ditt företag</h2>
+            <ul className="mt-5 space-y-3 text-[15px] text-body">
+              <li><a href={c.hub} className="hover:text-primary underline underline-offset-4">Översikt för {c.name}</a></li>
+              {SERVICE_ORDER.filter((key) => key !== service).map((key) => <li key={key}><a href={`/${city}/${key}`} className="hover:text-primary underline underline-offset-4">{SERVICES[key].label} i {c.name}</a></li>)}
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-heading font-600 text-[21px] text-heading">Fördjupning och nästa steg</h2>
+            <ul className="mt-5 space-y-3 text-[15px] text-body">
+              <li><a href={s.relatedService} className="hover:text-primary underline underline-offset-4">{s.name}, tjänsteöversikt</a></li>
+              {s.blog.map((link) => <li key={link.href}><a href={link.href} className="hover:text-primary underline underline-offset-4">{link.title}</a></li>)}
+            </ul>
           </div>
         </div>
       </section>
 
-      <CloseBlock
-        title={`${s.label} i ${c.name}? Då snackar vi.`}
-        text={`15–20 min. Jag går igenom ditt nuläge och vad som ger störst effekt för ditt företag i ${c.name}.`}
-      />
+      <section className="section-gul py-14 sm:py-20 px-5 sm:px-8">
+        <div className="max-w-[760px] mx-auto">
+          <h2 className="font-heading font-600 text-[clamp(28px,4vw,42px)] text-heading">{service === "hemsida" ? "Se ett förslag för ditt företag." : service === "ai-automation" ? "Börja med dina inkommande förfrågningar." : "Beskriv det du vill förbättra."}</h2>
+          <p className="mt-4 text-[17px] leading-relaxed text-body">{service === "hemsida" ? "Skicka din webbadress eller ditt företagsnamn. Jag tar fram ett förslag på startsida och en tjänstesida." : service === "ai-automation" ? "Se vad standardrutan gör och vad som kräver ett separat upplägg." : "Skicka din webbadress, tjänst och mål. Jag återkommer med förslag på ett första steg och dess omfattning."}</p>
+          <a href={s.cta.href} className="premium-btn mt-6">{s.cta.label}</a>
+        </div>
+      </section>
     </>
   );
 }

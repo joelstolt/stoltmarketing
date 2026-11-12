@@ -1,0 +1,13 @@
+export const accessFaqs = [
+  { q: "Omfattas min hemsida av tillgänglighetslagen?", a: "Det beror på tjänsten och verksamheten. Lagen gäller utpekade konsumenttjänster, bland annat e-handel, banktjänster och elektronisk kommunikation. Alla företagssajter omfattas inte. Andra regler, till exempel DOS-lagen, kan gälla separat. Bedöm först vad du erbjuder och vilket regelverk som berör det." },
+  { q: "Vad gäller för mikroföretag?", a: "Mikroföretag som tillhandahåller tjänster är undantagna från tillgänglighetskraven i lag 2023:254. Definitionen är färre än tio anställda och årsomsättning eller årlig balansomslutning som inte överstiger två miljoner euro. Produktkrav och andra regelverk behöver bedömas separat." },
+  { q: "Vad kostar granskning och åtgärder?", a: "Granskning med prioriterad rapport kostar 4 900 kr exkl. moms. Åtgärder kostar från 24 500 kr exkl. moms, med fast pris för den omfattning vi kommer överens om efter granskningen. En ny hemsida Bas kostar 0 kr i start och 1 190 kr/mån exkl. moms för högst fem sidor, med tolv månaders bindning, sedan månadsvis." },
+  { q: "Vad omfattar granskningen för 4 900 kr?", a: "Automatiska kontroller och manuell granskning av ett överenskommet urval: sidmallar, navigation, innehåll och viktiga formulär eller köpflöden. Jag dokumenterar testade sidor, metod, brister, prioritet och rekommenderade åtgärder. Antal mallar och flöden fastställs skriftligt före beställning; en fullständig revision av hela tjänsten ingår bara om det uttryckligen avtalats." },
+  { q: "Räcker en hög Lighthouse-poäng eller en widget?", a: "En automatisk poäng visar bara vad det verktyget kunde testa. Den visar inte full WCAG-uppfyllelse eller lagefterlevnad. En widget behöver bedömas utifrån vad den faktiskt löser; den ersätter inte arbetet med webbplatsens struktur, kod och innehåll. Manuella tester behövs också." },
+  { q: "Är rapporten en certifiering?", a: "Nej. Rapporten dokumenterar ett avgränsat test och åtgärdsförslag. Den är inte ett juridiskt förhandsbesked eller en certifiering. Innehåll, externa komponenter och senare ändringar kan påverka tillgängligheten efter granskningen." },
+];
+export const accessSources = [
+  { title: "PTS: frågor och svar om tillgänglighetslagen", href: "https://pts.se/digital-inkludering/lagen-om-vissa-produkters-och-tjansters-tillganglighet/vanliga-fragor-och-svar-om-tillganglighetslagen/" },
+  { title: "Riksdagen: lag 2023:254", href: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2023254-om-vissa-produkters-och-tjansters_sfs-2023-254/" },
+  { title: "W3C: WCAG 2.1", href: "https://www.w3.org/TR/WCAG21/" },
+];

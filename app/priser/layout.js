@@ -1,3 +1,5 @@
+import { packages, priceFaqs } from "@/lib/pricing-packages";
+
 export const metadata = {
   title: "Priser: 0 kr i startavgift, fast månadspris",
   description:
@@ -25,26 +27,7 @@ const serviceJsonLd = {
   },
   areaServed: "SE",
   url: "https://www.stoltmarketing.se/priser",
-  offers: [
-    {
-      "@type": "Offer",
-      name: "Bas, 1 190 kr per månad, 0 kr i startavgift",
-      price: "1190",
-      priceCurrency: "SEK",
-    },
-    {
-      "@type": "Offer",
-      name: "Bredd, 1 990 kr per månad, 0 kr i startavgift",
-      price: "1990",
-      priceCurrency: "SEK",
-    },
-    {
-      "@type": "Offer",
-      name: "Spets, 2 990 kr per månad, 0 kr i startavgift",
-      price: "2990",
-      priceCurrency: "SEK",
-    },
-  ],
+  offers: packages.map((item) => ({ "@type": "Offer", name: item.name, price: String(item.monthly), priceCurrency: "SEK", description: "Månadspris exkl moms. 0 kr start. 12 månader, därefter månadsvis." })),
 };
 
 const breadcrumbJsonLd = {
@@ -59,40 +42,7 @@ const breadcrumbJsonLd = {
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Varför 0 kr i startavgift?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Du ska inte behöva ta risken. Sajten byggs färdig först, du tittar och klickar runt i den, och betalar först när du bestämt dig. Månadspriset täcker bygget, hostingen, driften och ändringarna.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Vem äger sajten om vi avslutar?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Du. Sajten, innehållet och domänen är dina, och vill du flytta någon annanstans hjälper jag till med flytten. Ingen inlåsning: poängen med månadsmodellen är att jag ska förtjäna nästa månad, inte att avtalet ska hålla dig kvar.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Vad händer efter de första 12 månaderna?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Allt löper vidare månadsvis till samma pris och avslutas när som helst till nästa månadsskifte. Ett mejl räcker, och du behåller sajten.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Finns det dolda kostnader?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nej. Det enda som tillkommer är sådant du väljer själv: e-handel för 800 kr per månad och din annonsbudget till Google om du kör Spets. Engångstjänsterna har fasta priser som står här på sidan.",
-      },
-    },
-  ],
+  mainEntity: priceFaqs.map((faq) => ({ "@type": "Question", name: faq.q, acceptedAnswer: { "@type": "Answer", text: faq.a } })),
 };
 
 export default function PriserLayout({ children }) {

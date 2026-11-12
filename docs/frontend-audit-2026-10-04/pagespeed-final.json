@@ -1,0 +1,19 @@
+{
+  "url": "https://pagespeed.web.dev/analysis/https-www-stoltmarketing-se/rgfvt4j50w?form_factor=mobile",
+  "tested_page": "https://www.stoltmarketing.se/",
+  "captured_local": "2026-10-04 23:22 CEST",
+  "commit": "00fd929",
+  "device": "Emulated Moto G Power, slow 4G",
+  "lighthouse": "13.5.0",
+  "performance": 97,
+  "accessibility": 100,
+  "best_practices": 100,
+  "seo": 100,
+  "fcp_ms": 934,
+  "lcp_ms": 2551,
+  "tbt_ms": 0,
+  "cls": 0,
+  "speed_index_ms": 2316,
+  "crux": "No data",
+  "limitations": "Synthetic homepage test. Not all routes. Umami skips navigator.webdriver. Scores are not legal accessibility certification or evidence of ranking/business impact."
+}

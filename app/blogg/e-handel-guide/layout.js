@@ -1,44 +1,14 @@
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  image: ["https://www.stoltmarketing.se/og-image.png"],
-  mainEntityOfPage: "https://www.stoltmarketing.se/blogg/e-handel-guide",
-  inLanguage: "sv-SE",
-  headline: "Starta e-handel 2026, Komplett guide för svenska företag",
-  description: "Komplett guide för att starta e-handel i Sverige 2026. Plattformar, betalningar, juridik, logistik och kostnader allt på ett ställe.",
-  author: { "@type": "Person", name: "Joel Stolt" },
-  publisher: { "@type": "Organization", name: "Stolt Marketing", url: "https://www.stoltmarketing.se" },
-  datePublished: "2026-05-10",
-  dateModified: "2026-05-10",
-};
+import { getBlogMetadata, getBlogSchema } from "@/lib/blog-data";
 
-const breadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Hem", item: "https://www.stoltmarketing.se" },
-    { "@type": "ListItem", position: 2, name: "Blogg", item: "https://www.stoltmarketing.se/blogg" },
-    { "@type": "ListItem", position: 3, name: "E-handel Guide 2026", item: "https://www.stoltmarketing.se/blogg/e-handel-guide" },
-  ],
-};
-
-export const metadata = {
-  title: "Starta e-handel 2026 — Komplett guide för svenska företag",
-  description: "Allt du behöver veta för att starta e-handel i Sverige. Plattformar, betalmetoder, juridik, logistik, SEO och kostnader.",
-  alternates: { canonical: "https://www.stoltmarketing.se/blogg/e-handel-guide" },
-  openGraph: {
-    title: "Starta e-handel 2026 — Komplett guide för svenska företag",
-    description: "Shopify vs WooCommerce vs custom. Betalgateways, juridik och allt annat för att starta en webshop i Sverige.",
-    url: "https://www.stoltmarketing.se/blogg/e-handel-guide",
-    type: "article",
-  },
-};
+export const metadata = getBlogMetadata("e-handel-guide");
 
 export default function ArticleLayout({ children }) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBlogSchema("e-handel-guide")).replace(/</g, "\\u003c") }}
+      />
       {children}
     </>
   );

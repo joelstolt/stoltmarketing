@@ -91,7 +91,7 @@ export default function SaGarDetTill() {
       </div>
 
       <p style={{ margin: "34px 0 0", fontFamily: "var(--font-ui)", fontSize: 12.5, letterSpacing: "0.06em", color: DIM }}>
-        12 månader, sedan månadsvis. Du äger sajten, innehållet och domänen från dag ett.
+        30 dagar gratis. Därefter 495 kr/mån exkl moms om du vill fortsätta. Ingen bindning.
       </p>
     </section>
   );

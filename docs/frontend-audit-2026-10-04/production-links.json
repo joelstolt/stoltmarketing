@@ -1,0 +1,46 @@
+{
+  "extra_link_targets": 10,
+  "results": [
+    {
+      "path": "/case-arkipel.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-batteriproffs.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-edshare.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-gardetshundtrim.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-harpan.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-linguista.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-ngtab.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-niklassonsflytt.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-pingstkyrkan.webp",
+      "status": "200"
+    },
+    {
+      "path": "/case-premiebygg.webp",
+      "status": "200"
+    }
+  ],
+  "issues": []
+}

@@ -1,126 +1,94 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Check, ArrowRight, Plus,
-  ShoppingCart, CreditCard, Gauge, Package, Search, Smartphone,
-  Globe, Pencil, Shield, Wrench,
-} from "lucide-react";
-import { Reveal, PageHero, SectionHeader } from "@/components/ui";
-
-const ICONS = {
-  ShoppingCart, CreditCard, Gauge, Package, Search, Smartphone,
-  Globe, Pencil, Shield, Wrench,
-};
+import { Check } from "lucide-react";
+import { PageHero, SectionHeader } from "@/components/ui";
+import ServiceExtra from "@/components/ServiceExtra";
 
 export default function ServicePage({ data }) {
-  const [openFaq, setOpenFaq] = useState(null);
-
   return (
     <>
       <PageHero
-        breadcrumbs={[
-          { label: "Start", href: "/" },
-          { label: "Tjänster", href: "/tjanster" },
-          { label: data.badge },
-        ]}
-        badge={data.badge}
-        title={data.h1}
-        subtitle={data.subtitle}
-        bullets={data.bullets}
+        breadcrumbs={[{ label: "Start", href: "/" }, { label: "Tjänster", href: "/tjanster" }, { label: data.badge }]}
+        badge={data.badge} title={data.h1} highlight={data.highlight} compact
+        subtitle={data.subtitle} bullets={data.bullets} cta={data.cta}
       />
 
-      {/* ═══ VAD INGÅR ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8 bg-surface-muted">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Vad ingår" title={data.serviceName + " som ger resultat."} subtitle={data.intro} />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {data.features.map((f, i) => {
-              const Icon = ICONS[f.icon] || Check;
-              return (
-                <Reveal key={f.title} delay={i * 0.06 + 0.1}>
-                  <div className="bg-surface rounded-[10px] border border-border p-6 h-full hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-primary/15 transition-all duration-300">
-                    <div className="w-10 h-10 rounded-[10px] bg-primary/6 flex items-center justify-center mb-4">
-                      <Icon size={18} className="text-primary" />
-                    </div>
-                    <h3 className="font-heading font-700 text-[16px] text-heading">{f.title}</h3>
-                    <p className="mt-2 text-[14px] text-body leading-relaxed">{f.desc}</p>
-                  </div>
-                </Reveal>
-              );
-            })}
+      {data.proof && (
+        <section className="py-12 sm:py-16 px-5 sm:px-8">
+          <div className="max-w-6xl mx-auto border border-border rounded-[10px] p-6 sm:p-8">
+            <h2 className="font-heading font-600 text-[27px] text-heading">{data.proof.title}</h2>
+            <p className="mt-4 text-[17px] leading-[1.8] text-body max-w-[800px]">{data.proof.text}</p>
+            <a href={data.proof.href} className="inline-block mt-5 text-[15px] text-primary underline underline-offset-4">{data.proof.label}</a>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* ═══ FAQ ═══ */}
-      <section className="py-16 sm:py-24 px-5 sm:px-8">
-        <div className="max-w-[720px] mx-auto">
-          <SectionHeader badge="Vanliga frågor" title={"Frågor om " + data.badge.toLowerCase() + "."} />
-          <div className="mt-10 flex flex-col">
-            {data.faqs.map((faq, i) => (
-              <Reveal key={i} delay={i * 0.04 + 0.1}>
-                <div className="border-b border-border">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between py-5 text-left group"
-                  >
-                    <span className="font-heading font-600 text-[15px] sm:text-[16px] text-heading group-hover:text-primary transition-colors pr-4">
-                      {faq.q}
-                    </span>
-                    <motion.span
-                      animate={{ rotate: openFaq === i ? 45 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="flex-shrink-0 text-muted"
-                    >
-                      <Plus size={20} />
-                    </motion.span>
-                  </button>
-                  <motion.div
-                      initial={false}
-                      animate={{ height: openFaq === i ? "auto" : 0, opacity: openFaq === i ? 1 : 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                        <p className="pb-5 text-[14px] sm:text-[15px] leading-relaxed text-body">{faq.a}</p>
-                      </motion.div>
-                </div>
-              </Reveal>
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-surface-muted" id="omfattning">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader badge="Pris och omfattning" title="Det här kan du beställa." />
+          <div className={`mt-10 grid gap-5 ${data.offers.length === 3 ? "lg:grid-cols-3" : data.offers.length > 1 ? "md:grid-cols-2" : "max-w-[800px]"}`}>
+            {data.offers.map((offer) => (
+              <article key={offer.name} className="bg-surface rounded-[10px] border border-border p-6 sm:p-8">
+                <h3 className="font-heading font-600 text-[22px] text-heading">{offer.name}</h3>
+                <p className="mt-3 font-heading text-[30px] text-heading">{offer.price}</p>
+                <p className="mt-4 text-[16px] leading-relaxed text-body">{offer.desc}</p>
+                {offer.features && <ul className="mt-5 space-y-3">{offer.features.map((feature) => <li key={feature} className="flex items-start gap-2 text-[14px] text-body"><Check size={16} aria-hidden="true" className="shrink-0 mt-1 text-primary" />{feature}</li>)}</ul>}
+                <p className="mt-5 text-[14px] leading-relaxed text-muted">{offer.terms}</p>
+                <a href={offer.href || data.cta.href} className="inline-block mt-6 text-[15px] text-primary underline underline-offset-4">{offer.label || data.cta.label}</a>
+              </article>
             ))}
           </div>
-          <Reveal delay={0.2}>
-            <div className="mt-8">
-              <a href={data.relatedHref} className="inline-flex items-center gap-2 text-[14px] font-600 text-primary hover:text-primary-hover transition-colors">
-                Mer om {data.relatedLabel.toLowerCase()}
-                <ArrowRight size={14} />
-              </a>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
-      <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "transparent" }}
-        />
-        <div className="relative z-10 max-w-[600px] mx-auto text-center">
-          <Reveal>
-            <h2 className="font-heading font-600 text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.012em] text-heading">
-              {data.ctaTitle}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <p className="mt-4 text-[16px] leading-relaxed text-body">{data.ctaText}</p>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <a href="/boka" className="premium-btn mt-8 mx-auto">
-              <span>Boka kostnadsfri genomgång</span>
-              <ArrowRight size={16} className="opacity-80" />
-            </a>
-          </Reveal>
+      <section className="py-14 sm:py-20 px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader badge="Arbetet" title="Vad jag gör och vad du får." subtitle={data.intro} />
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            {data.features.map((feature) => (
+              <article key={feature.title} className="bg-surface rounded-[10px] border border-border p-6">
+                <h3 className="font-heading font-600 text-[20px] text-heading">{feature.title}</h3>
+                <p className="mt-3 text-[16px] leading-relaxed text-body">{feature.desc}</p>
+              </article>
+            ))}
+          </div>
+          {data.process && (
+            <>
+              <h2 className="mt-12 font-heading font-600 text-[28px] text-heading">Så går det till</h2>
+              <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {data.process.map((step, i) => (
+                  <li key={step.title} className="border-t border-border pt-5">
+                    <span className="font-heading text-[23px] text-primary" aria-hidden="true">{`0${i + 1}`}</span>
+                    <h3 className="mt-3 font-heading font-600 text-[19px] text-heading">{step.title}</h3>
+                    <p className="mt-3 text-[15px] leading-relaxed text-body">{step.desc}</p>
+                  </li>
+                ))}
+              </ol>
+            </>
+          )}
+        </div>
+      </section>
+
+      <ServiceExtra data={data.method} />
+
+      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-surface-muted">
+        <div className="max-w-[760px] mx-auto">
+          <SectionHeader badge="Vanliga frågor" title={`Frågor om ${data.serviceName.toLowerCase()}.`} />
+          <div className="mt-8 divide-y divide-border">
+            {data.faqs.map((faq) => (
+              <details key={faq.q} className="py-5">
+                <summary className="cursor-pointer font-heading font-600 text-[17px] text-heading">{faq.q}</summary>
+                <p className="mt-4 text-[16px] leading-[1.8] text-body">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+          {data.relatedHref && <a href={data.relatedHref} className="inline-block mt-7 text-[15px] text-primary underline underline-offset-4">{data.relatedLabel}</a>}
+        </div>
+      </section>
+
+      <section className="section-gul py-14 sm:py-20 px-5 sm:px-8">
+        <div className="max-w-[760px] mx-auto">
+          <h2 className="font-heading font-600 text-[clamp(28px,4vw,42px)] text-heading">{data.ctaTitle}</h2>
+          <p className="mt-4 text-[17px] leading-relaxed text-body">{data.ctaText}</p>
+          <a href={data.cta.href} className="premium-btn mt-6">{data.cta.label}</a>
         </div>
       </section>
     </>

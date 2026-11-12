@@ -9,25 +9,11 @@ import { SITE, PRICING } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 
-/* ============================================================
-   Annonslandningssida för WordPress-gruppen.
-
-   Medvetna val, ändra dem inte utan att veta varför:
-   - Ingen Header/Footer. En annonssida ska ha en väg ut, inte tolv.
-     Logga, telefon och integritetspolicy är kvar eftersom Google
-     bedömer transparens i landningssideupplevelsen.
-   - Heron animeras INTE in. Above the fold får aldrig starta på
-     opacity 0, det förstör LCP och därmed klickpriset.
-   - Ingen GSAP, ingen canvas. Sidan ska vara tråkigt snabb.
-   - Honeypot heter hp_field. Aldrig company/email/url, autofyll
-     trippar dem och leads försvinner tyst.
-   ============================================================ */
-
 const vadDuFar = [
   {
     icon: Gauge,
     title: "En mätning av din sajt",
-    desc: "Laddtid, Core Web Vitals och vad som faktiskt blockerar renderingen. Inte en generisk rapport, utan din adress.",
+    desc: "Jag testar den publika sidan och visar tekniska hinder. Verkliga Core Web Vitals redovisas bara när det finns tillräckliga fältdata.",
   },
   {
     icon: Video,
@@ -37,18 +23,16 @@ const vadDuFar = [
   {
     icon: Tag,
     title: "Ett fast pris om du vill vidare",
-    desc: "Migreringen kostar 0 kr när du tecknar drift, sedan 1 190 kr i månaden. Inga timmar, inga överraskningar.",
+    desc: "Bas kostar 1 190 kr/mån exkl. moms för högst fem sidor, med tolv månaders bindning, sedan månadsvis. Migrering kan ingå vid tecknad drift efter genomgång av omfattningen.",
   },
 ];
 
-/* Symptomen, inte diagnosen. Den som söker "wordpress hjälp" vet sällan
-   vad felet heter, men känner igen sig i listan. */
 const symptom = [
   "Sajten är långsam och besökarna hinner lämna",
   "Sajten har blivit hackad eller visar konstigt innehåll",
   "Uppdateringar har inte gjorts på länge",
   "Ingen svarar när något går sönder",
-  "Ni vet inte längre vem som har inloggningarna",
+  "Du vet inte längre vem som har inloggningarna",
   "Byrån som byggde den finns inte kvar",
 ];
 
@@ -56,12 +40,12 @@ const overtagande = [
   {
     n: "1",
     title: "Genomgång av sajten",
-    desc: "Kostnadsfritt. Jag mäter prestanda, går igenom plugins, säkerhet och backuper, och berättar vad jag hittar.",
+    desc: "Jag börjar med en kostnadsfri kontroll av den publika sidan. Pluginversioner, användare, backuper och intrång kan granskas först när jag har överenskommen åtkomst.",
   },
   {
     n: "2",
     title: "Jag säkrar och dokumenterar",
-    desc: "Uppdateringar, certifikat, backuper och en lista på vem som har vilka inloggningar. Du får dokumentationen oavsett.",
+    desc: "Efter ditt godkännande kontrollerar jag åtkomst, uppdateringar och backup och dokumenterar det överenskomna arbetet.",
   },
   {
     n: "3",
@@ -77,23 +61,23 @@ const faqs = [
   },
   {
     q: "Måste jag byta plattform?",
-    a: "Nej. Vill du bli kvar på WordPress sköter jag den där den står. Migrering till statisk edge är ett erbjudande när prestanda är problemet, inte ett krav för att jag ska ta över driften.",
+    a: "Nej. Vill du bli kvar på WordPress sköter jag den där den står. En ombyggnad till annan teknik kan vara ett alternativ, inte ett krav för att jag ska ta över driften.",
   },
   {
     q: "Hur snabbt kan du hjälpa?",
-    a: "Du får svar samma arbetsdag. Är sajten nere eller hackad går det före allt annat, då hör jag av mig samma dag.",
+    a: "Du får svar samma arbetsdag. Tid till felsökning och åtgärd beror på åtkomst och felet. Ett första svar betyder inte att problemet är löst samma dag.",
   },
   {
     q: "Behåller jag WordPress som redigeringsverktyg?",
-    a: "Ja, om du vill. Du kan fortsätta skriva i WordPress precis som i dag medan besökarna möter en statisk sajt som laddar direkt. Vill du hellre flytta redigeringen också går det, men du bestämmer.",
+    a: "Jag kan hjälpa dig behålla WordPress. Vid en ombyggnad bestämmer vi vilket redigeringsverktyg som passar och vilka funktioner som måste flyttas. Alla WordPress-funktioner kan inte exporteras som statiska filer.",
   },
   {
     q: "Vad händer med mina plugins?",
-    a: "Vi går igenom dem i mätningen. De flesta prestandaplugins blir överflödiga när sajten är statisk, och det som verkligen behövs byggs in i stället. Du får listan innan något ändras.",
+    a: "Jag inventerar dem när jag har åtkomst. Vi avgör vad som behövs, vad som kan tas bort och vad som kräver en ersättning före någon ändring.",
   },
   {
     q: "Äger jag sajten?",
-    a: "Du äger domänen och allt innehåll från dag ett. Säger du upp får du sajten exporterad som färdiga filer, utan extra kostnad. Du blir aldrig inlåst hos mig, du väljer att stanna.",
+    a: "Du äger domänen och innehållet. En export av filer behöver kompletteras med drift för sådant som formulär, CMS och e-post. Vid en flytt dokumenterar jag vilka externa tjänster och funktioner som behöver följa med.",
   },
   {
     q: "Hur lång tid tar en migrering?",
@@ -105,10 +89,100 @@ const faqs = [
   },
 ];
 
+const Formular = ({ id, done, form, sending, error, change, submit, input }) =>
+    done ? (
+      <div role="status" className="bg-surface rounded-[10px] border border-border p-7 text-center">
+        <div className="w-11 h-11 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mx-auto">
+          <Check aria-hidden="true" size={20} className="text-[#059669]" />
+        </div>
+        <h3 className="mt-4 font-heading font-700 text-[20px] text-heading">Tack, jag har fått din adress.</h3>
+        <p className="mt-2 text-[15px] text-body leading-relaxed">
+          Jag återkommer till den e-postadress du angav med min genomgång. Behöver du prata tidigare
+          når du mig på {SITE.phone}.
+        </p>
+      </div>
+    ) : (
+      <form onSubmit={submit} aria-busy={sending} className="bg-surface rounded-[10px] border border-border p-6 sm:p-7">
+        <div className="grid gap-3">
+          <label htmlFor={`${id}-url`} className="text-[14px] text-heading">Webbadress</label>
+          <input
+            id={`${id}-url`}
+            autoComplete="url"
+            name="url"
+            value={form.url}
+            onChange={change}
+            required
+            placeholder="dinsajt.se"
+            className={input}
+
+          />
+          <label htmlFor={`${id}-name`} className="text-[14px] text-heading">Ditt namn</label>
+          <input
+            id={`${id}-name`}
+            autoComplete="name"
+            name="name"
+            value={form.name}
+            onChange={change}
+            required
+            placeholder="Namn"
+            className={input}
+
+          />
+          <label htmlFor={`${id}-email`} className="text-[14px] text-heading">Din e-post</label>
+          <input
+            id={`${id}-email`}
+            autoComplete="email"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={change}
+            required
+            placeholder="E-post"
+            className={input}
+
+          />
+          <label htmlFor={`${id}-behov`} className="text-[14px] text-heading">Vad behöver du hjälp med? (valfritt)</label>
+          <textarea
+            id={`${id}-behov`}
+            name="behov"
+            value={form.behov}
+            onChange={change}
+            rows={3}
+            placeholder="Vad behöver du hjälp med? (valfritt)"
+            className={`${input} resize-y min-h-[84px]`}
+
+          />
+
+          <input
+            type="text"
+            name="hp_field"
+            value={form.hp_field}
+            onChange={change}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+          />
+          <button
+            type="submit"
+            disabled={sending}
+            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
+          >
+            {sending ? "Skickar..." : "Mät min sajt"}
+          </button>
+        </div>
+        {error && <p role="alert" className="mt-3 text-[15px] text-heading">{error}</p>}
+        <p className="mt-3 text-[13px] text-muted text-center">
+          Kostnadsfritt. Svar samma arbetsdag. Ingen uppföljningskedja.{" "}<Link href="/integritet" className="underline underline-offset-4">Så hanteras dina uppgifter</Link>.
+        </p>
+      </form>
+    );
+
 export default function LpWordpressContent() {
   const [form, setForm] = useState({ url: "", name: "", email: "", behov: "", hp_field: "" });
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
   // Sätts vid sidladdning, submits < 3 s efter denna avvisas server-side.
   const [loadedAt] = useState(() => Date.now());
 
@@ -118,6 +192,7 @@ export default function LpWordpressContent() {
     e.preventDefault();
     if (form.hp_field) return; // bot
     setSending(true);
+    setError("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -134,103 +209,24 @@ export default function LpWordpressContent() {
           _subject: `WordPress-mätning: ${form.url} (${form.name})`,
         }),
       });
-      if (res.ok) {
+      const result = await res.json().catch(() => null);
+      if (!res.ok || !result?.ok || !result?.reference) throw new Error("send");
+      if (result.ok) {
         setDone(true);
         trackConversion("lead-lp-wordpress", "sajtkoll");
       }
     } catch (err) {
-      console.error(err);
+      setError("Meddelandet kunde inte skickas. Försök igen eller mejla joel@stoltmarketing.se.");
     }
     setSending(false);
   };
 
   const input =
-    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[15px] text-heading placeholder:text-muted focus:outline-none focus:border-[#F2C230] transition-colors";
-
-  const Formular = ({ id }) =>
-    done ? (
-      <div className="bg-surface rounded-[10px] border border-border p-7 text-center">
-        <div className="w-11 h-11 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mx-auto">
-          <Check size={20} className="text-[#059669]" />
-        </div>
-        <h3 className="mt-4 font-heading font-700 text-[20px] text-heading">Tack, jag har fått din adress.</h3>
-        <p className="mt-2 text-[15px] text-body leading-relaxed">
-          Du får mätningen och videon på {SITE.email} inom 24 timmar. Behöver du prata tidigare
-          når du mig på {SITE.phone}.
-        </p>
-      </div>
-    ) : (
-      <form onSubmit={submit} className="bg-surface rounded-[10px] border border-border p-6 sm:p-7">
-        <div className="grid gap-3">
-          <input
-            id={`${id}-url`}
-            name="url"
-            value={form.url}
-            onChange={change}
-            required
-            placeholder="dinsajt.se"
-            className={input}
-            aria-label="Din webbadress"
-          />
-          <input
-            id={`${id}-name`}
-            name="name"
-            value={form.name}
-            onChange={change}
-            required
-            placeholder="Namn"
-            className={input}
-            aria-label="Namn"
-          />
-          <input
-            id={`${id}-email`}
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={change}
-            required
-            placeholder="E-post"
-            className={input}
-            aria-label="E-post"
-          />
-          <textarea
-            id={`${id}-behov`}
-            name="behov"
-            value={form.behov}
-            onChange={change}
-            rows={3}
-            placeholder="Vad behöver du hjälp med? (valfritt)"
-            className={`${input} resize-y min-h-[84px]`}
-            aria-label="Vad behöver du hjälp med, valfritt"
-          />
-          {/* Honeypot. Får inte heta company/url/email, autofyll trippar dem. */}
-          <input
-            type="text"
-            name="hp_field"
-            value={form.hp_field}
-            onChange={change}
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden="true"
-            style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
-          />
-          <button
-            type="submit"
-            disabled={sending}
-            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
-          >
-            {sending ? "Skickar…" : "Mät min sajt"}
-          </button>
-        </div>
-        <p className="mt-3 text-[13px] text-muted text-center">
-          Kostnadsfritt. Svar samma arbetsdag. Ingen uppföljningskedja.
-        </p>
-      </form>
-    );
+    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[16px] text-heading placeholder:text-muted focus:border-[#F2C230] transition-colors";
 
   return (
-    <main className="pb-20 lg:pb-0">
-      {/* ── Minimal topp. Bara logga och telefon, ingen meny. ── */}
+    <main id="main-content" className="pb-20 lg:pb-0">
+
       <header className="border-b border-border">
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="font-heading font-700 text-[19px] text-heading tracking-[-0.01em]">
@@ -242,7 +238,6 @@ export default function LpWordpressContent() {
         </div>
       </header>
 
-      {/* ── Hero. Ingen intoning: LCP-elementet måste vara målat direkt. ── */}
       <section className="px-5 sm:px-8 pt-12 sm:pt-16 pb-14">
         <div className="max-w-[1120px] mx-auto grid lg:grid-cols-[minmax(0,1fr)_420px] gap-10 lg:gap-16 items-start">
           <div>
@@ -255,15 +250,15 @@ export default function LpWordpressContent() {
             <p className="mt-5 text-[17px] sm:text-[18px] leading-relaxed text-body max-w-[560px]">
               Långsam, hackad eller övergiven sajt? Jag tar över även WordPress jag inte byggt
               själv. Skicka adressen så mäter jag sajten och spelar in en video på två minuter
-              där jag går igenom vad som är fel. Inom 24 timmar, utan kostnad och utan
-              säljsamtal.
+              med vad det publika testet kan visa. Jag svarar samma arbetsdag.
+              Säkerhet, plugins och backuper kräver åtkomst och en överenskommen granskning.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
               {[
-                ["86 %", "lättare sidvikt"],
-                ["3 × 100", "i Lighthouse"],
-                ["0 kr", "för migreringen"],
+                ["WordPress", "kan behållas"],
+                ["Publikt test", "kostnadsfri första kontroll"],
+                ["Åtkomst", "krävs för djupare felsökning"],
               ].map(([v, l]) => (
                 <div key={l}>
                   <div className="font-heading font-700 text-[26px] text-heading leading-none">{v}</div>
@@ -272,25 +267,18 @@ export default function LpWordpressContent() {
               ))}
             </div>
 
-            {/* Dold pa mobil: dar staplas formularet direkt under hero, och de
-                har raderna tryckte ner forsta faltet till 794 px pa en 812 px
-                skarm. Siffrorna ovanfor bar beviset, det har ar fotnoten till
-                dem. Pa desktop ligger formularet i sidokolumnen och texten
-                kostar ingenting. */}
-            <p className="mt-7 hidden lg:block text-[15px] text-body leading-relaxed max-w-[520px]">
-              Siffrorna kommer från EdShare, som låg på WordPress och flyttades till statisk edge.
-              Samma innehåll och samma redaktörer, men 86 procent mindre att ladda ner.
+            <p className="mt-7 text-[15px] text-body leading-relaxed max-w-[520px]">
+              I EdShare-caset visar jag en äldre jämförelse där redovisad sidvikt minskade från 2,67 till 0,37 MB.
+              Testdatum och resursdefinition saknas i underlaget. <Link href="/projekt/edshare" className="underline underline-offset-4">Läs jämförelsen och begränsningarna i caset</Link>.
             </p>
           </div>
 
           <div className="lg:sticky lg:top-8">
-            <Formular id="top" />
+            <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="top" />
           </div>
         </div>
       </section>
 
-      {/* ── Känner du igen dig? Symptomen först: den som söker "wordpress hjälp"
-             vet sällan vad felet heter men känner igen läget. ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-[900px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -308,12 +296,11 @@ export default function LpWordpressContent() {
             ))}
           </ul>
           <p className="mt-8 text-[16px] text-heading font-500">
-            Allt detta är vanligt, och fixbart.
+            Jag börjar med att reda ut felet och vilka åtgärder som behövs.
           </p>
         </div>
       </section>
 
-      {/* ── Så tar jag över ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -335,7 +322,6 @@ export default function LpWordpressContent() {
         </div>
       </section>
 
-      {/* ── Vad du får ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading max-w-[620px]">
@@ -345,7 +331,7 @@ export default function LpWordpressContent() {
             {vadDuFar.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.08}>
                 <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
-                  <v.icon size={22} className="text-[#F2C230]" />
+                  <v.icon aria-hidden="true" size={22} className="text-[#F2C230]" />
                   <h3 className="mt-4 font-heading font-700 text-[18px] text-heading">{v.title}</h3>
                   <p className="mt-2.5 text-[15px] text-body leading-relaxed">{v.desc}</p>
                 </div>
@@ -355,7 +341,6 @@ export default function LpWordpressContent() {
         </div>
       </section>
 
-      {/* ── Pris ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -366,20 +351,20 @@ export default function LpWordpressContent() {
               {
                 name: "Migrering",
                 price: "0 kr",
-                note: "Ingår när du tecknar drift i 12 månader.",
-                items: ["Hela sajten flyttad till edge", "Omdirigeringar och SEO bevarade", "Mätning före och efter"],
+                note: "Kan ingå vid tecknad drift i tolv månader. Omfattning bekräftas före start.",
+                items: ["Överenskomna sidor och funktioner", "Planerade omdirigeringar och SEO-kontroll", "Dokumenterade före- och eftertester"],
               },
               {
                 name: "Drift Bas",
                 price: PRICING.basManad,
-                note: "12 månaders bindning, därefter månadsvis.",
-                items: ["Hosting, uppdateringar och säkerhet", "Innehållsändringar när du behöver", "Svar samma arbetsdag"],
+                note: "Exkl. moms. Tolv månaders bindning, därefter månadsvis.",
+                items: ["Högst fem sidor", "Hosting och drift enligt omfattningen", "Ändringar klara inom två arbetsdagar"],
               },
               {
                 name: "Drift Bredd",
                 price: PRICING.bredd,
-                note: "Allt i Bas, för dig som behöver mer sajt.",
-                items: ["Obegränsat antal sidor", "Skräddarsydd design", "SEO-rapport varje månad"],
+                note: "Exkl. moms. Tolv månaders bindning, sedan månadsvis. Allt i Bas och fler sidor enligt överenskommen omfattning.",
+                items: ["Fler tjänstesidor enligt avtalad omfattning", "Skräddarsydd design", "SEO-rapport varje månad"],
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08}>
@@ -390,7 +375,7 @@ export default function LpWordpressContent() {
                   <ul className="mt-5 grid gap-2.5">
                     {p.items.map((it) => (
                       <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
-                        <Check size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
+                        <Check aria-hidden="true" size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
                         {it}
                       </li>
                     ))}
@@ -400,13 +385,12 @@ export default function LpWordpressContent() {
             ))}
           </div>
           <p className="mt-5 text-[14px] text-muted">
-            Spets {PRICING.spets} när du vill att jag driver SEO och Google Ads löpande.
-            E-handel på valfritt paket, {PRICING.ehandel}.
+            Spets kostar 2 990 kr/mån exkl. moms för löpande innehåll och skötsel av Google Ads.
+            Annonsbudget betalas separat. E-handel är ett tillägg för 800 kr/mån exkl. moms, med omfattning och externa avgifter avtalade före start.
           </p>
         </div>
       </section>
 
-      {/* ── Personen bakom ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[900px] mx-auto grid sm:grid-cols-[200px_minmax(0,1fr)] gap-8 items-center">
           <Reveal>
@@ -426,11 +410,10 @@ export default function LpWordpressContent() {
               </h2>
               <p className="mt-4 text-[16px] text-body leading-relaxed">
                 Jag heter Joel Stolt. Jag bygger själv, svarar själv och tar ansvar själv.
-                Inga projektledare på timpris, ingen sitter emellan och inget faller mellan
-                stolarna när något går sönder.
+                Du har direktkontakt med mig vid frågor och ändringar.
               </p>
               <p className="mt-3 text-[15px] text-muted">
-                10+ års erfarenhet av WordPress och WooCommerce · 150+ levererade projekt ·{" "}
+                10+ års erfarenhet av WordPress och WooCommerce ·{" "}
                 {SITE.baseCity}
               </p>
             </div>
@@ -438,8 +421,6 @@ export default function LpWordpressContent() {
         </div>
       </section>
 
-      {/* ── Invändningar. Alltid monterade, aldrig conditional mount:
-             AnimatePresence gömmer svaren för Google. ── */}
       <section className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-[760px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
@@ -456,22 +437,20 @@ export default function LpWordpressContent() {
         </div>
       </section>
 
-      {/* ── Avslut ── */}
       <section id="kontakt" className="px-5 sm:px-8 py-14 sm:py-20 scroll-mt-4">
         <div className="max-w-[560px] mx-auto text-center">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
             Skicka adressen, så mäter jag
           </h2>
           <p className="mt-4 text-[16px] text-body leading-relaxed">
-            Du får veta vad som är fel oavsett om du anlitar mig eller inte.
+            Du får resultatet från den publika kontrollen oavsett om du anlitar mig eller inte. Djupare felsökning kan kräva åtkomst.
           </p>
           <div className="mt-8 text-left">
-            <Formular id="bottom" />
+            <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="bottom" />
           </div>
         </div>
       </section>
 
-      {/* ── Minimal fot. Transparens väger in i landningssideupplevelsen. ── */}
       <footer className="border-t border-border">
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-8 flex flex-wrap gap-x-6 gap-y-2 justify-between text-[14px] text-muted">
           <span>
@@ -491,16 +470,13 @@ export default function LpWordpressContent() {
         </div>
       </footer>
 
-      {/* ── Sticky CTA på mobil. Ringknappen går till telefon, den andra
-             till formuläret. Döljs från lg och uppåt där formuläret är
-             synligt i sidokolumnen ändå. ── */}
       <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 border-t border-border bg-surface/95 backdrop-blur-sm">
         <div className="flex gap-2 px-4 py-3">
           <a
             href={SITE.phoneHref}
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-[10px] border border-border text-[15px] font-600 text-heading"
           >
-            <Phone size={16} />
+            <Phone aria-hidden="true" size={16} />
             Ring
           </a>
           <a

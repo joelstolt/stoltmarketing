@@ -95,7 +95,7 @@ export default function InsikterView({
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 py-10">
+      <main id="main-content" tabIndex={-1} className="mx-auto max-w-5xl px-6 py-10">
         {/* Period-väljare */}
         <div className="flex items-center gap-2 flex-wrap mb-6">
           <span className="text-xs text-[#7A7263] uppercase tracking-wider font-semibold mr-1">
