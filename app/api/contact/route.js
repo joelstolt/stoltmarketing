@@ -9,6 +9,7 @@
 import { rateLimited, clientIp } from "@/lib/rate-limit";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import {saveKvotaForm,deliverKvotaForms} from "@/lib/kvota-outbox";
+import { contactLead, deliverCrmLeads, saveCrmLead } from "@/lib/crm-outbox";
 
 const TO = "joel@stoltmarketing.se";
 const FROM = "Stolt Marketing <kontakt@stoltmarketing.se>";
@@ -124,6 +125,16 @@ export async function POST(req) {
     const {env,ctx}=getCloudflareContext();
     const reference=await saveKvotaForm(env,data,{from:FROM,to:TO,reply_to:email,subject,html:html+'<p><a href="https://app.kvota.se/kundkontakt">Öppna Kundkontakt i Kvota</a> och välj Stolt Marketing för att läsa svarsförslaget och förbereda en offert.</p>'});
     ctx.waitUntil(deliverKvotaForms(env));
+
+    // Leadet till Stolt Marketings CRM (lib/crm-outbox.js): sparas i kön och skickas
+    // direkt, annars av minutjobbet. Får aldrig fälla formuläret: förfrågan är redan
+    // sparad för Kvota och mejlet till Joel.
+    try {
+      await saveCrmLead(env, contactLead(data, reference));
+      ctx.waitUntil(deliverCrmLeads(env));
+    } catch (e) {
+      console.error("CRM-kön tog inte emot leadet:", e);
+    }
 
     // Annonskonverteringen till Kontrollrummets kö, som sweeperns uppladdare
     // tömmer mot Google Ads varje timme. Kontot mäter offline import, alltså

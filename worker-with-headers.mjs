@@ -6,6 +6,7 @@
 // workern.
 import handler from "./.open-next/worker.js";
 import {deliverKvotaForms} from './lib/kvota-outbox.js';
+import { deliverCrmLeads } from './lib/crm-outbox.js';
 export { DOQueueHandler, DOShardedTagCache, BucketCachePurge } from "./.open-next/worker.js";
 
 const STATISK = /\.(css|js|mjs|png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf|mp4|webm|pdf)$/i;
@@ -56,7 +57,11 @@ export default {
         skickas ett akutlarm (max ett per vecka per prenumerant). Larmet är
         Sajtvaktens starkaste bevis: någon vakar faktiskt. */
   async scheduled(event, env, ctx) {
-    if(event.cron==='* * * * *')ctx.waitUntil(deliverKvotaForms(env));
+    if(event.cron==='* * * * *'){
+      ctx.waitUntil(deliverKvotaForms(env));
+      // Leads till Stolt Marketings CRM (lib/crm-outbox.js).
+      ctx.waitUntil(deliverCrmLeads(env));
+    }
     else ctx.waitUntil(korSajtvakten(env));
   },
 };

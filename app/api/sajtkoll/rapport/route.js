@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { rateLimited, clientIp } from "@/lib/rate-limit";
 import { buildSajtvaktPdf } from "./sajtvakt-pdf";
+import { deliverCrmLeads, sajtkollLead, saveCrmLead } from "@/lib/crm-outbox";
 
 /**
  * Sajtvaktens rapport-route. Två lägen:
@@ -330,6 +331,15 @@ export async function POST(req) {
     </div>`,
     replyTo: String(email),
   });
+
+  // Beställaren till Stolt Marketings CRM som kontakt med källan Sajtkoll, utan uppgift
+  // (lib/crm-outbox.js). Rapporten är redan skickad; ett fel här fäller den aldrig.
+  try {
+    await saveCrmLead(env, sajtkollLead({ resultId: String(resultId), email, name, bevaka, resultat }));
+    getCloudflareContext().ctx.waitUntil(deliverCrmLeads(env));
+  } catch (e) {
+    console.error("CRM-kön tog inte emot sajtkoll-leadet:", e);
+  }
 
   return NextResponse.json({ ok: true, mailId: mail.id, bevakar: !!bevaka });
 }
