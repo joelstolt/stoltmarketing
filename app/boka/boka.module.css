@@ -1,0 +1,157 @@
+/* /boka i nya profilen, 2026-11-17. Kompletterar components/ny/ny.module.css.
+   Klasserna .boka-* i app/globals.css ändras inte; justeringarna görs här, inom .cal. */
+
+.wrap {
+  max-width: 880px;
+  margin-top: 48px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.tab {
+  min-height: 46px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 550;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--color-heading);
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.tabActive,
+.tabActive:hover {
+  color: var(--color-heading);
+  background: var(--color-surface-muted);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 -2px 0 var(--color-accent);
+}
+
+.note {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.note.note a {
+  color: var(--color-body);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.note.note a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.card {
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #141417 0%, #0f0f11 100%);
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.8);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-heading);
+}
+
+.cardLead {
+  margin: 8px 0 24px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.status {
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+/* Kalenderramen: neutral i stället för gul, kantiga knappar i stället för piller */
+.cal :global(.boka-cal) {
+  border-radius: 10px;
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.8);
+}
+
+.cal :global(.boka-cal-bar) {
+  background: var(--color-surface);
+  border-bottom-color: var(--color-border-light);
+}
+
+.cal :global(.boka-cal-avatar) {
+  border: 1px solid var(--color-border);
+}
+
+.cal :global(.boka-cal-open) {
+  border-radius: 6px;
+  border-color: var(--color-border);
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.cal :global(.boka-cal-open:hover) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-heading);
+}
+
+.cal :global(.boka-cal-open:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.cal :global(.boka-cal-skeleton) {
+  background: #f4f4f5;
+}
+
+.cal :global(.boka-cal-note) {
+  border-top-color: var(--color-border-light);
+}
+
+.cal :global(.boka-cal-note a) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    margin-top: 36px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .tab {
+    font-size: 14.5px;
+    padding: 10px 12px;
+  }
+}

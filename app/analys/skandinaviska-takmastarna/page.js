@@ -41,7 +41,7 @@ const DEMO = {
     { titel: "SMS när förfrågan kommer in", text: "Ni får ett SMS med namn, nummer och vad det gäller i samma stund som kunden skickar, inte först när någon hinner läsa mejlen." },
     { titel: "Ett färdigt svar att godkänna", text: "Ni får ett förslag på svar som ni läser, ändrar och skickar. Kunden som lämnat sin mejl får en bekräftelse direkt, så ingen undrar om förfrågan kom fram." },
   ],
-  tidNot: "Formuläret ingår i väg 2 och 3. SMS och svarsförslag ingår i väg 3, eller kan läggas till för 495 kr i månaden.",
+  tidNot: "Formuläret ingår i väg 2 och 3. SMS och svarsförslag ingår i väg 3, eller kan läggas till mot ett fast pris.",
   jamforelse: [
     ["Tid tills sidan syns i mobilen", "20 s", "Runt 2 s", "Kunden ser er sida direkt i stället för en tom skärm i flera sekunder."],
     ["Offertformuläret", "Namn, kontakt, taktyp och fritext", "Tjänst, taktyp, ort och kontakt i tre korta steg", "Ni ser vilken tjänst och vilken ort det gäller innan ni ringer tillbaka."],
@@ -477,11 +477,11 @@ export default function TakmastarnaAnalys() {
               <div className="h-full flex flex-col bg-surface rounded-[10px] border border-border p-7">
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 2</div>
                 <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Jag tar över driften</h3>
-                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">1 990 kr/mån</div>
-                <p className="mt-1 text-[13px] text-muted">0 kr i startavgift · 12 mån bindning, sedan månadsvis · ex moms</p>
+                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">Fast månadspris i förväg</div>
+                <p className="mt-1 text-[13px] text-muted">Fast pris skriftligt innan jag börjar · ex moms</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {[
-                    DEMO ? "Förslaget blir er riktiga sajt, flytten från WordPress ingår (annars 4 900 kr)" : "Sajten flyttas till snabb drift hos mig, flytten ingår (annars 4 900 kr)",
+                    DEMO ? "Förslaget blir er riktiga sajt, flytten från WordPress ingår" : "Sajten flyttas till snabb drift hos mig, flytten ingår",
                     "Alla tio ortsidorna och era texter följer med",
                     "Punkt 1, 2, 3, 5 och 7 i listan lösta vid flytten",
                     "Google-profilen och omdömesuppstarten ingår",
@@ -506,15 +506,15 @@ export default function TakmastarnaAnalys() {
                 </div>
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 3</div>
                 <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Driften plus tillväxt</h3>
-                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">2 990 kr/mån</div>
-                <p className="mt-1 text-[13px] text-muted">0 kr i startavgift · 12 mån bindning, sedan månadsvis · ex moms · annonsbudgeten till Google tillkommer</p>
+                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">Fast månadspris i förväg</div>
+                <p className="mt-1 text-[13px] text-muted">Fast pris skriftligt innan jag börjar · ex moms · annonsbudgeten till Google tillkommer</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {[
                     "Allt i väg 2, plus punkt 4 och 6 i listan",
                     "Google Ads: uppsättning och löpande skötsel",
                     "Ortsidorna byggs ut, och fler orter när ni vill",
                     "Nya söktexter varje månad",
-                    "Rutan för förfrågningar: SMS direkt och förslag på svar",
+                    "Förfrågningsrutan: SMS direkt och förslag på svar",
                     "Strategisamtal en gång i månaden",
                   ].map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-body leading-snug">
@@ -525,8 +525,8 @@ export default function TakmastarnaAnalys() {
                 </ul>
                 <p className="mt-4 text-[13.5px] text-body leading-relaxed">
                   Varför jag pekar hit: ni har redan tio orter och en annonskod på sajten. Det här är
-                  paketet där jag driver båda framåt varje månad. 2 990 kr i månaden blir 35 880 kr om
-                  året, mindre än hälften av ett enda takjobb.
+                  upplägget där jag driver båda framåt varje månad, till ett fast månadspris som ni
+                  vet i förväg.
                 </p>
               </div>
             </div>
@@ -535,9 +535,9 @@ export default function TakmastarnaAnalys() {
               <h3 className="font-heading font-700 text-[17px] text-heading">Tryggheterna om jag tar över, väg 2 och 3</h3>
               <div className="mt-5 grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {[
-                  "0 kr i startavgift är på riktigt: sajten flyttas och görs klar först, ni klickar runt i den och betalar först när ni bestämt er.",
+                  "Fast pris skriftligt innan jag börjar, och första samtalet kostar ingenting.",
                   "Ni äger allt, alltid: sajten, innehållet och domänen är era.",
-                  "Efter första året löper allt månadsvis. Uppsägning med ett mejl, till nästa månadsskifte, inga uppsägningsavgifter.",
+                  "Löpande hjälp har ett fast månadspris som du vet i förväg. Uppsägning med ett mejl, till nästa månadsskifte, inga uppsägningsavgifter.",
                   "Vill ni sluta tar ni sajten med er. Jag hjälper till med flytten, ingen inlåsning, och det står i avtalet.",
                 ].map((t) => (
                   <div key={t} className="flex items-start gap-2.5 text-[14px] text-body leading-relaxed">

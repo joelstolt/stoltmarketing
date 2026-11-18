@@ -224,8 +224,8 @@ export default function SockerbitenAnalys() {
                 </div>
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 2</div>
                 <h3 className="mt-2 font-heading font-700 text-[20px] text-heading">Ny sajt där allt är löst från start</h3>
-                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">0 kr start, 1 190 kr/mån</div>
-                <p className="mt-1 text-[13px] text-muted">12 månaders bindning, därefter månadsvis · ex moms</p>
+                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">Fast pris innan jag börjar</div>
+                <p className="mt-1 text-[13px] text-muted">Skriftligt, och löpande hjälp har ett fast månadspris i förväg · ex moms</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {[
                     "Gratis designförslag inom 2 arbetsdagar, ni ser innan ni bestämmer",

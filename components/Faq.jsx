@@ -23,7 +23,7 @@ function Reveal({ children, className = "", delay = 0 }) {
 const faqs = [
   {
     q: "Vad kostar det att jobba med dig?",
-    a: "0 kr i startavgift. De flesta landar på Bredd, 1 990 kr/mån. Bas är 1 190 kr/mån och Spets 2 990 kr/mån. 12 månaders bindning, därefter månadsvis. Då ingår sajten, hosting, drift, uppdateringar, innehållsändringar och support. Du äger sajten. Vill du ha aktiv SEO, Google Ads och nytt innehåll varje månad ingår det i Spets. Större e-handel och AI-projekt prissätts efter scope, alltid till fast pris innan vi börjar.",
+    a: "Första samtalet kostar ingenting. Därefter får du ett fast pris skriftligt innan jag börjar. Löpande hjälp, med drift, uppdateringar, innehållsändringar och support, har ett fast månadspris som du vet i förväg. Du äger sajten. Akut felsökning samma arbetsdag kostar 1 500 kr/h exkl. moms.",
   },
   {
     q: "Jobbar du bara med företag i Hässleholm?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "Vad händer efter lansering?",
-    a: "Jag erbjuder managed hemsida med löpande drift, underhåll, säkerhet och förbättringar. Allt ingår i månadspriset på 1 190 kr, och jag tar över även sajter jag inte byggt själv. Inget ansvar faller mellan stolarna.",
+    a: "Jag erbjuder managed hemsida med löpande drift, underhåll, säkerhet och förbättringar. Det har ett fast månadspris som du vet i förväg, och jag tar över även sajter jag inte byggt själv. Inget ansvar faller mellan stolarna.",
   },
 ];
 

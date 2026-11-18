@@ -282,11 +282,11 @@ export default function KinnekulleAnalys() {
 
               <div className="h-full flex flex-col bg-surface rounded-[10px] border border-border p-7">
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 2</div>
-                <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Ny sajt: Bredd, till Bas-pris</h3>
+                <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Ny sajt, helt ny design</h3>
                 <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">
-                  <s className="text-muted font-400 text-[16px] mr-2">1 990</s>1 190 kr/mån
+                  Fast månadspris i förväg
                 </div>
-                <p className="mt-1 text-[13px] text-muted">0 kr i startavgift · priset gäller första året, därefter 1 990 kr/mån · 12 mån bindning, sedan månadsvis · ex moms</p>
+                <p className="mt-1 text-[13px] text-muted">Fast pris skriftligt innan jag börjar · ex moms</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {["Helt ny sajt, design från vitt papper", "Obegränsat antal sidor, alla tretton tjänsterna får en egen", "Texter och struktur byggda för sök och AI", "Drift, säkerhet och löpande ändringar ingår", "SEO-rapport varje månad"].map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-body leading-snug">
@@ -306,14 +306,14 @@ export default function KinnekulleAnalys() {
                   Min ärliga rekommendation
                 </div>
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 3</div>
-                <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Ny sajt: Spets, till Bredd-pris</h3>
+                <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Ny sajt plus tillväxt</h3>
                 <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">
-                  <s className="text-muted font-400 text-[16px] mr-2">2 990</s>1 990 kr/mån
+                  Fast månadspris i förväg
                 </div>
-                <p className="mt-1 text-[13px] text-muted">0 kr i startavgift · priset gäller första året, därefter 2 990 kr/mån · 12 mån bindning, sedan månadsvis · ex moms</p>
+                <p className="mt-1 text-[13px] text-muted">Fast pris skriftligt innan jag börjar · ex moms</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {[
-                    "Allt i Bredd",
+                    "Allt i väg 2",
                     "Egna sidor för Skara, Lidköping och Mariestad",
                     "AI-assistent som svarar dygnet runt",
                     "Google Ads-hantering och nya söktexter varje månad",
@@ -326,10 +326,9 @@ export default function KinnekulleAnalys() {
                   ))}
                 </ul>
                 <p className="mt-4 text-[13.5px] text-body leading-relaxed">
-                  Varför jag pekar hit: väg 1 kostar 19 900 kr en gång och lagar det som finns. För
-                  ungefär samma pengar första året får ni i stället en sajt där allt är byggt rätt
-                  från grunden, plus annonsering, AI-assistent och ny text varje månad. Och ni
-                  slipper betala en gång till den dag sajten ändå görs om.
+                  Varför jag pekar hit: väg 1 lagar det som finns. Med en ny sajt får ni i stället
+                  allt byggt rätt från grunden, plus annonsering, AI-assistent och ny text varje månad.
+                  Och ni slipper betala en gång till den dag sajten ändå görs om.
                 </p>
               </div>
             </div>
@@ -338,9 +337,9 @@ export default function KinnekulleAnalys() {
               <h3 className="font-heading font-700 text-[17px] text-heading">Tryggheterna med de nya sajterna, väg 2 och 3</h3>
               <div className="mt-5 grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {[
-                  "0 kr i startavgift är på riktigt: sajten byggs färdig först, ni tittar och klickar runt i den, och betalar först när ni bestämt er.",
+                  "Fast pris skriftligt innan jag börjar, och första samtalet kostar ingenting.",
                   "Ni äger allt, alltid: sajten, innehållet och domänen är era.",
-                  "Efter första året löper allt månadsvis. Uppsägning med ett mejl, till nästa månadsskifte, inga uppsägningsavgifter.",
+                  "Löpande hjälp har ett fast månadspris som du vet i förväg. Uppsägning med ett mejl, till nästa månadsskifte, inga uppsägningsavgifter.",
                   "Vill ni sluta tar ni sajten med er och driftar den var ni vill. Jag hjälper till med flytten, ingen inlåsning, och det står i avtalet.",
                 ].map((t) => (
                   <div key={t} className="flex items-start gap-2.5 text-[14px] text-body leading-relaxed">

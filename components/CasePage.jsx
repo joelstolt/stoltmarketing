@@ -1,46 +1,198 @@
-"use client";
-
+import Link from "next/link";
 import { ExternalLink, Check } from "lucide-react";
-import { PageHero } from "@/components/ui";
-import ForeEfter from "@/components/ForeEfter";
+import s from "@/components/ny/ny.module.css";
+import c from "./CasePage.module.css";
 
+/* Mall för casesidorna under /projekt/<namn>, ny profil 2026-11-17.
+   Texterna kommer oförändrade från lib/case-data.js. Bara formen är ny.
+   Sidan läggs i <main> av respektive page.js, därför sätts scope-klassen här. */
 export default function CasePage({ data }) {
-  return <>
-    <PageHero
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Kundprojekt", href: "/projekt" }, { label: data.title }]}
-      badge={data.badge} title={data.heroTitle} subtitle={data.heroSubtitle}
-      compact={true} cta={false}
-    />
-    <section className="py-10 sm:py-14 px-5 sm:px-8">
-      <div className="max-w-6xl mx-auto">
-        {data.screenshot && <figure className="mb-10 bg-surface border border-border rounded-xl overflow-hidden">
-          <a href={data.screenshot} target="_blank" rel="noopener noreferrer" aria-label={`Öppna större skärmbild av ${data.title}`}>
-            <img src={data.screenshot} alt={`Skärmbild av ${data.title}s webbplats`} className="w-full max-h-[620px] object-cover object-top" width="1440" height="900" fetchPriority="high" />
-          </a>
-          <figcaption className="px-5 py-3 text-[14px] text-body">Sparad skärmbild av leveransen. Öppna bilden för att se den större.</figcaption>
-        </figure>}
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14 items-start">
-          <div className="max-w-[720px]">
-            <h2 className="font-heading text-[28px] text-heading">Behovet</h2>
-            {data.challenge.map((p,i)=><p key={i} className="mt-4 text-[17px] leading-[1.8] text-body">{p}</p>)}
-            <h2 className="mt-10 font-heading text-[28px] text-heading">Det jag byggde</h2>
-            {data.solution.map((p,i)=><p key={i} className="mt-4 text-[17px] leading-[1.8] text-body">{p}</p>)}
-            <h2 className="mt-10 font-heading text-[28px] text-heading">Leverans och redovisade resultat</h2>
-            <div className="mt-5 grid sm:grid-cols-3 gap-4">
-              {data.results.map(r=><div key={r.label} className="bg-surface rounded-xl border border-border p-5"><p className="font-heading text-[24px] text-primary">{r.value}</p><p className="mt-2 text-[14px] leading-relaxed text-body">{r.label}</p></div>)}
-            </div>
-            {data.comparison && <div className="mt-8"><ForeEfter rader={data.comparison} /></div>}
-            {data.measurementNote && <aside className="mt-6 p-5 border border-border rounded-xl bg-surface" aria-label="Källor och mätningens begränsningar"><h3 className="font-heading text-[20px] text-heading">Så ska uppgifterna läsas</h3><p className="mt-3 text-[15px] leading-[1.8] text-body">{data.measurementNote}</p></aside>}
+  return (
+    <div className={s.scope}>
+      {/* Toppen */}
+      <section className={s.intro}>
+        <div className={`${s.frame} ${s.introInner}`}>
+          <nav className={s.crumbs} aria-label="Brödsmulor">
+            <Link href="/">Start</Link>
+            <span className={s.crumbSep} aria-hidden="true">/</span>
+            <Link href="/projekt">Case</Link>
+            <span className={s.crumbSep} aria-hidden="true">/</span>
+            <span aria-current="page">{data.title}</span>
+          </nav>
+          <p className={s.kicker}>{data.badge}</p>
+          <h1 className={s.h1Sub} style={{ maxWidth: 900 }}>{data.heroTitle}</h1>
+          <p className={s.heroLead}>{data.heroSubtitle}</p>
+          <div className={s.heroActions}>
+            <Link href="/kontakt" className={s.btnPrimary} data-umami-event={`case-${data.slug}-hero-cta`}>
+              Berätta vad ni behöver
+            </Link>
+            {data.liveUrl && (
+              <a href={data.liveUrl} target="_blank" rel="noopener noreferrer" className={`${s.btnGhost} ${c.wrapBtn}`}>
+                Besök {data.title}
+                <ExternalLink size={15} strokeWidth={2} aria-hidden="true" />
+                <span className="sr-only"> (öppnas i ny flik)</span>
+              </a>
+            )}
           </div>
-          <aside className="bg-surface rounded-xl border border-border p-6">
-            <h2 className="font-heading text-[22px] text-heading">Det här ingick</h2>
-            <ul className="mt-4 space-y-3">{data.deliverables.map(d=><li key={d} className="flex gap-2.5 items-start"><Check size={16} aria-hidden="true" className="text-primary mt-1 shrink-0"/><span className="text-[15px] text-body leading-relaxed">{d}</span></li>)}</ul>
-            {data.liveUrl && <a href={data.liveUrl} target="_blank" rel="noopener noreferrer" className="secondary-btn mt-6">Besök {data.title}<ExternalLink size={15} aria-hidden="true"/></a>}
-            <details className="mt-6"><summary className="text-[14px] text-body cursor-pointer">Teknik i projektet</summary><p className="mt-3 text-[14px] leading-relaxed text-body">{data.tech.join(", ")}</p></details>
-          </aside>
         </div>
-      </div>
-    </section>
-    <section className="section-gul px-5 sm:px-8 py-12 sm:py-16"><div className="max-w-3xl mx-auto"><h2 className="font-heading text-[32px] text-heading">Behöver din verksamhet något liknande?</h2><p className="mt-4 text-[17px] text-body leading-relaxed">Beskriv vad besökaren ska kunna göra på din hemsida. Jag föreslår ett upplägg och visar vad som ingår.</p><div className="mt-6 flex flex-wrap gap-3"><a href="/kontakt" className="premium-btn">Beskriv ditt projekt</a><a href="/hemsida-foretag" className="secondary-btn">Se hemsideupplägget</a></div></div></section>
-  </>;
+      </section>
+
+      {/* Skärmbild */}
+      {data.screenshot && (
+        <section className={s.section}>
+          <div className={`${s.frame}`} style={{ paddingTop: 56, paddingBottom: 56 }}>
+            <figure className={c.shot}>
+              <a
+                href={data.screenshot}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={c.shotLink}
+                aria-label={`Öppna större skärmbild av ${data.title}`}
+              >
+                <img
+                  src={data.screenshot}
+                  alt={`Skärmbild av ${data.title}s webbplats`}
+                  className={c.shotImg}
+                  width="1440"
+                  height="900"
+                  fetchPriority="high"
+                />
+              </a>
+              <figcaption className={c.shotCaption}>
+                {data.screenshotCaption || "Sparad skärmbild av leveransen. Öppna bilden för att se den större."}
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
+
+      {/* Behovet och det jag byggde */}
+      <section className={s.section}>
+        <div className={`${s.frame} ${s.block}`}>
+          <div className={c.body}>
+            <div className={c.prose}>
+              <h2 className={s.h2}>Behovet</h2>
+              {data.challenge.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+              <h2 className={`${s.h2} ${c.h2Gap}`}>Det jag byggde</h2>
+              {data.solution.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+            <aside className={c.side}>
+              <h2 className={c.sideTitle}>Det här ingick</h2>
+              <ul className={s.checkList}>
+                {data.deliverables.map((d) => (
+                  <li key={d}>
+                    <Check size={16} strokeWidth={2.25} aria-hidden="true" className={s.checkIcon} />
+                    {d}
+                  </li>
+                ))}
+              </ul>
+              {data.liveUrl && (
+                <div className={c.sideActions}>
+                  <a href={data.liveUrl} target="_blank" rel="noopener noreferrer" className={`${s.btnGhost} ${c.wrapBtn}`}>
+                    Besök {data.title}
+                    <ExternalLink size={15} strokeWidth={2} aria-hidden="true" />
+                    <span className="sr-only"> (öppnas i ny flik)</span>
+                  </a>
+                </div>
+              )}
+              {data.tech?.length > 0 && (
+                <details className={c.tech}>
+                  <summary>Teknik i projektet</summary>
+                  <p>{data.tech.join(", ")}</p>
+                </details>
+              )}
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Så flödar det */}
+      {data.flode?.length > 0 && (
+        <section className={s.section}>
+          <div className={`${s.frame} ${s.block}`}>
+            <div className={s.blockHead}>
+              <h2 className={s.h2}>Så fungerar det, steg för steg</h2>
+            </div>
+            <div className={`${s.cells} ${c.flow}`}>
+              {data.flode.map((f) => (
+                <div key={f.titel} className={s.cell}>
+                  <h3 className={s.cellTitle}>{f.titel}</h3>
+                  <p className={s.cellText}>{f.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Leverans och resultat */}
+      <section className={s.section}>
+        <div className={`${s.frame} ${s.block}`}>
+          <div className={s.blockHead}>
+            <h2 className={s.h2}>Leverans och redovisade resultat</h2>
+          </div>
+          <div className={s.cells}>
+            {data.results.map((r) => (
+              <div key={r.label} className={s.cell}>
+                <p className={c.resultValue}>{r.value}</p>
+                <p className={s.cellText}>{r.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {data.comparison && (
+            <div className={c.compare}>
+              <h3 className={c.compareTitle}>Före och efter</h3>
+              <p className={c.compareLead}>
+                Två redovisade testlägen. Förutsättningar och begränsningar anges i metodrutan.
+              </p>
+              <dl className={c.compareList}>
+                {data.comparison.map((rad) => (
+                  <div key={rad.label} className={c.compareRow}>
+                    <dt>{rad.label}</dt>
+                    <dd className={c.compareCols}>
+                      <div>
+                        <span className={c.compareSmall}>Före ombyggnaden</span>
+                        <span className={c.compareNum}>{rad.before}</span>
+                      </div>
+                      <div>
+                        <span className={c.compareSmall}>Efter ombyggnaden</span>
+                        <span className={c.compareNum}>{rad.after}</span>
+                      </div>
+                    </dd>
+                    {rad.delta && <dd className={c.compareSmall}>Förändring: {rad.delta}</dd>}
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
+
+          {data.measurementNote && (
+            <aside className={`${s.caseNote} ${c.note}`} aria-label="Källor och mätningens begränsningar">
+              <span className={s.caseLabel}>Så ska uppgifterna läsas</span>
+              <p>{data.measurementNote}</p>
+            </aside>
+          )}
+        </div>
+      </section>
+
+      {/* Avslut */}
+      <section className={`${s.section} ${s.cta}`}>
+        <div className={`${s.frame} ${s.ctaInner}`}>
+          <h2 className={s.ctaTitle}>Behöver ni något liknande?</h2>
+          <p className={s.ctaText}>Berätta vad ni behöver eller vad som krånglar. Ni får svar nästa arbetsdag.</p>
+          <div className={s.heroActions}>
+            <Link href="/kontakt" className={s.btnPrimary} data-umami-event={`case-${data.slug}-avslut-cta`}>
+              Skriv till mig
+            </Link>
+            <Link href="/projekt" className={s.btnGhost}>Fler case</Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }

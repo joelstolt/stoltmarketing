@@ -12,12 +12,12 @@ export const metadata = {
   "alternates": {
     "canonical": "https://www.stoltmarketing.se/lp/wordpress"
   },
-  "openGraph": {
+  "openGraph": { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     "title": "Hjälp med WordPress: första kontroll och tydlig omfattning",
     "description": "Jag hjälper även med WordPress jag inte byggt. Kostnadsfri publik snabbkontroll, djupare felsökning efter åtkomst och överenskommen omfattning.",
     "url": "https://www.stoltmarketing.se/lp/wordpress"
   },
-  "twitter": {
+  "twitter": { images: ["/og-image.png"], 
     "card": "summary_large_image",
     "title": "Hjälp med WordPress: första kontroll och tydlig omfattning",
     "description": "Jag hjälper även med WordPress jag inte byggt. Kostnadsfri publik snabbkontroll, djupare felsökning efter åtkomst och överenskommen omfattning."

@@ -36,8 +36,8 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
       </Reveal>
       <Reveal delay={0.06}>
         <h2
-          className="mt-5 font-heading text-[clamp(30px,4.2vw,50px)] leading-[1.08] tracking-[-0.02em] text-heading"
-          style={{ fontWeight: 420, fontVariationSettings: '"opsz" 120' }}
+          className="mt-5 font-heading text-[clamp(30px,3.6vw,44px)] leading-[1.1] text-heading"
+          style={{ fontWeight: 620, letterSpacing: "-0.03em" }}
         >
           {title}
         </h2>
@@ -57,200 +57,66 @@ export function SectionHeader({ badge, title, subtitle, maxWidth = "700px" }) {
       Samma familj som startsidans "fältet i mörker" men gryningsvarianten:
       statiska fältrader i SVG + horisont i stället för canvas. Renderas
       statiskt, ovanför vecket animeras inget från opacity 0. ── */
-export function PageHero({ breadcrumbs, badge, title, subtitle, bullets, highlight, compact = false, cta = { href: "/boka", label: "Boka kostnadsfri genomgång" } }) {
-  const accentIndex = typeof title === "string" && highlight ? title.indexOf(highlight) : -1;
-
-  /* Vinden: scrollfarten böjer fältraderna (--vind 0..1), fjädrar tillbaka
-     via CSS-transition. Passiv lyssnare, av vid prefers-reduced-motion. */
-  const heroRef = useRef(null);
-  useEffect(() => {
-    const el = heroRef.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let lastY = window.scrollY;
-    let lastT = performance.now();
-    let t;
-    const onScroll = () => {
-      const y = window.scrollY;
-      const now = performance.now();
-      const v = Math.min(1, Math.abs(y - lastY) / Math.max(1, now - lastT) / 2.5);
-      lastY = y;
-      lastT = now;
-      el.style.setProperty("--vind", v.toFixed(3));
-      clearTimeout(t);
-      t = setTimeout(() => el.style.setProperty("--vind", "0"), 160);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      clearTimeout(t);
-    };
-  }, []);
-
+export function PageHero({ breadcrumbs, badge, title, subtitle, bullets, highlight, compact = false, cta = { href: "/kontakt", label: "Berätta vad ni behöver" } }) {
+  /* Ny profil 2026-11-17: lugn topp med svagt gult sken, brödsmulor, liten gul punkt
+     framför överraden och rubrik i normal stil. highlight tas emot men markeras inte
+     längre (inga kursiva accentord). */
+  void highlight;
   return (
-    <section ref={heroRef} className="hero-dark field-glow relative overflow-hidden">
-
-      {/* Fältraderna: perspektivlinjer mot gryningen, ekar startsidans canvas */}
-      <svg
+    <section className="relative overflow-hidden" style={{ borderBottom: "1px solid var(--color-border-light)" }}>
+      <div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 w-full pointer-events-none"
-        style={{
-          height: "clamp(120px, 22vw, 230px)",
-          maskImage: "linear-gradient(to top, black 55%, transparent)",
-          WebkitMaskImage: "linear-gradient(to top, black 55%, transparent)",
-        }}
-        viewBox="0 0 1200 240"
-        preserveAspectRatio="none"
-      >
-        <line x1="1200" y1="26" x2="0" y2="30" stroke="rgba(242,236,221,0.18)" strokeWidth="1" />
-        <line x1="-140" y1="240" x2="812" y2="28" stroke="rgba(242,194,48,0.12)" strokeWidth="1" />
-        <line x1="40" y1="240" x2="826" y2="28" stroke="rgba(122,148,64,0.2)" strokeWidth="1" />
-        <line x1="220" y1="240" x2="840" y2="28" stroke="rgba(242,194,48,0.18)" strokeWidth="1" />
-        <line x1="400" y1="240" x2="854" y2="28" stroke="rgba(242,194,48,0.24)" strokeWidth="1" />
-        <line x1="580" y1="240" x2="868" y2="28" stroke="rgba(122,148,64,0.22)" strokeWidth="1" />
-        <line x1="760" y1="240" x2="882" y2="28" stroke="rgba(242,194,48,0.28)" strokeWidth="1" />
-        <line x1="940" y1="240" x2="896" y2="28" stroke="rgba(242,194,48,0.22)" strokeWidth="1" />
-        <line x1="1120" y1="240" x2="910" y2="28" stroke="rgba(122,148,64,0.18)" strokeWidth="1" />
-        <line x1="1300" y1="240" x2="924" y2="28" stroke="rgba(242,194,48,0.14)" strokeWidth="1" />
-        {/* Ljuspulser som vandrar längs raderna mot horisonten */}
-        {[
-          { x1: 220, x2: 840, d: "8s", del: "-2s", o: 0.55 },
-          { x1: 400, x2: 854, d: "11s", del: "-6s", o: 0.62 },
-          { x1: 580, x2: 868, d: "7s", del: "-1s", o: 0.5 },
-          { x1: 760, x2: 882, d: "9s", del: "-4s", o: 0.7 },
-          { x1: 940, x2: 896, d: "12.5s", del: "-8s", o: 0.52 },
-          { x1: 1120, x2: 910, d: "8.5s", del: "-5s", o: 0.45 },
-        ].map((l, i) => (
-          <line
-            key={i}
-            x1={l.x1}
-            y1="240"
-            x2={l.x2}
-            y2="28"
-            className="hero-puls"
-            stroke="rgba(242,194,48,0.8)"
-            strokeWidth="2"
-            style={{ "--pd": l.d, "--pdel": l.del, opacity: l.o }}
-          />
-        ))}
-      </svg>
-
-      {/* Korn som svävar i gryningsljuset */}
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[
-          { left: "12%", bottom: "16%", d: "11s", del: "0s", s: 4 },
-          { left: "28%", bottom: "7%", d: "14s", del: "-4s", s: 3 },
-          { left: "55%", bottom: "11%", d: "12s", del: "-7s", s: 3.5 },
-          { left: "73%", bottom: "20%", d: "16s", del: "-2s", s: 3 },
-          { left: "87%", bottom: "9%", d: "13s", del: "-9s", s: 3 },
-        ].map((k, i) => (
-          <span
-            key={i}
-            className="hero-korn"
-            style={{
-              left: k.left,
-              bottom: k.bottom,
-              width: k.s,
-              height: k.s,
-              animationDuration: k.d,
-              animationDelay: k.del,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className={`relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-28 ${compact ? "sm:pt-28 pb-10 sm:pb-12" : "sm:pt-32 pb-14 sm:pb-20"}`}>
-        {/* Breadcrumbs */}
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(55% 70% at 85% 30%, rgba(242,194,48,0.06), transparent 70%)" }}
+      />
+      <div className={`relative z-10 max-w-[1200px] mx-auto px-4 sm:px-12 ${compact ? "pt-16 sm:pt-20 pb-12 sm:pb-16" : "pt-16 sm:pt-24 pb-14 sm:pb-24"}`}>
         {breadcrumbs && (
-          <nav
-            aria-label="Brödsmulor"
-            className="flex flex-wrap items-center gap-2 text-[13px] text-muted mb-6"
-            style={{ fontFamily: "var(--font-ui)" }}
-          >
+          <nav aria-label="Brödsmulor" className="flex flex-wrap items-center gap-2 text-[14px] text-muted mb-7">
             {breadcrumbs.map((bc, i) => (
               <span key={i} className="flex items-center gap-2">
-                {i > 0 && <span className="text-border">·</span>}
+                {i > 0 && <span className="text-faint" aria-hidden="true">/</span>}
                 {bc.href ? (
-                  <a
-                    href={bc.href}
-                    className="hover:text-heading transition-colors"
-                  >
-                    {bc.label}
-                  </a>
+                  <a href={bc.href} className="hover:text-heading transition-colors">{bc.label}</a>
                 ) : (
-                  <span aria-current="page" className="text-heading font-500">{bc.label}</span>
+                  <span aria-current="page">{bc.label}</span>
                 )}
               </span>
             ))}
           </nav>
         )}
 
-        {/* Eyebrow, samma motiv som startsidan: guldstreck + versaler */}
-        <div className="flex items-center gap-3.5">
-          <span
-            aria-hidden="true"
-            className="inline-block"
-            style={{ width: 30, height: 2, background: "var(--color-accent)" }}
-          />
-          <span
-            className="uppercase"
-            style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: 10.5,
-              fontWeight: 600,
-              letterSpacing: "0.28em",
-              color: "var(--color-accent)",
-            }}
-          >
-            {badge}
-          </span>
-        </div>
+        {badge && <span className="eyebrow">{badge}</span>}
 
         <h1
-          className={`mt-6 font-heading ${compact ? "text-[clamp(32px,4.5vw,56px)]" : "text-[clamp(36px,5.8vw,72px)]"} leading-[1.08] tracking-[-0.025em] text-heading max-w-[900px]`}
-          style={{ fontWeight: 380, fontVariationSettings: '"opsz" 144' }}
+          className={`mt-5 ${compact ? "text-[clamp(32px,4.4vw,52px)]" : "text-[clamp(36px,5vw,60px)]"} leading-[1.05] text-heading max-w-[880px]`}
+          style={{ fontWeight: 640, letterSpacing: "-0.035em" }}
         >
-          {accentIndex >= 0 ? (
-            <>
-              {title.slice(0, accentIndex)}
-              <em style={{ fontStyle: "italic", color: "var(--color-accent)", fontWeight: 400 }}>
-                {highlight}
-              </em>
-              {title.slice(accentIndex + highlight.length)}
-            </>
-          ) : (
-            title
-          )}
+          {title}
         </h1>
 
         {subtitle && (
-          <p className="mt-6 text-[16px] sm:text-[17.5px] leading-relaxed text-body max-w-[580px]">
-            {subtitle}
-          </p>
+          <p className="mt-6 text-[17px] sm:text-[19px] leading-relaxed text-body max-w-[620px]">{subtitle}</p>
         )}
 
         {bullets && (
           <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
             {bullets.map((b) => (
-              <li
-                key={b}
-                className="flex items-center gap-2 text-[13px] text-body font-500"
-                style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.04em" }}
-              >
-                <span className="w-2 h-2 bg-accent" />
+              <li key={b} className="flex items-center gap-2 text-[14.5px] text-body">
+                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-accent" />
                 {b}
               </li>
             ))}
           </ul>
         )}
 
-        {cta && <div className="flex flex-wrap gap-3 mt-8">
-          <a href={cta.href} className="premium-btn">
-            <span>{cta.label}</span>
-          </a>
-        </div>}
+        {cta && (
+          <div className="flex flex-wrap gap-3 mt-9">
+            <a href={cta.href} className="premium-btn">
+              <span>{cta.label}</span>
+            </a>
+          </div>
+        )}
       </div>
-
     </section>
   );
 }

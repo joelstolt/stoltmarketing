@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
+import f from "./InquiryForm.module.css";
 
 export default function InquiryForm({ service = "Kontakt", initialMessage = "", submitLabel = "Skicka meddelande", eventName = "lead-kontaktformular" }) {
   const id = useId();
@@ -36,17 +37,17 @@ export default function InquiryForm({ service = "Kontakt", initialMessage = "", 
       setError(err.name === "TimeoutError" ? "Det tog för lång tid att få svar. Försök igen eller mejla Joel direkt." : err.name === "TypeError" ? "Det gick inte att nå servern. Kontrollera din anslutning och försök igen." : err.message);
     } finally { setSending(false); }
   }
-  if (reference) return <div ref={resultRef} tabIndex={-1} role="status" className="py-8"><h3 className="text-[28px] mb-3">Ditt meddelande är mottaget</h3><p>Jag återkommer personligen, normalt samma arbetsdag. Skickar du på kvällen eller helgen får du svar nästa arbetsdag.</p><p className="text-[14px] text-muted mt-4">Du behöver inte skicka igen. Du kan också nå mig på <a href="mailto:joel@stoltmarketing.se" className="underline">joel@stoltmarketing.se</a>.</p></div>;
-  return <form onFocusCapture={() => { if (!started.current) { started.current = true; trackForm("form-start"); } }} onInvalidCapture={() => trackForm("form-validation")} onSubmit={submit} aria-busy={sending} className="space-y-5">
-    <p className="text-[13px] text-muted">Alla tre fält behövs för att jag ska kunna svara.</p>
-    <div className="grid sm:grid-cols-2 gap-5">
-      <label className="form-field" htmlFor={`${id}-name`}>Namn<input id={`${id}-name`} name="name" autoComplete="name" maxLength={200} required value={data.name} onChange={change} /></label>
-      <label className="form-field" htmlFor={`${id}-email`}>E-post<input id={`${id}-email`} name="email" type="email" autoComplete="email" inputMode="email" maxLength={254} required value={data.email} onChange={change} /></label>
+  if (reference) return <div ref={resultRef} tabIndex={-1} role="status" className={f.done}><h3 className={f.doneTitle}>Tack, ditt meddelande är mottaget</h3><p className={f.doneText}>Jag har fått det och svarar senast nästa arbetsdag.</p><p className={f.doneSmall}>Du behöver inte skicka igen. Du kan också nå mig på <a href="mailto:joel@stoltmarketing.se" className={f.textLink}>joel@stoltmarketing.se</a>.</p></div>;
+  return <form onFocusCapture={() => { if (!started.current) { started.current = true; trackForm("form-start"); } }} onInvalidCapture={() => trackForm("form-validation")} onSubmit={submit} aria-busy={sending} className={f.form}>
+    <p className={f.hint}>Alla tre fält behövs för att jag ska kunna svara.</p>
+    <div className={f.row}>
+      <label className={f.field} htmlFor={`${id}-name`}>Namn<input id={`${id}-name`} name="name" autoComplete="name" maxLength={200} required value={data.name} onChange={change} /></label>
+      <label className={f.field} htmlFor={`${id}-email`}>E-post<input id={`${id}-email`} name="email" type="email" autoComplete="email" inputMode="email" maxLength={254} required value={data.email} onChange={change} /></label>
     </div>
-    <label className="form-field" htmlFor={`${id}-message`}>Vad vill du ha hjälp med?<textarea id={`${id}-message`} name="message" rows={5} maxLength={5000} required value={data.message} onChange={change} placeholder="Berätta kort. Lägg gärna till företagets namn eller webbadress." /></label>
+    <label className={f.field} htmlFor={`${id}-message`}>Vad vill du ha hjälp med?<textarea id={`${id}-message`} name="message" rows={5} maxLength={5000} required value={data.message} onChange={change} placeholder="Berätta kort. Lägg gärna till företagets namn eller webbadress." /></label>
     <input name="hp_field" value={data.hp_field} onChange={change} tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] w-px h-px" />
-    {error && <div role="alert" className="border border-red-400/50 bg-red-950/20 rounded-lg p-4 text-[15px]"><p>{error}</p><a href="mailto:joel@stoltmarketing.se" className="underline mt-2 inline-block">Mejla joel@stoltmarketing.se</a></div>}
-    <p className="text-[13px] text-muted">Jag använder uppgifterna för att hantera din förfrågan. <a href="/integritet" className="underline">Så behandlas personuppgifterna</a>.</p>
-    <button type="submit" disabled={sending} className="premium-btn w-full sm:w-auto justify-center disabled:opacity-60">{sending ? "Skickar..." : submitLabel}</button>
+    {error && <div role="alert" className={f.error}><p>{error}</p><a href="mailto:joel@stoltmarketing.se" className={`${f.textLink} ${f.errorLink}`}>Mejla joel@stoltmarketing.se</a></div>}
+    <p className={f.hint}>Jag använder uppgifterna för att hantera din förfrågan. <a href="/integritet" className={f.textLink}>Så behandlas personuppgifterna</a>.</p>
+    <button type="submit" disabled={sending} className={f.submit}>{sending ? "Skickar..." : submitLabel}</button>
   </form>;
 }

@@ -17,6 +17,8 @@ const nextConfig = {
         destination: "/vad-kostar-en-hemsida",
         statusCode: 301,
       },
+      // /priser utgår: inga publika paketpriser. Så funkar det ersätter sidan.
+      { source: "/priser", destination: "/sa-funkar-det", permanent: true },
       // Splittest-varianten /b är nu startsidan
       { source: "/b", destination: "/", permanent: true },
       /* Dubblett borttagen 2026-08-23. Två sidor täckte exakt samma ämne med

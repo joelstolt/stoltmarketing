@@ -1,40 +1,95 @@
-"use client";
+import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { PageHero } from "@/components/ui";
-import JoelCard from "@/components/JoelCard";
 import InquiryForm from "@/components/InquiryForm";
 import { SITE } from "@/lib/local/data";
+import s from "@/components/ny/ny.module.css";
+import k from "./kontakt.module.css";
 
-const contactMethods = [
-  {
-    icon: Mail,
-    title: "E-post",
-    value: "joel@stoltmarketing.se",
-    href: "mailto:joel@stoltmarketing.se",
-    desc: "Svar samma arbetsdag",
-  },
+/* /kontakt i nya profilen (2026-11-17). Underlag: positionering-2026-11-15/sajttext.md avsnitt 8.
+   Formuläret (InquiryForm) har samma fält, API-anrop, honeypot och spårning som tidigare. */
+
+const VAGAR = [
   {
     icon: Phone,
-    title: "Telefon",
-    value: SITE.phone,
+    varde: SITE.phone,
     href: SITE.phoneHref,
-    desc: "Ring eller SMS, vardagar 08:00 till 17:00",
+    text: "Ring eller sms:a, vardagar 08:00 till 17:00",
+  },
+  {
+    icon: Mail,
+    varde: SITE.email,
+    href: `mailto:${SITE.email}`,
+    text: "Svar nästa arbetsdag",
   },
   {
     icon: MapPin,
-    title: "Plats",
-    value: "Hässleholm, Sverige",
+    varde: "Hässleholm",
     href: null,
-    desc: "Jobbar med kunder i hela Sverige",
+    text: "Kunder i hela Sverige",
   },
 ];
 
 export default function KontaktContent() {
-  return <>
-    <PageHero compact cta={false} breadcrumbs={[{label:"Start",href:"/"},{label:"Kontakt"}]} badge="Kontakt" title="Skriv till Joel" subtitle="Berätta vad du behöver hjälp med. Jag svarar personligen, normalt samma arbetsdag. På kvällar och helger återkommer jag nästa arbetsdag." />
-    <section className="px-5 sm:px-8 py-10 sm:py-16"><div className="max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_340px] gap-12 lg:gap-20 items-start">
-      <div className="bg-surface border border-border rounded-xl p-5 sm:p-8"><h2 className="text-[28px] mb-3">Vad funderar du på?</h2><p className="mb-6">Du behöver inte veta vilken tjänst du ska välja. Vill du prata direkt kan du <a href="/boka" className="text-primary underline">boka en tid i kalendern</a>.</p><InquiryForm /></div>
-      <aside><JoelCard compact /><h2 className="text-[24px] mt-8 mb-5">Du når mig också här</h2><ul className="space-y-5">{contactMethods.map((method) => <li key={method.title} className="flex gap-3"><method.icon size={20} className="text-primary mt-1 shrink-0" aria-hidden="true" /><div><p className="text-heading">{method.href ? <a href={method.href} className="underline underline-offset-4">{method.value}</a> : method.value}</p><p className="text-[14px] text-muted">{method.desc}</p></div></li>)}</ul><p className="text-[15px] mt-8">En första kontakt kostar inget. Jag berättar vad jag kan hjälpa till med och vad det kostar innan du bestämmer dig.</p></aside>
-    </div></section>
-  </>;
+  return (
+    <section className={s.intro}>
+      <div className={`${s.frame} ${s.introInner}`}>
+        <nav className={s.crumbs} aria-label="Brödsmulor">
+          <Link href="/">Start</Link>
+          <span className={s.crumbSep} aria-hidden="true">/</span>
+          <span aria-current="page">Kontakt</span>
+        </nav>
+        <p className={s.kicker}>Kontakt</p>
+        <h1 className={s.h1Sub}>Berätta vad ni behöver.</h1>
+        <p className={s.heroLead}>Några rader räcker. Ni får svar nästa arbetsdag.</p>
+
+        <div className={k.grid}>
+          <div className={k.formCard}>
+            <h2 className={k.formTitle}>Vad behöver ni hjälp med?</h2>
+            <p className={k.formLead}>
+              Du behöver inte veta vilken tjänst det handlar om. Vill du hellre prata kan du{" "}
+              <Link href="/boka" className={k.inlineLink}>boka en tid i kalendern</Link>.
+            </p>
+            <InquiryForm />
+          </div>
+
+          <aside className={k.aside} aria-label="Andra sätt att nå Joel">
+            <div className={k.person}>
+              <img src="/joel-stolt-240.webp" alt="" width="56" height="56" className={k.personImg} />
+              <div>
+                <p className={k.personName}>Joel Stolt</p>
+                <p className={k.personText}>Det är jag som svarar.</p>
+              </div>
+            </div>
+            <ul className={k.ways}>
+              {VAGAR.map((v) => (
+                <li key={v.varde} className={k.way}>
+                  <v.icon size={18} strokeWidth={2} aria-hidden="true" className={k.wayIcon} />
+                  <div>
+                    <p className={k.wayMain}>{v.href ? <a href={v.href}>{v.varde}</a> : v.varde}</p>
+                    <p className={k.waySub}>{v.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div className={`${k.box} ${k.boxAkut}`}>
+              <h2 className={k.boxTitle}>Har något slutat fungera?</h2>
+              <p className={k.boxText}>
+                Ring direkt, så börjar jag felsöka samma arbetsdag. Akut hjälp kostar{" "}
+                <span className={k.price}>1 500 kr/h exkl moms</span>.
+              </p>
+              <a href={SITE.phoneHref} className={`${s.btnGhost} ${k.btnFull}`} data-umami-event="kontakt-akut-ring">
+                <Phone size={16} strokeWidth={2} aria-hidden="true" />
+                Ring {SITE.phone}
+              </a>
+            </div>
+
+            <p className={k.small}>
+              Första samtalet kostar ingenting. Du får ett fast pris innan jag börjar, skriftligt.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
 }

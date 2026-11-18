@@ -42,7 +42,7 @@ const DEMO = {
     { titel: "SMS när förfrågan kommer in", text: "Ni får ett SMS med namn, nummer och vad det gäller i samma stund som kunden skickar, även när ni står på ett bygge." },
     { titel: "Ett färdigt svar att godkänna", text: "Ni får ett förslag på svar som ni läser, ändrar och skickar. Kunden som lämnat sin mejl får en bekräftelse direkt, så ingen undrar om förfrågan kom fram." },
   ],
-  tidNot: "Formuläret ingår i väg 2 och 3. SMS och svarsförslag ingår i väg 3, eller kan läggas till för 495 kr i månaden.",
+  tidNot: "Formuläret ingår i väg 2 och 3. SMS och svarsförslag ingår i väg 3, eller kan läggas till mot ett fast pris.",
   jamforelse: [
     ["Robins nummer i mobilen", "Ringer fel nummer", "Rätt nummer överallt", "Den som trycker på ditt nummer når dig."],
     ["Lars och Robin", "Nummer längst ned, laget på en egen sida", "Bild och nummer högst upp på startsidan", "Kunden ser vem som bygger och ringer direkt till rätt person."],
@@ -510,14 +510,14 @@ export default function DinByggpartnerAnalys() {
                 </div>
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 2</div>
                 <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">{DEMO ? "Förslaget som riktig sajt" : "Ny sajt där allt är löst från start"}</h3>
-                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">1 990 kr/mån</div>
-                <p className="mt-1 text-[13px] text-muted">0 kr i startavgift · 12 mån bindning, sedan månadsvis · ex moms</p>
+                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">Fast månadspris i förväg</div>
+                <p className="mt-1 text-[13px] text-muted">Fast pris skriftligt innan jag börjar · ex moms</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {[
                     "Allt i listan löst från start",
                     "Egen sida för varje tjänst, husmodellerna och orterna",
-                    "Flytt från WordPress ingår (annars 4 900 kr)",
-                    "Drift, säkerhet, backuper och ändringar inom ett dygn",
+                    "Flytt från WordPress ingår",
+                    "Drift, säkerhet, backuper och ändringar, svar nästa arbetsdag",
                     "Rapport varje månad på var ni ligger i Google",
                   ].map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-body leading-snug">
@@ -527,24 +527,23 @@ export default function DinByggpartnerAnalys() {
                   ))}
                 </ul>
                 <p className="mt-4 text-[13.5px] text-body leading-relaxed">
-                  Varför jag pekar hit: väg 1 kostar 21 900 kr och lagar det som finns. Första året
-                  med väg 2 kostar 23 880 kr, och då får ni en helt ny sajt där allt är byggt rätt från
-                  grunden, plus drift och ändringar. Ni slipper också betala en gång till den dag
-                  sajten ändå görs om.
+                  Varför jag pekar hit: väg 1 lagar det som finns. Med väg 2 får ni en helt ny sajt
+                  där allt är byggt rätt från grunden, plus drift och ändringar. Ni slipper också
+                  betala en gång till den dag sajten ändå görs om.
                 </p>
               </div>
 
               <div className="h-full flex flex-col bg-surface rounded-[10px] border border-border p-7">
                 <div className="text-[11px] font-600 uppercase tracking-[0.12em] text-muted">Väg 3</div>
                 <h3 className="mt-2 font-heading font-700 text-[19px] text-heading">Ny sajt plus tillväxt</h3>
-                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">2 990 kr/mån</div>
-                <p className="mt-1 text-[13px] text-muted">0 kr i startavgift · 12 mån bindning, sedan månadsvis · ex moms · annonsbudgeten till Google tillkommer</p>
+                <div className="mt-2 font-heading font-600 text-[24px] text-primary tracking-tight">Fast månadspris i förväg</div>
+                <p className="mt-1 text-[13px] text-muted">Fast pris skriftligt innan jag börjar · ex moms · annonsbudgeten till Google tillkommer</p>
                 <ul className="mt-5 flex flex-col gap-2.5 flex-1">
                   {[
                     "Allt i väg 2",
                     "Google Ads: uppsättning och löpande skötsel",
                     "Nya söktexter varje månad, till exempel om attefallshus och lösvirkeshus",
-                    "Rutan för förfrågningar: SMS direkt och förslag på svar",
+                    "Förfrågningsrutan: SMS direkt och förslag på svar",
                     "Strategisamtal en gång i månaden",
                   ].map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-body leading-snug">
@@ -560,9 +559,9 @@ export default function DinByggpartnerAnalys() {
               <h3 className="font-heading font-700 text-[17px] text-heading">Tryggheterna med en ny sajt, väg 2 och 3</h3>
               <div className="mt-5 grid sm:grid-cols-2 gap-x-8 gap-y-4">
                 {[
-                  "0 kr i startavgift är på riktigt: sajten byggs färdig först, ni klickar runt i den och betalar först när ni bestämt er.",
+                  "Fast pris skriftligt innan jag börjar, och första samtalet kostar ingenting.",
                   "Ni äger allt, alltid: sajten, innehållet och domänen är era.",
-                  "Efter första året löper allt månadsvis. Uppsägning med ett mejl, till nästa månadsskifte, inga uppsägningsavgifter.",
+                  "Löpande hjälp har ett fast månadspris som du vet i förväg. Uppsägning med ett mejl, till nästa månadsskifte, inga uppsägningsavgifter.",
                   "Vill ni sluta tar ni sajten med er. Jag hjälper till med flytten, ingen inlåsning, och det står i avtalet.",
                 ].map((t) => (
                   <div key={t} className="flex items-start gap-2.5 text-[14px] text-body leading-relaxed">

@@ -1,78 +1,97 @@
-import { PageHero, SectionHeader } from "@/components/ui";
-import { PRICING } from "@/lib/local/data";
-import { EXTRA_SERVICES } from "@/lib/services-extra";
+import Link from "next/link";
+import s from "@/components/ny/ny.module.css";
+import { OMRADEN } from "@/lib/nav";
 
-const mainPaths = [
-  { title: "Jag vill hantera förfrågningar bättre", text: "Rutan tar emot förfrågningar från hemsidan, skickar SMS och ger ett svarsförslag som du granskar.", price: "495 kr/mån", terms: "Exkl. moms. 30 dagar gratis och ingen bindning.", href: "/forfragningar", label: "Se rutan och prova gratis" },
-  { title: "Jag behöver en hemsida", text: "En företagssajt med tydliga tjänster och kontaktvägar. Du kan börja med ett gratis förslag på startsida och en tjänstesida.", price: `Från ${PRICING.basManad}`, terms: `Exkl. moms. 0 kr start. Bas: högst fem sidor. ${PRICING.bindning}.`, href: "/hemsida-foretag", label: "Se hemsidor och designförslag" },
-  { title: "Mina kunder hittar inte min sajt", text: "En SEO-audit granskar teknik, innehåll och synlighet. Du får en prioriterad åtgärdslista innan du beställer fortsatt arbete.", price: `Audit ${PRICING.seoAudit}`, terms: "Exkl. moms. Engångsgranskning. Åtgärder avtalas separat.", href: "/tjanster/seo", label: "Se SEO-audit och arbetssätt" },
-  { title: "Jag vill annonsera ett erbjudande", text: "Google Ads med ett tydligt kontaktmål och uppföljning. Ett befintligt annonskonto kan få ett separat upplägg.", price: `Arbete i Spets: ${PRICING.spets}`, terms: `Exkl. moms. Annonsbudget tillkommer. Spets: ${PRICING.bindning}. Meta får separat offert.`, href: "/tjanster/google-ads", label: "Se Google Ads" },
-];
-const specialistKeys = ["webbutveckling", "e-handel", "wordpress", "managed-hemsida", "ai-automation", "facebook-annonsering", "ai-synlighet"];
+/* Översikten Det jag gör, ny profil 2026-11-17. Tjänstesidorna ligger kvar på sina
+   adresser under /tjanster och grupperas här under de tre områdena. */
+const TEXT = {
+  "/tjanster/seo": "Sidor som svarar på det era kunder söker efter, och teknik som Google kan läsa.",
+  "/tjanster/ai-synlighet": "Vad ChatGPT och liknande svarar om er, och vad som behöver ändras för att ni ska vara med.",
+  "/tjanster/google-ads": "Annonser med mål ni kan följa: förfrågningar och köp, inte bara klick.",
+  "/tjanster/facebook-annonsering": "Annonser i Facebook och Instagram när målgruppen finns där.",
+  "/tjanster/webbutveckling": "Snabba sajter som säger vad ni gör och gör det lätt att höra av sig.",
+  "/tjanster/e-handel": "WooCommerce eller egen kod, med kassa och betalningar som går igenom.",
+  "/tjanster/wordpress": "Jag jobbar i den sajt ni har: rättar, snabbar upp och bygger vidare.",
+  "/tillganglighet": "Sajter som fler kan använda, med koll på kraven i tillgänglighetslagen.",
+  "/tjanster/managed-hemsida": "Hosting, säkerhet, uppdateringar och backup, och svar när något händer.",
+  "/tjanster/ai-automation": "Agenter och flöden som tar bort manuellt arbete, ett flöde i taget.",
+  "/mindre-handarbete#crm": "Förfrågningar, offerter och kunder på ett ställe.",
+  "/mindre-handarbete#kopplingar": "Sajt, kassa, CRM och affärssystem som pratar med varandra.",
+};
 
 export default function TjansterContent() {
   return (
-    <>
-      <PageHero
-        breadcrumbs={[{ label: "Start", href: "/" }, { label: "Tjänster" }]}
-        badge="Välj hjälp" title="Börja med det du vill förbättra." highlight="vill förbättra" compact
-        subtitle="Hemsida, synlighet, annonsering eller inkommande förfrågningar. Jag heter Joel och hjälper dig välja ett avgränsat första steg."
-        bullets={["Direktkontakt med Joel", "Tydlig omfattning", "Bas i Hässleholm"]}
-        cta={{ href: "#valj-hjalp", label: "Hitta rätt första steg" }}
-      />
-
-      <section className="py-14 sm:py-20 px-5 sm:px-8" id="valj-hjalp">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Fyra ingångar" title="Vad behöver ditt företag just nu?" />
-          <div className="mt-10 grid md:grid-cols-2 gap-5">
-            {mainPaths.map((item) => (
-              <a key={item.href} href={item.href} className="block bg-surface rounded-[10px] border border-border p-6 sm:p-8 hover:border-primary/40 transition-colors group">
-                <h3 className="font-heading font-600 text-[25px] text-heading group-hover:text-primary">{item.title}</h3>
-                <p className="mt-4 text-[16px] leading-relaxed text-body">{item.text}</p>
-                <p className="mt-5 font-heading text-[25px] text-heading">{item.price}</p>
-                <p className="mt-3 text-[14px] leading-relaxed text-muted">{item.terms}</p>
-                <span className="inline-block mt-5 text-[15px] text-primary underline underline-offset-4">{item.label}</span>
-              </a>
-            ))}
+    <div className={s.scope}>
+      <section className={s.intro}>
+        <div className={`${s.frame} ${s.introInner}`}>
+          <nav className={s.crumbs} aria-label="Brödsmulor">
+            <Link href="/">Start</Link>
+            <span className={s.crumbSep} aria-hidden="true">/</span>
+            <span aria-current="page">Det jag gör</span>
+          </nav>
+          <p className={s.kicker}>Det jag gör</p>
+          <h1 className={s.h1Sub}>Det digitala som tar in kunder och sparar tid.</h1>
+          <p className={s.heroLead}>
+            Tre områden, en person. Bredden finns, men varje del ska ge något ni kan se: fler som hittar er, fler som
+            blir kunder och mindre som görs för hand.
+          </p>
+          <div className={s.heroActions}>
+            <Link href="/kontakt" className={s.btnPrimary} data-umami-event="tjanster-hero-cta">
+              Berätta vad ni behöver
+            </Link>
+            <Link href="/sa-funkar-det" className={s.btnGhost}>Så funkar det</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-surface-muted">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Ett mer specifikt behov" title="Funktioner, drift och specialuppdrag." />
-          <ul className="mt-8 divide-y divide-border">
-            {specialistKeys.map((key) => {
-              const service = EXTRA_SERVICES[key];
-              return (
-                <li key={key} className="py-5 sm:py-6">
-                  <a href={`/tjanster/${key}`} className="block sm:grid sm:grid-cols-[240px_1fr] gap-8 group">
-                    <h3 className="font-heading font-600 text-[21px] text-heading group-hover:text-primary">{service.serviceName}</h3>
-                    <p className="mt-2 sm:mt-0 text-[15px] leading-relaxed text-body">{service.intro}</p>
-                  </a>
-                </li>
-              );
-            })}
-            <li className="py-5 sm:py-6"><a href="/tillganglighet" className="block sm:grid sm:grid-cols-[240px_1fr] gap-8 group"><h3 className="font-heading font-600 text-[21px] text-heading group-hover:text-primary">Tillgänglighet</h3><p className="mt-2 sm:mt-0 text-[15px] leading-relaxed text-body">Granskning av hur sajten fungerar med tangentbord, hjälpmedel och olika skärmstorlekar, med prioriterad rapport.</p></a></li>
-          </ul>
+      {OMRADEN.map((o) => (
+        <section key={o.key} className={s.section}>
+          <div className={`${s.frame} ${s.block}`} style={{ paddingTop: 80, paddingBottom: 80 }}>
+            <div className={s.split} style={{ alignItems: "start" }}>
+              <div className={s.reveal}>
+                <h2 className={s.h2}>{o.namn}</h2>
+                <p className={s.blockLead}>{o.kort}</p>
+                <div className={s.heroActions} style={{ marginTop: 24 }}>
+                  <Link href={o.href} className={s.btnGhost}>Läs mer om {o.namn.toLowerCase()}</Link>
+                </div>
+              </div>
+              <div className={`${s.cells} ${s.cells2} ${s.reveal}`}>
+                {o.tjanster.map((t) => (
+                  <Link key={t.href} href={t.href} className={s.cell}>
+                    <h3 className={s.cellTitle}>{t.namn}</h3>
+                    <p className={s.cellText}>{TEXT[t.href]}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section className={s.section}>
+        <div className={`${s.frame} ${s.block}`} style={{ paddingTop: 72, paddingBottom: 72 }}>
+          <div className={s.akut} style={{ marginTop: 0 }}>
+            <div>
+              <h2 className={s.akutTitle}>Har något slutat fungera?</h2>
+              <p className={s.akutText}>Akut hjälp: jag börjar felsöka samma arbetsdag.</p>
+            </div>
+            <div className={s.akutRight}>
+              <span className={s.akutPrice}>1 500 kr/h exkl moms</span>
+              <Link href="/akut" className={s.btnGhost}>Till akut hjälp</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-14 sm:py-20 px-5 sm:px-8">
-        <div className="max-w-[760px] mx-auto">
-          <SectionHeader badge="Underlag för ditt val" title="Se tidigare leveranser och hela prislistan." />
-          <p className="mt-6 text-[17px] leading-[1.8] text-body">Kundprojekten visar vad jag byggt och hur arbetet avgränsats. Prissidan samlar hemsidepaket, tillägg och engångsgranskningar.</p>
-          <div className="mt-6 flex flex-wrap gap-5 text-[16px] text-primary"><a href="/projekt" className="underline underline-offset-4">Se kundprojekten</a><a href="/priser" className="underline underline-offset-4">Jämför priser och omfattning</a></div>
+      <section className={`${s.section} ${s.cta}`}>
+        <div className={`${s.frame} ${s.ctaInner}`}>
+          <h2 className={`${s.ctaTitle} ${s.reveal}`}>Berätta vad ni behöver.</h2>
+          <p className={s.ctaText}>Några rader räcker. Ni får svar nästa arbetsdag.</p>
+          <div className={s.heroActions}>
+            <Link href="/kontakt" className={s.btnPrimary}>Skriv till mig</Link>
+          </div>
         </div>
       </section>
-
-      <section className="section-gul py-14 sm:py-20 px-5 sm:px-8">
-        <div className="max-w-[760px] mx-auto">
-          <h2 className="font-heading font-600 text-[clamp(28px,4vw,42px)] text-heading">Osäker på var du ska börja?</h2>
-          <p className="mt-4 text-[17px] leading-relaxed text-body">Skicka din webbadress och berätta vad som inte fungerar idag. Jag föreslår ett avgränsat nästa steg.</p>
-          <a href="/kontakt" className="premium-btn mt-6">Skriv till Joel</a>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

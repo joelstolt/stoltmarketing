@@ -60,8 +60,8 @@ export default function BlogIndex({ posts }) {
           <h2 className="font-heading font-600 text-[21px] text-heading mb-3">Jämför hjälp och priser</h2>
           <p className="text-[15px] text-body leading-relaxed max-w-2xl mb-4">Om du ska köpa hjälp finns erbjudandets omfattning och villkor på tjänste- och prissidorna. Bloggens räkneexempel är underlag för beslut, ingen garanti för utfallet.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-[15px] text-primary font-600">
-            <a className="underline hover:text-heading" href="/priser">Hemsidans paket</a>
-            <a className="underline hover:text-heading" href="/forfragningar">Förfrågningsrutan</a>
+            <a className="underline hover:text-heading" href="/sa-funkar-det">Så funkar det</a>
+            <a className="underline hover:text-heading" href="/mindre-handarbete">Mindre handarbete</a>
             <a className="underline hover:text-heading" href="/tjanster/seo">SEO-arbetet</a>
           </div>
         </aside>

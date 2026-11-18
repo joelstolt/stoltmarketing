@@ -1,0 +1,142 @@
+/* /om i nya profilen, 2026-11-17. Kompletterar components/ny/ny.module.css. */
+
+.photo {
+  margin: 0;
+  justify-self: end;
+  width: 100%;
+  max-width: 360px;
+}
+
+.photoCaption {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.prose {
+  max-width: 680px;
+}
+
+.prose p {
+  margin: 16px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-body);
+  text-wrap: pretty;
+}
+
+.no {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+}
+
+.noList {
+  display: grid;
+}
+
+.noItem {
+  padding: 22px 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.noItem:last-child {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.noTitle {
+  margin: 0;
+  font-size: 17.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-heading);
+}
+
+.noText {
+  margin: 8px 0 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+.contact {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--color-border-light);
+  border-left: 1px solid var(--color-border-light);
+}
+
+.contact > div {
+  padding: 22px 24px;
+  border-right: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  min-width: 0;
+}
+
+.contact dt {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.contact dd {
+  margin: 6px 0 0;
+  font-size: 16.5px;
+  font-weight: 560;
+  color: var(--color-heading);
+  overflow-wrap: anywhere;
+}
+
+.contact dd a {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.contact dd a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.uiLink.uiLink {
+  display: block;
+  padding: 12px 18px;
+  border-top: 1px solid var(--color-border-light);
+  font-size: 14px;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 4px;
+  transition: background-color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.uiLink:hover {
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration-color: var(--color-accent);
+}
+
+@media (max-width: 1080px) {
+  .photo {
+    justify-self: start;
+    max-width: 300px;
+  }
+
+  .no {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .photo {
+    max-width: 240px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact > div {
+    padding: 18px 20px;
+  }
+}

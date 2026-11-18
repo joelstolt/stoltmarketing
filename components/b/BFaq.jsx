@@ -9,7 +9,7 @@ const GUL = "#F2C230";
 const faqs = [
   {
     "q": "Vad kostar förfrågningsrutan?",
-    "a": "495 kr/mån exklusive moms och 0 kr i start. De första 30 dagarna är gratis. Du får rutan, inkorgen, aviseringar och förslag på svar. Per månad ingår upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar. Vi går igenom behov och villkor före start."
+    "a": "Du får ett fast pris skriftligt innan jag börjar, och första samtalet kostar ingenting. Du får rutan, inkorgen, aviseringar och förslag på svar. Per månad ingår upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar. Vi går igenom behov och villkor före start."
   },
   {
     "q": "Svarar rutan i telefon åt mig?",
@@ -20,12 +20,12 @@ const faqs = [
     "a": "Svarsförslag på förfrågningar granskar, ändrar och skickar du själv. Kunden kan få en automatisk mottagningsbekräftelse. AI-chatten besvarar däremot frågor direkt utifrån underlaget om ditt företag och berättar att den är AI."
   },
   {
-    "q": "Vad händer efter de 30 dagarna?",
-    "a": "Vi tittar på hur rutan fungerat. Vill du fortsätta kostar den 495 kr/mån exklusive moms, utan bindning. Annars tar jag bort rutan. Du avslutar med ett mejl till joel@stoltmarketing.se."
+    "q": "Hur avslutar jag?",
+    "a": "Vi tittar på hur rutan fungerat. Vill du fortsätta har den ett fast månadspris som du vet i förväg. Annars tar jag bort rutan. Du avslutar med ett mejl till joel@stoltmarketing.se."
   },
   {
     "q": "Behöver jag en ny hemsida?",
-    "a": "Vanligtvis inte. Jag kontrollerar först om din befintliga hemsida kan ta emot kodraden. Behöver du en ny sajt finns Bas från 1 190 kr/mån exklusive moms, med 12 månaders bindning. Hemsida och förfrågningsruta är två olika erbjudanden. I hemsidepaketet Spets ingår rutan."
+    "a": "Vanligtvis inte. Jag kontrollerar först om din befintliga hemsida kan ta emot kodraden. Behöver du en ny sajt bygger jag den till fast pris skriftligt innan jag börjar. Hemsida och förfrågningsruta är två olika uppdrag."
   }
 ];
 

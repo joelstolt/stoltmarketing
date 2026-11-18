@@ -9,9 +9,9 @@ import { PageHero } from "@/components/ui";
 import { accessFaqs, accessSources } from "./data";
 
 const steps = [
-  { title: "Granskning", price: "4 900 kr exkl. moms", text: "Jag kombinerar automatiska kontroller med manuella tester av överenskomna sidmallar och flöden. Du får en prioriterad rapport med testomfattning, brister och åtgärdsförslag." },
-  { title: "Åtgärder i befintlig sajt", price: "Från 24 500 kr exkl. moms", text: "Efter granskningen får du ett fast pris för ett avgränsat åtgärdspaket. Jag dokumenterar ändringarna och kontrollerar de åtgärdade delarna igen." },
-  { title: "Ny hemsida Bas", price: "0 kr start, 1 190 kr/mån exkl. moms", text: "För högst fem sidor. Hosting, drift och ändringar enligt paketets omfattning ingår. Tolv månaders bindning, sedan månadsvis. Tillgänglighet ingår i arbetet; en full juridisk revision är en egen omfattning." },
+  { title: "Granskning", price: "Fast pris innan jag börjar", text: "Jag kombinerar automatiska kontroller med manuella tester av överenskomna sidmallar och flöden. Du får en prioriterad rapport med testomfattning, brister och åtgärdsförslag." },
+  { title: "Åtgärder i befintlig sajt", price: "Fast pris efter granskningen", text: "Efter granskningen får du ett fast pris för ett avgränsat åtgärdspaket. Jag dokumenterar ändringarna och kontrollerar de åtgärdade delarna igen." },
+  { title: "Ny hemsida", price: "Fast pris innan jag börjar", text: "Hosting, drift och ändringar kan ingå i ett fast månadspris som du vet i förväg. Tillgänglighet ingår i arbetet; en full juridisk revision är en egen omfattning." },
 ];
 
 export default function TillganglighetPage() {

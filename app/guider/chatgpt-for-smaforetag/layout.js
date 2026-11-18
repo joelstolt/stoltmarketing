@@ -4,13 +4,13 @@ export const metadata = {
   "alternates": {
     "canonical": "https://www.stoltmarketing.se/guider/chatgpt-for-smaforetag"
   },
-  "openGraph": {
+  "openGraph": { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     "title": "ChatGPT för småföretag: nio uppgifter med promptmallar",
     "description": "Börja med avidentifierat underlag och en uppgift du kan kontrollera. Använd AI till utkast, granska resultatet själv och mät tidsvinsten inklusive korrigeringar.",
     "url": "https://www.stoltmarketing.se/guider/chatgpt-for-smaforetag",
     "type": "article"
   },
-  "twitter": {
+  "twitter": { images: ["/og-image.png"], 
     "card": "summary_large_image",
     "title": "ChatGPT för småföretag: nio uppgifter med promptmallar",
     "description": "Börja med avidentifierat underlag och en uppgift du kan kontrollera. Använd AI till utkast, granska resultatet själv och mät tidsvinsten inklusive korrigeringar."

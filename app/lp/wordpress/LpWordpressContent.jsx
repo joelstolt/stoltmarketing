@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, Gauge, Video, Tag, Phone } from "lucide-react";
 import { Reveal } from "@/components/ui";
-import { SITE, PRICING } from "@/lib/local/data";
+import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 
@@ -23,7 +23,7 @@ const vadDuFar = [
   {
     icon: Tag,
     title: "Ett fast pris om du vill vidare",
-    desc: "Bas kostar 1 190 kr/mån exkl. moms för högst fem sidor, med tolv månaders bindning, sedan månadsvis. Migrering kan ingå vid tecknad drift efter genomgång av omfattningen.",
+    desc: "Du får ett fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting. Löpande hjälp har ett fast månadspris som du vet i förväg.",
   },
 ];
 
@@ -350,21 +350,21 @@ export default function LpWordpressContent() {
             {[
               {
                 name: "Migrering",
-                price: "0 kr",
-                note: "Kan ingå vid tecknad drift i tolv månader. Omfattning bekräftas före start.",
+                price: "Fast pris innan jag börjar",
+                note: "Omfattning bekräftas skriftligt före start.",
                 items: ["Överenskomna sidor och funktioner", "Planerade omdirigeringar och SEO-kontroll", "Dokumenterade före- och eftertester"],
               },
               {
-                name: "Drift Bas",
-                price: PRICING.basManad,
-                note: "Exkl. moms. Tolv månaders bindning, därefter månadsvis.",
-                items: ["Högst fem sidor", "Hosting och drift enligt omfattningen", "Ändringar klara inom två arbetsdagar"],
+                name: "Felsökning och ändringar",
+                price: "Fast pris innan jag börjar",
+                note: "Exkl. moms. Omfattning bekräftas efter genomgång av sajten.",
+                items: ["Genomgång av plattform och åtkomst", "Åtgärder på det som krånglar", "Svar nästa arbetsdag"],
               },
               {
-                name: "Drift Bredd",
-                price: PRICING.bredd,
-                note: "Exkl. moms. Tolv månaders bindning, sedan månadsvis. Allt i Bas och fler sidor enligt överenskommen omfattning.",
-                items: ["Fler tjänstesidor enligt avtalad omfattning", "Skräddarsydd design", "SEO-rapport varje månad"],
+                name: "Löpande drift",
+                price: "Fast månadspris i förväg",
+                note: "Exkl. moms. Du vet månadskostnaden innan vi startar.",
+                items: ["Hosting och drift enligt omfattningen", "Säkerhet, uppdateringar och backuper", "Ändringar enligt överenskommen omfattning"],
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08}>
@@ -385,8 +385,7 @@ export default function LpWordpressContent() {
             ))}
           </div>
           <p className="mt-5 text-[14px] text-muted">
-            Spets kostar 2 990 kr/mån exkl. moms för löpande innehåll och skötsel av Google Ads.
-            Annonsbudget betalas separat. E-handel är ett tillägg för 800 kr/mån exkl. moms, med omfattning och externa avgifter avtalade före start.
+            Första samtalet kostar ingenting. Annonsbudget betalas separat. Webbshop och externa avgifter avtalas före start.
           </p>
         </div>
       </section>

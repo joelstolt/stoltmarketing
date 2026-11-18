@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageHero } from "@/components/ui";
-import { packages, websiteTerms } from "@/lib/pricing-packages";
 import InquiryForm from "@/components/InquiryForm";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -12,14 +11,14 @@ import { ArrowRight, Check } from "lucide-react";
 const URL = "https://www.stoltmarketing.se/hemsida-foretag";
 
 export const metadata = {
-  title: "Hemsida för företag | 0 kr start, från 1 190 kr per månad",
+  title: "Hemsida för företag | Fast pris innan jag börjar",
   description:
-    "Hemsida för företag utan startavgift: design, bygge, drift och ändringar från 1 190 kr/mån. Byggd för att synas på Google och göra besökare till kunder. Se ett klickbart förslag innan du bestämmer dig.",
+    "Hemsida för företag med fast pris skriftligt innan jag börjar. Design, bygge, drift och ändringar. Byggd för att synas på Google och göra besökare till kunder. Första samtalet kostar ingenting.",
   alternates: { canonical: URL },
-  openGraph: {
-    title: "Hemsida för företag | 0 kr start, från 1 190 kr per månad",
+  openGraph: { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
+    title: "Hemsida för företag | Fast pris innan jag börjar",
     description:
-      "Design, bygge, drift och ändringar i ett månadspris. Byggd för att synas på Google.",
+      "Design, bygge, drift och ändringar med fast pris i förväg. Byggd för att synas på Google.",
     url: URL,
     type: "website",
     locale: "sv_SE",
@@ -38,16 +37,24 @@ function P({ children }) {
   return <p className="text-[16px] sm:text-[17px] leading-[1.8] text-body mb-5">{children}</p>;
 }
 
-const paket = packages.map((item) => ({ namn: item.name, pris: `${item.monthly.toLocaleString("sv-SE")} kr/mån`, start: "0 kr start, exklusive moms", rader: item.features }));
+const websiteTerms = {
+  proposal: "Ett gratis, klickbart förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs när du har sagt ja.",
+};
+
+const upplagg = [
+  { namn: "Hemsida", pris: "Fast pris innan jag börjar", start: "Skriftligt, exklusive moms", rader: ["Design och bygge efter vad ni behöver", "Texter skrivna för både kunder och sök", "Teknik som testas även i mobilen", "Formulär med skydd mot skräppost"] },
+  { namn: "Webbshop", pris: "Fast pris innan jag börjar", start: "Skriftligt, exklusive moms", rader: ["Produktsidor och kassa", "Betalning och frakt efter era behov", "Koppling till lager eller ekonomi vid behov", "Omfattningen avgränsas före start"] },
+  { namn: "Löpande hjälp", pris: "Fast månadspris i förväg", start: "Du vet kostnaden varje månad", rader: ["Drift, säkerhet och backup", "Ändringar och uppdateringar", "Svar nästa arbetsdag", "Jag kan ta över sajter jag inte byggt"] },
+];
 
 const faqs = [
   {
     q: "Vad kostar en hemsida för företag?",
-    a: "Hos mig 0 kr i startavgift och från 1 190 kr i månaden exklusive moms, där design, bygge, drift, säkerhet och löpande ändringar ingår. Webbshop läggs till på valfritt paket för 800 kr/mån. Bindningstiden är 12 månader, därefter månadsvis. Bas omfattar upp till fem sidor.",
+    a: "Det beror på omfattningen. Första samtalet kostar ingenting, och därefter får du ett fast pris skriftligt innan jag börjar. Vill du ha löpande hjälp efter lansering har den ett fast månadspris som du vet i förväg. Alla priser anges exklusive moms.",
   },
   {
-    q: "Varför månadspris i stället för engångspris?",
-    a: "För att en hemsida inte är klar vid lansering. Den behöver drift, säkerhet och uppdateringar för att fortsätta leverera. Med månadspriset slipper du stor startinvestering, timfakturor för varje ändring, och oklar ansvarsfördelning efter leverans. Jag tjänar på att din sajt fortsätter fungera.",
+    q: "Hur fungerar priset efter lansering?",
+    a: "En hemsida är inte klar vid lansering. Den behöver drift, säkerhet och uppdateringar för att fortsätta leverera. Löpande hjälp har ett fast månadspris som du vet i förväg, så du slipper timfakturor för varje ändring och oklar ansvarsfördelning efter leverans.",
   },
   {
     q: "Hur lång tid tar det innan sajten är klar?",
@@ -55,15 +62,15 @@ const faqs = [
   },
   {
     q: "Syns hemsidan på Google?",
-    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och begriplig struktur. Vill du aktivt klättra på konkurrensutsatta sökord ingår löpande sökmotoroptimering i Spets för 2 990 kr/mån.",
+    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och begriplig struktur. Vill du aktivt klättra på konkurrensutsatta sökord kan löpande sökmotoroptimering läggas till med ett fast månadspris som du vet i förväg.",
   },
   {
     q: "Vem äger hemsidan och domänen?",
-    a: "Du äger din domän och ditt innehåll, alltid. Väljer du att avsluta efter bindningstiden hjälper jag till med flytten. Ägande och överlämning framgår av avtalet.",
+    a: "Du äger din domän och ditt innehåll, alltid. Väljer du att avsluta hjälper jag till med flytten. Ägande och överlämning framgår av avtalet.",
   },
   {
     q: "Kan du göra om min befintliga hemsida i stället?",
-    a: "Ja. Har du en befintlig WordPress-sajt börjar jag med att kontrollera teknik och omfattning. Avgränsad migrering kostar 0 kr när du samtidigt tecknar drift. Nya funktioner och större ombyggnad specificeras separat före start.",
+    a: "Ja. Har du en befintlig WordPress-sajt börjar jag med att kontrollera teknik och omfattning. Migreringen får ett fast pris skriftligt innan jag börjar. Nya funktioner och större ombyggnad specificeras separat före start.",
   },
 ];
 
@@ -92,7 +99,7 @@ const serviceLd = {
   name: "Hemsida för företag",
   serviceType: "Webbutveckling",
   description:
-    "Hemsida för företag som abonnemang: design, bygge, drift och löpande ändringar från 1 190 kr per månad exklusive moms utan startavgift. Bas omfattar upp till fem sidor, med 12 månaders bindning och därefter månadsvis.",
+    "Hemsida för företag: design, bygge, drift och löpande ändringar med fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting.",
   url: URL,
   provider: {
     "@type": "ProfessionalService",
@@ -101,13 +108,6 @@ const serviceLd = {
     url: "https://www.stoltmarketing.se",
   },
   areaServed: [{ "@type": "Country", name: "Sverige" }],
-  offers: {
-    "@type": "Offer",
-    price: "1190",
-    priceCurrency: "SEK",
-    name: "Bas, upp till fem sidor",
-    description: "0 kr start. 1 190 kr/mån exkl moms. 12 månader, därefter månadsvis.",
-  },
 };
 
 export default function Page() {
@@ -125,14 +125,14 @@ export default function Page() {
           breadcrumbs={[{ label: "Start", href: "/" }, { label: "Hemsida för företag" }]}
           badge="Hemsida för företag"
           title="Hemsida för företag som gör nästa steg tydligt"
-          subtitle="Design, bygge, drift och innehållsändringar från 1 190 kr/mån exkl moms. 0 kr i startavgift. Du får ett gratis förslag med startsida och en tjänstesida innan du bestämmer dig."
-          bullets={["Gratis designförslag inom 2 arbetsdagar", "12 månader, sedan månadsvis", "Du äger domän och innehåll"]}
+          subtitle="Design, bygge, drift och innehållsändringar med fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting, och du får ett gratis förslag med startsida och en tjänstesida innan du bestämmer dig."
+          bullets={["Gratis designförslag inom 2 arbetsdagar", "Fast pris innan jag börjar", "Du äger domän och innehåll"]}
         />
 
         <section className="py-14 sm:py-20 px-5 sm:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid sm:grid-cols-3 gap-5">
-              {paket.map((p) => (
+              {upplagg.map((p) => (
                 <div key={p.namn} className="bg-surface rounded-[10px] border border-border p-7 flex flex-col">
                   <div className="font-heading font-700 text-[18px] text-heading">{p.namn}</div>
                   <div className="mt-2 font-heading font-700 text-[26px] text-primary">{p.pris}</div>
@@ -152,7 +152,7 @@ export default function Page() {
               ))}
             </div>
             <p className="mt-5 text-[13px] text-body text-center">
-              12 månaders bindning, därefter månadsvis. Inga startavgifter, inga timfakturor för småändringar.
+              Fast pris skriftligt innan jag börjar. Löpande hjälp har ett fast månadspris som du vet i förväg. Se <a href="/sa-funkar-det" className="text-primary underline underline-offset-4">Så funkar det</a>.
             </p>
           </div>
         </section>
@@ -165,7 +165,7 @@ export default function Page() {
               Kunden behöver förstå vad du hjälper till med, var du arbetar och hur det går till att anlita dig. En liten verksamhet kan få en tydlig sajt med fem sidor. Har du flera tjänster behövs ofta egna sidor för att kunna förklara dem ordentligt. Antalet sidor är inget mål i sig; varje sida ska svara på en verklig kundfråga.
             </P>
             <P>
-              Väl framme ska besökaren konvertera. Det betyder pris eller prisidé synlig,
+              Väl framme ska besökaren konvertera. Det betyder att nästa steg är tydligt,
               telefonnummer som går att klicka på i mobilen, formulär utan onödiga fält och
               bevis i form av riktiga kundcase. Jag går igenom dessa vägar på både mobil och dator innan lansering.
             </P>
@@ -177,12 +177,12 @@ export default function Page() {
               företag, kostnadsfritt och utan förpliktelse. Säger du ja bygger jag resten av
               sajten, fyller den med innehåll och optimerar tekniken. Vi planerar lanseringen
               på din domän, normalt inom två veckor efter ditt ja, och därefter ingår drift, säkerhet och
-              ändringar i månadspriset. Du mejlar en ändring, jag gör den. Om en ändring går utanför den avtalade sajten får du priset först.
+              ändringar i det fasta månadspriset om ni väljer löpande hjälp. Du mejlar en ändring, jag gör den. Om en ändring går utanför den avtalade sajten får du priset först.
             </P>
 
             <H2>Vad som ingår, på riktigt</H2>
             <P>
-              Design och innehåll anpassade efter valt paket. Texter skrivna för både
+              Design och innehåll anpassade efter vad ni behöver. Texter skrivna för både
               kunder och sök. Teknik som testas även i mobilen. Formulär med skydd mot skräppost. Statistik så att du
               ser vad besökarna gör. Och löpande: uppdateringar, säkerhet, backup och de där
               småändringarna som annars aldrig blir gjorda. Hela listan gås igenom i förslaget,

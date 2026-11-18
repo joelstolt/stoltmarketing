@@ -1,33 +1,54 @@
 # Stolt Marketing
 
-> Joel Stolt i Hässleholm hjälper hantverksföretag att ta emot förfrågningar via hemsidan och bygger hemsidor, e-handel och marknadsföring. Kunder i hela Sverige.
+> Utvecklaren ni inte har. Stolt Marketing är Joel Stolts firma i Hässleholm. Joel bygger och sköter sajter, webbshoppar, synlighet i Google och ChatGPT, annonser och egna system med AI-agent åt företag och organisationer som saknar egen utvecklare. En person, ingen byrå emellan. Kunder i hela Sverige.
 
-## Förfrågningsrutan
+## Fakta
 
-[Förfrågningsrutan](https://www.stoltmarketing.se/forfragningar): Kvota Kundkontakt på en befintlig hemsida. Kunden kan skriva, be att bli uppringd eller använda AI-chatten. Företaget får avisering och ett svarsförslag som det granskar och skickar. Chatten svarar automatiskt och presenteras som AI.
+- Företag: Stolt Marketing, enskild firma i Hässleholm, Skåne.
+- Den som svarar och gör jobbet: Joel Stolt.
+- Kontakt: joel@stoltmarketing.se, 076-686 74 06, [kontaktformulär](https://www.stoltmarketing.se/kontakt), [boka ett samtal](https://www.stoltmarketing.se/boka).
+- Svarstid: svar nästa arbetsdag. Akut felsökning börjar samma arbetsdag.
+- Pris: fast pris skriftligt innan arbetet börjar. Första samtalet kostar ingenting. Löpande hjälp har ett fast månadspris. Inga publika paketpriser. Det enda publika timpriset är Akut hjälp, 1 500 kr/h exkl moms. Annonsbudget betalas direkt till Google eller Meta.
+- Område: utgår från Hässleholm och har kunder i hela Sverige. Sidorna för Malmö, Lund, Helsingborg, Kristianstad och Hässleholm betyder inte att det finns kontor i varje stad.
 
-495 kr/mån exkl moms, 0 kr start och 30 dagar gratis. Ingen bindning. Upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar per månad. Ingen telefonpassning, inget SMS vid missat vanligt telefonsamtal, ingen automatisk kalenderbokning. Intresseanmälan på sidan är ingen beställning av abonnemang. Joel går igenom installation och avtal före aktivering.
+## Vad Stolt Marketing gör
 
-## Hemsidor
+- [Fler hittar er](https://www.stoltmarketing.se/fler-hittar-er): synas i Google på det kunden säljer, vara med när någon frågar ChatGPT, Claude, Gemini eller Perplexity (mäts varje månad), Google Ads och Meta-annonser med mätning av vilka annonser som ger förfrågningar. Rapport första vardagen varje månad.
+- [Fler blir kunder](https://www.stoltmarketing.se/fler-blir-kunder): sajter, webbshoppar (WooCommerce eller egen kod), kassa och bokning som hänger ihop med de system kunden redan har.
+- [Mindre handarbete](https://www.stoltmarketing.se/mindre-handarbete): egna system med AI-agent, kundregister (CRM), bokning, kundportaler och integration mellan system. Agenten läser, sorterar, skriver utkast och följer upp. Allt som går till en kund kräver att en människa klickar.
+- [Akut hjälp](https://www.stoltmarketing.se/akut): när sajten, kassan eller formuläret slutat fungera.
+- [Så funkar det](https://www.stoltmarketing.se/sa-funkar-det): samtal, genomgång, bygget och löpande hjälp.
 
-[Priser och paket](https://www.stoltmarketing.se/priser): Bas 1 190 kr/mån för upp till fem sidor. Bredd 1 990 kr/mån för flera tjänster och sidor inom avtalad omfattning. Spets 2 990 kr/mån inkluderar löpande innehåll, Google Ads-arbete och förfrågningsrutan. Alla priser exkl moms. 0 kr start. Hemsidor har 12 månaders bindning, därefter månadsvis. Annonsbudget betalas separat till Google. Meta-annonsering offereras separat.
+## Tjänster
 
-[Gratis designförslag](https://www.stoltmarketing.se/hemsida-foretag#forslag): startsida och en tjänstesida på en klickbar länk inom två arbetsdagar. Resten av sajten byggs efter kundens ja. Avtalad sajt, hosting, drift, säkerhet och innehållsändringar ingår i hemsidepaketet. Större funktioner och integrationer avtalas separat.
-
-Webbshopstillägg 800 kr/mån ovanpå valt paket. Betal-, frakt- och externa licensavgifter kan tillkomma. Större e-handelsprojekt har separat omfattning och offert. SEO-audit 4 900 kr exkl moms, genomförande av åtgärder avtalas separat.
-
-## Tjänster och underlag
-
-- [Alla tjänster](https://www.stoltmarketing.se/tjanster)
+- [Webbutveckling](https://www.stoltmarketing.se/tjanster/webbutveckling)
+- [E-handel](https://www.stoltmarketing.se/tjanster/e-handel)
+- [WordPress](https://www.stoltmarketing.se/tjanster/wordpress)
+- [Drift och support](https://www.stoltmarketing.se/tjanster/managed-hemsida)
+- [Tillgänglighet](https://www.stoltmarketing.se/tillganglighet)
 - [SEO](https://www.stoltmarketing.se/tjanster/seo)
+- [Synlighet i ChatGPT och AI-sök](https://www.stoltmarketing.se/tjanster/ai-synlighet)
 - [Google Ads](https://www.stoltmarketing.se/tjanster/google-ads)
-- [Kundprojekt](https://www.stoltmarketing.se/projekt): daterade mätningar med metod och begränsningar. Telefonklick är inte bevisade samtal, formulärevents är inte unika kunder eller affärer.
-- [Kartläggning av hantverksföretag](https://www.stoltmarketing.se/hantverkssajter): 4 864 företagsposter, inte lika många unika webbplatser. Tester har olika nämnare och täckning, se metodavsnittet.
+- [Meta-annonser](https://www.stoltmarketing.se/tjanster/facebook-annonsering)
+- [AI och automation](https://www.stoltmarketing.se/tjanster/ai-automation)
+- [Alla tjänster](https://www.stoltmarketing.se/tjanster)
+
+## Case
+
+- [Eget CRM med AI-agent](https://www.stoltmarketing.se/projekt/eget-crm): Joels eget kundregister, i drift sedan 14 november 2026. Förfrågningar, offerter, uppföljning och fakturor på ett ställe. En AI-agent skriver svarsutkast, sorterar svar och följer upp offerter. Inget skickas till en kund utan Joels klick.
+- [Alla case](https://www.stoltmarketing.se/projekt): kunduppdrag med daterade mätningar, metod och begränsningar. Telefonklick är inte bevisade samtal, och formulärevents är inte unika kunder eller affärer.
+
+## Orter
+
+- [Hässleholm](https://www.stoltmarketing.se/hassleholm)
+- [Kristianstad](https://www.stoltmarketing.se/kristianstad)
+- [Malmö](https://www.stoltmarketing.se/malmo)
+- [Lund](https://www.stoltmarketing.se/lund)
+- [Helsingborg](https://www.stoltmarketing.se/helsingborg)
+
+## Mer
+
+- [Om Joel Stolt](https://www.stoltmarketing.se/om)
 - [Guider](https://www.stoltmarketing.se/guider)
 - [Blogg](https://www.stoltmarketing.se/blogg)
-- [Boka samtal](https://www.stoltmarketing.se/boka)
-- [Om Joel](https://www.stoltmarketing.se/om)
-- [Kontakt](https://www.stoltmarketing.se/kontakt)
 - [Integritet](https://www.stoltmarketing.se/integritet)
-
-Kontakt: joel@stoltmarketing.se, 076-686 74 06. Normalt svar samma arbetsdag. Verksamheten utgår från Hässleholm och hjälper även företag i Kristianstad, Helsingborg, Malmö och Lund; ortssidor innebär inte ett eget kontor i respektive stad.

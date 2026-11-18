@@ -38,9 +38,9 @@ const ingarInte = [
 ];
 
 const pris = [
-  "0 kr i start, jag installerar",
-  "Första 30 dagarna gratis",
-  "Ingen bindning, du säger upp med ett mejl",
+  "Fast pris skriftligt innan jag börjar, jag installerar",
+  "Första samtalet kostar ingenting",
+  "Fast månadspris som du vet i förväg, du säger upp med ett mejl",
   "Upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar i månaden. Räcker det inte hör jag av mig innan något kostar mer.",
 ];
 
@@ -172,7 +172,7 @@ export default function ForfragningarContent() {
         highlight="direkt till din mobil"
         cta={{ href: "#prova", label: "Jag vill prova rutan" }}
         subtitle="Jag sätter en ruta på din hemsida. Kunden skriver där, du får ett SMS direkt, och när du sätter dig och tittar ligger ett förslag på svar färdigt. Du ändrar om du vill och skickar."
-        bullets={["495 kr/mån exkl moms", "Första 30 dagarna gratis", "Ingen bindning"]}
+        bullets={["Fast pris innan jag börjar", "Första samtalet kostar ingenting", "Du vet månadspriset i förväg"]}
       />
 
       <RequestFlowDemo />
@@ -216,7 +216,7 @@ export default function ForfragningarContent() {
             </ul>
           </div>
           <div>
-            <SectionHeader badge="Pris" title="495 kr i månaden exkl moms" maxWidth="480px" />
+            <SectionHeader badge="Pris" title="Fast pris, du vet kostnaden i förväg" maxWidth="480px" />
             <ul className="mt-8 space-y-3 list-none p-0">
               {pris.map((t) => (
                 <li key={t} className="flex gap-3 text-[15px] leading-relaxed text-body">
@@ -228,8 +228,8 @@ export default function ForfragningarContent() {
             <p className="mt-6 text-[14.5px] leading-relaxed text-body">
               Du behöver inte byta hemsida. Rutan läggs på den du har, om den tar emot en rad kod. Det kollar jag innan
               du bestämmer dig, och sköter någon annan din sajt skickar jag raden till dem. Går det inte, eller finns
-              ingen sajt som fungerar, börjar vi med hemsidan. Priserna för hemsidor står på{" "}
-              <a href="/priser" className="underline" style={{ textUnderlineOffset: 4 }}>sidan med priser och paket</a>.
+              ingen sajt som fungerar, börjar vi med hemsidan. Hur det går till står på{" "}
+              <a href="/sa-funkar-det" className="underline" style={{ textUnderlineOffset: 4 }}>sidan Så funkar det</a>.
             </p>
           </div>
         </div>
@@ -288,7 +288,7 @@ export default function ForfragningarContent() {
         </div>
       </section>
 
-      <section id="prova" className="py-12 sm:py-20 px-5 sm:px-8 scroll-mt-24"><div className="max-w-3xl mx-auto bg-surface border border-primary/40 rounded-2xl p-5 sm:p-9"><h2 className="text-[clamp(28px,4vw,38px)] leading-tight mb-4">Prova rutan på din hemsida</h2><p className="mb-6">Skriv din webbadress i meddelandet. Jag kontrollerar att rutan fungerar där och återkommer om installation. Du beställer inget abonnemang genom formuläret.</p><InquiryForm service="Prova förfrågningsrutan" initialMessage="Jag vill prova förfrågningsrutan i 30 dagar. Min hemsida är: " submitLabel="Skicka intresseanmälan" eventName="lead-prova-rutan" /><p className="text-[14px] text-muted mt-6">0 kr start och 30 dagar gratis. Därefter 495 kr/mån exkl moms om du vill fortsätta. Ingen bindning; avsluta med ett mejl till Joel. Uppgifter om avtalet och personuppgiftsbiträdesavtalet får du före aktivering.</p></div></section>
+      <section id="prova" className="py-12 sm:py-20 px-5 sm:px-8 scroll-mt-24"><div className="max-w-3xl mx-auto bg-surface border border-primary/40 rounded-2xl p-5 sm:p-9"><h2 className="text-[clamp(28px,4vw,38px)] leading-tight mb-4">Prova rutan på din hemsida</h2><p className="mb-6">Skriv din webbadress i meddelandet. Jag kontrollerar att rutan fungerar där och återkommer om installation. Du beställer inget abonnemang genom formuläret.</p><InquiryForm service="Prova förfrågningsrutan" initialMessage="Jag vill prova förfrågningsrutan. Min hemsida är: " submitLabel="Skicka intresseanmälan" eventName="lead-prova-rutan" /><p className="text-[14px] text-muted mt-6">Du får ett fast pris skriftligt innan jag börjar, och första samtalet kostar ingenting. Avsluta med ett mejl till Joel. Uppgifter om avtalet och personuppgiftsbiträdesavtalet får du före aktivering.</p></div></section>
 
       <section className="section-gul relative py-16 sm:py-24 px-5 sm:px-8 overflow-hidden">
         <div className="relative z-10 max-w-[620px] mx-auto text-center">

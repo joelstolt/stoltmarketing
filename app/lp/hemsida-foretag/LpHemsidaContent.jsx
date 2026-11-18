@@ -5,11 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
 import { Reveal } from "@/components/ui";
-import { SITE, PRICING } from "@/lib/local/data";
+import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 import { CASES } from "@/lib/case-data";
-import { packages } from "@/lib/pricing-packages";
 
 const niklassonsOffert = CASES.niklassonsflytt.results[0].value;
 
@@ -27,7 +26,7 @@ const steg = [
   {
     n: "3",
     title: "Säg ja till upplägget",
-    desc: "Gillar du förslaget kommer vi överens om paket, omfattning och tidplan. Därefter bygger jag klart och publicerar sajten. Tackar du nej till förslaget kostar det inget.",
+    desc: "Gillar du förslaget kommer vi överens om omfattning, tidplan och ett fast pris skriftligt. Därefter bygger jag klart och publicerar sajten. Tackar du nej till förslaget kostar det inget.",
   },
 ];
 
@@ -35,12 +34,16 @@ const ingar = [
   "Sajt och design, byggd för din bransch",
   "Hosting och löpande drift",
   "Säkerhet, certifikat och backuper",
-  "Innehållsändringar inom paketets omfattning",
+  "Innehållsändringar inom överenskommen omfattning",
   "Support med svar samma arbetsdag",
   "Teknisk SEO-grund och läsbart innehåll",
 ];
 
-const paket = packages.map(p => ({ name: p.name, price: `${p.monthly.toLocaleString("sv-SE")} kr/mån`, note: p.desc, items: p.features, highlight: p.featured }));
+const paket = [
+  { name: "Hemsida", price: "Fast pris innan jag börjar", note: "Du får priset skriftligt innan jag börjar. Första samtalet kostar ingenting.", items: ["Design och bygge efter vad ni behöver", "Texter skrivna för kunder och sök", "Teknik som testas även i mobilen", "Formulär med skydd mot skräppost"], highlight: true },
+  { name: "Webbshop", price: "Fast pris innan jag börjar", note: "Omfattning och externa avgifter avtalas före start.", items: ["Produktsidor och kassa", "Betalning och frakt efter era behov", "Koppling till lager eller ekonomi vid behov"], highlight: false },
+  { name: "Löpande hjälp", price: "Fast månadspris i förväg", note: "Du vet månadskostnaden innan vi startar.", items: ["Drift, säkerhet och backup", "Ändringar och uppdateringar", "Svar nästa arbetsdag"], highlight: false },
+];
 
 const faqs = [
   {
@@ -49,7 +52,7 @@ const faqs = [
   },
   {
     q: "Hur säger jag upp?",
-    a: "Ett mejl räcker. Bindningen är tolv månader, därefter löper avtalet månadsvis och avslutas till nästa månadsskifte. Inga uppsägningsavgifter och ingen förhandling.",
+    a: "Ett mejl räcker. Löpande hjälp avslutas till nästa månadsskifte. Inga uppsägningsavgifter och ingen förhandling.",
   },
   {
     q: "Hur lång tid tar det?",
@@ -244,8 +247,8 @@ export default function LpHemsidaContent() {
               Ny hemsida till ditt företag. Börja med ett gratis förslag.
             </h1>
             <p className="mt-5 text-[17px] sm:text-[18px] leading-relaxed text-body max-w-[560px]">
-              Byggd av personen du pratar med. Fast pris från {PRICING.basManad} exkl. moms,
-              0 kr i startavgift. Bas omfattar högst fem sidor med drift, support och ändringar enligt paketet. Tolv månaders bindning, sedan månadsvis.
+              Byggd av personen du pratar med. Fast pris skriftligt innan jag börjar, exkl. moms.
+              Första samtalet kostar ingenting. Löpande hjälp har ett fast månadspris som du vet i förväg.
             </p>
 
             <p className="mt-6 text-[15px] text-body leading-relaxed max-w-[520px]">
@@ -304,12 +307,12 @@ export default function LpHemsidaContent() {
                   Här
                 </p>
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
-                  Från {PRICING.basManad}
+                  Fast pris innan jag börjar
                 </div>
-                <p className="mt-2.5 text-[14px] text-muted">0 kr i startavgift. Exkl. moms. Tolv månader, sedan månadsvis.</p>
+                <p className="mt-2.5 text-[14px] text-muted">Skriftligt, exkl. moms. Första samtalet kostar ingenting.</p>
                 <ul className="mt-5 grid gap-2.5">
                   {[
-                    "Bas: högst fem sidor, hosting och drift",
+                    "Omfattning och pris avtalas före start",
                     "Ändringar inom avtalad omfattning",
                     "Du äger innehållet och domänen",
                   ].map((it) => (
@@ -496,7 +499,7 @@ export default function LpHemsidaContent() {
       <section id="priser" className="px-5 sm:px-8 py-14 sm:py-20 scroll-mt-4">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
-            Priset står här, inte i en offert
+            Du vet priset innan jag börjar
           </h2>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {paket.map((p, i) => (
@@ -524,9 +527,8 @@ export default function LpHemsidaContent() {
             ))}
           </div>
           <p className="mt-5 text-[14px] text-muted">
-            Alla priser exkl. moms. 0 kr start. Tolv månaders bindning, sedan månadsvis.
-            Bas har högst fem sidor. Sidor, ändringar och nya funktioner följer avtalad omfattning.
-            Annonsbudget betalas separat. E-handel kan läggas till för 800 kr/mån exkl. moms, med omfattning och externa avgifter avtalade före start.
+            Alla priser exkl. moms. Sidor, ändringar och nya funktioner följer avtalad omfattning.
+            Annonsbudget betalas separat. Webbshop och externa avgifter avtalas före start.
           </p>
         </div>
       </section>

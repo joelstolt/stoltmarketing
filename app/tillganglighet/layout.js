@@ -1,11 +1,11 @@
 import { accessFaqs } from "./data";
 const title = "Tillgänglighet: granskning och åtgärder med tydlig omfattning";
-const description = "Jag granskar webbtillgänglighet från 4 900 kr exkl. moms och åtgärdar från 24 500 kr. Manuella tester, rapport och rätt avgränsning av lagkrav.";
+const description = "Jag granskar webbtillgänglighet och åtgärdar, med fast pris skriftligt innan jag börjar. Manuella tester, rapport och rätt avgränsning av lagkrav.";
 const url = "https://www.stoltmarketing.se/tillganglighet";
 export const metadata = {
   title, description, alternates: { canonical: url },
-  openGraph: { title, description, url },
-  twitter: { card: "summary_large_image", title, description },
+  openGraph: { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }],  title, description, url },
+  twitter: { images: ["/og-image.png"],  card: "summary_large_image", title, description },
 };
 const service = {
   "@context": "https://schema.org", "@type": "Service", name: "Webbtillgänglighet: granskning och åtgärder", serviceType: "Webbtillgänglighet",

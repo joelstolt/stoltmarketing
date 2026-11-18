@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import { PageHero } from "@/components/ui";
 import InquiryForm from "@/components/InquiryForm";
+import s from "@/components/ny/ny.module.css";
+import b from "./boka.module.css";
 
 function calendarEmbedUrl(raw) {
   const url = (raw || "").trim();
@@ -109,16 +111,31 @@ export default function BokaContent() {
       select(event.key === "Home" ? "tid" : event.key === "End" ? "meddelande" : path === "tid" ? "meddelande" : "tid", true);
     }
   }
-  return <>
-    <PageHero compact cta={false} breadcrumbs={[{label:"Start",href:"/"},{label:"Boka"}]} badge="30 minuter med Joel" title="Välj en tid som passar dig" subtitle="Vi går igenom ditt behov och vad jag kan hjälpa till med. Samtalet är kostnadsfritt och du förbinder dig inte till något." />
-    <section className="px-5 sm:px-8 py-10 sm:py-14"><div className="max-w-4xl mx-auto">
-      <div role="tablist" aria-label="Välj hur du vill ta kontakt" onKeyDown={tabKeys} className="grid sm:grid-cols-2 gap-3 mb-8">
-        {[{id:"tid",label:"Välj tid i kalendern",ref:timeRef},{id:"meddelande",label:"Skicka ett meddelande",ref:messageRef}].map((tab) => <button key={tab.id} ref={tab.ref} type="button" role="tab" id={`tab-${tab.id}`} aria-controls={`panel-${tab.id}`} aria-selected={path === tab.id} tabIndex={path === tab.id ? 0 : -1} onClick={() => select(tab.id)} className={`rounded-xl p-4 border font-[family-name:var(--font-ui)] text-[15px] ${path === tab.id ? "border-primary bg-primary-light text-primary" : "border-border bg-surface text-body"}`}>{tab.label}</button>)}
+  return (
+    <section className={s.intro}>
+      <div className={`${s.frame} ${s.introInner}`}>
+        <nav className={s.crumbs} aria-label="Brödsmulor">
+          <Link href="/">Start</Link>
+          <span className={s.crumbSep} aria-hidden="true">/</span>
+          <span aria-current="page">Boka</span>
+        </nav>
+        <p className={s.kicker}>30 minuter med Joel</p>
+        <h1 className={s.h1Sub}>Välj en tid som passar.</h1>
+        <p className={s.heroLead}>
+          Vi går igenom vad som krånglar eller saknas och vad jag kan göra åt det. Samtalet kostar ingenting och du
+          förbinder dig inte till något.
+        </p>
+
+        <div className={b.wrap}>
+          <div role="tablist" aria-label="Välj hur du vill ta kontakt" onKeyDown={tabKeys} className={b.tabs}>
+            {[{id:"tid",label:"Välj tid i kalendern",ref:timeRef},{id:"meddelande",label:"Skicka ett meddelande",ref:messageRef}].map((tab) => <button key={tab.id} ref={tab.ref} type="button" role="tab" id={`tab-${tab.id}`} aria-controls={`panel-${tab.id}`} aria-selected={path === tab.id} tabIndex={path === tab.id ? 0 : -1} onClick={() => select(tab.id)} className={`${b.tab} ${path === tab.id ? b.tabActive : ""}`}>{tab.label}</button>)}
+          </div>
+          <div role="tabpanel" id="panel-tid" aria-labelledby="tab-tid" hidden={path !== "tid"}>
+            {calendarUrl ? <><p className={b.note}>Kalendern tillhandahålls av Google. När du bokar får du en bekräftelse och uppgifter om mötet via e-post. <a href="/integritet">Om personuppgifter</a>.</p><div className={b.cal}><CalendarPanel url={calendarUrl} /></div></> : !calendarChecked ? <p role="status" className={b.status}>Hämtar kalendern...</p> : <div className={b.card}><h2 className={b.cardTitle}>Föreslå en tid</h2><p className={b.cardLead}>Kalendern kunde inte visas. Skriv när du kan prata så bekräftar jag tiden via mejl.</p><InquiryForm service="Tidsönskemål" initialMessage="Jag vill boka ett samtal. Jag kan följande tider: " eventName="lead-boka-tid" /></div>}
+          </div>
+          <div role="tabpanel" id="panel-meddelande" aria-labelledby="tab-meddelande" hidden={path !== "meddelande"}><div className={b.card}><h2 className={b.cardTitle}>Skriv det du funderar på</h2><p className={b.cardLead}>Du får svar nästa arbetsdag. Ett meddelande bokar ingen tid automatiskt.</p><InquiryForm service={message ? "Prisförfrågan" : "Bokningsförfrågan"} initialMessage={message} eventName="lead-boka" /></div></div>
+        </div>
       </div>
-      <div role="tabpanel" id="panel-tid" aria-labelledby="tab-tid" hidden={path !== "tid"}>
-        {calendarUrl ? <><p className="text-[14px] text-muted mb-4">Kalendern tillhandahålls av Google. När du bokar får du en bekräftelse och uppgifter om mötet via e-post. <a href="/integritet" className="underline">Om personuppgifter</a>.</p><CalendarPanel url={calendarUrl} /></> : !calendarChecked ? <p role="status">Hämtar kalendern...</p> : <><h2 className="text-[26px] mb-3">Föreslå en tid</h2><p className="mb-6">Kalendern kunde inte visas. Skriv när du kan prata så bekräftar jag tiden via mejl.</p><InquiryForm service="Tidsönskemål" initialMessage="Jag vill boka ett samtal. Jag kan följande tider: " eventName="lead-boka-tid" /></>}
-      </div>
-      <div role="tabpanel" id="panel-meddelande" aria-labelledby="tab-meddelande" hidden={path !== "meddelande"}><div className="bg-surface border border-border rounded-xl p-5 sm:p-8"><h2 className="text-[26px] mb-3">Skriv det du funderar på</h2><p className="mb-6">Jag återkommer normalt samma arbetsdag. Ett meddelande bokar ingen tid automatiskt.</p><InquiryForm service={message ? "Prisförfrågan" : "Bokningsförfrågan"} initialMessage={message} eventName="lead-boka" /></div></div>
-    </div></section>
-  </>;
+    </section>
+  );
 }

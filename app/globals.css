@@ -1,39 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  /* === Rapsfält i mörker — natthimmel över fältet === */
-  --color-base: #0F0D08;
-  --color-surface: #161309;
-  --color-surface-muted: #1D1912;
-  --color-surface-dark: #0B0A06;
+  /* === Ny profil 2026-11-17: neutral svart, hårfina linjer, gult som enda accent === */
+  --color-base: #0A0A0B;
+  --color-surface: #111113;
+  --color-surface-muted: #17171A;
+  --color-surface-dark: #070708;
 
-  /* === Primary accent — rapsgul (läsbar som text/ikon på mörkt) === */
-  --color-primary: #F2C230;
-  --color-primary-hover: #FFD34D;
-  --color-primary-light: #2E250D;
-  --color-primary-subtle: #201A0B;
+  /* === Knappar och textaccent: nära vitt. Signalfärgen är accent och används sparsamt === */
+  --color-primary: #EDEDEE;
+  --color-primary-hover: #FFFFFF;
+  --color-primary-light: #1A1A1D;
+  --color-primary-subtle: #141416;
 
-  /* === Rapsgul — signaturfärg (ytor, markeringar, CTA) === */
-  --color-accent: #F2C230;
-  --color-accent-deep: #DFA616;
+  /* Signal: status, punkter och fokus. Grönt som i "i drift" (Joels val 2026-11-17) */
+  --color-accent: #3DD68C;
+  --color-accent-deep: #2BB673;
 
-  /* === Fältgrön — stödfärg (lyft för mörk botten) === */
-  --color-field: #8CA05A;
+  /* Fältgrönt utgår; tokenen finns kvar för äldre sidor men blir neutral */
+  --color-field: #8D8D94;
 
-  /* === Text — papper på bläck === */
-  --color-heading: #F2ECDD;
-  --color-body: #CFC9B8;
-  --color-muted: #A19A87;
-  --color-faint: #7B7462;
+  /* === Text === */
+  --color-heading: #EDEDEE;
+  --color-body: #C4C4C9;
+  --color-muted: #8D8D94;
+  /* Faint: minst 4,5 gånger kontrast mot alla mörka ytor */
+  --color-faint: #828289;
 
-  /* === Borders === */
-  --color-border: rgba(242, 236, 221, 0.16);
-  --color-border-light: rgba(242, 236, 221, 0.09);
+  /* === Linjer === */
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-border-light: rgba(255, 255, 255, 0.08);
 
-  /* === Typography === */
-  --font-heading: var(--font-fraunces), "Georgia", serif;
-  --font-body: var(--font-fraunces), "Georgia", serif;
-  --font-ui: var(--font-archivo), "Arial", sans-serif;
+  /* === Typografi: en grotesk för allt === */
+  --font-heading: var(--font-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-grotesk), system-ui, sans-serif;
+  --font-ui: var(--font-grotesk), system-ui, sans-serif;
 }
 
 html {
@@ -892,3 +893,97 @@ a[class*="hover:underline"]:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ======================================================================
+   Ny profil 2026-11-17. Ligger sist så att den vinner över äldre regler.
+   Mörkt, hårfina linjer, en grotesk (Schibsted Grotesk), gult som enda accent.
+   Inga kursiva accentord, inga pillerknappar, inga numrerade sektionsetiketter.
+   ====================================================================== */
+body { line-height: 1.6; }
+h1, h2, h3, h4, h5, h6 { font-weight: 620; letter-spacing: -0.03em; text-wrap: balance; }
+h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.015em; }
+:is(h1, h2, h3, h4, p) :is(em, i) { font-style: normal; color: inherit; }
+.stolt-mark { font-style: normal; color: inherit; }
+::selection { background: var(--color-accent); color: #15110a; }
+
+/* Överrad: liten gul punkt och lugn text, inga versaler */
+.eyebrow { gap: 9px; font-size: 13.5px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--color-muted); }
+.eyebrow::before { width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 3px rgba(242, 194, 48, 0.15); }
+
+/* Rapsfältets dekor utgår */
+.grain::before, .field-glow::after, .hero-puls, .hero-korn, .footer-natt, .footer-horisont,
+.footer-stjarna, .gardslampa, .process-sol, .las-stra, .vind-svg, .troska-falt, .troska-maskin,
+.sec-no { display: none !important; }
+.sec-label { font-size: 15px; letter-spacing: 0; text-transform: none; font-weight: 600; }
+.sec-eng { font-style: normal; }
+
+/* Knappar: rektanglar med lätt rundning */
+.premium-btn, .secondary-btn {
+  min-height: 44px; padding: 10px 18px; gap: 8px;
+  font-family: var(--font-ui); font-size: 15px; font-weight: 550; letter-spacing: 0; text-transform: none;
+  border-radius: 6px; transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.premium-btn { border: 1px solid var(--color-accent); background: var(--color-accent); color: #15110a; }
+.premium-btn:hover { background: #F7D04F; border-color: #F7D04F; color: #15110a; transform: none; }
+.secondary-btn { border: 1px solid var(--color-border); background: rgba(255, 255, 255, 0.02); color: var(--color-heading); }
+.secondary-btn:hover { border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.06); color: var(--color-heading); transform: none; }
+
+/* Mörka sektioner: neutrala tonvärden */
+.hero-dark { background: var(--color-surface-dark); }
+.hero-dark .text-body { color: var(--color-body); }
+.hero-dark .text-muted { color: var(--color-muted); }
+.hero-dark .text-faint { color: var(--color-faint); }
+.hero-dark .text-border { color: var(--color-faint); }
+.hero-dark .eyebrow { color: var(--color-muted); }
+.hero-dark .premium-btn:hover { background: #F7D04F; border-color: #F7D04F; }
+.hero-dark .secondary-btn { color: var(--color-heading); border-color: var(--color-border); }
+.hero-dark .secondary-btn:hover { background: rgba(255, 255, 255, 0.06); color: var(--color-heading); border-color: rgba(255, 255, 255, 0.3); }
+
+/* Den gula finalsektionen blir en mörk yta med svagt gult sken */
+.section-gul { background: radial-gradient(50% 90% at 50% 100%, rgba(242, 194, 48, 0.08), transparent 70%), var(--color-base); border-top: 1px solid var(--color-border-light); }
+.section-gul :is(h1, h2, h3), .section-gul .text-heading { color: var(--color-heading); }
+.section-gul .text-body { color: var(--color-body); }
+.section-gul .text-muted { color: var(--color-muted); }
+.section-gul .eyebrow { color: var(--color-muted); }
+.section-gul .eyebrow::before { background: var(--color-accent); }
+.section-gul .premium-btn { background: var(--color-accent); border-color: var(--color-accent); color: #15110a; }
+.section-gul .premium-btn:hover { background: #F7D04F; border-color: #F7D04F; color: #15110a; }
+.section-gul .secondary-btn { color: var(--color-heading); border-color: var(--color-border); }
+.section-gul .secondary-btn:hover { background: rgba(255, 255, 255, 0.06); color: var(--color-heading); }
+
+/* Formulär och artiklar i nya tonen */
+.form-field input, .form-field textarea, .form-field select { border-radius: 6px; background: var(--color-surface); border-color: var(--color-border); }
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: rgba(255, 255, 255, 0.32); }
+.article-body { line-height: 1.7; font-size: 17.5px; }
+.article-body .article-box { border-radius: 8px; border-color: var(--color-border-light); }
+
+/* Pillerformade märken i äldre sidor blir rektanglar */
+.rounded-full:is(span, a, button):not([class*="w-"]) { border-radius: 6px; }
+
+/* Äldre komponenter med inline-stil: rubrikvikt, kursiva accentord och spärrade versaletiketter
+   följer nya profilen. !important behövs för att gå före inline-stilar. */
+:is(h1, h2) { font-weight: 620 !important; font-variation-settings: normal !important; }
+h3 { font-variation-settings: normal !important; }
+:is(h1, h2, h3, h4) :is(em, i, .italic, [style*="italic"]) { font-style: normal !important; color: inherit !important; font-weight: inherit !important; }
+[style*="letter-spacing:0.2"], [style*="letter-spacing:0.3"], [style*="letter-spacing:0.18"], [style*="letter-spacing:0.16"] {
+  letter-spacing: 0 !important; text-transform: none !important;
+}
+
+/* === Profil v2, 2026-11-17 kväll: vit primärknapp, lättare rubriker, signalfärg bara som accent === */
+:is(h1, h2) { font-weight: 540 !important; letter-spacing: -0.035em; }
+.skip-link { background: #EDEDEE; color: #0A0A0B; }
+.premium-btn,
+.hero-dark .premium-btn,
+.section-gul .premium-btn {
+  background: #EDEDEE !important;
+  border-color: #EDEDEE !important;
+  color: #0A0A0B !important;
+}
+.premium-btn:hover,
+.hero-dark .premium-btn:hover,
+.section-gul .premium-btn:hover {
+  background: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #0A0A0B !important;
+}
+.secondary-btn:hover { border-color: rgba(255, 255, 255, 0.3) !important; background: rgba(255, 255, 255, 0.06) !important; color: var(--color-heading) !important; }

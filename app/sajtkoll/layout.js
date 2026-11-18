@@ -5,7 +5,7 @@ export const metadata = {
   alternates: {
     canonical: "https://www.stoltmarketing.se/sajtkoll",
   },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     title: "Gratis sajtkoll: så bra fungerar din hemsida",
     description:
       "14 kontroller på 10 sekunder: sidvikt, hastighet, mobil, Google, AI-läsbarhet och trasiga filer. Gratis, ingen registrering.",

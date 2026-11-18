@@ -9,13 +9,13 @@ const breadcrumb = {
 
 export const metadata = {
   "title": "Kontakt med Joel Stolt",
-  "description": "Skriv till Joel om förfrågningsrutan, hemsidor, SEO eller annonsering. Mejla, ring eller använd kontaktformuläret. Normalt svar samma arbetsdag.",
+  "description": "Skriv till Joel om hemsidor, automation, SEO eller annonsering. Mejla, ring eller använd kontaktformuläret. Normalt svar samma arbetsdag.",
   "alternates": {
     "canonical": "https://www.stoltmarketing.se/kontakt"
   },
   "openGraph": {
     "title": "Kontakt med Joel Stolt",
-    "description": "Skriv till Joel om förfrågningsrutan, hemsidor, SEO eller annonsering. Mejla, ring eller använd kontaktformuläret. Normalt svar samma arbetsdag.",
+    "description": "Skriv till Joel om hemsidor, automation, SEO eller annonsering. Mejla, ring eller använd kontaktformuläret. Normalt svar samma arbetsdag.",
     "url": "https://www.stoltmarketing.se/kontakt",
     "images": [
       "/og-image.png"
@@ -24,7 +24,7 @@ export const metadata = {
   "twitter": {
     "card": "summary_large_image",
     "title": "Kontakt med Joel Stolt",
-    "description": "Skriv till Joel om förfrågningsrutan, hemsidor, SEO eller annonsering. Mejla, ring eller använd kontaktformuläret. Normalt svar samma arbetsdag.",
+    "description": "Skriv till Joel om hemsidor, automation, SEO eller annonsering. Mejla, ring eller använd kontaktformuläret. Normalt svar samma arbetsdag.",
     "images": [
       "/og-image.png"
     ]

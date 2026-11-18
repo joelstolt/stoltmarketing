@@ -5,7 +5,7 @@ import { ArrowRight, Check, AlertTriangle, X, Search } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui";
-import { SITE, PRICING } from "@/lib/local/data";
+import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { skickaForslag, varstaBrister } from "@/lib/forslag";
 
@@ -286,7 +286,7 @@ export default function SajtkollPage() {
             <p className="mt-6 flex items-center gap-3 text-[13.5px] text-muted max-w-[560px]">
               <img src="/joel-stolt-240.webp" alt="" width={36} height={36} style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
               <span>
-                Jag heter Joel Stolt och bygger hemsidor åt småföretag. 0 kr i start, från {PRICING.basManad} exkl. moms. Du ser hemsidan innan du betalar.
+                Jag heter Joel Stolt och bygger hemsidor åt företag. Du får ett fast pris skriftligt innan jag börjar, och du ser hemsidan innan du bestämmer dig.
               </span>
             </p>
           </div>
@@ -394,8 +394,8 @@ export default function SajtkollPage() {
                       </div>
                       {leadFel && <p role="alert" className="text-[13.5px] mt-3 mb-0" style={{ color: "#C97B5E" }}>{leadFel}</p>}
                       <p className="text-[12.5px] text-muted mt-4 mb-0 max-w-[600px] leading-relaxed">
-                        Säger du nej hör du inte av mig igen. Gillar du den: 0 kr i start, från {PRICING.basManad} exkl. moms,
-                        12 månader och sedan månadsvis. Du äger hemsidan.
+                        Säger du nej hör du inte av mig igen. Gillar du den får du ett fast pris skriftligt innan jag börjar.
+                        Du äger hemsidan.
                       </p>
                     </form>
                   ) : (

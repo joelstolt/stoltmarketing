@@ -1,0 +1,230 @@
+/* Casesidorna under /projekt/<namn> i nya profilen (2026-11-17).
+   Kompletterar components/ny/ny.module.css, som inte ändras. */
+
+.shot {
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  overflow: hidden;
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.8);
+}
+
+.shotLink {
+  display: block;
+  cursor: zoom-in;
+}
+
+.shotImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: top;
+  transition: opacity 0.15s ease;
+}
+
+.shotLink:hover .shotImg {
+  opacity: 0.92;
+}
+
+.shotLink:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.shotCaption {
+  padding: 12px 18px;
+  border-top: 1px solid var(--color-border-light);
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 64px;
+  align-items: start;
+}
+
+.prose {
+  max-width: 680px;
+}
+
+.prose h2 + p {
+  margin-top: 16px;
+}
+
+.prose p {
+  margin: 16px 0 0;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--color-body);
+  text-wrap: pretty;
+}
+
+.prose .h2Gap {
+  margin-top: 56px;
+}
+
+.side {
+  padding: 26px;
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.sideTitle {
+  margin: 0;
+  font-size: 18.5px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-heading);
+}
+
+.sideActions {
+  margin-top: 24px;
+}
+
+.tech {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.tech summary {
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-muted);
+  transition: color 0.15s ease;
+}
+
+.tech summary:hover {
+  color: var(--color-heading);
+}
+
+.tech p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+.resultValue {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.compare {
+  margin-top: 24px;
+  padding: 24px 26px;
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.compareTitle {
+  margin: 0;
+  font-size: 18.5px;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.compareLead {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.compareList {
+  margin: 20px 0 0;
+}
+
+.compareRow {
+  padding: 16px 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.compareRow dt {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.compareRow dd {
+  margin: 8px 0 0;
+}
+
+.compareCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.compareCols span {
+  display: block;
+}
+
+.compareSmall {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.compareNum {
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  margin-top: 24px;
+}
+
+@media (max-width: 1080px) {
+  .body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  .side,
+  .compare {
+    padding: 20px;
+  }
+}
+
+/* Långa kundnamn i knappen får bryta rad i stället för att gå utanför skärmen */
+.wrapBtn.wrapBtn {
+  white-space: normal;
+  height: auto;
+  min-height: 42px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+/* Flödet i steg: fyra i rad på dator, två på surfplatta, en på mobil */
+.flow.flow {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1080px) {
+  .flow.flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .flow.flow {
+    grid-template-columns: 1fr;
+  }
+}

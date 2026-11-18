@@ -4,13 +4,13 @@ export const metadata = {
   "alternates": {
     "canonical": "https://www.stoltmarketing.se/guider/synas-i-ai-sok"
   },
-  "openGraph": {
+  "openGraph": { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     "title": "Synas i AI-sök: förbättra grunden och mät vad som händer",
     "description": "Gör tjänster, priser och företagsuppgifter tydliga och möjliga att hitta. Testa relevanta frågor i flera AI-tjänster och spara svaren. Tydlighet hjälper läsaren men garanterar inget omnämnande.",
     "url": "https://www.stoltmarketing.se/guider/synas-i-ai-sok",
     "type": "article"
   },
-  "twitter": {
+  "twitter": { images: ["/og-image.png"], 
     "card": "summary_large_image",
     "title": "Synas i AI-sök: förbättra grunden och mät vad som händer",
     "description": "Gör tjänster, priser och företagsuppgifter tydliga och möjliga att hitta. Testa relevanta frågor i flera AI-tjänster och spara svaren. Tydlighet hjälper läsaren men garanterar inget omnämnande."

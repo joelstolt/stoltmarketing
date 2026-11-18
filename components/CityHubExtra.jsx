@@ -1,96 +1,74 @@
-import { PageHero, SectionHeader } from "@/components/ui";
+import { Code, Search, Megaphone, Workflow } from "lucide-react";
 import CityProof from "@/components/CityProof";
-import { CITIES, SERVICES, SERVICE_ORDER, PRICING, cityHubFaqs } from "@/lib/local/data";
+import { Sida, SidHero, Sektion, Celler, Delad, Text, Fragor, Avslut } from "@/components/ny/Sida";
+import { CITIES, SERVICES, SERVICE_ORDER, cityHubFaqs } from "@/lib/local/data";
 import HUB from "@/lib/local/hub-content.json";
 
-/** Hubben hjälper besökaren välja uppdrag. FAQ och schema läser samma data. */
+/** Stadssidan (/malmo m.fl.), ny profil v2 2026-11-17. Hjälper besökaren välja uppdrag.
+    FAQ och schema läser samma data (cityHubFaqs), texten är oförändrad. */
+
+const IKON = { hemsida: Code, seo: Search, "google-ads": Megaphone, "ai-automation": Workflow };
+
+const STEG = [
+  { titel: "Ditt underlag", text: "Skicka din webbadress och beskriv vad kunden ska kunna göra." },
+  { titel: "Förslag med fast pris", text: "Jag föreslår ett första steg med omfattning och pris, skriftligt." },
+  { titel: "Arbetet", text: "Efter ditt ja gör jag arbetet och stämmer av det vi har kommit överens om." },
+];
+
 export default function CityHubExtra({ city }) {
   const data = HUB[city];
   const c = CITIES[city];
   if (!data || !c) return null;
-  const prices = {
-    hemsida: `Från ${PRICING.basManad}`,
-    seo: `Audit ${PRICING.seoAudit}`,
-    "google-ads": `Arbete i Spets: ${PRICING.spets}`,
-    "ai-automation": "Rutan: 495 kr/mån",
-  };
-  const terms = {
-    hemsida: "0 kr start. Högst fem sidor i Bas. 12 månader, sedan månadsvis.",
-    seo: "Engångsgranskning. Fortsatt arbete avtalas separat.",
-    "google-ads": "Annonsbudget tillkommer. Spets: 12 månader, sedan månadsvis. Separata uppdrag enligt offert.",
-    "ai-automation": "30 dagar gratis, ingen bindning. Systemintegrationer enligt offert.",
-  };
 
   return (
-    <>
-      <PageHero
-        breadcrumbs={[{ label: "Start", href: "/" }, { label: c.name }]}
-        badge={`Stolt Marketing för ${c.name}`}
+    <Sida>
+      <SidHero
+        crumbs={[{ label: "Start", href: "/" }, { label: c.name }]}
+        kicker={`Stolt Marketing för företag i ${c.name}`}
         title={data.title}
-        highlight={c.name}
-        compact
-        subtitle={data.intro}
-        bullets={["Direktkontakt med Joel", "Bas i Hässleholm", "Tydlig omfattning före start"]}
-        cta={{ href: "#tjanster", label: "Välj den hjälp du behöver" }}
+        lead={data.intro}
+        punkter={["Direktkontakt med Joel", "Bas i Hässleholm", "Fast pris före start"]}
+        cta={{ href: "/kontakt", label: "Berätta vad ni behöver" }}
+        sekundar={{ href: "#tjanster", label: "Välj den hjälp ni behöver" }}
+        omrade="kunder"
       />
 
-      <section className="py-14 sm:py-20 px-5 sm:px-8" id="tjanster">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader badge="Välj ditt nästa steg" title="Vilket problem vill du lösa först?" />
-          <div className="mt-10 grid md:grid-cols-2 gap-5">
-            {SERVICE_ORDER.map((key) => {
-              const s = SERVICES[key];
-              return (
-                <a key={key} href={`/${city}/${key}`} className="block bg-surface rounded-[10px] border border-border p-6 sm:p-8 hover:border-primary/40 transition-colors group">
-                  <h3 className="font-heading font-600 text-[25px] text-heading group-hover:text-primary">{s.name}</h3>
-                  <p className="mt-4 text-[16px] leading-relaxed text-body">{s.intro}</p>
-                  <p className="mt-5 font-heading text-[21px] text-heading">{prices[key]} <span className="font-sans text-[13px] text-muted">exkl. moms</span></p>
-                  <p className="mt-2 text-[14px] leading-relaxed text-muted">{terms[key]}</p>
-                  <span className="inline-block mt-5 text-[15px] text-primary underline underline-offset-4">Se {s.name.toLowerCase()} i {c.name}</span>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <Sektion id="tjanster" rubrik="Vad vill ni lösa först?" ingress="Fast pris skriftligt innan jag börjar, för allt.">
+        <Celler
+          kolumner={2}
+          items={SERVICE_ORDER.map((key) => ({
+            ikon: IKON[key],
+            titel: SERVICES[key].name,
+            text: SERVICES[key].intro,
+            href: `/${city}/${key}`,
+            lank: `${SERVICES[key].label} i ${c.name}`,
+          }))}
+        />
+      </Sektion>
 
-      <section className="pb-14 sm:pb-20 px-5 sm:px-8">
-        <div className="max-w-[760px] mx-auto">
-          <SectionHeader badge={`Samarbete för ${c.name}`} title={data.deepHeading} />
-          {data.deepParagraphs.map((paragraph) => <p key={paragraph} className="mt-6 text-[17px] leading-[1.8] text-body">{paragraph}</p>)}
-          <h2 className="mt-9 font-heading font-600 text-[25px] text-heading">Från underlag till överenskommet arbete</h2>
-          <ol className="mt-5 list-decimal pl-5 space-y-3 text-[16px] leading-[1.8] text-body">
-            <li>Skicka din webbadress och beskriv vad kunden ska kunna göra.</li>
-            <li>Jag föreslår ett första steg med omfattning och pris.</li>
-            <li>Efter ditt ja gör jag arbetet och stämmer av det vi har kommit överens om.</li>
-          </ol>
-        </div>
-      </section>
+      <Sektion>
+        <Delad rubrik={data.deepHeading}>
+          <Text stycken={data.deepParagraphs} />
+        </Delad>
+      </Sektion>
+
+      <Sektion rubrik="Från underlag till överenskommet arbete">
+        <Celler items={STEG} />
+      </Sektion>
 
       <CityProof city={city} />
 
-      <section className="py-14 sm:py-20 px-5 sm:px-8 bg-surface-muted">
-        <div className="max-w-[760px] mx-auto">
-          <SectionHeader badge="Vanliga frågor" title={`Om samarbetet för ditt företag i ${c.name}.`} />
-          <div className="mt-8 divide-y divide-border">
-            {cityHubFaqs(city).map((faq) => (
-              <details key={faq.q} className="py-5">
-                <summary className="cursor-pointer font-heading font-600 text-[17px] text-heading">{faq.q}</summary>
-                <p className="mt-4 text-[16px] leading-[1.8] text-body">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Sektion>
+        <Delad rubrik="Vanliga frågor" ingress={`Om samarbetet för ditt företag i ${c.name}.`}>
+          <Fragor faqs={cityHubFaqs(city)} />
+        </Delad>
+      </Sektion>
 
-      <section className="section-gul py-14 sm:py-20 px-5 sm:px-8">
-        <div className="max-w-[760px] mx-auto">
-          <h2 className="font-heading font-600 text-[clamp(28px,4vw,42px)] text-heading">Berätta vad du vill förbättra.</h2>
-          <p className="mt-4 text-[17px] leading-relaxed text-body">Skicka din webbadress och en kort beskrivning. Jag återkommer med ett förslag på var vi kan börja.</p>
-          <a href="/kontakt" className="premium-btn mt-6">Skriv till Joel</a>
-          <a href="/hemsida-foretag" className="block mt-5 text-[15px] underline underline-offset-4 text-heading">Vill du ha en hemsida? Se designförslag och paket.</a>
-        </div>
-      </section>
-    </>
+      <Avslut
+        rubrik="Berätta vad du vill förbättra."
+        text="Skicka din webbadress och en kort beskrivning. Jag återkommer med ett förslag på var vi kan börja."
+        cta={{ href: "/kontakt", label: "Skriv till Joel" }}
+      />
+    </Sida>
   );
 }

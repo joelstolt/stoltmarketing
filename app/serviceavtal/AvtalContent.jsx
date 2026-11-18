@@ -101,7 +101,7 @@ export default function AvtalContent() {
 
           <Reveal delay={0.1}>
             <p className="mt-4 text-[16px] sm:text-[17px] leading-relaxed text-body max-w-[520px] mx-auto">
-              Förvaltning för en befintlig, större e-handelsplattform. Dessa nivåer är separata från hemsidepaketen Bas, Bredd och Spets på prissidan. Omfattning och villkor fastställs i det individuella avtalet.
+              Förvaltning för en befintlig, större e-handelsplattform. Dessa nivåer gäller bara förvaltning av e-handelsplattformar. Omfattning och villkor fastställs i det individuella avtalet.
             </p>
           </Reveal>
 

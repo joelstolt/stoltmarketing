@@ -254,7 +254,7 @@ export default function BContent() {
             </Link>
           </div>
           <p style={{ marginTop: 16, fontSize: 14, color: FAINT, position: "relative", zIndex: 3 }}>
-            495 kr/mån exkl moms. Första 30 dagarna gratis, ingen bindning.
+            Fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting.
           </p>
           <p className="b-proof" style={{ marginTop: 18, fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 500, letterSpacing: "0.04em", color: FAINT, position: "relative", zIndex: 3 }}>
             Joel Stolt installerar och hjälper dig komma igång.
@@ -404,7 +404,7 @@ export default function BContent() {
             <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(30px, 5.4vw, 66px)", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
               Rutan för förfrågningar
               <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14, marginTop: 10, letterSpacing: "0.02em" }}>
-                495 kr/mån exkl moms · 30 dagar gratis · ingen bindning
+                Fast pris innan jag börjar · första samtalet kostar ingenting
               </span>
             </span>
 
@@ -419,7 +419,7 @@ export default function BContent() {
               <span className="b-srv-title font-heading" style={{ fontWeight: 400, fontVariationSettings: '"opsz" 110', fontSize: "clamp(30px, 5.4vw, 66px)", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
                 Ny hemsida, byggd för att hittas
                 <span className="b-srv-desc" style={{ display: "block", fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14, marginTop: 10, letterSpacing: "0.02em" }}>
-                  0 kr start · från 1 190 kr/mån exkl moms · 12 månader, sedan månadsvis
+                  Fast pris innan jag börjar · första samtalet kostar ingenting
                 </span>
               </span>
 
@@ -464,7 +464,7 @@ export default function BContent() {
             </Link>
           </div>
           <p style={{ marginTop: 22, fontFamily: "var(--font-ui)", fontSize: 11.5, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(25,20,5,0.8)" }}>
-            495 kr/mån exkl moms · 30 dagar gratis · ingen bindning
+            Fast pris innan jag börjar · första samtalet kostar ingenting
           </p>
           <p style={{ marginTop: 18, fontSize: 14.5, color: "rgba(25,20,5,0.7)" }}>
             eller ring <a href={SITE.phoneHref} data-umami-event="cta-telefon" style={{ color: INK, fontWeight: 600 }}>{SITE.phone}</a>

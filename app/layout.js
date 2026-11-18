@@ -1,23 +1,13 @@
 import "./globals.css";
 import Script from "next/script";
-import { Fraunces, Archivo } from "next/font/google";
+import { Schibsted_Grotesk } from "next/font/google";
 
-/* Självhostade typsnitt via next/font: ingen renderblockerande CSS från Google,
-   bara de axlar som används (opsz + wght, kursiv på Fraunces). */
-const fraunces = Fraunces({
+/* Ny profil 2026-11-17: en grotesk för hela sajten, självhostad via next/font. */
+const grotesk = Schibsted_Grotesk({
   subsets: ["latin"],
   weight: "variable",
-  style: ["normal", "italic"],
-  axes: ["opsz"],
   display: "swap",
-  variable: "--font-fraunces",
-});
-const archivo = Archivo({
-  subsets: ["latin"],
-  weight: "variable",
-  style: ["normal"],
-  display: "swap",
-  variable: "--font-archivo",
+  variable: "--font-grotesk",
 });
 
 /* Preview-byggen (NEXT_PUBLIC_PREVIEW=1): noindex i metadata och ingen Umami. */
@@ -30,11 +20,11 @@ import { CITY_ORDER, CITIES, SERVICE_ORDER, SERVICES, SITE } from "@/lib/local/d
 export const metadata = {
   metadataBase: new URL("https://www.stoltmarketing.se"),
   title: {
-    default: "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
+    default: "Utvecklaren ni inte har | Stolt Marketing",
     template: "%s | Stolt Marketing",
   },
   description:
-    "En ruta på din hemsida: kunden skriver, du får ett SMS och ett förslag på svar. 495 kr/mån exkl moms, 30 dagar gratis. Hemsidor från 1 190 kr/mån, 0 kr i start.",
+    "Hemsidor och webbshoppar, synlighet i Google och AI-sök, annonser, CRM och automation åt företag och organisationer utan egen utvecklare. Svar nästa arbetsdag.",
   keywords: [
     "webbyrå hässleholm",
     "webbyrå skåne",
@@ -56,10 +46,10 @@ export const metadata = {
     locale: "sv_SE",
     url: "https://www.stoltmarketing.se",
     siteName: "Stolt Marketing",
-    title: "Förfrågningar och hemsidor för hantverksföretag | Stolt Marketing",
+    title: "Utvecklaren ni inte har | Stolt Marketing",
     description:
-      "En ruta på din hemsida: kunden skriver, du får ett SMS och ett förslag på svar. 495 kr/mån exkl moms, 30 dagar gratis. Hemsidor från 1 190 kr/mån, 0 kr i start.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing, webbyrå i Skåne" }],
+      "Hemsidor och webbshoppar, synlighet i Google och AI-sök, annonser, CRM och automation åt företag och organisationer utan egen utvecklare. Svar nästa arbetsdag.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -97,17 +87,18 @@ export default function RootLayout({ children }) {
     image: `${SITE.url}/og-image.png`,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE.url}/og-image.png`,
-      width: 1200,
-      height: 630,
+      url: `${SITE.url}/logo-512.png`,
+      width: 512,
+      height: 512,
     },
     description:
-      "Stolt Marketing i Hässleholm hjälper hantverksföretag att ta emot förfrågningar via hemsidan direkt i mobilen, och bygger hemsidor, SEO och Google Ads. Kunder i hela Sverige.",
+      "Stolt Marketing är Joel Stolts firma i Hässleholm. Han bygger och sköter sajter, webbshoppar, synlighet i Google och ChatGPT, annonser och egna system med AI-agent åt företag och organisationer utan egen utvecklare. Fast pris skriftligt innan arbetet börjar, svar nästa arbetsdag och akut felsökning samma arbetsdag. Kunder i hela Sverige.",
+    sameAs: ["https://www.google.com/maps?cid=8357467268890589983"],
     priceRange: SITE.priceRange,
     founder: {
       "@type": "Person",
       name: SITE.founder,
-      jobTitle: "Webbkonsult för hantverksföretag",
+      jobTitle: "Webbutvecklare och grundare",
       image: `${SITE.url}/joel-stolt.png`,
     },
     address: {
@@ -126,14 +117,35 @@ export default function RootLayout({ children }) {
       { "@type": "AdministrativeArea", name: "Skåne" },
       { "@type": "Country", name: "Sverige" },
     ],
-    knowsAbout: SERVICE_ORDER.map((s) => SERVICES[s].serviceType),
+    knowsAbout: [
+      ...SERVICE_ORDER.map((s) => SERVICES[s].serviceType),
+      "Webbshoppar och WooCommerce",
+      "Synlighet i ChatGPT och AI-sök",
+      "Google Ads",
+      "CRM och kundregister",
+      "AI-agenter för företag",
+      "Integration mellan system",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Det Stolt Marketing gör",
+      itemListElement: [
+        ["Fler hittar er: Google, ChatGPT och annonser", "/fler-hittar-er"],
+        ["Fler blir kunder: sajter, webbshoppar och bokning", "/fler-blir-kunder"],
+        ["Mindre handarbete: eget CRM, AI-agenter och system som pratar med varandra", "/mindre-handarbete"],
+        ["Akut hjälp när sajten, kassan eller formuläret slutat fungera", "/akut"],
+      ].map(([name, path]) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name, url: `${SITE.url}${path}`, provider: { "@id": orgId } },
+      })),
+    },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
       closes: "17:00",
     },
-    slogan: "Förfrågan via hemsidan, direkt till mobilen.",
+    slogan: "Utvecklaren ni inte har.",
   };
 
   const website = {
@@ -153,11 +165,11 @@ export default function RootLayout({ children }) {
   return (
     // suppressHydrationWarning: Skördeklockan nedan sätter data-dygn på <html> före
     // hydreringen, så attributet finns i DOM:en men inte i React-trädet (gäller bara html-taggen).
-    <html lang="sv" className={`${fraunces.variable} ${archivo.variable}`} suppressHydrationWarning>
+    <html lang="sv" className={grotesk.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         {/* Skördeklockan: fältglöden följer besökarens dygn (ren CSS-styrning,
             attributet sätts före första målningen så inget blinkar om). */}

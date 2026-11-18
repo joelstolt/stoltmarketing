@@ -56,7 +56,7 @@
       },
       {
         "type": "p",
-        "text": "En ruta kan samla in en fråga och hjälpa till med ett svarsförslag. Den löser inte automatiskt telefon, kalender och hela inkorgen. Min förfrågningsruta kostar 495 kr/mån exkl. moms, med 30 dagar gratis och ingen bindning. Kunden skriver på hemsidan, du får ett SMS och kan läsa, ändra och skicka svarsförslaget."
+        "text": "En agent kan skriva ett utkast till svar som du läser, ändrar och godkänner. Den löser inte automatiskt telefon, kalender och hela inkorgen. Ett flöde i taget får ett fast pris skriftligt efter en genomgång."
       },
       {
         "type": "p",
@@ -100,16 +100,16 @@
         "href": "/blogg/automatisera-med-ai"
       },
       {
-        "title": "Förfrågningsrutan och villkoren",
-        "href": "/forfragningar"
+        "title": "Mindre handarbete",
+        "href": "/mindre-handarbete"
       }
     ],
     "breadcrumbName": "AI för företag",
     "cta": {
-      "heading": "Se hur förfrågningsrutan fungerar",
-      "text": "Om du vill samla hemsidans förfrågningar och få ett svarsförslag finns pris, provperiod och användningsgränser på produktsidan.",
-      "label": "Se rutan och villkoren",
-      "href": "/forfragningar"
+      "heading": "Börja med ett flöde",
+      "text": "Berätta vad som tar tid idag. Jag föreslår ett första flöde med fast pris efter en genomgång.",
+      "label": "Se Mindre handarbete",
+      "href": "/mindre-handarbete"
     }
   },
   {
@@ -173,7 +173,7 @@
       },
       {
         "type": "p",
-        "text": "Min förfrågningsruta är ett konkret kontaktstöd med eget pris och villkor. Den samlar förfrågan och ger ett svarsförslag som du godkänner. Läs produktsidan om du söker just det flödet. Det är en annan sak än att koppla AI till hela företagets inkorg eller kalender."
+        "text": "Utkast till svar som du godkänner är ett konkret stöd för ett enskilt flöde, med eget fast pris efter en genomgång. Se Mindre handarbete om du söker just det. Det är en annan sak än att koppla AI till hela företagets inkorg eller kalender."
       },
       {
         "type": "h2",
@@ -210,8 +210,8 @@
         "href": "/blogg/automatisera-med-ai"
       },
       {
-        "title": "Förfrågningsrutan och villkoren",
-        "href": "/forfragningar"
+        "title": "Mindre handarbete",
+        "href": "/mindre-handarbete"
       }
     ],
     "breadcrumbName": "12 användningar av AI att prova i ett litet företag",
@@ -305,7 +305,7 @@
       },
       {
         "type": "p",
-        "text": "En AI-chatt kan besvara vissa frågor utifrån verifierat innehåll. Min standardruta samlar dessutom förfrågan, ger SMS och ett svarsförslag som du godkänner. Den bokar inte din kalender och bevakar inte din vanliga inkorg."
+        "text": "En AI-chatt kan besvara vissa frågor utifrån verifierat innehåll. Ett utkastflöde ger dig i stället ett svarsförslag som du godkänner. Bokning och inkorg kräver en separat koppling mellan systemen."
       },
       {
         "type": "p",
@@ -375,7 +375,7 @@
       },
       {
         "type": "p",
-        "text": "En bokningslänk kan visa tider och skicka bekräftelser enligt regler utan AI. Kontrollera kalender, buffertar, avbokning och dubbelbokning. Det är en annan leverans än min standardruta för förfrågningar."
+        "text": "En bokningslänk kan visa tider och skicka bekräftelser enligt regler utan AI. Kontrollera kalender, buffertar, avbokning och dubbelbokning. Det är en annan leverans än ett flöde som skriver utkast till svar."
       },
       {
         "type": "p",
@@ -387,7 +387,7 @@
       },
       {
         "type": "p",
-        "text": "Ett möjligt specialflöde kan koppla flera delar, men varje integration behöver eget test och reservväg. Följande är ett illustrativt upplägg, inte funktioner som automatiskt ingår i standardrutan:"
+        "text": "Ett möjligt specialflöde kan koppla flera delar, men varje integration behöver eget test och reservväg. Följande är ett illustrativt upplägg, inte funktioner som automatiskt ingår:"
       },
       {
         "type": "p",
@@ -542,17 +542,17 @@
       },
       {
         "type": "h2",
-        "text": "Standardruta eller specialbygge?"
+        "text": "Färdig lösning eller specialbygge?"
       },
       {
         "type": "p",
-        "text": "Förfrågningsrutan kostar 495 kr/mån exkl. moms, med 30 dagar gratis och ingen bindning. Kalender, vanlig inkorg och egna affärssystem ingår inte. Om du behöver koppla fler system behöver jag först gå igenom process, data och ansvar och beskriva ett separat upplägg."
+        "text": "Ett flöde i taget får ett fast pris skriftligt efter en genomgång. Kalender, vanlig inkorg och egna affärssystem ingår inte. Om du behöver koppla fler system behöver jag först gå igenom process, data och ansvar och beskriva ett separat upplägg."
       }
     ],
     "related": [
       {
-        "title": "Standardrutan och användningsgränser",
-        "href": "/forfragningar"
+        "title": "Mindre handarbete",
+        "href": "/mindre-handarbete"
       },
       {
         "title": "Anpassad AI och automation",
@@ -868,35 +868,31 @@
   },
   {
     "slug": "chatbot-for-foretag",
-    "h1": "Chatbot för företag: vad rutan gör och vad den kostar",
-    "title": "Chatbot för företag: vad rutan gör och vad den kostar",
-    "description": "Jämför en AI-chatbot med min förfrågningsruta för 495 kr/mån. Se flöde, gränser, användning och kalkyl med täckningsbidrag.",
+    "h1": "Chatbot för företag: vad den gör och vad den inte gör",
+    "title": "Chatbot för företag: vad den gör och vad den inte gör",
+    "description": "Jämför en AI-chatbot med utkast som du godkänner. Se flöde, gränser och kalkyl med täckningsbidrag.",
     "category": "AI",
     "publishedDate": "2026-07-23",
     "updatedDate": "2026-10-04",
-    "summary": "Min förfrågningsruta samlar kundens fråga på hemsidan, aviserar dig med SMS och ger ett svarsförslag som du godkänner. Den kostar 495 kr/mån exkl. moms, med 30 dagar gratis och ingen bindning.",
+    "summary": "En chatbot svarar själv på frågor, medan en agent som skriver utkast ger dig något att läsa, ändra och godkänna. Här är skillnaderna, gränserna och hur du räknar på marginalen.",
     "sources": [
       {
-        "title": "Förfrågningsrutan: aktuellt erbjudande",
-        "href": "/forfragningar"
+        "title": "Mindre handarbete",
+        "href": "/mindre-handarbete"
       }
     ],
     "blocks": [
       {
         "type": "lead",
-        "text": "En kund kan vilja fråga något efter att du slutat arbeta för dagen. En ruta på hemsidan kan ge en första väg in. Det betyder inte att den ska lova en ledig tid eller ett pris den inte vet. Det är viktigt att skilja mellan en generell AI-chatbot, min standardruta och ett specialbyggt flöde."
+        "text": "En kund kan vilja fråga något efter att du slutat arbeta för dagen. En chatt eller ett kontaktflöde på hemsidan kan ge en första väg in. Det betyder inte att den ska lova en ledig tid eller ett pris den inte vet. Det är viktigt att skilja mellan en generell AI-chatbot och ett flöde som skriver utkast åt dig."
       },
       {
         "type": "h2",
-        "text": "Förfrågan, chatt och svar är olika saker"
+        "text": "Förfrågan, chatt och utkast är olika saker"
       },
       {
         "type": "p",
-        "text": "I min förfrågningsruta kan kunden skriva ett meddelande, be att bli uppringd eller chatta. Du får ett SMS med kontaktuppgifter och början på meddelandet. Om kunden lämnar mejladress skickas även en bekräftelse på att förfrågan kommit fram."
-      },
-      {
-        "type": "p",
-        "text": "För en förfrågan skriver AI ett svarsförslag. Du läser, ändrar och skickar. Inget sådant svar går ut i ditt namn utan ditt godkännande. Chatten är ett separat läge: den kan själv svara på frågor utifrån din hemsida och anger att den är AI. Det är alltså viktigt att inte beskriva alla dessa flöden som samma sorts autosvar."
+        "text": "En förfrågan är ett meddelande som du själv svarar på. En chatt kan svara direkt utifrån din hemsida och bör tala om att den är AI. Ett utkast är ett svarsförslag som en agent skriver och som du läser, ändrar och godkänner innan något går ut i ditt namn. Beskriv dem inte som samma sorts autosvar."
       },
       {
         "type": "h2",
@@ -904,7 +900,7 @@
       },
       {
         "type": "p",
-        "text": "En besökare frågar på kvällen om du målar fönster i Kristianstad. Ett bra första underlag kan vara ort, antal fönster och önskad tid. En förfrågan samlas in och du kan senare svara om omfattning och tillgänglighet. Det är ett exempel på användning, inte ett verifierat kundresultat eller ett löfte om en extra affär."
+        "text": "En besökare frågar på kvällen om du målar fönster i Kristianstad. Ett bra första underlag kan vara ort, antal fönster och önskad tid. Förfrågan samlas in och du kan senare svara om omfattning och tillgänglighet. Det är ett exempel på användning, inte ett verifierat kundresultat eller ett löfte om en extra affär."
       },
       {
         "type": "p",
@@ -912,33 +908,17 @@
       },
       {
         "type": "h2",
-        "text": "Pris och användningsgränser"
-      },
-      {
-        "type": "p",
-        "text": "Rutan kostar 495 kr/mån exkl. moms. Starten kostar 0 kr och jag installerar. De första 30 dagarna är gratis och det finns ingen bindning. Uppsägning sker med mejl enligt produktsidans upplägg."
-      },
-      {
-        "type": "p",
-        "text": "I månaden ingår upp till 30 uppringningar, 150 samtalsminuter, 100 SMS och 100 chattar. Om användningen inte ryms hör jag av mig innan något kostar mer. Se den aktuella produktsidan för villkoren innan du börjar."
-      },
-      {
-        "type": "h2",
-        "text": "Vad som ligger utanför standardrutan"
+        "text": "Det här ingår inte av sig självt"
       },
       {
         "type": "checklist",
         "items": [
-          "Samtal till ditt vanliga telefonnummer besvaras inte av rutan.",
-          "Rutan bevakar inte mejl som skickas direkt till din vanliga adress.",
-          "Svar på förfrågningar skickas inte automatiskt i ditt namn.",
-          "Bokning i din kalender ingår inte.",
-          "Specialintegrationer och egna processer behöver ett separat upplägg."
+          "Samtal till ditt vanliga telefonnummer besvaras inte av en chatt.",
+          "Mejl som skickas direkt till din vanliga adress bevakas inte.",
+          "Svar skickas inte automatiskt i ditt namn utan ditt godkännande.",
+          "Bokning i din kalender kräver en koppling mellan systemen.",
+          "Egna processer behöver ett separat upplägg."
         ]
-      },
-      {
-        "type": "p",
-        "text": "Kunden kan be att bli uppringd från sajten, men det är inte samma sak som en AI-telefonsvarare för ditt befintliga nummer. Beskriv den skillnaden även för medarbetare som ska använda tjänsten."
       },
       {
         "type": "h2",
@@ -946,11 +926,11 @@
       },
       {
         "type": "p",
-        "text": "Anta i ett rent räkneexempel att ett extra uppdrag har 1 500 kr i täckningsbidrag efter leveranskostnader. Då finns utrymme för 495 kr i månadsavgift och återstående bidrag till andra kostnader. Om uppdragets bidrag däremot är 300 kr täcker ett enda extra uppdrag inte avgiften. Om ingen affär tillkommer finns ingen sådan ekonomisk effekt."
+        "text": "Anta i ett rent räkneexempel att ett extra uppdrag har 1 500 kr i täckningsbidrag efter leveranskostnader. Då finns utrymme för en månadsavgift och återstående bidrag till andra kostnader. Om uppdragets bidrag däremot är mycket lågt täcker ett enda extra uppdrag inte avgiften. Om ingen affär tillkommer finns ingen sådan ekonomisk effekt."
       },
       {
         "type": "p",
-        "text": "Rutan utlovar inte fler jobb. Följ först om förfrågningar kommer fram, om du kan svara och om kontakterna är relevanta. Jämför sedan svarstid, offerter och affärer över tydliga perioder. En extra registrerad chatt är inte automatiskt en ny kund."
+        "text": "Ingen lösning utlovar fler jobb. Följ först om förfrågningar kommer fram, om du kan svara och om kontakterna är relevanta. Jämför sedan svarstid, offerter och affärer över tydliga perioder. En extra registrerad chatt är inte automatiskt en ny kund."
       },
       {
         "type": "h2",
@@ -958,7 +938,7 @@
       },
       {
         "type": "p",
-        "text": "Rutan behöver korrekta tjänsteuppgifter och tydliga avgränsningar. Avtalet för standardprodukten tecknas med Invox AB och du godkänner personuppgiftsbiträdesavtalet före aktivering. En del bearbetning sker hos leverantörer i USA enligt produktinformationen. Läs villkoren och datahanteringen för ditt företag; beskriv inte tjänsten som att all behandling sker i EU."
+        "text": "En chatt behöver korrekta tjänsteuppgifter och tydliga avgränsningar. Kontrollera var uppgifterna behandlas och vilka leverantörer som används, och beskriv inte en tjänst som att all behandling sker i EU om det inte stämmer."
       },
       {
         "type": "h2",
@@ -968,17 +948,17 @@
         "type": "checklist",
         "items": [
           "Välj vanliga frågor som sidan kan besvara med verifierade uppgifter.",
-          "Testa en förfrågan hela vägen till SMS och svarsförslag.",
+          "Testa en förfrågan hela vägen till ett utkast som du granskar.",
           "Kontrollera gränser och överlämning vid osäkra frågor.",
           "Behåll telefon och annan kontaktväg tillgängliga.",
-          "Följ mottagna kontakter och din egen hantering under provperioden."
+          "Följ mottagna kontakter och din egen hantering under en provperiod."
         ]
       }
     ],
     "related": [
       {
-        "title": "Se rutan, omfattning och villkor",
-        "href": "/forfragningar"
+        "title": "Mindre handarbete",
+        "href": "/mindre-handarbete"
       },
       {
         "title": "AI som stöd i företaget",
@@ -991,10 +971,10 @@
     ],
     "breadcrumbName": "Chatbot för företag",
     "cta": {
-      "heading": "Se hur förfrågningsrutan fungerar",
-      "text": "Om du vill samla hemsidans förfrågningar och få ett svarsförslag finns pris, provperiod och användningsgränser på produktsidan.",
-      "label": "Se rutan och villkoren",
-      "href": "/forfragningar"
+      "heading": "Börja med ett flöde",
+      "text": "Berätta vad som tar tid idag. Jag föreslår ett första flöde med fast pris efter en genomgång.",
+      "label": "Se Mindre handarbete",
+      "href": "/mindre-handarbete"
     }
   },
   {
@@ -1270,9 +1250,9 @@
     "breadcrumbName": "Lansera hemsida",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -1385,9 +1365,9 @@
     "breadcrumbName": "Innehållsstrategi för småföretag",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -1840,9 +1820,9 @@
     "breadcrumbName": "E-postmarknadsföring",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -2019,7 +1999,7 @@
       },
       {
         "type": "p",
-        "text": "Du kan fråga om rådgivning eller en engångsgenomgång. Avtal och pris bestäms för just den leveransen; det är inte samma erbjudande som ett löpande hemsidepaket."
+        "text": "Du kan fråga om rådgivning eller en engångsgenomgång. Avtal och pris bestäms för just den leveransen; det är inte samma erbjudande som löpande hjälp med fast månadspris."
       },
       {
         "type": "p",
@@ -2111,7 +2091,7 @@
       },
       {
         "type": "p",
-        "text": "I mitt hemsidepaket Spets kostar helheten 2 990 kr/mån exkl. moms och Google Ads-arbetet ingår; mediebudgeten tillkommer. Hemsidans avtalsperiod är 12 månader, sedan månadsvis. Se aktuellt paket och tjänstesida för omfattningen. En separat Ads-offert behöver bedömas som ett eget upplägg."
+        "text": "Google Ads-arbetet får ett fast pris skriftligt innan jag börjar, och löpande skötsel har ett fast månadspris som du vet i förväg. Mediebudgeten tillkommer. Se tjänstesidan för omfattningen. En separat Ads-offert behöver bedömas som ett eget upplägg."
       }
     ],
     "related": [
@@ -2124,8 +2104,8 @@
         "href": "/blogg/vad-kostar-google-ads"
       },
       {
-        "title": "Paket och avtalsvillkor",
-        "href": "/priser"
+        "title": "Så funkar det",
+        "href": "/sa-funkar-det"
       }
     ],
     "breadcrumbName": "Google Ads-byrå eller själv",
@@ -2688,9 +2668,9 @@
     "breadcrumbName": "Hemsidan får inga kunder? Diagnos i sju steg",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -2800,9 +2780,9 @@
     "breadcrumbName": "Fem delar av en hemsida som hjälper kunden att välja",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -3058,9 +3038,9 @@
     "breadcrumbName": "Konverteringsoptimering",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -3233,7 +3213,7 @@
       },
       {
         "type": "p",
-        "text": "Förklara avtalsperiod, pris, omfattning och avslut nära beslutet. Gratis genomgång, ingen bindning eller garanti får bara anges när det faktiskt gäller just produkten. Hemsidan och förfrågningsrutan har olika villkor."
+        "text": "Förklara avtalsperiod, pris, omfattning och avslut nära beslutet. Gratis genomgång, ingen bindning eller garanti får bara anges när det faktiskt gäller just produkten. Hemsidan och automation har olika villkor."
       },
       {
         "type": "h2",
@@ -3326,7 +3306,7 @@
       },
       {
         "type": "p",
-        "text": "På /lp/hemsida-foretag är uppgiften att få ett gratis designförslag för en företagssajt. Sidan beskriver ett första förslag och har en kontaktväg för det erbjudandet. Det ska jämföras med omfattning och villkor för hemsidepaketen, inte med provperioden för förfrågningsrutan."
+        "text": "På /lp/hemsida-foretag är uppgiften att få ett gratis designförslag för en företagssajt. Sidan beskriver ett första förslag och har en kontaktväg för det erbjudandet. Det ska jämföras med omfattning och villkor för hemsidan, inte med en provperiod för en annan tjänst."
       },
       {
         "type": "cards",
@@ -3341,7 +3321,7 @@
           },
           {
             "title": "Pris och villkor",
-            "text": "Bas 1 190 kr/mån exkl. moms har högst fem sidor och 12 månaders avtalstid, sedan månadsvis. De villkoren behöver vara begripliga nära erbjudandet."
+            "text": "Priset och villkoren behöver vara begripliga nära erbjudandet: vad som är fast pris, vad som ingår och hur avslut går till."
           },
           {
             "title": "Bevis och mätning",
@@ -3371,9 +3351,9 @@
     "breadcrumbName": "Landningssida",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -3778,9 +3758,9 @@
     "breadcrumbName": "Marknadsföring för småföretag",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -5107,7 +5087,7 @@
       },
       {
         "type": "p",
-        "text": "Arvode kan vara fast, per timme eller kopplat till mediebudget. Be om konkret arbete och åtkomst, inte bara en prisetikett. I mitt hemsidepaket Spets på 2 990 kr/mån exkl. moms ingår Google Ads-arbete. Mediebudgeten tillkommer separat. Hemsidan har 12 månaders avtalstid, sedan månadsvis. Det är ett paket med egen omfattning, inte ett marknadsgenomsnitt för Ads-arvode."
+        "text": "Arvode kan vara fast, per timme eller kopplat till mediebudget. Be om konkret arbete och åtkomst, inte bara en prisetikett. Hos mig får Google Ads-arbetet ett fast pris skriftligt innan jag börjar, och mediebudgeten tillkommer separat. Det är ett upplägg med egen omfattning, inte ett marknadsgenomsnitt för Ads-arvode."
       },
       {
         "type": "h2",
@@ -5138,8 +5118,8 @@
         "href": "/tjanster/google-ads"
       },
       {
-        "title": "Paket, omfattning och villkor",
-        "href": "/priser"
+        "title": "Så funkar det",
+        "href": "/sa-funkar-det"
       }
     ],
     "breadcrumbName": "Vad kostar Google Ads? Räkna från klick till täckningsbidrag",
@@ -5165,8 +5145,8 @@
         "href": "https://stripe.com/se/pricing"
       },
       {
-        "title": "Mina aktuella priser",
-        "href": "/priser"
+        "title": "Så funkar det",
+        "href": "/sa-funkar-det"
       },
       {
         "title": "E-handelstjänstens omfattning",
@@ -5378,15 +5358,15 @@
       },
       {
         "type": "p",
-        "text": "Mindre webbshop som tillägg"
+        "text": "Mindre webbshop"
       },
       {
         "type": "p",
-        "text": "Hemsidans paket plus 800 kr/mån exkl. moms."
+        "text": "Fast pris skriftligt innan jag börjar, efter ett första samtal som inte kostar något."
       },
       {
         "type": "p",
-        "text": "Med Bas blir paket och tillägg 1 990 kr/mån, alltså 23 880 kr över första tolv månaderna och 71 640 kr över 36 månader vid oförändrat pris. Bas har högst fem sidor. Produkter, integrationer och innehållsarbete behöver specificeras separat. Hemsidans villkor är 12 månader, sedan månadsvis."
+        "text": "Produkter, integrationer och innehållsarbete behöver specificeras separat innan priset fastställs."
       },
       {
         "type": "p",
@@ -5394,7 +5374,7 @@
       },
       {
         "type": "p",
-        "text": "Publicerade byggnivåer 89 000 eller 149 000 kr exkl. moms, med drift 2 495 kr/mån."
+        "text": "Fast pris skriftligt innan jag börjar. Löpande drift har ett fast månadspris som du vet i förväg."
       },
       {
         "type": "p",
@@ -5775,9 +5755,9 @@
     "breadcrumbName": "Välja domännamn",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -5869,7 +5849,7 @@
       },
       {
         "type": "p",
-        "text": "Jämför totalkostnad över avtalsperioden, vad som ingår och vad som händer vid uppsägning. En tolvmånadersperiod är inte i sig ett tecken på dålig leverans, men du behöver förstå åtagandet. Mina hemsidepaket har 12 månader, sedan månadsvis. Spets kostar 2 990 kr/mån exkl. moms och innehåller även Google Ads-arbete med separat mediebudget. Se prislistan för hela paketet; för separat SEO-arbete behöver omfattning avtalas."
+        "text": "Jämför totalkostnad över avtalsperioden, vad som ingår och vad som händer vid uppsägning. En bindningstid är inte i sig ett tecken på dålig leverans, men du behöver förstå åtagandet. Hos mig får du ett fast pris skriftligt innan jag börjar, och löpande hjälp har ett fast månadspris som du vet i förväg. För separat SEO-arbete behöver omfattning avtalas."
       },
       {
         "type": "checklist",
@@ -5892,8 +5872,8 @@
         "href": "/blogg/seo-analys-sjalv"
       },
       {
-        "title": "Mina priser och villkor",
-        "href": "/priser"
+        "title": "Så funkar det",
+        "href": "/sa-funkar-det"
       }
     ],
     "breadcrumbName": "Välja SEO-byrå",
@@ -6016,9 +5996,9 @@
     "breadcrumbName": "Snabb hemsida",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -6137,9 +6117,9 @@
     "breadcrumbName": "Webbdesign 2026",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -6195,15 +6175,15 @@
       },
       {
         "type": "h2",
-        "text": "Mina hemsidepaket som jämförelsepunkt"
+        "text": "Hur jag prissätter som jämförelsepunkt"
       },
       {
         "type": "p",
-        "text": "Bas kostar 1 190 kr/mån exkl. moms och omfattar högst fem sidor. Bredd kostar 1 990 kr/mån och Spets 2 990 kr/mån. För hemsidor gäller 12 månader, därefter månadsvis. Google Ads-arbete ingår i Spets; annonsbudgeten betalas separat. Se den aktuella prislistan för paketens fulla innehåll."
+        "text": "Hos mig får du ett fast pris skriftligt innan jag börjar, efter ett första samtal som inte kostar något. Löpande hjälp har ett fast månadspris som du vet i förväg. Annonsbudget betalas separat till Google."
       },
       {
         "type": "p",
-        "text": "Bas blir 14 280 kr över de första tolv månaderna och 42 840 kr över 36 månader om priset och upplägget är oförändrade, före tillägg. Bredd blir 23 880 respektive 71 640 kr och Spets 35 880 respektive 107 640 kr. De summorna är ett jämförelseunderlag, inte ett löfte om att sajten betalar tillbaka sig på viss tid."
+        "text": "Räkna på totalkostnaden över tid: engångspris för bygget plus löpande månadspris gånger antal månader. Siffrorna är ett jämförelseunderlag, inte ett löfte om att sajten betalar tillbaka sig på viss tid."
       },
       {
         "type": "h2",
@@ -6238,8 +6218,8 @@
         "href": "/blogg/wordpress-vs-nextjs"
       },
       {
-        "title": "Hemsidans paket och villkor",
-        "href": "/priser"
+        "title": "Så funkar det",
+        "href": "/sa-funkar-det"
       },
       {
         "title": "Checklista före lansering",
@@ -6249,9 +6229,9 @@
     "breadcrumbName": "Bygga hemsida själv eller anlita hjälp? Jämför hela arbetet",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   },
   {
@@ -6351,16 +6331,16 @@
         "href": "/blogg/wordpress-eller-webbyra"
       },
       {
-        "title": "Jämför hemsidepaketen",
-        "href": "/priser"
+        "title": "Så funkar det",
+        "href": "/sa-funkar-det"
       }
     ],
     "breadcrumbName": "WordPress eller Next.js",
     "cta": {
       "heading": "Vill du ha hjälp med hemsidan?",
-      "text": "Se paketens omfattning och villkor innan du bestämmer hur mycket hjälp du behöver.",
-      "label": "Jämför hemsidepaketen",
-      "href": "/priser"
+      "text": "Se hur det går till: fast pris innan jag börjar, och första samtalet kostar ingenting.",
+      "label": "Så funkar det",
+      "href": "/sa-funkar-det"
     }
   }
 ]

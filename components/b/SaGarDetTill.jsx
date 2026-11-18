@@ -24,12 +24,12 @@ const steg = [
   {
     dag: "Dag 1 till 30",
     titel: "Förfrågningarna kommer till dig.",
-    text: "Ett SMS när något kommer in och ett förslag på svar att skicka. Månaden kostar ingenting.",
+    text: "Ett SMS när något kommer in och ett förslag på svar att skicka. Du vet kostnaden i förväg.",
   },
   {
     dag: "Dag 30",
     titel: "Du bestämmer.",
-    text: "Vi tittar tillsammans på vad som kommit in. Vill du fortsätta är det 495 kr i månaden. Vill du inte tar jag bort rutan, och det har inte kostat något.",
+    text: "Vi tittar tillsammans på vad som kommit in. Vill du fortsätta har rutan ett fast månadspris som du vet i förväg. Vill du inte tar jag bort rutan.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function SaGarDetTill() {
       </div>
 
       <p style={{ margin: "34px 0 0", fontFamily: "var(--font-ui)", fontSize: 12.5, letterSpacing: "0.06em", color: DIM }}>
-        30 dagar gratis. Därefter 495 kr/mån exkl moms om du vill fortsätta. Ingen bindning.
+        Fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting.
       </p>
     </section>
   );

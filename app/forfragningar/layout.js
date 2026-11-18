@@ -8,13 +8,14 @@ const breadcrumb = {
 };
 
 const beskrivning =
-  "En ruta på din hemsida. Kunden skriver, du får ett SMS och ett förslag på svar som du skickar när du hinner. 495 kr/mån exkl moms, 30 dagar gratis, ingen bindning.";
+  "En ruta på din hemsida. Kunden skriver, du får ett SMS och ett förslag på svar som du skickar när du hinner. Fast pris skriftligt innan jag börjar, och första samtalet kostar ingenting.";
 
 export const metadata = {
   title: "Förfrågningar via hemsidan, direkt till mobilen",
+  robots: { index: false, follow: false },
   description: beskrivning,
   alternates: { canonical: "https://www.stoltmarketing.se/forfragningar" },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     title: "Förfrågningar via hemsidan, direkt till mobilen | Stolt Marketing",
     description: beskrivning,
     url: "https://www.stoltmarketing.se/forfragningar",

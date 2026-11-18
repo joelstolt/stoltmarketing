@@ -14,7 +14,7 @@ export const metadata = {
   alternates: {
     canonical: "https://www.stoltmarketing.se/om",
   },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     title: "Om Joel Stolt: webbkonsult för hantverksföretag i Hässleholm",
     description: "10+ års erfarenhet. Webbutveckling, SEO, AI. Baserad i Hässleholm, jobbar i hela Sverige.",
     url: "https://www.stoltmarketing.se/om",
