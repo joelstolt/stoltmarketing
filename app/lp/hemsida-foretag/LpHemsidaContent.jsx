@@ -404,12 +404,6 @@ export default function LpHemsidaContent() {
                     role: "recension på Google",
                     google: true,
                   },
-                  {
-                    quote:
-                      "Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
-                    name: "Robin, RBN Utbildning",
-                    role: "Ny webb, API-integration och SEO",
-                  },
                 ].map((t) => (
                   <blockquote
                     key={t.name}

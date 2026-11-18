@@ -15,14 +15,6 @@ const testimonials = [
     color: "#F2C230",
   },
   {
-    name: "Robin, RBN Utbildning",
-    role: "Ny webb, API-integration & SEO",
-    quote:
-      "Vi behövde en helhetsleverans, ny grafisk profil, ny sajt och integration mot våra system. Joel levererade allt under en och samma kontakt. Proffsigt, strukturerat och med en tydlig plan hela vägen.",
-    initials: "RO",
-    color: "#8CA05A",
-  },
-  {
     name: "Susanne, Förskolan Harpan",
     role: "Ny grafisk profil & webb",
     quote:
