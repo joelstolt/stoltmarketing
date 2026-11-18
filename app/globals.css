@@ -62,6 +62,23 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .article-body .article-box { padding: 22px; border: 1px solid var(--color-border); background: var(--color-surface); border-radius: 12px; margin: 24px 0; }
 .article-body li { margin-block: 8px; }
 .article-body input[type="checkbox"] { accent-color: var(--color-accent); width: 20px; height: 20px; flex: 0 0 auto; margin-top: 6px; }
+/* Kontaktwidgeten (Svarslagret, Shadow DOM) tar typsnitt, färger och radier härifrån.
+   Utseendet flat väljs med data-look i components/ContactWidget.jsx. */
+svarslagret-widget {
+  --sl-font: var(--font-grotesk), system-ui, sans-serif;
+  --sl-bg: var(--color-surface);
+  --sl-field: var(--color-base);
+  --sl-surface: var(--color-primary-light);
+  --sl-line: var(--color-border);
+  --sl-ink: var(--color-heading);
+  --sl-mute: var(--color-muted);
+  --sl-button: var(--color-primary);
+  --sl-button-ink: var(--color-base);
+  --sl-signal: var(--color-accent);
+  --sl-danger: #fca5a5;
+  --sl-radius: 12px;
+  --sl-radius-control: 6px;
+}
 @media print {
   header, footer, .skip-link, .article-actions, .article-cta, svarslagret-widget { display: none !important; }
   body, main, article, section, .article-box { background: white !important; color: black !important; }

@@ -9,11 +9,15 @@ export default function ContactWidget() {
     if (document.getElementById("stolt-contact-widget")) return;
     const script = document.createElement("script");
     script.id = "stolt-contact-widget";
-    script.src = "https://widget.stoltmarketing.se/widget.js";
+    // NEXT_PUBLIC_WIDGET_SRC: en förhandsversion av widgeten i förhandsbyggen. Annars den skarpa.
+    script.src = process.env.NEXT_PUBLIC_WIDGET_SRC || "https://widget.stoltmarketing.se/widget.js";
     script.defer = true;
     script.setAttribute("data-client", "stoltmarketing");
     script.setAttribute("data-load", "click");
     script.setAttribute("data-open-policy", "manual");
+    // Sajtens profil: neutral panel med färgerna ur globals.css (svarslagret-widget) och knapp med text.
+    script.setAttribute("data-look", "flat");
+    script.setAttribute("data-label", "Kontakta Joel");
     document.body.appendChild(script);
   }, []);
   useEffect(() => {
