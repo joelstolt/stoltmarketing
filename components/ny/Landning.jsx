@@ -35,10 +35,17 @@ export const BEVIS = {
 
 export const STEG = [
   { titel: "1. Samtal", text: "Ni berättar vad som tar tid eller vad som ska hänga ihop. Första samtalet kostar ingenting." },
-  { titel: "2. Fast pris", text: "Jag går igenom det ni har och ger en plan med fast pris, skriftligt, innan jag börjar." },
-  { titel: "3. Bygget", text: "Ett flöde i taget. Ni testar och säger till. Ni äger det som byggs." },
+  { titel: "2. Klickbar demo", text: "Efter samtalet visar jag en klickbar demo av det vi pratat om. Ni klickar runt i den innan ni bestämmer er. Helt riskfritt för er." },
+  { titel: "3. Fast pris och bygget", text: "Ni får ett fast pris skriftligt innan jag börjar. Sedan bygger jag, ett flöde i taget, och ni äger det som byggs." },
   { titel: "4. Drift", text: "Vill ni kan jag sköta det efteråt till fast månadspris, med svar nästa arbetsdag." },
 ];
+
+/* Joels USP (2026-11-18): efter första samtalet får kunden alltid en klickbar demo,
+   helt riskfritt. Gäller CRM, affärssystem, sajt och webbshop. */
+export const FRAGA_DEMO = {
+  q: "Får vi se något innan vi bestämmer oss?",
+  a: "Ja. Efter första samtalet visar jag en klickbar demo av det vi pratat om, oavsett om det är ett CRM, ett affärssystem, en sajt eller en webbshop. Ni klickar runt i den innan ni bestämmer er. Helt riskfritt för er.",
+};
 
 function FlodesDemo({ titel, steg, fot }) {
   return (
@@ -166,7 +173,7 @@ export default function Landning({ d }) {
               <h1 className={`${k.h1} ${l.h1}`}>{d.h1}</h1>
               <p className={k.lead}>{d.lead}</p>
               <ul className={k.points}>
-                {["Fast pris skriftligt innan jag börjar", "Svar nästa arbetsdag", "Första samtalet kostar ingenting"].map((p) => (
+                {["Klickbar demo innan ni bestämmer er", "Fast pris skriftligt innan jag börjar", "Svar nästa arbetsdag", "Första samtalet kostar ingenting"].map((p) => (
                   <li key={p}>
                     <Check size={15} strokeWidth={2.4} aria-hidden="true" />
                     {p}
@@ -220,7 +227,7 @@ export default function Landning({ d }) {
           </Sektion>
         )}
 
-        <Sektion rubrik="Så går det till" ingress="Inga timmar som rinner iväg. Ni vet priset innan jag börjar.">
+        <Sektion rubrik="Så går det till" ingress="Ni ser en klickbar demo och vet priset innan jag börjar. Inga timmar som rinner iväg.">
           <Celler kolumner={4} items={STEG} />
         </Sektion>
 
@@ -230,7 +237,7 @@ export default function Landning({ d }) {
 
         <Sektion>
           <Delad rubrik="Vanliga frågor">
-            <Fragor faqs={d.faq} />
+            <Fragor faqs={[FRAGA_DEMO, ...d.faq]} />
           </Delad>
         </Sektion>
 
