@@ -13,11 +13,12 @@ const SA_JOBBAR_JAG = [
   "Fast pris innan jag börjar, skriftligt. Inga timmar som rinner iväg.",
   "Löpande hjälp har ett fast månadspris och en rapport första vardagen i månaden.",
   "Första samtalet kostar ingenting.",
+  "Efter första samtalet får ni en klickbar demo, helt riskfritt.",
 ];
 
 const STEG = [
   ["Samtal", "Ni berättar vad ni behöver eller vad som krånglar"],
-  ["Genomgång", "Plan och fast pris för system och kopplingar"],
+  ["Klickbar demo", "Ni klickar i den innan ni bestämmer er, helt riskfritt"],
   ["Bygget", "Fast pris, skriftligt, innan jag börjar"],
   ["Löpande", "Drift eller reserverad tid varje månad"],
 ];

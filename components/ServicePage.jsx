@@ -13,6 +13,7 @@ import {
   sidaStil as k,
 } from "@/components/ny/Sida";
 import Link from "next/link";
+import { DEMO_TJANSTER } from "@/lib/usp";
 
 /* Tjänstesidorna (/tjanster/*), ny profil v2 2026-11-17. Samma data som förut
    (lib/services-extra.js); FAQ-texten är oförändrad så att FAQ-datan i layouten stämmer. */
@@ -44,7 +45,15 @@ export default function ServicePage({ data }) {
         </Sektion>
       )}
 
-      <Sektion id="omfattning" rubrik="Så kan du köpa" ingress="Ni får ett fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting.">
+      <Sektion
+        id="omfattning"
+        rubrik="Så kan du köpa"
+        ingress={
+          DEMO_TJANSTER.has(data.slug)
+            ? "Efter första samtalet får ni en klickbar demo, helt riskfritt. Sedan ett fast pris skriftligt innan jag börjar."
+            : "Ni får ett fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting."
+        }
+      >
         <Erbjudanden offers={data.offers} fallback={data.cta} />
       </Sektion>
 

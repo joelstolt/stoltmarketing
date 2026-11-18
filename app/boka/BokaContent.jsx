@@ -123,7 +123,7 @@ export default function BokaContent() {
         <h1 className={s.h1Sub}>Välj en tid som passar.</h1>
         <p className={s.heroLead}>
           Vi går igenom vad som krånglar eller saknas och vad jag kan göra åt det. Samtalet kostar ingenting och du
-          förbinder dig inte till något.
+          förbinder dig inte till något. Efter samtalet får du en klickbar demo, helt riskfritt.
         </p>
 
         <div className={b.wrap}>

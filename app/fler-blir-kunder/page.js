@@ -57,10 +57,10 @@ const d = {
     rubrik: "Byggt för att sälja, inte bara synas.",
     stycken: [
       "En sajt ska göra det lätt att förstå vad ni gör och lätt att köpa eller höra av sig. Jag bygger det som behövs, och inte mer.",
-      "Innan något byggs får ni se ett förslag ni kan klicka i. Ni ser hur det blir innan ni bestämmer er.",
+      "Efter första samtalet får ni en klickbar demo av sajten eller webbshoppen. Ni ser hur det blir innan ni bestämmer er, helt riskfritt för er.",
     ],
     punkter: [
-      "Förslag att klicka i innan ni bestämmer er",
+      "Klickbar demo efter första samtalet, helt riskfritt",
       "Fast pris innan jag börjar, skriftligt",
       "Ni äger sajten, innehållet och koden",
       "Mätning av varje steg fram till beställning",
@@ -83,7 +83,7 @@ const d = {
     },
     {
       q: "Vad kostar en ny sajt eller webbshop?",
-      a: "Ni får ett fast pris efter ett första samtal, skriftligt, innan jag börjar. Första samtalet kostar ingenting.",
+      a: "Ni får ett fast pris efter ett första samtal, skriftligt, innan jag börjar. Första samtalet kostar ingenting, och efter det får ni en klickbar demo, helt riskfritt.",
     },
   ],
   andra: OMRADEN.filter((o) => o.key !== "kunder"),

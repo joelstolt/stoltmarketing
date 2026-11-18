@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
       height: 512,
     },
     description:
-      "Stolt Marketing är Joel Stolts firma i Hässleholm. Han bygger och sköter sajter, webbshoppar, synlighet i Google och ChatGPT, annonser och egna system med AI-agent åt företag och organisationer utan egen utvecklare. Fast pris skriftligt innan arbetet börjar, svar nästa arbetsdag och akut felsökning samma arbetsdag. Kunder i hela Sverige.",
+      "Stolt Marketing är Joel Stolts firma i Hässleholm. Han bygger och sköter sajter, webbshoppar, synlighet i Google och ChatGPT, annonser och egna system med AI-agent åt företag och organisationer utan egen utvecklare. Efter första samtalet visar han en klickbar demo, helt riskfritt för kunden. Fast pris skriftligt innan arbetet börjar, svar nästa arbetsdag och akut felsökning samma arbetsdag. Kunder i hela Sverige.",
     sameAs: ["https://www.google.com/maps?cid=8357467268890589983"],
     priceRange: SITE.priceRange,
     founder: {

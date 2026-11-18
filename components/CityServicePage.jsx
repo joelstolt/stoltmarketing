@@ -20,11 +20,13 @@ import { getCombo, cityServiceFaqs } from "@/lib/local/seo";
    lib/local; FAQ-texten är oförändrad så att FAQ-datan stämmer med det som visas. */
 
 const FAST = "Fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting.";
+/* Joels USP, bara där något byggs (hemsida och AI/automation), se lib/usp.js. */
+const FAST_DEMO = "Klickbar demo efter första samtalet, helt riskfritt. Fast pris skriftligt innan jag börjar.";
 
 function erbjudanden(service) {
   if (service === "hemsida") {
     return [
-      { name: "Hemsida eller webbshop", price: "Fast pris innan jag börjar", desc: "Jag bygger det ni behöver, med omfattning och pris avtalat skriftligt i förväg.", terms: FAST, href: "/sa-funkar-det", label: "Så funkar det" },
+      { name: "Hemsida eller webbshop", price: "Fast pris innan jag börjar", desc: "Jag bygger det ni behöver, med omfattning och pris avtalat skriftligt i förväg.", terms: FAST_DEMO, href: "/sa-funkar-det", label: "Så funkar det" },
       { name: "Löpande hjälp", price: "Fast månadspris i förväg", desc: "Drift, säkerhet och ändringar efter lansering, med svar nästa arbetsdag.", terms: "Du vet månadspriset i förväg. Annonsbudget tillkommer vid Google Ads." },
     ];
   }
@@ -41,7 +43,7 @@ function erbjudanden(service) {
     ];
   }
   return [
-    { name: "Ett flöde i taget", price: "Fast pris per flöde", desc: "CRM, portaler och bokning, agenter som skriver utkast till svar och offerter som du godkänner, eller kopplingar mellan system.", terms: FAST, href: "/mindre-handarbete", label: "Se hur automation fungerar" },
+    { name: "Ett flöde i taget", price: "Fast pris per flöde", desc: "CRM, portaler och bokning, agenter som skriver utkast till svar och offerter som du godkänner, eller kopplingar mellan system.", terms: FAST_DEMO, href: "/mindre-handarbete", label: "Se hur automation fungerar" },
     { name: "Ett anpassat arbetsflöde", price: "Fast pris innan jag börjar", desc: "Kalenderbokning, CRM, offertautomation och andra systemkopplingar är specialarbete.", terms: "Offerten avgränsar bygge, test, åtkomst och drift. Fast pris för överenskommet arbete före start.", href: "/kontakt", label: "Beskriv ditt arbetsflöde" },
   ];
 }

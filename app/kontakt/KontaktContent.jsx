@@ -85,7 +85,7 @@ export default function KontaktContent() {
             </div>
 
             <p className={k.small}>
-              Första samtalet kostar ingenting. Du får ett fast pris innan jag börjar, skriftligt.
+              Första samtalet kostar ingenting. Efter samtalet får ni en klickbar demo, helt riskfritt, och ett fast pris skriftligt innan jag börjar.
             </p>
           </aside>
         </div>

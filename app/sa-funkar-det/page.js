@@ -4,11 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import s from "@/components/ny/ny.module.css";
 import { SITE } from "@/lib/local/data";
+import { DEMO_FRAGA } from "@/lib/usp";
 
 export const metadata = {
-  title: "Så funkar det: samtal, genomgång, bygget och löpande",
+  title: "Så funkar det: samtal, klickbar demo, bygget och löpande",
   description:
-    "Samma väg för alla: ett gratis samtal, en genomgång, fast pris innan jag börjar och löpande drift eller reserverad tid. Akut hjälp samma arbetsdag.",
+    "Samma väg för alla: ett gratis samtal, en klickbar demo, fast pris innan jag börjar och löpande drift eller reserverad tid. Akut hjälp samma arbetsdag.",
   alternates: { canonical: "https://www.stoltmarketing.se/sa-funkar-det" },
 };
 
@@ -21,9 +22,9 @@ const STEG = [
     far: ["Svar nästa arbetsdag", "Ärlig bedömning", "Kostar ingenting"],
   },
   {
-    namn: "Genomgång",
-    text: "För system och kopplingar går jag igenom det ni har i dag och hur ni jobbar. Ni får en plan med vad som ska byggas, i vilken ordning och till vilket pris.",
-    far: ["Plan i vanligt språk", "Fast pris per del", "Underlaget är ert"],
+    namn: "Klickbar demo",
+    text: "Efter samtalet visar jag en klickbar demo av det vi pratat om, oavsett om det är ett CRM, ett affärssystem, en sajt eller en webbshop. Ni klickar runt i den innan ni bestämmer er. För system och kopplingar får ni också en plan med vad som ska byggas, i vilken ordning och till vilket pris.",
+    far: ["Helt riskfritt för er", "Plan i vanligt språk", "Fast pris per del"],
   },
   {
     namn: "Bygget",
@@ -49,6 +50,7 @@ const LOPANDE = [
 ];
 
 const FAQ = [
+  DEMO_FRAGA,
   {
     q: "Vad kostar det?",
     a: "Ni får ett fast pris innan jag börjar, skriftligt. Löpande hjälp har ett fast månadspris som ni vet i förväg. Första samtalet kostar ingenting. Akut hjälp kostar 1 500 kr/h exkl moms.",

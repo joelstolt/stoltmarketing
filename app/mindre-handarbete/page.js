@@ -56,6 +56,7 @@ const d = {
       "Det jag bygger åt er bygger jag också åt mig själv: mitt eget CRM, offertagenten i Kvota och mätningen i Refora är gjorda på samma sätt.",
     ],
     punkter: [
+      "Klickbar demo efter första samtalet, helt riskfritt",
       "Ni godkänner allt som skickas i ert namn",
       "Ni äger det som byggs",
       "Fast pris per flöde efter en genomgång",
@@ -77,7 +78,7 @@ const d = {
     },
     {
       q: "Vad kostar det?",
-      a: "Fast pris per flöde efter en genomgång av hur ni jobbar i dag. Första samtalet kostar ingenting.",
+      a: "Fast pris per flöde efter en genomgång av hur ni jobbar i dag. Första samtalet kostar ingenting, och efter det får ni en klickbar demo, helt riskfritt.",
     },
   ],
   andra: OMRADEN.filter((o) => o.key !== "handarbete"),

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, MessageSquare, Search, Hammer, RefreshCw, PenLine, Blocks, Bot, UserCheck } from "lucide-react";
+import { Phone, MessageSquare, MousePointerClick, Hammer, RefreshCw, PenLine, Blocks, Bot, UserCheck } from "lucide-react";
+import { DEMO_FRAGA } from "@/lib/usp";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Omraden from "@/components/ny/Omraden";
@@ -27,7 +28,7 @@ export const metadata = {
 
 const STEG = [
   { namn: "Samtal", ikon: MessageSquare, text: "Ni berättar vad ni behöver eller vad som krånglar. Det kostar ingenting." },
-  { namn: "Genomgång", ikon: Search, text: "För system som ska hänga ihop går jag igenom det ni har och ger en plan med fast pris." },
+  { namn: "Klickbar demo", ikon: MousePointerClick, text: "Efter samtalet visar jag en klickbar demo av det vi pratat om, helt riskfritt för er. För system som ska hänga ihop får ni också en plan." },
   { namn: "Bygget", ikon: Hammer, text: "Fast pris innan jag börjar, skriftligt. Inga timmar som rinner iväg." },
   {
     namn: "Löpande",
@@ -73,7 +74,7 @@ const JAMFOR = [
       ["Hur priset sätts", "Fast pris innan jag börjar. Löpande hjälp till fast månadspris."],
       ["Vad som ingår", "Sajt och webbshop, synlighet i Google och ChatGPT, annonser, kundregister och system som pratar med varandra."],
       ["När något går sönder", "Jag börjar felsöka samma arbetsdag."],
-      ["Att komma igång", "Ett samtal, sedan ett fast pris skriftligt."],
+      ["Att komma igång", "Ett samtal, en klickbar demo, sedan ett fast pris skriftligt."],
     ],
   },
 ];
@@ -101,6 +102,7 @@ const FRAGOR = [
     q: "Vad kostar det att anlita Stolt Marketing?",
     a: "Ni får ett fast pris skriftligt innan jag börjar, efter ett första samtal som inte kostar något. Löpande hjälp har ett fast månadspris. Det enda publika timpriset är Akut hjälp, 1 500 kr i timmen exklusive moms.",
   },
+  DEMO_FRAGA,
   {
     q: "Vad är skillnaden mot att anlita en byrå?",
     a: "Det är jag som svarar och jag som gör jobbet, utan projektledare emellan. Jag tar hand om sajt, webbshop, synlighet i Google och ChatGPT, annonser och system, så att ni slipper flera leverantörer som skyller på varandra.",
@@ -158,7 +160,7 @@ export default function Home() {
               Sajt, annonser och system, skötta av en person. Ni slipper anställa, och slipper fyra leverantörer som
               skyller på varandra.
             </p>
-            <p className={t.breadth}>Fast pris innan jag börjar. Svar nästa arbetsdag.</p>
+            <p className={t.breadth}>Klickbar demo efter första samtalet. Fast pris innan jag börjar. Svar nästa arbetsdag.</p>
             <div className={t.actions}>
               <Link href="/kontakt" className={t.btn} data-umami-event="start-hero-cta">
                 Berätta vad ni behöver
@@ -326,6 +328,7 @@ export default function Home() {
               <ul className={s.pricingList}>
                 <li>Ni får ett fast pris innan jag börjar, skriftligt. Inga timmar som rinner iväg.</li>
                 <li>Första samtalet kostar ingenting.</li>
+                <li>Efter samtalet får ni en klickbar demo, helt riskfritt.</li>
                 <li>Löpande hjälp har ett fast månadspris som ni vet i förväg.</li>
               </ul>
             </div>
