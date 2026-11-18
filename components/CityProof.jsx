@@ -28,12 +28,12 @@ export default function CityProof({ city, service = "hemsida" }) {
       <Sektion pad={false}>
         <div style={{ paddingTop: 56, paddingBottom: 56 }}>
           <Bevis
-            etikett={isAi ? "Innan du väljer" : "Underlag för beslutet"}
-            titel={isAi ? "Se hur automation fungerar innan du väljer upplägg" : "Vad annonsering kostar, räknat på riktigt"}
+            etikett={isAi ? "Innan ni väljer" : "Underlag för beslutet"}
+            titel={isAi ? "Se hur automation fungerar innan ni väljer upplägg" : "Vad annonsering kostar, räknat på riktigt"}
             text={
               isAi
-                ? "På sidan Mindre handarbete beskrivs vad som kan automatiseras och vilka delar du granskar och godkänner själv. Använd den för att bedöma vilket flöde som är värt att börja med."
-                : "Kostnadsguiden går igenom annonsbudget, arbetskostnad och hur kontakter räknas vidare till affär. Ta med din marginal och ett relevant uppdrag när vi går igenom ditt upplägg."
+                ? "På sidan Mindre handarbete beskrivs vad som kan automatiseras och vilka delar ni granskar och godkänner själva. Använd den för att bedöma vilket flöde som är värt att börja med."
+                : "Kostnadsguiden går igenom annonsbudget, arbetskostnad och hur kontakter räknas vidare till affär. Ta med er marginal och ett relevant uppdrag när vi går igenom ert upplägg."
             }
             href={isAi ? "/mindre-handarbete" : "/blogg/vad-kostar-google-ads"}
             lank={isAi ? "Se Mindre handarbete" : "Läs kostnadsguiden"}

@@ -38,13 +38,13 @@ function erbjudanden(service) {
   }
   if (service === "google-ads") {
     return [
-      { name: "Google Ads, uppsättning och skötsel", price: "Fast pris innan jag börjar", desc: "Uppsättning och löpande skötsel av Google Ads enligt överenskommen omfattning.", terms: "Annonsbudget tillkommer och betalas till Google. Löpande skötsel har ett fast månadspris som du vet i förväg." },
-      { name: "Ditt befintliga annonskonto", price: "Fast pris innan jag börjar", desc: "Genomgång, kampanjarbete och uppföljning avgränsas utifrån ditt konto och mål.", terms: "Arbetets omfattning och villkor bekräftas före start. Annonsbudget betalas separat." },
+      { name: "Google Ads, uppsättning och skötsel", price: "Fast pris innan jag börjar", desc: "Uppsättning och löpande skötsel av Google Ads enligt överenskommen omfattning.", terms: "Annonsbudget tillkommer och betalas till Google. Löpande skötsel har ett fast månadspris som ni vet i förväg." },
+      { name: "Ert befintliga annonskonto", price: "Fast pris innan jag börjar", desc: "Genomgång, kampanjarbete och uppföljning avgränsas utifrån ert konto och mål.", terms: "Arbetets omfattning och villkor bekräftas före start. Annonsbudget betalas separat." },
     ];
   }
   return [
-    { name: "Ett flöde i taget", price: "Fast pris per flöde", desc: "CRM, portaler och bokning, agenter som skriver utkast till svar och offerter som du godkänner, eller kopplingar mellan system.", terms: FAST_DEMO, href: "/mindre-handarbete", label: "Se hur automation fungerar" },
-    { name: "Ett anpassat arbetsflöde", price: "Fast pris innan jag börjar", desc: "Kalenderbokning, CRM, offertautomation och andra systemkopplingar är specialarbete.", terms: "Offerten avgränsar bygge, test, åtkomst och drift. Fast pris för överenskommet arbete före start.", href: "/kontakt", label: "Beskriv ditt arbetsflöde" },
+    { name: "Ett flöde i taget", price: "Fast pris per flöde", desc: "CRM, portaler och bokning, agenter som skriver utkast till svar och offerter som ni godkänner, eller kopplingar mellan system.", terms: FAST_DEMO, href: "/mindre-handarbete", label: "Se hur automation fungerar" },
+    { name: "Ett anpassat arbetsflöde", price: "Fast pris innan jag börjar", desc: "Kalenderbokning, CRM, offertautomation och andra systemkopplingar är specialarbete.", terms: "Offerten avgränsar bygge, test, åtkomst och drift. Fast pris för överenskommet arbete före start.", href: "/kontakt", label: "Beskriv ert arbetsflöde" },
   ];
 }
 
@@ -65,8 +65,8 @@ export default function CityServicePage({ service, city }) {
   const combo = getCombo(service, city);
   const faqs = cityServiceFaqs(service, city);
   const slut = AVSLUT[service] || {
-    rubrik: "Beskriv det du vill förbättra.",
-    text: "Skicka din webbadress, tjänst och mål. Jag återkommer med förslag på ett första steg och dess omfattning.",
+    rubrik: "Beskriv det ni vill förbättra.",
+    text: "Skicka er webbadress, tjänst och mål. Jag återkommer med förslag på ett första steg och dess omfattning.",
   };
 
   return (
@@ -78,7 +78,7 @@ export default function CityServicePage({ service, city }) {
         lead={combo.heroSubtitle}
         punkter={["Direktkontakt med Joel", "Fast pris före start", "Bas i Hässleholm"]}
         cta={s.cta}
-        sekundar={{ href: "#pris", label: "Så kan du köpa" }}
+        sekundar={{ href: "#pris", label: "Så kan ni köpa" }}
         omrade={TJANST_OMRADE[service]}
       />
 
@@ -95,13 +95,13 @@ export default function CityServicePage({ service, city }) {
 
       <Sektion
         id="pris"
-        rubrik="Så kan du köpa"
+        rubrik="Så kan ni köpa"
         ingress="Ni får ett fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting."
       >
         <Erbjudanden offers={erbjudanden(service)} fallback={s.cta} />
       </Sektion>
 
-      <Sektion rubrik="Vad jag gör och hur du deltar" ingress={s.intro}>
+      <Sektion rubrik="Vad jag gör och hur ni deltar" ingress={s.intro}>
         <Celler items={s.features.map((f) => ({ titel: f.title, text: f.desc }))} />
       </Sektion>
 

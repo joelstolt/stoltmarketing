@@ -1,13 +1,13 @@
 {
   "webbutveckling": {
-    "deepHeading": "Välj teknik efter ditt innehållsarbete",
+    "deepHeading": "Välj teknik efter ert innehållsarbete",
     "deepParagraphs": [
-      "WordPress, ett publiceringssystem eller egen kod väljs efter hur du och besökarna ska använda sajten. Jag går igenom redigering, integrationer och drift innan jag rekommenderar upplägget.",
+      "WordPress, ett publiceringssystem eller egen kod väljs efter hur ni och besökarna ska använda sajten. Jag går igenom redigering, integrationer och drift innan jag rekommenderar upplägget.",
       "Laddtid och användbarhet kontrolleras på de byggda sidorna. Ett ramverksnamn eller en enskild testpoäng ersätter inte kontroll av mobil, kontaktvägar och publiceringsflöde."
     ]
   },
   "seo": {
-    "deepHeading": "En nollmätning du kan följa upp",
+    "deepHeading": "En nollmätning ni kan följa upp",
     "deepParagraphs": [
       "Auditens underlag skiljer på indexering, sökningar, sidor och registrerade kontakter. Tillgänglig Search Console-data och sökordsdata används med uppgift om källa och datum. Saknad historik markeras.",
       "Rapporten beskriver problem, föreslagna åtgärder och prioritet. Vid fortsatt arbete stämmer jag av vad som gjorts, hur samma mått utvecklats och vad som återstår. Sidantal, recensionsnivåer eller AI-citat är inte universella trösklar för framgång."
@@ -16,14 +16,14 @@
   "google-ads": {
     "deepHeading": "Bestäm vad som ska mätas innan kampanjen startar",
     "deepParagraphs": [
-      "En relevant förfrågan definieras tillsammans med dig: tjänst, område och ett uppdrag du kan ta. Telefonklick och registrerade formulär skiljs från genomförda samtal och vunna uppdrag.",
-      "För lönsamhet behöver vi både din marginal och kostnaden för arbete och mediebudget. Du återkopplar vilka kontakter som blev affär. Geografiskt urval och negativa sökord förbättras utifrån verkliga kontakter utan ett löfte om noll spill."
+      "En relevant förfrågan definieras tillsammans med er: tjänst, område och ett uppdrag ni kan ta. Telefonklick och registrerade formulär skiljs från genomförda samtal och vunna uppdrag.",
+      "För lönsamhet behöver vi både er marginal och kostnaden för arbete och mediebudget. Ni återkopplar vilka kontakter som blev affär. Geografiskt urval och negativa sökord förbättras utifrån verkliga kontakter utan ett löfte om noll spill."
     ]
   },
   "ai-automation": {
     "deepHeading": "Ett begripligt flöde med tydlig kontroll",
     "deepParagraphs": [
-      "Exempel: kunden skickar en fråga, underlaget samlas, ett utkast föreslås och du granskar innan ett svar skickas. Om ett flöde ska fatta beslut eller ändra uppgifter i ett system behöver behörigheter, ansvar och felhantering beskrivas.",
+      "Exempel: kunden skickar en fråga, underlaget samlas, ett utkast föreslås och ni granskar innan ett svar skickas. Om ett flöde ska fatta beslut eller ändra uppgifter i ett system behöver behörigheter, ansvar och felhantering beskrivas.",
       "Jag kontrollerar om befintliga system kan kopplas ihop och vilka begränsningar som finns. Ett specialbygge får egen omfattning för analys, bygge, test och drift. Nyttan följs upp i hanteringstid och manuella steg jämfört med nuläget."
     ]
   },
@@ -38,21 +38,21 @@
     "deepHeading": "Produktmigrering och integrationer avgör omfattningen",
     "deepParagraphs": [
       "Den mindre webbshopen passar en begränsad butik. De större projekten omfattar en ny butiksfront eller flytt av en befintlig butik. Lager, ekonomi, egna fraktregler och särskilda produktflöden behöver bedömas separat.",
-      "För båda större uppläggen kan löpande drift ha ett fast månadspris som du vet i förväg. Betal- och fraktleverantörernas avgifter, licenser och arbete utanför projektet specificeras i förslaget. En planerad adressflytt minskar risk men garanterar inte oförändrade sökpositioner."
+      "För båda större uppläggen kan löpande drift ha ett fast månadspris som ni vet i förväg. Betal- och fraktleverantörernas avgifter, licenser och arbete utanför projektet specificeras i förslaget. En planerad adressflytt minskar risk men garanterar inte oförändrade sökpositioner."
     ]
   },
   "wordpress": {
     "deepHeading": "Behålla, förbättra eller flytta",
     "deepParagraphs": [
-      "Jag börjar med hur du publicerar idag, vilka tillägg du använder och vad som orsakar problem. Att förbättra en befintlig WordPress-sajt kan vara rätt första steg.",
+      "Jag börjar med hur ni publicerar idag, vilka tillägg ni använder och vad som orsakar problem. Att förbättra en befintlig WordPress-sajt kan vara rätt första steg.",
       "En migrering till annan teknik får en egen innehålls- och adressplan. Det är ett separat beslut från att sköta WordPress. Båda alternativen behöver fungerande redigering, underhåll och återställning."
     ]
   },
   "facebook-annonsering": {
     "deepHeading": "Material, mätning och kontaktkvalitet",
     "deepParagraphs": [
-      "En annons behöver ett erbjudande, användbart bild- eller videomaterial och en kontaktväg som fungerar. Offerten anger vad du lämnar och vad jag producerar.",
-      "Mätningens förutsättningar och nödvändiga inställningar planeras före lansering. Rapporterade kontakter jämförs med din bedömning av relevans. Jag använder inga generella leadpriser eller åldersantaganden som garanti för ditt företag."
+      "En annons behöver ett erbjudande, användbart bild- eller videomaterial och en kontaktväg som fungerar. Offerten anger vad ni lämnar och vad jag producerar.",
+      "Mätningens förutsättningar och nödvändiga inställningar planeras före lansering. Rapporterade kontakter jämförs med er bedömning av relevans. Jag använder inga generella leadpriser eller åldersantaganden som garanti för ert företag."
     ]
   },
   "ai-synlighet": {

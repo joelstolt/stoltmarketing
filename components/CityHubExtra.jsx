@@ -10,9 +10,9 @@ import HUB from "@/lib/local/hub-content.json";
 const IKON = { hemsida: Code, seo: Search, "google-ads": Megaphone, "ai-automation": Workflow };
 
 const STEG = [
-  { titel: "Ditt underlag", text: "Skicka din webbadress och beskriv vad kunden ska kunna göra." },
+  { titel: "Ert underlag", text: "Skicka er webbadress och beskriv vad kunden ska kunna göra." },
   { titel: "Förslag med fast pris", text: "Jag föreslår ett första steg med omfattning och pris, skriftligt." },
-  { titel: "Arbetet", text: "Efter ditt ja gör jag arbetet och stämmer av det vi har kommit överens om." },
+  { titel: "Arbetet", text: "När ni har sagt ja gör jag arbetet och stämmer av det vi har kommit överens om." },
 ];
 
 export default function CityHubExtra({ city }) {
@@ -59,14 +59,14 @@ export default function CityHubExtra({ city }) {
       <CityProof city={city} />
 
       <Sektion>
-        <Delad rubrik="Vanliga frågor" ingress={`Om samarbetet för ditt företag i ${c.name}.`}>
+        <Delad rubrik="Vanliga frågor" ingress={`Om samarbetet för ert företag i ${c.name}.`}>
           <Fragor faqs={cityHubFaqs(city)} />
         </Delad>
       </Sektion>
 
       <Avslut
-        rubrik="Berätta vad du vill förbättra."
-        text="Skicka din webbadress och en kort beskrivning. Jag återkommer med ett förslag på var vi kan börja."
+        rubrik="Berätta vad ni vill förbättra."
+        text="Skicka er webbadress och en kort beskrivning. Jag återkommer med ett förslag på var vi kan börja."
         cta={{ href: "/kontakt", label: "Skriv till Joel" }}
       />
     </Sida>
