@@ -9,6 +9,7 @@ import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 import { CASES } from "@/lib/case-data";
+import { Logo } from "@/components/ny/Logo";
 
 const niklassonsOffert = CASES.niklassonsflytt.results[0].value;
 
@@ -35,7 +36,7 @@ const ingar = [
   "Hosting och löpande drift",
   "Säkerhet, certifikat och backuper",
   "Innehållsändringar inom överenskommen omfattning",
-  "Support med svar samma arbetsdag",
+  "Support med svar nästa arbetsdag",
   "Teknisk SEO-grund och läsbart innehåll",
 ];
 
@@ -67,11 +68,11 @@ const faqs = [
 const Formular = ({ id, rubrik, done, form, sending, error, change, submit, input }) =>
     done ? (
       <div role="status" className="bg-surface rounded-[10px] border border-border p-7 text-center">
-        <div className="w-11 h-11 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mx-auto">
-          <Check aria-hidden="true" size={20} className="text-[#059669]" />
+        <div className="w-11 h-11 rounded-[10px] bg-[rgba(61,214,140,0.12)] flex items-center justify-center mx-auto">
+          <Check aria-hidden="true" size={20} className="text-[#3DD68C]" />
         </div>
         <h3 className="mt-4 font-heading font-700 text-[20px] text-heading">
-          Tack, jag hör av mig samma arbetsdag.
+          Tack, jag hör av mig nästa arbetsdag.
         </h3>
         <p className="mt-2 text-[15px] text-body leading-relaxed">
           Du får ett förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs efter ditt ja. Vill du prata tidigare når du mig
@@ -146,7 +147,7 @@ const Formular = ({ id, rubrik, done, form, sending, error, change, submit, inpu
           <button
             type="submit"
             disabled={sending}
-            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] cursor-pointer hover:bg-[#F2ECDD] transition-colors disabled:opacity-60"
+            className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#EDEDEE] text-[#0A0A0B] font-heading font-600 text-[16px] cursor-pointer hover:bg-white transition-colors disabled:opacity-60"
           >
             {sending ? "Skickar..." : "Be om gratis förslag"}
           </button>
@@ -218,19 +219,19 @@ export default function LpHemsidaContent() {
   };
 
   const input =
-    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[16px] text-heading placeholder:text-muted focus:border-[#F2C230] transition-colors";
+    "w-full px-4 py-3 rounded-[10px] border border-border bg-surface text-[16px] text-heading placeholder:text-muted focus:border-[#3DD68C] transition-colors";
 
   return (
     <main id="main-content" className="pb-20 lg:pb-0">
 
       <header className="border-b border-border">
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="font-heading font-700 text-[19px] text-heading tracking-[-0.01em]">
-            sto<span className="text-[#F2C230]">|</span>t
+          <Link href="/" aria-label="Stolt Marketing, till startsidan">
+            <Logo />
           </Link>
           <a
             href={SITE.phoneHref}
-            className="text-[15px] font-500 text-heading hover:text-[#F2C230] transition-colors"
+            className="text-[15px] font-500 text-heading hover:text-white transition-colors"
           >
             {SITE.phone}
           </a>
@@ -240,7 +241,7 @@ export default function LpHemsidaContent() {
       <section className="px-5 sm:px-8 pt-12 sm:pt-16 pb-14">
         <div className="max-w-[1120px] mx-auto grid lg:grid-cols-[minmax(0,1fr)_420px] gap-10 lg:gap-16 items-start">
           <div>
-            <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-[#F2C230]">
+            <p className="text-[13px] font-600 text-muted">
               Hemsida till fast pris
             </p>
             <h1 className="mt-4 font-heading font-700 text-[clamp(34px,5.6vw,54px)] leading-[1.05] tracking-[-0.02em] text-heading">
@@ -262,7 +263,7 @@ export default function LpHemsidaContent() {
             <div className="mt-8 hidden lg:flex flex-wrap gap-3">
               <a
                 href="#kontakt"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[16px] hover:bg-[#F2ECDD] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[10px] bg-[#EDEDEE] text-[#0A0A0B] font-heading font-600 text-[16px] hover:bg-white transition-colors"
               >
                 Få gratis förslag inom två arbetsdagar
                     </a>
@@ -287,7 +288,7 @@ export default function LpHemsidaContent() {
           <div className="mt-10 grid md:grid-cols-2 gap-5">
             <Reveal>
               <div className="rounded-[10px] border border-border p-7 h-full">
-                <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-muted">
+                <p className="text-[13px] font-600 text-muted">
                   När du jämför offerter
                 </p>
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
@@ -302,8 +303,8 @@ export default function LpHemsidaContent() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="rounded-[10px] border-2 border-[#F2C230] p-7 h-full">
-                <p className="text-[13px] font-600 tracking-[0.08em] uppercase text-[#F2C230]">
+              <div className="rounded-[10px] border-2 border-[#3DD68C] p-7 h-full">
+                <p className="text-[13px] font-600 text-muted">
                   Här
                 </p>
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
@@ -317,7 +318,7 @@ export default function LpHemsidaContent() {
                     "Du äger innehållet och domänen",
                   ].map((it) => (
                     <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
-                      <Check aria-hidden="true" size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
+                      <Check aria-hidden="true" size={17} className="text-[#3DD68C] shrink-0 mt-0.5" />
                       {it}
                     </li>
                   ))}
@@ -337,7 +338,7 @@ export default function LpHemsidaContent() {
             {steg.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="bg-surface rounded-[10px] border border-border p-7 h-full">
-                  <div className="font-heading font-700 text-[30px] text-[#F2C230] leading-none">
+                  <div className="font-heading font-600 text-[30px] text-heading leading-none">
                     {s.n}
                   </div>
                   <h3 className="mt-4 font-heading font-700 text-[18px] text-heading">{s.title}</h3>
@@ -378,7 +379,7 @@ export default function LpHemsidaContent() {
                   <p className="mt-3 text-[15px] text-body leading-relaxed">
                     38 sitemap-URL:er. Formulärevents är kontaktaktiviteter, inte genomförda affärer. Kunden redigerar innehållet
                     själv.{" "}
-                    <span className="text-[#F2C230] group-hover:underline">Läs caset</span>
+                    <span className="text-heading underline underline-offset-4 decoration-[rgba(255,255,255,0.3)]">Läs caset</span>
                   </p>
                 </div>
               </Link>
@@ -418,7 +419,7 @@ export default function LpHemsidaContent() {
                         className="flex items-center gap-2 mb-3 text-[13px] text-muted"
                         aria-label="Betyg 5 av 5"
                       >
-                        <span aria-hidden="true" className="text-[#F2C230] tracking-[0.1em]">
+                        <span aria-hidden="true" className="text-[#FBBC05] tracking-[0.1em]">
                           ★★★★★
                         </span>
                       </div>
@@ -488,7 +489,7 @@ export default function LpHemsidaContent() {
           <ul className="mt-9 grid sm:grid-cols-2 gap-x-8 gap-y-4">
             {ingar.map((it) => (
               <li key={it} className="flex gap-3 text-[16px] text-body leading-snug">
-                <Check aria-hidden="true" size={19} className="text-[#F2C230] shrink-0 mt-0.5" />
+                <Check aria-hidden="true" size={19} className="text-[#3DD68C] shrink-0 mt-0.5" />
                 {it}
               </li>
             ))}
@@ -506,7 +507,7 @@ export default function LpHemsidaContent() {
               <Reveal key={p.name} delay={i * 0.08}>
                 <div
                   className={`bg-surface rounded-[10px] p-7 h-full ${
-                    p.highlight ? "border-2 border-[#F2C230]" : "border border-border"
+                    p.highlight ? "border-2 border-[#3DD68C]" : "border border-border"
                   }`}
                 >
                   <h3 className="font-heading font-700 text-[18px] text-heading">{p.name}</h3>
@@ -517,7 +518,7 @@ export default function LpHemsidaContent() {
                   <ul className="mt-5 grid gap-2.5">
                     {p.items.map((it) => (
                       <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
-                        <Check aria-hidden="true" size={17} className="text-[#F2C230] shrink-0 mt-0.5" />
+                        <Check aria-hidden="true" size={17} className="text-[#3DD68C] shrink-0 mt-0.5" />
                         {it}
                       </li>
                     ))}
@@ -558,7 +559,7 @@ export default function LpHemsidaContent() {
                 </p>
                 <a
                   href="#kontakt"
-                  className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-[#F2C230] hover:underline"
+                  className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-heading underline underline-offset-4 decoration-[rgba(255,255,255,0.3)]"
                 >
                   Få gratis förslag
                 </a>
@@ -576,7 +577,7 @@ export default function LpHemsidaContent() {
                 </p>
                 <a
                   href="#kontakt"
-                  className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-[#F2C230] hover:underline"
+                  className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-heading underline underline-offset-4 decoration-[rgba(255,255,255,0.3)]"
                 >
                   Få gratis förslag
                 </a>
@@ -615,13 +616,13 @@ export default function LpHemsidaContent() {
           </div>
           <p className="mt-5 text-[15px] text-muted">
             Hellre prata direkt?{" "}
-            <a href={SITE.phoneHref} className="text-heading hover:text-[#F2C230] transition-colors">
+            <a href={SITE.phoneHref} className="text-heading hover:text-white transition-colors">
               {SITE.phone}
             </a>{" "}
             eller{" "}
             <a
               href={`mailto:${SITE.email}`}
-              className="text-heading hover:text-[#F2C230] transition-colors"
+              className="text-heading hover:text-white transition-colors"
             >
               {SITE.email}
             </a>
@@ -660,7 +661,7 @@ export default function LpHemsidaContent() {
 
           <a
             href="#kontakt"
-            className="flex-[1.4] inline-flex items-center justify-center px-4 py-3 rounded-[10px] bg-[#F2C230] text-[#191405] font-heading font-600 text-[15px]"
+            className="flex-[1.4] inline-flex items-center justify-center px-4 py-3 rounded-[10px] bg-[#EDEDEE] text-[#0A0A0B] font-heading font-600 text-[15px]"
           >
             Få gratis förslag
           </a>

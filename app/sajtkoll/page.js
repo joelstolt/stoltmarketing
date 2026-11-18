@@ -9,9 +9,9 @@ import { SITE } from "@/lib/local/data";
 import { trackConversion } from "@/lib/track";
 import { skickaForslag, varstaBrister } from "@/lib/forslag";
 
-const GUL = "#F2C230";
-const LINE = "rgba(242,236,221,0.14)";
-const PAPER = "#F2ECDD";
+const GUL = "#3DD68C"; /* signalfärgen (grön), ny profil */
+const LINE = "rgba(255,255,255,0.12)";
+const PAPER = "#EDEDEE";
 
 /* Gratis verktyg: URL in, 14 kontroller ut, ärlig bedömning. Efter resultatet
    ställs samma fråga som på startsidan: vill du se hemsidan byggd på nytt?
@@ -22,7 +22,7 @@ const PAPER = "#F2ECDD";
 function CheckRow({ c }) {
   const state = c.pass ? "pass" : c.warn ? "warn" : "fail";
   const Icon = state === "pass" ? Check : state === "warn" ? AlertTriangle : X;
-  const color = state === "pass" ? GUL : state === "warn" ? "#D9B96A" : "#C97B5E";
+  const color = state === "pass" ? GUL : state === "warn" ? "#E8B04A" : "#F2665C";
   return (
     <div className="py-4 flex items-start gap-4" style={{ borderBottom: `1px solid ${LINE}` }}>
       <span
@@ -31,7 +31,7 @@ function CheckRow({ c }) {
           width: 26,
           height: 26,
           borderRadius: 8,
-          background: state === "pass" ? "rgba(242,194,48,0.12)" : state === "warn" ? "rgba(217,185,106,0.12)" : "rgba(201,123,94,0.14)",
+          background: state === "pass" ? "rgba(61,214,140,0.12)" : state === "warn" ? "rgba(217,185,106,0.12)" : "rgba(201,123,94,0.14)",
         }}
       >
         <Icon size={14} strokeWidth={2.5} style={{ color }} />
@@ -44,7 +44,7 @@ function CheckRow({ c }) {
               fontFamily: "var(--font-ui)",
               fontSize: 11.5,
               fontWeight: 600,
-              letterSpacing: "0.08em",
+              letterSpacing: 0,
               color,
             }}
           >
@@ -194,32 +194,14 @@ export default function SajtkollPage() {
       <Header />
       <main id="main-content" tabIndex={-1}>
         {/* Hero med verktyget: renderas statiskt, inget startar på opacity 0 */}
-        <section className="hero-dark field-glow relative overflow-hidden">
-          {/* Fältraderna, samma familj som övriga undersidor */}
-          <svg
-            aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 w-full pointer-events-none"
-            style={{ height: "clamp(120px, 22vw, 230px)", maskImage: "linear-gradient(to top, black 55%, transparent)", WebkitMaskImage: "linear-gradient(to top, black 55%, transparent)" }}
-            viewBox="0 0 1200 240"
-            preserveAspectRatio="none"
-          >
-            <line x1="1200" y1="26" x2="0" y2="30" stroke="rgba(242,236,221,0.18)" strokeWidth="1" />
-            <line x1="220" y1="240" x2="840" y2="28" stroke="rgba(242,194,48,0.18)" strokeWidth="1" />
-            <line x1="400" y1="240" x2="854" y2="28" stroke="rgba(242,194,48,0.24)" strokeWidth="1" />
-            <line x1="580" y1="240" x2="868" y2="28" stroke="rgba(122,148,64,0.22)" strokeWidth="1" />
-            <line x1="760" y1="240" x2="882" y2="28" stroke="rgba(242,194,48,0.28)" strokeWidth="1" />
-            <line x1="940" y1="240" x2="896" y2="28" stroke="rgba(242,194,48,0.22)" strokeWidth="1" />
-            <line x1="220" y1="240" x2="840" y2="28" className="hero-puls" stroke="rgba(242,194,48,0.8)" strokeWidth="2" style={{ "--pd": "8s", "--pdel": "-2s", opacity: 0.55 }} />
-            <line x1="580" y1="240" x2="868" y2="28" className="hero-puls" stroke="rgba(242,194,48,0.8)" strokeWidth="2" style={{ "--pd": "10s", "--pdel": "-6s", opacity: 0.6 }} />
-            <line x1="940" y1="240" x2="896" y2="28" className="hero-puls" stroke="rgba(242,194,48,0.8)" strokeWidth="2" style={{ "--pd": "12s", "--pdel": "-4s", opacity: 0.5 }} />
-          </svg>
+        <section className="relative overflow-hidden" style={{ background: "radial-gradient(55% 60% at 18% 0%, rgba(255,255,255,0.07), transparent 70%)" }}>
           <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
             <Badge>Gratis verktyg</Badge>
             <h1
               className="mt-6 font-heading text-[clamp(38px,5.6vw,72px)] leading-[1.03] tracking-[-0.025em] text-heading max-w-[800px]"
-              style={{ fontWeight: 380, fontVariationSettings: '"opsz" 144' }}
+              style={{ fontWeight: 520, }}
             >
-              Hur bra fungerar din hemsida<em style={{ fontStyle: "italic", color: GUL }}>?</em>
+              Hur bra fungerar din hemsida?
             </h1>
             <p className="mt-6 text-[16px] sm:text-[17.5px] leading-relaxed text-body max-w-[560px]">
               Skriv in din adress så mäter jag hemsidan på riktigt: sidvikt, hastighet,
@@ -238,9 +220,9 @@ export default function SajtkollPage() {
                 className="flex-1 min-w-[220px]"
                 style={{
                   padding: "15px 18px",
-                  borderRadius: "3em",
+                  borderRadius: 8,
                   border: `1.5px solid ${LINE}`,
-                  background: "#161309",
+                  background: "#111113",
                   color: PAPER,
                   fontSize: 16,
                   outline: "none",
@@ -257,7 +239,7 @@ export default function SajtkollPage() {
                 {state !== "loading" && <Search size={14} />}
               </button>
             </form>
-            {error && <p className="mt-4 text-[14px] m-0" style={{ color: "#C97B5E" }}>{error}</p>}
+            {error && <p className="mt-4 text-[14px] m-0" style={{ color: "#F2665C" }}>{error}</p>}
             {state === "loading" && (
               <div className="mt-8" aria-hidden="true">
                 <div className="troska-falt">
@@ -267,20 +249,13 @@ export default function SajtkollPage() {
                       <span className="troska-rad" style={{ top: y, animationDelay: `${(i * 1.55).toFixed(2)}s` }} />
                     </span>
                   ))}
-                  <svg className="troska-maskin" width="38" height="24" viewBox="0 0 38 24" fill="none">
-                    <path d="M8 16 H26 V8 H16 L13 16" stroke="var(--color-accent)" strokeWidth="1.6" strokeLinejoin="round" />
-                    <path d="M26 12 H33 L36 16" stroke="var(--color-accent)" strokeWidth="1.6" strokeLinecap="round" />
-                    <circle cx="12" cy="19" r="3.2" stroke="var(--color-accent)" strokeWidth="1.6" />
-                    <circle cx="27" cy="19" r="3.2" stroke="var(--color-accent)" strokeWidth="1.6" />
-                    <circle cx="4" cy="17" r="2.4" stroke="var(--color-accent)" strokeWidth="1.4" opacity="0.7" />
-                  </svg>
                 </div>
-                <p className="mt-3 text-[12.5px] m-0" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.08em", color: "rgba(242,236,221,0.55)" }}>
+                <p className="mt-3 text-[12.5px] m-0" style={{ fontFamily: "var(--font-ui)", letterSpacing: 0, color: "rgba(255,255,255,0.55)" }}>
                   Kontrollerar startsidans teknik. Det brukar ta cirka 10 sekunder.
                 </p>
               </div>
             )}
-            <p className="mt-5 text-[12.5px] text-muted" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.06em" }}>
+            <p className="mt-5 text-[12.5px] text-muted" style={{ fontFamily: "var(--font-ui)", letterSpacing: 0 }}>
               Allt som rapporteras läses ur ett riktigt svar från din hemsida. Jag sparar resultatet så att du kan dela länken, inget annat.
             </p>
             <p className="mt-6 flex items-center gap-3 text-[13.5px] text-muted max-w-[560px]">
@@ -298,7 +273,7 @@ export default function SajtkollPage() {
             <div className="max-w-4xl mx-auto">
               <div
                 className="p-7 sm:p-9 rounded-[14px]"
-                style={{ background: "#161309", border: `1px solid ${LINE}` }}
+                style={{ background: "#111113", border: `1px solid ${LINE}` }}
               >
                 <div className="flex flex-wrap items-end justify-between gap-6 pb-7" style={{ borderBottom: `1px solid ${LINE}` }}>
                   <div>
@@ -307,9 +282,8 @@ export default function SajtkollPage() {
                         fontFamily: "var(--font-ui)",
                         fontSize: 10.5,
                         fontWeight: 600,
-                        letterSpacing: "0.26em",
-                        textTransform: "uppercase",
-                        color: "rgba(242,236,221,0.5)",
+                        letterSpacing: 0,
+                        color: "rgba(255,255,255,0.5)",
                       }}
                     >
                       Resultat för {result.url.replace(/^https?:\/\//, "")}
@@ -317,26 +291,26 @@ export default function SajtkollPage() {
                     <div className="flex items-baseline gap-3 mt-2">
                       <span
                         className="font-heading"
-                        style={{ fontSize: "clamp(56px,8vw,84px)", lineHeight: 1, fontWeight: 340, fontVariationSettings: '"opsz" 144', color: result.score >= 85 ? GUL : result.score >= 60 ? "#D9B96A" : "#C97B5E" }}
+                        style={{ fontSize: "clamp(56px,8vw,84px)", lineHeight: 1, fontWeight: 520, color: "#F4F4F5" }}
                       >
                         {result.score}
                       </span>
                       <span className="text-[15px] text-muted">av 100 på tekniken</span>
                     </div>
                   </div>
-                  <p className="font-heading text-[clamp(18px,2.4vw,24px)] text-heading m-0 max-w-[380px]" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                  <p className="font-heading text-[clamp(18px,2.4vw,24px)] text-heading m-0 max-w-[380px]" style={{ fontWeight: 400 }}>
                     {result.verdict}
                   </p>
                 </div>
 
                 {result.intro && (
-                  <p className="font-heading text-[clamp(17px,2.2vw,21px)] leading-relaxed text-heading mt-6 mb-0" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                  <p className="font-heading text-[clamp(17px,2.2vw,21px)] leading-relaxed text-heading mt-6 mb-0" style={{ fontWeight: 400 }}>
                     {result.intro}
                   </p>
                 )}
 
                 {result.ai && (
-                  <div className="mt-6 p-5 rounded-[10px]" style={{ background: "rgba(242,194,48,0.07)", border: "1px solid rgba(242,194,48,0.2)" }}>
+                  <div className="mt-6 p-5 rounded-[10px]" style={{ background: "rgba(61,214,140,0.07)", border: "1px solid rgba(61,214,140,0.2)" }}>
                     <p className="text-[15px] leading-relaxed text-body m-0">{result.ai}</p>
                     <p className="text-[11.5px] text-faint mt-2 mb-0" style={{ fontFamily: "var(--font-ui)" }}>
                       Sammanfattning framtagen automatiskt ur mätvärdena.
@@ -359,12 +333,12 @@ export default function SajtkollPage() {
                 {/* Förslagsfrågan: huvudvägen efter resultatet */}
                 <div
                   className="mt-8 p-6 sm:p-7 rounded-[12px]"
-                  style={{ background: "linear-gradient(135deg, rgba(242,194,48,0.13), rgba(242,194,48,0.04))", border: "1px solid rgba(242,194,48,0.28)" }}
+                  style={{ background: "linear-gradient(135deg, rgba(61,214,140,0.13), rgba(61,214,140,0.04))", border: "1px solid rgba(61,214,140,0.28)" }}
                 >
                   {lead !== "done" ? (
                     <form onSubmit={bestallForslag} aria-label="Beställ ett gratis förslag">
                       <h2 className="font-heading text-[clamp(21px,2.6vw,26px)] text-heading mt-0 mb-3" style={{ fontWeight: 520 }}>
-                        Vill du se din hemsida byggd på nytt<em style={{ fontStyle: "italic", color: GUL }}>?</em>
+                        Vill du se din hemsida byggd på nytt?
                       </h2>
                       <p className="text-[14.5px] leading-relaxed text-body mt-0 mb-3 max-w-[600px]">
                         Den här kollen mäter 14 tekniska saker. Den mäter inte hur många sidor du har som kan dyka upp
@@ -385,14 +359,14 @@ export default function SajtkollPage() {
                           onChange={(e) => setEmail(e.target.value)}
                           disabled={lead === "sending"}
                           className="flex-1 min-w-0"
-                          style={{ padding: "15px 18px", borderRadius: "3em", border: `1.5px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 16, outline: "none" }}
+                          style={{ padding: "15px 18px", borderRadius: 8, border: `1.5px solid ${LINE}`, background: "#0B0B0D", color: PAPER, fontSize: 16, outline: "none" }}
                         />
                         <button type="submit" disabled={lead === "sending"} className="premium-btn" data-umami-event="forslag-sajtkoll" style={{ opacity: lead === "sending" ? 0.7 : 1 }}>
                           {lead === "sending" ? "Skickar..." : "Bygg mitt förslag"}
                           {lead !== "sending" && <ArrowRight size={15} />}
                         </button>
                       </div>
-                      {leadFel && <p role="alert" className="text-[13.5px] mt-3 mb-0" style={{ color: "#C97B5E" }}>{leadFel}</p>}
+                      {leadFel && <p role="alert" className="text-[13.5px] mt-3 mb-0" style={{ color: "#F2665C" }}>{leadFel}</p>}
                       <p className="text-[12.5px] text-muted mt-4 mb-0 max-w-[600px] leading-relaxed">
                         Säger du nej hör du inte av mig igen. Gillar du den får du ett fast pris skriftligt innan jag börjar.
                         Du äger hemsidan.
@@ -409,7 +383,7 @@ export default function SajtkollPage() {
                       </p>
                     </div>
                   )}
-                  <p className="mt-5 mb-0 pt-5 flex items-center gap-3 text-[13.5px] text-body" style={{ borderTop: "1px solid rgba(242,194,48,0.2)" }}>
+                  <p className="mt-5 mb-0 pt-5 flex items-center gap-3 text-[13.5px] text-body" style={{ borderTop: "1px solid rgba(61,214,140,0.2)" }}>
                     <img src="/joel-stolt-240.webp" alt="Joel Stolt" width={40} height={40} loading="lazy" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
                     <span>
                       Joel Stolt bygger och svarar själv. Hellre prata först?{" "}
@@ -434,7 +408,7 @@ export default function SajtkollPage() {
                     if (window.umami) window.umami.track("chatt-sajtkoll");
                   }}
                   className="mt-6"
-                  style={{ background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: GUL, display: "inline-flex", alignItems: "center", gap: 8 }}
+                  style={{ background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: "var(--font-ui)", fontSize: 12.5, fontWeight: 600, letterSpacing: 0, color: GUL, display: "inline-flex", alignItems: "center", gap: 8 }}
                 >
                   Fråga AI:n vad det betyder för din bransch <ArrowRight size={13} />
                 </button>
@@ -463,15 +437,15 @@ export default function SajtkollPage() {
                   </summary>
                   <div className="pb-6">
                     {rapport === "sent" ? (
-                      <div className="flex items-start gap-3 p-4 rounded-[10px]" style={{ background: "rgba(242,194,48,0.1)", border: "1px solid rgba(242,194,48,0.3)" }}>
+                      <div className="flex items-start gap-3 p-4 rounded-[10px]" style={{ background: "rgba(61,214,140,0.1)", border: "1px solid rgba(61,214,140,0.3)" }}>
                         <Check size={18} style={{ color: GUL, flexShrink: 0, marginTop: 2 }} />
                         <p className="text-[14px] text-body m-0">Rapporten är på väg till din inkorg. Kolla skräpposten om den dröjer.</p>
                       </div>
                     ) : (
                       <form onSubmit={bestallRapport} className="flex flex-col gap-3">
                         <div className="flex flex-wrap gap-3">
-                          <input name="name" placeholder="Ditt namn" autoComplete="name" aria-label="Ditt namn" className="flex-1 min-w-[160px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
-                          <input name="email" type="email" required placeholder="Din e-post" autoComplete="email" aria-label="Din e-post" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
+                          <input name="name" placeholder="Ditt namn" autoComplete="name" aria-label="Ditt namn" className="flex-1 min-w-[160px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#0B0B0D", color: PAPER, fontSize: 15, outline: "none" }} />
+                          <input name="email" type="email" required placeholder="Din e-post" autoComplete="email" aria-label="Din e-post" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: 10, border: `1px solid ${LINE}`, background: "#0B0B0D", color: PAPER, fontSize: 15, outline: "none" }} />
                         </div>
                         <label className="flex items-start gap-2.5 text-[13.5px] text-body cursor-pointer">
                           <input type="checkbox" name="bevaka" style={{ marginTop: 3, accentColor: GUL }} />
@@ -483,7 +457,7 @@ export default function SajtkollPage() {
                             {rapport === "sending" ? "Skickar..." : "Skicka rapporten"}
                           </button>
                         </div>
-                        {rapportFel && <p className="text-[13px] m-0" style={{ color: "#C97B5E" }}>{rapportFel}</p>}
+                        {rapportFel && <p className="text-[13px] m-0" style={{ color: "#F2665C" }}>{rapportFel}</p>}
                         <p className="text-[11.5px] text-faint m-0" style={{ fontFamily: "var(--font-ui)" }}>
                           Jag använder uppgifterna för rapporten och bevakningen, inget annat. Avregistrering i varje mejl.
                         </p>
@@ -499,12 +473,12 @@ export default function SajtkollPage() {
                 )}
 
                 {/* Konkurrentjämförelse */}
-                <div className="mt-5 p-6 rounded-[12px]" style={{ background: "#161309", border: `1px solid ${LINE}` }}>
+                <div className="mt-5 p-6 rounded-[12px]" style={{ background: "#111113", border: `1px solid ${LINE}` }}>
                   <h2 className="font-heading text-[18px] text-heading mt-0 mb-3" style={{ fontWeight: 500 }}>
                     Jämför med en konkurrent
                   </h2>
                   <form onSubmit={jamforKonkurrent} className="flex flex-wrap gap-3">
-                    <input value={konkUrl} onChange={(e) => setKonkUrl(e.target.value)} placeholder="konkurrenten.se" aria-label="Konkurrentens webbadress" inputMode="url" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: "3em", border: `1px solid ${LINE}`, background: "#0F0D08", color: PAPER, fontSize: 15, outline: "none" }} />
+                    <input value={konkUrl} onChange={(e) => setKonkUrl(e.target.value)} placeholder="konkurrenten.se" aria-label="Konkurrentens webbadress" inputMode="url" className="flex-1 min-w-[200px]" style={{ padding: "12px 14px", borderRadius: 8, border: `1px solid ${LINE}`, background: "#0B0B0D", color: PAPER, fontSize: 15, outline: "none" }} />
                     <button type="submit" disabled={konkState === "loading"} className="secondary-btn" data-umami-event="sajtkoll-jamfor" style={{ opacity: konkState === "loading" ? 0.7 : 1 }}>
                       {konkState === "loading" ? "Mäter..." : "Jämför"}
                     </button>
@@ -513,9 +487,9 @@ export default function SajtkollPage() {
                     <div className="mt-5">
                       <div className="grid grid-cols-2 gap-4 mb-4">
                         {[{ r: result, namn: "Din sajt" }, { r: konk, namn: konk.url.replace(/^https?:\/\//, "") }].map(({ r, namn }) => (
-                          <div key={namn} className="text-center p-4 rounded-[10px]" style={{ background: "#0F0D08", border: `1px solid ${LINE}` }}>
-                            <div className="text-[12px] text-muted mb-1" style={{ fontFamily: "var(--font-ui)", letterSpacing: "0.08em" }}>{namn}</div>
-                            <div className="font-heading" style={{ fontSize: 40, lineHeight: 1, fontWeight: 340, color: r.score >= 85 ? GUL : r.score >= 60 ? "#D9B96A" : "#C97B5E" }}>{r.score}</div>
+                          <div key={namn} className="text-center p-4 rounded-[10px]" style={{ background: "#0B0B0D", border: `1px solid ${LINE}` }}>
+                            <div className="text-[12px] text-muted mb-1" style={{ fontFamily: "var(--font-ui)", letterSpacing: 0 }}>{namn}</div>
+                            <div className="font-heading" style={{ fontSize: 40, lineHeight: 1, fontWeight: 520, color: "#F4F4F5" }}>{r.score}</div>
                           </div>
                         ))}
                       </div>
@@ -524,7 +498,7 @@ export default function SajtkollPage() {
                           const k = konk.checks.find((x) => x.id === c.id);
                           if (!k) return null;
                           const sym = (x) => (x.pass ? "✓" : x.warn ? "!" : "✗");
-                          const col = (x) => (x.pass ? GUL : x.warn ? "#D9B96A" : "#C97B5E");
+                          const col = (x) => (x.pass ? GUL : x.warn ? "#E8B04A" : "#F2665C");
                           return (
                             <div key={c.id} className="flex items-center justify-between gap-3 py-2 text-[13.5px]" style={{ borderBottom: `1px solid ${LINE}` }}>
                               <span style={{ color: col(c), fontWeight: 700, width: 18 }}>{sym(c)}</span>

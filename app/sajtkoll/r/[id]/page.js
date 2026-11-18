@@ -18,20 +18,20 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const GUL = "#F2C230";
-const LINE = "rgba(242,236,221,0.14)";
+const GUL = "#3DD68C"; /* signalfärgen (grön), ny profil */
+const LINE = "rgba(255,255,255,0.12)";
 
 function Rad({ c }) {
   const state = c.pass ? "pass" : c.warn ? "warn" : "fail";
-  const color = state === "pass" ? GUL : state === "warn" ? "#D9B96A" : "#C97B5E";
+  const color = state === "pass" ? GUL : state === "warn" ? "#E8B04A" : "#F2665C";
   const tecken = state === "pass" ? "✓" : state === "warn" ? "!" : "✗";
   return (
     <div className="py-4 flex items-start gap-4" style={{ borderBottom: `1px solid ${LINE}` }}>
-      <span className="flex items-center justify-center flex-shrink-0 mt-0.5" style={{ width: 26, height: 26, borderRadius: 8, background: "rgba(242,236,221,0.07)", color, fontWeight: 700 }}>{tecken}</span>
+      <span className="flex items-center justify-center flex-shrink-0 mt-0.5" style={{ width: 26, height: 26, borderRadius: 8, background: "rgba(255,255,255,0.07)", color, fontWeight: 700 }}>{tecken}</span>
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
           <span className="text-[15px] font-500 text-heading">{c.label}</span>
-          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11.5, fontWeight: 600, letterSpacing: "0.08em", color }}>{c.value}</span>
+          <span style={{ fontFamily: "var(--font-ui)", fontSize: 11.5, fontWeight: 600, letterSpacing: 0, color }}>{c.value}</span>
         </div>
         <p className="text-[13.5px] text-muted mt-1 mb-0 leading-relaxed">{c.detail}</p>
       </div>
@@ -54,7 +54,7 @@ export default async function DelatResultat({ params }) {
     <>
       <Header />
       <main id="main-content" tabIndex={-1}>
-        <section className="hero-dark field-glow relative overflow-hidden">
+        <section className="relative overflow-hidden" style={{ background: "radial-gradient(55% 60% at 18% 0%, rgba(255,255,255,0.07), transparent 70%)" }}>
           <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 pt-28 sm:pt-36 pb-12">
             <span className="eyebrow">Delat resultat</span>
             {!resultat ? (
@@ -75,12 +75,12 @@ export default async function DelatResultat({ params }) {
                   Sajtkoll för {resultat.url.replace(/^https?:\/\//, "")}
                 </h1>
                 <div className="flex items-baseline gap-3 mt-4">
-                  <span className="font-heading" style={{ fontSize: "clamp(52px,7vw,76px)", lineHeight: 1, fontWeight: 340, fontVariationSettings: '"opsz" 144', color: resultat.score >= 85 ? GUL : resultat.score >= 60 ? "#D9B96A" : "#C97B5E" }}>
+                  <span className="font-heading" style={{ fontSize: "clamp(52px,7vw,76px)", lineHeight: 1, fontWeight: 520, color: "#F4F4F5" }}>
                     {resultat.score}
                   </span>
                   <span className="text-[15px] text-muted">av 100</span>
                 </div>
-                <p className="font-heading text-[clamp(17px,2.2vw,22px)] text-heading mt-2 mb-0 max-w-[480px]" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                <p className="font-heading text-[clamp(17px,2.2vw,22px)] text-heading mt-2 mb-0 max-w-[480px]" style={{ fontWeight: 400 }}>
                   {resultat.verdict}
                 </p>
               </>
@@ -91,14 +91,14 @@ export default async function DelatResultat({ params }) {
         {resultat && (
           <section className="py-12 sm:py-16 px-5 sm:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="p-7 sm:p-9 rounded-[14px]" style={{ background: "#161309", border: `1px solid ${LINE}` }}>
+              <div className="p-7 sm:p-9 rounded-[14px]" style={{ background: "#111113", border: `1px solid ${LINE}` }}>
                 {resultat.intro && (
-                  <p className="font-heading text-[clamp(17px,2.2vw,21px)] leading-relaxed text-heading mt-0 mb-6" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                  <p className="font-heading text-[clamp(17px,2.2vw,21px)] leading-relaxed text-heading mt-0 mb-6" style={{ fontWeight: 400 }}>
                     {resultat.intro}
                   </p>
                 )}
                 {resultat.ai && (
-                  <div className="mb-6 p-5 rounded-[10px]" style={{ background: "rgba(242,194,48,0.07)", border: "1px solid rgba(242,194,48,0.2)" }}>
+                  <div className="mb-6 p-5 rounded-[10px]" style={{ background: "rgba(61,214,140,0.07)", border: "1px solid rgba(61,214,140,0.2)" }}>
                     <p className="text-[15px] leading-relaxed text-body m-0">{resultat.ai}</p>
                     <p className="text-[11.5px] text-faint mt-2 mb-0" style={{ fontFamily: "var(--font-ui)" }}>Sammanfattning framtagen automatiskt ur mätvärdena.</p>
                   </div>
@@ -108,7 +108,7 @@ export default async function DelatResultat({ params }) {
                     <Rad key={c.id} c={c} />
                   ))}
                 </div>
-                <div className="mt-8 p-6 rounded-[12px] flex flex-wrap items-center justify-between gap-5" style={{ background: "linear-gradient(135deg, rgba(242,194,48,0.13), rgba(242,194,48,0.04))", border: "1px solid rgba(242,194,48,0.28)" }}>
+                <div className="mt-8 p-6 rounded-[12px] flex flex-wrap items-center justify-between gap-5" style={{ background: "linear-gradient(135deg, rgba(61,214,140,0.13), rgba(61,214,140,0.04))", border: "1px solid rgba(61,214,140,0.28)" }}>
                   <p className="text-[15px] text-body m-0 max-w-[480px]">
                     Vill du se hur din egen sajt står sig? 14 kontroller på tio sekunder, gratis och utan registrering.
                   </p>
