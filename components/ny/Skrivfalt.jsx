@@ -15,7 +15,7 @@ const EXEMPEL = [
   "Vi behöver en ny sajt med bokning",
 ];
 
-export default function Skrivfalt({ event, stor = false }) {
+export default function Skrivfalt({ event, stor = false, href = "/kontakt" }) {
   const [i, setI] = useState(0);
   const [synlig, setSynlig] = useState(true);
 
@@ -33,7 +33,7 @@ export default function Skrivfalt({ event, stor = false }) {
 
   return (
     <Link
-      href="/kontakt"
+      href={href}
       className={`${t.composer} ${stor ? t.composerStor : ""}`}
       data-umami-event={event}
       aria-label="Berätta vad ni behöver"

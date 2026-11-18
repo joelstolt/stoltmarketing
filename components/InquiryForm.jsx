@@ -5,7 +5,7 @@ import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 import f from "./InquiryForm.module.css";
 
-export default function InquiryForm({ service = "Kontakt", initialMessage = "", submitLabel = "Skicka meddelande", eventName = "lead-kontaktformular" }) {
+export default function InquiryForm({ service = "Kontakt", initialMessage = "", submitLabel = "Skicka meddelande", eventName = "lead-kontaktformular", messageLabel = "Vad vill du ha hjälp med?", placeholder = "Berätta kort. Lägg gärna till företagets namn eller webbadress.", rows = 5 }) {
   const id = useId();
   const started = useRef(false);
   const trackForm = (event) => { try { window.umami?.track(event, { form_id: eventName, service }); } catch {} };
@@ -44,7 +44,7 @@ export default function InquiryForm({ service = "Kontakt", initialMessage = "", 
       <label className={f.field} htmlFor={`${id}-name`}>Namn<input id={`${id}-name`} name="name" autoComplete="name" maxLength={200} required value={data.name} onChange={change} /></label>
       <label className={f.field} htmlFor={`${id}-email`}>E-post<input id={`${id}-email`} name="email" type="email" autoComplete="email" inputMode="email" maxLength={254} required value={data.email} onChange={change} /></label>
     </div>
-    <label className={f.field} htmlFor={`${id}-message`}>Vad vill du ha hjälp med?<textarea id={`${id}-message`} name="message" rows={5} maxLength={5000} required value={data.message} onChange={change} placeholder="Berätta kort. Lägg gärna till företagets namn eller webbadress." /></label>
+    <label className={f.field} htmlFor={`${id}-message`}>{messageLabel}<textarea id={`${id}-message`} name="message" rows={rows} maxLength={5000} required value={data.message} onChange={change} placeholder={placeholder} /></label>
     <input name="hp_field" value={data.hp_field} onChange={change} tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] w-px h-px" />
     {error && <div role="alert" className={f.error}><p>{error}</p><a href="mailto:joel@stoltmarketing.se" className={`${f.textLink} ${f.errorLink}`}>Mejla joel@stoltmarketing.se</a></div>}
     <p className={f.hint}>Jag använder uppgifterna för att hantera din förfrågan. <a href="/integritet" className={f.textLink}>Så behandlas personuppgifterna</a>.</p>

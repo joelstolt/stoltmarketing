@@ -19,7 +19,8 @@ const STEG = [
 const SLUT = 5;
 const TIDER = [500, 1400, 1900, 1600, 1600, 1200];
 
-export default function ArendeFonster() {
+/* href och event används av landningssidorna, så att skrivfältet leder till sidans eget formulär. */
+export default function ArendeFonster({ href = "/kontakt", event = "start-fonster-cta" }) {
   const [fas, setFas] = useState(0);
   const rot = useRef(null);
   const synlig = useRef(false);
@@ -101,7 +102,7 @@ export default function ArendeFonster() {
       </ol>
 
       <div className={t.composerWrap}>
-        <Skrivfalt event="start-fonster-cta" />
+        <Skrivfalt event={event} href={href} />
       </div>
     </figure>
   );

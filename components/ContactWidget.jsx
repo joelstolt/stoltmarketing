@@ -17,7 +17,8 @@ export default function ContactWidget() {
     document.body.appendChild(script);
   }, []);
   useEffect(() => {
-    const suppressed = ["/kontakt", "/boka", "/integritet", "/serviceavtal"].includes(pathname) || pathname.startsWith("/analys/");
+    // Landningssidorna (/lp/) har ett mål och egen ringknapp; widgeten täckte formuläret i mobil (2026-11-18).
+    const suppressed = ["/kontakt", "/boka", "/integritet", "/serviceavtal"].includes(pathname) || pathname.startsWith("/analys/") || pathname.startsWith("/lp/");
     let menuOpen = document.querySelector('[aria-controls="mobile-navigation"]')?.getAttribute("aria-expanded") === "true";
     const apply = (close = false) => {
       const widget = document.querySelector("svarslagret-widget");
