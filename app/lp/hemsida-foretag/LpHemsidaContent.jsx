@@ -10,6 +10,7 @@ import { trackConversion } from "@/lib/track";
 import { klickId } from "@/lib/klickid";
 import { CASES } from "@/lib/case-data";
 import { Logo } from "@/components/ny/Logo";
+import { DEMO_MENING } from "@/lib/usp";
 
 const niklassonsOffert = CASES.niklassonsflytt.results[0].value;
 
@@ -17,22 +18,22 @@ const steg = [
   {
     n: "1",
     title: "Skicka formuläret",
-    desc: "Namn och mejl räcker och det tar en minut. Inget möte, inget säljsamtal. Har du en hemsida idag skriver du adressen, annars lämnar du fältet tomt.",
+    desc: "Namn och mejl räcker och det tar en minut. Har ni en hemsida i dag skriver ni adressen, annars lämnar ni fältet tomt. Jag hör av mig nästa arbetsdag.",
   },
   {
     n: "2",
-    title: "Du får ett färdigt designförslag",
-    desc: "Ett gratis, klickbart förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs efter ditt ja.",
+    title: "Samtal och klickbar demo",
+    desc: "Vi pratar om vad sajten ska göra. Efter samtalet får ni en klickbar demo av er nya hemsida och klickar runt i den innan ni bestämmer er, helt riskfritt för er.",
   },
   {
     n: "3",
     title: "Säg ja till upplägget",
-    desc: "Gillar du förslaget kommer vi överens om omfattning, tidplan och ett fast pris skriftligt. Därefter bygger jag klart och publicerar sajten. Tackar du nej till förslaget kostar det inget.",
+    desc: "Gillar ni demon kommer vi överens om omfattning, tidplan och ett fast pris skriftligt. Därefter bygger jag klart och publicerar sajten. Tackar ni nej kostar det inget.",
   },
 ];
 
 const ingar = [
-  "Sajt och design, byggd för din bransch",
+  "Sajt och design, byggd för er bransch",
   "Hosting och löpande drift",
   "Säkerhet, certifikat och backuper",
   "Innehållsändringar inom överenskommen omfattning",
@@ -41,23 +42,23 @@ const ingar = [
 ];
 
 const paket = [
-  { name: "Hemsida", price: "Fast pris innan jag börjar", note: "Du får priset skriftligt innan jag börjar. Första samtalet kostar ingenting.", items: ["Design och bygge efter vad ni behöver", "Texter skrivna för kunder och sök", "Teknik som testas även i mobilen", "Formulär med skydd mot skräppost"], highlight: true },
+  { name: "Hemsida", price: "Fast pris innan jag börjar", note: "Ni får priset skriftligt innan jag börjar. Första samtalet kostar ingenting.", items: ["Design och bygge efter vad ni behöver", "Texter skrivna för kunder och sök", "Teknik som testas även i mobilen", "Formulär med skydd mot skräppost"], highlight: true },
   { name: "Webbshop", price: "Fast pris innan jag börjar", note: "Omfattning och externa avgifter avtalas före start.", items: ["Produktsidor och kassa", "Betalning och frakt efter era behov", "Koppling till lager eller ekonomi vid behov"], highlight: false },
-  { name: "Löpande hjälp", price: "Fast månadspris i förväg", note: "Du vet månadskostnaden innan vi startar.", items: ["Drift, säkerhet och backup", "Ändringar och uppdateringar", "Svar nästa arbetsdag"], highlight: false },
+  { name: "Löpande hjälp", price: "Fast månadspris i förväg", note: "Ni vet månadskostnaden innan vi startar.", items: ["Drift, säkerhet och backup", "Ändringar och uppdateringar", "Svar nästa arbetsdag"], highlight: false },
 ];
 
 const faqs = [
   {
     q: "Vem äger sajten vid avslut?",
-    a: "Du äger domänen och innehållet. Vid avslut får du en export av sajtens filer. Formulär, CMS, e-post och andra externa tjänster behöver en fortsatt eller ny driftlösning. Jag går igenom vad som behövs för att flytta funktionerna.",
+    a: "Ni äger domänen och innehållet. Vid avslut får ni en export av sajtens filer. Formulär, CMS, e-post och andra externa tjänster behöver en fortsatt eller ny driftlösning. Jag går igenom vad som behövs för att flytta funktionerna.",
   },
   {
-    q: "Hur säger jag upp?",
+    q: "Hur säger vi upp?",
     a: "Ett mejl räcker. Löpande hjälp avslutas till nästa månadsskifte. Inga uppsägningsavgifter och ingen förhandling.",
   },
   {
     q: "Hur lång tid tar det?",
-    a: "Förslaget med startsida och en tjänstesida får du inom två arbetsdagar. När du sagt ja bestämmer vi tidplanen för resten utifrån omfattning och när materialet finns.",
+    a: "Det beror på omfattningen och på när materialet finns. Efter första samtalet får ni en klickbar demo. När ni sagt ja får ni tidplanen skriftligt tillsammans med det fasta priset.",
   },
   {
     q: "Jobbar du bara i Hässleholm?",
@@ -75,7 +76,7 @@ const Formular = ({ id, rubrik, done, form, sending, error, change, submit, inpu
           Tack, jag hör av mig nästa arbetsdag.
         </h3>
         <p className="mt-2 text-[15px] text-body leading-relaxed">
-          Du får ett förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs efter ditt ja. Vill du prata tidigare når du mig
+          Då bokar vi ett första samtal. Efter samtalet får ni en klickbar demo, helt riskfritt. Vill ni prata tidigare når ni mig
           direkt på {SITE.phone}.
         </p>
       </div>
@@ -85,7 +86,7 @@ const Formular = ({ id, rubrik, done, form, sending, error, change, submit, inpu
           <h3 className="font-heading font-700 text-[19px] text-heading mb-4">{rubrik}</h3>
         )}
         <div className="grid gap-3">
-          <label htmlFor={`${id}-name`} className="text-[14px] text-heading">Ditt namn</label>
+          <label htmlFor={`${id}-name`} className="text-[14px] text-heading">Namn</label>
           <input
             id={`${id}-name`}
             autoComplete="name"
@@ -97,7 +98,7 @@ const Formular = ({ id, rubrik, done, form, sending, error, change, submit, inpu
             className={input}
 
           />
-          <label htmlFor={`${id}-email`} className="text-[14px] text-heading">Din e-post</label>
+          <label htmlFor={`${id}-email`} className="text-[14px] text-heading">E-post</label>
           <input
             id={`${id}-email`}
             autoComplete="email"
@@ -149,12 +150,12 @@ const Formular = ({ id, rubrik, done, form, sending, error, change, submit, inpu
             disabled={sending}
             className="w-full mt-1 px-6 py-3.5 rounded-[10px] bg-[#EDEDEE] text-[#0A0A0B] font-heading font-600 text-[16px] cursor-pointer hover:bg-white transition-colors disabled:opacity-60"
           >
-            {sending ? "Skickar..." : "Be om gratis förslag"}
+            {sending ? "Skickar..." : "Boka ett första samtal"}
           </button>
         </div>
         {error && <p role="alert" className="mt-3 text-[15px] text-heading">{error}</p>}
         <p className="mt-3 text-[13px] text-muted leading-relaxed">
-          Gratis förslag: startsida och en tjänstesida inom två arbetsdagar, resten efter ditt ja. Uppgifterna används för att svara dig. Ingen uppföljningskedja, inget nyhetsbrev.{" "}
+          Klickbar demo efter första samtalet, helt riskfritt. Uppgifterna används för att svara er. Ingen uppföljningskedja, inget nyhetsbrev.{" "}
           <Link href="/integritet" className="underline hover:text-heading transition-colors">
             Så hanteras de
           </Link>
@@ -188,7 +189,7 @@ export default function LpHemsidaContent() {
       // De valfria fälten bakas in i message: /api/contact kräver name, email
       // och message, och vill inte veta något om den här sidans fältuppsättning.
       const rader = [
-        "Vill ha ett gratis designförslag (LP hemsida-foretag).",
+        "Vill boka ett första samtal om ny hemsida (LP hemsida-foretag).",
         form.phone ? `Telefon: ${form.phone}` : null,
         form.url ? `Nuvarande sajt: ${form.url}` : null,
       ].filter(Boolean);
@@ -203,7 +204,7 @@ export default function LpHemsidaContent() {
           message: rader.join("\n"),
           hp_field: form.hp_field,
           _elapsedMs: Date.now() - loadedAt,
-          _subject: `Designförslag: ${form.name}${form.url ? ` (${form.url})` : ""}`,
+          _subject: `Hemsida: ${form.name}${form.url ? ` (${form.url})` : ""}`,
         }),
       });
       const result = await res.json().catch(() => null);
@@ -245,11 +246,11 @@ export default function LpHemsidaContent() {
               Hemsida till fast pris
             </p>
             <h1 className="mt-4 font-heading font-700 text-[clamp(34px,5.6vw,54px)] leading-[1.05] tracking-[-0.02em] text-heading">
-              Ny hemsida till ditt företag. Börja med ett gratis förslag.
+              Ny hemsida till ert företag. Se den innan ni bestämmer er.
             </h1>
             <p className="mt-5 text-[17px] sm:text-[18px] leading-relaxed text-body max-w-[560px]">
-              Byggd av personen du pratar med. Fast pris skriftligt innan jag börjar, exkl. moms.
-              Första samtalet kostar ingenting. Löpande hjälp har ett fast månadspris som du vet i förväg.
+              Byggd av personen ni pratar med. Klickbar demo efter första samtalet, helt riskfritt.
+              Fast pris skriftligt innan jag börjar, exkl. moms. Löpande hjälp har ett fast månadspris som ni vet i förväg.
             </p>
 
             <p className="mt-6 text-[15px] text-body leading-relaxed max-w-[520px]">
@@ -265,7 +266,7 @@ export default function LpHemsidaContent() {
                 href="#kontakt"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[10px] bg-[#EDEDEE] text-[#0A0A0B] font-heading font-600 text-[16px] hover:bg-white transition-colors"
               >
-                Få gratis förslag inom två arbetsdagar
+                Boka ett första samtal
                     </a>
             </div>
 
@@ -275,7 +276,7 @@ export default function LpHemsidaContent() {
           </div>
 
           <div className="lg:sticky lg:top-8">
-            <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="top" rubrik="Få ditt gratis designförslag" />
+            <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="top" rubrik="Boka ett första samtal" />
           </div>
         </div>
       </section>
@@ -289,7 +290,7 @@ export default function LpHemsidaContent() {
             <Reveal>
               <div className="rounded-[10px] border border-border p-7 h-full">
                 <p className="text-[13px] font-600 text-muted">
-                  När du jämför offerter
+                  När ni jämför offerter
                 </p>
                 <div className="mt-3 font-heading font-700 text-[30px] text-heading leading-none">
                   Jämför hela kostnaden
@@ -315,7 +316,7 @@ export default function LpHemsidaContent() {
                   {[
                     "Omfattning och pris avtalas före start",
                     "Ändringar inom avtalad omfattning",
-                    "Du äger innehållet och domänen",
+                    "Ni äger innehållet och domänen",
                   ].map((it) => (
                     <li key={it} className="flex gap-2.5 text-[15px] text-body leading-snug">
                       <Check aria-hidden="true" size={17} className="text-[#3DD68C] shrink-0 mt-0.5" />
@@ -466,12 +467,12 @@ export default function LpHemsidaContent() {
           <Reveal delay={0.08}>
             <div>
               <h2 className="font-heading font-700 text-[clamp(22px,3vw,30px)] leading-[1.15] tracking-[-0.015em] text-heading">
-                Du pratar med den som bygger
+                Ni pratar med den som bygger
               </h2>
               <p className="mt-4 text-[16px] text-body leading-relaxed">
                 Jag heter Joel Stolt. Jag bygger själv, svarar själv och tar ansvar själv.
-                Inga projektledare på timpris, ingen sitter emellan och ingen ringer upp dig
-                som inte vet vad du beställt.
+                Inga projektledare på timpris, ingen sitter emellan och ingen ringer upp er
+                som inte vet vad ni beställt.
               </p>
               <p className="mt-3 text-[15px] text-muted">
                 10+ års erfarenhet · {SITE.baseCity}
@@ -500,7 +501,7 @@ export default function LpHemsidaContent() {
       <section id="priser" className="px-5 sm:px-8 py-14 sm:py-20 scroll-mt-4">
         <div className="max-w-[1120px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
-            Du vet priset innan jag börjar
+            Ni vet priset innan jag börjar
           </h2>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {paket.map((p, i) => (
@@ -541,7 +542,7 @@ export default function LpHemsidaContent() {
           </h2>
           <p className="mt-4 text-[16px] text-body leading-relaxed max-w-[620px]">
             Jag sitter i {SITE.baseCity} och jobbar med företag i Kristianstad, Malmö, Lund,
-            Helsingborg och resten av Skåne. Vi ses över video eller på plats, och du får tag
+            Helsingborg och resten av Skåne. Vi ses över video eller på plats, och ni får tag
             på mig direkt när något behöver fixas. Kunderna finns i hela Sverige, men Skåne
             ligger närmast.
           </p>
@@ -561,7 +562,7 @@ export default function LpHemsidaContent() {
                   href="#kontakt"
                   className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-heading underline underline-offset-4 decoration-[rgba(255,255,255,0.3)]"
                 >
-                  Få gratis förslag
+                  Boka ett första samtal
                 </a>
               </div>
             </Reveal>
@@ -572,14 +573,14 @@ export default function LpHemsidaContent() {
                 </h3>
                 <p className="mt-3 text-[15px] text-body leading-relaxed">
                   Rätt struktur från start, spårning mot riktiga förfrågningar och löpande
-                  optimering. Fast pris utan procentpåslag på annonsbudgeten, så du vet vad
+                  optimering. Fast pris utan procentpåslag på annonsbudgeten, så ni vet vad
                   rådgivningen kostar.
                 </p>
                 <a
                   href="#kontakt"
                   className="mt-5 inline-flex items-center gap-2 text-[15px] font-600 text-heading underline underline-offset-4 decoration-[rgba(255,255,255,0.3)]"
                 >
-                  Få gratis förslag
+                  Boka ett första samtal
                 </a>
               </div>
             </Reveal>
@@ -590,7 +591,7 @@ export default function LpHemsidaContent() {
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-[760px] mx-auto">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
-            Det du undrar
+            Det ni undrar
           </h2>
           <div className="mt-9 grid gap-6">
             {faqs.map((f) => (
@@ -606,10 +607,10 @@ export default function LpHemsidaContent() {
       <section id="kontakt" className="px-5 sm:px-8 py-14 sm:py-20 bg-surface border-t border-border scroll-mt-4">
         <div className="max-w-[560px] mx-auto text-center">
           <h2 className="font-heading font-700 text-[clamp(24px,3.4vw,34px)] leading-[1.15] tracking-[-0.015em] text-heading">
-            Få ditt gratis designförslag
+            Se er nya hemsida innan ni bestämmer er
           </h2>
           <p className="mt-4 text-[16px] text-body leading-relaxed">
-            Inom två arbetsdagar får du ett klickbart förslag med startsida och en tjänstesida. Resten byggs efter ditt ja. Tackar du nej till förslaget kostar det inget.
+            {DEMO_MENING} Vill ni gå vidare får ni ett fast pris skriftligt innan jag börjar. Tackar ni nej kostar det inget.
           </p>
           <div className="mt-8 text-left">
             <Formular done={done} form={form} sending={sending} error={error} change={change} submit={submit} input={input} id="bottom" />
@@ -663,7 +664,7 @@ export default function LpHemsidaContent() {
             href="#kontakt"
             className="flex-[1.4] inline-flex items-center justify-center px-4 py-3 rounded-[10px] bg-[#EDEDEE] text-[#0A0A0B] font-heading font-600 text-[15px]"
           >
-            Få gratis förslag
+            Boka samtal
           </a>
         </div>
       </div>

@@ -27,7 +27,7 @@ function erbjudanden(service) {
   if (service === "hemsida") {
     return [
       { name: "Hemsida eller webbshop", price: "Fast pris innan jag börjar", desc: "Jag bygger det ni behöver, med omfattning och pris avtalat skriftligt i förväg.", terms: FAST_DEMO, href: "/sa-funkar-det", label: "Så funkar det" },
-      { name: "Löpande hjälp", price: "Fast månadspris i förväg", desc: "Drift, säkerhet och ändringar efter lansering, med svar nästa arbetsdag.", terms: "Du vet månadspriset i förväg. Annonsbudget tillkommer vid Google Ads." },
+      { name: "Löpande hjälp", price: "Fast månadspris i förväg", desc: "Drift, säkerhet och ändringar efter lansering, med svar nästa arbetsdag.", terms: "Ni vet månadspriset i förväg. Annonsbudget tillkommer vid Google Ads." },
     ];
   }
   if (service === "seo") {
@@ -50,8 +50,8 @@ function erbjudanden(service) {
 
 const AVSLUT = {
   hemsida: {
-    rubrik: "Se ett förslag för ditt företag.",
-    text: "Skicka din webbadress eller ditt företagsnamn. Jag tar fram ett förslag på startsida och en tjänstesida.",
+    rubrik: "Se er nya hemsida innan ni bestämmer er.",
+    text: "Berätta vad sajten ska göra. Efter första samtalet får ni en klickbar demo, helt riskfritt, och sedan ett fast pris skriftligt.",
   },
   "ai-automation": {
     rubrik: "Börja med ett flöde som tar tid.",

@@ -3306,18 +3306,18 @@
       },
       {
         "type": "p",
-        "text": "På /lp/hemsida-foretag är uppgiften att få ett gratis designförslag för en företagssajt. Sidan beskriver ett första förslag och har en kontaktväg för det erbjudandet. Det ska jämföras med omfattning och villkor för hemsidan, inte med en provperiod för en annan tjänst."
+        "text": "På /lp/hemsida-foretag är uppgiften att boka ett första samtal om en företagssajt. Sidan beskriver vad som händer efter samtalet, en klickbar demo och ett fast pris skriftligt, och har en kontaktväg för just det. Det ska jämföras med omfattning och villkor för hemsidan, inte med en provperiod för en annan tjänst."
       },
       {
         "type": "cards",
         "items": [
           {
             "title": "Matchning",
-            "text": "En annons om företagets hemsida ska mötas av just hemsideerbjudandet. Knappen behöver beskriva att besökaren lämnar underlag för ett förslag."
+            "text": "En annons om företagets hemsida ska mötas av just hemsideerbjudandet. Knappen behöver beskriva att besökaren bokar ett första samtal."
           },
           {
             "title": "Omfattning",
-            "text": "Förslaget behöver beskrivas som startsida och en tjänstesida, inte som ett löfte om en komplett färdig sajt före beslut."
+            "text": "Demon efter samtalet behöver beskrivas som en demo att klicka runt i, inte som ett löfte om en komplett färdig sajt före beslut."
           },
           {
             "title": "Pris och villkor",

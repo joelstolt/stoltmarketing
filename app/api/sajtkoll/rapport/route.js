@@ -162,8 +162,8 @@ function renderEmail({ resultat, name, diff, unsubUrl, synlighet, ask }) {
       <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">${rows}</table>
 
       <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;margin-top:28px;"><tr><td align="center" style="background:#0F0D08;border-radius:12px;padding:22px 24px;">
-        <div style="font-size:15px;font-weight:700;color:#F2ECDD;margin-bottom:4px;">Vill du se hemsidan byggd på nytt?</div>
-        <div style="font-size:12.5px;color:#A19A87;margin-bottom:14px;">Svara på det här mejlet så bygger Joel ett förslag du kan klicka runt i. Klart om två arbetsdagar, gratis och utan möte.</div>
+        <div style="font-size:15px;font-weight:700;color:#F2ECDD;margin-bottom:4px;">Vill ni se hemsidan byggd på nytt?</div>
+        <div style="font-size:12.5px;color:#A19A87;margin-bottom:14px;">Svara på det här mejlet eller boka ett första samtal. Efter samtalet får ni en klickbar demo av er nya hemsida, helt riskfritt, och sedan ett fast pris skriftligt.</div>
         <table role="presentation" cellpadding="0" cellspacing="0" align="center"><tr>
           <td style="background:#F2C230;border-radius:24px;">
             <a href="https://www.stoltmarketing.se/boka" style="display:inline-block;padding:12px 26px;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#191405;text-decoration:none;">BOKA GENOMGÅNG</a>

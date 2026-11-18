@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Hur lång tid tar ett projekt?",
-    a: "En enklare webbplats tar oftast 1-2 veckor. Större e-handels- och AI-projekt kan ta 1-2 månader. Ett gratis designförslag för din webb får du inom 2 arbetsdagar, och alltid en tydlig tidplan i förslaget.",
+    a: "Det beror på omfattningen. Efter första samtalet får ni en klickbar demo, helt riskfritt. Tidplanen får ni skriftligt tillsammans med det fasta priset, innan jag börjar.",
   },
   {
     q: "Vad händer efter lansering?",

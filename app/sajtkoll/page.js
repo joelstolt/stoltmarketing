@@ -336,17 +336,17 @@ export default function SajtkollPage() {
                   style={{ background: "linear-gradient(135deg, rgba(61,214,140,0.13), rgba(61,214,140,0.04))", border: "1px solid rgba(61,214,140,0.28)" }}
                 >
                   {lead !== "done" ? (
-                    <form onSubmit={bestallForslag} aria-label="Beställ ett gratis förslag">
+                    <form onSubmit={bestallForslag} aria-label="Bli kontaktad om en ny hemsida">
                       <h2 className="font-heading text-[clamp(21px,2.6vw,26px)] text-heading mt-0 mb-3" style={{ fontWeight: 520 }}>
-                        Vill du se din hemsida byggd på nytt?
+                        Vill ni se er hemsida byggd på nytt?
                       </h2>
                       <p className="text-[14.5px] leading-relaxed text-body mt-0 mb-3 max-w-[600px]">
-                        Den här kollen mäter 14 tekniska saker. Den mäter inte hur många sidor du har som kan dyka upp
-                        när någon söker på din tjänst och din ort. Det tittar jag på när jag bygger ditt förslag.
+                        Den här kollen mäter 14 tekniska saker. Den mäter inte hur många sidor ni har som kan dyka upp
+                        när någon söker på er tjänst och er ort. Det går vi igenom i första samtalet.
                       </p>
                       <p className="text-[14.5px] leading-relaxed text-body mt-0 mb-5 max-w-[600px]">
-                        Jag bygger startsidan och en tjänstesida åt dig, med dina tjänster och dina orter, på en riktig
-                        länk. Klart om två arbetsdagar. Det kostar ingenting och du förbinder dig inte till något.
+                        Lämna er mejladress så hör jag av mig nästa arbetsdag. Efter första samtalet får ni en klickbar
+                        demo av er nya hemsida och klickar runt i den innan ni bestämmer er, helt riskfritt för er.
                       </p>
                       <div className="flex flex-wrap gap-3 max-w-[600px]">
                         <input
@@ -362,24 +362,23 @@ export default function SajtkollPage() {
                           style={{ padding: "15px 18px", borderRadius: 8, border: `1.5px solid ${LINE}`, background: "#0B0B0D", color: PAPER, fontSize: 16, outline: "none" }}
                         />
                         <button type="submit" disabled={lead === "sending"} className="premium-btn" data-umami-event="forslag-sajtkoll" style={{ opacity: lead === "sending" ? 0.7 : 1 }}>
-                          {lead === "sending" ? "Skickar..." : "Bygg mitt förslag"}
+                          {lead === "sending" ? "Skickar..." : "Kontakta mig"}
                           {lead !== "sending" && <ArrowRight size={15} />}
                         </button>
                       </div>
                       {leadFel && <p role="alert" className="text-[13.5px] mt-3 mb-0" style={{ color: "#F2665C" }}>{leadFel}</p>}
                       <p className="text-[12.5px] text-muted mt-4 mb-0 max-w-[600px] leading-relaxed">
-                        Säger du nej hör du inte av mig igen. Gillar du den får du ett fast pris skriftligt innan jag börjar.
-                        Du äger hemsidan.
+                        Säger ni nej hör ni inte av mig igen. Vill ni gå vidare får ni ett fast pris skriftligt innan jag börjar.
+                        Ni äger hemsidan.
                       </p>
                     </form>
                   ) : (
                     <div role="status">
                       <h2 className="font-heading text-[21px] text-heading mt-0 mb-2 flex items-center gap-2.5" style={{ fontWeight: 520 }}>
-                        <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Om två arbetsdagar har du en länk.
+                        <Check size={20} style={{ color: GUL, flexShrink: 0 }} /> Tack. Jag hör av mig nästa arbetsdag.
                       </h2>
                       <p className="text-[14.5px] leading-relaxed text-body m-0 max-w-[600px]">
-                        Jag läser din hemsida, dina tjänster och din ort, och bygger ett förslag med startsida och en tjänstesida.
-                        Länken kommer på mejlen.
+                        Då bokar vi ett första samtal om er hemsida. Efter samtalet får ni en klickbar demo, helt riskfritt.
                       </p>
                     </div>
                   )}
@@ -401,7 +400,7 @@ export default function SajtkollPage() {
                       new CustomEvent("stolt-chat:open", {
                         detail: {
                           context: `Domän ${doman}. Poäng ${result.score} av 100. Bedömning: ${result.verdict || ""}. Brister: ${brister.map((b) => `${b.label}: ${b.value} (${b.detail})`).join(" | ") || "inga allvarliga"}.`,
-                          intro: `Jag såg mätningen av ${doman}: ${result.score} av 100. Fråga mig vad bristerna betyder för just din bransch, hur förslaget går till, eller vad något kostar.`,
+                          intro: `Jag såg mätningen av ${doman}: ${result.score} av 100. Fråga mig vad bristerna betyder för just er bransch, hur det går till efter första samtalet, eller vad något kostar.`,
                         },
                       })
                     );

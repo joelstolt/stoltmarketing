@@ -27,7 +27,7 @@ export default function ServicePage({ data }) {
         lead={data.subtitle}
         punkter={data.bullets}
         cta={data.cta}
-        sekundar={{ href: "#omfattning", label: "Så kan du köpa" }}
+        sekundar={{ href: "#omfattning", label: "Så kan ni köpa" }}
         omrade={TJANST_OMRADE[data.slug]}
       />
 
@@ -47,7 +47,7 @@ export default function ServicePage({ data }) {
 
       <Sektion
         id="omfattning"
-        rubrik="Så kan du köpa"
+        rubrik="Så kan ni köpa"
         ingress={
           DEMO_TJANSTER.has(data.slug)
             ? "Efter första samtalet får ni en klickbar demo, helt riskfritt. Sedan ett fast pris skriftligt innan jag börjar."
@@ -57,7 +57,7 @@ export default function ServicePage({ data }) {
         <Erbjudanden offers={data.offers} fallback={data.cta} />
       </Sektion>
 
-      <Sektion rubrik="Vad jag gör och vad du får" ingress={data.intro}>
+      <Sektion rubrik="Vad jag gör och vad ni får" ingress={data.intro}>
         <Celler items={data.features.map((f) => ({ titel: f.title, text: f.desc }))} />
       </Sektion>
 

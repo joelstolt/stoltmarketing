@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { PageHero } from "@/components/ui";
 import InquiryForm from "@/components/InquiryForm";
 import { ArrowRight, Check } from "lucide-react";
+import { DEMO_FRAGA, DEMO_KORT, DEMO_MENING } from "@/lib/usp";
 
 // Landningssida for "hemsida foretag" (590 sok/man, KD 19).
 // Byggd som konverteringssida: pris direkt, bevis, process, FAQ.
@@ -13,7 +14,7 @@ const URL = "https://www.stoltmarketing.se/hemsida-foretag";
 export const metadata = {
   title: "Hemsida för företag | Fast pris innan jag börjar",
   description:
-    "Hemsida för företag med fast pris skriftligt innan jag börjar. Design, bygge, drift och ändringar. Byggd för att synas på Google och göra besökare till kunder. Första samtalet kostar ingenting.",
+    "Hemsida för företag: design, bygge, drift och ändringar. Klickbar demo efter första samtalet, helt riskfritt, och fast pris skriftligt innan jag börjar.",
   alternates: { canonical: URL },
   openGraph: { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Stolt Marketing: utvecklaren ni inte har" }], 
     title: "Hemsida för företag | Fast pris innan jag börjar",
@@ -37,40 +38,41 @@ function P({ children }) {
   return <p className="text-[16px] sm:text-[17px] leading-[1.8] text-body mb-5">{children}</p>;
 }
 
-const websiteTerms = {
-  proposal: "Ett gratis, klickbart förslag med startsida och en tjänstesida inom två arbetsdagar. Resten byggs när du har sagt ja.",
-};
-
 const upplagg = [
   { namn: "Hemsida", pris: "Fast pris innan jag börjar", start: "Skriftligt, exklusive moms", rader: ["Design och bygge efter vad ni behöver", "Texter skrivna för både kunder och sök", "Teknik som testas även i mobilen", "Formulär med skydd mot skräppost"] },
   { namn: "Webbshop", pris: "Fast pris innan jag börjar", start: "Skriftligt, exklusive moms", rader: ["Produktsidor och kassa", "Betalning och frakt efter era behov", "Koppling till lager eller ekonomi vid behov", "Omfattningen avgränsas före start"] },
-  { namn: "Löpande hjälp", pris: "Fast månadspris i förväg", start: "Du vet kostnaden varje månad", rader: ["Drift, säkerhet och backup", "Ändringar och uppdateringar", "Svar nästa arbetsdag", "Jag kan ta över sajter jag inte byggt"] },
+  { namn: "Löpande hjälp", pris: "Fast månadspris i förväg", start: "Ni vet kostnaden varje månad", rader: ["Drift, säkerhet och backup", "Ändringar och uppdateringar", "Svar nästa arbetsdag", "Jag kan ta över sajter jag inte byggt"] },
 ];
 
 const faqs = [
   {
     q: "Vad kostar en hemsida för företag?",
-    a: "Det beror på omfattningen. Första samtalet kostar ingenting, och därefter får du ett fast pris skriftligt innan jag börjar. Vill du ha löpande hjälp efter lansering har den ett fast månadspris som du vet i förväg. Alla priser anges exklusive moms.",
+    a: "Det beror på omfattningen. Första samtalet kostar ingenting, och därefter får ni ett fast pris skriftligt innan jag börjar. Vill ni ha löpande hjälp efter lansering har den ett fast månadspris som ni vet i förväg. Alla priser anges exklusive moms.",
+  },
+  DEMO_FRAGA,
+  {
+    q: "Vad händer efter första samtalet?",
+    a: "Ni får en klickbar demo av er nya hemsida, byggd på det vi pratat om. Ni klickar runt i den innan ni bestämmer er, helt riskfritt för er. Vill ni gå vidare får ni omfattning, tidplan och ett fast pris skriftligt innan jag börjar.",
   },
   {
     q: "Hur fungerar priset efter lansering?",
-    a: "En hemsida är inte klar vid lansering. Den behöver drift, säkerhet och uppdateringar för att fortsätta leverera. Löpande hjälp har ett fast månadspris som du vet i förväg, så du slipper timfakturor för varje ändring och oklar ansvarsfördelning efter leverans.",
+    a: "En hemsida är inte klar vid lansering. Den behöver drift, säkerhet och uppdateringar för att fortsätta leverera. Löpande hjälp har ett fast månadspris som ni vet i förväg, så ni slipper timfakturor för varje ändring och oklar ansvarsfördelning efter leverans.",
   },
   {
     q: "Hur lång tid tar det innan sajten är klar?",
-    a: "En vanlig företagssajt är normalt live inom två veckor efter ditt ja. E-handel och större byggen tar 1 till 2 månader. Ett gratis förslag du kan klicka runt i får du inom 2 arbetsdagar, så du ser hemsidan innan du bestämmer dig.",
+    a: "Det beror på omfattningen och på när texter och bilder finns på plats. Tidplanen får ni skriftligt tillsammans med det fasta priset, innan jag börjar. Hemsidan har ni redan sett i demon efter första samtalet.",
   },
   {
     q: "Syns hemsidan på Google?",
-    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och begriplig struktur. Vill du aktivt klättra på konkurrensutsatta sökord kan löpande sökmotoroptimering läggas till med ett fast månadspris som du vet i förväg.",
+    a: "Grunderna ingår alltid: rätt teknik, snabb laddning, korrekta titlar och begriplig struktur. Vill ni aktivt klättra på konkurrensutsatta sökord kan löpande sökmotoroptimering läggas till med ett fast månadspris som ni vet i förväg.",
   },
   {
     q: "Vem äger hemsidan och domänen?",
-    a: "Du äger din domän och ditt innehåll, alltid. Väljer du att avsluta hjälper jag till med flytten. Ägande och överlämning framgår av avtalet.",
+    a: "Ni äger er domän och ert innehåll, alltid. Väljer ni att avsluta hjälper jag till med flytten. Ägande och överlämning framgår av avtalet.",
   },
   {
-    q: "Kan du göra om min befintliga hemsida i stället?",
-    a: "Ja. Har du en befintlig WordPress-sajt börjar jag med att kontrollera teknik och omfattning. Migreringen får ett fast pris skriftligt innan jag börjar. Nya funktioner och större ombyggnad specificeras separat före start.",
+    q: "Kan du göra om vår befintliga hemsida i stället?",
+    a: "Ja. Har ni en befintlig WordPress-sajt börjar jag med att kontrollera teknik och omfattning. Migreringen får ett fast pris skriftligt innan jag börjar. Nya funktioner och större ombyggnad specificeras separat före start.",
   },
 ];
 
@@ -99,7 +101,7 @@ const serviceLd = {
   name: "Hemsida för företag",
   serviceType: "Webbutveckling",
   description:
-    "Hemsida för företag: design, bygge, drift och löpande ändringar med fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting.",
+    "Hemsida för företag: design, bygge, drift och löpande ändringar. Klickbar demo efter första samtalet, helt riskfritt, och fast pris skriftligt innan jag börjar.",
   url: URL,
   provider: {
     "@type": "ProfessionalService",
@@ -120,13 +122,13 @@ export default function Page() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
         <PageHero
-          cta={{ href: "#forslag", label: "Be om gratis designförslag" }}
+          cta={{ href: "#forslag", label: "Boka ett första samtal" }}
           highlight="Hemsida för företag"
           breadcrumbs={[{ label: "Start", href: "/" }, { label: "Hemsida för företag" }]}
           badge="Hemsida för företag"
           title="Hemsida för företag som gör nästa steg tydligt"
-          subtitle="Design, bygge, drift och innehållsändringar med fast pris skriftligt innan jag börjar. Första samtalet kostar ingenting, och du får ett gratis förslag med startsida och en tjänstesida innan du bestämmer dig."
-          bullets={["Gratis designförslag inom 2 arbetsdagar", "Fast pris innan jag börjar", "Du äger domän och innehåll"]}
+          subtitle="Design, bygge, drift och innehållsändringar. Efter första samtalet får ni en klickbar demo av er nya hemsida, helt riskfritt, och sedan ett fast pris skriftligt innan jag börjar."
+          bullets={[DEMO_KORT, "Fast pris skriftligt innan jag börjar", "Ni äger domän och innehåll"]}
         />
 
         <section className="py-14 sm:py-20 px-5 sm:px-8">
@@ -146,13 +148,13 @@ export default function Page() {
                     ))}
                   </div>
                   <a href="#forslag" className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-600 text-primary">
-                    Få gratis förslag <ArrowRight size={15} />
+                    Boka ett första samtal <ArrowRight size={15} />
                   </a>
                 </div>
               ))}
             </div>
             <p className="mt-5 text-[13px] text-body text-center">
-              Fast pris skriftligt innan jag börjar. Löpande hjälp har ett fast månadspris som du vet i förväg. Se <a href="/sa-funkar-det" className="text-primary underline underline-offset-4">Så funkar det</a>.
+              Fast pris skriftligt innan jag börjar. Löpande hjälp har ett fast månadspris som ni vet i förväg. Se <a href="/sa-funkar-det" className="text-primary underline underline-offset-4">Så funkar det</a>.
             </p>
           </div>
         </section>
@@ -162,7 +164,7 @@ export default function Page() {
 
             <H2>Därför räcker det inte med en snygg sajt</H2>
             <P>
-              Kunden behöver förstå vad du hjälper till med, var du arbetar och hur det går till att anlita dig. En liten verksamhet kan få en tydlig sajt med fem sidor. Har du flera tjänster behövs ofta egna sidor för att kunna förklara dem ordentligt. Antalet sidor är inget mål i sig; varje sida ska svara på en verklig kundfråga.
+              Kunden behöver förstå vad ni hjälper till med, var ni arbetar och hur det går till att anlita er. En liten verksamhet kan få en tydlig sajt med fem sidor. Har ni flera tjänster behövs ofta egna sidor för att kunna förklara dem ordentligt. Antalet sidor är inget mål i sig; varje sida ska svara på en verklig kundfråga.
             </P>
             <P>
               Väl framme ska besökaren konvertera. Det betyder att nästa steg är tydligt,
@@ -172,21 +174,21 @@ export default function Page() {
 
             <H2>Så går det till</H2>
             <P>
-              Du skickar din webbadress eller ditt företagsnamn. Inom två arbetsdagar får du ett
-              förslag du kan klicka runt i: startsida och en tjänstesida med texter om ditt
-              företag, kostnadsfritt och utan förpliktelse. Säger du ja bygger jag resten av
-              sajten, fyller den med innehåll och optimerar tekniken. Vi planerar lanseringen
-              på din domän, normalt inom två veckor efter ditt ja, och därefter ingår drift, säkerhet och
-              ändringar i det fasta månadspriset om ni väljer löpande hjälp. Du mejlar en ändring, jag gör den. Om en ändring går utanför den avtalade sajten får du priset först.
+              Först ett samtal där ni berättar vad ni säljer, vilka kunder ni vill nå och vad
+              sajten ska göra. {DEMO_MENING} Vill ni gå vidare får ni omfattning, tidplan och
+              ett fast pris skriftligt innan jag börjar. Sedan bygger jag resten av sajten, fyller
+              den med innehåll och optimerar tekniken. Lanseringen på er domän planerar vi
+              tillsammans, och därefter ingår drift, säkerhet och ändringar i det fasta
+              månadspriset om ni väljer löpande hjälp. Ni mejlar en ändring, jag gör den. Om en ändring går utanför den avtalade sajten får ni priset först.
             </P>
 
             <H2>Vad som ingår, på riktigt</H2>
             <P>
               Design och innehåll anpassade efter vad ni behöver. Texter skrivna för både
-              kunder och sök. Teknik som testas även i mobilen. Formulär med skydd mot skräppost. Statistik så att du
+              kunder och sök. Teknik som testas även i mobilen. Formulär med skydd mot skräppost. Statistik så att ni
               ser vad besökarna gör. Och löpande: uppdateringar, säkerhet, backup och de där
-              småändringarna som annars aldrig blir gjorda. Hela listan gås igenom i förslaget,
-              och vill du jämföra marknaden först finns{" "}
+              småändringarna som annars aldrig blir gjorda. Hela listan står i offerten,
+              och vill ni jämföra marknaden först finns{" "}
               <a href="/vad-kostar-en-hemsida" className="text-primary font-600 hover:underline">prisguiden för hemsidor</a>.
             </P>
 
@@ -203,7 +205,7 @@ export default function Page() {
           </div>
         </article>
 
-        <section id="forslag" className="px-5 sm:px-8 py-14 scroll-mt-24"><div className="max-w-3xl mx-auto bg-surface border border-primary/40 rounded-xl p-5 sm:p-8"><h2 className="text-[32px] leading-tight mb-4">Se hur din nya hemsida kan se ut</h2><p className="mb-6">{websiteTerms.proposal} Skriv din webbadress eller ditt företagsnamn och vad du vill förbättra. Ingen beställning eller bindning uppstår genom formuläret.</p><InquiryForm service="Gratis designförslag" initialMessage="Jag vill se ett gratis designförslag. Mitt företag eller min webbadress: " submitLabel="Be om gratis designförslag" eventName="lead-designforslag" /></div></section>
+        <section id="forslag" className="px-5 sm:px-8 py-14 scroll-mt-24"><div className="max-w-3xl mx-auto bg-surface border border-primary/40 rounded-xl p-5 sm:p-8"><h2 className="text-[32px] leading-tight mb-4">Se er nya hemsida innan ni bestämmer er</h2><p className="mb-6">{DEMO_MENING} Skriv er webbadress eller ert företagsnamn och vad ni vill förbättra, så hör jag av mig nästa arbetsdag och bokar första samtalet. Ingen beställning eller bindning uppstår genom formuläret.</p><InquiryForm service="Hemsida, första samtal" initialMessage="Vi vill boka ett första samtal om en ny hemsida. Vårt företag eller vår webbadress: " submitLabel="Boka ett första samtal" eventName="lead-designforslag" /></div></section>
       </main><Footer />
     </>
   );
