@@ -6,7 +6,8 @@ import s from "@/components/ny/ny.module.css";
 import o from "./om.module.css";
 
 /* /om i nya profilen (2026-11-17). Underlag: positionering-2026-11-15/sajttext.md avsnitt 6
-   och erbjudande-2026-11-17/RAPPORT.md (nej-listan; reservplan och org.nr läggs in när Joel har dem). Inga påhittade siffror. */
+   och erbjudande-2026-11-17/RAPPORT.md (reservplan och org.nr läggs in när Joel har dem). Inga påhittade siffror.
+   Nej-listan (sociala medier, grafisk profil) borttagen 2026-11-20: Joel gör det när kunden vill ha hjälp med det. */
 
 const SA_JOBBAR_JAG = [
   "Svar nästa arbetsdag, och akuta fel börjar jag felsöka samma arbetsdag.",
@@ -21,17 +22,6 @@ const STEG = [
   ["Klickbar demo", "Ni klickar i den innan ni bestämmer er, helt riskfritt"],
   ["Bygget", "Fast pris, skriftligt, innan jag börjar"],
   ["Löpande", "Drift eller reserverad tid varje månad"],
-];
-
-const NEJ = [
-  {
-    titel: "Sociala medier",
-    text: "Jag sköter inte inlägg och konton i sociala medier som en egen tjänst. Annonser i Facebook och Instagram gör jag, med samma mätning som allt annat.",
-  },
-  {
-    titel: "Grafisk profil",
-    text: "Logotyp och grafisk profil säljer jag inte som en egen tjänst. Design ingår när jag bygger en sajt eller ett system åt er.",
-  },
 ];
 
 export default function OmContent() {
@@ -166,26 +156,6 @@ export default function OmContent() {
                 ))}
               </div>
               <Link href="/sa-funkar-det" className={o.uiLink}>Läs hur det funkar</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Nej-listan */}
-      <section className={s.section}>
-        <div className={`${s.frame} ${s.block}`}>
-          <div className={o.no}>
-            <div className={s.reveal}>
-              <h2 className={s.h2}>Det här gör jag inte</h2>
-              <p className={s.blockLead}>Hellre färre saker som håller än en meny med allt.</p>
-            </div>
-            <div className={o.noList}>
-              {NEJ.map((n) => (
-                <div key={n.titel} className={o.noItem}>
-                  <h3 className={o.noTitle}>{n.titel}</h3>
-                  <p className={o.noText}>{n.text}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

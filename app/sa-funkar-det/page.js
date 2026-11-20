@@ -67,10 +67,6 @@ const FAQ = [
     q: "Kan du jobba ihop med vår byrå?",
     a: "Ja. En del kunder har en byrå för annonser eller innehåll och mig för tekniken och mätningen.",
   },
-  {
-    q: "Vad gör du inte?",
-    a: "Sociala medier och grafisk profil som egna tjänster. Jag tipsar gärna om någon som gör det bra.",
-  },
 ];
 
 export default function Page() {
